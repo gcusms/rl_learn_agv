@@ -1,0 +1,20 @@
+# Active scene name (当前场景名称)
+scene_name: scene_1
+
+# Default home pose in arm_base_link, millimeters/degrees
+# (arm_base_link 坐标系下的默认复位姿态，单位为毫米/度)
+home_pose:
+  # Forward position (前后位置)
+  x: 95.0
+  # Lateral position (左右位置)
+  y: 0.0
+  # Height above the arm mounting frame (机械臂安装坐标系高度)
+  z: 216.0
+  # Tool pitch angle (末端俯仰角)
+  pitch: -50.0
+  # Tool roll angle (末端横滚角)
+  roll: 0.0
+  # Gripper angle (夹爪角度)
+  claw: -95.0
+# Home motion duration in milliseconds (复位运动时间，单位为毫秒)
+home_time_ms: 1500

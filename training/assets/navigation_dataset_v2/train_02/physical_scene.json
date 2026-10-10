@@ -1,0 +1,136 @@
+{
+  "size_m": [
+    10.0,
+    8.0
+  ],
+  "resolution_m": 0.05,
+  "origin": [
+    0,
+    0,
+    0
+  ],
+  "walls": [
+    [
+      0,
+      0,
+      10,
+      0.2
+    ],
+    [
+      0,
+      7.8,
+      10,
+      8
+    ],
+    [
+      0,
+      0.2,
+      0.2,
+      7.8
+    ],
+    [
+      9.8,
+      0.2,
+      10,
+      7.8
+    ],
+    [
+      3,
+      0.2,
+      3.2,
+      4.2664589381084905
+    ],
+    [
+      6.5,
+      2.8372835008131556,
+      6.7,
+      7.8
+    ],
+    [
+      5.681752872946134,
+      2.632765880170994,
+      6.314935963795044,
+      3.246704540239556
+    ],
+    [
+      3.949917375368182,
+      2.4260721106184575,
+      4.384021037356406,
+      2.9273268051014507
+    ],
+    [
+      1.2850727199118983,
+      4.85349016691624,
+      1.835578518910399,
+      5.20503098829537
+    ]
+  ],
+  "robot_model": "Native planar MuJoCo dynamic body; URDF convex contact geometry; force servo; synthetic chassis mass 8 kg",
+  "robot_collision_box_m": [
+    0.393924904,
+    0.329460022,
+    0.313185074
+  ],
+  "conservative_radius_m": 0.27,
+  "action_limits": {
+    "vx_m_s": [
+      0.0,
+      0.2
+    ],
+    "wz_rad_s": [
+      -0.5,
+      0.5
+    ]
+  },
+  "tasks": [
+    {
+      "start": [
+        8.775,
+        4.775,
+        0
+      ],
+      "goal": [
+        1.475,
+        2.575
+      ]
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "name": "crossing_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        2.5,
+        3.5
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true
+    },
+    {
+      "name": "corridor_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        4.8,
+        2.0
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true
+    }
+  ],
+  "scene_file": "physical_scene.xml",
+  "simulation_backend": "MuJoCo mj_step, constrained planar rigid bodies",
+  "pedestrian_behavior": "random reachable waypoints; acceleration-limited yielding and side stepping; native solid contacts",
+  "map_id": "train_02",
+  "split": "train",
+  "generation_seed": 11002
+}

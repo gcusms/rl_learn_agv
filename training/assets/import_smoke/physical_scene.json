@@ -1,0 +1,154 @@
+{
+  "size_m": [
+    10.0,
+    8.0
+  ],
+  "resolution_m": 0.05,
+  "origin": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "walls": [
+    [
+      0.0,
+      7.800000000000001,
+      10.0,
+      8.0
+    ],
+    [
+      1.5,
+      6.0,
+      2.1,
+      6.6000000000000005
+    ],
+    [
+      7.0,
+      5.7,
+      7.800000000000001,
+      6.5
+    ],
+    [
+      3.9000000000000004,
+      4.2,
+      4.1000000000000005,
+      7.800000000000001
+    ],
+    [
+      0.0,
+      4.1000000000000005,
+      0.2,
+      7.800000000000001
+    ],
+    [
+      9.8,
+      4.1000000000000005,
+      10.0,
+      7.800000000000001
+    ],
+    [
+      5.2,
+      3.9000000000000004,
+      10.0,
+      4.1000000000000005
+    ],
+    [
+      0.0,
+      3.9000000000000004,
+      2.8000000000000003,
+      4.1000000000000005
+    ],
+    [
+      0.0,
+      0.2,
+      0.2,
+      3.9000000000000004
+    ],
+    [
+      9.8,
+      0.2,
+      10.0,
+      3.9000000000000004
+    ],
+    [
+      3.9000000000000004,
+      0.2,
+      4.1000000000000005,
+      2.8000000000000003
+    ],
+    [
+      0.0,
+      0.0,
+      10.0,
+      0.2
+    ]
+  ],
+  "robot_model": "Native planar MuJoCo dynamic body; URDF convex contact geometry; force servo; synthetic chassis mass 8 kg",
+  "robot_collision_box_m": [
+    0.393924904,
+    0.329460022,
+    0.313185074
+  ],
+  "conservative_radius_m": 0.27,
+  "action_limits": {
+    "vx_m_s": [
+      0.0,
+      0.2
+    ],
+    "wz_rad_s": [
+      -0.5,
+      0.5
+    ]
+  },
+  "tasks": [
+    {
+      "start": [
+        2.475,
+        1.075,
+        0
+      ],
+      "goal": [
+        7.525,
+        2.6750000000000003
+      ]
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "name": "crossing_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        2.5,
+        3.5
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true
+    },
+    {
+      "name": "corridor_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        4.8,
+        2.0
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true
+    }
+  ],
+  "scene_file": "physical_scene.xml",
+  "simulation_backend": "MuJoCo mj_step, constrained planar rigid bodies",
+  "pedestrian_behavior": "random reachable waypoints; acceleration-limited yielding and side stepping; native solid contacts",
+  "map_id": "import_smoke",
+  "source_map": "training/assets/decision_map.yaml",
+  "map_import_assumptions": "Occupied and unknown cells extruded to 1 m high static walls; floor level, axis-aligned map; map image is not a reconstruction of object heights"
+}

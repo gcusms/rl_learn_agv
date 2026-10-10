@@ -1,0 +1,114 @@
+{
+  "revision": "v3",
+  "policy_environment": "RoomNavigationEnv",
+  "observation_dimensions": 235,
+  "action_limits": {
+    "forward_m_s": 0.2,
+    "reverse_m_s": 0.08,
+    "turn_rad_s": 0.5
+  },
+  "components": "/home/ubuntu/rl_learn/training/runs/full_model_navigation_v3",
+  "lidar": {
+    "angle_min": -1.8915926535897931,
+    "angle_max": 1.938407346410207,
+    "beams": 220,
+    "range_min": 0.1,
+    "range_max": 12.0,
+    "mount": [
+      0.118389,
+      0.0,
+      0.116682537,
+      0.0
+    ],
+    "source": "agv/peripherals/config/lidar_filters_config_sclidar.yaml"
+  },
+  "scene_file": "physical_scene.xml",
+  "runtime_amcl": false,
+  "runtime_robot_astar": false,
+  "runtime_robot_supervisor_override": false,
+  "ground_truth_in_policy_inputs": false,
+  "teacher_training_only": true,
+  "parent_weight_sha256": {
+    "policy.zip": "3b9084786bdac5cdb5b3dd83c95ea179c992fbc127e6a7a2908cff87204bb195",
+    "localizer.pt": "ecd5498beb748f52354875386b550e8bcb9bf98c73facd85b0e360548bfff4e0",
+    "router.pt": "1ce6b529fe725d4e4b9152d48ae4baa7f4d261abb44dd8ec75a6e5274ddf5d15"
+  },
+  "training_demonstrations": [
+    {
+      "episode": 0,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 700,
+      "verified_targets": 0,
+      "verified_mission": false,
+      "status": "running",
+      "true_goal_distance_m": 6.15903578184041,
+      "collision_events": 0
+    },
+    {
+      "episode": 1,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 1350,
+      "verified_targets": 4,
+      "verified_mission": true,
+      "status": "success",
+      "true_goal_distance_m": 0.13750404596623642,
+      "collision_events": 0
+    },
+    {
+      "episode": 2,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 913,
+      "verified_targets": 1,
+      "verified_mission": false,
+      "status": "running",
+      "true_goal_distance_m": 4.600579315555084,
+      "collision_events": 0
+    },
+    {
+      "episode": 3,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 1215,
+      "verified_targets": 4,
+      "verified_mission": true,
+      "status": "success",
+      "true_goal_distance_m": 0.1264767784032228,
+      "collision_events": 0
+    },
+    {
+      "episode": 4,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 193,
+      "verified_targets": null,
+      "verified_mission": null,
+      "status": "success",
+      "true_goal_distance_m": 0.1314924425343315,
+      "collision_events": 0
+    },
+    {
+      "episode": 5,
+      "source": "offline training teacher; not policy evaluation",
+      "steps": 197,
+      "verified_targets": null,
+      "verified_mission": null,
+      "status": "success",
+      "true_goal_distance_m": 0.12878032714368542,
+      "collision_events": 0
+    }
+  ],
+  "training_samples": 20782,
+  "requested_ppo_steps": 8192,
+  "training_maps": "Original v2 samples plus observed room failures and jittered room missions; original three tasks are regression cases, not independent held-out tests",
+  "completed_ppo_steps": 8192,
+  "selected_checkpoint": "final PPO 8192 steps; not claimed best among all checkpoints",
+  "post_training_environment_fixes": [
+    "Grid centers align with actual map sample centers (+0.025,-0.025 m)",
+    "Completed route prefixes discarded; retain still-valid neural route",
+    "Local targets respect known-map visibility at corners",
+    "Eight-second partial-FOV obstacle memory; actual free-space laser evidence clears earlier"
+  ],
+  "unchanged_learned_components": [
+    "localizer.pt",
+    "router.pt"
+  ],
+  "status": "trained candidate; failures retained; not production ready"
+}

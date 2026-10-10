@@ -1,0 +1,209 @@
+{
+  "size_m": [
+    10.0,
+    8.0
+  ],
+  "resolution_m": 0.05,
+  "origin": [
+    0,
+    0,
+    0
+  ],
+  "walls": [
+    [
+      0,
+      0,
+      10,
+      0.2
+    ],
+    [
+      0,
+      7.8,
+      10,
+      8
+    ],
+    [
+      0,
+      0.2,
+      0.2,
+      7.8
+    ],
+    [
+      9.8,
+      0.2,
+      10,
+      7.8
+    ],
+    [
+      0.2,
+      4.423549285167443,
+      2.1456746265037863,
+      4.623549285167442
+    ],
+    [
+      3.8456746265037864,
+      4.423549285167443,
+      9.8,
+      4.623549285167442
+    ],
+    [
+      8.323725096156853,
+      3.3254809225752,
+      8.820053891060782,
+      3.8875351264008047
+    ],
+    [
+      5.441494879075477,
+      3.597510018282692,
+      5.994304702789165,
+      4.021541536179361
+    ],
+    [
+      7.179446044949169,
+      3.5030413808113665,
+      7.840699585048107,
+      4.072497012942163
+    ]
+  ],
+  "robot_model": "Native planar MuJoCo dynamic body; URDF convex contact geometry; force servo; synthetic chassis mass 8 kg",
+  "robot_collision_box_m": [
+    0.393924904,
+    0.329460022,
+    0.313185074
+  ],
+  "conservative_radius_m": 0.27,
+  "action_limits": {
+    "vx_m_s": [
+      0.0,
+      0.2
+    ],
+    "wz_rad_s": [
+      -0.5,
+      0.5
+    ]
+  },
+  "tasks": [
+    {
+      "name": "bypass",
+      "start": [
+        8.575000000000001,
+        1.175,
+        2.6041493350080316
+      ],
+      "goal": [
+        1.8250000000000002,
+        6.125
+      ],
+      "straight_distance_m": 8.370483856982224,
+      "offline_reference_length_m": 8.453102790769316,
+      "column_task": {
+        "kind": "bypass",
+        "blocks": [
+          {
+            "column_index": 0,
+            "position": [
+              6.403947368421053,
+              2.468859649122807
+            ],
+            "release_goal": [
+              5.675000000000001,
+              1.2750000000000001
+            ],
+            "hold_seconds": 12,
+            "trigger_distance_m": 2.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "temporary_chokepoint",
+      "start": [
+        8.075000000000001,
+        1.625,
+        2.6297368111579673
+      ],
+      "goal": [
+        2.875,
+        7.025
+      ],
+      "straight_distance_m": 7.496665925596526,
+      "offline_reference_length_m": 8.183535940259118,
+      "column_task": {
+        "kind": "temporary_chokepoint",
+        "blocks": [
+          {
+            "column_index": 0,
+            "position": [
+              2.6356746265037865,
+              4.523549285167443
+            ],
+            "release_goal": [
+              3.825,
+              5.2250000000000005
+            ],
+            "hold_seconds": 18,
+            "trigger_distance_m": 1.5
+          },
+          {
+            "column_index": 1,
+            "position": [
+              3.3556746265037862,
+              4.523549285167443
+            ],
+            "release_goal": [
+              2.1750000000000003,
+              5.2250000000000005
+            ],
+            "hold_seconds": 18,
+            "trigger_distance_m": 1.5
+          }
+        ]
+      }
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "name": "crossing_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        2.5,
+        3.5
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true,
+      "kind": "moving_solid_column",
+      "height_m": 1.7
+    },
+    {
+      "name": "corridor_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        4.8,
+        2.0
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true,
+      "kind": "moving_solid_column",
+      "height_m": 1.7
+    }
+  ],
+  "scene_file": "physical_scene.xml",
+  "simulation_backend": "MuJoCo mj_step, constrained planar rigid bodies",
+  "pedestrian_behavior": "random reachable waypoints; acceleration-limited yielding and side stepping; native solid contacts",
+  "map_id": "columns_01",
+  "split": "test",
+  "generation_seed": 44001,
+  "dynamic_obstacle_kind": "columns",
+  "column_behavior": "Solid acceleration-limited moving columns; approach-triggered blocking then physical release",
+  "task_source": "Offline scene/task geometry; no routes supplied to robot inference"
+}

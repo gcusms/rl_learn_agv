@@ -1,0 +1,14 @@
+/**:
+  ros__parameters:
+    filter1:
+      name: angle
+      type: laser_filters/LaserScanSectorFilter
+      params:
+        # Forward-mounted lidar: retain 251.62-360 and 0-111.06 degrees.
+        # Clear the complementary rear sector because the retained range crosses 0 degrees.
+        angle_min: 1.938407346410207
+        angle_max: 4.391592653589793
+        range_min: 0.0
+        range_max: 100000.0
+        clear_inside: true
+        invert: false

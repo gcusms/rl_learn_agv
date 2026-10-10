@@ -1,0 +1,8 @@
+# Source-derived SCLIDAR profile; user confirmed this hardware and rear-sector filter.
+filter_source: agv/peripherals/config/lidar_filters_config_sclidar.yaml
+beams: 220
+# Range limits are conservative simulation settings, not measured hardware specs.
+range_min_m: 0.10
+range_max_m: 12.0
+noise_std_m: 0.015
+dropout_probability: 0.005

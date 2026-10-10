@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "size_m": [
+    10,
+    8
+  ],
+  "splits": {
+    "train": [
+      {
+        "id": "train_00",
+        "directory": "training/assets/navigation_dataset/train_00",
+        "seed": 11000,
+        "sha256": "6853fd7ad10022896c012b747aa9b522b9e5c54df3c07fabf64e3890063d77ee"
+      },
+      {
+        "id": "train_01",
+        "directory": "training/assets/navigation_dataset/train_01",
+        "seed": 11001,
+        "sha256": "305878f2ed597255ab469ac213511eb811c5753337c17083c3fdc14f4111cfc4"
+      },
+      {
+        "id": "train_02",
+        "directory": "training/assets/navigation_dataset/train_02",
+        "seed": 11002,
+        "sha256": "28b6bd12fb67524c6d330e6debc6ae6ab0c2c1ffb6219d37ac2a8fd19acd661e"
+      },
+      {
+        "id": "train_03",
+        "directory": "training/assets/navigation_dataset/train_03",
+        "seed": 11003,
+        "sha256": "171a943f83af83b53ca9886c93f38492a19b422a19138949174e496217bac6bc"
+      },
+      {
+        "id": "train_04",
+        "directory": "training/assets/navigation_dataset/train_04",
+        "seed": 11004,
+        "sha256": "866e190b69b8f4bf002bac6293e6ff064a3887089108111b5c507a3fd12ad1b8"
+      },
+      {
+        "id": "train_05",
+        "directory": "training/assets/navigation_dataset/train_05",
+        "seed": 11005,
+        "sha256": "032622f067020210313ce10da74b7d08f41c23877f149555787833debb1c22e5"
+      }
+    ],
+    "validation": [
+      {
+        "id": "validation_00",
+        "directory": "training/assets/navigation_dataset/validation_00",
+        "seed": 22000,
+        "sha256": "def44550ab9758bbd64dba486d2f47d42f300e89f70feb61cc319edcab1c6c33"
+      },
+      {
+        "id": "validation_01",
+        "directory": "training/assets/navigation_dataset/validation_01",
+        "seed": 22001,
+        "sha256": "f455649e37cc96b670964b07acbe2b292c0f1936d9933fa50bc07070570daf28"
+      }
+    ],
+    "test": [
+      {
+        "id": "test_00",
+        "directory": "training/assets/navigation_dataset/test_00",
+        "seed": 33000,
+        "sha256": "b7bbeee63e2a2caf75a33a6c7862c62daa048c624846621f633eaf924085f145"
+      },
+      {
+        "id": "test_01",
+        "directory": "training/assets/navigation_dataset/test_01",
+        "seed": 33001,
+        "sha256": "851e695d605217bb3a2f4de69fe73921afac98aa144c7d39fa31e57e56c91f5e"
+      },
+      {
+        "id": "test_02",
+        "directory": "training/assets/navigation_dataset/test_02",
+        "seed": 33002,
+        "sha256": "9a11dc2c5c9dea240b65af0bbb4b005bdf5e0b7e6a9f326912a1f69b579b4098"
+      }
+    ]
+  },
+  "sampling": "random free start/goal >= 2 m apart; randomized full-circle initial heading"
+}

@@ -1,0 +1,246 @@
+{
+  "entries": [
+    {
+      "directory": "training/assets/column_navigation_tasks/columns_00",
+      "map_id": "columns_00",
+      "tasks": [
+        {
+          "name": "bypass",
+          "start": [
+            0.9750000000000001,
+            5.4750000000000005,
+            0.04345089539152663
+          ],
+          "goal": [
+            9.025,
+            5.825
+          ],
+          "straight_distance_m": 8.057605103254938,
+          "offline_reference_length_m": 8.057605103254936,
+          "column_task": {
+            "kind": "bypass",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  6.1571875,
+                  5.700312500000001
+                ],
+                "release_goal": [
+                  6.075,
+                  7.075
+                ],
+                "hold_seconds": 12
+              }
+            ]
+          }
+        },
+        {
+          "name": "temporary_chokepoint",
+          "start": [
+            8.925,
+            2.025,
+            2.730136410176091
+          ],
+          "goal": [
+            2.1750000000000003,
+            3.875
+          ],
+          "straight_distance_m": 6.998928489418934,
+          "offline_reference_length_m": 7.739016867478658,
+          "column_task": {
+            "kind": "temporary_chokepoint",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  6.388168888426034,
+                  3.088338424865215
+                ],
+                "release_goal": [
+                  5.825,
+                  1.8250000000000002
+                ],
+                "hold_seconds": 18
+              },
+              {
+                "column_index": 1,
+                "position": [
+                  6.100208880094631,
+                  2.428430072439078
+                ],
+                "release_goal": [
+                  6.675000000000001,
+                  3.725
+                ],
+                "hold_seconds": 18
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "directory": "training/assets/column_navigation_tasks/columns_01",
+      "map_id": "columns_01",
+      "tasks": [
+        {
+          "name": "bypass",
+          "start": [
+            8.575000000000001,
+            1.175,
+            2.6041493350080316
+          ],
+          "goal": [
+            1.8250000000000002,
+            6.125
+          ],
+          "straight_distance_m": 8.370483856982224,
+          "offline_reference_length_m": 8.453102790769316,
+          "column_task": {
+            "kind": "bypass",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  6.403947368421053,
+                  2.468859649122807
+                ],
+                "release_goal": [
+                  5.675000000000001,
+                  1.2750000000000001
+                ],
+                "hold_seconds": 12
+              }
+            ]
+          }
+        },
+        {
+          "name": "temporary_chokepoint",
+          "start": [
+            1.875,
+            6.2250000000000005,
+            -0.8675656857591515
+          ],
+          "goal": [
+            8.225,
+            1.5250000000000001
+          ],
+          "straight_distance_m": 7.900158226263573,
+          "offline_reference_length_m": 8.027362891119587,
+          "column_task": {
+            "kind": "temporary_chokepoint",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  4.672383659091109,
+                  3.280536708333699
+                ],
+                "release_goal": [
+                  5.325,
+                  5.275
+                ],
+                "hold_seconds": 18
+              },
+              {
+                "column_index": 1,
+                "position": [
+                  5.017157193181122,
+                  3.9126215208320554
+                ],
+                "release_goal": [
+                  4.325,
+                  2.6750000000000003
+                ],
+                "hold_seconds": 18
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "directory": "training/assets/column_navigation_tasks/columns_02",
+      "map_id": "columns_02",
+      "tasks": [
+        {
+          "name": "bypass",
+          "start": [
+            9.025,
+            4.125,
+            -2.483704048407575
+          ],
+          "goal": [
+            2.475,
+            6.125
+          ],
+          "straight_distance_m": 6.848539990392114,
+          "offline_reference_length_m": 8.61999748483008,
+          "column_task": {
+            "kind": "bypass",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  4.835849056603774,
+                  3.8561320754716983
+                ],
+                "release_goal": [
+                  3.875,
+                  2.825
+                ],
+                "hold_seconds": 12
+              }
+            ]
+          }
+        },
+        {
+          "name": "temporary_chokepoint",
+          "start": [
+            8.875,
+            3.5250000000000004,
+            -2.64910688771787
+          ],
+          "goal": [
+            1.675,
+            1.975
+          ],
+          "straight_distance_m": 7.364950780555156,
+          "offline_reference_length_m": 10.936693439066358,
+          "column_task": {
+            "kind": "temporary_chokepoint",
+            "blocks": [
+              {
+                "column_index": 0,
+                "position": [
+                  4.019898778234837,
+                  4.1976753891726455
+                ],
+                "release_goal": [
+                  3.875,
+                  3.0250000000000004
+                ],
+                "hold_seconds": 18
+              },
+              {
+                "column_index": 1,
+                "position": [
+                  3.6280811825635406,
+                  3.5936232625127316
+                ],
+                "release_goal": [
+                  4.375,
+                  4.775
+                ],
+                "hold_seconds": 18
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "model_weights": "Frozen full_model_navigation_v2; no retraining for these tasks",
+  "maps": "Same known layouts as v2 test; new long-distance tasks and column schedules"
+}

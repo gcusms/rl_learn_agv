@@ -1,0 +1,150 @@
+{
+  "size_m": [
+    10.0,
+    8.0
+  ],
+  "resolution_m": 0.05,
+  "origin": [
+    0,
+    0,
+    0
+  ],
+  "walls": [
+    [
+      0.0,
+      0.0,
+      10.0,
+      0.2
+    ],
+    [
+      0.0,
+      7.8,
+      10.0,
+      8.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.2,
+      7.8
+    ],
+    [
+      9.8,
+      0.2,
+      10.0,
+      7.8
+    ],
+    [
+      3.9,
+      0.2,
+      4.1,
+      2.8
+    ],
+    [
+      3.9,
+      4.2,
+      4.1,
+      7.8
+    ],
+    [
+      0.2,
+      3.9,
+      2.8,
+      4.1
+    ],
+    [
+      5.2,
+      3.9,
+      9.8,
+      4.1
+    ],
+    [
+      7.0,
+      5.7,
+      7.8,
+      6.5
+    ],
+    [
+      1.5,
+      6.0,
+      2.1,
+      6.6
+    ]
+  ],
+  "robot_model": "ideal planar differential drive; no calibrated wheel dynamics",
+  "robot_collision_box_m": [
+    0.393924904,
+    0.329460022,
+    0.313185074
+  ],
+  "conservative_radius_m": 0.27,
+  "action_limits": {
+    "vx_m_s": [
+      0.0,
+      0.2
+    ],
+    "wz_rad_s": [
+      -0.5,
+      0.5
+    ]
+  },
+  "tasks": [
+    {
+      "start": [
+        1,
+        1,
+        0
+      ],
+      "goal": [
+        8.5,
+        6.8
+      ]
+    },
+    {
+      "start": [
+        1,
+        7,
+        0
+      ],
+      "goal": [
+        8.5,
+        1
+      ]
+    },
+    {
+      "start": [
+        8.5,
+        1,
+        3.14
+      ],
+      "goal": [
+        1,
+        1
+      ]
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "name": "crossing_obstacle",
+      "center": [
+        4.0,
+        3.5
+      ],
+      "axis": "x",
+      "amplitude": 1.5,
+      "period_s": 12.0,
+      "radius_m": 0.25
+    },
+    {
+      "name": "corridor_obstacle",
+      "center": [
+        4.8,
+        4.0
+      ],
+      "axis": "y",
+      "amplitude": 2.0,
+      "period_s": 16.0,
+      "radius_m": 0.25
+    }
+  ]
+}

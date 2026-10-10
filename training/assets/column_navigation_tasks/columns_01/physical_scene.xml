@@ -1,0 +1,124 @@
+<mujoco model="agv_test_01">
+  <compiler angle="radian" />
+  <option timestep=".005" gravity="0 0 -9.81" iterations="80" integrator="implicitfast" />
+  <visual>
+    <global offwidth="800" offheight="640" />
+  </visual>
+  <worldbody>
+    <light pos="5 4 10" dir="0 0 -1" directional="true" />
+    <camera name="overview" pos="5 4 13" xyaxes="1 0 0 0 1 0" mode="fixed" />
+    <geom name="floor" type="plane" size="10 8 .1" rgba=".92 .92 .92 1" contype="0" conaffinity="0" />
+    <body name="robot" pos="1 1 .156592537">
+      <geom name="robot_footprint" type="box" size=".196962452 .164730011 .156592537" rgba="0 0 0 0" group="3" mass="8" />
+      <site name="lidar" pos=".118389 0 -.039910" size=".025" rgba="1 .8 .1 1" />
+      <geom name="urdf_base_link_0" type="mesh" mesh="urdf_base_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      <geom name="urdf_base_link_1" type="mesh" mesh="urdf_base_link_1" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.16 0.17 0.19 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      <body name="urdf_imu_link" pos="0.04 -0.015 -0.110" quat="0.7073882691671997 0.0 0.0 0.7068251811053661" />
+      <body name="urdf_lidar_link" pos="0.118389 0 -0.039910" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_lidar_link_0" type="mesh" mesh="urdf_lidar_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.18 0.19 0.21 1.0" group="2" contype="1" conaffinity="1" density="0" />
+        <body name="urdf_lidar_frame" pos="0 0 0" quat="1.0 0.0 0.0 0.0" />
+      </body>
+      <body name="urdf_mic_link" pos="-0.066735 0 0.029340" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_mic_link_0" type="mesh" mesh="urdf_mic_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.18 0.19 0.21 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_screen_link" pos="-0.127226 0 0.086858" quat="-0.38037338933013143 -2.677023061258123e-10 0.9248330036766141 -2.677023061258123e-10">
+        <geom name="urdf_screen_link_0" type="mesh" mesh="urdf_screen_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_wheel_rf" pos="0.099428135 -0.125955841 -0.104872855" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_wheel_rf_0" type="mesh" mesh="urdf_wheel_rf_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.16 0.17 0.19 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_wheel_lf" pos="0.099426834 0.125937958 -0.105074888" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_wheel_lf_0" type="mesh" mesh="urdf_wheel_lf_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.16 0.17 0.19 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_wheel_rb" pos="-0.094948105 -0.125955841 -0.105218003" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_wheel_rb_0" type="mesh" mesh="urdf_wheel_rb_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.16 0.17 0.19 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_wheel_lb" pos="-0.094955299 0.125938507 -0.105071213" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_wheel_lb_0" type="mesh" mesh="urdf_wheel_lb_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.16 0.17 0.19 1.0" group="2" contype="1" conaffinity="1" density="0" />
+      </body>
+      <body name="urdf_arm_base_link" pos="0.093769 0 0.017843" quat="1.0 0.0 0.0 0.0">
+        <geom name="urdf_arm_base_link_0" type="mesh" mesh="urdf_arm_base_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+        <body name="urdf_link1" pos="0.00042383 0 0.071003" quat="1.0 0.0 0.0 0.0">
+          <geom name="urdf_link1_0" type="mesh" mesh="urdf_link1_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+          <body name="urdf_link2" pos="-0.00041844 0.03728 0.039446" quat="1.0 0.0 0.0 0.0">
+            <geom name="urdf_link2_0" type="mesh" mesh="urdf_link2_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+            <body name="urdf_link3" pos="0.0348 -0.01893 0.22535" quat="1.0 0.0 0.0 0.0">
+              <geom name="urdf_link3_0" type="mesh" mesh="urdf_link3_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+              <body name="urdf_link4" pos="0.027316 0 -0.14239" quat="1.0 0.0 0.0 0.0">
+                <geom name="urdf_link4_0" type="mesh" mesh="urdf_link4_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                <body name="urdf_camera_link" pos="0.064555 -0.019407 0.036497" quat="1.0 0.0 0.0 0.0">
+                  <geom name="urdf_camera_link_0" type="mesh" mesh="urdf_camera_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.85 0.87 0.90 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                  <body name="urdf_camera_link0" pos="0 0 0" quat="0.5 -0.5 0.5 -0.5">
+                    <body name="urdf_depth_cam_frame" pos="0 0 0" quat="1.0 0.0 0.0 0.0" />
+                  </body>
+                </body>
+                <body name="urdf_link5" pos="0.049832 -0.018351 -0.00031098" quat="1.0 0.0 0.0 0.0">
+                  <geom name="urdf_link5_0" type="mesh" mesh="urdf_link5_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                  <body name="urdf_gripper_link" pos="0.035032 0 -0.00022027" quat="1.0 0.0 0.0 0.0">
+                    <geom name="urdf_gripper_link_0" type="mesh" mesh="urdf_gripper_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                    <body name="urdf_gripper_base_link" pos="0.0023084 0 -1.4336E-05" quat="1.0 0.0 0.0 0.0">
+                      <geom name="urdf_gripper_base_link_0" type="mesh" mesh="urdf_gripper_base_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                    </body>
+                    <body name="urdf_right_jaw_link" pos="0.0081154 -0.038561 -0.013453" quat="1.0 0.0 0.0 0.0">
+                      <geom name="urdf_right_jaw_link_0" type="mesh" mesh="urdf_right_jaw_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                    </body>
+                    <body name="urdf_left_jaw_link" pos="0.0091166 0.038561 -0.01346" quat="1.0 0.0 0.0 0.0">
+                      <geom name="urdf_left_jaw_link_0" type="mesh" mesh="urdf_left_jaw_link_0" pos="0 0 0" quat="1.0 0.0 0.0 0.0" rgba="0.35 0.37 0.40 1.0" group="2" contype="1" conaffinity="1" density="0" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <joint name="robot_x" type="slide" axis="1 0 0" damping="0" />
+      <joint name="robot_y" type="slide" axis="0 1 0" damping="0" />
+      <joint name="robot_yaw" type="hinge" axis="0 0 1" damping="0" />
+    </body>
+    <body name="crossing_obstacle" pos="0 0 .85">
+      <geom name="crossing_obstacle_geom" type="cylinder" size=".25 .85" rgba="0.95 0.42 0.10 1" mass="70" />
+      <joint name="crossing_obstacle_x" type="slide" axis="1 0 0" damping="0" />
+      <joint name="crossing_obstacle_y" type="slide" axis="0 1 0" damping="0" />
+    </body>
+    <body name="corridor_obstacle" pos="0 0 .85">
+      <geom name="corridor_obstacle_geom" type="cylinder" size=".25 .85" rgba="0.16 0.48 0.86 1" mass="70" />
+      <joint name="corridor_obstacle_x" type="slide" axis="1 0 0" damping="0" />
+      <joint name="corridor_obstacle_y" type="slide" axis="0 1 0" damping="0" />
+    </body>
+    <geom name="wall_0" type="box" pos="5.0 0.1 .5" size="5.0 0.1 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_1" type="box" pos="5.0 7.9 .5" size="5.0 0.10000000000000009 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_2" type="box" pos="0.1 4.0 .5" size="0.1 3.8 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_3" type="box" pos="9.9 4.0 .5" size="0.09999999999999964 3.8 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_4" type="box" pos="1.1728373132518932 4.523549285167443 .5" size="0.9728373132518932 0.09999999999999964 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_5" type="box" pos="6.822837313251894 4.523549285167443 .5" size="2.977162686748107 0.09999999999999964 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_6" type="box" pos="8.571889493608818 3.6065080244880026 .5" size="0.24816439745196472 0.28102710191280234 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_7" type="box" pos="5.7178997909323215 3.809525777231027 .5" size="0.2764049118568441 0.2120157589483347 .5" rgba=".35 .4 .45 1" />
+    <geom name="wall_8" type="box" pos="7.510072814998638 3.7877691968767646 .5" size="0.3306267700494687 0.2847278160653983 .5" rgba=".35 .4 .45 1" />
+  </worldbody>
+  <asset>
+    <mesh name="urdf_base_link_0" file="../../../../agv/simulations/agv_description/meshes/chassis.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_base_link_1" file="../../../../agv/simulations/agv_description/meshes/wheel_fixed.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_lidar_link_0" file="../../../../agv/simulations/agv_description/meshes/lidar.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_mic_link_0" file="../../../../agv/simulations/agv_description/meshes/mic.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_screen_link_0" file="../../../../agv/simulations/agv_description/meshes/screen.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_wheel_rf_0" file="../../../../agv/simulations/agv_description/meshes/wheel_rf.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_wheel_lf_0" file="../../../../agv/simulations/agv_description/meshes/wheel_lf.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_wheel_rb_0" file="../../../../agv/simulations/agv_description/meshes/wheel_rb.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_wheel_lb_0" file="../../../../agv/simulations/agv_description/meshes/wheel_lb.stl" scale="0.001 0.001 0.001" />
+    <mesh name="urdf_arm_base_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_base_link.stl" scale="1 1 1" />
+    <mesh name="urdf_link1_0" file="../../../../agv/simulations/agv_description/meshes/arm_link1.stl" scale="1 1 1" />
+    <mesh name="urdf_link2_0" file="../../../../agv/simulations/agv_description/meshes/arm_link2.stl" scale="1 1 1" />
+    <mesh name="urdf_link3_0" file="../../../../agv/simulations/agv_description/meshes/arm_link3.stl" scale="1 1 1" />
+    <mesh name="urdf_link4_0" file="../../../../agv/simulations/agv_description/meshes/arm_link4.stl" scale="1 1 1" />
+    <mesh name="urdf_camera_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_camera_link.stl" scale="1 1 1" />
+    <mesh name="urdf_link5_0" file="../../../../agv/simulations/agv_description/meshes/arm_link5.stl" scale="1 1 1" />
+    <mesh name="urdf_gripper_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_gripper_link.stl" scale="1 1 1" />
+    <mesh name="urdf_gripper_base_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_gripper_base_link.stl" scale="1 1 1" />
+    <mesh name="urdf_right_jaw_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_right_jaw_link.stl" scale="1 1 1" />
+    <mesh name="urdf_left_jaw_link_0" file="../../../../agv/simulations/agv_description/meshes/arm_left_jaw_link.stl" scale="1 1 1" />
+  </asset>
+  <default>
+    <geom solref=".008 1" solimp=".99 .999 .001" margin=".015" friction=".7 .02 .002" />
+  </default>
+</mujoco>

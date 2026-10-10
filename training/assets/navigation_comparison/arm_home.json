@@ -1,0 +1,24 @@
+{
+  "source": "agv/driver/ros_arm_controller/config/init_pose.yaml",
+  "mapping_source": "agv/simulations/agv_description/config/arm_sync.yaml",
+  "home_pose": {
+    "x": 95.0,
+    "y": 0.0,
+    "z": 216.0,
+    "pitch": -50.0,
+    "roll": 0.0,
+    "claw": -95.0
+  },
+  "joint_positions_rad": {
+    "joint1": -0.0,
+    "joint2": -0.7725264489689284,
+    "joint3": -0.7446126573582297,
+    "joint4": 2.3898037323243226,
+    "joint5": 0.0,
+    "gripper_base_joint": 0.0
+  },
+  "method": "Offline CAD IK, checked against source arm_state_bridge.validate_home_solution; no hardware commands",
+  "cad_fk_error_m": 2.0892409209948075e-15,
+  "gripper": "Open linkage q=0 for claw=-95 degrees",
+  "launch_note": "controller.launch.py -> odom_publisher.launch.py -> ros_robot_controller.launch.py -> arm_controller; auto_home_on_startup defaults false in current source"
+}

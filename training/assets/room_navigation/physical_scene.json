@@ -1,0 +1,402 @@
+{
+  "size_m": [
+    10.0,
+    8.0
+  ],
+  "resolution_m": 0.05,
+  "origin": [
+    0,
+    0,
+    0
+  ],
+  "walls": [
+    [
+      0,
+      0,
+      10,
+      0.2
+    ],
+    [
+      0,
+      7.8,
+      10,
+      8
+    ],
+    [
+      0,
+      0.2,
+      0.2,
+      7.8
+    ],
+    [
+      9.8,
+      0.2,
+      10,
+      7.8
+    ],
+    [
+      4.9,
+      0.2,
+      5.1,
+      3.1
+    ],
+    [
+      4.9,
+      4.9,
+      5.1,
+      7.8
+    ],
+    [
+      0.2,
+      3.9,
+      1.6,
+      4.1
+    ],
+    [
+      3.4,
+      3.9,
+      4.9,
+      4.1
+    ],
+    [
+      5.1,
+      3.9,
+      6.6,
+      4.1
+    ],
+    [
+      8.4,
+      3.9,
+      9.8,
+      4.1
+    ]
+  ],
+  "robot_model": "Native planar MuJoCo dynamic body; URDF convex contact geometry; force servo; synthetic chassis mass 8 kg",
+  "robot_collision_box_m": [
+    0.393924904,
+    0.329460022,
+    0.313185074
+  ],
+  "conservative_radius_m": 0.27,
+  "action_limits": {
+    "vx_m_s": [
+      0.0,
+      0.2
+    ],
+    "wz_rad_s": [
+      -0.5,
+      0.5
+    ]
+  },
+  "tasks": [
+    {
+      "name": "four_room_mission_1",
+      "start": [
+        1.2,
+        1.2,
+        1.57
+      ],
+      "goal": [
+        1.2,
+        6.6
+      ],
+      "waypoints": [
+        [
+          1.2,
+          6.6
+        ],
+        [
+          8.6,
+          6.6
+        ],
+        [
+          8.6,
+          1.2
+        ],
+        [
+          1.2,
+          1.2
+        ]
+      ],
+      "offline_leg_lengths_m": [
+        5.6603820068284465,
+        8.47700833270975,
+        5.54326917083214,
+        8.738442891529719
+      ],
+      "column_task": {
+        "kind": "doorway_temporary_block",
+        "blocks": [
+          {
+            "column_index": 0,
+            "position": [
+              2.14,
+              4.0
+            ],
+            "release_goal": [
+              1.3,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          },
+          {
+            "column_index": 1,
+            "position": [
+              2.8600000000000003,
+              4.0
+            ],
+            "release_goal": [
+              3.7,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "four_room_mission_2",
+      "start": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ],
+      "waypoints": [
+        [
+          8.6,
+          6.6
+        ],
+        [
+          1.2,
+          6.6
+        ],
+        [
+          8.6,
+          1.2
+        ],
+        [
+          1.2,
+          1.2
+        ]
+      ],
+      "offline_leg_lengths_m": [
+        9.8043432687941,
+        8.47621878135575,
+        9.693349759683631,
+        8.738442891529719
+      ],
+      "column_task": {
+        "kind": "doorway_temporary_block",
+        "blocks": [
+          {
+            "column_index": 0,
+            "position": [
+              2.14,
+              4.0
+            ],
+            "release_goal": [
+              1.3,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          },
+          {
+            "column_index": 1,
+            "position": [
+              2.8600000000000003,
+              4.0
+            ],
+            "release_goal": [
+              3.7,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "four_room_mission_3",
+      "start": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "goal": [
+        8.6,
+        1.2
+      ],
+      "waypoints": [
+        [
+          8.6,
+          1.2
+        ],
+        [
+          8.6,
+          6.6
+        ],
+        [
+          1.2,
+          6.6
+        ],
+        [
+          1.2,
+          1.2
+        ]
+      ],
+      "offline_leg_lengths_m": [
+        8.739349596133774,
+        5.538021486316882,
+        8.47621878135575,
+        5.6705858298410785
+      ],
+      "column_task": {
+        "kind": "doorway_temporary_block",
+        "blocks": [
+          {
+            "column_index": 0,
+            "position": [
+              2.14,
+              4.0
+            ],
+            "release_goal": [
+              1.3,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          },
+          {
+            "column_index": 1,
+            "position": [
+              2.8600000000000003,
+              4.0
+            ],
+            "release_goal": [
+              3.7,
+              5.4
+            ],
+            "hold_seconds": 15,
+            "trigger_distance_m": 1.5
+          }
+        ]
+      }
+    }
+  ],
+  "dynamic_obstacles": [
+    {
+      "name": "crossing_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        2.5,
+        3.5
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true,
+      "kind": "moving_solid_column",
+      "height_m": 1.7
+    },
+    {
+      "name": "corridor_obstacle",
+      "radius_m": 0.25,
+      "mass_kg": 70,
+      "spawn_m": [
+        4.8,
+        2.0
+      ],
+      "nominal_speed_range_m_s": [
+        0.5,
+        0.85
+      ],
+      "acceleration_limit_per_axis_m_s2": 1.8,
+      "random_reachable_goals": true,
+      "kind": "moving_solid_column",
+      "height_m": 1.7
+    }
+  ],
+  "scene_file": "physical_scene.xml",
+  "simulation_backend": "MuJoCo mj_step, constrained planar rigid bodies",
+  "pedestrian_behavior": "random reachable waypoints; acceleration-limited yielding and side stepping; native solid contacts",
+  "map_id": "four_rooms",
+  "split": "test",
+  "generation_seed": 44000,
+  "dynamic_obstacle_kind": "columns",
+  "column_behavior": "Solid acceleration-limited moving columns; approach-triggered blocking then physical release",
+  "task_source": "Externally specified mission waypoints; robot receives only current target, known map and sensors",
+  "arm_home": {
+    "source": "agv/driver/ros_arm_controller/config/init_pose.yaml",
+    "mapping_source": "agv/simulations/agv_description/config/arm_sync.yaml",
+    "home_pose": {
+      "x": 95.0,
+      "y": 0.0,
+      "z": 216.0,
+      "pitch": -50.0,
+      "roll": 0.0,
+      "claw": -95.0
+    },
+    "joint_positions_rad": {
+      "joint1": -0.0,
+      "joint2": -0.7725264489689284,
+      "joint3": -0.7446126573582297,
+      "joint4": 2.3898037323243226,
+      "joint5": 0.0,
+      "gripper_base_joint": 0.0
+    },
+    "method": "Offline CAD IK, checked against source arm_state_bridge.validate_home_solution; no hardware commands",
+    "cad_fk_error_m": 2.0892409209948075e-15,
+    "gripper": "Open linkage q=0 for claw=-95 degrees",
+    "launch_note": "controller.launch.py -> odom_publisher.launch.py -> ros_robot_controller.launch.py -> arm_controller; auto_home_on_startup defaults false in current source"
+  },
+  "rooms": [
+    {
+      "name": "Room A",
+      "bounds": [
+        0.2,
+        0.2,
+        4.9,
+        3.9
+      ]
+    },
+    {
+      "name": "Room B",
+      "bounds": [
+        0.2,
+        4.1,
+        4.9,
+        7.8
+      ]
+    },
+    {
+      "name": "Room C",
+      "bounds": [
+        5.1,
+        0.2,
+        9.8,
+        3.9
+      ]
+    },
+    {
+      "name": "Room D",
+      "bounds": [
+        5.1,
+        4.1,
+        9.8,
+        7.8
+      ]
+    }
+  ],
+  "door_width_m": 1.8
+}
