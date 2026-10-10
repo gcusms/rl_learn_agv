@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/d3953e3c-5959-47fe-81f2-0118efa307dd
 # AGV 学习导航与 MuJoCo 仿真
 
 已知地图、部分视野激光与动态实体障碍下的四轮差速机器人导航。当前系统由学习定位、神经路线规划和 PPO 速度决策三个模型配合；地图/激光融合、路线切换确认和运动约束仍由程序处理。机器人导航运行时不使用 AMCL/A*；传统对照另使用实际 Nav2 AMCL、NavFn 与 TEB。
@@ -6,7 +8,11 @@
 
 ## 录制演示
 
-[![四窗口导航演示：Navigation2 + TEB 与三个 PPO 检查点](docs/media/navigation-preview.jpg)](docs/media/navigation-four-window.mp4?raw=true)
+
+
+https://github.com/user-attachments/assets/07f6c48b-e696-44cd-a4b2-b898b000c18c
+
+
 
 **[观看 / 下载完整视频](docs/media/navigation-four-window.mp4?raw=true)** · 约 8.7 MB · 82 秒 · 1600 × 1254 · 25 fps · H.264 MP4
 
