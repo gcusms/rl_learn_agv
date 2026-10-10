@@ -4,6 +4,16 @@
 
 此目录是独立整理副本。原 training、agv、base_controller 和训练历史没有迁移、删除或改写。agv 子目录仅含离线仿真需要的 URDF、网格、雷达与机械臂配置，不是完整实车 ROS 工作区。
 
+## 录制演示
+
+[![四窗口导航演示：Navigation2 + TEB 与三个 PPO 检查点](docs/media/navigation-preview.jpg)](docs/media/navigation-four-window.mp4?raw=true)
+
+**[观看 / 下载完整视频](docs/media/navigation-four-window.mp4?raw=true)** · 约 8.7 MB · 82 秒 · 1600 × 1254 · 25 fps · H.264 MP4
+
+左上为 Navigation2 + TEB，右上为追加 PPO 1 万步，左下为 5 万步，右下为 10 万步。画面包含规划路线、实际轨迹、部分视野激光扫描和实体柱子干预；统一 5 倍速，片尾汇总用时与路程，并介绍两种导航方式的优劣势。
+
+本视频展示不同限速与控制参数下的表现；10 万步组完成更快，TEB 路程更短。模型权重未因录制而改变，实时测试命令仍运行原始模型配置。
+
 ## 安装（Ubuntu 22.04 / Python 3.10）
 
 ```bash
@@ -61,7 +71,7 @@ python training/navigation_parameter_demo.py --preset ppo_100k \
   --output training/runs/new_parameter_100k
 ```
 
-实体柱子按靠近目标触发、停留约 8 秒后离开的规则干预。录制脚本仍保留，但原录制轨迹和视频未打包；需先生成其所需的四组轨迹。不同参数演示不能用来证明训练步数或算法的公平优劣。保留的实测数据见 docs/results/。
+实体柱子按靠近目标触发、停留约 8 秒后离开的规则干预。录制脚本及压缩后的四窗口演示视频已保留；原录制轨迹未打包，重新录制需先生成其所需的四组轨迹。不同参数演示不能用来证明训练步数或算法的公平优劣。保留的实测数据见 docs/results/。
 
 ## 可选传统 Nav2 + TEB 对照
 
