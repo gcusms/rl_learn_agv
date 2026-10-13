@@ -1,0 +1,481 @@
+{
+  "kind": "training",
+  "version": 1,
+  "templates": [
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/navigation_stage2_dataset/train_03",
+      "seed": 673549447,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          8.375,
+          6.675000000000001,
+          1.274605666292424
+        ],
+        "goal": [
+          3.875,
+          1.5750000000000002
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_guarded_dynamic_30k/candidate/episodes.jsonl",
+        "step": 12180,
+        "worker": 3,
+        "collisions": 0,
+        "override_fraction": 0.7171428571428572
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1395126524,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          7.025,
+          5.525,
+          1.045801498619353
+        ],
+        "goal": [
+          6.075,
+          3.075
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09384029549612849,
+        "hold_s": 3.8681983746696567
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_guarded_dynamic_30k/candidate/episodes.jsonl",
+        "step": 26124,
+        "worker": 5,
+        "collisions": 0,
+        "override_fraction": 0.6971428571428572
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1428653096,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          6.925000000000001,
+          6.7250000000000005,
+          0.9067713928938455
+        ],
+        "goal": [
+          1.3250000000000002,
+          2.075
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "sudden_block",
+        "obstacle_speed_m_s": 0.09769255421111026,
+        "hold_s": 3.968113018734943
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 11712,
+        "worker": 2,
+        "collisions": 1,
+        "override_fraction": 0.1746031746031746
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 590125966,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          3.975,
+          5.125,
+          1.1810511184966304
+        ],
+        "goal": [
+          8.675,
+          2.5250000000000004
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.11959396102353029,
+        "hold_s": 0.0,
+        "reverse_after_event_s": 3.7349819736434204
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 17520,
+        "worker": 0,
+        "collisions": 0,
+        "override_fraction": 0.7271428571428571
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1631389241,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          1.725,
+          6.825,
+          0.3296899513325804
+        ],
+        "goal": [
+          8.425,
+          1.125
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.10276188434278359,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            1.956162839185033,
+            3.7408104565548665
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 22380,
+        "worker": 0,
+        "collisions": 1,
+        "override_fraction": 0.045454545454545456
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1750494379,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          8.025,
+          2.9250000000000003,
+          0.6226033075398143
+        ],
+        "goal": [
+          3.0250000000000004,
+          1.2750000000000001
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "sudden_block",
+        "obstacle_speed_m_s": 0.0816279611039843,
+        "hold_s": 2.15256213038912
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 48132,
+        "worker": 10,
+        "collisions": 0,
+        "override_fraction": 0.8414285714285714
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1000096269,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          1.075,
+          2.7750000000000004,
+          -0.7450549813966765
+        ],
+        "goal": [
+          8.375,
+          5.775
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.15280625504443035,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            1.7366185318579217,
+            4.533873017229441
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 49320,
+        "worker": 5,
+        "collisions": 1,
+        "override_fraction": 0.013888888888888888
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 48562772,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          6.025,
+          7.075,
+          2.263636752038469
+        ],
+        "goal": [
+          6.525,
+          2.9250000000000003
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.10858543982856511,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            2.7870175308879546,
+            5.7122886790655425
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_motion_300k/candidate/episodes.jsonl",
+        "step": 60372,
+        "worker": 2,
+        "collisions": 1,
+        "override_fraction": 0.08791208791208792
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 828289165,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          2.975,
+          1.075,
+          -0.0032946259362174324
+        ],
+        "goal": [
+          6.875,
+          2.125
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.14811833568386543,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            1.9829274786039375,
+            4.776997282855998
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 1088,
+        "worker": 3,
+        "collisions": 1,
+        "override_fraction": 0.14925373134328357
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 534990668,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          6.7250000000000005,
+          6.675000000000001,
+          -1.581129336407903
+        ],
+        "goal": [
+          1.7750000000000001,
+          2.375
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09606933896350482,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            1.6461636131815338,
+            4.285377285845264
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 9696,
+        "worker": 3,
+        "collisions": 1,
+        "override_fraction": 0.0873015873015873
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 605338237,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          8.025,
+          6.525,
+          1.7148199148419376
+        ],
+        "goal": [
+          6.125,
+          1.7750000000000001
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.15669651221591982,
+        "hold_s": 2.8125347933649123
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 22640,
+        "worker": 0,
+        "collisions": 0,
+        "override_fraction": 0.5528571428571428
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 123915829,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          4.175,
+          2.1750000000000003,
+          -1.3302579372391812
+        ],
+        "goal": [
+          4.2250000000000005,
+          5.2250000000000005
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "sudden_block",
+        "obstacle_speed_m_s": 0.12200324323142629,
+        "hold_s": 3.8786299173959007
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 29608,
+        "worker": 3,
+        "collisions": 1,
+        "override_fraction": 0.12121212121212122
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 432450315,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          3.475,
+          6.575,
+          -0.160742468615529
+        ],
+        "goal": [
+          6.875,
+          2.325
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "sudden_block",
+        "obstacle_speed_m_s": 0.10464133642950248,
+        "hold_s": 3.729692546645479
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 37968,
+        "worker": 2,
+        "collisions": 1,
+        "override_fraction": 0.061855670103092786
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1372302064,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          9.075000000000001,
+          2.075,
+          1.5838422455329226
+        ],
+        "goal": [
+          3.6750000000000003,
+          1.2750000000000001
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09727925195667278,
+        "hold_s": 0.0,
+        "actor_pause_after_event_s": [
+          [
+            2.1168256462215833,
+            3.4787905217608817
+          ]
+        ]
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 45884,
+        "worker": 1,
+        "collisions": 1,
+        "override_fraction": 0.125
+      }
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 344366874,
+      "stage": "dynamic",
+      "options": {
+        "start": [
+          2.1750000000000003,
+          5.075,
+          1.38436229593749
+        ],
+        "goal": [
+          7.175000000000001,
+          1.225
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.1472046415237398,
+        "hold_s": 0.0,
+        "reverse_after_event_s": 3.1616411849738437
+      },
+      "origin": {
+        "training_log": "training/runs/optimization_stage3_20261011/pilot_clearance_recovery_4/candidate/episodes.jsonl",
+        "step": 49472,
+        "worker": 0,
+        "collisions": 0,
+        "override_fraction": 0.4957142857142857
+      }
+    }
+  ],
+  "source_counts": {
+    "pilot_guarded_dynamic_30k/candidate/episodes.jsonl": 2,
+    "pilot_clearance_motion_300k/candidate/episodes.jsonl": 6,
+    "pilot_clearance_recovery_4/candidate/episodes.jsonl": 7
+  }
+}

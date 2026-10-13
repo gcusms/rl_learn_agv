@@ -1,0 +1,210 @@
+{
+  "policy_sha256": "b410319605b9436e03a17d2168c90a9fdb9c3a9b785ab698c33056ee565a03ba",
+  "observation_contract": {
+    "schema": "quality_prediction_append_v1",
+    "prefix_dimensions": 282,
+    "dimensions": 300,
+    "commands_m_s_rad_s": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "fields": [
+      "12_directional_response_risk_scores",
+      "pose_supported",
+      "observed_moving_track",
+      "held_moving_track",
+      "unknown_velocity_track",
+      "degraded_contour_track",
+      "maximum_track_age_over_0.8"
+    ],
+    "horizon_s": 2.4,
+    "period_s": 0.2,
+    "margin_m": 0.04,
+    "velocity_error_floor_m_s": 0.025,
+    "residual_scale": 2.0,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "contour_hold_s": 0.6,
+    "contour_recovery_measurements": 2,
+    "thresholds_calibrated": false,
+    "absence_of_support_means": "unknown",
+    "simulator_truth_used": false,
+    "commands_issued": false
+  },
+  "action_contract": {
+    "schema": "masked_velocity_choices_v1",
+    "choices": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "normalized_actions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.25,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.25,
+        -1.0
+      ],
+      [
+        0.05000000074505806,
+        1.0
+      ],
+      [
+        0.05000000074505806,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "stop_index": 0,
+    "mask_source": "current_sensor_guard_probe_acceptance",
+    "wait_always_allowed": true,
+    "future_safety_certified": false,
+    "simulator_truth_used": false
+  },
+  "comparison_inputs": 256,
+  "exact_action_parity": true,
+  "deployment_approved": false,
+  "requires_quality_feature_generator": true,
+  "files": {
+    "quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "hardware.json": "72731b5de656c7378687bc3c1b1565dac9df56052b1bb5e3136dd5202a6cdf30",
+    "actor.pt": "fe21d3f2ed2417746781c6e4f7c1636ba61d0913e47e7160b01cd1b2a72b6b69",
+    "localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274"
+  },
+  "sensor_core": "time-consistent",
+  "sensor_core_parameters": {
+    "fusion_every_sensor_frame": true,
+    "confirmation_window_s": 0.8,
+    "velocity_filter_reference_period_s": 0.4,
+    "velocity_filter_reference_retention": 0.55
+  },
+  "required_runtime": "experiments.time_consistent_tracking.TimeConsistentFreshRuntime"
+}

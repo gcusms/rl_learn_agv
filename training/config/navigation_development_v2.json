@@ -1,0 +1,687 @@
+{
+  "version": 2,
+  "kind": "development",
+  "limitation": "40 development cases: known-map static and new validation layouts, physically separated sudden/crossing actors, pose/odometry/scan faults, and continuous four-goal missions. Not final acceptance.",
+  "cases": [
+    {
+      "id": "static_sw_e",
+      "category": "static",
+      "seed": 41001,
+      "start": [
+        1.2,
+        1.2,
+        0
+      ],
+      "goal": [
+        8.6,
+        1.2
+      ]
+    },
+    {
+      "id": "static_sw_n",
+      "category": "static",
+      "seed": 41002,
+      "start": [
+        1.2,
+        1.2,
+        1.5707963268
+      ],
+      "goal": [
+        1.2,
+        6.6
+      ]
+    },
+    {
+      "id": "static_sw_ne",
+      "category": "static",
+      "seed": 41003,
+      "start": [
+        1.2,
+        1.2,
+        0
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ]
+    },
+    {
+      "id": "static_ne_sw",
+      "category": "static",
+      "seed": 41004,
+      "start": [
+        8.6,
+        6.6,
+        3.1415926536
+      ],
+      "goal": [
+        1.2,
+        1.2
+      ]
+    },
+    {
+      "id": "static_nw_e",
+      "category": "static",
+      "seed": 41005,
+      "start": [
+        1.2,
+        6.6,
+        0
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ]
+    },
+    {
+      "id": "static_se_n",
+      "category": "static",
+      "seed": 41006,
+      "start": [
+        8.6,
+        1.2,
+        1.5707963268
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ]
+    },
+    {
+      "id": "static_se_w",
+      "category": "static",
+      "seed": 41007,
+      "start": [
+        8.6,
+        1.2,
+        3.1415926536
+      ],
+      "goal": [
+        1.2,
+        1.2
+      ]
+    },
+    {
+      "id": "static_nw_se",
+      "category": "static",
+      "seed": 41008,
+      "start": [
+        1.2,
+        6.6,
+        -1.5707963268
+      ],
+      "goal": [
+        8.6,
+        1.2
+      ]
+    },
+    {
+      "id": "new_layout_000",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_00",
+      "seed": 844875,
+      "start": [
+        6.775,
+        6.425000000000001,
+        2.7570324704747806
+      ],
+      "goal": [
+        2.7750000000000004,
+        4.325
+      ]
+    },
+    {
+      "id": "new_layout_001",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_01",
+      "seed": 420522,
+      "start": [
+        1.425,
+        1.0250000000000001,
+        1.9241434135805875
+      ],
+      "goal": [
+        8.575000000000001,
+        7.075
+      ]
+    },
+    {
+      "id": "new_layout_002",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_00",
+      "seed": 859229,
+      "start": [
+        4.875,
+        1.375,
+        2.7656773772526595
+      ],
+      "goal": [
+        6.875,
+        6.275
+      ]
+    },
+    {
+      "id": "new_layout_003",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_01",
+      "seed": 460024,
+      "start": [
+        7.075,
+        6.9750000000000005,
+        2.787972626406627
+      ],
+      "goal": [
+        3.325,
+        2.625
+      ]
+    },
+    {
+      "id": "new_layout_004",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_00",
+      "seed": 527605,
+      "start": [
+        1.5750000000000002,
+        2.475,
+        1.6627485801683148
+      ],
+      "goal": [
+        4.825,
+        6.375
+      ]
+    },
+    {
+      "id": "new_layout_005",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_01",
+      "seed": 125919,
+      "start": [
+        2.125,
+        4.175,
+        0.767853397056594
+      ],
+      "goal": [
+        6.925000000000001,
+        6.675000000000001
+      ]
+    },
+    {
+      "id": "new_layout_006",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_00",
+      "seed": 793445,
+      "start": [
+        7.125,
+        2.825,
+        -0.08952027829390286
+      ],
+      "goal": [
+        1.0250000000000001,
+        4.325
+      ]
+    },
+    {
+      "id": "new_layout_007",
+      "category": "new_layout",
+      "scene": "assets/navigation_stage2_dataset/validation_01",
+      "seed": 766961,
+      "start": [
+        8.525,
+        5.575,
+        -2.4517689064695305
+      ],
+      "goal": [
+        4.325,
+        2.4250000000000003
+      ]
+    },
+    {
+      "id": "sudden_block_000",
+      "category": "sudden_block",
+      "seed": 54000,
+      "start": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "goal": [
+        8.6,
+        1.2
+      ],
+      "obstacle": "sudden_block",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "sudden_block_001",
+      "category": "sudden_block",
+      "seed": 54001,
+      "start": [
+        8.6,
+        1.2,
+        3.141592653589793
+      ],
+      "goal": [
+        1.2,
+        1.2
+      ],
+      "obstacle": "sudden_block",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "sudden_block_002",
+      "category": "sudden_block",
+      "seed": 54002,
+      "start": [
+        1.2,
+        1.2,
+        1.5707963267948966
+      ],
+      "goal": [
+        1.2,
+        6.6
+      ],
+      "obstacle": "sudden_block",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "sudden_block_003",
+      "category": "sudden_block",
+      "seed": 54003,
+      "start": [
+        8.6,
+        1.2,
+        1.5707963267948966
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ],
+      "obstacle": "sudden_block",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "crossing_000",
+      "category": "crossing",
+      "seed": 54000,
+      "start": [
+        1.2,
+        1.2,
+        0.0
+      ],
+      "goal": [
+        8.6,
+        1.2
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "crossing_001",
+      "category": "crossing",
+      "seed": 54001,
+      "start": [
+        8.6,
+        1.2,
+        3.141592653589793
+      ],
+      "goal": [
+        1.2,
+        1.2
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "crossing_002",
+      "category": "crossing",
+      "seed": 54002,
+      "start": [
+        1.2,
+        1.2,
+        1.5707963267948966
+      ],
+      "goal": [
+        1.2,
+        6.6
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "crossing_003",
+      "category": "crossing",
+      "seed": 54003,
+      "start": [
+        8.6,
+        1.2,
+        1.5707963267948966
+      ],
+      "goal": [
+        8.6,
+        6.6
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.12,
+      "hold_s": 3.0
+    },
+    {
+      "id": "initial_pose_000",
+      "category": "initial_pose",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 859899,
+      "start": [
+        1.7750000000000001,
+        6.425000000000001,
+        1.576788357346027
+      ],
+      "goal": [
+        6.025,
+        2.5250000000000004
+      ],
+      "initial_prior_offset": [
+        0.16,
+        -0.14,
+        0.08
+      ]
+    },
+    {
+      "id": "initial_pose_001",
+      "category": "initial_pose",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 320589,
+      "start": [
+        8.325000000000001,
+        1.125,
+        -2.4052270025597435
+      ],
+      "goal": [
+        3.875,
+        6.675000000000001
+      ],
+      "initial_prior_offset": [
+        -0.2,
+        0.15,
+        -0.1
+      ]
+    },
+    {
+      "id": "initial_pose_002",
+      "category": "initial_pose",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 286322,
+      "start": [
+        2.975,
+        5.325,
+        -0.18258681187765635
+      ],
+      "goal": [
+        6.875,
+        6.925000000000001
+      ],
+      "initial_prior_offset": [
+        0.3,
+        -0.18,
+        0.16
+      ]
+    },
+    {
+      "id": "initial_pose_003",
+      "category": "initial_pose",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 275923,
+      "start": [
+        0.875,
+        2.6750000000000003,
+        -1.0962771342881275
+      ],
+      "goal": [
+        7.425000000000001,
+        3.625
+      ],
+      "initial_prior_offset": [
+        -0.3,
+        0.2,
+        -0.16
+      ]
+    },
+    {
+      "id": "odometry_drift_000",
+      "category": "odometry_drift",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 876404,
+      "start": [
+        7.925000000000001,
+        4.525,
+        -0.186869145484577
+      ],
+      "goal": [
+        1.375,
+        1.5750000000000002
+      ],
+      "odom_scale": 1.1,
+      "yaw_odom_scale": 1.1,
+      "odom_bias_m_s": [
+        0.005,
+        -0.005
+      ]
+    },
+    {
+      "id": "odometry_drift_001",
+      "category": "odometry_drift",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 817604,
+      "start": [
+        2.325,
+        1.125,
+        -2.3043147983412804
+      ],
+      "goal": [
+        7.675000000000001,
+        1.075
+      ],
+      "odom_scale": 0.9,
+      "yaw_odom_scale": 0.9,
+      "odom_bias_m_s": [
+        0.005,
+        -0.005
+      ]
+    },
+    {
+      "id": "odometry_drift_002",
+      "category": "odometry_drift",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 777581,
+      "start": [
+        1.975,
+        2.275,
+        -1.5971661925999692
+      ],
+      "goal": [
+        8.775,
+        2.4250000000000003
+      ],
+      "odom_scale": 1.25,
+      "yaw_odom_scale": 1.25,
+      "odom_bias_m_s": [
+        0.005,
+        -0.005
+      ]
+    },
+    {
+      "id": "odometry_drift_003",
+      "category": "odometry_drift",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 605795,
+      "start": [
+        1.7750000000000001,
+        2.225,
+        2.903814014493107
+      ],
+      "goal": [
+        2.375,
+        6.775
+      ],
+      "odom_scale": 0.75,
+      "yaw_odom_scale": 0.75,
+      "odom_bias_m_s": [
+        0.005,
+        -0.005
+      ]
+    },
+    {
+      "id": "scan_dropout_000",
+      "category": "scan_dropout",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 182912,
+      "start": [
+        5.9750000000000005,
+        4.775,
+        0.4089168259387779
+      ],
+      "goal": [
+        9.125,
+        2.325
+      ],
+      "dropout_windows": [
+        [
+          8.0,
+          9.0
+        ],
+        [
+          22.0,
+          22.6
+        ]
+      ],
+      "extra_scan_dropout": 0.05
+    },
+    {
+      "id": "scan_dropout_001",
+      "category": "scan_dropout",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 574695,
+      "start": [
+        2.6750000000000003,
+        0.925,
+        2.994359724693915
+      ],
+      "goal": [
+        7.125,
+        4.9750000000000005
+      ],
+      "dropout_windows": [
+        [
+          8.0,
+          9.0
+        ],
+        [
+          22.0,
+          22.6
+        ]
+      ],
+      "extra_scan_dropout": 0.05
+    },
+    {
+      "id": "scan_dropout_002",
+      "category": "scan_dropout",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 401816,
+      "start": [
+        6.625,
+        4.825,
+        0.01930066859045798
+      ],
+      "goal": [
+        2.6750000000000003,
+        3.125
+      ],
+      "dropout_windows": [
+        [
+          8.0,
+          9.0
+        ],
+        [
+          22.0,
+          22.6
+        ]
+      ],
+      "extra_scan_dropout": 0.05
+    },
+    {
+      "id": "scan_dropout_003",
+      "category": "scan_dropout",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 158376,
+      "start": [
+        3.9250000000000003,
+        1.8250000000000002,
+        -1.4581162089645945
+      ],
+      "goal": [
+        6.9750000000000005,
+        2.9250000000000003
+      ],
+      "dropout_windows": [
+        [
+          8.0,
+          9.0
+        ],
+        [
+          22.0,
+          22.6
+        ]
+      ],
+      "extra_scan_dropout": 0.05
+    },
+    {
+      "id": "continuous_000",
+      "category": "continuous_mission",
+      "seed": 55000,
+      "max_steps": 2800
+    },
+    {
+      "id": "continuous_001",
+      "category": "continuous_mission",
+      "seed": 55001,
+      "max_steps": 2800
+    },
+    {
+      "id": "continuous_002",
+      "category": "continuous_mission",
+      "seed": 55002,
+      "max_steps": 2800
+    },
+    {
+      "id": "continuous_003",
+      "category": "continuous_mission",
+      "seed": 55003,
+      "max_steps": 2800
+    }
+  ],
+  "scene_sha256": {
+    "assets/room_navigation_scripted/decision_map.pgm": "bf430807e27e72ec76c0408739a191b81e5a06f6baa5e9b57f735aa18487f281",
+    "assets/room_navigation_scripted/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "assets/room_navigation_scripted/physical_scene.xml": "8c0bcb10ed844aaaf5e42493b57076802879f095cc6d8c678451c5cd031d5949",
+    "assets/room_navigation_scripted/physical_scene.json": "5e5a99cdafd464a2ac9e9689266ccc378dece711181234dc734d9c8dabeaba2d",
+    "assets/navigation_stage2_dataset/validation_00/decision_map.pgm": "759dbeb4eb4ab49a4cebfdd0c220d1c963ad19f5883fdfae929d3ae3c805c888",
+    "assets/navigation_stage2_dataset/validation_00/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "assets/navigation_stage2_dataset/validation_00/physical_scene.xml": "67a02a8db210b0ba4b3409e40e6e4930212d98903d28d50a23fb454542287ae9",
+    "assets/navigation_stage2_dataset/validation_00/physical_scene.json": "1a9c78c155e20171d4d36c5315640f3a50071668679a180b8f1e876d0c120d72",
+    "assets/navigation_stage2_dataset/validation_01/decision_map.pgm": "0a0718caf5264e1e4da998e522fe063a4531b5ee26428ec113463cbddcd260d0",
+    "assets/navigation_stage2_dataset/validation_01/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "assets/navigation_stage2_dataset/validation_01/physical_scene.xml": "5ecde303b21dac531bed8aacc3f4592ee7f699a0390f7f410ffd05c83910a973",
+    "assets/navigation_stage2_dataset/validation_01/physical_scene.json": "4d685884bf2f854eb658617a7df5b61c716ce7489e079c34b06033da2f2ab28c",
+    "assets/navigation_comparison/decision_map.pgm": "bf430807e27e72ec76c0408739a191b81e5a06f6baa5e9b57f735aa18487f281",
+    "assets/navigation_comparison/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "assets/navigation_comparison/physical_scene.xml": "185307ed4b0776a5c55fba50a78478073f59df979c4072d2edf974456809ef16",
+    "assets/navigation_comparison/physical_scene.json": "51113ec0fce50578b2590b88e0ff4e219a6e8b07c39c2b8be645183f6560e6fb"
+  },
+  "actor_protocol": "Introduced at >0.35m footprint gap after 0.6m robot travel, <=0.18m/s, one-way crossing or hold-and-leave. Actor truth is WORLD control only.",
+  "reference": "Offline inflated-grid paths validate sampling only; no reference path enters runtime policy"
+}

@@ -49,7 +49,10 @@ def replay_observations(trace):
 
 
 class TrainingMission(gym.Env):
-    def __init__(self,components):
+    def __init__(self,components,safety_training=False,time_cost=0.):
+        self.safety_training=safety_training
+        self.time_cost=float(time_cost)
+        if self.time_cost<0:raise ValueError('Additional time cost must be nonnegative')
         self.active=RoomNavigationEnv(components=components,scene_dir=ROOT/'assets/room_navigation_scripted',dynamic=True,max_steps=2800)
         self.action_space=self.active.action_space;self.observation_space=self.active.observation_space
         self.corners=np.array([[1.2,1.2],[1.2,6.6],[8.6,6.6],[8.6,1.2]])
@@ -60,7 +63,16 @@ class TrainingMission(gym.Env):
         obs,info=self.active.reset(seed=seed,options={'task':0,'start':start,'goal':self.goals[0]});obs=configure_column_task(self.active,0)
         return obs,info
     def step(self,action):
+        collisions=self.active.collision_events;guards=self.active.hard_guard_activations
         obs,reward,done,timeout,info=self.active.step(action);self.leg_steps+=1
+        reward-=self.time_cost
+        safety_failure=self.safety_training and (self.active.collision_events>collisions or self.active.hard_guard_activations>guards)
+        if safety_failure:
+            # A simulator rollback must not become a successful training tactic.
+            reward=min(float(reward),0.)-25.;done=True;timeout=False
+            info.update(mission_targets_reached=sum(self.verified),verified_mission_success=False,safety_termination=True)
+            return obs,float(reward),done,timeout,info
+        info['safety_termination']=False
         if done:
             self.verified.append(bool(info['true_goal_distance_m']<=.30));self.index+=1
             if self.index<len(self.goals):

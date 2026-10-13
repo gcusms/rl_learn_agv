@@ -1,0 +1,380 @@
+{
+  "methods": {
+    "nav2_teb": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 122.7999999999608,
+      "travel_m": 24.18201008947578,
+      "velocity_total_variation": 47.986219763806474,
+      "mean_velocity_variation_per_step": 0.07815345238404964,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 38.20000000000109
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 23.600000000012074
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 37.199999999969286
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 23.799999999978354
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 23.79999999999955,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 25.84999999999914,
+          "released_time_s": 33.89999999999889
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 47.25000000000572,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 59.750000000012115,
+          "released_time_s": 67.80000000001083
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 84.69999999999546,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 87.69999999999273,
+          "released_time_s": 95.7499999999854
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 108.44999999997385,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 120.64999999996276,
+          "released_time_s": 128.69999999995545
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 900,
+      "policy_path": null,
+      "policy_sha256": null,
+      "robot_action_source": "native_nav2_teb",
+      "runtime_robot_amcl": true,
+      "runtime_robot_astar": true,
+      "post_arrival_tail_seconds": 7.999999999992738,
+      "linear_velocity_total_variation_m_s": 2.222658217185907,
+      "angular_velocity_total_variation_rad_s": 45.55441280709785,
+      "mean_angular_velocity_change_rad_s": 0.07431388712414004
+    },
+    "ppo_10k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 200.39999999989024,
+      "travel_m": 26.77132818116228,
+      "velocity_total_variation": 81.10502131785852,
+      "mean_velocity_variation_per_step": 0.08094313504776299,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 57.80000000001112
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 38.99999999997333
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 63.79999999994199
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 39.7999999999638
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 33.74999999999881,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 35.79999999999986,
+          "released_time_s": 43.800000000003955
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 75.300000000004,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 77.90000000000164,
+          "released_time_s": 85.94999999999432
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 134.09999999995054,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 137.0999999999478,
+          "released_time_s": 145.1499999999405
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 178.74999999990993,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 181.04999999990784,
+          "released_time_s": 189.09999999990052
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 900,
+      "policy_path": "training/runs/remote_room_100k/policy_10000.zip",
+      "policy_sha256": "b50968f5df3c1f977a34ba21459cd4ed3392d6f3fce3474daeaa3d8dc76eb53a",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "linear_velocity_total_variation_m_s": 13.24896996380016,
+      "angular_velocity_total_variation_rad_s": 67.61934556782901,
+      "mean_angular_velocity_change_rad_s": 0.06755179377405496
+    },
+    "ppo_50k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 204.79999999988624,
+      "travel_m": 26.817574544728462,
+      "velocity_total_variation": 84.54659213072846,
+      "mean_velocity_variation_per_step": 0.08256503137766451,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 58.00000000001122
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 42.599999999969775
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 63.79999999994199
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 40.399999999963256
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 33.64999999999876,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 35.69999999999981,
+          "released_time_s": 43.700000000003904
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 75.8500000000035,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 78.45000000000114,
+          "released_time_s": 86.49999999999382
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 137.74999999994722,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 140.7499999999445,
+          "released_time_s": 148.79999999993717
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 183.24999999990584,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 185.54999999990375,
+          "released_time_s": 193.59999999989643
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 900,
+      "policy_path": "training/runs/remote_room_100k/policy_50000.zip",
+      "policy_sha256": "f587bb83be1bd9ab269e157fbc8eb24aabc9ebe29f2e84994264d46b59c5bd78",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "linear_velocity_total_variation_m_s": 13.735534145918942,
+      "angular_velocity_total_variation_rad_s": 70.57542007081173,
+      "mean_angular_velocity_change_rad_s": 0.06898868042112584
+    },
+    "ppo_100k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 208.59999999988278,
+      "travel_m": 26.659543573429573,
+      "velocity_total_variation": 85.03768531090944,
+      "mean_velocity_variation_per_step": 0.08153181717249228,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 58.00000000001122
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 44.599999999967956
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 64.79999999994108
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 41.19999999996253
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 33.79999999999884,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 35.84999999999989,
+          "released_time_s": 43.85000000000398
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 76.05000000000332,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 78.65000000000096,
+          "released_time_s": 86.69999999999364
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 140.3999999999448,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 143.39999999994208,
+          "released_time_s": 151.44999999993476
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 186.49999999990288,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 188.7999999999008,
+          "released_time_s": 196.84999999989347
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 900,
+      "policy_path": "training/runs/remote_room_100k/policy_100000.zip",
+      "policy_sha256": "27c54cf728eca01a5b26105c31c8681c1127dc23775c8b30939361b277deef04",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "linear_velocity_total_variation_m_s": 14.11810981391529,
+      "angular_velocity_total_variation_rad_s": 70.68789885866639,
+      "mean_angular_velocity_change_rad_s": 0.06783867452847062
+    }
+  },
+  "playback_speed": 5.0,
+  "shared_simulation_time": true,
+  "selection_note": "Same seed, map, action limits and goal-triggered obstacle rule. A single demonstration is not a statistical success-rate estimate."
+}

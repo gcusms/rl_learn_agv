@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "kind": "development",
+  "cases": [
+    {
+      "id": "independent_dynamic_000",
+      "category": "dynamic_independent",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 88000,
+      "start": [
+        6.675000000000001,
+        0.875,
+        -1.7310662652092546
+      ],
+      "goal": [
+        8.475,
+        6.875
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.14387713498867125,
+      "hold_s": 3.264840754820615,
+      "odom_scale": 1.0
+    },
+    {
+      "id": "motion_profile_015",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 100015,
+      "start": [
+        8.325000000000001,
+        1.175,
+        1.6233780945997562
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.0960091377313955,
+      "odom_scale": 1.0,
+      "actor_pause_after_event_s": [
+        [
+          2.0,
+          4.0
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ]
+    },
+    {
+      "id": "latest_training_failure_057",
+      "category": "training_failure",
+      "scene": "/home/ubuntu/rl_learn/rl_learn_agv/training/assets/room_navigation_scripted",
+      "seed": 1267080342,
+      "start": [
+        6.275,
+        6.9750000000000005,
+        1.339884378295471
+      ],
+      "goal": [
+        2.975,
+        5.4750000000000005
+      ],
+      "odom_scale": 1.0,
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.11484101604734812,
+      "hold_s": 3.0814593887713952
+    }
+  ]
+}

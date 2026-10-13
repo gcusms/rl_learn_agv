@@ -1,0 +1,438 @@
+{
+  "methods": {
+    "nav2_teb": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 176.5999999999119,
+      "travel_m": 24.499344466011223,
+      "velocity_total_variation": 71.8008836895633,
+      "mean_velocity_variation_per_step": 0.0813147040651906,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 54.40000000000938
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 35.39999999998144
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 51.599999999953084
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 35.199999999967986
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 33.79999999999884,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 35.84999999999989,
+          "released_time_s": 43.85000000000398
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 68.00000000001064,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 69.30000000000946,
+          "released_time_s": 77.35000000000214
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 120.99999999996244,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 123.99999999995971,
+          "released_time_s": 132.0499999999524
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 155.29999999993126,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 157.59999999992917,
+          "released_time_s": 165.64999999992185
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 1800,
+      "configuration": {
+        "checkpoint_steps": null,
+        "forward_limit": 0.14,
+        "reverse_limit": 0.08,
+        "yaw_limit": 0.42,
+        "route_shortcut": false,
+        "forward_gain": 1.0,
+        "turn_alpha": 1.0,
+        "label": "\u666e\u901a\u5bfc\u822a / \u4fdd\u5b88\u9650\u901f\u914d\u7f6e",
+        "comparison_type": "unequal_parameter_demonstration",
+        "policy_weights_unchanged": true,
+        "native_lookahead_m": 2.5
+      },
+      "policy_path": null,
+      "policy_sha256": null,
+      "robot_action_source": "native_nav2_teb",
+      "runtime_robot_amcl": true,
+      "runtime_robot_astar": true,
+      "post_arrival_tail_seconds": 0.0,
+      "linear_velocity_total_variation_m_s": 3.8514458059926358,
+      "angular_velocity_total_variation_rad_s": 67.73549457469264,
+      "mean_angular_velocity_change_rad_s": 0.07679761289647691,
+      "angular_variation_per_m": 2.7647880402948903
+    },
+    "ppo_10k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 311.59999999978913,
+      "travel_m": 26.08296886606449,
+      "velocity_total_variation": 64.32589229809071,
+      "mean_velocity_variation_per_step": 0.041287479010327796,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 91.59999999998918
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 62.999999999942716
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 95.59999999991305
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 61.399999999944185
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 53.90000000000912,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 55.95000000001017,
+          "released_time_s": 63.95000000001426
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 115.6499999999673,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 118.24999999996494,
+          "released_time_s": 126.29999999995762
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 211.39999999988024,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 214.3999999998775,
+          "released_time_s": 222.4499999998702
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 273.19999999982406,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 275.49999999982197,
+          "released_time_s": 283.54999999981464
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 1800,
+      "configuration": {
+        "checkpoint_steps": 10000,
+        "forward_limit": 0.11,
+        "reverse_limit": 0.06,
+        "yaw_limit": 0.35,
+        "route_shortcut": false,
+        "forward_gain": 1.0,
+        "turn_alpha": 1.0,
+        "label": "\u4fdd\u5b88\u9650\u901f / \u539f\u59cb\u795e\u7ecf\u8def\u7ebf",
+        "comparison_type": "unequal_parameter_demonstration",
+        "policy_weights_unchanged": true
+      },
+      "policy_path": "/home/ubuntu/rl_learn/training/runs/remote_room_100k/policy_10000.zip",
+      "policy_sha256": "b50968f5df3c1f977a34ba21459cd4ed3392d6f3fce3474daeaa3d8dc76eb53a",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "post_arrival_tail_seconds": 0.0,
+      "linear_velocity_total_variation_m_s": 7.0378158308522725,
+      "angular_velocity_total_variation_rad_s": 57.06788339082205,
+      "mean_angular_velocity_change_rad_s": 0.03665246203649457,
+      "angular_variation_per_m": 2.1879366449373325
+    },
+    "ppo_50k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 248.39999999984659,
+      "travel_m": 26.34079459908915,
+      "velocity_total_variation": 79.20848542191598,
+      "mean_velocity_variation_per_step": 0.06377494800476327,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 71.40000000000755
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 50.19999999995434
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 76.19999999993071
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 50.59999999995398
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 41.85000000000296,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 43.900000000004006,
+          "released_time_s": 51.9000000000081
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 91.19999999998954,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 93.79999999998718,
+          "released_time_s": 101.84999999997986
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 167.39999999992025,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 170.39999999991753,
+          "released_time_s": 178.4499999999102
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 218.34999999987392,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 220.64999999987182,
+          "released_time_s": 228.6999999998645
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 1800,
+      "configuration": {
+        "checkpoint_steps": 50000,
+        "forward_limit": 0.15,
+        "reverse_limit": 0.07,
+        "yaw_limit": 0.45,
+        "route_shortcut": false,
+        "forward_gain": 1.0,
+        "turn_alpha": 1.0,
+        "label": "\u4e2d\u7b49\u9650\u901f / \u539f\u59cb\u795e\u7ecf\u8def\u7ebf",
+        "comparison_type": "unequal_parameter_demonstration",
+        "policy_weights_unchanged": true
+      },
+      "policy_path": "/home/ubuntu/rl_learn/training/runs/remote_room_100k/policy_50000.zip",
+      "policy_sha256": "f587bb83be1bd9ab269e157fbc8eb24aabc9ebe29f2e84994264d46b59c5bd78",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "post_arrival_tail_seconds": 0.0,
+      "linear_velocity_total_variation_m_s": 10.005440873519259,
+      "angular_velocity_total_variation_rad_s": 68.97631123789492,
+      "mean_angular_velocity_change_rad_s": 0.05558123387421025,
+      "angular_variation_per_m": 2.618611635970924
+    },
+    "ppo_100k": {
+      "verified_success": true,
+      "targets_reached": 4,
+      "targets_total": 4,
+      "simulation_seconds": 150.39999999993572,
+      "travel_m": 25.533759333356286,
+      "velocity_total_variation": 60.69156593519353,
+      "mean_velocity_variation_per_step": 0.08070686959467224,
+      "collision_events": 0,
+      "penetration_guard_activations": 0,
+      "legs": [
+        {
+          "target": 1,
+          "verified_success": true,
+          "seconds": 43.40000000000375
+        },
+        {
+          "target": 2,
+          "verified_success": true,
+          "seconds": 32.3999999999998
+        },
+        {
+          "target": 3,
+          "verified_success": true,
+          "seconds": 42.99999999996089
+        },
+        {
+          "target": 4,
+          "verified_success": true,
+          "seconds": 31.599999999971274
+        }
+      ],
+      "interferences": [
+        {
+          "target": 1,
+          "column": 2,
+          "trigger_time_s": 27.849999999998744,
+          "block_position": [
+            6.55,
+            1.7
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 29.899999999998336,
+          "released_time_s": 37.90000000000094
+        },
+        {
+          "target": 2,
+          "column": 2,
+          "trigger_time_s": 59.35000000001191,
+          "block_position": [
+            8.2,
+            4.9
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 60.95000000001273,
+          "released_time_s": 69.00000000000973
+        },
+        {
+          "target": 3,
+          "column": 1,
+          "trigger_time_s": 101.29999999998036,
+          "block_position": [
+            3.0,
+            6.15
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 104.29999999997763,
+          "released_time_s": 112.34999999997031
+        },
+        {
+          "target": 4,
+          "column": 1,
+          "trigger_time_s": 134.3499999999503,
+          "block_position": [
+            1.45,
+            3.0
+          ],
+          "hold_seconds": 8.0,
+          "entered_time_s": 136.64999999994822,
+          "released_time_s": 144.6999999999409
+        }
+      ],
+      "seed": 31002,
+      "max_leg_steps": 1800,
+      "configuration": {
+        "checkpoint_steps": 100000,
+        "forward_limit": 0.2,
+        "reverse_limit": 0.08,
+        "yaw_limit": 0.5,
+        "route_shortcut": false,
+        "forward_gain": 1.1,
+        "turn_alpha": 0.9,
+        "lookahead_points": 4,
+        "label": "\u5b8c\u6574\u9650\u901f / \u539f\u59cb\u795e\u7ecf\u8def\u7ebf / \u8f6c\u5411\u6ee4\u6ce2",
+        "comparison_type": "unequal_parameter_demonstration",
+        "policy_weights_unchanged": true
+      },
+      "policy_path": "/home/ubuntu/rl_learn/training/runs/remote_room_100k/policy_100000.zip",
+      "policy_sha256": "27c54cf728eca01a5b26105c31c8681c1127dc23775c8b30939361b277deef04",
+      "robot_action_source": "PPO",
+      "runtime_robot_amcl": false,
+      "runtime_robot_astar": false,
+      "post_arrival_tail_seconds": 0.0,
+      "linear_velocity_total_variation_m_s": 5.694773042038473,
+      "angular_velocity_total_variation_rad_s": 54.74240503532516,
+      "mean_angular_velocity_change_rad_s": 0.07289268313625188,
+      "angular_variation_per_m": 2.143922652384832
+    }
+  },
+  "playback_speed": 5.0,
+  "shared_simulation_time": true,
+  "comparison_type": "unequal_parameter_demonstration",
+  "weights_retrained": false
+}

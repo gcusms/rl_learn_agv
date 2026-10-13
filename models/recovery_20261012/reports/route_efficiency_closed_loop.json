@@ -1,0 +1,49 @@
+{
+  "cases": [
+    {
+      "efficient_routes": false,
+      "arrived": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "seconds": 43.000000000003546,
+      "travel_m": 4.379341592602019,
+      "control_ms_p95": 110.91650048911106,
+      "control_ms_max": 141.44009599112906,
+      "final_goal_distance_m": 0.15243753313879946
+    },
+    {
+      "efficient_routes": true,
+      "arrived": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "seconds": 30.599999999998197,
+      "travel_m": 3.5405719359316308,
+      "control_ms_p95": 109.38489545369518,
+      "control_ms_max": 122.37142500816844,
+      "final_goal_distance_m": 0.13992525392675811
+    }
+  ],
+  "scope": "One reused manual scenario; not broad regression or shortest path proof",
+  "actor_sha256": "78d0a075d4eb16ccb823fe0adc62f4156ed9e5ed0300fb707033f86d33271886",
+  "source_sha256": {
+    "training/neural_navigation/core.py": "9e71eb06765ecd1a1b4ecf905660f30145b6bfe15378ba8d79b86fcd58edbb28",
+    "training/neural_navigation/route_efficiency.py": "28325018051e27f830d43483ad88a33c17baceb3d129e1a3d40ec470958966b7",
+    "training/neural_navigation/pick_place_env.py": "98e6ec9748e490de89eee5dde00e3e863bcc474489f32735e48ded68338cfc70",
+    "training/preview_sensor_navigation.py": "3ca4531c1f58dab90134fad7884b64f3d5f05338434d64305ed44e2bd332b0d2"
+  },
+  "seed": 88000,
+  "start": [
+    1.2,
+    1.2,
+    0.0
+  ],
+  "goal": [
+    3.8,
+    1.2
+  ],
+  "obstacle": [
+    2.2,
+    1.2
+  ],
+  "default_model_replaced": false
+}

@@ -2,14 +2,20 @@
 import numpy as np
 from scipy.ndimage import distance_transform_edt
 from navrl.geometry import wrap
+from neural_navigation.motion_prediction import ScanMotionPredictor
 
 class LaserMapFusion:
     def __init__(self,env):
         self.points=np.array([env.xy((r,c)) for r in range(env.grid_h) for c in range(env.grid_w)]).reshape(env.grid_h,env.grid_w,2)
         self.shape=env.free.shape;self.reset()
+        config=getattr(env,'motion_prediction_config',None)
+        self.predictor=ScanMotionPredictor(config) if config else None
     def reset(self):
         self.first_seen=np.full(self.shape,np.nan);self.last_seen=np.full(self.shape,-100.);self.hard_expiry=np.zeros(self.shape)
         self.hard=np.zeros(self.shape,bool);self.layer=np.zeros(self.shape,np.float32);self.cleared=0;self.far_pending=0
+        self.forecast_cells=0
+        self.last_alignment_supported=False
+        if getattr(self,'predictor',None):self.predictor.reset()
     def update(self,env):
         now=env.elapsed;pose=env.estimate;yaw=pose[2];mount=env.lidar.mount
         self.hard_expiry=np.maximum(self.hard_expiry,env.expiry)
@@ -42,6 +48,23 @@ class LaserMapFusion:
         env.expiry[:]=self.hard_expiry
         occupied=self.hard_expiry>now
         self.hard=distance_transform_edt(~occupied)*env.grid_res<=.32 if occupied.any() else np.zeros(self.shape,bool)
+        if self.predictor is not None:
+            if getattr(env.localizer,'scan_update_accepted',True):
+                self.last_alignment_supported=getattr(env.localizer,'map_agreement',1.)>=.5
+            # A brief missing scan is occlusion evidence, not proof of a bad
+            # map pose. Retain bounded prediction from the last supported scan.
+            supported=self.last_alignment_supported and max(env.localizer.std[:2])<.2 and env.localizer.std[2]<.25
+            predicted=self.predictor.update(ends,now,supported)
+            future=np.zeros(self.shape,bool)
+            if len(predicted):
+                r,c=env.static_map.cells(predicted);r=r//4;c=c//4
+                inside=(r>=0)&(r<env.grid_h)&(c>=0)&(c<env.grid_w)
+                future[r[inside],c[inside]]=True
+                future=distance_transform_edt(~future)*env.grid_res<=.32
+            self.forecast_cells=int(np.count_nonzero(future&~self.hard))
+            # Forecast is recomputed, never written into the eight-second
+            # occupancy memory or cleared using today's free rays.
+            self.hard|=future
         recent=(now-self.last_seen<.8)&~occupied
         soft=distance_transform_edt(~recent)*env.grid_res<=.32 if recent.any() else np.zeros(self.shape,bool)
         self.layer=np.maximum(self.hard.astype(np.float32),soft.astype(np.float32)*.02)

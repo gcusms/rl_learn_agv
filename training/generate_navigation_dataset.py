@@ -4,6 +4,7 @@ from pathlib import Path
 import copy
 import json
 import hashlib
+import os
 import xml.etree.ElementTree as ET
 import numpy as np
 from PIL import Image
@@ -12,12 +13,13 @@ from navrl.map import StaticMap
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT/'assets/navigation_dataset');p.add_argument('--test-offset',type=int,default=33000);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT/'assets/navigation_dataset');p.add_argument('--test-offset',type=int,default=33000)
+    p.add_argument('--train-offset',type=int,default=11000);p.add_argument('--validation-offset',type=int,default=22000);a=p.parse_args()
     base=ROOT/'assets';output=a.output; output.mkdir(exist_ok=True)
     template=ET.parse(base/'physical_scene.xml').getroot()
     config=json.loads((base/'physical_scene.json').read_text())
     manifest={'version':1,'size_m':[10,8],'splits':{},'sampling':'random free start/goal >= 2 m apart; randomized full-circle initial heading'}
-    for split,count,offset in [('train',6,11000),('validation',2,22000),('test',3,a.test_offset)]:
+    for split,count,offset in [('train',6,a.train_offset),('validation',2,a.validation_offset),('test',3,a.test_offset)]:
         manifest['splits'][split]=[]
         for i in range(count):
             rng=np.random.default_rng(offset+i); folder=output/f'{split}_{i:02d}';folder.mkdir(exist_ok=True)
@@ -40,6 +42,13 @@ def main():
             Image.fromarray(np.where(occupied,0,254).astype(np.uint8)).save(folder/'decision_map.pgm')
             (folder/'decision_map.yaml').write_text((base/'decision_map.yaml').read_text())
             model=copy.deepcopy(template);model.set('model',f'agv_{split}_{i:02d}');world=model.find('worldbody')
+            # Asset files are relative to the generated XML, not the template.
+            for asset in model.findall('./asset/*'):
+                filename=asset.get('file')
+                if filename:
+                    source=(base/filename).resolve()
+                    if not source.is_file():raise FileNotFoundError(source)
+                    asset.set('file',os.path.relpath(source,folder.resolve()))
             for g in list(world.findall('geom')):
                 if g.get('name','').startswith('wall_'):world.remove(g)
             for j,(x0,y0,x1,y1) in enumerate(walls):

@@ -1,9 +1,43 @@
 import heapq
+from math import floor,isfinite
 from pathlib import Path
 import numpy as np
 from PIL import Image
 from scipy.ndimage import distance_transform_edt
 import yaml
+
+
+def segment_is_free(a,b,origin_m,resolution,free):
+    height,width=free.shape
+    # Supercover grid traversal checks every cell touched by the segment,
+    # including both neighbors at corner crossings (no sampled-ray gaps).
+    # Scalar traversal avoids allocating tiny NumPy arrays at every cell.
+    # Keep the same corner tolerance, boundary tests and visited-cell semantics.
+    ox=float((a[0]-origin_m[0])/resolution);oy=float((a[1]-origin_m[1])/resolution)
+    ex=float((b[0]-origin_m[0])/resolution);ey=float((b[1]-origin_m[1])/resolution)
+    if not all(isfinite(v) for v in (ox,oy,ex,ey)):return False
+    col,y=floor(ox),floor(oy);target_col,target_y=floor(ex),floor(ey)
+    dx,dy=ex-ox,ey-oy
+    sx=(1 if dx>0 else -1 if dx<0 else 0);sy=(1 if dy>0 else -1 if dy<0 else 0)
+    def clear(col,y):
+        row=height-1-y
+        return 0<=row<height and 0<=col<width and bool(free[row,col])
+    if not clear(col,y) or not clear(target_col,target_y): return False
+    tx=(col+(1 if sx>0 else 0)-ox)/dx if sx else float('inf')
+    ty=(y+(1 if sy>0 else 0)-oy)/dy if sy else float('inf')
+    stride_x=1/abs(dx) if sx else float('inf');stride_y=1/abs(dy) if sy else float('inf')
+    for _ in range(width+height+4):
+        if col==target_col and y==target_y:return True
+        if min(tx,ty)>1.+1e-10: return True
+        if abs(tx-ty)<1e-12:
+            if not clear(col+sx,y) or not clear(col,y+sy): return False
+            col+=sx;y+=sy;tx+=stride_x;ty+=stride_y
+        elif tx<ty:
+            col+=sx;tx+=stride_x
+        else:
+            y+=sy;ty+=stride_y
+        if not clear(col,y): return False
+    return False
 
 
 class StaticMap:
@@ -39,33 +73,8 @@ class StaticMap:
         value=field[np.clip(row,0,self.height-1),np.clip(col,0,self.width-1)]
         return np.where(valid,value,outside)
 
-    def visible(self, a, b):
-        # Supercover grid traversal checks every cell touched by the segment,
-        # including both neighbors at corner crossings (no sampled-ray gaps).
-        origin=(np.asarray(a)-self.origin[:2])/self.res
-        end=(np.asarray(b)-self.origin[:2])/self.res
-        cell=np.floor(origin).astype(int); target=np.floor(end).astype(int)
-        delta=end-origin; direction=np.sign(delta).astype(int)
-        def clear(c):
-            col,y=c; row=self.height-1-y
-            return 0<=row<self.height and 0<=col<self.width and bool(self.free[row,col])
-        if not clear(cell) or not clear(target): return False
-        next_t=np.full(2,np.inf); stride=np.full(2,np.inf)
-        for axis in range(2):
-            if direction[axis]:
-                boundary=cell[axis]+(1 if direction[axis]>0 else 0)
-                next_t[axis]=(boundary-origin[axis])/delta[axis]
-                stride[axis]=1/abs(delta[axis])
-        for _ in range(self.width+self.height+4):
-            if np.array_equal(cell,target): return True
-            if min(next_t)>1.+1e-10: return True
-            if abs(next_t[0]-next_t[1])<1e-12:
-                if not clear(cell+[direction[0],0]) or not clear(cell+[0,direction[1]]): return False
-                cell+=direction; next_t+=stride
-            else:
-                axis=int(np.argmin(next_t)); cell[axis]+=direction[axis]; next_t[axis]+=stride[axis]
-            if not clear(cell): return False
-        return False
+    def visible(self,a,b):
+        return segment_is_free(a,b,self.origin,self.res,self.free)
 
     def plan(self, start, goal):
         start=tuple(int(v) for v in self.cells(start)); goal=tuple(int(v) for v in self.cells(goal))
