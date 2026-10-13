@@ -1,0 +1,87 @@
+{
+  "seed": 88000,
+  "start": [
+    1.2,
+    1.2,
+    0.0
+  ],
+  "goal": [
+    3.8,
+    1.2
+  ],
+  "obstacle": [
+    2.2,
+    1.2
+  ],
+  "scene": "training/assets/room_navigation_manual_two",
+  "decision_period_s": 0.2,
+  "speed_limit_m_s": 0.2,
+  "yaw_limit_rad_s": 0.5,
+  "laser_beams": 220,
+  "laser_fov_degrees": 219.44,
+  "methods": {
+    "clone_100k": {
+      "state": "arrived",
+      "seconds": 21.400000000000027,
+      "travel_m": 3.0160972446031082,
+      "collisions": 0,
+      "physical_guards": 0,
+      "goal_distance_m": 0.15834082700660962,
+      "control_ms_p95": 0.754790607606992,
+      "efficient_routes": false,
+      "policy_sha256": "27c54cf728eca01a5b26105c31c8681c1127dc23775c8b30939361b277deef04"
+    },
+    "parent_8k": {
+      "state": "arrived",
+      "seconds": 41.80000000000293,
+      "travel_m": 4.112812806062881,
+      "collisions": 0,
+      "physical_guards": 0,
+      "goal_distance_m": 0.1499930494432751,
+      "control_ms_p95": 117.23528219154105,
+      "efficient_routes": false,
+      "policy_sha256": "fe21d3f2ed2417746781c6e4f7c1636ba61d0913e47e7160b01cd1b2a72b6b69"
+    },
+    "latest_10k": {
+      "state": "arrived",
+      "seconds": 43.000000000003546,
+      "travel_m": 4.379341592602019,
+      "collisions": 0,
+      "physical_guards": 0,
+      "goal_distance_m": 0.15243753313879946,
+      "control_ms_p95": 115.2257023117272,
+      "efficient_routes": false,
+      "policy_sha256": "78d0a075d4eb16ccb823fe0adc62f4156ed9e5ed0300fb707033f86d33271886"
+    },
+    "latest_efficient": {
+      "state": "arrived",
+      "seconds": 30.599999999998197,
+      "travel_m": 3.5405719359316308,
+      "collisions": 0,
+      "physical_guards": 0,
+      "goal_distance_m": 0.13992525392675811,
+      "control_ms_p95": 116.72732161241584,
+      "efficient_routes": true,
+      "policy_sha256": "78d0a075d4eb16ccb823fe0adc62f4156ed9e5ed0300fb707033f86d33271886"
+    }
+  },
+  "deployment_approved": false,
+  "scope": "One static-obstacle demonstration, not aggregate validation or optimality proof.",
+  "fairness": "Same physical scene/seed/start/goal. Clone uses its original 235D continuous actor with current environment sensor features; new models use 300D masked portable runtimes. This is a pipeline comparison, not an isolated training-step comparison. The two latest panes differ only by route-efficiency flag. No legacy Nav2/TEB run is included.",
+  "video": {
+    "file": "docs/media/recovery-comparison-20261013.mp4",
+    "bytes": 1925399,
+    "sha256": "6a11f0021119e37873c6ed8a9fb60ba41ac6120e9f95400510ff9e0f6230d3f5",
+    "frames": 337,
+    "fps": 20.0,
+    "duration_s": 16.85,
+    "resolution": [
+      1536,
+      1088
+    ],
+    "codec": "h264",
+    "playback_speed": 4,
+    "decode_verified": true
+  },
+  "recorder_sha256": "d055e614ebbb8a0bc9d049f0058411c4f89833a558c57d09cb4c3267b4b6bca2"
+}
