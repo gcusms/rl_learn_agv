@@ -1,0 +1,774 @@
+{
+  "phase": "complete",
+  "steps": 12500,
+  "requested_steps": 12500,
+  "sampling": {
+    "alignment": {
+      "steps": 829,
+      "stop_choices": 283,
+      "only_stop": 0,
+      "overrides": 0,
+      "success": 45,
+      "collisions": 0,
+      "braking_cost": 20.357513663021265,
+      "hold_reward": 10.640000000000024
+    },
+    "approach": {
+      "steps": 1671,
+      "stop_choices": 295,
+      "only_stop": 0,
+      "overrides": 0,
+      "success": 44,
+      "collisions": 0,
+      "braking_cost": 26.03670865794847,
+      "hold_reward": 12.25000000000003
+    }
+  },
+  "episodes": [
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.044881556376827336,
+      "true_goal_yaw_error_rad": 0.09800545953244022,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 570131733, \"stage\": \"static\", \"options\": {\"start\": [6.025, 1.2750000000000001, 0.9495700162283889], \"goal\": [6.025, 1.2750000000000001]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.65537403167368, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.014686613188999867,
+      "true_goal_yaw_error_rad": 0.0330656335414643,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1867668466, \"stage\": \"static\", \"options\": {\"start\": [5.875, 5.875, 0.140109775441851], \"goal\": [5.875, 5.875]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.140109775441851, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06603463736731792,
+      "true_goal_yaw_error_rad": 0.024992193535875007,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 967303238, \"stage\": \"static\", \"options\": {\"start\": [3.225, 1.975, 2.038212831740112], \"goal\": [2.8229391358806333, 2.378096630914695]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.038212831740112, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.020951693964220124,
+      "true_goal_yaw_error_rad": 0.006040422220777941,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 818284596, \"stage\": \"static\", \"options\": {\"start\": [5.925000000000001, 1.675, -1.6495502554818868], \"goal\": [5.925000000000001, 1.675]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.6495502554818868, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08667995718923667,
+      "true_goal_yaw_error_rad": 0.05003758827835236,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 527268579, \"stage\": \"static\", \"options\": {\"start\": [2.1750000000000003, 5.4750000000000005, -2.362504466604425], \"goal\": [1.955838846380944, 5.433443944588287]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.362504466604425, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.033992420340141084,
+      "true_goal_yaw_error_rad": 0.008866963107099668,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1370284410, \"stage\": \"static\", \"options\": {\"start\": [7.125, 6.2250000000000005, -2.177936122926417], \"goal\": [7.125, 6.2250000000000005]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.177936122926417, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.02528318608049154,
+      "true_goal_yaw_error_rad": 0.01850468215812695,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1286712753, \"stage\": \"static\", \"options\": {\"start\": [7.425000000000001, 2.9250000000000003, -0.21224937019961754], \"goal\": [7.425000000000001, 2.9250000000000003]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.6922068438452067, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04593423154324196,
+      "true_goal_yaw_error_rad": 0.014081452457434196,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1352778039, \"stage\": \"static\", \"options\": {\"start\": [4.575, 1.175, -2.379322111408323], \"goal\": [4.575, 1.175]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.379322111408323, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.004075724569538953,
+      "true_goal_yaw_error_rad": 0.04757250143465175,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2078630011, \"stage\": \"static\", \"options\": {\"start\": [9.125, 2.6750000000000003, -0.404970094173724], \"goal\": [9.125, 2.6750000000000003]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.2370179463376592, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.0014472873484563972,
+      "true_goal_yaw_error_rad": 0.1140134000658879,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2101590670, \"stage\": \"static\", \"options\": {\"start\": [1.425, 6.325, -2.987238492173137], \"goal\": [1.425, 6.325]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.4472767113412668, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.10005731364464522,
+      "true_goal_yaw_error_rad": 0.11722290944609304,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1722431472, \"stage\": \"static\", \"options\": {\"start\": [3.875, 2.125, -1.8955299979638391], \"goal\": [3.9593343131912424, 1.8254351763340733]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.349258408468401, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07557013164226423,
+      "true_goal_yaw_error_rad": 0.014862167152156047,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1864255022, \"stage\": \"static\", \"options\": {\"start\": [4.575, 2.825, 0.09816289126423872], \"goal\": [4.575, 2.825]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.41166064168465555, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.1318695903313012,
+      "true_goal_yaw_error_rad": 0.6405249853243866,
+      "physical_goal_settled": false,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1860495532, \"stage\": \"static\", \"options\": {\"start\": [8.175, 3.325, -2.4471167787681267], \"goal\": [7.8626141057815335, 3.325513572817647]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.4471167787681267, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06622695705368023,
+      "true_goal_yaw_error_rad": 0.0034665024655069487,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2063560886, \"stage\": \"static\", \"options\": {\"start\": [4.825, 6.825, 0.9990647567849598], \"goal\": [5.250151892759826, 7.095558650465012]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.6403922572237577, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07514371199721993,
+      "true_goal_yaw_error_rad": 0.07805941346512402,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 104366365, \"stage\": \"static\", \"options\": {\"start\": [2.7750000000000004, 3.7750000000000004, 1.9399499639060798], \"goal\": [2.6368102195391168, 3.9017698221672292]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.9702464575214949, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.039015755100115235,
+      "true_goal_yaw_error_rad": 0.001843236329491571,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1191489111, \"stage\": \"static\", \"options\": {\"start\": [2.9250000000000003, 3.625, 1.926733319182528], \"goal\": [2.9250000000000003, 3.625]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.5964037460299734, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04329814445408087,
+      "true_goal_yaw_error_rad": 0.013942130271510145,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 501557926, \"stage\": \"static\", \"options\": {\"start\": [4.2250000000000005, 3.725, 0.4047431458017088], \"goal\": [4.2250000000000005, 3.725]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.1384418034890071, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.037307091415998854,
+      "true_goal_yaw_error_rad": 0.1334075349811199,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1739943280, \"stage\": \"static\", \"options\": {\"start\": [8.325000000000001, 6.2250000000000005, -0.4711706027613798], \"goal\": [8.880885459818652, 6.030812719142958]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.381257712749097, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.00903824500725728,
+      "true_goal_yaw_error_rad": 0.004829272730049183,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 450154847, \"stage\": \"static\", \"options\": {\"start\": [1.7750000000000001, 4.125, 0.3334053838119968], \"goal\": [1.7750000000000001, 4.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.7976853534351385, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05885631848409132,
+      "true_goal_yaw_error_rad": 0.03853600784359035,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1869789180, \"stage\": \"static\", \"options\": {\"start\": [1.2750000000000001, 1.125, -0.06831990184877368], \"goal\": [1.675030615564861, 1.2259462386024584]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.06831990184877368, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04390020324177116,
+      "true_goal_yaw_error_rad": 0.046922706568780725,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 881730741, \"stage\": \"static\", \"options\": {\"start\": [4.625, 3.5250000000000004, 2.209409259850987], \"goal\": [4.519449887258809, 3.680372600125586]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.2458864807013583, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.03899109808421426,
+      "true_goal_yaw_error_rad": 0.09141943219275994,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 552669281, \"stage\": \"static\", \"options\": {\"start\": [5.275, 1.975, 2.5604622217937205], \"goal\": [5.275, 1.975]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.036610291424775454, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06163280057517321,
+      "true_goal_yaw_error_rad": 0.05955237222978438,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1607300542, \"stage\": \"static\", \"options\": {\"start\": [7.575, 4.675, -1.629865377894611], \"goal\": [7.575, 4.675]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.629865377894611, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.014998701532167138,
+      "true_goal_yaw_error_rad": 0.014908620267778616,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 2135332945, \"stage\": \"static\", \"options\": {\"start\": [3.075, 6.7250000000000005, -1.2381669865791225], \"goal\": [3.1135072082981545, 6.38383020856693]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.2381669865791225, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07244781736252641,
+      "true_goal_yaw_error_rad": 0.13561322310825208,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1820212345, \"stage\": \"static\", \"options\": {\"start\": [1.675, 6.125, 3.137808084157931], \"goal\": [1.3575933432477125, 5.8306405897971825]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.0273607600547656, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.03522240672269723,
+      "true_goal_yaw_error_rad": 0.0014159891392280244,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 616022562, \"stage\": \"static\", \"options\": {\"start\": [8.825000000000001, 3.7750000000000004, 1.7635953030240543], \"goal\": [8.825000000000001, 3.7750000000000004]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.27176373664112, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04467684513978352,
+      "true_goal_yaw_error_rad": 0.011578914786015915,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1812719862, \"stage\": \"static\", \"options\": {\"start\": [5.825, 7.125, 0.3776320725830731], \"goal\": [5.825, 7.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -3.0596550397748628, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08953064249532876,
+      "true_goal_yaw_error_rad": 0.09151575302466064,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 2130480621, \"stage\": \"static\", \"options\": {\"start\": [0.925, 4.075, 0.4051224156295312], \"goal\": [1.3543461097380276, 3.983436337746997]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.883722568994039, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08298993233296416,
+      "true_goal_yaw_error_rad": 0.002120404334209791,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1885526376, \"stage\": \"static\", \"options\": {\"start\": [9.075000000000001, 6.575, 0.24601517214797086], \"goal\": [9.226991076533686, 6.746588998899953]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.4899916570638838, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.030041414085018033,
+      "true_goal_yaw_error_rad": 0.0722842006916875,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 927104638, \"stage\": \"static\", \"options\": {\"start\": [8.775, 2.1750000000000003, 2.482455362308352], \"goal\": [8.66583369800022, 2.8055986867229823]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.482455362308352, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04086778735004567,
+      "true_goal_yaw_error_rad": 0.03893186330922083,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 967771018, \"stage\": \"static\", \"options\": {\"start\": [3.5250000000000004, 5.625, -2.2310606030345723], \"goal\": [3.5250000000000004, 5.625]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.130688882613076, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.034301213619824064,
+      "true_goal_yaw_error_rad": 0.0870167673636617,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1263998695, \"stage\": \"static\", \"options\": {\"start\": [4.275, 3.125, -1.1899342460944147], \"goal\": [4.275, 3.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.8601213736348305, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05335757117490508,
+      "true_goal_yaw_error_rad": 0.024783538022216334,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 748560186, \"stage\": \"static\", \"options\": {\"start\": [8.725, 1.225, -1.609217770608517], \"goal\": [8.49761358424294, 0.8924185262919412]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.609217770608517, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06500219136546921,
+      "true_goal_yaw_error_rad": 0.11124863744905333,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 336769371, \"stage\": \"static\", \"options\": {\"start\": [3.6750000000000003, 3.975, 2.030955227352977], \"goal\": [3.8014014904918554, 4.3445389354100135]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.482216577121874, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.027203104982607376,
+      "true_goal_yaw_error_rad": 0.09663460462208029,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 466293076, \"stage\": \"static\", \"options\": {\"start\": [8.525, 4.125, -0.26470311838333505], \"goal\": [8.525, 4.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.01193068488218385, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06926035098657113,
+      "true_goal_yaw_error_rad": 0.12001421276311541,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 708688754, \"stage\": \"static\", \"options\": {\"start\": [3.725, 5.425000000000001, 2.295313279833527], \"goal\": [3.437918832686242, 5.554847058624089]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.9283614419274056, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.023085556320860356,
+      "true_goal_yaw_error_rad": 0.011766266729493768,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 1148821852, \"stage\": \"static\", \"options\": {\"start\": [8.225, 5.125, -1.9846533281017145], \"goal\": [8.225, 5.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.9846533281017145, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.033770058623618024,
+      "true_goal_yaw_error_rad": 0.11217293073256984,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 187900752, \"stage\": \"static\", \"options\": {\"start\": [3.625, 1.425, 1.9159659404427183], \"goal\": [3.625, 1.425]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.2142650776434625, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06000393556285336,
+      "true_goal_yaw_error_rad": 0.046869979725716604,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 711412876, \"stage\": \"static\", \"options\": {\"start\": [9.075000000000001, 2.975, 2.3289751306648467], \"goal\": [9.075025527548622, 3.1656216371516828]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.5929877640167582, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.037944782220018715,
+      "true_goal_yaw_error_rad": 0.0408161647099603,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 1610876865, \"stage\": \"static\", \"options\": {\"start\": [5.875, 2.5250000000000004, -0.3464693564283099], \"goal\": [6.28510788628896, 2.400646749849339]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.3861278507488342, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05195635045830751,
+      "true_goal_yaw_error_rad": 0.03443730197042694,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 1615496877, \"stage\": \"static\", \"options\": {\"start\": [3.475, 5.575, -1.324415339705072], \"goal\": [3.475, 5.575]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.9079212383486415, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.024231942170234912,
+      "true_goal_yaw_error_rad": 0.11341380515771604,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 993265891, \"stage\": \"static\", \"options\": {\"start\": [1.475, 2.325, -2.667092552205422], \"goal\": [1.475, 2.325]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.5073810731868678, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.017994816853391223,
+      "true_goal_yaw_error_rad": 0.06864768547676814,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 404903936, \"stage\": \"static\", \"options\": {\"start\": [1.5750000000000002, 5.275, 2.5269713149824558], \"goal\": [1.5750000000000002, 5.275]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.9399205388076908, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.031057862872912987,
+      "true_goal_yaw_error_rad": 0.08471259333623138,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 1668660236, \"stage\": \"static\", \"options\": {\"start\": [9.025, 2.875, 3.0280582133242957], \"goal\": [9.025, 2.875]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 3.11774341921479, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06873106346358833,
+      "true_goal_yaw_error_rad": 0.0701194437981596,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 380222078, \"stage\": \"static\", \"options\": {\"start\": [1.7750000000000001, 6.825, 1.0812747098533526], \"goal\": [1.9602706154305547, 6.898478453957103]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.643631324189041, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.023222547602420363,
+      "true_goal_yaw_error_rad": 0.05666460082528335,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 284162203, \"stage\": \"static\", \"options\": {\"start\": [8.025, 2.225, 2.769944517569539], \"goal\": [8.025, 2.225]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.185051217063898, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06776045422926157,
+      "true_goal_yaw_error_rad": 0.035148507565443854,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 1785738447, \"stage\": \"static\", \"options\": {\"start\": [6.125, 6.325, -2.478043564509344], \"goal\": [5.905875613153931, 6.323639227523392]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.478043564509344, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08102775624020209,
+      "true_goal_yaw_error_rad": 0.03884533738229301,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00\", \"seed\": 587034110, \"stage\": \"static\", \"options\": {\"start\": [2.625, 5.575, -1.981351986736415], \"goal\": [2.6660559466049785, 5.341973566665188]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.644943044756932, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.024303277214776046,
+      "true_goal_yaw_error_rad": 0.07781172895168975,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1940174798, \"stage\": \"static\", \"options\": {\"start\": [3.875, 6.675000000000001, -1.6321833244651223], \"goal\": [3.7349252636418315, 6.392954903250388]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.044879914885219474, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.016282404189811094,
+      "true_goal_yaw_error_rad": 0.1127145897955768,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1715154422, \"stage\": \"static\", \"options\": {\"start\": [0.925, 3.725, 0.24428510836777795], \"goal\": [0.925, 3.725]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.03185406692943582, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.03464179569888261,
+      "true_goal_yaw_error_rad": 0.03570233815290891,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1200686536, \"stage\": \"static\", \"options\": {\"start\": [7.025, 6.575, -0.6543891442277237], \"goal\": [7.114507816578862, 6.3901449377102075]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.6543891442277237, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.052037030079036956,
+      "true_goal_yaw_error_rad": 0.011422089750825037,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2010251250, \"stage\": \"static\", \"options\": {\"start\": [5.375, 5.775, 2.5589989378193954], \"goal\": [5.375, 5.775]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.8792037515406728, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06470049890151468,
+      "true_goal_yaw_error_rad": 0.1375269787383675,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2027643963, \"stage\": \"static\", \"options\": {\"start\": [5.275, 1.175, 0.29135864254640964], \"goal\": [5.6464372945795045, 1.676622972609005]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.2799902322296992, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.018959183261831675,
+      "true_goal_yaw_error_rad": 0.04188745845999131,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 952297421, \"stage\": \"static\", \"options\": {\"start\": [2.1750000000000003, 6.575, -2.4491222464752673], \"goal\": [2.1750000000000003, 6.575]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.0983924174522053, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.007836164670651279,
+      "true_goal_yaw_error_rad": 0.05693060115731141,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 2076564271, \"stage\": \"static\", \"options\": {\"start\": [4.075, 2.825, 3.101819011346122], \"goal\": [4.075, 2.825]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.2938839015093504, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.03809137311851551,
+      "true_goal_yaw_error_rad": 0.049777320893269916,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1982537329, \"stage\": \"static\", \"options\": {\"start\": [8.775, 2.975, -2.8558334579398443], \"goal\": [8.775, 2.975]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.1872796759537287, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.03810487350741402,
+      "true_goal_yaw_error_rad": 0.016020132817716082,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 292182045, \"stage\": \"static\", \"options\": {\"start\": [6.375, 2.125, 0.19143196987416022], \"goal\": [6.375, 2.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.9079200478573553, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08088669909523451,
+      "true_goal_yaw_error_rad": 0.03516299828715219,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1127376321, \"stage\": \"static\", \"options\": {\"start\": [7.925000000000001, 1.3250000000000002, -1.5946292379283926], \"goal\": [8.104934341842753, 1.116391410338647]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.5498159407715564, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07575322636570529,
+      "true_goal_yaw_error_rad": 0.007418119676160018,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1049993232, \"stage\": \"static\", \"options\": {\"start\": [8.475, 2.5250000000000004, -3.001765802812496], \"goal\": [8.260711256783614, 2.329632472936014]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -3.001765802812496, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.025927335066611778,
+      "true_goal_yaw_error_rad": 0.020375186922851007,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 659031097, \"stage\": \"static\", \"options\": {\"start\": [6.625, 6.4750000000000005, 1.906388217119659], \"goal\": [6.625, 6.4750000000000005]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.3057687592762077, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.02381892508739252,
+      "true_goal_yaw_error_rad": 0.02213388184551679,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 537105726, \"stage\": \"static\", \"options\": {\"start\": [5.025, 6.575, 1.7916229924683247], \"goal\": [5.025, 6.575]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.0302509693939661, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.023920449437467094,
+      "true_goal_yaw_error_rad": 0.12395649502680772,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1215097175, \"stage\": \"static\", \"options\": {\"start\": [1.3250000000000002, 6.7250000000000005, -0.8739090373170044], \"goal\": [1.4531363434419058, 6.382762702218843]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.390054966278139, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.056234943324277115,
+      "true_goal_yaw_error_rad": 0.05258875348374836,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 732245430, \"stage\": \"static\", \"options\": {\"start\": [6.2250000000000005, 1.975, -1.601178676151432], \"goal\": [6.199156633558866, 1.412560767221923]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.722298371279755, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.059397393596687685,
+      "true_goal_yaw_error_rad": 0.07032045513368868,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_04\", \"seed\": 1844584976, \"stage\": \"static\", \"options\": {\"start\": [5.525, 1.075, 1.041484485112563], \"goal\": [5.535683812411599, 1.4672912200563961]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.041484485112563, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.029599197826161522,
+      "true_goal_yaw_error_rad": 0.08326839366110761,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 102061816, \"stage\": \"static\", \"options\": {\"start\": [1.375, 0.925, 2.5819625254213454], \"goal\": [1.375, 0.925]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.6657240091740873, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.02827526152523643,
+      "true_goal_yaw_error_rad": 0.00815073168924485,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 2038615924, \"stage\": \"static\", \"options\": {\"start\": [2.825, 1.925, -2.820315385973796], \"goal\": [2.825, 1.925]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.820315385973796, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.006539362975735705,
+      "true_goal_yaw_error_rad": 0.08538300692009138,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 2055957518, \"stage\": \"static\", \"options\": {\"start\": [6.025, 2.325, 3.0433222147794377], \"goal\": [6.025, 2.325]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.552561472012938, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07127591743540468,
+      "true_goal_yaw_error_rad": 0.002106881898006563,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1267984604, \"stage\": \"static\", \"options\": {\"start\": [1.675, 2.875, -1.9070290343661902], \"goal\": [1.675, 2.875]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.9552421822358053, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.0525494553555131,
+      "true_goal_yaw_error_rad": 0.05520212272958247,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 2143905510, \"stage\": \"static\", \"options\": {\"start\": [1.3250000000000002, 2.5250000000000004, 2.794806300666753], \"goal\": [0.9993324194302441, 2.6851608797276563]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.7601504206721703, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.01780741177490603,
+      "true_goal_yaw_error_rad": 0.11526296324147722,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 780178546, \"stage\": \"static\", \"options\": {\"start\": [1.5250000000000001, 6.825, -3.072272353333652], \"goal\": [1.5250000000000001, 6.825]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 3.055001692078376, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.02808903602029933,
+      "true_goal_yaw_error_rad": 0.006211740182703984,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1505566079, \"stage\": \"static\", \"options\": {\"start\": [3.5250000000000004, 2.5250000000000004, -1.4680850127856782], \"goal\": [3.5250000000000004, 2.5250000000000004]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.4680850127856782, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05803388099689161,
+      "true_goal_yaw_error_rad": 0.09878265893985105,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1742647935, \"stage\": \"static\", \"options\": {\"start\": [1.375, 4.875, -0.4158615492906854], \"goal\": [1.375, 4.875]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.3234676960720275, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05053975485307526,
+      "true_goal_yaw_error_rad": 0.05242183290288871,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 432736876, \"stage\": \"static\", \"options\": {\"start\": [4.025, 5.325, 2.461291895335097], \"goal\": [4.025, 5.325]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.8646662311773667, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06865611440038973,
+      "true_goal_yaw_error_rad": 2.87720290565397,
+      "physical_goal_settled": false,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 929682437, \"stage\": \"static\", \"options\": {\"start\": [1.675, 6.025, 2.129170933454656], \"goal\": [1.6770358309684619, 6.306748530867336]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.5603801340221644, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07194209459455005,
+      "true_goal_yaw_error_rad": 0.06201711374274499,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 223118099, \"stage\": \"static\", \"options\": {\"start\": [8.175, 1.8250000000000002, -2.015218181771922], \"goal\": [8.32873359475363, 1.317925356925054]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.017734652650738, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05200634306465169,
+      "true_goal_yaw_error_rad": 0.13377618832247773,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 440779133, \"stage\": \"static\", \"options\": {\"start\": [2.7750000000000004, 4.625, 3.139518618487241], \"goal\": [2.417559457671184, 4.678549873517621]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.5651992328505315, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06225162848465472,
+      "true_goal_yaw_error_rad": 0.00023450878371011896,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1619965633, \"stage\": \"static\", \"options\": {\"start\": [2.475, 5.825, 2.7427316527796446], \"goal\": [2.0018422923543158, 6.058619522087972]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.9460401226451483, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.005207606272671215,
+      "true_goal_yaw_error_rad": 0.03994050088519163,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1005328513, \"stage\": \"static\", \"options\": {\"start\": [3.825, 2.7750000000000004, -0.19281738888267386], \"goal\": [3.825, 2.7750000000000004]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.614805933513678, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07156049975133955,
+      "true_goal_yaw_error_rad": 0.10698753755331047,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 161316951, \"stage\": \"static\", \"options\": {\"start\": [1.625, 2.6750000000000003, 0.9860881744751229], \"goal\": [1.5327442824934114, 3.2989106254913674]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.9860881744751229, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06315543899993178,
+      "true_goal_yaw_error_rad": 0.003578542862610945,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1459930499, \"stage\": \"static\", \"options\": {\"start\": [0.9750000000000001, 5.675000000000001, -0.3713935079399029], \"goal\": [1.4779722696866877, 5.76450438012729]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.3713935079399029, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04980957692963215,
+      "true_goal_yaw_error_rad": 0.027747656287532507,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 1784761747, \"stage\": \"static\", \"options\": {\"start\": [2.875, 5.775, 0.9965707812173861], \"goal\": [2.985239792355599, 6.280149974168981]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.9965707812173861, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.041255263246770826,
+      "true_goal_yaw_error_rad": 0.011026531145242657,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 889097697, \"stage\": \"static\", \"options\": {\"start\": [2.075, 0.925, 1.8281565867715797], \"goal\": [2.006144423685633, 1.4375619153686425]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.8486656906517158, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.058341571817857284,
+      "true_goal_yaw_error_rad": 0.11913874750517017,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 1816134274, \"stage\": \"static\", \"options\": {\"start\": [7.075, 6.375, 0.951036037408735], \"goal\": [7.235704970412294, 6.769765468707575]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.5424361927789696, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06592998119639744,
+      "true_goal_yaw_error_rad": 0.09113332967747523,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 983167468, \"stage\": \"static\", \"options\": {\"start\": [6.275, 4.925000000000001, -0.645491945044701], \"goal\": [6.721126905687851, 4.709246167312559]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.055546735045783, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.039489440439752985,
+      "true_goal_yaw_error_rad": 0.03721946845192026,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 1040413548, \"stage\": \"static\", \"options\": {\"start\": [8.425, 2.575, -2.24063253308814], \"goal\": [8.425, 2.575]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.24063253308814, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.0401432712016661,
+      "true_goal_yaw_error_rad": 0.10523756867988832,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 1568484719, \"stage\": \"static\", \"options\": {\"start\": [0.9750000000000001, 2.825, -0.775242145929647], \"goal\": [1.0791152755827762, 2.6541698081902725]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -3.004118297329011, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.032911675348397264,
+      "true_goal_yaw_error_rad": 0.03958835663694682,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 328337588, \"stage\": \"static\", \"options\": {\"start\": [8.375, 5.2250000000000005, -2.7825261565222625], \"goal\": [7.882153788913848, 5.03733086386466]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.6965368997561345, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.053682806570603446,
+      "true_goal_yaw_error_rad": 0.04103789494348575,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 902945286, \"stage\": \"static\", \"options\": {\"start\": [2.225, 1.5250000000000001, 1.0625580873643656], \"goal\": [2.5620684615188574, 1.977544894972889]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.0625580873643656, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.06903973190618812,
+      "true_goal_yaw_error_rad": 0.05885294006315567,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 725694855, \"stage\": \"static\", \"options\": {\"start\": [2.825, 1.5750000000000002, -0.03047589178696475], \"goal\": [3.253492327594211, 1.9010189109051923]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.829894706654656, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.050687137759023476,
+      "true_goal_yaw_error_rad": 0.044937929913841046,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 336503222, \"stage\": \"static\", \"options\": {\"start\": [3.1750000000000003, 5.775, -3.0015452673932392], \"goal\": [2.8891624307415134, 5.620146006560955]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.049704682869826655, \"pose_alignment_task\": false, \"docking_curriculum_level\": 2, \"docking_task\": \"approach\"}"
+    },
+    {
+      "verified_mission_success": true,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.04081520452189262,
+      "true_goal_yaw_error_rad": 0.018809094553918104,
+      "physical_goal_settled": true,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 271074686, \"stage\": \"static\", \"options\": {\"start\": [2.275, 4.275, 1.6314614755245378], \"goal\": [2.275, 4.275]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 0.9256051702680423, \"pose_alignment_task\": true, \"docking_curriculum_level\": 2, \"docking_task\": \"alignment\"}"
+    }
+  ],
+  "ppo_statistics": {
+    "train/learning_rate": 0.0001,
+    "train/entropy_loss": -0.27116408571600914,
+    "train/policy_gradient_loss": -0.0023984503504399513,
+    "train/value_loss": 0.00868143275147304,
+    "train/approx_kl": 0.0016933528240770102,
+    "train/clip_fraction": 0.011000000173225999,
+    "train/loss": -0.0032428819686174393,
+    "train/explained_variance": -1.016129732131958,
+    "train/n_updates": 200.0,
+    "train/clip_range": 0.2
+  },
+  "seconds": 552.2953575919964,
+  "cpu_seconds": 276.242146298,
+  "average_cpu_cores": 0.5001710452581273,
+  "peak_rss_mib": 2508.05078125,
+  "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+}

@@ -1,0 +1,567 @@
+[
+  {
+    "id": "motion_profile_015",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100015,
+    "start": [
+      8.325000000000001,
+      1.175,
+      1.6233780945997562
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.0960091377313955,
+    "odom_scale": 1.0,
+    "actor_pause_after_event_s": [
+      [
+        2.0,
+        4.0
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "position_regression",
+    "max_steps": 700
+  },
+  {
+    "id": "independent_dynamic_013",
+    "category": "dynamic_independent",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 88013,
+    "start": [
+      6.275,
+      6.025,
+      -0.6398121626944073
+    ],
+    "goal": [
+      2.725,
+      5.425000000000001
+    ],
+    "obstacle": "sudden_block",
+    "obstacle_speed_m_s": 0.08055267821291612,
+    "hold_s": 3.803329963556838,
+    "odom_scale": 1.0,
+    "pilot_category": "position_regression",
+    "max_steps": 700
+  },
+  {
+    "id": "motion_profile_002",
+    "category": "reversal",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100002,
+    "start": [
+      7.875,
+      6.525,
+      0.5829383550326908
+    ],
+    "goal": [
+      1.175,
+      6.075
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.15477787921727554,
+    "odom_scale": 1.0,
+    "reverse_after_event_s": 3.499490583194487,
+    "pilot_category": "position_regression",
+    "max_steps": 700
+  },
+  {
+    "id": "train_failure_w11_e7",
+    "category": "training_failure",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 1962350169,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09295138997376881,
+    "hold_s": 3.4079953972433437,
+    "pilot_category": "position_regression",
+    "max_steps": 700
+  },
+  {
+    "id": "goal_pose_00",
+    "category": "static",
+    "pilot_category": "alignment",
+    "seed": 114900,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      1.225,
+      1.975,
+      0.8469762891900294
+    ],
+    "goal": [
+      1.225,
+      1.975,
+      -0.7238200376048671
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 120
+  },
+  {
+    "id": "goal_pose_01",
+    "category": "static",
+    "pilot_category": "alignment",
+    "seed": 114901,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      7.525,
+      6.575,
+      -1.6463584930793371
+    ],
+    "goal": [
+      7.525,
+      6.575,
+      -0.07556216628444057
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 120
+  },
+  {
+    "id": "goal_pose_02",
+    "category": "static",
+    "pilot_category": "alignment",
+    "seed": 114902,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      1.125,
+      1.8250000000000002,
+      -0.38162245179361154
+    ],
+    "goal": [
+      1.125,
+      1.8250000000000002,
+      2.7599702017961816
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 120
+  },
+  {
+    "id": "goal_pose_03",
+    "category": "static",
+    "pilot_category": "alignment",
+    "seed": 114903,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      2.5250000000000004,
+      3.4250000000000003,
+      0.6808399317094409
+    ],
+    "goal": [
+      2.5250000000000004,
+      3.4250000000000003,
+      -0.8899563950854557
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 120
+  },
+  {
+    "id": "goal_pose_04",
+    "category": "static",
+    "pilot_category": "short_approach",
+    "seed": 114904,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      3.0250000000000004,
+      2.225,
+      0.037885781041474775
+    ],
+    "goal": [
+      3.7244976937438903,
+      2.251513703003908,
+      -1.5329105457534218
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 220
+  },
+  {
+    "id": "goal_pose_05",
+    "category": "static",
+    "pilot_category": "short_approach",
+    "seed": 114905,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      7.075,
+      2.825,
+      -1.8168374283238267
+    ],
+    "goal": [
+      6.9045036567758356,
+      2.146081008553165,
+      -0.2460411015289301
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 220
+  },
+  {
+    "id": "goal_pose_06",
+    "category": "static",
+    "pilot_category": "short_approach",
+    "seed": 114906,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      3.325,
+      6.325,
+      -2.288042740308566
+    ],
+    "goal": [
+      2.864881591119041,
+      5.797467015430453,
+      0.8535499132812272
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 220
+  },
+  {
+    "id": "goal_pose_07",
+    "category": "static",
+    "pilot_category": "short_approach",
+    "seed": 114907,
+    "scene": "assets/room_navigation_scripted",
+    "start": [
+      7.075,
+      2.1750000000000003,
+      3.082995677227567
+    ],
+    "goal": [
+      6.3762014181482085,
+      2.2159944142771297,
+      1.5121993504326703
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 220
+  },
+  {
+    "id": "docking_dev_00",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114980,
+    "scene": "assets/navigation_stage2_dataset/train_01",
+    "start": [
+      6.2250000000000005,
+      4.375,
+      2.3459911358508148
+    ],
+    "goal": [
+      6.2250000000000005,
+      4.375,
+      2.3459911358508148
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_01",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114981,
+    "scene": "assets/navigation_stage2_dataset/train_02",
+    "start": [
+      2.375,
+      6.175000000000001,
+      -0.48803546877191195
+    ],
+    "goal": [
+      2.375,
+      6.175000000000001,
+      -0.36803546877191184
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_02",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114982,
+    "scene": "assets/navigation_stage2_dataset/train_03",
+    "start": [
+      8.425,
+      5.425000000000001,
+      3.0317837825121092
+    ],
+    "goal": [
+      8.425,
+      5.425000000000001,
+      2.911783782512109
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_03",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114983,
+    "scene": "assets/navigation_stage2_dataset/train_04",
+    "start": [
+      1.3250000000000002,
+      1.3250000000000002,
+      -0.47462859092309495
+    ],
+    "goal": [
+      1.3250000000000002,
+      1.3250000000000002,
+      0.02537140907690505
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_04",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114984,
+    "scene": "assets/navigation_stage2_dataset/train_05",
+    "start": [
+      1.225,
+      2.075,
+      -1.3967417139555
+    ],
+    "goal": [
+      1.225,
+      2.075,
+      -1.8967417139555
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_05",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114985,
+    "scene": "assets/navigation_stage2_dataset/train_01",
+    "start": [
+      2.975,
+      1.125,
+      0.22770903885013993
+    ],
+    "goal": [
+      2.975,
+      1.125,
+      1.7985053656450365
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_06",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114986,
+    "scene": "assets/navigation_stage2_dataset/train_02",
+    "start": [
+      4.175,
+      6.075,
+      1.542526283936719
+    ],
+    "goal": [
+      4.175,
+      6.075,
+      -0.02827004285817747
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "extra_scan_dropout": 0.08
+  },
+  {
+    "id": "docking_dev_07",
+    "category": "static",
+    "pilot_category": "new_alignment",
+    "seed": 114987,
+    "scene": "assets/navigation_stage2_dataset/train_03",
+    "start": [
+      6.125,
+      6.375,
+      0.4514809528482804
+    ],
+    "goal": [
+      6.125,
+      6.375,
+      -2.6901117007415127
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "dropout_windows": [
+      [
+        1.0,
+        1.4
+      ]
+    ]
+  },
+  {
+    "id": "docking_dev_08",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114988,
+    "scene": "assets/navigation_stage2_dataset/train_04",
+    "start": [
+      4.125,
+      5.9750000000000005,
+      -1.7516520266478042
+    ],
+    "goal": [
+      4.069070160427294,
+      5.669127933342242,
+      -1.7516520266478042
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_09",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114989,
+    "scene": "assets/navigation_stage2_dataset/train_05",
+    "start": [
+      7.675000000000001,
+      1.675,
+      -0.7705546111282375
+    ],
+    "goal": [
+      8.100578501290968,
+      1.261871799879357,
+      -0.6505546111282374
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_10",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114990,
+    "scene": "assets/navigation_stage2_dataset/train_01",
+    "start": [
+      2.125,
+      1.625,
+      -1.4924318430017962
+    ],
+    "goal": [
+      2.1490097802676393,
+      1.3192414341778604,
+      -1.6124318430017963
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_11",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114991,
+    "scene": "assets/navigation_stage2_dataset/train_02",
+    "start": [
+      1.7750000000000001,
+      6.075,
+      -2.4756806786308934
+    ],
+    "goal": [
+      1.4459404850019102,
+      5.816483712099427,
+      -1.9756806786308934
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_12",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114992,
+    "scene": "assets/navigation_stage2_dataset/train_03",
+    "start": [
+      1.2750000000000001,
+      1.5750000000000002,
+      0.6008525291677365
+    ],
+    "goal": [
+      1.79328520277524,
+      1.9302270227947238,
+      0.10085252916773646
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_13",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114993,
+    "scene": "assets/navigation_stage2_dataset/train_04",
+    "start": [
+      4.4750000000000005,
+      3.225,
+      2.506792631374415
+    ],
+    "goal": [
+      3.9569649509398435,
+      3.6065288556886883,
+      -2.205596349010275
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150
+  },
+  {
+    "id": "docking_dev_14",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114994,
+    "scene": "assets/navigation_stage2_dataset/train_05",
+    "start": [
+      6.375,
+      1.725,
+      1.2489636124096437
+    ],
+    "goal": [
+      6.515085580463275,
+      2.14514167545406,
+      -0.32183271438525285
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "extra_scan_dropout": 0.08
+  },
+  {
+    "id": "docking_dev_15",
+    "category": "static",
+    "pilot_category": "new_approach",
+    "seed": 114995,
+    "scene": "assets/navigation_stage2_dataset/train_01",
+    "start": [
+      6.7250000000000005,
+      4.375,
+      -3.0019242132224
+    ],
+    "goal": [
+      6.247185477482221,
+      4.307827034632814,
+      0.13966844036739312
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "dropout_windows": [
+      [
+        1.0,
+        1.4
+      ]
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "native_portable_parity": {
+    "all_matching": true,
+    "frames": 1644
+  },
+  "position_only_navigation_branch_parity": {
+    "all_matching": true,
+    "frames": 780
+  },
+  "heading_counterfactuals": {
+    "previous_3k": {
+      "inputs": 325,
+      "mean_total_variation": 0.007882745936512947,
+      "changed_choices": 5,
+      "opposite_rotation_sign_choices": 0,
+      "aligned_mean_stop_probability": 0.03437775745987892,
+      "aligned_stop_choices": 10
+    },
+    "candidate": {
+      "inputs": 325,
+      "mean_total_variation": 0.9857848286628723,
+      "changed_choices": 321,
+      "opposite_rotation_sign_choices": 319,
+      "aligned_mean_stop_probability": 0.751622200012207,
+      "aligned_stop_choices": 320
+    }
+  },
+  "scope": "trace parity and task-input sensitivity; not new physical successes"
+}

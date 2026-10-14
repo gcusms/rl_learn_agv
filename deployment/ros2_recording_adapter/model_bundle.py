@@ -19,6 +19,7 @@ def inspect_bundle(config_path):
         'native': 'experiments.quality_sensor_runtime.QualitySensorNavigationRuntime',
         'time-consistent': 'experiments.time_consistent_tracking.TimeConsistentFreshRuntime',
         'odom-goal-pose': 'experiments.goal_pose_navigation.GoalPoseRuntime',
+        'learned-terminal-goal-pose': 'experiments.docking_navigation.DockingRuntime',
     }
     runtime = runtimes.get(sensor_core)
     if runtime is None or config['required_runtime'] != runtime:
@@ -34,10 +35,11 @@ def inspect_bundle(config_path):
     if len(manifest['action_contract']['choices']) != config['action_choices']:
         raise ValueError('Action contract mismatch')
     quality = json.loads((bundle/'quality_observation.json').read_text())
-    expected_quality=manifest.get('quality_prefix_contract') if sensor_core=='odom-goal-pose' else manifest['observation_contract']
+    directional_core=sensor_core in ('odom-goal-pose','learned-terminal-goal-pose')
+    expected_quality=manifest.get('quality_prefix_contract') if directional_core else manifest['observation_contract']
     if quality != expected_quality:
         raise ValueError('Quality feature contract mismatch')
-    if sensor_core=='odom-goal-pose':
+    if directional_core:
         goal_contract=json.loads((bundle/'goal_pose_observation.json').read_text())
         if (manifest['observation_contract']!=goal_contract
             or goal_contract.get('schema')!='quality_goal_pose_v1' or goal_contract.get('dimensions')!=303):
@@ -47,8 +49,19 @@ def inspect_bundle(config_path):
         if (bundle/'localization_contract.json').exists() and (
             'localization_contract.json' not in manifest['files'] or
             json.loads((bundle/'localization_contract.json').read_text()).get('schema') not in
-                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3')):
+                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4')):
             raise ValueError('Localization contract mismatch')
+    if sensor_core=='learned-terminal-goal-pose':
+        if 'docking_contract.json' not in manifest['files']:
+            raise ValueError('Missing terminal policy contract hash')
+        docking=json.loads((bundle/'docking_contract.json').read_text())
+        version_radius={'learned_terminal_actor_v1':.8,'learned_terminal_actor_v2':.10}
+        expected_radius=version_radius.get(docking.get('schema'))
+        if (docking!=manifest.get('docking_contract') or expected_radius is None
+            or docking.get('activation_distance_m')!=expected_radius
+            or docking.get('observation_dimensions')!=303 or docking.get('actions')!=12
+            or docking.get('teacher_at_runtime') is not False):
+            raise ValueError('Terminal policy contract mismatch')
     if not manifest.get('requires_quality_feature_generator'):
         raise ValueError('Quality feature generator required')
     for required in ('actor.pt','localizer.pt','router.pt','hardware.json','quality_observation.json'):

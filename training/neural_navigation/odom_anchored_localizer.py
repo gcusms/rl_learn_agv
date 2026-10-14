@@ -35,9 +35,18 @@ def contract():
             bootstrap_translation_rate_m_s=.12,bootstrap_yaw_rate_rad_s=.12))
 
 
+def turn_response_contract():
+    """Opt-in v4: retain static support, expose a faster bounded yaw response.
+
+    The rate ablation reduced command-odometry turn transients. This is a
+    provisional simulator-tested response, not measured hardware calibration.
+    """
+    return dict(contract(),schema='odom_anchored_static_support_v4',maximum_yaw_rate_rad_s=.15)
+
+
 class OdometryAnchoredLocalizer(LearnedLocalizer):
     def __init__(self,static_map,lidar,checkpoint,config):
-        if config not in (contract(),refinement_contract(),legacy_contract()):raise ValueError('Unsupported localization contract')
+        if config not in (turn_response_contract(),contract(),refinement_contract(),legacy_contract()):raise ValueError('Unsupported localization contract')
         super().__init__(static_map,lidar,checkpoint);self.config=config
         self.timestamp=None;self.correction_reason='reset';self.static_support_fraction=0.
         self.bootstrap_origin=None

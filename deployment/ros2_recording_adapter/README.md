@@ -11,6 +11,8 @@
 
 需要同时使用本分支的 training 源码，并将 `model_source` 指向对应目录。新的 model.json 需要包括 bundle 的绝对路径、分支及 commit、`sensor_core: odom-goal-pose`、`required_runtime: experiments.goal_pose_navigation.GoalPoseRuntime`、`observation_dimensions: 303`、`action_choices: 12`、`route_mode: shortcut` 和 manifest 的 SHA256。不要用新 actor 覆盖旧 bundle 中的 actor，也不要复制旧 300 维合同。
 
+2026-10-14 终点停靠候选采用独立合同：`sensor_core: learned-terminal-goal-pose`、`required_runtime: experiments.docking_navigation.DockingRuntime`，仍为 303 维、12 动作。必须一起加载 `docking_contract.json` 和对应源码。v2 合同在估计目标距离 0.10 m 内启用学习到的停靠演员；外部速度仍由学习模型选择，没有 Nav2 控制器。`portable_v4_localization` 另包含 opt-in 的定位 v4 合同。候选的 `deployment_approved` 为 false；先离线/影子回放，不凭 actor 文件替换发布模型。见 `reports/docking_training_20261014/REPORT.md`。
+
 新的 bundle 默认 `deployment_approved=false`，这里只做 shadow 验证。先手动设置可信初始位姿，建议 `auto_initial_pose=false`；目标方向是停靠要求，初始位姿方向才是当前姿态。旧 bundle 仍按旧的位置目标处理。
 
 发布历史指上游实际发出的速度命令，不代表真实车速。策略观测中的速度仍由所选里程计/反馈提供，需要保留录制并分别检查。动作历史修复也没有消除全部 ROS 推理间隙：必须再测端到端耗时和控制保持周期。

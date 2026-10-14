@@ -1,0 +1,32 @@
+{
+  "schema": "odom_anchored_static_support_v4",
+  "calibrated": false,
+  "endpoint_gate_m": 0.15,
+  "minimum_hits": 12,
+  "minimum_support_fraction": 0.35,
+  "maximum_translation_rate_m_s": 0.04,
+  "maximum_yaw_rate_rad_s": 0.15,
+  "maximum_proposal_translation_m": 0.12,
+  "maximum_proposal_yaw_rad": 0.12,
+  "weak_axis_ratio": 0.04,
+  "minimum_cost_improvement_m": 0.001,
+  "verified_prior_cost_m": 0.02,
+  "verified_prior_support": 0.8,
+  "process_std_per_sqrt_s": [
+    0.01,
+    0.01,
+    0.008
+  ],
+  "static_refinement": {
+    "huber_distance_m": 0.06,
+    "prior_precision": 0.2,
+    "minimum_improvement_m": 0.0002,
+    "verified_prior_cost_m": 0.012,
+    "angular_endpoint_gate_rad": 0.04,
+    "maximum_endpoint_gate_m": 0.35,
+    "yaw_length_scale_m": 3.0,
+    "bootstrap_seconds": 2.0,
+    "bootstrap_translation_rate_m_s": 0.12,
+    "bootstrap_yaw_rate_rad_s": 0.12
+  }
+}

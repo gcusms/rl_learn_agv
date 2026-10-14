@@ -1,0 +1,3115 @@
+{
+  "completed": true,
+  "scope": "28 fixed development tasks on training maps; 72 fresh runs and 12 reused parent baseline runs; not final acceptance",
+  "deployment_approved": false,
+  "baseline_checkpoint_sha256": "d1a6b8b0d903e631f359038d161eb8f0ea971893490ee515c124c918fe727969",
+  "cases_sha256": "d9c6c7b7e674105a449d6fe39da0c84c21e7f064a71e94769c59f48c43f0cdd7",
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "position_regression",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.400000000000226,
+      "travel_m": 1.5658187409959405,
+      "frames": 52,
+      "final_xy_error_m": 3.1336759043737525,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.02970550401233255,
+      "localization_yaw_p95_rad": 0.01341715995480501,
+      "stop_choices": 3,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 49,
+        "scan_unavailable": 3
+      },
+      "runtime_ms": {
+        "p95": 122.3589982429985,
+        "p99": 132.51506707281808,
+        "maximum": 142.08531600888819
+      },
+      "variant": "trained",
+      "trace_sha256": "57a557d0f7189523ee1ceb0c8d0bccce2f37e1666523ebe4960664fa84d8b793",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "position_regression",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 9.800000000000132,
+      "travel_m": 1.432672563039874,
+      "frames": 49,
+      "final_xy_error_m": 3.199156287992136,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.008515726142222752,
+      "localization_yaw_p95_rad": 0.0030462140462354623,
+      "stop_choices": 7,
+      "only_stop_frames": 4,
+      "stop_reasons": {
+        "None": 39,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 3
+      },
+      "runtime_ms": {
+        "p95": 87.43131319060922,
+        "p99": 90.44794609770177,
+        "maximum": 91.58835699781775
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "f111387820150eea1c34b983b8831eceba25f94ef7d4c206e02ebfc447684f77",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "independent_dynamic_013",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 55.60000000000999,
+      "travel_m": 8.885191778763236,
+      "frames": 279,
+      "final_xy_error_m": 0.07736298811125578,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.04012732863651947,
+      "localization_yaw_p95_rad": 0.051414020360320764,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 278,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 122.92833498795517,
+        "p99": 132.02529790694825,
+        "maximum": 139.83557699248195
+      },
+      "variant": "trained",
+      "trace_sha256": "78099f74257a6097fec4bd1e2e187f7abd9db2271ca094fd820acb4363fe6b4d",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "independent_dynamic_013",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 56.4000000000104,
+      "travel_m": 8.959151521552512,
+      "frames": 283,
+      "final_xy_error_m": 0.09520407259570153,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.006278036276894506,
+      "localization_yaw_p95_rad": 0.0026753994813751613,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 282,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 102.52045397646724,
+        "p99": 128.39624132262549,
+        "maximum": 144.12416995037347
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "fbf2bb3c4cdde851b362f4154d6d9bc6b95c71ad01c29df0c279b3185fa75f10",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 63.00000000001378,
+      "travel_m": 9.16260176045929,
+      "frames": 316,
+      "final_xy_error_m": 0.11353993303497055,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.06023211905665661,
+      "localization_yaw_p95_rad": 0.040027995084314316,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 315,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 106.19238349318039,
+        "p99": 128.8915672514122,
+        "maximum": 132.67664198065177
+      },
+      "variant": "trained",
+      "trace_sha256": "9a24d2fb8c4379e9266906fa6d56273571a4def0c696506c30c3e1a0c3c0083d",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 52.00000000000815,
+      "travel_m": 8.575851932912306,
+      "frames": 261,
+      "final_xy_error_m": 0.11243129643357394,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005690599049820525,
+      "localization_yaw_p95_rad": 0.002858968964538633,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 258,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 119.71773504046723,
+        "p99": 133.40900159673762,
+        "maximum": 143.26564798830077
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "809ec299022703baef20311034278f47e3db8208ff152366727197f0bcbbffd3",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 26.399999999999032,
+      "travel_m": 4.565666530626417,
+      "frames": 133,
+      "final_xy_error_m": 0.1254186086597928,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0632439126093011,
+      "localization_yaw_p95_rad": 0.02015992147672296,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 130,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 122.99486421979964,
+        "p99": 148.85782783385378,
+        "maximum": 166.68757796287537
+      },
+      "variant": "trained",
+      "trace_sha256": "7e88fce6b815460326c9d630fe14cd89757ccce80bdba76bccc7ed204d0e8f7d",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 27.399999999998833,
+      "travel_m": 4.583991028026549,
+      "frames": 138,
+      "final_xy_error_m": 0.09484851381651875,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0058888543880403,
+      "localization_yaw_p95_rad": 0.002528316746540149,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 137,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 116.48005403403658,
+        "p99": 122.06723527866414,
+        "maximum": 123.75077797332779
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "5ef246d94e95ee9c815de41a508f2b42cbd53ce75f5fcbb9a4f464e1e8a55375",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_00",
+      "category": "alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 0.0,
+      "frames": 120,
+      "final_xy_error_m": 0.023765199142006883,
+      "final_yaw_error_rad": 0.15661987641190223,
+      "localization_xy_p95_m": 0.01944755557022081,
+      "localization_yaw_p95_rad": 0.004949965984052796,
+      "stop_choices": 105,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 116,
+        "learned_route_incomplete": 4
+      },
+      "runtime_ms": {
+        "p95": 58.93471729941666,
+        "p99": 71.77046558004805,
+        "maximum": 85.59292898280546
+      },
+      "variant": "trained",
+      "trace_sha256": "95b573db37d352222ab8bea9d9eb47e0718b8470f5b55dfc43bb58f22c77a923",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_00",
+      "category": "alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 0.0,
+      "frames": 120,
+      "final_xy_error_m": 0.023765199142006883,
+      "final_yaw_error_rad": 0.15661987641190223,
+      "localization_xy_p95_m": 0.005999013836190612,
+      "localization_yaw_p95_rad": 0.002089268692069046,
+      "stop_choices": 105,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 120
+      },
+      "runtime_ms": {
+        "p95": 59.69721014844254,
+        "p99": 74.71030166256242,
+        "maximum": 81.98774204356596
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "a008587118193442680036773dfe47924b3ad008d8c8da7509e188b1a3074993",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_01",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03874060550053774,
+      "final_yaw_error_rad": 0.006077322573422972,
+      "localization_xy_p95_m": 0.025165050304379627,
+      "localization_yaw_p95_rad": 0.017271256356946374,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 19,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 78.07371398666874,
+        "p99": 85.86583399446681,
+        "maximum": 87.81386399641633
+      },
+      "variant": "trained",
+      "trace_sha256": "9560b31d6470578c74405331358e1905d4522f44021bb9887fa65f61b36d29b2",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_01",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03874060550053774,
+      "final_yaw_error_rad": 0.006077322573422972,
+      "localization_xy_p95_m": 0.01480008307762346,
+      "localization_yaw_p95_rad": 0.002847666299946816,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 79.58827400580049,
+        "p99": 82.17788278125226,
+        "maximum": 82.82528497511521
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "439dfb8edaee5984a39449121c8a17d2e0bd83014b053889041a96b26689e3f5",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_02",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 6.799999999999877,
+      "travel_m": 0.0,
+      "frames": 35,
+      "final_xy_error_m": 0.038288511803911816,
+      "final_yaw_error_rad": 0.10223153360837278,
+      "localization_xy_p95_m": 0.024838531743534942,
+      "localization_yaw_p95_rad": 0.010602394859303298,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 32,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 60.67665316513739,
+        "p99": 78.62794478773131,
+        "maximum": 87.18835702165961
+      },
+      "variant": "trained",
+      "trace_sha256": "9e5e1646415cba5ec377c52f4b9af737e4ae23f34f6fe0d04aa12e49fb10f87f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_02",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 6.799999999999877,
+      "travel_m": 0.0,
+      "frames": 35,
+      "final_xy_error_m": 0.038288511803911816,
+      "final_yaw_error_rad": 0.10223153360837278,
+      "localization_xy_p95_m": 0.020177507690393042,
+      "localization_yaw_p95_rad": 0.014648884636521161,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 71.81041592266408,
+        "p99": 81.38212133664638,
+        "maximum": 81.86204900266603
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "3a2d57536033a819794c996d9277d3360341905315485b8674099d6e58f8e472",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_03",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.0690756671995717,
+      "final_yaw_error_rad": 0.0877525558060146,
+      "localization_xy_p95_m": 0.029025236578620366,
+      "localization_yaw_p95_rad": 0.008620802310406628,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 71.25486899167299,
+        "p99": 84.73802497610451,
+        "maximum": 88.10881397221237
+      },
+      "variant": "trained",
+      "trace_sha256": "274e20d71be0a8907116b0f861df6efa4f24012aedb547427cfee6745937ed74",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_03",
+      "category": "alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 0.0,
+      "frames": 120,
+      "final_xy_error_m": 0.0690756671995717,
+      "final_yaw_error_rad": 0.18819640371163704,
+      "localization_xy_p95_m": 0.007392682182240311,
+      "localization_yaw_p95_rad": 0.003076226473342978,
+      "stop_choices": 106,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 120
+      },
+      "runtime_ms": {
+        "p95": 57.62903612339869,
+        "p99": 78.41421404678842,
+        "maximum": 81.35927398689091
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "03b6e2469c44a545033de7ad32c7c78e38a0867de86c3f7b5721bf16e0a45b10",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_04",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.199999999999869,
+      "travel_m": 0.6277504829576328,
+      "frames": 37,
+      "final_xy_error_m": 0.08535483038448993,
+      "final_yaw_error_rad": 0.10437700542272221,
+      "localization_xy_p95_m": 0.03313917656375721,
+      "localization_yaw_p95_rad": 0.029190036933871774,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.95764442300424,
+        "p99": 84.11364903440699,
+        "maximum": 84.41764599410817
+      },
+      "variant": "trained",
+      "trace_sha256": "5f3a9f0be85d275ee2440288a74e5ded0d6154b4dc97f0917c0ba8576623faba",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_04",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.199999999999869,
+      "travel_m": 0.6669847134156122,
+      "frames": 37,
+      "final_xy_error_m": 0.04727842119706138,
+      "final_yaw_error_rad": 0.10437700542272221,
+      "localization_xy_p95_m": 0.007370493767870723,
+      "localization_yaw_p95_rad": 0.00486321345555794,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 72.32962377602233,
+        "p99": 77.89614571491256,
+        "maximum": 79.35499999439344
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "2f94a9c02a825caae114ef32cd96da0987c86dbc69fc636b71d1c19a9f92f4f3",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_05",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.59999999999986,
+      "travel_m": 0.6444504410033058,
+      "frames": 39,
+      "final_xy_error_m": 0.04964670187509317,
+      "final_yaw_error_rad": 0.00184356150242726,
+      "localization_xy_p95_m": 0.026255137914000446,
+      "localization_yaw_p95_rad": 0.011245710511946606,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 36,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 83.28090973664075,
+        "p99": 86.06324784341267,
+        "maximum": 87.38996501779184
+      },
+      "variant": "trained",
+      "trace_sha256": "500dc2b04f682c1455c29c2fb90aaede74275d492c50e5e778ba0f0d633815aa",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_05",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.59999999999986,
+      "travel_m": 0.6444504410033058,
+      "frames": 39,
+      "final_xy_error_m": 0.04964670187509317,
+      "final_yaw_error_rad": 0.00184356150242726,
+      "localization_xy_p95_m": 0.0076826981618132355,
+      "localization_yaw_p95_rad": 0.0025547727909461587,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 36,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 79.61095547652803,
+        "p99": 81.92823507473803,
+        "maximum": 83.21205899119377
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "13177d917dafbe6e6bbe3f01a4ec9915c4a203026d3abca82749be1ea2790c8e",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_06",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.200000000000195,
+      "travel_m": 0.6724903689300608,
+      "frames": 52,
+      "final_xy_error_m": 0.057708079506040656,
+      "final_yaw_error_rad": 0.05210377418309742,
+      "localization_xy_p95_m": 0.026372028685459556,
+      "localization_yaw_p95_rad": 0.018998977835572185,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 48,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 77.79690121533346,
+        "p99": 84.33284209808335,
+        "maximum": 85.93357400968671
+      },
+      "variant": "trained",
+      "trace_sha256": "ea4b91c9bbe5a1ecb70624f836ace0fcc4ed8ebdd8b210a59ba65e3d7d6a370a",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_06",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.400000000000226,
+      "travel_m": 0.6728503170202834,
+      "frames": 53,
+      "final_xy_error_m": 0.05715462503966427,
+      "final_yaw_error_rad": 0.05210377418309742,
+      "localization_xy_p95_m": 0.008722548909547548,
+      "localization_yaw_p95_rad": 0.0031315220447123856,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 50,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 74.24538662889971,
+        "p99": 82.15293335961177,
+        "maximum": 83.52071902481839
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "18414e4dd89f958843b54766bd36167ac7ea19cfa6fc1ce71258ad7d0c9a30ac",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_07",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.199999999999869,
+      "travel_m": 0.6300388702009518,
+      "frames": 37,
+      "final_xy_error_m": 0.08347221449890445,
+      "final_yaw_error_rad": 0.0975770762117043,
+      "localization_xy_p95_m": 0.03403833860217028,
+      "localization_yaw_p95_rad": 0.010329259339439376,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 86.69396319892257,
+        "p99": 88.31608078908175,
+        "maximum": 89.00964597705752
+      },
+      "variant": "trained",
+      "trace_sha256": "1c93f6991326f6a91172f5b9aef877630e795a5249f19c1d3b645034badf0e76",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "goal_pose_07",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.199999999999869,
+      "travel_m": 0.6691686746604238,
+      "frames": 37,
+      "final_xy_error_m": 0.04115934615710037,
+      "final_yaw_error_rad": 0.10537219727742775,
+      "localization_xy_p95_m": 0.007225724239599458,
+      "localization_yaw_p95_rad": 0.0026075073000291576,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 81.4814238110557,
+        "p99": 83.02076090592891,
+        "maximum": 83.0787579761818
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "9e96fe1bf4c4db2bbcdb232bc2d290f83da759f6af3a4bd0365f69eb0da87a65",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_00",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.02225634417079561,
+      "final_yaw_error_rad": 0.018141234928465977,
+      "localization_xy_p95_m": 0.04265073369981287,
+      "localization_yaw_p95_rad": 0.01704269652152064,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 99.58982017124072,
+        "p99": 100.87072801077738,
+        "maximum": 101.19095497066155
+      },
+      "variant": "trained",
+      "trace_sha256": "58afc0e0deb68fec0ec362a71d3b37ace6ebbcebc43a037b4fbc69812c57302f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_00",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.02225634417079561,
+      "final_yaw_error_rad": 0.018141234928465977,
+      "localization_xy_p95_m": 0.020954422874537672,
+      "localization_yaw_p95_rad": 0.016448812618792982,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 104.54807508504018,
+        "p99": 106.68593660695478,
+        "maximum": 107.22040198743343
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "6a4fe138458b7b49c84de2a3bb6ecb6bdbc6090d7356e7cdd5d9d6e59166a8b5",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_01",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.03691185507867453,
+      "final_yaw_error_rad": 0.11605521371410399,
+      "localization_xy_p95_m": 0.022715391413146116,
+      "localization_yaw_p95_rad": 0.003354514503612771,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 98.41527186799794,
+        "p99": 99.62342074606568,
+        "maximum": 99.92545796558261
+      },
+      "variant": "trained",
+      "trace_sha256": "3652760e36aa18f04821ec468a0e7611ad24e6c0574adee97f8da3114ae61b60",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_01",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.03691185507867453,
+      "final_yaw_error_rad": 0.11605521371410399,
+      "localization_xy_p95_m": 0.03451718567073748,
+      "localization_yaw_p95_rad": 0.0037018309575657326,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 100.45619003358297,
+        "p99": 102.02814763761126,
+        "maximum": 102.42113703861833
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "dcdccef0aacf3e46f69aa14bbc07afd5b42da62d8bd4fa9534a018eb49133ee7",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_02",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.0,
+      "frames": 150,
+      "final_xy_error_m": 0.019070192067748026,
+      "final_yaw_error_rad": 0.16699455897925164,
+      "localization_xy_p95_m": 0.0200707545634407,
+      "localization_yaw_p95_rad": 0.006530063910005165,
+      "stop_choices": 150,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 150
+      },
+      "runtime_ms": {
+        "p95": 55.745044379727915,
+        "p99": 86.54492039931934,
+        "maximum": 98.3129550004378
+      },
+      "variant": "trained",
+      "trace_sha256": "b197eb0d5e734ee7fb75b8194ebcaaf3a97b83e8716104d70b5f5566b282dd15",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_02",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.0,
+      "frames": 150,
+      "final_xy_error_m": 0.019070192067748026,
+      "final_yaw_error_rad": 0.16699455897925164,
+      "localization_xy_p95_m": 0.013058614159026077,
+      "localization_yaw_p95_rad": 0.002253411697852714,
+      "stop_choices": 150,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 150
+      },
+      "runtime_ms": {
+        "p95": 56.43389004399069,
+        "p99": 82.7564841735875,
+        "maximum": 84.7352150012739
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "6c15056b18e4a03454fa41336c746dd1d11045fe4862783650e820cfa29cb404",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_03",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.9999999999999793,
+      "travel_m": 0.0,
+      "frames": 11,
+      "final_xy_error_m": 0.012443528052681216,
+      "final_yaw_error_rad": 0.0007600937044585088,
+      "localization_xy_p95_m": 0.04709333338926443,
+      "localization_yaw_p95_rad": 0.009345372056974277,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 8,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 96.51312048663385,
+        "p99": 103.06900167488493,
+        "maximum": 104.7079719719477
+      },
+      "variant": "trained",
+      "trace_sha256": "d3c994772659c91a2ec2df15fd847d2bb165db9feb5a28ed5ccf050d0dcd541f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_03",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.7999999999999836,
+      "travel_m": 0.0,
+      "frames": 10,
+      "final_xy_error_m": 0.012443528052681216,
+      "final_yaw_error_rad": 0.0983730864495107,
+      "localization_xy_p95_m": 0.01233637218537784,
+      "localization_yaw_p95_rad": 0.006910872382134138,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 9,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 92.72020842763594,
+        "p99": 97.9170129110571,
+        "maximum": 99.21621403191239
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "aeab23440a93c1fb5c89fe84edb3de1e42b6a10881d92a06149f7a6ad194fbee",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_04",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.5999999999999879,
+      "travel_m": 0.0,
+      "frames": 9,
+      "final_xy_error_m": 0.032444710876062266,
+      "final_yaw_error_rad": 0.11437377530153636,
+      "localization_xy_p95_m": 0.015967367311059476,
+      "localization_yaw_p95_rad": 0.009110566926176665,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 8,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 94.45119663141668,
+        "p99": 96.67804495431483,
+        "maximum": 97.23475703503937
+      },
+      "variant": "trained",
+      "trace_sha256": "b192bf8f43c665e1e1bc0d94fe39937912b010097d6e83a21c7fe1f73b18a096",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_04",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.5999999999999879,
+      "travel_m": 0.0,
+      "frames": 9,
+      "final_xy_error_m": 0.032444710876062266,
+      "final_yaw_error_rad": 0.11437377530153636,
+      "localization_xy_p95_m": 0.023884379961566025,
+      "localization_yaw_p95_rad": 0.005191369982151438,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 8,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 93.42245660955086,
+        "p99": 99.92999131092802,
+        "maximum": 101.5568749862723
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "4c8863a6d0dbed38dd353091a9b31fbb6917eb1fcf5bfa260ca9ba887609620f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_05",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.02734275016385526,
+      "final_yaw_error_rad": 0.05721498741995035,
+      "localization_xy_p95_m": 0.05777616238450447,
+      "localization_yaw_p95_rad": 0.004306794060968677,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 90.84474097471684,
+        "p99": 95.1990962261334,
+        "maximum": 96.28768503898755
+      },
+      "variant": "trained",
+      "trace_sha256": "b4ef4e5f6056c4318fde76a9d0cdb83a871e13bba9404636be83e72a1dedd2e4",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_05",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.02734275016385526,
+      "final_yaw_error_rad": 0.05721498741995035,
+      "localization_xy_p95_m": 0.01654000963657391,
+      "localization_yaw_p95_rad": 0.002799019908525935,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.5408729724586,
+        "p99": 96.28680576570333,
+        "maximum": 99.7232889640145
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "b951f1b5d7c7f23d3d7b8ee272877cfa4392a11d018fcd31ce44d42fca543a7f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_06",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03640158306998015,
+      "final_yaw_error_rad": 0.001511886296718945,
+      "localization_xy_p95_m": 0.03376894207312654,
+      "localization_yaw_p95_rad": 0.015072990026991029,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 95.4642309807241,
+        "p99": 98.48414217121899,
+        "maximum": 99.23911996884272
+      },
+      "variant": "trained",
+      "trace_sha256": "6e9d0ca9740a4fd5567d877e47a4214e42ba16253823fcb564ea20dfa46b4c8a",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_06",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03640158306998015,
+      "final_yaw_error_rad": 0.001511886296718945,
+      "localization_xy_p95_m": 0.012711824719982685,
+      "localization_yaw_p95_rad": 0.005340522042209805,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 81.72174304490909,
+        "p99": 91.93641579477118,
+        "maximum": 94.49008398223668
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "972da7c60e882fcfaa3e5e0fa43c5c0f495720e8a29c25bf6b31045e10dc835c",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_07",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.0,
+      "frames": 38,
+      "final_xy_error_m": 0.012217145199561723,
+      "final_yaw_error_rad": 0.0960247005967858,
+      "localization_xy_p95_m": 0.0312980240350232,
+      "localization_yaw_p95_rad": 0.01448825109546392,
+      "stop_choices": 9,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 30,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 80.60554093390236,
+        "p99": 91.60324210242834,
+        "maximum": 92.4829529831186
+      },
+      "variant": "trained",
+      "trace_sha256": "59b90c64c2f8f066d2d386e74c37ffea01bcda2cbbb4c05b4115f0d3fcc9765d",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_07",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.799999999999856,
+      "travel_m": 0.0,
+      "frames": 40,
+      "final_xy_error_m": 0.012217145199561723,
+      "final_yaw_error_rad": 0.06658845396413682,
+      "localization_xy_p95_m": 0.011669590871087045,
+      "localization_yaw_p95_rad": 0.003033185086223788,
+      "stop_choices": 9,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 36,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 63.77752344124014,
+        "p99": 89.48251646768766,
+        "maximum": 95.62371700303629
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "ce9fed914d1e3b5a788172487719deb68bee60fe5b8564f00aa9eeb1a4931a2b",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_08",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.28554742167128333,
+      "frames": 150,
+      "final_xy_error_m": 0.05086871478665969,
+      "final_yaw_error_rad": 0.1601164790114744,
+      "localization_xy_p95_m": 0.016950407818260838,
+      "localization_yaw_p95_rad": 0.0033469994346482625,
+      "stop_choices": 143,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 147,
+        "learned_route_incomplete": 3
+      },
+      "runtime_ms": {
+        "p95": 57.15361735492477,
+        "p99": 82.69574952195391,
+        "maximum": 94.11734802415594
+      },
+      "variant": "trained",
+      "trace_sha256": "c1aeca3fa5f61d5a7a46da43f8af6cf8e163117b1a4be2f7c210d836f6936188",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_08",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.285569018890135,
+      "frames": 150,
+      "final_xy_error_m": 0.0512371014758717,
+      "final_yaw_error_rad": 0.1601164790114744,
+      "localization_xy_p95_m": 0.01794067992234244,
+      "localization_yaw_p95_rad": 0.001995587014575406,
+      "stop_choices": 142,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 148,
+        "learned_route_incomplete": 2
+      },
+      "runtime_ms": {
+        "p95": 56.62286512961145,
+        "p99": 75.52673727856009,
+        "maximum": 95.04673996707425
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "81bfaf2d52a2fd21e286626ade003b37d35ec7c191ce08dfb07c43cbc92e682c",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_09",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.5999999999999455,
+      "travel_m": 0.5316224186229512,
+      "frames": 19,
+      "final_xy_error_m": 0.07163391376290017,
+      "final_yaw_error_rad": 0.03629883561504155,
+      "localization_xy_p95_m": 0.01872608900795919,
+      "localization_yaw_p95_rad": 0.005549285192476327,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 90.07484522298908,
+        "p99": 92.72578584146686,
+        "maximum": 93.3885209960863
+      },
+      "variant": "trained",
+      "trace_sha256": "66e81bd1aa233e43424addf3671eb278aedc6adec1a531cef4f6b5c40a5fedae",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_09",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.5999999999999455,
+      "travel_m": 0.5316224186229512,
+      "frames": 19,
+      "final_xy_error_m": 0.07163391376290017,
+      "final_yaw_error_rad": 0.03629883561504155,
+      "localization_xy_p95_m": 0.009062515255766939,
+      "localization_yaw_p95_rad": 0.0037701619543308394,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 83.46759006381035,
+        "p99": 84.09971481189132,
+        "maximum": 84.25774599891156
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "69976960d894735d342775dd4520d8782ed1956048cc61a4a59045ff0a41ca8f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_10",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 2.9999999999999583,
+      "travel_m": 0.275841782010905,
+      "frames": 16,
+      "final_xy_error_m": 0.05881937959090604,
+      "final_yaw_error_rad": 0.12207614817588786,
+      "localization_xy_p95_m": 0.03509917889091098,
+      "localization_yaw_p95_rad": 0.006158563364205394,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 13,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 89.92265998676885,
+        "p99": 92.17297680734191,
+        "maximum": 92.73555601248518
+      },
+      "variant": "trained",
+      "trace_sha256": "a8e63fcc190056c02b15ceba7d6b9b52e18331a8bc9a959bc5652c96a88bf724",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_10",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.5999999999999455,
+      "travel_m": 0.31365276119099006,
+      "frames": 19,
+      "final_xy_error_m": 0.03462069953177716,
+      "final_yaw_error_rad": 0.05743558823537365,
+      "localization_xy_p95_m": 0.02211460555975422,
+      "localization_yaw_p95_rad": 0.0017094972270037976,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.18132323818278,
+        "p99": 93.36858385475352,
+        "maximum": 96.1653990088962
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "94735b0c7a3eaa485629877bff975586cbf585fbcf539080d9d99625fa8efab4",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_11",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.799999999999941,
+      "travel_m": 0.42172753527405893,
+      "frames": 20,
+      "final_xy_error_m": 0.03749599684650426,
+      "final_yaw_error_rad": 0.052809126494084424,
+      "localization_xy_p95_m": 0.022554189377939467,
+      "localization_yaw_p95_rad": 0.008032976146168247,
+      "stop_choices": 8,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 89.67057480185758,
+        "p99": 90.93606295937207,
+        "maximum": 91.25243499875069
+      },
+      "variant": "trained",
+      "trace_sha256": "e924b1b04be60a212b69682c778721761eb67223ae024e780c05fb4ed3182a1d",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_11",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.3999999999999497,
+      "travel_m": 0.42206824637525103,
+      "frames": 18,
+      "final_xy_error_m": 0.04431305350656938,
+      "final_yaw_error_rad": 0.11620970693464994,
+      "localization_xy_p95_m": 0.02606550018780337,
+      "localization_yaw_p95_rad": 0.003716792658858705,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 14,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 84.72096431651151,
+        "p99": 92.14304802124387,
+        "maximum": 93.99856894742697
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "0f1240c4e17cbe2e3213949ab91c639d16b75ae8799cfda5e5144ed25444477f",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_12",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 5.399999999999907,
+      "travel_m": 0.6191024426516892,
+      "frames": 28,
+      "final_xy_error_m": 0.03668191430778302,
+      "final_yaw_error_rad": 0.12720173653331912,
+      "localization_xy_p95_m": 0.03715326832345879,
+      "localization_yaw_p95_rad": 0.013277128990468711,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 26,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 86.12806702440137,
+        "p99": 91.61737224494573,
+        "maximum": 92.31941303005442
+      },
+      "variant": "trained",
+      "trace_sha256": "9b65be638d275febddcd242b6b5af04f75d27263173db155b67426f4edb0795a",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_12",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 5.799999999999899,
+      "travel_m": 0.6184764500682628,
+      "frames": 30,
+      "final_xy_error_m": 0.03908500539818495,
+      "final_yaw_error_rad": 0.12720173653331912,
+      "localization_xy_p95_m": 0.013580015066208949,
+      "localization_yaw_p95_rad": 0.0034382544180800523,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 28,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.75923905312084,
+        "p99": 93.18857019301505,
+        "maximum": 97.32218901626766
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "1aea079fa8e10cced6d8af11e3f245415079e4da5c1229414b0a7adc7474b1be",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_13",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.199999999999869,
+      "travel_m": 0.6232558020075197,
+      "frames": 37,
+      "final_xy_error_m": 0.05507393560728255,
+      "final_yaw_error_rad": 0.02359925696554832,
+      "localization_xy_p95_m": 0.021038428739398377,
+      "localization_yaw_p95_rad": 0.012414667596814866,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 33,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.13621681788932,
+        "p99": 91.4804841694422,
+        "maximum": 92.59850700618699
+      },
+      "variant": "trained",
+      "trace_sha256": "72d8deee134a0d26dcfb606642fff1c52213df254e3244c35f74da437e871171",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_13",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.6225946244097893,
+      "frames": 38,
+      "final_xy_error_m": 0.051056806691166384,
+      "final_yaw_error_rad": 0.03812302181525862,
+      "localization_xy_p95_m": 0.011117742173368726,
+      "localization_yaw_p95_rad": 0.004438887373927103,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 81.59379166318104,
+        "p99": 91.0347583232215,
+        "maximum": 96.21339599834755
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "87ffdfa430aef79484846b23cfc90437d2d721f5f4102b021ced3d92a69c6623",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_14",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 5.799999999999899,
+      "travel_m": 0.4034019321481871,
+      "frames": 30,
+      "final_xy_error_m": 0.0498124105599315,
+      "final_yaw_error_rad": 0.051163686915408846,
+      "localization_xy_p95_m": 0.01686373127338218,
+      "localization_yaw_p95_rad": 0.006119574314643849,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 27,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 88.01262917404529,
+        "p99": 91.69767566083465,
+        "maximum": 93.11888099182397
+      },
+      "variant": "trained",
+      "trace_sha256": "a76f252ec3fe22aa11594cc6f6fc85e59c09ff449422b97561ad5903ca468c93",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_14",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 5.999999999999894,
+      "travel_m": 0.4035555746764836,
+      "frames": 31,
+      "final_xy_error_m": 0.046038908435542966,
+      "final_yaw_error_rad": 0.08118554867209671,
+      "localization_xy_p95_m": 0.012095054708225788,
+      "localization_yaw_p95_rad": 0.004638341216567365,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 28,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 84.2456569953356,
+        "p99": 85.1907097036019,
+        "maximum": 85.55533300386742
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "a7d3352064be5958d02a734b526ad736198a979b3ecf103def4400b218146ed4",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_15",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.4222236375054938,
+      "frames": 150,
+      "final_xy_error_m": 0.057917305200197035,
+      "final_yaw_error_rad": 0.1695982260038562,
+      "localization_xy_p95_m": 0.036009767403250625,
+      "localization_yaw_p95_rad": 0.01790825170717904,
+      "stop_choices": 109,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 146,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 1
+      },
+      "runtime_ms": {
+        "p95": 61.7136926099192,
+        "p99": 91.33561979688236,
+        "maximum": 100.41537001961842
+      },
+      "variant": "trained",
+      "trace_sha256": "dc19cb95d51653c8a414c9c222015e3fe9039d3350ef2ace103750beeffab8ae",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_15",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 9.800000000000132,
+      "travel_m": 0.42234465163596346,
+      "frames": 50,
+      "final_xy_error_m": 0.05196934512282373,
+      "final_yaw_error_rad": 0.1283645176027548,
+      "localization_xy_p95_m": 0.018926541175021003,
+      "localization_yaw_p95_rad": 0.003741515179926402,
+      "stop_choices": 8,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 45,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 81.17497982748318,
+        "p99": 99.74475992261432,
+        "maximum": 99.79632799513638
+      },
+      "variant": "trained_v4_localization",
+      "trace_sha256": "c4f4697502cb49ee447ae0f9b8cb0eab368bd6884ce2ac80528dddd3517b4096",
+      "provenance": {
+        "source": "training/runs/docking_full_evaluation_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "position_regression",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.400000000000226,
+      "travel_m": 1.5658187409959405,
+      "frames": 52,
+      "final_xy_error_m": 3.1336759043737525,
+      "final_yaw_error_rad": null,
+      "best_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.02970550401233255,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 49,
+        "scan_unavailable": 3
+      },
+      "runtime_ms": {
+        "p95": 115.8035569009371,
+        "p99": 117.7890326443594,
+        "maximum": 118.33694501547143
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "57a557d0f7189523ee1ceb0c8d0bccce2f37e1666523ebe4960664fa84d8b793",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "independent_dynamic_013",
+      "category": "position_regression",
+      "safe_success": true,
+      "claimed_arrival": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 55.60000000000999,
+      "travel_m": 8.885191778763236,
+      "frames": 279,
+      "final_xy_error_m": 0.07736298811125578,
+      "final_yaw_error_rad": null,
+      "best_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.04012732863651947,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 278,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 115.08301532594486,
+        "p99": 123.76157267135565,
+        "maximum": 129.0532299899496
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "78099f74257a6097fec4bd1e2e187f7abd9db2271ca094fd820acb4363fe6b4d",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "position_regression",
+      "safe_success": true,
+      "claimed_arrival": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 63.00000000001378,
+      "travel_m": 9.16260176045929,
+      "frames": 316,
+      "final_xy_error_m": 0.11353993303497055,
+      "final_yaw_error_rad": null,
+      "best_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.06023211905665661,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 315,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 99.84251076821238,
+        "p99": 122.8027713455959,
+        "maximum": 133.89448396628723
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "9a24d2fb8c4379e9266906fa6d56273571a4def0c696506c30c3e1a0c3c0083d",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "position_regression",
+      "safe_success": true,
+      "claimed_arrival": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 26.399999999999032,
+      "travel_m": 4.565666530626417,
+      "frames": 133,
+      "final_xy_error_m": 0.1254186086597928,
+      "final_yaw_error_rad": null,
+      "best_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0632439126093011,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 130,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 118.91241080593313,
+        "p99": 126.58507676096633,
+        "maximum": 127.4269160348922
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "7e88fce6b815460326c9d630fe14cd89757ccce80bdba76bccc7ed204d0e8f7d",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_00",
+      "category": "alignment",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 1.2315683629845908,
+      "frames": 120,
+      "final_xy_error_m": 0.06931069182347531,
+      "final_yaw_error_rad": 0.10429111768771016,
+      "best_yaw_error_rad": 0.010075076247263226,
+      "localization_xy_p95_m": 0.0221049066297355,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 104,
+        "learned_route_incomplete": 16
+      },
+      "runtime_ms": {
+        "p95": 62.04813003714662,
+        "p99": 87.30115366110113,
+        "maximum": 87.87409402430058
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "4942aadbf84e2df5629e8d3e5d482921dc204a88e90007c86c87603581fbc52a",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_01",
+      "category": "alignment",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 1.0011864800367416,
+      "frames": 120,
+      "final_xy_error_m": 0.0734858390746313,
+      "final_yaw_error_rad": 0.0142023463140033,
+      "best_yaw_error_rad": 0.0012835810845022166,
+      "localization_xy_p95_m": 0.026821367895423807,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 102,
+        "learned_route_incomplete": 18
+      },
+      "runtime_ms": {
+        "p95": 60.20323597476816,
+        "p99": 85.50694065401332,
+        "maximum": 87.19111798563972
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "3b3e4ef45d0c7d872cee71be3fee31fe1147e2be7c392ede92b61ccb6d2314d2",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_02",
+      "category": "alignment",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 1.1783905187011354,
+      "frames": 120,
+      "final_xy_error_m": 0.037179250809224434,
+      "final_yaw_error_rad": 2.938615804959692,
+      "best_yaw_error_rad": 0.03070944531060471,
+      "localization_xy_p95_m": 0.02303489053189749,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 100,
+        "learned_route_incomplete": 20
+      },
+      "runtime_ms": {
+        "p95": 61.90280489681754,
+        "p99": 81.86066922731698,
+        "maximum": 84.26762599265203
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "44dcce5dc90c2784f74d54cb181782768e08681582cc74a4a3dba2669d11fec5",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_03",
+      "category": "alignment",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 23.99999999999951,
+      "travel_m": 1.14731593236576,
+      "frames": 120,
+      "final_xy_error_m": 0.09066449896549066,
+      "final_yaw_error_rad": 0.8548757945262881,
+      "best_yaw_error_rad": 0.006546347933784169,
+      "localization_xy_p95_m": 0.02903602683074705,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 106,
+        "learned_route_incomplete": 14
+      },
+      "runtime_ms": {
+        "p95": 58.708529992145486,
+        "p99": 83.70044604758732,
+        "maximum": 84.13311204640195
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "d7ae73c688523c83a125be1ab0f59a82d3f013fa50f2f323b0fc6b6943912fe1",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_04",
+      "category": "short_approach",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 44.00000000000406,
+      "travel_m": 2.5096249486748357,
+      "frames": 220,
+      "final_xy_error_m": 0.04506083727092532,
+      "final_yaw_error_rad": 3.1363971282546537,
+      "best_yaw_error_rad": 0.006191065654711281,
+      "localization_xy_p95_m": 0.03183331657070941,
+      "wait_with_motion_frames": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 189,
+        "learned_route_incomplete": 31
+      },
+      "runtime_ms": {
+        "p95": 59.88999769033397,
+        "p99": 85.45560937433038,
+        "maximum": 86.86475100694224
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "54f255eeea3ff25ed808a5b230f5f904b6ec386fbe4707db162450e5d091d152",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_05",
+      "category": "short_approach",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 44.00000000000406,
+      "travel_m": 2.467368236961816,
+      "frames": 220,
+      "final_xy_error_m": 0.04547649204292116,
+      "final_yaw_error_rad": 0.9324892382412706,
+      "best_yaw_error_rad": 0.0037588269279345,
+      "localization_xy_p95_m": 0.0260536964061964,
+      "wait_with_motion_frames": 2,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 195,
+        "learned_route_incomplete": 25
+      },
+      "runtime_ms": {
+        "p95": 54.43154533277265,
+        "p99": 80.900060251588,
+        "maximum": 82.94549002312124
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "4223fc2f40ca8694cf49b6f9f962ced8c9256eda4bd23d3734574655c94bd7e7",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_06",
+      "category": "short_approach",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 44.00000000000406,
+      "travel_m": 2.1707388963876872,
+      "frames": 220,
+      "final_xy_error_m": 0.1265863295167114,
+      "final_yaw_error_rad": 2.0725555413709813,
+      "best_yaw_error_rad": 0.015252167706476527,
+      "localization_xy_p95_m": 0.026204408409920332,
+      "wait_with_motion_frames": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 193,
+        "learned_route_incomplete": 27
+      },
+      "runtime_ms": {
+        "p95": 54.84486226923764,
+        "p99": 79.76185711857397,
+        "maximum": 81.97302499320358
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "f236f9726ab8ddb7a4d66f93bb69c703e4c9e8519581c1ba6f06b16fcfc4dc2b",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "goal_pose_07",
+      "category": "short_approach",
+      "safe_success": false,
+      "claimed_arrival": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 44.00000000000406,
+      "travel_m": 2.2851920803215227,
+      "frames": 220,
+      "final_xy_error_m": 0.12872883368372662,
+      "final_yaw_error_rad": 1.5371096082193194,
+      "best_yaw_error_rad": 0.027270531515370955,
+      "localization_xy_p95_m": 0.03178605496074374,
+      "wait_with_motion_frames": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 190,
+        "learned_route_incomplete": 30
+      },
+      "runtime_ms": {
+        "p95": 77.07257178553844,
+        "p99": 83.68722153012641,
+        "maximum": 84.85814201412722
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "1fe56c7f24b3f8c36b1b78217e3ba7f80ee4ce8f8b49c4cd94d958660847d295",
+      "provenance": {
+        "source": "training/runs/goal_pose_paired_evaluation_20261014",
+        "historical_cached": true
+      }
+    },
+    {
+      "case_id": "docking_dev_00",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.6061585030530245,
+      "frames": 150,
+      "final_xy_error_m": 0.0667323884731401,
+      "final_yaw_error_rad": 2.275562099527219,
+      "localization_xy_p95_m": 0.03838657798952094,
+      "localization_yaw_p95_rad": 0.01817694024773253,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 127,
+        "learned_route_incomplete": 23
+      },
+      "runtime_ms": {
+        "p95": 64.53366022615226,
+        "p99": 98.41520302114071,
+        "maximum": 138.08714202605188
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "157f3d7c18c42e61574d395cc7217cc135a1d94e9644042a04ee0918cde083c9",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_01",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.382176990269974,
+      "frames": 150,
+      "final_xy_error_m": 0.08192666515286974,
+      "final_yaw_error_rad": 1.9489596018378528,
+      "localization_xy_p95_m": 0.025967533863077055,
+      "localization_yaw_p95_rad": 0.007285224164564318,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 126,
+        "learned_route_incomplete": 24
+      },
+      "runtime_ms": {
+        "p95": 62.18149562191683,
+        "p99": 85.34037939214609,
+        "maximum": 116.51387496385723
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "f2c4f292881342812d17be3e13587880d21a6c79b26729d31016920382cc4c47",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_02",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.7555395997501533,
+      "frames": 150,
+      "final_xy_error_m": 0.13708906076555946,
+      "final_yaw_error_rad": 2.229233124075744,
+      "localization_xy_p95_m": 0.027433887575730533,
+      "localization_yaw_p95_rad": 0.013209781638931956,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 134,
+        "learned_route_incomplete": 16
+      },
+      "runtime_ms": {
+        "p95": 76.990949222818,
+        "p99": 83.88968130399003,
+        "maximum": 88.00518995849416
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "617f28ac71c936ddde5a1101669a538ad4c2b5b6d06c248e2a241d58a2623369",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_03",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 2.1000818071851173,
+      "frames": 150,
+      "final_xy_error_m": 0.25353561635437954,
+      "final_yaw_error_rad": 1.3686334243549272,
+      "localization_xy_p95_m": 0.04912490236425892,
+      "localization_yaw_p95_rad": 0.014339069731122126,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 130,
+        "learned_route_incomplete": 20
+      },
+      "runtime_ms": {
+        "p95": 79.06775744631886,
+        "p99": 84.97575773566493,
+        "maximum": 90.0720710051246
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "aa159ef926befb47cb5f6aa9b372e3460e7e1d87cdc72bf34aad236b265618a2",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_04",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.9136645720199191,
+      "frames": 150,
+      "final_xy_error_m": 0.06736540528131843,
+      "final_yaw_error_rad": 0.930658981964374,
+      "localization_xy_p95_m": 0.04213059305385941,
+      "localization_yaw_p95_rad": 0.01826287774355557,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 135,
+        "learned_route_incomplete": 15
+      },
+      "runtime_ms": {
+        "p95": 75.6824228243203,
+        "p99": 84.6750807930948,
+        "maximum": 89.13738996488973
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "7e8af6839bfc35efe4156083d02c122f622de7f00674c8da66dc1db9c0e6dbc5",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_05",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.9611499608951847,
+      "frames": 150,
+      "final_xy_error_m": 0.1169211052070886,
+      "final_yaw_error_rad": 2.9261867542155393,
+      "localization_xy_p95_m": 0.04902317705880268,
+      "localization_yaw_p95_rad": 0.008261810691036505,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 136,
+        "learned_route_incomplete": 14
+      },
+      "runtime_ms": {
+        "p95": 68.03977072122501,
+        "p99": 90.54260457050985,
+        "maximum": 95.71065905038267
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "8c5b54f93d8cfda9220b8f073fa98b83d68d7826cc26e52e2021f7e80ebf3355",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_06",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.3578998705624357,
+      "frames": 150,
+      "final_xy_error_m": 0.1339363828112744,
+      "final_yaw_error_rad": 1.8786291246993478,
+      "localization_xy_p95_m": 0.033063844706618516,
+      "localization_yaw_p95_rad": 0.015288742562848866,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 127,
+        "learned_route_incomplete": 23
+      },
+      "runtime_ms": {
+        "p95": 64.76974549295844,
+        "p99": 82.63656053808516,
+        "maximum": 87.15339400805533
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "e24fcd93ee62a34894940e0af82da427a11b179632daabeec5f61c79ec64d075",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_07",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.159365020016977,
+      "frames": 150,
+      "final_xy_error_m": 0.09140542495855827,
+      "final_yaw_error_rad": 0.7148318963614528,
+      "localization_xy_p95_m": 0.03105319952398901,
+      "localization_yaw_p95_rad": 0.01591359047225822,
+      "stop_choices": 3,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 129,
+        "learned_route_incomplete": 18,
+        "scan_unavailable": 3
+      },
+      "runtime_ms": {
+        "p95": 62.62942169269081,
+        "p99": 87.69881841843016,
+        "maximum": 93.89655705308542
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "a3e0035e8b94a8f6fb7f88ce58ca2a7748618971f830679da1213fa579924116",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_08",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.4674236248502592,
+      "frames": 150,
+      "final_xy_error_m": 0.07469904594128188,
+      "final_yaw_error_rad": 0.2709002432410905,
+      "localization_xy_p95_m": 0.02868354476136928,
+      "localization_yaw_p95_rad": 0.011792473999630635,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 131,
+        "learned_route_incomplete": 19
+      },
+      "runtime_ms": {
+        "p95": 78.93421106564344,
+        "p99": 88.38257906492797,
+        "maximum": 97.76497498387471
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "012471239aec3235449a184cba61a9a1441541e3bc90dabaa96788f35d71d2d2",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_09",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.7606383872957214,
+      "frames": 150,
+      "final_xy_error_m": 0.044424595129316034,
+      "final_yaw_error_rad": 1.176366021560078,
+      "localization_xy_p95_m": 0.029063603401425348,
+      "localization_yaw_p95_rad": 0.012800415218474633,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 124,
+        "learned_route_incomplete": 26
+      },
+      "runtime_ms": {
+        "p95": 84.29211380716875,
+        "p99": 94.79232719459105,
+        "maximum": 96.22686100192368
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "2abc9273bd600e4ee22eec9bfae65b857ea5f17e1bf49fae94a5e29dcac42218",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_10",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.32750626422458,
+      "frames": 150,
+      "final_xy_error_m": 0.236480093654188,
+      "final_yaw_error_rad": 1.0852310366132158,
+      "localization_xy_p95_m": 0.038461089119500226,
+      "localization_yaw_p95_rad": 0.018661606610758597,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 134,
+        "learned_route_incomplete": 16
+      },
+      "runtime_ms": {
+        "p95": 74.51851799560228,
+        "p99": 88.71876280754799,
+        "maximum": 101.18104901630431
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "ef3673de6d4616a9694542b76e9e5f9d8f9d12f4d8d3a673e22a4665087100cb",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_11",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.910653749966798,
+      "frames": 150,
+      "final_xy_error_m": 0.06831480385952864,
+      "final_yaw_error_rad": 0.7534517718378062,
+      "localization_xy_p95_m": 0.031876896825155265,
+      "localization_yaw_p95_rad": 0.010290950323052515,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 128,
+        "learned_route_incomplete": 22
+      },
+      "runtime_ms": {
+        "p95": 80.59010762663092,
+        "p99": 88.15113932127133,
+        "maximum": 116.26968195196241
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "1d4511e46d849d966347e428b4886e99124ac51c478ae0dde64ccafd15ada8fe",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_12",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 2.248561024575028,
+      "frames": 150,
+      "final_xy_error_m": 0.15507050269990394,
+      "final_yaw_error_rad": 2.352559242105741,
+      "localization_xy_p95_m": 0.03643135908637983,
+      "localization_yaw_p95_rad": 0.0139401327466472,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 136,
+        "learned_route_incomplete": 14
+      },
+      "runtime_ms": {
+        "p95": 64.25692772027102,
+        "p99": 81.08484924421641,
+        "maximum": 87.06246496876702
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "321dcf8f711e3ebb19f17de6a671c436911ee13f7652315ad540100430087865",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_13",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 1.5806825902537454,
+      "frames": 150,
+      "final_xy_error_m": 0.05239961395835701,
+      "final_yaw_error_rad": 3.0901482516943286,
+      "localization_xy_p95_m": 0.037936029614854615,
+      "localization_yaw_p95_rad": 0.010499037025101413,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 129,
+        "learned_route_incomplete": 21
+      },
+      "runtime_ms": {
+        "p95": 73.34737060882605,
+        "p99": 88.59976736071982,
+        "maximum": 92.08478598156944
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "c7f3a5af8315201d2a138e89682bdb0b4c4bc74267bdea0978d68e69187bbb71",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_14",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.9812291140695969,
+      "frames": 150,
+      "final_xy_error_m": 0.05915678252512089,
+      "final_yaw_error_rad": 0.21286247243509848,
+      "localization_xy_p95_m": 0.02276741783558435,
+      "localization_yaw_p95_rad": 0.005435781254755944,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 125,
+        "learned_route_incomplete": 25
+      },
+      "runtime_ms": {
+        "p95": 62.18177376722451,
+        "p99": 83.06528065993915,
+        "maximum": 90.11341398581862
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "fe9b9437651df467f17b191cc2659c14a7e9c839ae847acbd7f2cf3634971956",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    },
+    {
+      "case_id": "docking_dev_15",
+      "category": "new_approach",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 2.4002430194300453,
+      "frames": 150,
+      "final_xy_error_m": 1.9164861705224363,
+      "final_yaw_error_rad": 2.8661462179324966,
+      "localization_xy_p95_m": 0.031626209447494,
+      "localization_yaw_p95_rad": 0.013195685921901878,
+      "stop_choices": 5,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 144,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 3
+      },
+      "runtime_ms": {
+        "p95": 80.63872423081193,
+        "p99": 93.22940860642115,
+        "maximum": 109.2037899652496
+      },
+      "variant": "previous_3k",
+      "trace_sha256": "b41683aa34c3ab709dc01a6aeafa4e419faa025f0182058e0218607e5df59005",
+      "provenance": {
+        "source": "training/runs/docking_parent_new_tasks_20261014",
+        "historical_cached": false
+      }
+    }
+  ],
+  "groups": {
+    "alignment": {
+      "previous_3k": {
+        "tasks": 4,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 4,
+        "false_arrivals": 0
+      },
+      "trained": {
+        "tasks": 4,
+        "success": 3,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      },
+      "trained_v4_localization": {
+        "tasks": 4,
+        "success": 2,
+        "collisions": 0,
+        "timeouts": 2,
+        "false_arrivals": 0
+      }
+    },
+    "new_alignment": {
+      "previous_3k": {
+        "tasks": 8,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 8,
+        "false_arrivals": 0
+      },
+      "trained": {
+        "tasks": 8,
+        "success": 7,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      },
+      "trained_v4_localization": {
+        "tasks": 8,
+        "success": 7,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      }
+    },
+    "new_approach": {
+      "previous_3k": {
+        "tasks": 8,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 8,
+        "false_arrivals": 0
+      },
+      "trained": {
+        "tasks": 8,
+        "success": 6,
+        "collisions": 0,
+        "timeouts": 2,
+        "false_arrivals": 0
+      },
+      "trained_v4_localization": {
+        "tasks": 8,
+        "success": 7,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      }
+    },
+    "position_regression": {
+      "previous_3k": {
+        "tasks": 4,
+        "success": 3,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "trained": {
+        "tasks": 4,
+        "success": 3,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "trained_v4_localization": {
+        "tasks": 4,
+        "success": 3,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "short_approach": {
+      "previous_3k": {
+        "tasks": 4,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 4,
+        "false_arrivals": 0
+      },
+      "trained": {
+        "tasks": 4,
+        "success": 4,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "trained_v4_localization": {
+        "tasks": 4,
+        "success": 4,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  },
+  "baseline_provenance": {
+    "fresh_tasks": 16,
+    "cached_tasks": 12,
+    "case_parameters_and_trace_hashes_verified": true
+  }
+}
