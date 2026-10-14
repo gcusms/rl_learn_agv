@@ -1,0 +1,49 @@
+{
+  "verified": true,
+  "recorded_frames": 9924,
+  "checkpoint_and_export_parity": true,
+  "selected_executed_nonzero_parity": true,
+  "package_hashes_verified": true,
+  "historical_runtime_files_verified": 229,
+  "historical_summary": {
+    "tasks": 48,
+    "safe_success": 46,
+    "collisions": 1,
+    "timeouts": 1
+  },
+  "full48_rerun": false,
+  "deployment_approved": false,
+  "release_date": "2026-10-14",
+  "new_closed_loop_smoke": {
+    "summary": {
+      "completed_cases": 1,
+      "requested_cases": 1,
+      "safe_success": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "cases": [
+        {
+          "case_id": "independent_dynamic_014",
+          "safe_success": true,
+          "arrived": true,
+          "protocol_valid": true,
+          "false_arrival": false,
+          "collisions": 0,
+          "physical_guards": 0,
+          "timeout": false,
+          "seconds": 16.40000000000102,
+          "travel_m": 2.9582502780856936,
+          "localization_error_p95_m": 0.023827526985870064,
+          "frames": 83,
+          "voluntary_wait_frames": 0,
+          "only_stop_frames": 0,
+          "emergency_stop_counts": {}
+        }
+      ],
+      "deployment_approved": false
+    },
+    "matched_historical_key_metrics": true
+  },
+  "verification_scope": "All 9924 recorded actor inputs checked; one new native MuJoCo case rerun. Historical 48-case success rate not newly rerun.",
+  "scripts_compile_and_shell_syntax": true
+}

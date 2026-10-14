@@ -97,7 +97,14 @@ class AnchoredMaskedPPO(MaskablePPO):
                 logs['approx_kl'].append(approx)
                 if (self.target_kl is not None and approx>1.5*self.target_kl) or reference.detach().item()>self.reference_kl_budget:
                     stopped=True;break
-                if not self.constrained_optimizer_step(loss,batch.observations,batch.action_masks):
+                weights={k:v.detach().clone() for k,v in self.policy.state_dict().items()}
+                optimizer=copy.deepcopy(self.policy.optimizer.state_dict())
+                self.policy.optimizer.zero_grad();loss.backward()
+                torch.nn.utils.clip_grad_norm_(self.policy.parameters(),self.max_grad_norm)
+                self.policy.optimizer.step()
+                with torch.no_grad():post,_=self.reference_loss(batch.observations,batch.action_masks)
+                if post.item()>self.reference_kl_budget:
+                    self.policy.load_state_dict(weights);self.policy.optimizer.load_state_dict(optimizer)
                     rollbacks+=1;stopped=True;break
                 accepted+=1
             if stopped:break
@@ -112,16 +119,3 @@ class AnchoredMaskedPPO(MaskablePPO):
             cache_states=0 if self.reference_cache is None else len(self.reference_cache[0]),
             accepted_optimizer_steps=accepted,rolled_back_optimizer_steps=rollbacks,
             update_stopped=stopped,reference_kl_budget=self.reference_kl_budget)
-
-    def constrained_optimizer_step(self,loss,observations,masks):
-        """Default behavior retains the original whole-update rollback."""
-        weights={k:v.detach().clone() for k,v in self.policy.state_dict().items()}
-        optimizer=copy.deepcopy(self.policy.optimizer.state_dict())
-        self.policy.optimizer.zero_grad();loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.policy.parameters(),self.max_grad_norm)
-        self.policy.optimizer.step()
-        with torch.no_grad():post,_=self.reference_loss(observations,masks)
-        if not torch.isfinite(post) or post.item()>self.reference_kl_budget:
-            self.policy.load_state_dict(weights);self.policy.optimizer.load_state_dict(optimizer)
-            return False
-        return True

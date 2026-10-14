@@ -18,14 +18,11 @@ class QualityPolicyInput:
 
 
 class QualitySensorNavigationRuntime(SensorNavigationRuntime):
-    sensor_core_variants=('native',)
     def __init__(self,bundle,*args,**kwargs):
         bundle=Path(bundle)
         if json.loads((bundle/'quality_observation.json').read_text())!=contract():
             raise ValueError('Quality observation contract mismatch')
         manifest=json.loads((bundle/'manifest.json').read_text())
-        if manifest.get('sensor_core','native') not in self.sensor_core_variants:
-            raise ValueError('Bundle requires a different sensor core runtime')
         if manifest['observation_contract']!=contract() or not manifest['requires_quality_feature_generator']:
             raise ValueError('Quality bundle manifest required')
         for name,expected in manifest['files'].items():

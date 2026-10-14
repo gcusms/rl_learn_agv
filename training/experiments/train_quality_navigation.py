@@ -26,20 +26,20 @@ from neural_navigation.masked_actions import ACTIONS,masks_from_observation,acti
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def make_environment(components,templates,cases,seed,monitor=False,reward_scale=1.,scheduled_recovery=False,core_factory=None):
+def make_environment(components,templates,cases,seed,monitor=False,reward_scale=1.,scheduled_recovery=False):
     def create():
         torch.set_num_threads(1)
         curriculum=ScheduledRecoveryCurriculum if scheduled_recovery else FocusedMaskedCurriculum
         base=curriculum(components,stage='robust',route_mode='shortcut',
             motion_profiles=True,footprint_clearance_cost=1.,failure_templates=templates,
-            recorded_cases=cases,replay_probability=.25,replay_seed=seed,core_factory=core_factory)
+            recorded_cases=cases,replay_probability=.25,replay_seed=seed)
         wrapped=QualityMaskedWrapper(base,reward_scale=reward_scale)
         return Monitor(wrapped,str(components/'worker_0.csv'),info_keywords=(
             'verified_mission_success','collision_events','safety_termination','training_case_json')) if monitor else wrapped
     return create
 
 
-def export(policy,components,output,sensor_core='native'):
+def export(policy,components,output):
     output.mkdir();model=MaskablePPO.load(policy,device='cpu')
     if model.observation_space.shape!=(TOTAL_DIM,) or model.action_space.n!=12:
         raise ValueError('Quality actor dimensions required')
@@ -58,20 +58,14 @@ def export(policy,components,output,sensor_core='native'):
         comparison_inputs=256,exact_action_parity=True,deployment_approved=False,
         requires_quality_feature_generator=True,
         files={p.name:digest(p) for p in output.iterdir() if p.is_file()})
-    manifest['sensor_core']=sensor_core
-    if sensor_core=='time-consistent':
-        from experiments.time_consistent_tracking import sensor_core_contract
-        manifest['sensor_core_parameters']=sensor_core_contract()
-        manifest['required_runtime']='experiments.time_consistent_tracking.TimeConsistentFreshRuntime'
-    elif sensor_core!='native':raise ValueError('Unknown sensor core export')
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2))
 
 
-def evaluate(policy,components,templates,task,output,core_factory=None):
+def evaluate(policy,components,templates,task,output):
     model=MaskablePPO.load(policy,device='cpu');actor=torch.jit.load(str(output.parent/'portable/actor.pt'))
     # Use the corresponding export, never the final actor for initial results.
     if policy.name=='policy_initial.zip':actor=torch.jit.load(str(output.parent/'initial_portable/actor.pt'))
-    env=make_environment(components,templates,(),0,core_factory=core_factory)();rows=[]
+    env=make_environment(components,templates,(),0)();rows=[]
     try:
         if isinstance(task,int):obs,_=env.reset(seed=task);case=json.loads(env.env.training_case_json)
         else:
@@ -108,13 +102,7 @@ def main():
     p.add_argument('--steps',type=int,default=2000);p.add_argument('--seed',type=int,default=92401)
     p.add_argument('--resume-quality',action='store_true')
     p.add_argument('--scheduled-recovery',action='store_true',help='Alternate recorded training and general episodes')
-    p.add_argument('--sensor-core',choices=('native','time-consistent'),default='native',
-        help='Use the same explicitly selected sensor core for training and both evaluations')
     a=p.parse_args()
-    core_factory=None
-    if a.sensor_core=='time-consistent':
-        from experiments.time_consistent_tracking import TimeConsistentCore
-        core_factory=TimeConsistentCore
     if a.output.exists() or a.steps<=0 or a.steps%250:p.error('Fresh output and positive multiple of250 steps required')
     pool=json.loads(a.failure_pool.read_text())
     if pool.get('kind')!='training':p.error('Training-only templates required')
@@ -147,31 +135,31 @@ def main():
         evaluation_seeds=list(range(938000,938008)),evaluation_kind='fresh development seeds plus one reused training failure',
         reward_unchanged=reward_scale==1.,native_reward_unchanged=True,training_reward_scale=reward_scale,
         resume_quality=a.resume_quality,guard_unchanged=True,num_envs=1,reference_strength=2.,reference_kl_budget=.02,
-        scheduled_recovery=a.scheduled_recovery,sensor_core=a.sensor_core,
+        scheduled_recovery=a.scheduled_recovery,
         localizer_router_frozen=True,deployment_approved=False)
     (components/'config.json').write_text(json.dumps(config,indent=2));status=dict(status='running',phase='initializing',started_unix=time.time())
     def save():(a.output/'status.json').write_text(json.dumps(status,indent=2))
     save();torch.set_num_threads(1);env=None
     try:
-        env=SubprocVecEnv([make_environment(components,pool['templates'],[case],a.seed,True,reward_scale,a.scheduled_recovery,core_factory)],start_method='spawn');env.seed(a.seed)
+        env=SubprocVecEnv([make_environment(components,pool['templates'],[case],a.seed,True,reward_scale,a.scheduled_recovery)],start_method='spawn');env.seed(a.seed)
         model=(resume_quality(a.checkpoint,env,seed=a.seed) if a.resume_quality else
             warm_start_quality(a.checkpoint,env,seed=a.seed,model_class=QualityAnchoredPPO,reference_strength=2.,reference_kl_budget=.02))
         model.training_reward_scale=reward_scale
         model.snapshot_reference();model.save(components/'policy_initial.zip')
-        export(components/'policy_initial.zip',components,a.output/'initial_portable',a.sensor_core)
+        export(components/'policy_initial.zip',components,a.output/'initial_portable')
         status['phase']='training';save()
         callback=(RecoveryCoverageProgress if a.scheduled_recovery else Progress)(components,a.steps)
         model.learn(a.steps,callback=callback,reset_num_timesteps=True)
         if callback.changed:raise ValueError('Masked nonzero execution disagreement')
         model.save(components/'policy.zip');env.close();env=None
         config.update(completed_steps=model.num_timesteps,reference_statistics=model.last_reference_statistics)
-        (components/'config.json').write_text(json.dumps(config,indent=2));export(components/'policy.zip',components,a.output/'portable',a.sensor_core)
+        (components/'config.json').write_text(json.dumps(config,indent=2));export(components/'policy.zip',components,a.output/'portable')
         results=[]
         for index,task in enumerate([case]+config['evaluation_seeds']):
             status.update(phase='matched_diagnostic',completed_cases=index);save()
             pair={}
             for label,filename in [('initial','policy_initial.zip'),('final','policy.zip')]:
-                pair[label]=evaluate(components/filename,components,pool['templates'],task,a.output/f'{label}_{index}.json',core_factory)
+                pair[label]=evaluate(components/filename,components,pool['templates'],task,a.output/f'{label}_{index}.json')
             results.append(pair)
             (a.output/'MATCHED_RESULTS.json').write_text(json.dumps(dict(results=results,completed=len(results)==9),indent=2))
         status.update(status='complete',finished_unix=time.time(),development_gate_passed=all(r['final']['safe_success'] for r in results));save()

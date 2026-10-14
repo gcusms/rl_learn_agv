@@ -86,9 +86,6 @@ class LearnedRoutingMixin:
         new=np.asarray(path)
         if self.routing_ready and (len(new)!=len(self.predicted_path) or not np.allclose(new,self.predicted_path,atol=.08)):self.plan_revision+=1
         self.predicted_path=new;self.routing_ready=True;self.last_route_time=now
-        if getattr(self,'efficient_route_selection',False):
-            self.route_decode_q=q
-            self.route_decode_free=(current[0]>0)
 
     def _observation(self,scan,initialize=False):
         # Parent reset passes a scan before it sets the public scan attribute.
@@ -177,10 +174,6 @@ class RoomRoutingMixin:
         super()._neural_route();candidate=self.predicted_path.copy();self.route_retained=False
         if getattr(self,'route_mode','raw')=='shortcut':
             candidate=self._shortcut_route(candidate);self.predicted_path=candidate.copy()
-            if getattr(self,'efficient_route_selection',False):
-                from neural_navigation.route_efficiency import efficient_learned_route
-                candidate=efficient_learned_route(self,self.route_decode_q,self.route_decode_free,candidate)
-                self.predicted_path=candidate.copy()
         self.replan_reason='new_goal_or_initial_route'
         if old is None or len(old)<2 or np.linalg.norm(old[-1]-self.goal)>.12:return
         nearest=int(np.argmin(np.linalg.norm(old-self.estimate[:2],axis=1)))
@@ -190,9 +183,7 @@ class RoomRoutingMixin:
             return
         old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
         improvement=old_length-new_length
-        minimum_improvement=(max(.15,.03*old_length) if getattr(self,'efficient_route_selection',False)
-                             else max(.5,.08*old_length))
-        shorter=self._route_usable(candidate) and improvement>minimum_improvement
+        shorter=self._route_usable(candidate) and improvement>max(.5,.08*old_length)
         if shorter:
             # Confirm a better route for .8s; compare geometry, not moving start cells.
             stable=False
@@ -346,3 +337,4 @@ class PortablePolicy:
         with torch.no_grad():action=self.actor(torch.from_numpy(observation[None])).numpy()[0]
         if action.shape!=(2,) or not np.isfinite(action).all():raise RuntimeError('Invalid actor output')
         return np.clip(action,-1.,1.)
+

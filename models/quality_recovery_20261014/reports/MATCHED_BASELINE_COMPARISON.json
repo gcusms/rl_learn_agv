@@ -1,0 +1,21 @@
+{
+  "same_task_ids": true,
+  "old_safe_success": 44,
+  "new_safe_success": 46,
+  "old_collision_cases": 3,
+  "new_collision_cases": 1,
+  "old_timeouts": 1,
+  "new_timeouts": 1,
+  "common_safe_tasks": 43,
+  "median_new_minus_old_seconds": 0.0,
+  "median_new_minus_old_travel_m": -0.004456716366208369,
+  "became_safe": [
+    "train_failure_w11_e7",
+    "independent_dynamic_003",
+    "train_failure_w6_e0"
+  ],
+  "became_unsafe": [
+    "independent_dynamic_013"
+  ],
+  "limitation": "One candidate, one frozen 48-case development set. Multiple changes since original masked4k baseline; does not isolate a single cause or prove generalization or optimal paths."
+}

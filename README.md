@@ -1,258 +1,104 @@
+# AGV 学习导航：历史较优模型归档（2026-10-14）
 
-# AGV 学习导航与 MuJoCo 仿真
+本分支 `models/best-2026-10-14` 保存本地已查到的历史完整开发回归中到达表现最好的候选：`quality_recovery_4000` 试验的 **2,000 步中间检查点**。它继承已有预训练，不是从零只训练 2,000 步。本次是归档交付，没有新增训练。
 
-> **模型交接：** [核心思想、训练过程、能力边界与后续优化建议](docs/MODEL_HANDOFF/README.md)。包含三个学习模块的分工、地图/激光实时融合、现有评估结果，以及独立学习导航的优化方向、传统方法对比和实车迁移建议。
+**历史固定开发集：46/48 安全到达（95.8%）、1 次碰撞、1 次超时。没有通过部署验收，也没有证明最短路径、窄道或实车能力。** 这 48 项不是封存的 200 项最终验收集。
 
-已知地图、部分视野激光与动态实体障碍下的四轮差速机器人导航。当前系统由学习定位、神经路线规划和 PPO 速度决策三个模型配合；地图/激光融合、路线切换确认和运动约束仍由程序处理。机器人导航运行时不使用 AMCL/A*；传统对照另使用实际 Nav2 AMCL、NavFn 与 TEB。
+## 模型与配套文件
 
-## 本分支版本说明：恢复专项训练与路线效率优化
-
-**结论：本版完成了恢复分支续训、可选路线比较、交互仿真和模型发布，但尚未通过部署验收。** 相比上一版，5 个专项场景的安全到达率仍是 40%；开启路线优化后，一个静态绕障案例的路程缩短 19.2%、耗时下降 28.8%。这两项结果来自不同实验，不能合并成“训练后整体更好”。
-
-### 版本对应关系
-
-| 文档称呼 | 对应模型／配置 | 在比较中的作用 |
-|---|---|---|
-| 首次克隆版本 | 提交 `c63c1b7`，`training/runs/remote_room_100k/policy_100000.zip` | 历史基线；不是本轮直接续训的父检查点 |
-| 上一版本：8k 保守父模型 | `models/recovery_20261012/parent/policy.zip`；推理包 `baseline_portable/` | 本轮直接续训起点，比较训练前后表现 |
-| 本次版本：追加 10k 恢复模型 | `models/recovery_20261012/candidate/policy.zip`；推理包 `portable/` | 本轮新增 10,000 步后的候选权重 |
-| 本次版本＋路线优化 | 同一个 `portable/actor.pt`，加 `--efficient-routes` | **权重不变**，单独比较程序路线选择的影响 |
-
-8k、10k 均表示对应阶段**新增步数**，各模型继承更早的预训练基础，不能按从零训练总步数理解。`candidate/policy_initial.zip` 是适配新恢复条件后、尚未进行本轮 10k 更新的初始检查点；9 组配对用它与 final 比较，不应与未经适配的父检查点混称。原模型保留，默认启动模型没有替换。
-
-### 方法与策略对比
-
-| 项目 | 首次克隆 100k | 上一版本：8k 父模型 | 本次版本：新增 10k |
-|---|---|---|---|
-| 导航结构 | 学习定位＋神经路由＋PPO 速度控制 | 保留学习定位／路由，加入恢复分支与传感器反馈 | 延续父模型结构，扩展恢复分支生效条件 |
-| 策略接口 | 235 维观测，连续速度动作 | 300 维观测，12 个速度组合的 Maskable PPO | 同一观测和动作接口，继续训练恢复分支 |
-| 停车及动作反馈 | 没有本轮完整的停车反馈接口 | 包含停车原因、实际执行动作、合法动作及风险 | 沿用已有反馈；新增“转向仍未对齐”的持续恢复条件 |
-| 学习范围 | 原实验冻结定位／路由，续训 PPO | 普通 actor 基底冻结，训练恢复分支和 critic | 继承恢复权重及 Adam 状态，继续训练恢复分支和 critic |
-| 恢复触发 | 没有本轮恢复门控设计 | 依据原停车／等待／后方子目标等恢复条件 | 保留原条件；若已执行纯转向、定位及路线可信、未充分对齐且存在合法非零动作，恢复分支继续参与 |
-| 动作与安全检查 | 连续动作，旧运行接口 | 传感器检查生成动作屏蔽；采样、PPO 概率、导出使用一致规则 | 沿用一致规则；不设置固定转向方向、时长或替代速度控制器 |
-| 路线效率 | 旧神经路线及缩短逻辑 | 保留有效旧路线，较保守地切换 | 可选比较同一神经分数场解码出的不同起始方向候选；详见下表 |
-| 实时交互 | 原四目标测试与柱子拖动 | 保留测试基础 | 输入 X/Y 发送目标；双击取走柱子、右键放置，默认柱子静止 |
-
-本轮仍是强化学习 actor 选择速度动作，运行时不由 Nav2/TEB 接管。不过地图融合、动作屏蔽、路线确认和候选比较由程序实现，**不是端到端全流程都由强化学习完成**。策略只使用扫描、里程计及状态反馈，仿真真值用于世界设置、评分和画面显示。
-
-### 本次实际修改了什么
-
-| 改动 | 上一版的问题／处理方式 | 本版实现 | 证据与当前结论 |
-|---|---|---|---|
-| 持续恢复训练 | 离开原恢复条件后，恢复分支可能不再参与尚未完成的转向 | 增加可信状态下的持续转向恢复条件；保留原学习参数和优化器状态 | 代码及导出一致性已检查；**未证明专项脱困成功率提高** |
-| 候选路线比较（可选） | 有效旧路线的切换阈值较大，可能保留绕远路线 | 对四个起始方向做有界神经路线解码，加上原候选；优先比较完整剩余长度，再小幅考虑朝目标及转角 | 同模型单场景实录：43.0→30.6 秒，4.379→3.541 米；不是新权重的收益 |
-| 更及时采用明显更短路线（可选） | 改善需超过 `max(0.50 m, 旧路线长度×8%)` | 改为 `max(0.15 m, 旧路线长度×3%)`，仍保留 0.8 秒稳定确认、1 秒最小切换间隔 | 降低绕远路线保持门槛；完整动态回归尚未完成 |
-| 交互仿真修复 | 手动环境与传感器运行接口不一致可能导致发送目标闪退；拖动障碍不便 | 统一预览传感器输入入口；柱子取走时隐藏并禁用碰撞，放置后恢复；拒绝重叠放置 | 已检查目标发送和搬运流程；用户手动场景不作为固定验收集 |
-| 模型与证据交付 | 原检查点、训练源码和评估不便追溯 | 打包父／初始／最终模型、便携推理包、训练输入、源码快照及 SHA256；加入四窗口实录 | 338 个发布文件哈希、8 组导出一致性输入及 15 项相关检查通过；不等同导航验收 |
-
-路线优化须显式启用 `--efficient-routes`。候选来自学习路由器的同一个分数场，逐步选择合法未访问格点，不引入 A* 或 Nav2；完整路线须通过地图及激光占据检查。长度接近时的方向偏好最多相当于 0.10 米代价，允许必要的背离目标绕行。因此不能把“每一步都朝终点”当作最短路原则，也不能保证解码结果是全局最短路径。
-
-相关实现：[持续恢复策略](prototypes/continued_recovery_policy.py)、[路线候选比较](training/neural_navigation/route_efficiency.py)、[路线切换](training/neural_navigation/core.py)、[交互环境](training/neural_navigation/pick_place_env.py)、[发布检查记录](docs/results/RECOVERY_RELEASE_VALIDATION_20261013.json)。
-
-### 数据对比一：相同 5 个专项开发场景
-
-此表比较父模型与新增 10k 权重，**没有开启后续路线效率实验**。两个版本使用相同场景协议；场景重复用于开发，不能当作独立部署验收集。时间为模拟任务时间，不是电脑运行耗时；超时上限为 140 秒。
-
-| 指标 | 上一版 8k 父模型 | 本次新增 10k | 判断 |
-|---|---:|---:|---|
-| 安全到达 | 2/5（40%） | 2/5（40%） | 没有提高 |
-| 碰撞场景 | 1/5 | 1/5 | 没有修复 |
-| 超时场景 | 2/5 | 2/5 | 没有修复 |
-| 动态 006 到达时间 | 75.4 秒 | 105.0 秒 | 增加 39.3%，退化 |
-| 动态 006 实走距离 | 11.688 米 | 12.809 米 | 增加 9.6%，退化 |
-| 动态 021：存在合法非零动作却等待 | 272 帧 | 289 帧 | 仍然等待过多 |
-| 动态 023：存在合法非零动作却等待 | 650 帧 | 646 帧 | 减少 4 帧，但仍未脱困 |
-
-| 场景 | 上一版：结果／时间／路程 | 本次：结果／时间／路程 |
-|---|---|---|
-| `independent_dynamic_006` | 到达／75.4 秒／11.688 米 | 到达／105.0 秒／12.809 米 |
-| `independent_dynamic_021` | 超时／140.0 秒／1.946 米 | 超时／140.0 秒／1.954 米 |
-| `independent_dynamic_023` | 超时／140.0 秒／0.916 米 | 超时／140.0 秒／0.920 米 |
-| `motion_profile_005` | 到达／39.6 秒／6.677 米 | 到达／39.6 秒／6.677 米 |
-| `train_failure_w11_e7` | 碰撞／15.2 秒／2.124 米 | 碰撞／15.2 秒／2.124 米 |
-
-等待帧指动作屏蔽中存在非零候选，但确定性策略仍选择等待；合法候选不代表未来安全已得到保证。超时案例的短路程不能解读为路径更优，必须先完成任务。原始证据：[父模型 5 场景](models/recovery_20261012/reports/parent_five.json)、[本次 5 场景](models/recovery_20261012/reports/specialist_five.json)。
-
-### 数据对比二：本轮训练初始／最终的 9 组配对
-
-| 指标 | 适配后的初始模型 | 新增 10k 后最终模型 |
-|---|---:|---:|
-| 安全到达／碰撞／超时 | 9／0／0 | 9／0／0 |
-| 9 组累计模拟用时 | 365.0 秒 | 369.8 秒 |
-| 9 组累计实走距离 | 65.678 米 | 65.544 米 |
-| 存在合法非零动作却等待 | 6 帧 | 9 帧 |
-
-普通配对场景未出现到达率退化，但累计耗时增加约 1.3%、距离仅减少约 0.2%，不足以证明整体导航效率提升。这组起点是 `policy_initial.zip`，不是原始 100k；不能与上表混算成功率。[9 组原始数据](models/recovery_20261012/reports/paired_nine.json)
-
-### 数据对比三：四窗口 MuJoCo 实录
-
-[![四窗口 MuJoCo 实录对比](docs/media/recovery-comparison-20261013.jpg)](docs/media/recovery-comparison-20261013.mp4)
-
-**[观看／下载视频](docs/media/recovery-comparison-20261013.mp4?raw=true)** · [本次实测数据与模型 SHA256](docs/results/recovery_video_20261013.json)
-
-视频约 **16.85 秒、1.9 MB、1536×1088、20 fps**，统一 4 倍速，展示实际仿真轨迹而非预画动画。固定 seed=88000，起点 `(1.2,1.2,0)`、终点 `(3.8,1.2)`、静态柱子 `(2.2,1.2)`；前进上限 0.20 m/s、转速上限 0.50 rad/s，决策周期 0.20 秒。四组均无碰撞、无物理保护触发，达到终点。
-
-| 实录版本 | 模拟到达时间 | 实走距离 | 相对上一版 8k |
-|---|---:|---:|---|
-| 首次克隆 PPO 100k | **21.4 秒** | **3.016 米** | 四组中最快、最短；控制接口不同 |
-| 上一版 8k 父模型 | 41.8 秒 | 4.113 米 | 直接父版本参照 |
-| 本次新增 10k，原路线 | 43.0 秒 | 4.379 米 | 耗时及距离均增加 |
-| 同一最新模型，路线优化开启 | 30.6 秒 | 3.541 米 | 耗时减少 26.8%、距离减少 13.9% |
-
-**同一最新模型只切换路线开关：耗时下降 28.8%、距离减少 19.2%。** 这是本次已观察到的程序优化收益，但仅一个静态案例；原 100k 模型仍更快、更短。本次视频没有 TEB、动态横穿、遮挡及丢帧测试，也不证明全局最短路或实车安全。
-
-首次克隆组采用保留的 235 维连续 actor 与当前环境传感器特征，新组采用 300 维屏蔽动作便携运行时，定位／路由组件也不完全相同。这是同物理条件下的整套流程对比，不是仅改变训练步数的实验；也没有重跑历史四目标协议。下方两窗口使用同一 actor，才是路线开关的直接对照。
-
-复现录制（CPU 单线程，编码两线程；需分支依赖与 EGL 环境）：
-
-```bash
-MUJOCO_GL=egl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
-  .venv/bin/python training/record_recovery_comparison.py --record --render
-```
-
-[录制程序](training/record_recovery_comparison.py)将原始帧记录保存在本地 `training/runs/recovery_video_20261013/`；分支仅上传压缩视频、预览图和精简结果。路线开关的另一份单场景记录见 [route_efficiency_closed_loop.json](models/recovery_20261012/reports/route_efficiency_closed_loop.json)，与本次实录属于同一个复用案例，不应计为两个独立测试。
-
-### 首次克隆的历史四目标数据（单独保留）
-
-| 历史统一限速协议 | 到达目标 | 碰撞 | 模拟用时 | 实走距离 |
-|---|---:|---:|---:|---:|
-| 原 PPO 100k | 4/4 | 0 | 208.6 秒 | 26.660 米 |
-| 同报告 Nav2＋TEB | 4/4 | 0 | 122.8 秒 | 24.182 米 |
-| 本次恢复模型 | 未跑此协议 | — | — | — |
-
-这是从首次克隆提交提取的历史记录，本次没有重跑，不能据此宣称新模型超越 TEB。另一个旧视频报告的 PPO 100k 为 150.4 秒，参数不同，不混用。[历史原始报告](docs/results/clone_baseline_c63c1b7)
-
-### 本次训练设置与产物
-
-| 项目 | 本轮设置／实际记录 |
+| 内容 | 路径 |
 |---|---|
-| 算法与新增训练量 | 单环境 Maskable PPO，10,000 步 |
-| 固定／学习模块 | 固定定位器、神经路由器及普通 actor 基底；学习恢复分支和 critic |
-| 观测 | 300 维，三帧激光历史、目标／子目标、速度、上一动作、定位质量、停车与合法动作反馈、动态风险 |
-| 激光与运动 | 220 束、219.44°；12 个速度组合，当前集合无倒车、无横移 |
-| PPO 参数 | rollout/batch 250，4 epochs，γ=0.995，GAE λ=0.95，entropy=0.003 |
-| 学习率 | 恢复分支 3e-4，critic 3e-5 |
-| 课程与奖励 | 历史训练失败与一般课程交替；原环境奖励保留，训练缩放 1/60，附加 alignment cost=0；评估不作为训练标签 |
-| 实际运行 | 50 分 44 秒，约 3.29 步/秒；本机后台组限速约半个 CPU 核心 |
-| 训练内统计 | 46 个训练 episode，28 次 verified mission；不是独立评估成功率 |
-| 执行一致性诊断 | 7,947 次非零选择被 guard 改写 0 次；仍有 687 次存在非零候选却等待，不能据此认为脱困已解决 |
+| 原始 PPO 检查点，按文件保留权重和优化器 | [policy_2000.zip](models/quality_recovery_20261014/policy_2000.zip) |
+| 新导出的推理包、学习定位和路由组件 | [portable/](models/quality_recovery_20261014/portable) |
+| 原 4,000 步试验配置；本分支选择中间 2k | [training_run_config.json](models/quality_recovery_20261014/training_run_config.json) |
+| 发布信息及 SHA256 | [RELEASE_MANIFEST.json](models/quality_recovery_20261014/RELEASE_MANIFEST.json) |
+| 历史报告、固定任务与逐任务结果 | [reports/](models/quality_recovery_20261014/reports) |
+| 9,924 帧实际历史策略输入和动作，压缩保存 | [parity_inputs.npz](models/quality_recovery_20261014/reports/parity_inputs.npz) |
+| 训练失败模板和唯一回放记录 | [training_inputs/](models/quality_recovery_20261014/training_inputs) |
 
-运行数据见 [progress.json](models/recovery_20261012/candidate/progress.json)，配置见 [config.json](models/recovery_20261012/candidate/config.json)。限速为本机实验服务设置，不是其他机器运行脚本时的默认保证。
+检查点 SHA256：`7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11`。
 
-发布目录 [models/recovery_20261012](models/recovery_20261012)约 6 MB，包含父／初始／最终检查点、便携推理包、训练输入、实际训练源码快照及评估摘要。文件校验见 [MODEL_MANIFEST.json](models/recovery_20261012/MODEL_MANIFEST.json)。当前工程另含训练后的交互与路线修改，复现训练应查看源码快照；不承诺逐位复现原训练随机序列。
+本分支恢复了 229 个记录过哈希的历史源码文件，匹配该模型的评估版本，见 [source_restore.json](models/quality_recovery_20261014/reports/source_restore.json)。原工作区的窄道改动保留在原分支，本分支使用归档运行时。源码相符不等于随机训练能逐位复现。
 
-### 当前能力边界与下一步
+## 成绩与比较范围
 
-| 用户目标 | 本次证据 | 尚需完成 |
-|---|---|---|
-| 安全、成功到达 | 普通配对 9/9，专项仅 2/5 | 先修复专项碰撞、021/023 等待脱困，再做冻结的大样本回归 |
-| 更快、更短路线 | 可选路线比较改善一个静态案例 | 覆盖多地图、多起终点；只在安全到达案例上比较效率，不宣称全局最短 |
-| 突发动态障碍决策 | 有传感器跟踪、风险及安全屏蔽接口 | 横穿、反向、遮挡和丢帧后的恢复仍需专项验证；接口存在不等于性能达标 |
-| 稳定定位 | 学习定位与质量反馈已接入 | 本轮未重新训练定位器，没有证明长距离漂移／回环问题已全面解决 |
-| Orin Nano 上运行 | 本机单场景控制 P95 约 109–117 ms | 未测 Orin；需要目标板推理与端到端延迟、峰值及内存测试 |
+| 同一历史 48 场景开发集 | 安全到达 | 碰撞 | 超时 |
+|---|---:|---:|---:|
+| 原 masked4k 基线 | 44/48 | 3 | 1 |
+| 所选质量恢复 2k 检查点 | **46/48** | **1** | **1** |
 
-当前优先顺序是：诊断等待状态下的动作概率、探索和奖励结果，修复自主恢复与碰撞回归，再扩大训练量和评估规模。所有候选均缺乏真机验收；当前仿真动力学也不是完整标定的电机／轮胎模型。
+3 个旧失败转为安全，但 `independent_dynamic_013` 从旧成功退化为超时。43 个共同安全任务的用时差中位数为 0 秒，路程差中位数约 −0.00446 米，不能据此声称明显更快、更短。[配对证据](models/quality_recovery_20261014/reports/MATCHED_BASELINE_COMPARISON.json)
 
-### 使用发布模型
+已推送的追加 10k 恢复模型使用另一套协议，普通回放 9/9、专项 2/5，不能与 46/48 混算。今天新增 20k 的窄道试验在另一套 25 场景中训练前后都是 7/25，完整窄道均 0/13，未作为本分支模型。原始 100k 在单个静态绕障演示中曾更快、更短，同样不能当作综合排名。
 
-完成下文安装后，从仓库根目录执行：
+本分支的“较优”仅指已有完整开发回归记录，不表示任何环境下最优。
 
-```bash
-# 验证发布文件及原生检查点/导出 actor 的输出一致性
-.venv/bin/python scripts/verify_recovery_release.py --inference
+## 方法与硬件约束
 
-# 最新模型：目标点输入窗口＋静止柱子搬运；初始暂停
-bash scripts/preview_recovery_model.bash
+已知二维地图、初始粗位姿、激光、里程计/速度输入；学习定位网络估计位置、神经路由网络输出路线、PPO 选择局部速度。运行时没有 Nav2、行为树或 A* 接管，但地图/激光融合、动作掩码和紧急停车仍由程序处理。
 
-# 单独启用实验性路线效率比较
-bash scripts/preview_recovery_model.bash --efficient-routes
+- **300 维观测、12 个离散速度动作**，需要 `QualitySensorNavigationRuntime`；不能接普通 282 维或新窄道 318 维入口。
+- 前进上限 0.20 m/s、角速度上限 0.50 rad/s，无横移；这 12 个策略动作不含倒车。
+- 车体约 39.39 × 32.95 cm；220 束雷达，视野约 219.44°，保留后方盲区。详见 [hardware.json](models/quality_recovery_20261014/hardware.json)。
+- 此恢复阶段冻结定位/路由权重，使用 1/60 奖励缩放、质量状态观测、恢复片段回放和参考分布约束。原试验配置里 `completed_steps=4000` 指整个试验，归档模型实际取自 2,000 步。
+- 动力学、噪声、延迟未实车标定，Jetson Orin Nano 耗时未测；仍存在动态碰撞和无可用动作后的停车超时。
 
-# 从打包的父模型重新进行本轮专项训练，不自动替换默认模型
-bash scripts/train_recovery_model.bash training/runs/recovery_reproduction_10000 10000
-```
+## 安装与校验
 
-图形测试需 Ubuntu 桌面及 `python3-tk`。输入 X/Y（米），点击发送目标；双击柱子取走并隐藏，右键地面放置；默认柱子不自动移动，放置时拒绝与墙、小车或其他柱子重叠。R 重置，B 切换打包的父模型并重置。手动测试不是固定协议评估，移走障碍物后仍可能等待传感器记忆被真实自由空间扫描清除。
-
-续训入口保留初始/最终和每 1,000 步的中间检查点，训练后自动跑 9 组配对；本次发布只收录初始/最终及父模型。至少 250 MiB 空闲磁盘才允许启动，小于 100 MiB 时保存低磁盘检查点并停止。打包日志仅包含 replay step 10458 所需的一条历史记录；原始训练源码和来源哈希保留在 `training_source_snapshot/` 与 `TRAINING_SOURCE.json`。当前源码另含训练后的交互/路线修改，**不承诺逐位复现原训练随机序列**。
-
-后续优先诊断 021/023 的动作概率、实际探索与奖励结果，验证自主恢复和碰撞回归，再增加训练量。本候选及原模型均没有通过真机部署验收。
-
-
-## 录制演示
-
-https://github.com/user-attachments/assets/07f6c48b-e696-44cd-a4b2-b898b000c18c
-
-**[观看 / 下载完整视频](docs/media/navigation-four-window.mp4?raw=true)** · 约 8.7 MB · 82 秒 · 1600 × 1254 · 25 fps · H.264 MP4
-
-左上为 Navigation2 + TEB，右上为追加 PPO 1 万步，左下为 5 万步，右下为 10 万步。画面包含规划路线、实际轨迹、部分视野激光扫描和实体柱子干预；统一 5 倍速，片尾汇总用时与路程，并介绍两种导航方式的优劣势。
-
-本视频展示不同限速与控制参数下的表现；10 万步组完成更快，TEB 路程更短。模型权重未因录制而改变，实时测试命令仍运行原始模型配置。
-
-## 安装（Ubuntu 22.04 / Python 3.10）
+推荐 Python 3.10，在仓库根目录执行 CPU 示例：
 
 ```bash
-sudo apt-get install python3-venv python3-tk build-essential libglfw3-dev libgl1 libosmesa6
-bash scripts/setup_cpu.bash
-source training/activate.bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r training/requirements.txt
+
+PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  .venv/bin/python training/verify_best_model_release.py
 ```
 
-纯模型 MuJoCo 测试不要求 ROS。GPU 训练请按服务器 CUDA 环境安装相容的 PyTorch 构建，再安装 training/requirements.txt；CPU 安装脚本不会配置 CUDA。
+校验包内文件、历史源码和地图/传感器配置哈希，在 9,924 帧实际历史观测上比对 ZIP、TorchScript、动作掩码和记录中的执行命令。**该校验没有重新运行 48 个闭环场景。** 本次交付检查见 [release_checks.json](models/quality_recovery_20261014/reports/release_checks.json)。
 
-## 原始 10 万步模型实时测试
+## MuJoCo 查看
 
-所有命令从本仓库根目录执行。
+需要图形桌面和 OpenGL，纯模型不需要 ROS 2：
 
 ```bash
-source training/activate.bash
-MUJOCO_GL=glfw python training/preview_live_navigation.py \
-  --policy training/runs/remote_room_100k/policy_100000.zip \
-  --components training/runs/remote_room_100k --max-leg-steps 1800
+bash scripts/preview_best_model.bash
+bash scripts/preview_best_model.bash --case independent_dynamic_006
 ```
 
-双击柱子后按住右键拖动，松开取消选中；左键旋转、滚轮缩放；空格暂停，R 重新开始。使用原始策略，无视频演示额外调参。激光范围 −108.38° 至 +111.06°（219.44°），220 束；两根实体柱子、四个目标点、机械臂离线归位姿态与原案例一致。
+空格暂停，R 重置。B 两边指向同一归档模型，不能用来作版本对比。本入口按固定任务目标导航，使用历史查看器，不包含后来版本的手动目标点和柱子搬运功能。仿真真值只用于显示/评分。
 
-## 模型和训练
+## 重跑固定开发测试
 
-- training/runs/remote_room_100k/localizer.pt：学习定位网络。
-- training/runs/remote_room_100k/router.pt：神经路线网络。
-- policy_10000.zip / policy_50000.zip / policy_100000.zip：有预训练基础的追加 PPO 检查点，权重按原文件保留。
-- training/runs/full_model_navigation_v3/：原续训父模型、定位/规划网络和离线动作样本，供复现原并行续训。
-
-定位与路线网络的训练入口：training/train_neural_components.py；PPO 并行续训入口：training/remote/train_parallel.py。原 10 万步实验固定定位与规划权重，只续训 PPO，随机起点、朝向和目标顺序，主要使用既有房间布局。
+单个案例或全部 48 案例，单线程顺序运行，输出目录必须是新的：
 
 ```bash
-# 生成学习定位/规划的数据地图，再独立训练网络
-python training/generate_navigation_dataset.py
-python training/train_neural_components.py --output training/runs/new_components
+PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  .venv/bin/python training/evaluate_best_model_release.py \
+  --case independent_dynamic_006 --output training/runs/best_20261014_one
 
-# 从保留的 v3 父模型开始新的 PPO 续训，CPU 示例
-python training/remote/train_parallel.py --device cpu --envs 4 \
-  --steps 100000 --output training/runs/new_continued_ppo
+# 不传 --case 就运行全部 48 项，耗时较长
+PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  .venv/bin/python training/evaluate_best_model_release.py \
+  --output training/runs/best_20261014_full48
 ```
 
-历史脚本默认引用其他旧检查点时，需要自行训练或从原目录另取，整理版没有打包所有历史结果。
+这些入口限制计算线程，不自动替其他机器设置系统 CPU/内存配额。大型日志、视频和虚拟环境不上传；本包保留压缩的演员输入、任务和结果。
 
-## 自动干预评估与参数演示
+## 从此模型续训
+
+示例追加 2,000 步并输出为新试验，不自动替换归档模型：
 
 ```bash
-# 原统一限速的模型评估
-python training/navigation_comparison.py \
-  --policy training/runs/remote_room_100k/policy_100000.zip \
-  --output training/runs/new_fair_100k --max-leg-steps 1800
-
-# 视频调参配置：与原始模型测试分开
-python training/navigation_parameter_demo.py --preset ppo_100k \
-  --output training/runs/new_parameter_100k
+PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  .venv/bin/python -m experiments.train_quality_navigation \
+  --checkpoint models/quality_recovery_20261014/policy_2000.zip \
+  --failure-pool models/quality_recovery_20261014/training_inputs/failure_pool.json \
+  --training-log models/quality_recovery_20261014/training_inputs/replay_episode.jsonl \
+  --replay-step 10458 --resume-quality --scheduled-recovery \
+  --steps 2000 --seed 92521 --output training/runs/best_20261014_continuation
 ```
 
-实体柱子按靠近目标触发、停留约 8 秒后离开的规则干预。录制脚本及压缩后的四窗口演示视频已保留；原录制轨迹未打包，重新录制需先生成其所需的四组轨迹。不同参数演示不能用来证明训练步数或算法的公平优劣。保留的实测数据见 docs/results/。
-
-## 可选传统 Nav2 + TEB 对照
-
-需要 ROS 2 Humble、Nav2、colcon、g2o 与 costmap_converter/TEB 构建依赖；第三方源码保留在 training/teb_ws/src/，构建产物需在目标机器重新生成。原桥接方式与配置见 docs/NATIVE_NAVIGATION_COMPARISON.md。这部分不属于纯模型启动依赖，未在没有 ROS 的机器上验证。
-
-## 适用范围
-
-目前是仿真导航原型，底盘采用平面力驱动跟踪速度，不是已标定的完整轮胎/电机模型。没有实车验证，也未证明跨任意地图的成功率。旧版历史说明见 docs/LEGACY_TRAINING_README.md，以本 README 的当前入口为准。
-
-整理清单见 docs/EXPORT_MANIFEST.json；验证结果见 docs/VALIDATION.json。上传前检查第三方许可说明 THIRD_PARTY_NOTICES.md；本副本没有替作者新增开源授权。
+这不是重现原检查点。后续先处理预测失真、安全死锁和窄道可执行性，再增加训练规模。

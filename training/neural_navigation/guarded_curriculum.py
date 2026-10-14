@@ -27,10 +27,8 @@ def footprint_scan_penalty(scan,lidar,footprint,coefficient,target=.16):
 
 
 class GuardedNavigationCurriculum(NavigationCurriculum):
-    def __init__(self,components,stage='static',route_mode='shortcut',max_steps=700,projection_cost=.25,motion_profiles=False,footprint_clearance_cost=0.,core_factory=None):
+    def __init__(self,components,stage='static',route_mode='shortcut',max_steps=700,projection_cost=.25,motion_profiles=False,footprint_clearance_cost=0.):
         super().__init__(components,stage,route_mode,max_steps,motion_profiles=motion_profiles)
-        self.core_factory=NavigationCore if core_factory is None else core_factory
-        if not callable(self.core_factory):raise ValueError('Callable sensor core factory required')
         if not np.isfinite(projection_cost) or projection_cost<0:raise ValueError('Projection cost must be nonnegative')
         self.projection_cost=projection_cost
         if not np.isfinite(footprint_clearance_cost) or footprint_clearance_cost<0:raise ValueError('Footprint clearance cost must be nonnegative')
@@ -45,7 +43,7 @@ class GuardedNavigationCurriculum(NavigationCurriculum):
     def reset(self,seed=None,options=None):
         _,info=super().reset(seed=seed,options=options);e=self.active
         source=json.loads(self.training_case_json);prior=np.asarray(source['options']['start'])+np.asarray(source['options'].get('initial_prior_offset',[0,0,0]))
-        self.core=self.core_factory(e.static_map,e.lidar,self.components,self.route_mode);self.core.reset(prior,e.goal)
+        self.core=NavigationCore(e.static_map,e.lidar,self.components,self.route_mode);self.core.reset(prior,e.goal)
         self.guard=EmergencyStop(e.scene['robot_collision_box_m'][:2],memory_config=self.hardware.get('near_field_memory'))
         obs,_=self.core.update(e.scan,e.observed_odometry,e.measured_velocity,e.elapsed)
         self.guard_overrides=0;self.guard_steps=0;self.previous_executed=np.zeros(2)

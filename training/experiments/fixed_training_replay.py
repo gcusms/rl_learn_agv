@@ -43,7 +43,7 @@ def reset_training_episode(env, case):
     env.previous_distance = env.field.value(e.truth[:2])  # reward only
     env.previous_action = np.zeros(2); env.reverse_seconds = 0.
     prior = start+np.asarray(options.get('initial_prior_offset', [0., 0., 0.]))
-    env.core = getattr(env, 'core_factory', NavigationCore)(e.static_map, e.lidar, env.components, env.route_mode)
+    env.core = NavigationCore(e.static_map, e.lidar, env.components, env.route_mode)
     env.core.reset(prior, e.goal)
     env.guard = EmergencyStop(e.scene['robot_collision_box_m'][:2],
         memory_config=env.hardware.get('near_field_memory'))
