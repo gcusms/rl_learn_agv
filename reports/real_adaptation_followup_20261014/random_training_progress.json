@@ -1,0 +1,53 @@
+{
+  "phase": "complete",
+  "steps": 2000,
+  "seconds": 454.6399929029867,
+  "peak_rss_mib": 2439.796875,
+  "training_episodes": [
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07443339913451806,
+      "true_goal_yaw_error_rad": 0.30108149353611324,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_02\", \"seed\": 1837531783, \"stage\": \"static\", \"options\": {\"start\": [2.325, 2.475, 0.4100202590290074], \"goal\": [7.775, 2.475]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -3.078375091881556, \"pose_alignment_task\": false}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.19767715865175395,
+      "true_goal_yaw_error_rad": 0.13775283553436068,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1283741005, \"stage\": \"static\", \"options\": {\"start\": [1.8250000000000002, 2.1750000000000003, -2.431343006061171], \"goal\": [2.7750000000000004, 5.625]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.0446255155309534, \"pose_alignment_task\": false}"
+    }
+  ],
+  "sampling": {
+    "navigation": {
+      "steps": 2000,
+      "wait_with_motion": 5,
+      "only_stop": 0,
+      "turns": 1633,
+      "heading_reward": 36.91326042931021
+    }
+  },
+  "resource": {
+    "seconds": 454.6399816410267,
+    "cpu_seconds": 227.466138363,
+    "average_cpu_cores": 0.5003214577432437,
+    "peak_rss_mib": 2439.796875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo_statistics": {
+    "train/learning_rate": 3e-05,
+    "train/entropy_loss": -0.9892251640558243,
+    "train/policy_gradient_loss": -0.002062446391850159,
+    "train/value_loss": 0.15771138109266758,
+    "train/clip_fraction": 0.0010000000474974513,
+    "train/approx_kl": 0.00037564303588805137,
+    "train/reference_kl": 0.0010347971983719617,
+    "train/reference_fraction": 0.0,
+    "train/loss": 0.07328779995441437,
+    "train/explained_variance": -5.351218223571777,
+    "train/n_updates": 32.0,
+    "train/clip_range": 0.2
+  },
+  "scope": "training diagnostics, not independent acceptance"
+}

@@ -1,0 +1,95 @@
+{
+  "phase": "complete",
+  "steps": 3000,
+  "seconds": 650.0270317409886,
+  "peak_rss_mib": 2511.0546875,
+  "training_episodes": [
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.07093903199421948,
+      "true_goal_yaw_error_rad": 3.047780489027641,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 1302138380, \"stage\": \"static\", \"options\": {\"start\": [1.725, 1.2750000000000001, -2.137981111610921], \"goal\": [1.725, 1.2750000000000001]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.3628630494082428, \"pose_alignment_task\": true}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.10534736940446332,
+      "true_goal_yaw_error_rad": 0.9424548731650297,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_03\", \"seed\": 759638224, \"stage\": \"static\", \"options\": {\"start\": [4.375, 5.275, 0.585728846715813], \"goal\": [3.1750000000000003, 1.125]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.4754963524301834, \"pose_alignment_task\": false}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.035939742249959494,
+      "true_goal_yaw_error_rad": 0.23232927144213278,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_02\", \"seed\": 1926117819, \"stage\": \"static\", \"options\": {\"start\": [3.825, 4.875, -0.2937242946382814], \"goal\": [3.825, 4.875]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 1.8727912842298853, \"pose_alignment_task\": true}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.05935347752910177,
+      "true_goal_yaw_error_rad": 2.377014223053899,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted\", \"seed\": 1124139873, \"stage\": \"static\", \"options\": {\"start\": [7.925000000000001, 5.925000000000001, -2.333839403917916], \"goal\": [9.125, 2.725]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -0.604476070992459, \"pose_alignment_task\": false}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.09109002914714923,
+      "true_goal_yaw_error_rad": 2.4220715988700547,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 33388240, \"stage\": \"static\", \"options\": {\"start\": [2.025, 6.525, 2.8912520771027816], \"goal\": [2.025, 6.525]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -2.1779209897576446, \"pose_alignment_task\": true}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.08896147597984505,
+      "true_goal_yaw_error_rad": 1.4758502969999832,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_01\", \"seed\": 232881582, \"stage\": \"static\", \"options\": {\"start\": [1.0250000000000001, 1.375, -0.48921782128829694], \"goal\": [8.975, 1.425]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": -1.504820653717328, \"pose_alignment_task\": false}"
+    },
+    {
+      "verified_mission_success": false,
+      "collision_events": 0,
+      "true_goal_distance_m": 0.053130856966649966,
+      "true_goal_yaw_error_rad": 2.487129629737119,
+      "training_case_json": "{\"scene\": \"/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_05\", \"seed\": 147186365, \"stage\": \"static\", \"options\": {\"start\": [4.525, 3.975, 3.1109713702822015], \"goal\": [4.525, 3.975]}, \"interventions\": {\"odom_scale\": 1.0}, \"failure_template_origin\": null, \"goal_yaw\": 2.0765405336165763, \"pose_alignment_task\": true}"
+    }
+  ],
+  "sampling": {
+    "alignment": {
+      "steps": 400,
+      "wait_with_motion": 1,
+      "only_stop": 0,
+      "turns": 396,
+      "heading_reward": -0.43161046912251066
+    },
+    "navigation": {
+      "steps": 2600,
+      "wait_with_motion": 9,
+      "only_stop": 0,
+      "turns": 2098,
+      "heading_reward": 27.0939796506106
+    }
+  },
+  "resource": {
+    "seconds": 650.0270242239931,
+    "cpu_seconds": 325.151489704,
+    "average_cpu_cores": 0.5002122643934199,
+    "peak_rss_mib": 2511.0546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo_statistics": {
+    "train/learning_rate": 3e-05,
+    "train/entropy_loss": -1.000389151275158,
+    "train/policy_gradient_loss": -0.0012238538567981294,
+    "train/value_loss": 0.2058932464569807,
+    "train/clip_fraction": 0.0,
+    "train/approx_kl": 0.00018149119363897182,
+    "train/reference_kl": 0.0025033067795448005,
+    "train/reference_fraction": 0.0,
+    "train/loss": 0.0955902561545372,
+    "train/explained_variance": -26.276935577392578,
+    "train/n_updates": 48.0,
+    "train/clip_range": 0.2
+  },
+  "scope": "training diagnostics, not independent acceptance"
+}

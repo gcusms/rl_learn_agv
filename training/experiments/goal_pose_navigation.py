@@ -30,27 +30,37 @@ class GoalPoseAnchoredPPO(QualityAnchoredPPO):
 
 
 class GoalPoseWrapper(gym.Wrapper):
-    def __init__(self,env,gamma=.99,alignment_probability=.35):
+    def __init__(self,env,gamma=.99,alignment_probability=.35,alignment_max_steps=100,balanced_alignment=False):
         super().__init__(env)
         if env.observation_space.shape!=(300,) or not 0<gamma<=1 or not 0<=alignment_probability<=.5:
             raise ValueError('300-feature quality prefix, valid discount and at least half navigation tasks required')
         self.observation_space=gym.spaces.Box(-1,1,(303,),np.float32)
         self.gamma=float(gamma);self.alignment_probability=alignment_probability
+        if balanced_alignment and alignment_probability!=.5:raise ValueError('Alternating curriculum requires half alignment tasks')
+        self.balanced_alignment=bool(balanced_alignment);self.reset_count=0
         self.reward_scale=env.reward_scale
+        if alignment_max_steps<50:raise ValueError('At least ten physical seconds for alignment required')
+        self.navigation_max_steps=env.unwrapped.max_steps;self.alignment_max_steps=int(alignment_max_steps)
 
     def _potential(self):
         e=self.env.unwrapped.active;core=self.env.unwrapped.core
+        if core.goal_yaw is None:return 0.
         distance=np.linalg.norm(e.truth[:2]-core.goal)
         return -4.*np.exp(-distance/.5)*abs(wrap(core.goal_yaw-e.truth[2]))
 
     def reset(self,seed=None,options=None):
         rng=np.random.default_rng(seed) if seed is not None else self.env.unwrapped.np_random
         options=dict(options or {})
-        options.setdefault('pose_alignment_task',bool(rng.random()<self.alignment_probability))
+        if 'pose_alignment_task' not in options:
+            options['pose_alignment_task']=(self.reset_count%2==0 if self.balanced_alignment
+                else bool(rng.random()<self.alignment_probability))
+        self.reset_count+=1
+        self.env.unwrapped.max_steps=self.alignment_max_steps if options['pose_alignment_task'] else self.navigation_max_steps
         obs,info=self.env.reset(seed=seed,options=options)
         base=self.env.unwrapped;core=base.core
+        required=bool(options.get('goal_yaw_required',True))
         yaw=float(options.get('goal_yaw',base.np_random.uniform(-np.pi,np.pi)))
-        core.set_goal([*core.goal,yaw]);self.previous_potential=self._potential()
+        core.set_goal([*core.goal,yaw] if required else core.goal.copy());self.previous_potential=self._potential()
         case=json.loads(base.training_case_json);case['goal_yaw']=core.goal_yaw
         case['pose_alignment_task']=options['pose_alignment_task'];base.training_case_json=json.dumps(case)
         return append_goal_features(obs,core),dict(info,goal_yaw=core.goal_yaw)

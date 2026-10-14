@@ -46,7 +46,8 @@ def inspect_bundle(config_path):
             raise ValueError('Missing goal-pose contract hash')
         if (bundle/'localization_contract.json').exists() and (
             'localization_contract.json' not in manifest['files'] or
-            json.loads((bundle/'localization_contract.json').read_text()).get('schema')!='odom_anchored_static_support_v1'):
+            json.loads((bundle/'localization_contract.json').read_text()).get('schema') not in
+                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3')):
             raise ValueError('Localization contract mismatch')
     if not manifest.get('requires_quality_feature_generator'):
         raise ValueError('Quality feature generator required')

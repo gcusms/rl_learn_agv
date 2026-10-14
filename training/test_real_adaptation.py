@@ -78,24 +78,22 @@ class RealAdaptationTests(unittest.TestCase):
         np.testing.assert_allclose(loc.pose,[2,2.1,np.pi/2+.2],atol=1e-12)
 
     def test_single_wall_validates_pose_without_inventing_along_wall_motion(self):
-        distance=object();nx=object();ny=object()
-        def lookup(points,field,outside=0.):
-            points=np.asarray(points)
-            if field is distance:return abs(points[...,0]-3.)
-            if field is nx:return np.ones(points.shape[:-1])
-            if field is ny:return np.zeros(points.shape[:-1])
-            return np.ones(points.shape[:-1],bool)
-        m=SimpleNamespace(distance=distance,lookup=lookup,blocked=np.zeros((4,4),bool),_alignment_normals=(nx,ny))
-        loc=OdometryAnchoredLocalizer(m,self.lidar,BUNDLE/'localizer.pt',loc_contract())
-        loc.reset([0.,0.,0.],None)
-        with np.errstate(divide='ignore'):
-            scan=(3.-self.lidar.mount[0])/np.cos(self.lidar.mount[3]+self.lidar.angles)
-        scan[(scan<self.lidar.range_min)|(scan>=self.lidar.range_max)]=np.inf
-        for t in np.arange(0,2,.1):loc.update(np.zeros(3),scan,float(t))
-        self.assertTrue(loc.scan_update_accepted)
-        self.assertEqual(loc.correction_reason,'validated_static_prior')
-        np.testing.assert_allclose(loc.pose,[0.,0.,0.],atol=1e-12)
-        self.assertGreater(loc.std[1],.12)  # wall tangent remains unobserved
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as d:
+            image=np.full((800,320),255,np.uint8);image[:,160:162]=0
+            Image.fromarray(image).save(Path(d)/'map.pgm')
+            (Path(d)/'map.yaml').write_text('image: map.pgm\nresolution: 0.05\norigin: [-5, -20, 0]\nnegate: 0\noccupied_thresh: 0.65\nfree_thresh: 0.25\n')
+            m=StaticMap(Path(d)/'map.yaml',radius=.3)
+            loc=OdometryAnchoredLocalizer(m,self.lidar,BUNDLE/'localizer.pt',loc_contract())
+            loc.reset([0.,0.,0.],None)
+            with np.errstate(divide='ignore'):
+                scan=(3.-self.lidar.mount[0])/np.cos(self.lidar.mount[3]+self.lidar.angles)
+            scan[(scan<self.lidar.range_min)|(scan>=self.lidar.range_max)]=np.inf
+            for t in np.arange(0,2,.1):loc.update(np.zeros(3),scan,float(t))
+            self.assertTrue(loc.scan_update_accepted)
+            self.assertEqual(loc.correction_reason,'validated_static_prior')
+            np.testing.assert_allclose(loc.pose,[0.,0.,0.],atol=1e-12)
+            self.assertGreater(loc.std[1],.12)  # wall tangent remains unobserved
 
     def test_missing_uncertainty_depends_on_time_not_frame_count(self):
         scans=np.full(self.lidar.beams,np.nan);std=[]
@@ -150,6 +148,22 @@ class RealAdaptationTests(unittest.TestCase):
     def test_legacy_actor_rejects_heading_task(self):
         with self.assertRaisesRegex(ValueError,'Directional goals'):
             SensorNavigationRuntime(BUNDLE/'portable',ROOT/'assets/room_navigation_scripted/decision_map.yaml',[1.2,1.2,0],[1.2,1.2,1.])
+
+    def test_balanced_alignment_has_real_exposure_and_legacy_objective(self):
+        env=GoalPoseWrapper(QualityMaskedWrapper(MaskedNavigationCurriculum(BUNDLE,stage='static',max_steps=700)),
+            alignment_probability=.5,balanced_alignment=True)
+        try:
+            for index in range(4):
+                obs,_=env.reset(seed=114901+index)
+                case=json.loads(env.unwrapped.training_case_json)
+                self.assertEqual(case['pose_alignment_task'],index%2==0)
+                self.assertEqual(env.unwrapped.max_steps,100 if index%2==0 else 700)
+                self.assertEqual(obs.shape,(303,))
+            obs,_=env.reset(seed=114905,options={'pose_alignment_task':False,'goal_yaw_required':False})
+            self.assertIsNone(env.unwrapped.core.goal_yaw)
+            np.testing.assert_array_equal(obs[300:],[0.,0.,0.])
+            self.assertEqual(env._potential(),0.)
+        finally:env.close()
 
     def test_migration_masks_export_runtime_and_optimizer(self):
         old=MaskablePPO.load(BUNDLE/'policy_2000.zip',device='cpu')

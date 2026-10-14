@@ -1,0 +1,30 @@
+{
+  "scope": "recorded receive-clock velocity consistency; wheel/IMU not independent pose truth; no source or ROS configuration changed",
+  "samples": 3997,
+  "active_samples": 2317,
+  "command_source": "actually published /rl_navigation/cmd_vel",
+  "command_vs_wheel": {
+    "absolute_vx_difference_p95_m_s": 0.1224017730025116,
+    "absolute_wz_difference_p95_rad_s": 0.48199584633892417
+  },
+  "wheel_vs_imu": {
+    "absolute_wz_difference_p95_rad_s": 0.12444873189093143
+  },
+  "command_stop_wheel_moving_fraction": 0.22023809523809523,
+  "warning": "Timestamp/axis calibration, scale and true reference required. Do not infer delay from a best fitting lag alone or blindly use wheel odometry.",
+  "receive_clock_command_stable_for_at_least_0_6_s": {
+    "active": {
+      "samples": 674,
+      "command_wheel_vx_difference_p95_m_s": 0.040992191921619264,
+      "command_wheel_wz_difference_p95_rad_s": 0.05049944730305325,
+      "wheel_imu_wz_difference_p95_rad_s": 0.06869942702042149
+    },
+    "stop": {
+      "samples": 1121,
+      "command_wheel_vx_difference_p95_m_s": 0.0,
+      "command_wheel_wz_difference_p95_rad_s": 0.0,
+      "wheel_imu_wz_difference_p95_rad_s": 0.00263025591098712
+    },
+    "note": "Stability from received command values only; not a chassis-response calibration."
+  }
+}

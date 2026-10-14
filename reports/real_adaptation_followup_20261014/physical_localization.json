@@ -1,0 +1,731 @@
+{
+  "scope": "fixed manual MuJoCo trajectories; pose labels independent of localization; NOT closed-loop navigation acceptance",
+  "completed": true,
+  "cases": [
+    {
+      "case_id": 0,
+      "seed": 114000,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        2.075,
+        6.375,
+        2.953317839066039
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.02266751579374958,
+        "final_xy_m": 0.016702350901566868,
+        "yaw_p95_rad": 0.011579912510699675
+      },
+      "candidate": {
+        "xy_p95_m": 0.006434943001286418,
+        "final_xy_m": 0.0021016898034019577,
+        "yaw_p95_rad": 0.0024391473897988902
+      },
+      "frames": 41,
+      "rejected_corrections": 11
+    },
+    {
+      "case_id": 1,
+      "seed": 114001,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        6.7250000000000005,
+        1.5250000000000001,
+        -0.7949548731860019
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.02370944041400112,
+        "final_xy_m": 0.0066716221398222504,
+        "yaw_p95_rad": 0.005092333219469225
+      },
+      "candidate": {
+        "xy_p95_m": 0.07707166191352124,
+        "final_xy_m": 0.0023094223844134605,
+        "yaw_p95_rad": 0.016885833852504195
+      },
+      "frames": 41,
+      "rejected_corrections": 8
+    },
+    {
+      "case_id": 2,
+      "seed": 114002,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        2.875,
+        5.075,
+        3.001093049261934
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.03309517546174014,
+        "final_xy_m": 0.020980105577815805,
+        "yaw_p95_rad": 0.012521153270752983
+      },
+      "candidate": {
+        "xy_p95_m": 0.01853784352320479,
+        "final_xy_m": 0.0038231113690741793,
+        "yaw_p95_rad": 0.005063431368505622
+      },
+      "frames": 41,
+      "rejected_corrections": 7
+    },
+    {
+      "case_id": 3,
+      "seed": 114003,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        2.225,
+        2.475,
+        2.278399791687309
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.023164465487349423,
+        "final_xy_m": 0.016398641610758838,
+        "yaw_p95_rad": 0.011155348983769464
+      },
+      "candidate": {
+        "xy_p95_m": 0.006972663243242909,
+        "final_xy_m": 0.0027479034169293273,
+        "yaw_p95_rad": 0.0025990013462866557
+      },
+      "frames": 41,
+      "rejected_corrections": 10
+    },
+    {
+      "case_id": 4,
+      "seed": 114004,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        6.075,
+        2.275,
+        1.0702968582762251
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.031131603150638003,
+        "final_xy_m": 0.02704518008952218,
+        "yaw_p95_rad": 0.02620124771295096
+      },
+      "candidate": {
+        "xy_p95_m": 0.006176947720418392,
+        "final_xy_m": 0.005013066111509398,
+        "yaw_p95_rad": 0.0021818350882440996
+      },
+      "frames": 41,
+      "rejected_corrections": 3
+    },
+    {
+      "case_id": 5,
+      "seed": 114005,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        8.025,
+        4.9750000000000005,
+        0.9126406975423853
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.03262360446513476,
+        "final_xy_m": 0.02268724858968576,
+        "yaw_p95_rad": 0.009711390588738045
+      },
+      "candidate": {
+        "xy_p95_m": 0.008465037416770809,
+        "final_xy_m": 0.0021197346637259326,
+        "yaw_p95_rad": 0.06500990626220915
+      },
+      "frames": 41,
+      "rejected_corrections": 4
+    },
+    {
+      "case_id": 6,
+      "seed": 114006,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        2.1750000000000003,
+        1.625,
+        0.43244528295353213
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.04291036557909149,
+        "final_xy_m": 0.041742101389124785,
+        "yaw_p95_rad": 0.006302352718888571
+      },
+      "candidate": {
+        "xy_p95_m": 0.017382431103106576,
+        "final_xy_m": 0.012876485031184517,
+        "yaw_p95_rad": 0.003694881478025547
+      },
+      "frames": 41,
+      "rejected_corrections": 14
+    },
+    {
+      "case_id": 7,
+      "seed": 114007,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        5.425000000000001,
+        2.375,
+        -0.2619809048345836
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.03127009992297051,
+        "final_xy_m": 0.008327107756816603,
+        "yaw_p95_rad": 0.010670867050045718
+      },
+      "candidate": {
+        "xy_p95_m": 0.05024053271842543,
+        "final_xy_m": 0.0053461348599888586,
+        "yaw_p95_rad": 0.03099656558156738
+      },
+      "frames": 41,
+      "rejected_corrections": 8
+    },
+    {
+      "case_id": 8,
+      "seed": 114008,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        3.4250000000000003,
+        2.125,
+        1.692909637590068
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.04792447441920298,
+        "final_xy_m": 0.018547416469596716,
+        "yaw_p95_rad": 0.012794173100799888
+      },
+      "candidate": {
+        "xy_p95_m": 0.009371198717254075,
+        "final_xy_m": 0.00573283247023098,
+        "yaw_p95_rad": 0.004786648459524923
+      },
+      "frames": 41,
+      "rejected_corrections": 7
+    },
+    {
+      "case_id": 9,
+      "seed": 114009,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        7.325,
+        6.575,
+        2.53317493251431
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.04633966880499869,
+        "final_xy_m": 0.046556980846834226,
+        "yaw_p95_rad": 0.022199247517479037
+      },
+      "candidate": {
+        "xy_p95_m": 0.025670259447128706,
+        "final_xy_m": 0.01763267186202763,
+        "yaw_p95_rad": 0.003448345869810243
+      },
+      "frames": 41,
+      "rejected_corrections": 9
+    },
+    {
+      "case_id": 10,
+      "seed": 114010,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        8.275,
+        2.075,
+        -0.8466454619284431
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.03472903314845555,
+        "final_xy_m": 0.0086095831005145,
+        "yaw_p95_rad": 0.0040534564294905095
+      },
+      "candidate": {
+        "xy_p95_m": 0.027951272957499714,
+        "final_xy_m": 0.005933409912376062,
+        "yaw_p95_rad": 0.03594202766312282
+      },
+      "frames": 41,
+      "rejected_corrections": 6
+    },
+    {
+      "case_id": 11,
+      "seed": 114011,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        1.5250000000000001,
+        6.175000000000001,
+        -3.0155654538367602
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.03181046439453685,
+        "final_xy_m": 0.014401246643223686,
+        "yaw_p95_rad": 0.010648823516561823
+      },
+      "candidate": {
+        "xy_p95_m": 0.011531848017078145,
+        "final_xy_m": 0.0061821569277092266,
+        "yaw_p95_rad": 0.05825635863248957
+      },
+      "frames": 41,
+      "rejected_corrections": 4
+    },
+    {
+      "case_id": 12,
+      "seed": 114012,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        7.4750000000000005,
+        5.275,
+        0.8175703855674916
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.02481064661927545,
+        "final_xy_m": 0.0071481473305357885,
+        "yaw_p95_rad": 0.013041257256865002
+      },
+      "candidate": {
+        "xy_p95_m": 0.007575157316809006,
+        "final_xy_m": 0.002184227022995232,
+        "yaw_p95_rad": 0.0031027710836069033
+      },
+      "frames": 41,
+      "rejected_corrections": 10
+    },
+    {
+      "case_id": 13,
+      "seed": 114013,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        7.125,
+        6.175000000000001,
+        -0.9486591540542233
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.01419740449629917,
+        "final_xy_m": 0.00675267502075604,
+        "yaw_p95_rad": 0.010070258153687561
+      },
+      "candidate": {
+        "xy_p95_m": 0.053873280313642,
+        "final_xy_m": 0.0025788152828566764,
+        "yaw_p95_rad": 0.024719922521147186
+      },
+      "frames": 41,
+      "rejected_corrections": 9
+    },
+    {
+      "case_id": 14,
+      "seed": 114014,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        2.575,
+        3.375,
+        1.4380819045046938
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.04645847478913027,
+        "final_xy_m": 0.016221054262686583,
+        "yaw_p95_rad": 0.009762714932017857
+      },
+      "candidate": {
+        "xy_p95_m": 0.03412414874946869,
+        "final_xy_m": 0.003725829681894088,
+        "yaw_p95_rad": 0.01412511618031509
+      },
+      "frames": 41,
+      "rejected_corrections": 6
+    },
+    {
+      "case_id": 15,
+      "seed": 114015,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        8.875,
+        5.4750000000000005,
+        0.7705465751294684
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.015885150363371337,
+        "final_xy_m": 0.014792427920209296,
+        "yaw_p95_rad": 0.023643834789740303
+      },
+      "candidate": {
+        "xy_p95_m": 0.026124846463563268,
+        "final_xy_m": 0.0024961979944076148,
+        "yaw_p95_rad": 0.003045616516219596
+      },
+      "frames": 41,
+      "rejected_corrections": 9
+    },
+    {
+      "case_id": 16,
+      "seed": 114016,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        7.775,
+        6.875,
+        2.787004291045249
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.028024939683105824,
+        "final_xy_m": 0.020996690732841935,
+        "yaw_p95_rad": 0.00873905943909925
+      },
+      "candidate": {
+        "xy_p95_m": 0.019292427590466926,
+        "final_xy_m": 0.0033694367484997994,
+        "yaw_p95_rad": 0.008520720749401356
+      },
+      "frames": 41,
+      "rejected_corrections": 5
+    },
+    {
+      "case_id": 17,
+      "seed": 114017,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "initial_pose": [
+        2.375,
+        1.475,
+        0.40484699425954407
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.057247113155755536,
+        "final_xy_m": 0.05551327684712061,
+        "yaw_p95_rad": 0.01092868673070857
+      },
+      "candidate": {
+        "xy_p95_m": 0.031772787933633174,
+        "final_xy_m": 0.04351876413452191,
+        "yaw_p95_rad": 0.08447102811148799
+      },
+      "frames": 41,
+      "rejected_corrections": 13
+    },
+    {
+      "case_id": 18,
+      "seed": 114018,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        3.225,
+        1.625,
+        1.0613473615755833
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.02716058005504278,
+        "final_xy_m": 0.025272268775153556,
+        "yaw_p95_rad": 0.006840915466807207
+      },
+      "candidate": {
+        "xy_p95_m": 0.013583120669172052,
+        "final_xy_m": 0.004814999902216981,
+        "yaw_p95_rad": 0.0034517000197125114
+      },
+      "frames": 41,
+      "rejected_corrections": 11
+    },
+    {
+      "case_id": 19,
+      "seed": 114019,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        7.9750000000000005,
+        6.775,
+        -0.3628111265977614
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.03655658879403408,
+        "final_xy_m": 0.009660866744385625,
+        "yaw_p95_rad": 0.013483769309755367
+      },
+      "candidate": {
+        "xy_p95_m": 0.013215871812619942,
+        "final_xy_m": 0.005105403606881571,
+        "yaw_p95_rad": 0.007223537203207009
+      },
+      "frames": 41,
+      "rejected_corrections": 10
+    },
+    {
+      "case_id": 20,
+      "seed": 114020,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        3.125,
+        6.675000000000001,
+        2.4415083573416796
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.03590366232875726,
+        "final_xy_m": 0.03890366024121385,
+        "yaw_p95_rad": 0.012517867654223913
+      },
+      "candidate": {
+        "xy_p95_m": 0.008432951213487817,
+        "final_xy_m": 0.008780514360984938,
+        "yaw_p95_rad": 0.002677301096244644
+      },
+      "frames": 41,
+      "rejected_corrections": 9
+    },
+    {
+      "case_id": 21,
+      "seed": 114021,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        3.4250000000000003,
+        1.975,
+        -0.8290420188599352
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.019466458319779046,
+        "final_xy_m": 0.027021649627420683,
+        "yaw_p95_rad": 0.005704302683250617
+      },
+      "candidate": {
+        "xy_p95_m": 0.012785061106534577,
+        "final_xy_m": 0.0031131719701160063,
+        "yaw_p95_rad": 0.003151102238215131
+      },
+      "frames": 41,
+      "rejected_corrections": 13
+    },
+    {
+      "case_id": 22,
+      "seed": 114022,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        6.2250000000000005,
+        1.2750000000000001,
+        1.7460632407045278
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false,
+      "baseline": {
+        "xy_p95_m": 0.03352280476524756,
+        "final_xy_m": 0.015945008836845395,
+        "yaw_p95_rad": 0.021448684645802185
+      },
+      "candidate": {
+        "xy_p95_m": 0.027677267836077674,
+        "final_xy_m": 0.014782509953532388,
+        "yaw_p95_rad": 0.0076968486936164204
+      },
+      "frames": 41,
+      "rejected_corrections": 6
+    },
+    {
+      "case_id": 23,
+      "seed": 114023,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/train_00",
+      "initial_pose": [
+        8.375,
+        2.575,
+        -2.000163614871212
+      ],
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true,
+      "baseline": {
+        "xy_p95_m": 0.026982022643093337,
+        "final_xy_m": 0.026982022643093337,
+        "yaw_p95_rad": 0.015904844328062495
+      },
+      "candidate": {
+        "xy_p95_m": 0.028633650117944973,
+        "final_xy_m": 0.007496799999842998,
+        "yaw_p95_rad": 0.05273491683434717
+      },
+      "frames": 41,
+      "rejected_corrections": 5
+    }
+  ],
+  "groups": {
+    "normal_feedback": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.025985613337159114,
+        "maximum_case_xy_p95_m": 0.04291036557909149,
+        "median_case_yaw_p95_rad": 0.00921041398875344
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.010579138992990528,
+        "maximum_case_xy_p95_m": 0.017382431103106576,
+        "median_case_yaw_p95_rad": 0.0032772355516597074
+      }
+    },
+    "small_initial_offset": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.027489770168485812,
+        "maximum_case_xy_p95_m": 0.03655658879403408,
+        "median_case_yaw_p95_rad": 0.01037056260186664
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.052056906516033716,
+        "maximum_case_xy_p95_m": 0.07707166191352124,
+        "median_case_yaw_p95_rad": 0.02080287818682569
+      }
+    },
+    "unmapped_obstacle": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.04118106855894377,
+        "maximum_case_xy_p95_m": 0.04792447441920298,
+        "median_case_yaw_p95_rad": 0.012519510462488448
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.013954521120229432,
+        "maximum_case_xy_p95_m": 0.03412414874946869,
+        "median_case_yaw_p95_rad": 0.004925039914015272
+      }
+    },
+    "missing_sector": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.021315461903564235,
+        "maximum_case_xy_p95_m": 0.04633966880499869,
+        "median_case_yaw_p95_rad": 0.01667729825062425
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.01922766027683164,
+        "maximum_case_xy_p95_m": 0.026124846463563268,
+        "median_case_yaw_p95_rad": 0.0030983593772173634
+      }
+    },
+    "command_odometry": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.03232720395794278,
+        "maximum_case_xy_p95_m": 0.03472903314845555,
+        "median_case_yaw_p95_rad": 0.015093872042450718
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.0234848477132723,
+        "maximum_case_xy_p95_m": 0.027951272957499714,
+        "median_case_yaw_p95_rad": 0.008108784721508888
+      }
+    },
+    "command_and_unmapped": {
+      "baseline": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.032217034429835804,
+        "maximum_case_xy_p95_m": 0.057247113155755536,
+        "median_case_yaw_p95_rad": 0.010788755123635196
+      },
+      "candidate": {
+        "cases": 4,
+        "median_case_xy_p95_m": 0.02008274906751156,
+        "maximum_case_xy_p95_m": 0.031772787933633174,
+        "median_case_yaw_p95_rad": 0.06163313244734936
+      }
+    }
+  },
+  "resource": {
+    "seconds": 153.92505307501415,
+    "cpu_seconds": 76.964819469,
+    "average_cpu_cores": 0.5000148964151522,
+    "peak_rss_mib": 2528.16015625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "contract": {
+    "schema": "odom_anchored_static_support_v3",
+    "calibrated": false,
+    "endpoint_gate_m": 0.15,
+    "minimum_hits": 12,
+    "minimum_support_fraction": 0.35,
+    "maximum_translation_rate_m_s": 0.04,
+    "maximum_yaw_rate_rad_s": 0.06,
+    "maximum_proposal_translation_m": 0.12,
+    "maximum_proposal_yaw_rad": 0.12,
+    "weak_axis_ratio": 0.04,
+    "minimum_cost_improvement_m": 0.001,
+    "verified_prior_cost_m": 0.02,
+    "verified_prior_support": 0.8,
+    "process_std_per_sqrt_s": [
+      0.01,
+      0.01,
+      0.008
+    ],
+    "static_refinement": {
+      "huber_distance_m": 0.06,
+      "prior_precision": 0.2,
+      "minimum_improvement_m": 0.0002,
+      "verified_prior_cost_m": 0.012,
+      "angular_endpoint_gate_rad": 0.04,
+      "maximum_endpoint_gate_m": 0.35,
+      "yaw_length_scale_m": 3.0,
+      "bootstrap_seconds": 2.0,
+      "bootstrap_translation_rate_m_s": 0.12,
+      "bootstrap_yaw_rate_rad_s": 0.12
+    }
+  }
+}

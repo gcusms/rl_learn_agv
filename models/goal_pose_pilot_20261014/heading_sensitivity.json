@@ -1,0 +1,26 @@
+{
+  "scope": "Counterfactual +/-90-degree heading error on identical near-goal observations and masks from INITIAL evaluation trajectories; not independent success or physical accuracy",
+  "selected_with": "physical near-goal labels for offline sampling only; no truth appended to policy observations",
+  "rows": {
+    "initial": {
+      "inputs": 128,
+      "mean_total_variation": 0.0,
+      "maximum_total_variation": 0.0,
+      "deterministic_action_changed": 0,
+      "opposite_sign_rotation_choices": 0,
+      "zero_heading_error_mean_stop_probability": 0.0017716775182634592,
+      "zero_heading_error_stop_choices": 0,
+      "first_layer_heading_columns_l2": 0.0
+    },
+    "trained": {
+      "inputs": 128,
+      "mean_total_variation": 0.005876560695469379,
+      "maximum_total_variation": 0.045634910464286804,
+      "deterministic_action_changed": 2,
+      "opposite_sign_rotation_choices": 0,
+      "zero_heading_error_mean_stop_probability": 0.0028983838856220245,
+      "zero_heading_error_stop_choices": 0,
+      "first_layer_heading_columns_l2": 0.025269996374845505
+    }
+  }
+}
