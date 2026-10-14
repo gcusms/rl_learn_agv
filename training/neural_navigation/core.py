@@ -288,6 +288,37 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         self._goal_settled_since=None
         self.goal=goal[:2].copy();self.last_route_time=-100.;self.routing_ready=False
 
+    def replace_map(self,static_map,preserve_valid_route=False):
+        """Install an observed map revision without resetting odometry or actor.
+
+        Dynamic memory is remapped in world coordinates; map-dependent caches
+        are invalidated. The caller owns map/odom frame consistency.
+        """
+        h,w=static_map.free.shape
+        previous_ready=getattr(self,'routing_ready',False);previous_route_time=getattr(self,'last_route_time',-100.)
+        if h%4 or w%4:raise ValueError('Routing map must be padded to multiples of four')
+        old=self.laser_fusion;memory=old.points[old.hard_expiry>self.elapsed]
+        expiry=old.hard_expiry[old.hard_expiry>self.elapsed]
+        self.static_map=static_map;self.localizer.map=static_map
+        self.free=static_map.free[2:h:4,2:w:4].astype(np.float32)
+        self.grid_res=static_map.res*4;self.grid_h,self.grid_w=self.free.shape
+        self.expiry=np.zeros_like(self.free);self.router_cache.clear();self.static_visibility_cache.clear()
+        self.laser_fusion=LaserMapFusion(self)
+        if len(memory):
+            r,c=static_map.cells(memory);r=r//4;c=c//4
+            inside=(r>=0)&(r<self.grid_h)&(c>=0)&(c<self.grid_w)
+            np.maximum.at(self.laser_fusion.hard_expiry,(r[inside],c[inside]),expiry[inside])
+            self.expiry[:]=self.laser_fusion.hard_expiry
+            from scipy.ndimage import distance_transform_edt
+            self.laser_fusion.hard=distance_transform_edt(~(self.expiry>self.elapsed))*self.grid_res<=.32
+        if old.predictor is not None:self.laser_fusion.predictor=old.predictor
+        self.last_route_time=-100.;self.routing_ready=False;self.shortcut_candidate=None;self.shortcut_since=None
+        if preserve_valid_route and previous_ready and self._route_usable(self.predicted_path):
+            # Keep the existing route in world coordinates until the regular
+            # 0.4s replanning tick. New geometry and fresh laser guards apply
+            # immediately. Map growth alone must not erase route hysteresis.
+            self.routing_ready=True;self.last_route_time=previous_route_time
+
     def record_action(self,action):
         action=np.asarray(action,dtype=float)
         if action.shape!=(2,) or not np.isfinite(action).all():raise ValueError('Finite two-dimensional action required')
@@ -311,7 +342,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         self.elapsed=float(timestamp);self._last_timestamp=self.elapsed
         self.scan=scan.copy();self.odom=odom.copy();self.measured_velocity=velocity.copy()
         from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
-        if isinstance(self.localizer,OdometryAnchoredLocalizer):
+        if isinstance(self.localizer,OdometryAnchoredLocalizer) or getattr(self.localizer,'uses_timestamps',False):
             self.estimate=self.localizer.update(self.odom,self.scan,timestamp=self.elapsed)
         else:self.estimate=self.localizer.update(self.odom,self.scan)
         from neural_navigation.goal_pose import update_goal_settling

@@ -93,7 +93,7 @@ class ModelNode(Node):
             mp_context=multiprocessing.get_context('spawn'),
             initializer=initialize_worker,initargs=(worker_settings,))
         self.warmup=self.pool.submit(worker_ready)
-        self.future=None;self.generation=0;self.last_result=None;self.last_frame=None
+        self.future=None;self.generation=0;self.localization_generation=0;self.last_result=None;self.last_frame=None
         self.initial=None;self.goal=None;self.active=False;self.fault=None;self.terminal=None
         self.published_command=(0.,0.);self.published_reason='waiting_inference'
         self.map_alignment=None
@@ -173,6 +173,7 @@ class ModelNode(Node):
             pose=(p.position.x,p.position.y,yaw(p.orientation))
             if not all(math.isfinite(v) for v in pose):raise ValueError('Nonfinite pose')
             self.initial=pose
+            self.localization_generation+=1
             self.map_alignment=None
             if self.buffer.rows:
                 self.set_map_alignment(pose,self.buffer.rows[-1][1])
@@ -183,7 +184,7 @@ class ModelNode(Node):
         try:
             if msg.header.frame_id!='map':raise ValueError('Goal must use map frame')
             goal=(msg.pose.position.x,msg.pose.position.y)
-            if self.model_identity['sensor_core']=='odom-goal-pose':
+            if self.model_identity['sensor_core'] in ('odom-goal-pose','learned-terminal-goal-pose'):
                 goal=(*goal,yaw(msg.pose.orientation))
             if not all(math.isfinite(v) for v in goal):raise ValueError('Nonfinite goal')
             # A new goal must not reset localization to the startup pose after
@@ -297,7 +298,7 @@ class ModelNode(Node):
                 self.future=self.pool.submit(infer_frame,frame,self.generation,self.initial,self.goal,
                     self.get_clock().now().nanoseconds/1e9-self.origin,
                     bool(getattr(self,'decision_pub',None) and self.decision_pub.get_subscription_count()),
-                    self.published_command,self.published_reason)
+                    self.published_command,self.published_reason,self.localization_generation)
             now=self.get_clock().now().nanoseconds/1e9-self.origin
             if self.last_result is None or not 0<=now-self.last_result[1]<=.25:
                 self.stop();self.status('WAITING_INFERENCE',

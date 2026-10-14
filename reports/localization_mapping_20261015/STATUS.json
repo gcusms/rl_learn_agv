@@ -1,0 +1,37 @@
+{
+  "phase": "finished",
+  "completed_beijing": "2026-10-15T05:55:46.914789+08:00",
+  "deadline_beijing": "2026-10-15T09:00:00+08:00",
+  "overnight_training_running": false,
+  "overnight_evaluations_running": false,
+  "all_requested_capabilities_verified": false,
+  "deployment_approved": false,
+  "original_deployed_model_replaced": false,
+  "known_map_validation_48": "old directional 42/48; terminal and composed candidates 48/48",
+  "recorded_input_approximation": "original position 6/8; new position 8/8; new directional 8/8",
+  "historical_avoidance_12": "original and composed candidate 11/12",
+  "new_map_imu_validation": "original 5/8; composed candidate 4/8",
+  "online_mapping_12": {
+    "tasks": 12,
+    "success": 5,
+    "collisions": 1,
+    "false_arrivals": 2,
+    "timeouts": 4
+  },
+  "online_imu_4": {
+    "tasks": 4,
+    "success": 2,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 1
+  },
+  "preferred_general_candidate": null,
+  "requested_goal_outcome": {
+    "known_map_short_localization": "improved in sensor and simulation validation, no independent real reference",
+    "directional_parking": "improved in fixed validation tasks",
+    "historical_avoidance": "retained by composed candidate on 12-task regression",
+    "generalization": "not accepted: composed candidate 4/8 versus original 5/8 on new-map IMU validation",
+    "online_mapping": "not accepted: navigation failures and severe long-trajectory localization drift",
+    "all_requested_capabilities_verified": false
+  }
+}

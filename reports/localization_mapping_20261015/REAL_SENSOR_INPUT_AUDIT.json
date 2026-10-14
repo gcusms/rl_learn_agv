@@ -1,0 +1,226 @@
+{
+  "completed": true,
+  "scope": "recorded input/configuration audit, not ground-truth accuracy or encoder calibration",
+  "ekf_config": {
+    "ekf_filter_node": {
+      "ros__parameters": {
+        "frequency": 50.0,
+        "sensor_timeout": 0.2,
+        "two_d_mode": true,
+        "publish_tf": true,
+        "map_frame": "map",
+        "odom_frame": "odom",
+        "base_link_frame": "base_footprint",
+        "world_frame": "odom",
+        "odom0": "/rl_navigation/odom_raw",
+        "odom0_config": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "odom0_queue_size": 10,
+        "imu0": "/imu",
+        "imu0_config": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "imu0_queue_size": 20,
+        "imu0_differential": false,
+        "imu0_remove_gravitational_acceleration": false,
+        "use_control": false
+      }
+    }
+  },
+  "recorded_chassis_odometry_sources": {
+    "command": 1911
+  },
+  "wheel_feedback_quality_counts": {
+    "fresh": 1911,
+    "measurement_valid": 1911,
+    "frames": 1911
+  },
+  "streams": {
+    "/ros_robot_controller/imu_raw": {
+      "frames": 17576,
+      "median_positive_interval_s": 0.010037660598754883,
+      "backward_timestamps": 0,
+      "gyro_z_percentiles": [
+        -0.5220647948104132,
+        0.006749515466696821,
+        0.5551987798287431
+      ],
+      "receive_age_p95_s": 0.010385870933532715
+    },
+    "/imu_corrected": {
+      "frames": 17375,
+      "median_positive_interval_s": 0.01003873348236084,
+      "backward_timestamps": 0,
+      "gyro_z_percentiles": [
+        -0.528741020083911,
+        0.00028804750350296983,
+        0.5493611307192894
+      ],
+      "receive_age_p95_s": 0.011320710182189934
+    },
+    "/imu": {
+      "frames": 17375,
+      "median_positive_interval_s": 0.01003873348236084,
+      "backward_timestamps": 0,
+      "gyro_z_percentiles": [
+        -0.528741020083911,
+        0.00028804750350296983,
+        0.5493611307192894
+      ],
+      "receive_age_p95_s": 0.012193965911865234
+    },
+    "/rl_navigation/odom_raw": {
+      "frames": 20141,
+      "median_positive_interval_s": 0.010008931159973145,
+      "backward_timestamps": 0,
+      "xy_span_m": [
+        4.65098336828676,
+        3.957369813461116
+      ],
+      "twist_percentiles": [
+        [
+          0.0,
+          0.0,
+          -0.5000000000000001
+        ],
+        [
+          0.010000000149011624,
+          0.0,
+          0.0
+        ],
+        [
+          0.20000000000000004,
+          0.0,
+          0.5000000000000001
+        ]
+      ]
+    },
+    "/odom": {
+      "frames": 10026,
+      "median_positive_interval_s": 0.019995450973510742,
+      "backward_timestamps": 0,
+      "xy_span_m": [
+        4.345178469918367,
+        3.83039270430653
+      ],
+      "twist_percentiles": [
+        [
+          -0.0007535725085243295,
+          0.0,
+          -0.516188549509006
+        ],
+        [
+          0.04810091086172645,
+          0.0,
+          8.024387250053137e-05
+        ],
+        [
+          0.2011860699715307,
+          0.0,
+          0.5251459057121859
+        ]
+      ]
+    },
+    "/command/odom": {
+      "frames": 20142,
+      "median_positive_interval_s": 0.010009050369262695,
+      "backward_timestamps": 0,
+      "xy_span_m": [
+        4.65098336828676,
+        3.957369813461116
+      ],
+      "twist_percentiles": [
+        [
+          0.0,
+          0.0,
+          -0.5000000000000001
+        ],
+        [
+          0.010000000149011624,
+          0.0,
+          0.0
+        ],
+        [
+          0.20000000000000004,
+          0.0,
+          0.5000000000000001
+        ]
+      ]
+    },
+    "/wheel/odom": {
+      "frames": 15820,
+      "median_positive_interval_s": 0.010233163833618164,
+      "backward_timestamps": 0,
+      "xy_span_m": [
+        4.810864843247659,
+        3.8396537479037205
+      ],
+      "twist_percentiles": [
+        [
+          0.0,
+          -0.00594998608634431,
+          -0.4911099626823871
+        ],
+        [
+          0.04561655999530634,
+          0.0,
+          -0.0
+        ],
+        [
+          0.2102328417174988,
+          0.005949986086344308,
+          0.5099988074009403
+        ]
+      ]
+    }
+  },
+  "gyro_comparisons": {
+    "/command/odom": {
+      "gyro_rate_rmse_rad_s": 0.17008355083063656,
+      "gyro_rate_absolute_difference_p95_rad_s": 0.4778124944562647
+    },
+    "/odom": {
+      "gyro_rate_rmse_rad_s": 0.048872019722105156,
+      "gyro_rate_absolute_difference_p95_rad_s": 0.11304830720516988
+    },
+    "/wheel/odom": {
+      "gyro_rate_rmse_rad_s": 0.04882979067987564,
+      "gyro_rate_absolute_difference_p95_rad_s": 0.10621973543616976
+    }
+  },
+  "interpretation": [
+    "Recorded EKF uses command-source odometry velocity and IMU angular rate.",
+    "Wheel feedback exists in this recording, but is not selected as the chassis odometry source.",
+    "Fully command-integrated yaw is a degraded ablation, not an exact model of this recorded EKF.",
+    "Wheel odometry is a measured-motion estimate, not independent global pose truth; wheel slip remains possible."
+  ]
+}

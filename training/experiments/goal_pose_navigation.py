@@ -138,31 +138,4 @@ def export_goal_policy(model,components,output):
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2))
 
 
-class GoalPoseInput:
-    def __init__(self,policy,core,prediction):
-        self.policy=policy;self.core=core;self.prediction=prediction;self.last_observation=None
-    def predict(self,prefix):
-        self.last_observation=append_goal_features(self.prediction.augment(prefix,self.core),self.core)
-        return self.policy.predict(self.last_observation)
-
-
-class GoalPoseRuntime(SensorNavigationRuntime):
-    def __init__(self,bundle,*args,**kwargs):
-        bundle=Path(bundle);manifest=json.loads((bundle/'manifest.json').read_text())
-        if (manifest['observation_contract']!=contract() or manifest['quality_prefix_contract']!=quality_contract()
-            or json.loads((bundle/'goal_pose_observation.json').read_text())!=contract()
-            or json.loads((bundle/'quality_observation.json').read_text())!=quality_contract()
-            or manifest['required_runtime']!='experiments.goal_pose_navigation.GoalPoseRuntime'):
-            raise ValueError('Goal-pose bundle contract mismatch')
-        for name,expected in manifest['files'].items():
-            if Path(name).name!=name or hashlib.sha256((bundle/name).read_bytes()).hexdigest()!=expected:
-                raise ValueError('Bundle hash or filename mismatch')
-        super().__init__(bundle,*args,**kwargs)
-        if self.policy.observation_dimensions!=282:raise ValueError('Native V4 prefix required')
-        self.policy.observation_dimensions=303
-        self.policy=GoalPoseInput(self.policy,self.core,QualityPredictionContext(self.guard.half*2))
-    def step(self,*args,**kwargs):
-        result=super().step(*args,**kwargs);actual=self.policy.last_observation
-        result['policy_observation_dimensions']=303;result['goal_pose_features']=actual[300:].tolist()
-        if 'policy_observation' in result:result['policy_observation']=actual.tolist()
-        return result
+from neural_navigation.goal_pose_runtime import GoalPoseInput,GoalPoseRuntime

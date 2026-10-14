@@ -24,6 +24,11 @@ class LaserMapFusion:
         angles=env.lidar.angles[valid]+yaw+mount[3]
         ends=origin+scan[valid,None]*np.c_[np.cos(angles),np.sin(angles)]
         keep=env.static_map.lookup(ends,env.static_map.distance,outside=0.)>.22;ends=ends[keep]
+        if getattr(env,'routing_dynamic_known_free_only',False):
+            # Partial-map ablation: unknown space already blocks the static
+            # route with footprint inflation. Avoid duplicating that barrier
+            # in dynamic memory. Every raw return still reaches actor/guard.
+            ends=ends[env.static_map.lookup(ends,~env.static_map.blocked,outside=False)]
         hit=np.zeros(self.shape,bool);close=np.zeros(self.shape,bool);urgent=np.zeros(self.shape,bool)
         for point in ends:
             r,c=env.cell(point)

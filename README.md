@@ -1,5 +1,9 @@
 # AGV 学习导航：实车适配与方向停靠（2026-10-14–15）
 
+最新夜间实验位于 `fix/localization-mapping-20261015` 分支：[结果报告](reports/localization_mapping_20261015/REPORT.md)、[交互回放](reports/localization_mapping_20261015/index.html)、[复现说明](reports/localization_mapping_20261015/REPRODUCE.md)。内容包括已知栅格地图定位、真实 SLAM Toolbox 在线建图、方向停车专项训练，以及原部署 2k 模型的避障回归。所有候选单独保存，实车模型没有覆盖；在线建图和长距离弱特征定位仍存在失败，不能把短程停车成绩当作整体部署验收。
+
+实车录制核对确认当前输入包含指令平移和 EKF 融合 IMU 转向，且记录中已有轮反馈。报告分别列出运动反馈、指令平移＋IMU 近似和纯指令积分退化对照，避免把不同条件下的成绩合并。
+
 本地 `fix/real-odom-goal-yaw-20261014` 分支新增方向停靠训练与里程计锚定定位实验。终点 PPO 最高训练到 12,500 步；按开发闭环表现保留 **5,000 步检查点**：24 项方向任务成功 23 项，上轮 303 维模型为 0/24。4 项旧位置导航仍为 3/4，横穿碰撞未修复，候选未通过部署验收。
 
 新候选为 303 维、12 动作，使用 `experiments.docking_navigation.DockingRuntime`，不要套用下面历史 300 维模型的入口。完整配对数据、定位改善与退化、检查点选择见 [本轮报告](reports/docking_training_20261014/REPORT.md)、[五版本回放](reports/docking_training_20261014/index.html)、[候选模型](models/docking_selected_5000_20261015)。本次未替换原发布模型。

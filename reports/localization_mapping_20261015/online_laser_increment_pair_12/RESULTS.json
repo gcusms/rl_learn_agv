@@ -1,0 +1,222 @@
+{
+  "completed": false,
+  "scope": "validation maps; supervised scan bootstrap then retained RL control; no simulator truth input",
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "online_map_00",
+      "safe_success": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "seconds": 6.999999999999247,
+      "travel_including_bootstrap_m": 0.9281312155853159,
+      "bootstrap_frames": 66,
+      "frames": 36,
+      "final_xy_error_m": 0.06712064872210473,
+      "final_yaw_error_rad": 0.005608899780202403,
+      "localization_xy_p95_m": 0.024184725494339848,
+      "localization_yaw_p95_rad": 0.008867186725179388,
+      "map_updates": 35,
+      "subgoal_updates": 0,
+      "initial_known_cells": 17134,
+      "final_known_cells": 18677,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "serialization": {
+        "map_messages": 111,
+        "pose_messages": 102,
+        "transient_mapping_returns_withheld": 11,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 77,
+        "laser_increment_fallback_frames": 30,
+        "last_alignment_stamp_s": 21.299999999999997,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 128.2876405166462,
+      "task_kind": "visible_goal",
+      "dynamic_obstacle_introduced": false
+    },
+    {
+      "case_id": "online_map_01",
+      "safe_success": false,
+      "collisions": 1,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "seconds": 15.999999999997456,
+      "travel_including_bootstrap_m": 1.2341240203206152,
+      "bootstrap_frames": 66,
+      "frames": 80,
+      "final_xy_error_m": 4.929970543691674,
+      "final_yaw_error_rad": 2.3386458982986635,
+      "localization_xy_p95_m": 0.02844590878740285,
+      "localization_yaw_p95_rad": 0.0045822393361772285,
+      "map_updates": 78,
+      "subgoal_updates": 0,
+      "initial_known_cells": 16934,
+      "final_known_cells": 17485,
+      "stop_reasons": {
+        "None": 79,
+        "laser_braking_footprint": 1
+      },
+      "serialization": {
+        "map_messages": 167,
+        "pose_messages": 147,
+        "transient_mapping_returns_withheld": 1496,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 127,
+        "laser_increment_fallback_frames": 24,
+        "last_alignment_stamp_s": 30.099999999999994,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 194.85409512999468,
+      "task_kind": "occluded_goal_exploration",
+      "dynamic_obstacle_introduced": true
+    },
+    {
+      "case_id": "online_map_02",
+      "safe_success": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "seconds": 17.9999999999972,
+      "travel_including_bootstrap_m": 2.924107857438636,
+      "bootstrap_frames": 66,
+      "frames": 91,
+      "final_xy_error_m": 0.06551990721264644,
+      "final_yaw_error_rad": 0.0032146582598286955,
+      "localization_xy_p95_m": 0.040795430374825456,
+      "localization_yaw_p95_rad": 0.012690630363280997,
+      "map_updates": 84,
+      "subgoal_updates": 0,
+      "initial_known_cells": 19054,
+      "final_known_cells": 23161,
+      "stop_reasons": {
+        "None": 89,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "serialization": {
+        "map_messages": 180,
+        "pose_messages": 158,
+        "transient_mapping_returns_withheld": 2,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 134,
+        "laser_increment_fallback_frames": 28,
+        "last_alignment_stamp_s": 32.30000000000001,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 139.41213948419318,
+      "task_kind": "visible_goal",
+      "dynamic_obstacle_introduced": false
+    },
+    {
+      "case_id": "online_map_03",
+      "safe_success": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": true,
+      "timeout": false,
+      "seconds": 50.2000000000131,
+      "travel_including_bootstrap_m": 8.389535086634567,
+      "bootstrap_frames": 66,
+      "frames": 252,
+      "final_xy_error_m": 0.3649157360992166,
+      "final_yaw_error_rad": 0.04975760965815912,
+      "localization_xy_p95_m": 0.3597865187861623,
+      "localization_yaw_p95_rad": 0.055527327377317935,
+      "map_updates": 241,
+      "subgoal_updates": 19,
+      "initial_known_cells": 12167,
+      "final_known_cells": 24728,
+      "stop_reasons": {
+        "None": 243,
+        "learned_route_incomplete": 8,
+        "estimated_goal_reached": 1
+      },
+      "serialization": {
+        "map_messages": 350,
+        "pose_messages": 319,
+        "transient_mapping_returns_withheld": 596,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 300,
+        "laser_increment_fallback_frames": 23,
+        "last_alignment_stamp_s": 64.5,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 158.66471200424712,
+      "task_kind": "occluded_goal_exploration",
+      "dynamic_obstacle_introduced": false
+    },
+    {
+      "case_id": "online_map_04",
+      "safe_success": false,
+      "collisions": 1,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "seconds": 6.999999999999247,
+      "travel_including_bootstrap_m": 0.925120771754969,
+      "bootstrap_frames": 66,
+      "frames": 35,
+      "final_xy_error_m": 1.1192561469147644,
+      "final_yaw_error_rad": 1.032524880758471,
+      "localization_xy_p95_m": 0.3856168864686534,
+      "localization_yaw_p95_rad": 0.00936663734984062,
+      "map_updates": 34,
+      "subgoal_updates": 0,
+      "initial_known_cells": 17261,
+      "final_known_cells": 17365,
+      "stop_reasons": {
+        "None": 34,
+        "waiting_observed_free_space": 1
+      },
+      "serialization": {
+        "map_messages": 118,
+        "pose_messages": 102,
+        "transient_mapping_returns_withheld": 915,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 99,
+        "laser_increment_fallback_frames": 7,
+        "last_alignment_stamp_s": 21.099999999999994,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 165.86626011412585,
+      "task_kind": "visible_goal",
+      "dynamic_obstacle_introduced": true
+    }
+  ],
+  "resource_parent_only": {
+    "seconds": 713.1841109790257,
+    "cpu_seconds": 178.279480145,
+    "average_cpu_cores": 0.24997679757652802,
+    "peak_rss_mib": 2268.85546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

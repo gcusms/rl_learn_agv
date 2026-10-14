@@ -20,19 +20,27 @@ class InferenceWorker:
         sys.path[:0]=[settings['model_source'],str(Path(settings['model_source'])/'training')]
         import torch
         torch.set_num_threads(1)
-        module,name=settings['required_runtime'].rsplit('.',1)
-        self.factory=getattr(importlib.import_module(module),name)
+        from neural_navigation.goal_pose_runtime import resolve_runtime
+        self.factory=resolve_runtime(settings['required_runtime'])
+        if self.factory is None:
+            module,name=settings['required_runtime'].rsplit('.',1)
+            self.factory=getattr(importlib.import_module(module),name)
         from .fast_guard import install_acceleration
         install_acceleration()
         self.geometry=MecanumKinematics(*settings['geometry'])
-        self.runtime=None;self.generation=None
+        self.runtime=None;self.generation=None;self.localization_generation=None
 
-    def infer(self,frame,generation,initial,goal,received_timestamp,capture_observation=False,published_command=None,published_reason='none'):
+    def infer(self,frame,generation,initial,goal,received_timestamp,capture_observation=False,published_command=None,published_reason='none',localization_generation=0):
         started=time.perf_counter()
         s=self.settings
-        if self.runtime is None or self.generation!=generation:
+        if self.runtime is None or self.localization_generation!=localization_generation:
             self.runtime=self.factory(s['bundle'],s['map_path'],initial,goal,s['route_mode'])
-            self.generation=generation
+            self.localization_generation=localization_generation
+        elif self.generation!=generation:
+            # A target change is not a localization reset. Retain map/odom
+            # alignment, model weights, scan history and near-field obstacles.
+            self.runtime.core.set_goal(goal)
+        self.generation=generation
         scan,odom,velocity,stamp,valid=frame
         if published_command is not None:
             restore_published_history(self.runtime,published_command,published_reason,stamp)
@@ -71,5 +79,5 @@ def worker_ready():
     return _worker is not None
 
 
-def infer_frame(frame,generation,initial,goal,received_timestamp,capture_observation=False,published_command=None,published_reason='none'):
-    return _worker.infer(frame,generation,initial,goal,received_timestamp,capture_observation,published_command,published_reason)
+def infer_frame(frame,generation,initial,goal,received_timestamp,capture_observation=False,published_command=None,published_reason='none',localization_generation=0):
+    return _worker.infer(frame,generation,initial,goal,received_timestamp,capture_observation,published_command,published_reason,localization_generation)

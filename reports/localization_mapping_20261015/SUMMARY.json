@@ -1,0 +1,582 @@
+{
+  "completed": true,
+  "completed_beijing": "2026-10-15T05:55:46.914789+08:00",
+  "deadline_beijing": "2026-10-15T09:00:00+08:00",
+  "deployment_approved": false,
+  "selected_known_map": {
+    "selected": "boundary_ppo_8000",
+    "selection_scope": "parking-stage selection on 48 fixed validation tasks; not overall deployment selection",
+    "policy_sha256": "1daa4990408703d14ed3d3996d03c8912d65f99c55d9a5266a7622a95436d408",
+    "validation": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "deployment_approved": false,
+    "localizer_router_weights_retrained": false,
+    "navigation_actor_weights_changed": false,
+    "frozen_navigation_actor_reference": "parent 5k directional checkpoint, not original real-deployed 2k actor",
+    "updated_components": [
+      "terminal actor",
+      "critic during PPO",
+      "static-support localization v5",
+      "resident deployment state"
+    ],
+    "observation_dimensions": 303,
+    "actions": 12,
+    "physical_speed_limits_m_s_rad_s": [
+      0.2,
+      0.5
+    ],
+    "terminal_ppo_steps_total": 8000,
+    "additional_terminal_ppo_steps": 3000,
+    "teacher_warmup_updates": 600,
+    "online_mapping_status": "experimental; use live observed map and external SLAM estimates",
+    "requires_initial_pose_on_known_map": true,
+    "arbitrary_global_relocalization_tested": false,
+    "ros_validation_scope": "callback/resident-state tests and portable construction; full ROS adapter launch not exercised",
+    "known_map_command_integrated_directional_routes": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 2,
+      "false_arrivals": 2,
+      "timeouts": 0
+    },
+    "command_integrated_position_pair": {
+      "real_deployed_2k": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "false_arrivals": 0,
+        "timeouts": 0
+      },
+      "selected_8k": {
+        "tasks": 8,
+        "success": 4,
+        "collisions": 2,
+        "false_arrivals": 2,
+        "timeouts": 0
+      }
+    },
+    "command_translation_imu_heading_position_pair": {
+      "real_deployed_2k": {
+        "tasks": 8,
+        "success": 6,
+        "collisions": 1,
+        "false_arrivals": 0,
+        "timeouts": 1
+      },
+      "selected_8k": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "false_arrivals": 0,
+        "timeouts": 0
+      }
+    },
+    "online_mapping_command_integrated": {
+      "tasks": 4,
+      "success": 2,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 1
+    },
+    "command_feedback_sim_to_real_gap_resolved": false,
+    "unseen_generated_map_command_navigation": {
+      "tasks": 8,
+      "success": 2,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 5
+    },
+    "source_training_config": "models/localization_mapping_20261015/boundary_assisted_terminal/config.json"
+  },
+  "known_map_48": {
+    "boundary_warmup": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "retained_5k": {
+      "tasks": 48,
+      "success": 42,
+      "collisions": 0,
+      "false_arrivals": 3,
+      "timeouts": 3
+    },
+    "boundary_ppo_8000": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    }
+  },
+  "requested_goal_outcome": {
+    "known_map_short_localization": "improved in sensor and simulation validation, no independent real reference",
+    "directional_parking": "improved in fixed validation tasks",
+    "historical_avoidance": "retained by composed candidate on 12-task regression",
+    "generalization": "not accepted: composed candidate 4/8 versus original 5/8 on new-map IMU validation",
+    "online_mapping": "not accepted: navigation failures and severe long-trajectory localization drift",
+    "all_requested_capabilities_verified": false
+  },
+  "original_2k_position_16": {
+    "boundary_warmup": {
+      "tasks": 16,
+      "success": 16,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "real_deployed_2k": {
+      "tasks": 16,
+      "success": 15,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 0
+    }
+  },
+  "online_mapping_12": {
+    "tasks": 12,
+    "success": 5,
+    "collisions": 1,
+    "false_arrivals": 2,
+    "timeouts": 4
+  },
+  "annulus_parking_4": {
+    "tasks": 4,
+    "success": 4,
+    "collisions": 0,
+    "false_arrivals": 0,
+    "timeouts": 0
+  },
+  "historical_avoidance_12": {
+    "real_deployed_2k": {
+      "tasks": 12,
+      "success": 11,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "selected_8k": {
+      "tasks": 12,
+      "success": 9,
+      "collisions": 2,
+      "false_arrivals": 0,
+      "timeouts": 1
+    }
+  },
+  "command_integrated_boundary_8": {
+    "tasks": 8,
+    "success": 7,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 0
+  },
+  "command_integrated_routes_8": {
+    "tasks": 8,
+    "success": 4,
+    "collisions": 2,
+    "false_arrivals": 2,
+    "timeouts": 0
+  },
+  "command_integrated_position_8": {
+    "real_deployed_2k": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "selected_8k": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 2,
+      "false_arrivals": 2,
+      "timeouts": 0
+    }
+  },
+  "online_mapping_command_integrated_4": {
+    "tasks": 4,
+    "success": 2,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 1
+  },
+  "unseen_map_command_integrated_8": {
+    "tasks": 8,
+    "success": 2,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 5
+  },
+  "retained_navigation_ablation": {
+    "v5_known_48": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "v5_command_8": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 2,
+      "false_arrivals": 2,
+      "timeouts": 0
+    },
+    "v6_known_48": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "v6_command_8": {
+      "tasks": 8,
+      "success": 6,
+      "collisions": 1,
+      "false_arrivals": 1,
+      "timeouts": 0
+    },
+    "v6_online_command_4": {
+      "tasks": 4,
+      "success": 2,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 1
+    }
+  },
+  "recorded_input_approximation": {
+    "command_translation_imu_heading_position_8": {
+      "real_deployed_2k": {
+        "tasks": 8,
+        "success": 6,
+        "collisions": 1,
+        "false_arrivals": 0,
+        "timeouts": 1
+      },
+      "selected_8k": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "false_arrivals": 0,
+        "timeouts": 0
+      }
+    },
+    "online_mapping_4": {
+      "tasks": 4,
+      "success": 2,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 1
+    },
+    "preserved_turn_imu_8": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "preserved_turn_historical_12": {
+      "tasks": 12,
+      "success": 11,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "directional_pair_8": {
+      "preserved_turn_v6": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "false_arrivals": 0,
+        "timeouts": 0
+      },
+      "selected_8k": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "false_arrivals": 0,
+        "timeouts": 0
+      }
+    },
+    "new_map_position_pair_8": {
+      "preserved_turn_v6": {
+        "tasks": 8,
+        "success": 4,
+        "collisions": 0,
+        "false_arrivals": 1,
+        "timeouts": 3
+      },
+      "real_deployed_2k": {
+        "tasks": 8,
+        "success": 5,
+        "collisions": 0,
+        "false_arrivals": 1,
+        "timeouts": 2
+      }
+    },
+    "gyro_fusion_is_exact_ekf": false
+  },
+  "preferred_research_candidate": null,
+  "original_deployed_model_replaced": false,
+  "navigation_preservation_checks": {
+    "known_parking_48_not_worse": true,
+    "historical_avoidance_not_worse": true,
+    "imu_position_not_worse": true,
+    "imu_directional_not_worse": true,
+    "imu_new_map_position_not_worse": false
+  },
+  "optional_mapping_trials": {
+    "laser_increment_repair_3": {
+      "tasks": 3,
+      "success": 0,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 2
+    },
+    "laser_increment_fresh_8": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 0,
+      "false_arrivals": 3,
+      "timeouts": 1
+    },
+    "ray_free_repair_3": {
+      "tasks": 3,
+      "success": 0,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 2
+    },
+    "coarse_subgoal_repair_3": {
+      "tasks": 3,
+      "success": 1,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 2
+    },
+    "imu_known_free_dynamics_4": {
+      "tasks": 4,
+      "success": 2,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 2
+    }
+  },
+  "online_mapping_bundle": "boundary_assisted_terminal/portable_8000",
+  "long_online_slam_manual_trajectories": [
+    {
+      "scene": "single_long_wall",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 8.489233341637709,
+          "x_p95_m": 8.488620566606432,
+          "y_p95_m": 0.15002045664103325,
+          "yaw_p95_rad": 0.02950128648454607,
+          "final_xy_m": 4.391306922387646
+        },
+        "slam_fresh": {
+          "frames": 459,
+          "xy_p95_m": 8.495996887460185,
+          "x_p95_m": 8.495396541071308,
+          "y_p95_m": 0.15015327588771915,
+          "yaw_p95_rad": 0.02911322787230966,
+          "final_xy_m": 4.391306922387646
+        }
+      },
+      "serialization": {
+        "map_messages": 431,
+        "pose_messages": 461,
+        "transient_mapping_returns_withheld": 0,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    },
+    {
+      "scene": "feature_to_open",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 1.3357278649342559,
+          "x_p95_m": 0.41444161098546495,
+          "y_p95_m": 1.2871788546772667,
+          "yaw_p95_rad": 0.08714946771330596,
+          "final_xy_m": 1.026597064659296
+        },
+        "slam_fresh": {
+          "frames": 465,
+          "xy_p95_m": 1.3357278649342559,
+          "x_p95_m": 0.41444161098546495,
+          "y_p95_m": 1.2871788546772667,
+          "yaw_p95_rad": 0.08714946771330596,
+          "final_xy_m": 1.026597064659296
+        }
+      },
+      "serialization": {
+        "map_messages": 442,
+        "pose_messages": 462,
+        "transient_mapping_returns_withheld": 2856,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    }
+  ],
+  "long_online_slam_distance_prior_ablation": [
+    {
+      "scene": "single_long_wall",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 10.336054188877956,
+          "x_p95_m": 10.329968026174939,
+          "y_p95_m": 0.34786506784083265,
+          "yaw_p95_rad": 0.02753624215220718,
+          "final_xy_m": 7.086038148037157
+        },
+        "slam_fresh": {
+          "frames": 461,
+          "xy_p95_m": 10.345568214565086,
+          "x_p95_m": 10.339337623201354,
+          "y_p95_m": 0.3479822359649773,
+          "yaw_p95_rad": 0.026962453698837763,
+          "final_xy_m": 7.086038148037157
+        }
+      },
+      "serialization": {
+        "map_messages": 435,
+        "pose_messages": 461,
+        "experimental_distance_prior_variance": 0.0025,
+        "transient_mapping_returns_withheld": 0,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    },
+    {
+      "scene": "feature_to_open",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 2.998436493443677,
+          "x_p95_m": 0.80709757209497,
+          "y_p95_m": 2.9295983379331703,
+          "yaw_p95_rad": 0.13838477490686998,
+          "final_xy_m": 2.573754064933362
+        },
+        "slam_fresh": {
+          "frames": 465,
+          "xy_p95_m": 2.998436493443677,
+          "x_p95_m": 0.80709757209497,
+          "y_p95_m": 2.9295983379331703,
+          "yaw_p95_rad": 0.13838477490686998,
+          "final_xy_m": 2.573754064933362
+        }
+      },
+      "serialization": {
+        "map_messages": 465,
+        "pose_messages": 462,
+        "experimental_distance_prior_variance": 0.0025,
+        "transient_mapping_returns_withheld": 3678,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    }
+  ],
+  "long_online_slam_distance_prior_decision": "rejected: position error worsened on both frozen trajectories; default unchanged",
+  "same_map_unknown_exploration_entirely_learned": false,
+  "supervised_scan_bootstrap": true
+}

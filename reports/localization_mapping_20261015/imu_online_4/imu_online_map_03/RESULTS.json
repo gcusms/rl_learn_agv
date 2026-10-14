@@ -1,0 +1,43 @@
+{
+  "case_id": "imu_online_map_03",
+  "safe_success": false,
+  "collisions": 0,
+  "physical_guards": 0,
+  "false_arrival": true,
+  "timeout": false,
+  "seconds": 50.00000000001328,
+  "travel_including_bootstrap_m": 8.211245580311843,
+  "bootstrap_frames": 66,
+  "frames": 251,
+  "final_xy_error_m": 0.2718366110709943,
+  "final_yaw_error_rad": 0.07573704508404067,
+  "localization_xy_p95_m": 0.2350835377043295,
+  "localization_yaw_p95_rad": 0.04315170178690142,
+  "map_updates": 239,
+  "subgoal_updates": 18,
+  "initial_known_cells": 12066,
+  "final_known_cells": 25005,
+  "stop_reasons": {
+    "None": 240,
+    "learned_route_incomplete": 10,
+    "estimated_goal_reached": 1
+  },
+  "serialization": {
+    "map_messages": 350,
+    "pose_messages": 318,
+    "transient_mapping_returns_withheld": 582,
+    "rf2o_accepted_frames": 0,
+    "rf2o_fallback_frames": 0,
+    "laser_increment_accepted_frames": 0,
+    "laser_increment_fallback_frames": 0,
+    "last_alignment_stamp_s": 64.30000000000001,
+    "persistent_files": [
+      "persistent_map.posegraph",
+      "persistent_map.data"
+    ]
+  },
+  "actor_ms_p95": 159.53081197221763,
+  "task_kind": "occluded_goal_exploration",
+  "dynamic_obstacle_introduced": false,
+  "input_odometry": "command_linear_imu_yaw"
+}

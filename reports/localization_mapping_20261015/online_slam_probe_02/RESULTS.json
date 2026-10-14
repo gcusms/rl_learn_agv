@@ -1,0 +1,38 @@
+{
+  "completed": true,
+  "scope": "manual physical sensor-loop replay, not RL closed-loop navigation",
+  "scene": "assets/navigation_stage2_dataset/validation_00",
+  "valid_pose_frames": 159,
+  "frames": 160,
+  "metrics": {
+    "odometry": {
+      "xy_p95_m": 0.05888194540060201,
+      "yaw_p95_rad": 0.07391077326855289,
+      "final_xy_m": 0.021324524194921205
+    },
+    "slam": {
+      "xy_p95_m": 0.020414149759061705,
+      "yaw_p95_rad": 0.029121651465421554,
+      "final_xy_m": 0.012397372418909891
+    }
+  },
+  "serialization": {
+    "map_messages": 69,
+    "pose_messages": 43,
+    "last_alignment_stamp_s": 31.900000000000006,
+    "persistent_files": [
+      "persistent_map.posegraph",
+      "persistent_map.data"
+    ]
+  },
+  "known_free_cells": 12477,
+  "origin_planning_free": true,
+  "collisions": 0,
+  "resource": {
+    "seconds": 33.050109348027036,
+    "cpu_seconds": 16.282537896999997,
+    "average_cpu_cores": 0.49266214902771577,
+    "peak_rss_mib": 1596.5546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

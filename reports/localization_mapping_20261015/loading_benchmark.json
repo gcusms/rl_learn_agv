@@ -1,0 +1,25 @@
+{
+  "scope": "local CPU, fresh Python processes, cached filesystem; not Jetson measurement",
+  "rows": [
+    {
+      "mode": "legacy_training_import",
+      "torch_import_s": 1.7404726599925198,
+      "module_import_s": 1.0603724319953471,
+      "construct_s": 0.05854089104104787,
+      "goal_update_s": 7.129798177629709e-05,
+      "total_s": 2.85945756000001,
+      "rss_mib": 540.015625,
+      "training_imported": true
+    },
+    {
+      "mode": "portable_import",
+      "torch_import_s": 1.7496335440082476,
+      "module_import_s": 0.1708799289772287,
+      "construct_s": 0.06402586097829044,
+      "goal_update_s": 8.156901458278298e-05,
+      "total_s": 1.9846212329575792,
+      "rss_mib": 467.62890625,
+      "training_imported": false
+    }
+  ]
+}

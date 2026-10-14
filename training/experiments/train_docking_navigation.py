@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from sb3_contrib import MaskablePPO
 from stable_baselines3.common.callbacks import BaseCallback
-from experiments.docking_navigation import (DockingPolicy,DockingCurriculum,
+from experiments.docking_navigation import (DockingPolicy,DockingCurriculum,PrecisionDockingCurriculum,
     demonstration_choice,export_docking,docking_contract)
 from experiments.masked_navigation import MaskedNavigationCurriculum
 from experiments.quality_masked_navigation import QualityMaskedWrapper
@@ -84,6 +84,21 @@ def augment_goal_conditions(data,copies=0):
     return {key:np.concatenate([value,*extra[key]]) for key,value in data.items()}
 
 
+def augment_boundary_conditions(data,copies=4):
+    """Teacher labels for small target changes on held-group sensor states."""
+    rng=np.random.default_rng(116110)
+    eligible=np.flatnonzero(np.linalg.norm(data['observations'][:,218:220]*12,axis=1)<.10)
+    output={key:[value] for key,value in data.items()}
+    for _ in range(copies):
+        obs=data['observations'][eligible].copy();angles=rng.uniform(-.30,.30,len(obs))
+        obs[:,300]=np.sin(angles);obs[:,301]=np.cos(angles)
+        masks=data['masks'][eligible].copy()
+        output['observations'].append(obs);output['masks'].append(masks)
+        output['actions'].append(np.array([demonstration_choice(o,m) for o,m in zip(obs,masks)]))
+        output['episode'].append(data['episode'][eligible].copy())
+    return {key:np.concatenate(value) for key,value in output.items()}
+
+
 def pretrain(model,data,budget,updates=1000,select_best=False):
     rng=np.random.default_rng(114931);policy=model.policy
     train=np.flatnonzero(data['episode']%5!=0);validation=np.flatnonzero(data['episode']%5==0)
@@ -119,6 +134,8 @@ def main():
     p.add_argument('--heading-augmentation',type=int,default=0)
     p.add_argument('--demonstration-data',type=Path,help='Reuse unchanged physically recorded teacher trajectories')
     p.add_argument('--resume-terminal',action='store_true',help='Continue terminal PPO weights/Adam; start fresh physical episodes')
+    p.add_argument('--precision-curriculum',action='store_true',help='Tolerance-boundary heading sampling; unchanged physical reward')
+    p.add_argument('--terminal-warmup',action='store_true',help='Boundary teacher warmup of retained terminal weights before PPO')
     p.add_argument('--seed',type=int,default=114933);a=p.parse_args()
     if a.output.exists() or a.steps%250 or a.steps<=0 or a.heading_augmentation<0:p.error('Fresh output, positive multiple of 250, nonnegative augmentation required')
     a.output.mkdir(parents=True);torch.set_num_threads(1);torch.set_num_interop_threads(1)
@@ -130,11 +147,15 @@ def main():
     if old.observation_space.shape!=(303,) or old.action_space.n!=12:raise ValueError('303D parent required')
     scale=float(getattr(old,'training_reward_scale',1.))
     base=MaskedNavigationCurriculum(components,stage='static',route_mode='shortcut',max_steps=75,footprint_clearance_cost=1.)
-    env=DockingCurriculum(QualityMaskedWrapper(base,scale),gamma=old.gamma)
+    curriculum=PrecisionDockingCurriculum if a.precision_curriculum else DockingCurriculum
+    env=curriculum(QualityMaskedWrapper(base,scale),gamma=old.gamma)
     if a.resume_terminal:
         model=MaskablePPO.load(a.checkpoint,env=env,device='cpu',seed=a.seed)
         if not isinstance(model.policy,DockingPolicy):raise ValueError('Terminal checkpoint required')
         if model.num_timesteps>=a.steps:raise ValueError('Requested total must exceed parent steps')
+        if a.precision_curriculum:
+            model.learning_rate=3e-5;model.lr_schedule=lambda _:3e-5
+            model.ent_coef=.004;model.target_kl=.02
     else:
         model=MaskablePPO(DockingPolicy,env,device='cpu',seed=a.seed,n_steps=250,batch_size=125,
             n_epochs=4,learning_rate=1e-4,ent_coef=.008,target_kl=.03,gamma=old.gamma,
@@ -148,6 +169,8 @@ def main():
         heading_task_counterfactual_copies=a.heading_augmentation,
         parent_terminal_steps=int(model.num_timesteps),additional_requested_steps=a.steps-int(model.num_timesteps),
         reward_design='physical_distance_and_near_goal_heading_progress_v2',
+        precision_curriculum=bool(a.precision_curriculum),
+        learning_rate=float(model.learning_rate),entropy_coefficient=float(model.ent_coef),target_kl=model.target_kl,
         resumed_terminal_optimizer=bool(a.resume_terminal),exact_environment_rng_resume=False,
         docking_contract=docking_contract(model.policy.terminal_radius),goal_contract=contract(),localizer_router_frozen=True,
         deployment_approved=False,soft_average_cpu_cores=a.cpu_cores,memory_budget_mib=4096,
@@ -156,7 +179,7 @@ def main():
     (a.output/'config.json').write_text(json.dumps(config,indent=2))
     callback=Progress(a.output,budget,env)
     try:
-        if a.resume_terminal:
+        if a.resume_terminal and not a.terminal_warmup:
             data=None;results=[]
         elif a.demonstration_data:
             with np.load(a.demonstration_data) as archive:data={k:archive[k].copy() for k in archive.files}
@@ -168,12 +191,21 @@ def main():
             config['teacher_physical_successes']=sum(r['success'] for r in results)
             augmented=augment_goal_conditions(data,a.heading_augmentation)
             config['behavior_cloning']=pretrain(model,augmented,budget,a.bc_updates,select_best=bool(a.heading_augmentation))
+        elif a.terminal_warmup:
+            if data is None:raise ValueError('Recorded demonstration data required for warmup')
+            augmented=augment_boundary_conditions(data)
+            config['boundary_behavior_cloning']=pretrain(model,augmented,budget,a.bc_updates,select_best=True)
+            config['warmup_counterfactuals_are_not_physical_successes']=True
+            for parameter in model.policy.terminal_actor.parameters():model.policy.optimizer.state.pop(parameter,None)
+            config['terminal_optimizer_moments_reset_after_warmup']=True
         (a.output/'config.json').write_text(json.dumps(config,indent=2))
         model.save(a.output/'policy_start.zip');export_docking(model,components,a.output/'start_portable')
         if not a.resume_terminal:
             model.save(a.output/'policy_bc.zip');export_docking(model,components,a.output/'bc_portable')
         env.total_steps=0;env.curriculum_level=0 if model.num_timesteps<1500 else (1 if model.num_timesteps<3000 else 2)
-        for milestone in sorted(set([min(2500,a.steps),min(5000,a.steps),a.steps])):
+        parent_steps=int(model.num_timesteps)
+        milestones=[min(parent_steps+1500,a.steps),min(parent_steps+3000,a.steps),a.steps] if a.precision_curriculum else [min(2500,a.steps),min(5000,a.steps),a.steps]
+        for milestone in sorted(set(milestones)):
             if milestone<=model.num_timesteps:continue
             model.learn(milestone-model.num_timesteps,callback=callback,reset_num_timesteps=model.num_timesteps==0)
             model.save(a.output/f'policy_{milestone}.zip')

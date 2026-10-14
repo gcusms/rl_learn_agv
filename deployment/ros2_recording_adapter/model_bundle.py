@@ -49,7 +49,7 @@ def inspect_bundle(config_path):
         if (bundle/'localization_contract.json').exists() and (
             'localization_contract.json' not in manifest['files'] or
             json.loads((bundle/'localization_contract.json').read_text()).get('schema') not in
-                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4')):
+                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4','odom_anchored_static_support_v5','odom_anchored_static_support_v6')):
             raise ValueError('Localization contract mismatch')
     if sensor_core=='learned-terminal-goal-pose':
         if 'docking_contract.json' not in manifest['files']:

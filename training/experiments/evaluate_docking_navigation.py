@@ -44,16 +44,31 @@ def evaluate(case,bundle,budget):
         options=dict(start=case['start'],goal=case['goal'][:2])
         if 'initial_prior_offset' in case:options['initial_prior_offset']=case['initial_prior_offset']
         env.reset(seed=case['seed'],options=options)
+        from experiments.command_odometry_input import make_sensor_odometry,advance_sensor_odometry
+        command_input=make_sensor_odometry(case)
         manifest=json.loads((bundle/'manifest.json').read_text())
-        runtime_class=DockingRuntime if 'docking_contract' in manifest else GoalPoseRuntime
+        from neural_navigation.goal_pose_runtime import resolve_runtime
+        runtime_name=manifest.get('required_runtime')
+        # The archived 300D quality actor predates the runtime-name field.
+        # Identify it by its exact feature contract, never assume 303D input.
+        if runtime_name is None and manifest.get('requires_quality_feature_generator') and manifest.get('observation_contract',{}).get('schema')=='quality_prediction_append_v1':
+            runtime_name='experiments.quality_sensor_runtime.QualitySensorNavigationRuntime'
+        runtime_class=resolve_runtime(runtime_name)
+        if runtime_class is None:
+            if runtime_name!='experiments.quality_sensor_runtime.QualitySensorNavigationRuntime':
+                raise ValueError('Unsupported evaluation runtime')
+            from experiments.quality_sensor_runtime import QualitySensorNavigationRuntime
+            runtime_class=QualitySensorNavigationRuntime
         prior=np.asarray(case['start'])+np.asarray(case.get('initial_prior_offset',[0,0,0]))
         runtime=runtime_class(bundle,scene/'decision_map.yaml',prior,case['goal'],'shortcut')
-        labels=[];observations=[];masks=[];choices=[];commands=[];stops=Counter();latencies=[]
+        labels=[];observations=[];masks=[];choices=[];commands=[];scans=[];humans=[];stops=Counter();latencies=[]
         arrived=False;false_arrival=False;physical_since=None;c=contract();required=len(case['goal'])==3
         parity_frames=0
         for _ in range(case['max_steps']):
             start=time.perf_counter()
-            result=runtime.step(env.scan,env.observed_odometry,env.measured_velocity,env.elapsed,capture_observation=True)
+            odom=env.observed_odometry if command_input is None else command_input.pose
+            velocity_input=env.measured_velocity if command_input is None else command_input.velocity
+            result=runtime.step(env.scan,odom,velocity_input,env.elapsed,capture_observation=True)
             latencies.append((time.perf_counter()-start)*1000)
             obs=np.asarray(result['policy_observation'],np.float32);mask=masks_from_observation(obs[:282])
             distances=np.max(abs(ACTIONS-np.asarray(result['proposed_action'])),axis=1);choice=int(distances.argmin())
@@ -68,10 +83,13 @@ def evaluate(case,bundle,budget):
             settled=not required or physical_since is not None and env.elapsed-physical_since>=c['settle_seconds']-1e-9
             labels.append([env.elapsed,*env.truth,*runtime.core.estimate,xy,yaw,*velocity])
             observations.append(obs);masks.append(mask);choices.append(choice);commands.append(result['command']);stops[str(result['stop_reason'])]+=1
+            scans.append(env.scan.copy());humans.append(env._humans().copy())
             if result['stop_reason']=='estimated_goal_reached':
                 if good and settled:arrived=True;break
                 if not good:false_arrival=True;break
+            previous_measured_yaw=env.observed_odometry[2]
             env.step(np.asarray(result['command'])/[.2,.5]);budget.tick()
+            if command_input is not None:advance_sensor_odometry(command_input,result['command'],env,previous_measured_yaw,case)
             if env.collision_events or env.hard_guard_activations:break
         protocol=not case.get('obstacle') or env.intervention is not None
         if 'reverse_after_event_s' in case:protocol=protocol and 'reversal_time_s' in (env.intervention or {})
@@ -79,6 +97,7 @@ def evaluate(case,bundle,budget):
         labels=np.array(labels);masks=np.array(masks);choices=np.array(choices)
         result=dict(case_id=case['id'],category=case['pilot_category'],safe_success=bool(arrived and protocol and not env.collision_events and not env.hard_guard_activations),
             physical_arrival=arrived,false_arrival=false_arrival,protocol_valid=bool(protocol),collisions=int(env.collision_events),
+            input_odometry=case.get('input_odometry','noisy_motion_feedback'),
             physical_guards=int(env.hard_guard_activations),timeout=bool(not arrived and not false_arrival and not env.collision_events and not env.hard_guard_activations),
             seconds=float(env.elapsed),travel_m=float(env.travel),frames=len(choices),
             final_xy_error_m=float(labels[-1,7]),final_yaw_error_rad=float(labels[-1,8]) if required else None,
@@ -86,7 +105,8 @@ def evaluate(case,bundle,budget):
             localization_yaw_p95_rad=float(np.percentile(abs(wrap(labels[:,3]-labels[:,6])),95)),
             stop_choices=int((choices==0).sum()),only_stop_frames=int((~masks[:,1:].any(axis=1)).sum()),stop_reasons=dict(stops),
             runtime_ms=dict(p95=float(np.percentile(latencies,95)),p99=float(np.percentile(latencies,99)),maximum=float(max(latencies))))
-        return result,dict(labels=labels,observations=np.array(observations),masks=masks,choices=choices,commands=np.array(commands))
+        return result,dict(labels=labels,observations=np.array(observations),masks=masks,choices=choices,commands=np.array(commands),
+            scans=np.array(scans),human_positions=np.array(humans))
     finally:env.close()
 
 
@@ -95,19 +115,23 @@ def main():
     p.add_argument('--baseline',type=Path);p.add_argument('--bc',type=Path);p.add_argument('--localized',type=Path)
     p.add_argument('--output',type=Path,required=True);p.add_argument('--cases',type=Path)
     p.add_argument('--cpu-cores',type=float,default=.5);p.add_argument('--additional',action='store_true')
+    p.add_argument('--candidate-name',default='trained');p.add_argument('--baseline-name',default='previous_3k')
+    p.add_argument('--localized-name',default='trained_v4_localization')
     a=p.parse_args()
     if a.output.exists():p.error('Fresh output required')
     a.output.mkdir(parents=True);torch.set_num_threads(1);budget=ExperimentBudget(a.cpu_cores,directory=a.output)
+    from experiments.experiment_provenance import record_provenance
+    record_provenance(a.output,a.candidate)
     cases=json.loads(a.cases.read_text()) if a.cases else additional_cases()
     if a.additional:cases+=additional_cases()
     case_file=a.output/'cases.json';case_file.write_text(json.dumps(cases,indent=2))
     report=dict(completed=False,scope='fixed development tasks; independent physical labels; not real deployment acceptance',
         deployment_approved=False,cases_sha256=hashlib.sha256(case_file.read_bytes()).hexdigest(),rows=[])
     for case in cases:
-        variants=[('trained',a.candidate)]
-        if a.baseline:variants.insert(0,('previous_3k',a.baseline))
+        variants=[(a.candidate_name,a.candidate)]
+        if a.baseline:variants.insert(0,(a.baseline_name,a.baseline))
         if a.bc and case['pilot_category']!='position_regression':variants.insert(0,('bc_only',a.bc))
-        if a.localized:variants.append(('trained_v4_localization',a.localized))
+        if a.localized:variants.append((a.localized_name,a.localized))
         for variant,bundle in variants:
             result,trace=evaluate(case,bundle,budget);result['variant']=variant
             trace_path=a.output/f"{case['id']}_{variant}.npz";np.savez_compressed(trace_path,**trace)

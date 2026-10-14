@@ -44,9 +44,33 @@ def turn_response_contract():
     return dict(contract(),schema='odom_anchored_static_support_v4',maximum_yaw_rate_rad_s=.15)
 
 
+def precision_contract():
+    """Experimental v5: reduce the static residual deadband at initialization.
+
+    Preserve the v4 bounds and unknown-object filtering. Parameters are selected
+    on validation trajectories, not measured chassis calibration.
+    """
+    previous=turn_response_contract()
+    return dict(previous,schema='odom_anchored_static_support_v5',
+        static_refinement=dict(previous['static_refinement'],verified_prior_cost_m=.004,
+            bootstrap_translation_rate_m_s=.24,bootstrap_yaw_rate_rad_s=.24))
+
+
+def turn_decoupled_contract():
+    """Experimental v6: test a yaw-only static refinement proposal too.
+
+    Coupled proposals can have yaw throttled by the smaller translation
+    limit. Preserve every v5 bound/support gate and select this proposal only
+    if the measured static residual improves.
+    """
+    previous=precision_contract()
+    return dict(previous,schema='odom_anchored_static_support_v6',
+        static_refinement=dict(previous['static_refinement'],yaw_only_candidate=True))
+
+
 class OdometryAnchoredLocalizer(LearnedLocalizer):
     def __init__(self,static_map,lidar,checkpoint,config):
-        if config not in (turn_response_contract(),contract(),refinement_contract(),legacy_contract()):raise ValueError('Unsupported localization contract')
+        if config not in (turn_decoupled_contract(),precision_contract(),turn_response_contract(),contract(),refinement_contract(),legacy_contract()):raise ValueError('Unsupported localization contract')
         super().__init__(static_map,lidar,checkpoint);self.config=config
         self.timestamp=None;self.correction_reason='reset';self.static_support_fraction=0.
         self.bootstrap_origin=None
@@ -165,7 +189,9 @@ class OdometryAnchoredLocalizer(LearnedLocalizer):
         delta=proposed-prior;delta[2]=wrap(delta[2])
         self.posterior_entropy=float(-np.sum(weights*np.log(np.maximum(weights,1e-12)))/np.log(len(weights)))
         candidates=[delta]
-        if refinement:candidates.append(self._refinement_delta(ends,prior))
+        if refinement:
+            refined=self._refinement_delta(ends,prior);candidates.append(refined)
+            if refinement.get('yaw_only_candidate',False):candidates.append(np.array([0.,0.,refined[2]]))
         # The normal Jacobian identifies unconstrained displacement along walls.
         # Yaw is represented as an equivalent 1m arc for this observability gate.
         # No per-frame correction allowance: stationary repeated measurements

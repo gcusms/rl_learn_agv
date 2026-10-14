@@ -41,6 +41,32 @@ def segment_is_free(a,b,origin_m,resolution,free):
 
 
 class StaticMap:
+    @classmethod
+    def from_occupancy_grid(cls,data,width,height,resolution,origin,radius=.30):
+        """ROS-style bottom-up occupancy, with unknown padding and fixed origin.
+
+        No physical geometry is created here. Padding never becomes laser-visible
+        walls; it only prevents the learned router from entering unknown space.
+        """
+        if width<=0 or height<=0 or not np.isfinite(resolution) or resolution<=0 or len(data)!=width*height:
+            raise ValueError('Invalid occupancy grid dimensions')
+        origin=np.asarray(origin,float)
+        if origin.shape!=(3,) or not np.isfinite(origin).all() or abs(origin[2])>1e-8:
+            raise ValueError('Finite axis-aligned map origin required')
+        values=np.asarray(data).reshape(height,width)
+        if not np.isfinite(values).all() or np.any((values<-1)|(values>100)):
+            raise ValueError('Occupancy values must be -1 or 0..100')
+        gray=np.flipud(values).copy()
+        gray=np.pad(gray,(((-height)%4,0),(0,(-width)%4)),constant_values=-1)
+        obj=cls.__new__(cls);obj.path=None;obj.res=float(resolution);obj.origin=origin.copy()
+        obj.occupied=gray>65;obj.unknown=(gray<0)|((gray>=25)&~obj.occupied)
+        obj.blocked=obj.occupied|obj.unknown
+        obj.distance=distance_transform_edt(~obj.occupied)*obj.res if obj.occupied.any() else np.full(obj.occupied.shape,1e3)
+        obj.clearance=distance_transform_edt(~obj.blocked)*obj.res
+        obj.free=(obj.clearance>radius+obj.res*.71)&~obj.blocked
+        obj.height,obj.width=obj.free.shape
+        return obj
+
     def __init__(self, yaml_path, radius=.27):
         self.path=Path(yaml_path).resolve()
         c=yaml.safe_load(self.path.read_text())
@@ -51,7 +77,7 @@ class StaticMap:
         self.occupied=probability>c['occupied_thresh']
         self.unknown=(probability>=c['free_thresh']) & ~self.occupied
         self.blocked=self.occupied|self.unknown
-        self.distance=distance_transform_edt(~self.occupied)*self.res
+        self.distance=distance_transform_edt(~self.occupied)*self.res if self.occupied.any() else np.full(self.occupied.shape,1e3)
         self.clearance=distance_transform_edt(~self.blocked)*self.res
         self.free=(self.clearance>radius+self.res*.71)&~self.blocked
         self.height,self.width=self.free.shape

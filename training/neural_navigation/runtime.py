@@ -163,7 +163,8 @@ class SensorNavigationRuntime:
         bundle=Path(bundle);hardware=json.loads((bundle/'hardware.json').read_text())
         if len(goal)==3 and not (bundle/'goal_pose_observation.json').exists():
             raise ValueError('Directional goals require a goal-pose trained bundle; legacy actor is position-only')
-        self.core=NavigationCore(StaticMap(map_path,radius=.3),LidarSpec(hardware['lidar']),bundle,route_mode=route_mode)
+        static_map=map_path if isinstance(map_path,StaticMap) else StaticMap(map_path,radius=.3)
+        self.core=NavigationCore(static_map,LidarSpec(hardware['lidar']),bundle,route_mode=route_mode)
         self.core.reset(initial_pose,goal)
         self.context=None
         if 'policy_observation' in hardware:

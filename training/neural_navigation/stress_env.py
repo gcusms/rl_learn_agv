@@ -6,14 +6,20 @@ from neural_navigation.room_env import RoomNavigationEnv
 
 
 class CorruptedOdometry:
-    def __init__(self,base,env):self.base=base;self.env=weakref.proxy(env)
+    def __init__(self,base,env):
+        self.base=base;self.env=weakref.proxy(env);self.previous_yaw=None;self.corrupted_yaw=0.
     def __getattr__(self,name):return getattr(self.base,name)
-    def reset(self,*args,**kwargs):return self.base.reset(*args,**kwargs)
+    def reset(self,*args,**kwargs):
+        self.previous_yaw=None;self.corrupted_yaw=0.
+        return self.base.reset(*args,**kwargs)
     def update(self,odom,scan):
         scale=float(self.env.case.get('odom_scale',1.))
         bias=np.asarray(self.env.case.get('odom_bias_m_s',[0.,0.]),float)
         observed=np.asarray(odom,float).copy();observed[:2]=observed[:2]*scale+bias*self.env.elapsed
-        observed[2]*=float(self.env.case.get('yaw_odom_scale',1.))
+        from navrl.geometry import wrap
+        if self.previous_yaw is None:self.corrupted_yaw=float(odom[2])
+        else:self.corrupted_yaw+=wrap(odom[2]-self.previous_yaw)*float(self.env.case.get('yaw_odom_scale',1.))
+        self.previous_yaw=float(odom[2]);observed[2]=wrap(self.corrupted_yaw)
         self.env.observed_odometry=observed.copy()
         # Corrupt the sensor velocity too; no encoder feedback is presumed.
         if scale!=1.:self.env.measured_velocity=self.env.measured_velocity.copy()*[scale,1.]
@@ -51,6 +57,8 @@ class StressNavigationEnv(RoomNavigationEnv):
             windows.extend([[self.intervention['time_s']+a,self.intervention['time_s']+b] for a,b in self.case.get('dropout_after_event_s',[])])
         if any(a<=self.elapsed<b for a,b in windows):
             self.sensor_fault_steps+=1;return np.full_like(scan,np.nan)
+        if 'sensor_max_range_m' in self.case:
+            scan[scan>=float(self.case['sensor_max_range_m'])]=np.inf
         dropout=float(self.case.get('extra_scan_dropout',0.))
         if dropout:scan[self.np_random.random(len(scan))<dropout]=np.inf
         return scan

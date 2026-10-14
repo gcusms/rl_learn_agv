@@ -1,0 +1,114 @@
+{
+  "completed": true,
+  "scope": "manual 12m sensor trajectories; not autonomous RL navigation or real-world accuracy",
+  "input": "command translation plus noisy simulated gyro, 8% translation scale error, 0.003rad/s gyro bias",
+  "rows": [
+    {
+      "scene": "single_long_wall",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 8.489233341637709,
+          "x_p95_m": 8.488620566606432,
+          "y_p95_m": 0.15002045664103325,
+          "yaw_p95_rad": 0.02950128648454607,
+          "final_xy_m": 4.391306922387646
+        },
+        "slam_fresh": {
+          "frames": 459,
+          "xy_p95_m": 8.495996887460185,
+          "x_p95_m": 8.495396541071308,
+          "y_p95_m": 0.15015327588771915,
+          "yaw_p95_rad": 0.02911322787230966,
+          "final_xy_m": 4.391306922387646
+        }
+      },
+      "serialization": {
+        "map_messages": 431,
+        "pose_messages": 461,
+        "transient_mapping_returns_withheld": 0,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    },
+    {
+      "scene": "feature_to_open",
+      "frames": 465,
+      "seconds": 92.79999999998809,
+      "travel_m": 12.063859956861673,
+      "collisions": 0,
+      "physical_guards": 0,
+      "metrics": {
+        "odometry": {
+          "frames": 465,
+          "xy_p95_m": 0.8055295047569071,
+          "x_p95_m": 0.4270423304640021,
+          "y_p95_m": 0.8051865549468602,
+          "yaw_p95_rad": 0.2438297456075137,
+          "final_xy_m": 0.9873103605203917
+        },
+        "slam_all": {
+          "frames": 465,
+          "xy_p95_m": 1.3357278649342559,
+          "x_p95_m": 0.41444161098546495,
+          "y_p95_m": 1.2871788546772667,
+          "yaw_p95_rad": 0.08714946771330596,
+          "final_xy_m": 1.026597064659296
+        },
+        "slam_fresh": {
+          "frames": 465,
+          "xy_p95_m": 1.3357278649342559,
+          "x_p95_m": 0.41444161098546495,
+          "y_p95_m": 1.2871788546772667,
+          "yaw_p95_rad": 0.08714946771330596,
+          "final_xy_m": 1.026597064659296
+        }
+      },
+      "serialization": {
+        "map_messages": 442,
+        "pose_messages": 462,
+        "transient_mapping_returns_withheld": 2856,
+        "rf2o_accepted_frames": 0,
+        "rf2o_fallback_frames": 0,
+        "laser_increment_accepted_frames": 0,
+        "laser_increment_fallback_frames": 0,
+        "last_alignment_stamp_s": 92.9,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "loop_closure_enabled": true,
+      "loop_closure_causal_effect_isolated": false
+    }
+  ],
+  "resource_parent_only": {
+    "seconds": 380.66855595400557,
+    "cpu_seconds": 95.10365939,
+    "average_cpu_cores": 0.24983324181231018,
+    "peak_rss_mib": 2409.86328125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

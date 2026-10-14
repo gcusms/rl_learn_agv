@@ -1,0 +1,946 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "d9c6c7b7e674105a449d6fe39da0c84c21e7f064a71e94769c59f48c43f0cdd7",
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "position_regression",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 9.800000000000132,
+      "travel_m": 1.432672563039874,
+      "frames": 49,
+      "final_xy_error_m": 3.199156287992136,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0070242956921925635,
+      "localization_yaw_p95_rad": 0.0030071899957782476,
+      "stop_choices": 7,
+      "only_stop_frames": 4,
+      "stop_reasons": {
+        "None": 39,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 3
+      },
+      "runtime_ms": {
+        "p95": 92.93160400120541,
+        "p99": 120.45820461586105,
+        "maximum": 136.31302700378
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "5ab36e113f5056b9da0c868c9f0f7264f660bc9fd8b20c8758efee9a49f46d0d"
+    },
+    {
+      "case_id": "independent_dynamic_013",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 56.4000000000104,
+      "travel_m": 8.959151521552512,
+      "frames": 283,
+      "final_xy_error_m": 0.09520407259570153,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.006278036276894506,
+      "localization_yaw_p95_rad": 0.0026753994813751613,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 282,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 110.81017710384911,
+        "p99": 120.98303310805932,
+        "maximum": 123.48946300335228
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "1d3258f8211e0a6d0c24aefa7542163af531f0cd2f2763a852e2dd96e2091b71"
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 52.00000000000815,
+      "travel_m": 8.575851932912306,
+      "frames": 261,
+      "final_xy_error_m": 0.11243129643357394,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005690599049820525,
+      "localization_yaw_p95_rad": 0.002858968964538633,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 258,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 116.1825549788773,
+        "p99": 128.24672942515463,
+        "maximum": 134.17560799280182
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "809ec299022703baef20311034278f47e3db8208ff152366727197f0bcbbffd3"
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "position_regression",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 27.399999999998833,
+      "travel_m": 4.583991028026549,
+      "frames": 138,
+      "final_xy_error_m": 0.09484851381651875,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0058888543880403,
+      "localization_yaw_p95_rad": 0.0025283514538269715,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 137,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 119.84529777255376,
+        "p99": 153.81667288776947,
+        "maximum": 173.10347803868353
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "449998ff48c99444ecf4a4c5e6f8b66f9ac9615f0b927585dae59795a357ded2"
+    },
+    {
+      "case_id": "goal_pose_00",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.023765199142006883,
+      "final_yaw_error_rad": 0.06240460218302335,
+      "localization_xy_p95_m": 0.005131843116301996,
+      "localization_yaw_p95_rad": 0.0018690967262902092,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 80.16536198556423,
+        "p99": 105.40316682308915,
+        "maximum": 111.71261803247035
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "5f791995948ee119ada4aa43763db7f3a50627ed17df0a165618cd113461ce4b"
+    },
+    {
+      "case_id": "goal_pose_01",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03874060550053774,
+      "final_yaw_error_rad": 0.006077322573422972,
+      "localization_xy_p95_m": 0.005823312980910357,
+      "localization_yaw_p95_rad": 0.002847666299946816,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 93.94410299137235,
+        "p99": 102.8027285821736,
+        "maximum": 105.0173849798739
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "cf9e545bcfaae63912c70e4c28707fdf0bd6801a19b40e39c736e5316d521308"
+    },
+    {
+      "case_id": "goal_pose_02",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 6.799999999999877,
+      "travel_m": 0.0,
+      "frames": 35,
+      "final_xy_error_m": 0.038288511803911816,
+      "final_yaw_error_rad": 0.10223153360837278,
+      "localization_xy_p95_m": 0.013027701441618952,
+      "localization_yaw_p95_rad": 0.003867110435219736,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 94.31122008245437,
+        "p99": 99.44978046114555,
+        "maximum": 101.04311601025984
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "747a7b699fe5850d36c86c382e6c15e5808ea0c131c155b4e01fc508a3466297"
+    },
+    {
+      "case_id": "goal_pose_03",
+      "category": "alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.0690756671995717,
+      "final_yaw_error_rad": 0.0877525558060146,
+      "localization_xy_p95_m": 0.021471925103461176,
+      "localization_yaw_p95_rad": 0.0068418993435575,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 93.5244569554925,
+        "p99": 97.12698818184435,
+        "maximum": 98.02762098843232
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "3c46fb3fa1ac8567cda25fadf9391a62d688b7b198a0174ca54c2dcf4a10aaaf"
+    },
+    {
+      "case_id": "goal_pose_04",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.6669847134156122,
+      "frames": 38,
+      "final_xy_error_m": 0.04727842119706138,
+      "final_yaw_error_rad": 0.0019445878091639557,
+      "localization_xy_p95_m": 0.007365838361306956,
+      "localization_yaw_p95_rad": 0.003519119241091894,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 35,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 82.18914488097651,
+        "p99": 98.09224337979688,
+        "maximum": 102.75009903125465
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "92eaf302fd8b647ea5039b85f32244cf87a1784a8f09c3440edbedb7e57d362c"
+    },
+    {
+      "case_id": "goal_pose_05",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.59999999999986,
+      "travel_m": 0.6444504410033058,
+      "frames": 39,
+      "final_xy_error_m": 0.04964670187509317,
+      "final_yaw_error_rad": 0.00184356150242726,
+      "localization_xy_p95_m": 0.0076826981618132355,
+      "localization_yaw_p95_rad": 0.0025547727909461587,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 36,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 92.59205959970132,
+        "p99": 94.95237171533516,
+        "maximum": 96.27851698314771
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "13177d917dafbe6e6bbe3f01a4ec9915c4a203026d3abca82749be1ea2790c8e"
+    },
+    {
+      "case_id": "goal_pose_06",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.600000000000257,
+      "travel_m": 0.6728503170202834,
+      "frames": 54,
+      "final_xy_error_m": 0.05715462503966427,
+      "final_yaw_error_rad": 0.003471103156297062,
+      "localization_xy_p95_m": 0.007940428298035524,
+      "localization_yaw_p95_rad": 0.003782075203486319,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 51,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 80.01517417724241,
+        "p99": 101.50186016224322,
+        "maximum": 113.29886200837791
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "57b503e904f99cf2cdf360a9190cb123379dc17a1a36cc49bb555ed402bff1e3"
+    },
+    {
+      "case_id": "goal_pose_07",
+      "category": "short_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.6691686746604238,
+      "frames": 38,
+      "final_xy_error_m": 0.04115934615710037,
+      "final_yaw_error_rad": 0.004716258830520292,
+      "localization_xy_p95_m": 0.005664252095416302,
+      "localization_yaw_p95_rad": 0.0019619510731379683,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 35,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 83.67272929172032,
+        "p99": 88.03303028456868,
+        "maximum": 89.76984099717811
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "8018dafc77d966b3259d19fe874a172018f7e4515eaf8bfed3f151bc4e9a033e"
+    },
+    {
+      "case_id": "docking_dev_00",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.02225634417079561,
+      "final_yaw_error_rad": 0.018141234928465977,
+      "localization_xy_p95_m": 0.020954422874537672,
+      "localization_yaw_p95_rad": 0.016448812618792982,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 93.86859979713336,
+        "p99": 95.09907435858622,
+        "maximum": 95.40669299894944
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "6a4fe138458b7b49c84de2a3bb6ecb6bdbc6090d7356e7cdd5d9d6e59166a8b5"
+    },
+    {
+      "case_id": "docking_dev_01",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.03691185507867453,
+      "final_yaw_error_rad": 0.11605521371410399,
+      "localization_xy_p95_m": 0.03392492527390104,
+      "localization_yaw_p95_rad": 0.003659147728222267,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 87.77007567114197,
+        "p99": 88.39930470916443,
+        "maximum": 88.55661196867004
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "2ed4326c89faf3c3dea5c49c2c65fea54b46319e652371a61fef51123adbc83f"
+    },
+    {
+      "case_id": "docking_dev_02",
+      "category": "new_alignment",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 29.999999999998316,
+      "travel_m": 0.0,
+      "frames": 150,
+      "final_xy_error_m": 0.019070192067748026,
+      "final_yaw_error_rad": 0.16699455897925164,
+      "localization_xy_p95_m": 0.01269648769968591,
+      "localization_yaw_p95_rad": 0.002189668131896203,
+      "stop_choices": 150,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 150
+      },
+      "runtime_ms": {
+        "p95": 61.09419925487599,
+        "p99": 83.57748591166447,
+        "maximum": 98.56197802582756
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "b703884866a3bef8221ea6688108e160683d860c98fe0f8da02d686c39cb7c8e"
+    },
+    {
+      "case_id": "docking_dev_03",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.9999999999999793,
+      "travel_m": 0.0,
+      "frames": 11,
+      "final_xy_error_m": 0.012443528052681216,
+      "final_yaw_error_rad": 0.0007600937044585088,
+      "localization_xy_p95_m": 0.012324465977899686,
+      "localization_yaw_p95_rad": 0.006537118865622915,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 10,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 89.85390749876387,
+        "p99": 95.90377589338459,
+        "maximum": 97.41624299203977
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "743059a5fd47dda19ea1bc500571cf2e43580838e90c9b3fe861c5bf975dbcb4"
+    },
+    {
+      "case_id": "docking_dev_04",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.7999999999999836,
+      "travel_m": 0.0,
+      "frames": 10,
+      "final_xy_error_m": 0.032444710876062266,
+      "final_yaw_error_rad": 0.019722807715785606,
+      "localization_xy_p95_m": 0.02170768119851127,
+      "localization_yaw_p95_rad": 0.006056051777562275,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 9,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 88.61583749530836,
+        "p99": 93.63273628754541,
+        "maximum": 94.88696098560467
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "689f82653603450e11167d818dce817a537feb462b0d0a44e5ad7f47f58e37a6"
+    },
+    {
+      "case_id": "docking_dev_05",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.02734275016385526,
+      "final_yaw_error_rad": 0.05721498741995035,
+      "localization_xy_p95_m": 0.016548723998352523,
+      "localization_yaw_p95_rad": 0.0027989147862950148,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 96.17377398535609,
+        "p99": 104.43637636490168,
+        "maximum": 106.50202695978805
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "70d31865e91a0acd44ab1429506f5990571b0120cbf5305d9bd6d04b30467b45"
+    },
+    {
+      "case_id": "docking_dev_06",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.0,
+      "frames": 21,
+      "final_xy_error_m": 0.03640158306998015,
+      "final_yaw_error_rad": 0.001511886296718945,
+      "localization_xy_p95_m": 0.007245836478608576,
+      "localization_yaw_p95_rad": 0.0045223562184348864,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 79.75183997768909,
+        "p99": 88.55970401782544,
+        "maximum": 90.76167002785951
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "c659e33fd0c58256415309b2be97b6e24f78c9f5ae356a99ec067b7b3db43abb"
+    },
+    {
+      "case_id": "docking_dev_07",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.0,
+      "frames": 38,
+      "final_xy_error_m": 0.012217145199561723,
+      "final_yaw_error_rad": 0.0960247005967858,
+      "localization_xy_p95_m": 0.0113341726938787,
+      "localization_yaw_p95_rad": 0.0022986954472529178,
+      "stop_choices": 9,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 34,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 69.4133975805016,
+        "p99": 91.57499021850529,
+        "maximum": 95.8069910411723
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "ed2908ffc9b883f2e1244a4dfc984dca9e7c42829c534727f096ce54ca4d7dcb"
+    },
+    {
+      "case_id": "docking_dev_08",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.5999999999999455,
+      "travel_m": 0.2860308780051107,
+      "frames": 19,
+      "final_xy_error_m": 0.04729925616252641,
+      "final_yaw_error_rad": 0.05208915379954693,
+      "localization_xy_p95_m": 0.019014494287541567,
+      "localization_yaw_p95_rad": 0.001487784622315047,
+      "stop_choices": 7,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 90.17348742345347,
+        "p99": 93.02255909191445,
+        "maximum": 93.73482700902969
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "9752c57efbb20b3478fe2d858025d0993114b211eb457aa1c99ee02e3315b9fa"
+    },
+    {
+      "case_id": "docking_dev_09",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.5999999999999455,
+      "travel_m": 0.5316224186229512,
+      "frames": 19,
+      "final_xy_error_m": 0.07163391376290017,
+      "final_yaw_error_rad": 0.03629883561504155,
+      "localization_xy_p95_m": 0.0077523042312839545,
+      "localization_yaw_p95_rad": 0.0037701548312191386,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 86.89543911023064,
+        "p99": 92.56996140582487,
+        "maximum": 93.98859197972342
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "30054a3ad5a7c30c184f45bb47dc256378e8ca7de9ddfbd9595b6f7623893271"
+    },
+    {
+      "case_id": "docking_dev_10",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.799999999999941,
+      "travel_m": 0.31365276119099006,
+      "frames": 20,
+      "final_xy_error_m": 0.03462069953177716,
+      "final_yaw_error_rad": 0.03596014107754497,
+      "localization_xy_p95_m": 0.012997805909971308,
+      "localization_yaw_p95_rad": 0.0016410283112750835,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 17,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 84.9544692435302,
+        "p99": 94.2429186333902,
+        "maximum": 96.56503098085523
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "68dea38210ba6bbee1b3e43c0396a84995bbb810c530ea3aa1e56e0fa5a1bedd"
+    },
+    {
+      "case_id": "docking_dev_11",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.799999999999941,
+      "travel_m": 0.42217989130431915,
+      "frames": 20,
+      "final_xy_error_m": 0.03825376811395444,
+      "final_yaw_error_rad": 0.02316256811398265,
+      "localization_xy_p95_m": 0.011741575963249661,
+      "localization_yaw_p95_rad": 0.002278985968055252,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 80.3302463842556,
+        "p99": 91.05281890835612,
+        "maximum": 93.73346203938127
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "59e4c4cb45c010db24620c07e1f71e3bc774a50d90e0488eac67ce1609148158"
+    },
+    {
+      "case_id": "docking_dev_12",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 5.999999999999894,
+      "travel_m": 0.6184764500682628,
+      "frames": 31,
+      "final_xy_error_m": 0.03908500539818495,
+      "final_yaw_error_rad": 0.021188171371090636,
+      "localization_xy_p95_m": 0.01403689524885941,
+      "localization_yaw_p95_rad": 0.003472064872932723,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 29,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 79.06510448083282,
+        "p99": 86.06203612289391,
+        "maximum": 88.5759920347482
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "5314386f02054bd54dbc7549a23476fa71540496f83cea5f365545a41bed2dd8"
+    },
+    {
+      "case_id": "docking_dev_13",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 7.3999999999998645,
+      "travel_m": 0.6225946244097893,
+      "frames": 38,
+      "final_xy_error_m": 0.051056806691166384,
+      "final_yaw_error_rad": 0.03812302181525862,
+      "localization_xy_p95_m": 0.011117742168222486,
+      "localization_yaw_p95_rad": 0.004438887373925238,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 34,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 76.42804835631978,
+        "p99": 90.46709087968343,
+        "maximum": 97.57396799977869
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "4b7df19cb8c5cdafd91cc3eb3676d65852ccb6d3f1b8b047e40e8f7637401626"
+    },
+    {
+      "case_id": "docking_dev_14",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 6.19999999999989,
+      "travel_m": 0.4037842309181019,
+      "frames": 32,
+      "final_xy_error_m": 0.045502396885336104,
+      "final_yaw_error_rad": 0.03011359710887751,
+      "localization_xy_p95_m": 0.016168358961802912,
+      "localization_yaw_p95_rad": 0.004369872937320762,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 29,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 85.51604756212328,
+        "p99": 91.49296802759636,
+        "maximum": 91.723763034679
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "6184612bb8beac71f47bcb8e12f5126cf736dd660c27bdb0855067678650ea81"
+    },
+    {
+      "case_id": "docking_dev_15",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.000000000000163,
+      "travel_m": 0.4191074124838202,
+      "frames": 51,
+      "final_xy_error_m": 0.053379847218773424,
+      "final_yaw_error_rad": 0.033642628842791567,
+      "localization_xy_p95_m": 0.018284224818435627,
+      "localization_yaw_p95_rad": 0.0033201635891082493,
+      "stop_choices": 8,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 46,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 79.3328630097676,
+        "p99": 87.65695701004006,
+        "maximum": 94.99974903883412
+      },
+      "variant": "precision_11000",
+      "trace_sha256": "157de31389a407d114b3c4d2aa5511e16a7d71fc898da9cfbcd45ee8d677777e"
+    }
+  ],
+  "resource": {
+    "seconds": 823.0094978929847,
+    "cpu_seconds": 205.80743355299998,
+    "average_cpu_cores": 0.2500668996893654,
+    "peak_rss_mib": 2445.1171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "alignment": {
+      "precision_11000": {
+        "tasks": 4,
+        "success": 4,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "new_alignment": {
+      "precision_11000": {
+        "tasks": 8,
+        "success": 7,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      }
+    },
+    "new_approach": {
+      "precision_11000": {
+        "tasks": 8,
+        "success": 8,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "position_regression": {
+      "precision_11000": {
+        "tasks": 4,
+        "success": 3,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "short_approach": {
+      "precision_11000": {
+        "tasks": 4,
+        "success": 4,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

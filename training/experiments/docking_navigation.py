@@ -21,12 +21,7 @@ from neural_navigation.quality_prediction_context import contract as quality_con
 from experiments.goal_pose_navigation import GoalPoseRuntime
 
 
-def docking_contract(radius=.8):
-    if radius not in (.8,.10):raise ValueError('Unsupported terminal radius')
-    return dict(schema='learned_terminal_actor_v1' if radius==.8 else 'learned_terminal_actor_v2',observation_dimensions=303,
-        activation_distance_m=radius,requires_directional_goal=True,actions=12,
-        frozen_navigation_actor=True,teacher_at_runtime=False,
-        action_space_expanded=False,slow_rotation_calibrated=False)
+from neural_navigation.docking_contract import docking_contract
 
 
 def terminal_gate(x:torch.Tensor,radius:float=.8):
@@ -122,31 +117,7 @@ def export_docking(model,components,output):
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2))
 
 
-class DockingRuntime(GoalPoseRuntime):
-    def __init__(self,bundle,*args,**kwargs):
-        bundle=Path(bundle);manifest=json.loads((bundle/'manifest.json').read_text())
-        actual=manifest['docking_contract'];expected=docking_contract(actual.get('activation_distance_m'))
-        if (manifest['required_runtime']!='experiments.docking_navigation.DockingRuntime'
-            or actual!=expected or json.loads((bundle/'docking_contract.json').read_text())!=expected):
-            raise ValueError('Docking contract mismatch')
-        # Reuse the checked sensor path without weakening its bundle validation.
-        self._initialize_goal_runtime(bundle,manifest,*args,**kwargs)
-
-    def _initialize_goal_runtime(self,bundle,manifest,*args,**kwargs):
-        from neural_navigation.runtime import SensorNavigationRuntime
-        from neural_navigation.quality_prediction_context import QualityPredictionContext
-        from experiments.goal_pose_navigation import GoalPoseInput
-        if (manifest['observation_contract']!=goal_contract() or manifest['quality_prefix_contract']!=quality_contract()
-            or json.loads((bundle/'goal_pose_observation.json').read_text())!=goal_contract()
-            or json.loads((bundle/'quality_observation.json').read_text())!=quality_contract()):
-            raise ValueError('Goal/quality contract mismatch')
-        for name,digest in manifest['files'].items():
-            if Path(name).name!=name or hashlib.sha256((bundle/name).read_bytes()).hexdigest()!=digest:
-                raise ValueError('Bundle integrity failure')
-        SensorNavigationRuntime.__init__(self,bundle,*args,**kwargs)
-        if self.policy.observation_dimensions!=282:raise ValueError('Native V4 prefix required')
-        self.policy.observation_dimensions=303
-        self.policy=GoalPoseInput(self.policy,self.core,QualityPredictionContext(self.guard.half*2))
+from neural_navigation.goal_pose_runtime import DockingRuntime
 
 
 def demonstration_choice(obs,mask):
@@ -272,3 +243,25 @@ class DockingCurriculum(gym.Wrapper):
         return append_goal_features(obs,base.core),reward,done,truncated,info
 
     def action_masks(self):return self.env.action_masks()
+
+
+def precision_heading_offset(rng):
+    """Balance small tolerance-boundary errors with aligned and large turns."""
+    bucket=int(rng.choice(3,p=[.50,.25,.25]))
+    magnitude=float(rng.uniform(.07,.25) if bucket==0 else
+        rng.uniform(0.,.07) if bucket==1 else rng.uniform(.25,np.pi))
+    return magnitude*float(rng.choice([-1,1])),['boundary','aligned','large'][bucket]
+
+
+class PrecisionDockingCurriculum(DockingCurriculum):
+    def reset(self,seed=None,options=None):
+        obs,info=super().reset(seed,options)
+        base=self.env.unwrapped;e=base.active;core=base.core
+        offset,bucket=precision_heading_offset(base.np_random)
+        initial=np.asarray(json.loads(base.training_case_json)['options']['start'])
+        core.set_goal([*core.goal,float(wrap(initial[2]+offset))])
+        case=json.loads(base.training_case_json);case.update(goal_yaw=core.goal_yaw,heading_bucket=bucket)
+        base.training_case_json=json.dumps(case)
+        self.previous_physical_yaw=float(abs(wrap(core.goal_yaw-e.truth[2])))
+        self.previous_potential=self._potential()
+        return append_goal_features(obs[:300],core),dict(info,heading_bucket=bucket)

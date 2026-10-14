@@ -1,0 +1,722 @@
+{
+  "completed": true,
+  "scope": "paired localization development comparison; physical labels; not deployment approval",
+  "precision_comparison": true,
+  "validation_maps": true,
+  "seed_base": 115500,
+  "yaw_rate_baseline_rad_s": 0.06,
+  "yaw_rate_ablation_rad_s": 0.15,
+  "rows": [
+    {
+      "case_id": 0,
+      "seed": 115500,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.029805021613022266,
+          "final_xy_m": 0.00999375641371284,
+          "yaw_p95_rad": 0.013080718220407572
+        },
+        "v4": {
+          "xy_p95_m": 0.008156078551853008,
+          "final_xy_m": 0.0021015448984158633,
+          "yaw_p95_rad": 0.0022198056026656587
+        },
+        "v5": {
+          "xy_p95_m": 0.007643021394496017,
+          "final_xy_m": 0.0021015448984158633,
+          "yaw_p95_rad": 0.0022194722720438875
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 1,
+      "seed": 115501,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.02109475617465036,
+          "final_xy_m": 0.010066655702729492,
+          "yaw_p95_rad": 0.012149400424881218
+        },
+        "v4": {
+          "xy_p95_m": 0.05142843810490472,
+          "final_xy_m": 0.0025034485404825746,
+          "yaw_p95_rad": 0.031155032387982562
+        },
+        "v5": {
+          "xy_p95_m": 0.027547722417479794,
+          "final_xy_m": 0.0025034485404825746,
+          "yaw_p95_rad": 0.011551548679656243
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 2,
+      "seed": 115502,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.025517822720942145,
+          "final_xy_m": 0.02020302483790003,
+          "yaw_p95_rad": 0.013005161103594176
+        },
+        "v4": {
+          "xy_p95_m": 0.007427601099565949,
+          "final_xy_m": 0.004366959608000556,
+          "yaw_p95_rad": 0.0027481656187999803
+        },
+        "v5": {
+          "xy_p95_m": 0.006927079078871404,
+          "final_xy_m": 0.004366959608000556,
+          "yaw_p95_rad": 0.0028151768741171423
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 3,
+      "seed": 115503,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.026261717169505965,
+          "final_xy_m": 0.031271071445445296,
+          "yaw_p95_rad": 0.0074746555411007165
+        },
+        "v4": {
+          "xy_p95_m": 0.00813625001924591,
+          "final_xy_m": 0.0029703100660337053,
+          "yaw_p95_rad": 0.004149997801154548
+        },
+        "v5": {
+          "xy_p95_m": 0.007628324280835112,
+          "final_xy_m": 0.0029703100660337053,
+          "yaw_p95_rad": 0.002479757385285275
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 4,
+      "seed": 115504,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.04331968436788145,
+          "final_xy_m": 0.018286610062379704,
+          "yaw_p95_rad": 0.01747209504859981
+        },
+        "v4": {
+          "xy_p95_m": 0.025281736004150197,
+          "final_xy_m": 0.001450537707774971,
+          "yaw_p95_rad": 0.010224933175183804
+        },
+        "v5": {
+          "xy_p95_m": 0.025281736004150197,
+          "final_xy_m": 0.001450537707774971,
+          "yaw_p95_rad": 0.010224933175183804
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 5,
+      "seed": 115505,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.0291722255068143,
+          "final_xy_m": 0.023617762133149305,
+          "yaw_p95_rad": 0.008834741165709481
+        },
+        "v4": {
+          "xy_p95_m": 0.04277466319104123,
+          "final_xy_m": 0.0053964390164425915,
+          "yaw_p95_rad": 0.028313188239246667
+        },
+        "v5": {
+          "xy_p95_m": 0.04277466319104123,
+          "final_xy_m": 0.0053964390164425915,
+          "yaw_p95_rad": 0.028313188239246667
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 6,
+      "seed": 115506,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.05398557753780566,
+          "final_xy_m": 0.02950887282668167,
+          "yaw_p95_rad": 0.025452129883490215
+        },
+        "v4": {
+          "xy_p95_m": 0.018299854215802647,
+          "final_xy_m": 0.00834763800324548,
+          "yaw_p95_rad": 0.008682669617131822
+        },
+        "v5": {
+          "xy_p95_m": 0.018493324316142326,
+          "final_xy_m": 0.00834763800324548,
+          "yaw_p95_rad": 0.008682669617129157
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 7,
+      "seed": 115507,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.028465198843991846,
+          "final_xy_m": 0.0051956511633159475,
+          "yaw_p95_rad": 0.0023887572895207043
+        },
+        "v4": {
+          "xy_p95_m": 0.04271940584488092,
+          "final_xy_m": 0.0049851239566369955,
+          "yaw_p95_rad": 0.026658289069485086
+        },
+        "v5": {
+          "xy_p95_m": 0.019206788333156005,
+          "final_xy_m": 0.004985123956637873,
+          "yaw_p95_rad": 0.005742032464489455
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 8,
+      "seed": 115508,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.02454800428909547,
+          "final_xy_m": 0.013037446986785668,
+          "yaw_p95_rad": 0.015997886261961636
+        },
+        "v4": {
+          "xy_p95_m": 0.013216019699255005,
+          "final_xy_m": 0.013216680836502662,
+          "yaw_p95_rad": 0.006630058880842338
+        },
+        "v5": {
+          "xy_p95_m": 0.013216019699255005,
+          "final_xy_m": 0.013216680836502662,
+          "yaw_p95_rad": 0.006630064483743592
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 9,
+      "seed": 115509,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.033520985139490506,
+          "final_xy_m": 0.03361978548420801,
+          "yaw_p95_rad": 0.007967725083240396
+        },
+        "v4": {
+          "xy_p95_m": 0.007805923783437349,
+          "final_xy_m": 0.000541809915365265,
+          "yaw_p95_rad": 0.002194179907554883
+        },
+        "v5": {
+          "xy_p95_m": 0.006140856781252536,
+          "final_xy_m": 0.000541809915365265,
+          "yaw_p95_rad": 0.0020496285465414488
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 10,
+      "seed": 115510,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.022942197984334584,
+          "final_xy_m": 0.022942197984334584,
+          "yaw_p95_rad": 0.004995200220275997
+        },
+        "v4": {
+          "xy_p95_m": 0.05410282207508348,
+          "final_xy_m": 0.005238407712605256,
+          "yaw_p95_rad": 0.004080872776792255
+        },
+        "v5": {
+          "xy_p95_m": 0.05410282207508348,
+          "final_xy_m": 0.005238407712605256,
+          "yaw_p95_rad": 0.004080872776792255
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 11,
+      "seed": 115511,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.04307438353249819,
+          "final_xy_m": 0.02299698772352849,
+          "yaw_p95_rad": 0.012851393432504743
+        },
+        "v4": {
+          "xy_p95_m": 0.011290723746116468,
+          "final_xy_m": 0.006282354831503278,
+          "yaw_p95_rad": 0.018026030680207583
+        },
+        "v5": {
+          "xy_p95_m": 0.011290723746116468,
+          "final_xy_m": 0.006282354831503278,
+          "yaw_p95_rad": 0.018026030680207583
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 12,
+      "seed": 115512,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.0265021041523853,
+          "final_xy_m": 0.0012513918533529759,
+          "yaw_p95_rad": 0.013221051585894372
+        },
+        "v4": {
+          "xy_p95_m": 0.00732435667364163,
+          "final_xy_m": 0.00030102132362945657,
+          "yaw_p95_rad": 0.0032841251053463694
+        },
+        "v5": {
+          "xy_p95_m": 0.00732435667364163,
+          "final_xy_m": 0.00030102132362945657,
+          "yaw_p95_rad": 0.0032841251053463694
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 13,
+      "seed": 115513,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.029889381424190148,
+          "final_xy_m": 0.017570224445778885,
+          "yaw_p95_rad": 0.0075077992931751325
+        },
+        "v4": {
+          "xy_p95_m": 0.0428943884595984,
+          "final_xy_m": 0.005691230578392693,
+          "yaw_p95_rad": 0.023454832753456056
+        },
+        "v5": {
+          "xy_p95_m": 0.01895216796979386,
+          "final_xy_m": 0.005691230578392693,
+          "yaw_p95_rad": 0.004495988112445559
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 14,
+      "seed": 115514,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.07523843162778503,
+          "final_xy_m": 0.0700631100198967,
+          "yaw_p95_rad": 0.006164734530941907
+        },
+        "v4": {
+          "xy_p95_m": 0.03234852406297243,
+          "final_xy_m": 0.0021484596586018386,
+          "yaw_p95_rad": 0.0028219086832330653
+        },
+        "v5": {
+          "xy_p95_m": 0.014931752266044526,
+          "final_xy_m": 0.0021484596586018386,
+          "yaw_p95_rad": 0.0028219086812781846
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 15,
+      "seed": 115515,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.032728336187763836,
+          "final_xy_m": 0.005813945998894512,
+          "yaw_p95_rad": 0.012822875289452806
+        },
+        "v4": {
+          "xy_p95_m": 0.01155353914528064,
+          "final_xy_m": 0.006852738646660581,
+          "yaw_p95_rad": 0.009851974580459277
+        },
+        "v5": {
+          "xy_p95_m": 0.010140710111118362,
+          "final_xy_m": 0.006852738646660581,
+          "yaw_p95_rad": 0.002315383790474801
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 16,
+      "seed": 115516,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.036080288396093736,
+          "final_xy_m": 0.0191939656823486,
+          "yaw_p95_rad": 0.011184995732208325
+        },
+        "v4": {
+          "xy_p95_m": 0.05114010451769089,
+          "final_xy_m": 0.0029790119520382193,
+          "yaw_p95_rad": 0.03322452632718642
+        },
+        "v5": {
+          "xy_p95_m": 0.05114010451769089,
+          "final_xy_m": 0.0029790119520382193,
+          "yaw_p95_rad": 0.03322452632718642
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 17,
+      "seed": 115517,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_00",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.040497705048050704,
+          "final_xy_m": 0.037914645810356855,
+          "yaw_p95_rad": 0.01147246995358131
+        },
+        "v4": {
+          "xy_p95_m": 0.034159696972100806,
+          "final_xy_m": 0.0010623380612770142,
+          "yaw_p95_rad": 0.019179074271479912
+        },
+        "v5": {
+          "xy_p95_m": 0.034159696972100806,
+          "final_xy_m": 0.0010623380612770142,
+          "yaw_p95_rad": 0.019179074271479912
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 18,
+      "seed": 115518,
+      "condition": "normal_feedback",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.04609709512337167,
+          "final_xy_m": 0.044330076062243234,
+          "yaw_p95_rad": 0.011767464106812398
+        },
+        "v4": {
+          "xy_p95_m": 0.01205667297200438,
+          "final_xy_m": 0.010607416210735942,
+          "yaw_p95_rad": 0.0029708329785806953
+        },
+        "v5": {
+          "xy_p95_m": 0.01205667297200438,
+          "final_xy_m": 0.010607416210735942,
+          "yaw_p95_rad": 0.0022986764313071006
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 19,
+      "seed": 115519,
+      "condition": "small_initial_offset",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.029881931969982945,
+          "final_xy_m": 0.024982639521039626,
+          "yaw_p95_rad": 0.01383194162366097
+        },
+        "v4": {
+          "xy_p95_m": 0.031292629973339425,
+          "final_xy_m": 0.013955193954217264,
+          "yaw_p95_rad": 0.011449757979759223
+        },
+        "v5": {
+          "xy_p95_m": 0.01936279881109786,
+          "final_xy_m": 0.013955193954217264,
+          "yaw_p95_rad": 0.003160235034409098
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 20,
+      "seed": 115520,
+      "condition": "unmapped_obstacle",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.021861443192486382,
+          "final_xy_m": 0.0039045291269682895,
+          "yaw_p95_rad": 0.007252942695513909
+        },
+        "v4": {
+          "xy_p95_m": 0.008111696967504241,
+          "final_xy_m": 0.0037383316385319644,
+          "yaw_p95_rad": 0.001933327098006643
+        },
+        "v5": {
+          "xy_p95_m": 0.007572928114648816,
+          "final_xy_m": 0.0037383316385319644,
+          "yaw_p95_rad": 0.0019113235046628319
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    },
+    {
+      "case_id": 21,
+      "seed": 115521,
+      "condition": "missing_sector",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.04701080500121585,
+          "final_xy_m": 0.01616476058072292,
+          "yaw_p95_rad": 0.024978683828189574
+        },
+        "v4": {
+          "xy_p95_m": 0.01182445589411985,
+          "final_xy_m": 0.008312458504927345,
+          "yaw_p95_rad": 0.0026872418042795942
+        },
+        "v5": {
+          "xy_p95_m": 0.009431918101749214,
+          "final_xy_m": 0.008312458504927345,
+          "yaw_p95_rad": 0.0022211656568735805
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 22,
+      "seed": 115522,
+      "condition": "command_odometry",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.04891189643197891,
+          "final_xy_m": 0.02940309934551185,
+          "yaw_p95_rad": 0.014518475756927884
+        },
+        "v4": {
+          "xy_p95_m": 0.048026239465520815,
+          "final_xy_m": 0.015286724802890353,
+          "yaw_p95_rad": 0.003676805348580281
+        },
+        "v5": {
+          "xy_p95_m": 0.048026239465520815,
+          "final_xy_m": 0.015286724802890353,
+          "yaw_p95_rad": 0.003676805348580281
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": false
+    },
+    {
+      "case_id": 23,
+      "seed": 115523,
+      "condition": "command_and_unmapped",
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/navigation_stage2_dataset/validation_01",
+      "errors": {
+        "legacy": {
+          "xy_p95_m": 0.11073041312677136,
+          "final_xy_m": 0.10381200137745765,
+          "yaw_p95_rad": 0.01298713278110819
+        },
+        "v4": {
+          "xy_p95_m": 0.017986924737820806,
+          "final_xy_m": 0.012428191154675533,
+          "yaw_p95_rad": 0.016912929436396773
+        },
+        "v5": {
+          "xy_p95_m": 0.017986924737820806,
+          "final_xy_m": 0.012428191154675533,
+          "yaw_p95_rad": 0.016912929436396773
+        }
+      },
+      "collision_events": 0,
+      "unmapped_obstacle_introduced": true
+    }
+  ],
+  "groups": {
+    "normal_feedback": {
+      "legacy": {
+        "xy_p95_m": 0.03795105836819697,
+        "final_xy_m": 0.019751314620197254,
+        "yaw_p95_rad": 0.013150884903150972
+      },
+      "v4": {
+        "xy_p95_m": 0.010106375761928695,
+        "final_xy_m": 0.005224591450830671,
+        "yaw_p95_rad": 0.0031274790419635323
+      },
+      "v5": {
+        "xy_p95_m": 0.009849847183250198,
+        "final_xy_m": 0.005224591450830671,
+        "yaw_p95_rad": 0.002791400768326735
+      }
+    },
+    "small_initial_offset": {
+      "legacy": {
+        "xy_p95_m": 0.029173565406987394,
+        "final_xy_m": 0.013818440074254187,
+        "yaw_p95_rad": 0.009828599859028175
+      },
+      "v4": {
+        "xy_p95_m": 0.04280689715223966,
+        "final_xy_m": 0.005338177267514845,
+        "yaw_p95_rad": 0.02505656091147057
+      },
+      "v5": {
+        "xy_p95_m": 0.01928479357212693,
+        "final_xy_m": 0.005338177267515284,
+        "yaw_p95_rad": 0.005119010288467507
+      }
+    },
+    "unmapped_obstacle": {
+      "legacy": {
+        "xy_p95_m": 0.02503291350501881,
+        "final_xy_m": 0.01662023591234285,
+        "yaw_p95_rad": 0.010129051899554042
+      },
+      "v4": {
+        "xy_p95_m": 0.010663858333379624,
+        "final_xy_m": 0.00405264562326626,
+        "yaw_p95_rad": 0.002785037151016523
+      },
+      "v5": {
+        "xy_p95_m": 0.01039447390695191,
+        "final_xy_m": 0.00405264562326626,
+        "yaw_p95_rad": 0.0028185427776976635
+      }
+    },
+    "missing_sector": {
+      "legacy": {
+        "xy_p95_m": 0.03312466066362717,
+        "final_xy_m": 0.02371791601308411,
+        "yaw_p95_rad": 0.010395300186346601
+      },
+      "v4": {
+        "xy_p95_m": 0.009844894582263276,
+        "final_xy_m": 0.004911524356347143,
+        "yaw_p95_rad": 0.003418619802717071
+      },
+      "v5": {
+        "xy_p95_m": 0.008530121191292163,
+        "final_xy_m": 0.004911524356347143,
+        "yaw_p95_rad": 0.0022682747236741907
+      }
+    },
+    "command_odometry": {
+      "legacy": {
+        "xy_p95_m": 0.039699986381987594,
+        "final_xy_m": 0.021068081833341593,
+        "yaw_p95_rad": 0.012851735744568105
+      },
+      "v4": {
+        "xy_p95_m": 0.04958317199160585,
+        "final_xy_m": 0.004108709832321738,
+        "yaw_p95_rad": 0.007152902975988029
+      },
+      "v5": {
+        "xy_p95_m": 0.04958317199160585,
+        "final_xy_m": 0.004108709832321738,
+        "yaw_p95_rad": 0.007152902975988029
+      }
+    },
+    "command_and_unmapped": {
+      "legacy": {
+        "xy_p95_m": 0.04178604429027445,
+        "final_xy_m": 0.03076620397175308,
+        "yaw_p95_rad": 0.012161931693043027
+      },
+      "v4": {
+        "xy_p95_m": 0.026073310854960806,
+        "final_xy_m": 0.005839396923972935,
+        "yaw_p95_rad": 0.018602552475843748
+      },
+      "v5": {
+        "xy_p95_m": 0.026073310854960806,
+        "final_xy_m": 0.005839396923972935,
+        "yaw_p95_rad": 0.018602552475843748
+      }
+    }
+  },
+  "resource": {
+    "seconds": 156.27058843604755,
+    "cpu_seconds": 78.138329665,
+    "average_cpu_cores": 0.5000194243011855,
+    "peak_rss_mib": 2533.2265625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

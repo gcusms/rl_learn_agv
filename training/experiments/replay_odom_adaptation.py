@@ -7,13 +7,14 @@ from navrl.geometry import wrap
 from navrl.map import StaticMap
 from neural_navigation.sensors import LidarSpec
 from neural_navigation.models import LearnedLocalizer
-from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer,contract,turn_response_contract
+from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer,contract,turn_response_contract,precision_contract
 
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--record',type=Path,required=True);p.add_argument('--bundle',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--turn-response-v4',action='store_true',help='Opt-in bounded yaw response; leave v3 default unchanged')
-    a=p.parse_args();configuration=turn_response_contract() if a.turn_response_v4 else contract()
+    p.add_argument('--precision-v5',action='store_true',help='Reduced residual deadband and bounded startup refinement')
+    a=p.parse_args();configuration=precision_contract() if a.precision_v5 else turn_response_contract() if a.turn_response_v4 else contract()
     torch.set_num_threads(1);a.output.mkdir(parents=True,exist_ok=True)
     rows=[json.loads(l)['data'] for l in (a.record/'decisions.jsonl').open()]
     run=next((a.record/'snapshots/runs').iterdir())

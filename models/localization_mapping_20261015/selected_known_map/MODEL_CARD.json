@@ -1,0 +1,90 @@
+{
+  "selected": "boundary_ppo_8000",
+  "selection_scope": "parking-stage selection on 48 fixed validation tasks; not overall deployment selection",
+  "policy_sha256": "1daa4990408703d14ed3d3996d03c8912d65f99c55d9a5266a7622a95436d408",
+  "validation": {
+    "tasks": 48,
+    "success": 48,
+    "collisions": 0,
+    "false_arrivals": 0,
+    "timeouts": 0
+  },
+  "deployment_approved": false,
+  "localizer_router_weights_retrained": false,
+  "navigation_actor_weights_changed": false,
+  "frozen_navigation_actor_reference": "parent 5k directional checkpoint, not original real-deployed 2k actor",
+  "updated_components": [
+    "terminal actor",
+    "critic during PPO",
+    "static-support localization v5",
+    "resident deployment state"
+  ],
+  "observation_dimensions": 303,
+  "actions": 12,
+  "physical_speed_limits_m_s_rad_s": [
+    0.2,
+    0.5
+  ],
+  "terminal_ppo_steps_total": 8000,
+  "additional_terminal_ppo_steps": 3000,
+  "teacher_warmup_updates": 600,
+  "online_mapping_status": "experimental; use live observed map and external SLAM estimates",
+  "requires_initial_pose_on_known_map": true,
+  "arbitrary_global_relocalization_tested": false,
+  "ros_validation_scope": "callback/resident-state tests and portable construction; full ROS adapter launch not exercised",
+  "known_map_command_integrated_directional_routes": {
+    "tasks": 8,
+    "success": 4,
+    "collisions": 2,
+    "false_arrivals": 2,
+    "timeouts": 0
+  },
+  "command_integrated_position_pair": {
+    "real_deployed_2k": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "selected_8k": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 2,
+      "false_arrivals": 2,
+      "timeouts": 0
+    }
+  },
+  "command_translation_imu_heading_position_pair": {
+    "real_deployed_2k": {
+      "tasks": 8,
+      "success": 6,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 1
+    },
+    "selected_8k": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    }
+  },
+  "online_mapping_command_integrated": {
+    "tasks": 4,
+    "success": 2,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 1
+  },
+  "command_feedback_sim_to_real_gap_resolved": false,
+  "unseen_generated_map_command_navigation": {
+    "tasks": 8,
+    "success": 2,
+    "collisions": 0,
+    "false_arrivals": 1,
+    "timeouts": 5
+  },
+  "source_training_config": "models/localization_mapping_20261015/boundary_assisted_terminal/config.json"
+}

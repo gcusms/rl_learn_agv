@@ -1,0 +1,81 @@
+{
+  "completed": true,
+  "scope": "unseen validation maps; supervised scan bootstrap then retained RL control; no simulator truth input",
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "online_map_00",
+      "safe_success": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": true,
+      "seconds": 69.99999999999508,
+      "travel_including_bootstrap_m": 0.0,
+      "bootstrap_frames": 66,
+      "frames": 350,
+      "final_xy_error_m": 0.9292608646738931,
+      "final_yaw_error_rad": 0.31774290617040757,
+      "localization_xy_p95_m": 0.01837217575104482,
+      "localization_yaw_p95_rad": 0.0031834234566725295,
+      "map_updates": 166,
+      "subgoal_updates": 0,
+      "initial_known_cells": 16745,
+      "final_known_cells": 16850,
+      "stop_reasons": {
+        "static_braking_footprint": 350
+      },
+      "serialization": {
+        "map_messages": 405,
+        "pose_messages": 417,
+        "last_alignment_stamp_s": 84.1,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 129.09698502335232
+    },
+    {
+      "case_id": "online_map_01",
+      "safe_success": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "timeout": true,
+      "seconds": 69.99999999999508,
+      "travel_including_bootstrap_m": 4.090069340972806,
+      "bootstrap_frames": 66,
+      "frames": 350,
+      "final_xy_error_m": 0.24883650453838935,
+      "final_yaw_error_rad": 0.9245887610053654,
+      "localization_xy_p95_m": 0.5193482407437306,
+      "localization_yaw_p95_rad": 0.009266525771112779,
+      "map_updates": 326,
+      "subgoal_updates": 0,
+      "initial_known_cells": 18317,
+      "final_known_cells": 18841,
+      "stop_reasons": {
+        "None": 349,
+        "slam_correction_reobserve": 1
+      },
+      "serialization": {
+        "map_messages": 437,
+        "pose_messages": 417,
+        "last_alignment_stamp_s": 84.1,
+        "persistent_files": [
+          "persistent_map.posegraph",
+          "persistent_map.data"
+        ]
+      },
+      "actor_ms_p95": 158.81523995194584
+    }
+  ],
+  "resource_parent_only": {
+    "seconds": 459.1276793280267,
+    "cpu_seconds": 160.711884067,
+    "average_cpu_cores": 0.35003745429205185,
+    "peak_rss_mib": 2231.85546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

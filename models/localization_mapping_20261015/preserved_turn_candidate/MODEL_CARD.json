@@ -1,0 +1,57 @@
+{
+  "deployment_approved": false,
+  "additional_ppo_steps": 0,
+  "composition": "archived navigation outside 0.30m directional approach; trained approach/terminal inside",
+  "navigation_checkpoint_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "terminal_checkpoint_sha256": "1daa4990408703d14ed3d3996d03c8912d65f99c55d9a5266a7622a95436d408",
+  "composite_actor_sha256": "fd40e1d33a9b954345ff014b546e790a668316d8b3b37fe98ed5ee2d4856164a",
+  "resumption": "Use the two original PPO checkpoints; a single composite PPO optimizer has not been constructed",
+  "localization": "Experimental v6 yaw-only proposal; unchanged bounds and static-support gates",
+  "validation": {
+    "known_48": {
+      "tasks": 48,
+      "success": 48,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "historical_12": {
+      "tasks": 12,
+      "success": 11,
+      "collisions": 1,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "imu_position_8": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "imu_directional_8": {
+      "tasks": 8,
+      "success": 8,
+      "collisions": 0,
+      "false_arrivals": 0,
+      "timeouts": 0
+    },
+    "imu_new_map_position_8": {
+      "tasks": 8,
+      "success": 4,
+      "collisions": 0,
+      "false_arrivals": 1,
+      "timeouts": 3
+    }
+  },
+  "preservation_checks": {
+    "known_parking_48_not_worse": true,
+    "historical_avoidance_not_worse": true,
+    "imu_position_not_worse": true,
+    "imu_directional_not_worse": true,
+    "imu_new_map_position_not_worse": false
+  },
+  "preferred_research_candidate": false,
+  "validation_is_not_real_world_acceptance": true,
+  "online_mapping_approved": false
+}
