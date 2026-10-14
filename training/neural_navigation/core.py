@@ -5,6 +5,7 @@ observation methods. Static map geometry is immutable between resets.
 """
 from collections import deque
 from pathlib import Path
+import json
 import numpy as np
 import torch
 from scipy.ndimage import binary_dilation
@@ -97,7 +98,9 @@ class LearnedRoutingMixin:
         if old is not None and hasattr(self,'previous_remaining'):self.previous_remaining+=self.remaining-old
         clean=np.nan_to_num(scan,nan=12.,posinf=12.,neginf=.1)
         binned=np.array([p.min() for p in np.array_split(clean,72)])/self.lidar.range_max
-        if initialize:
+        if getattr(self,'timed_scan_history',None) is not None:
+            self.history.clear();self.history.extend(self.timed_scan_history.update(self.elapsed,binned))
+        elif initialize:
             self.history.clear()
             for _ in range(3):self.history.append(binned.copy())
         else:self.history.append(binned)
@@ -231,8 +234,19 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
     def __init__(self,static_map,lidar,components,route_mode='raw'):
         if route_mode not in ('raw','shortcut'):raise ValueError('Unknown route mode')
         self.route_mode=route_mode
+        self.timed_scan_history=None
+        goal_contract_path=Path(components)/'goal_pose_observation.json'
+        if goal_contract_path.exists():
+            from neural_navigation.goal_pose import contract
+            from neural_navigation.timed_scan_history import TimedScanHistory
+            if json.loads(goal_contract_path.read_text())!=contract():raise ValueError('Goal-pose contract mismatch')
+            self.timed_scan_history=TimedScanHistory(contract()['control_period_s'])
         self.static_map=static_map;self.lidar=lidar;components=Path(components)
-        self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
+        localization_contract=components/'localization_contract.json'
+        if localization_contract.exists():
+            from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
+            self.localizer=OdometryAnchoredLocalizer(static_map,lidar,components/'localizer.pt',json.loads(localization_contract.read_text()))
+        else:self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
         checkpoint=torch.load(components/'router.pt',map_location='cpu',weights_only=True)
         self.motion_prediction_config=checkpoint.get('motion_prediction')
         self.escape_start=bool(checkpoint.get('escape_start',False))
@@ -256,6 +270,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         self.elapsed=float(timestamp);self._last_timestamp=float(timestamp)
         self.odom=np.zeros(3);self.measured_velocity=np.zeros(2);self.last_action=np.zeros(2)
         self.scan=np.full(self.lidar.beams,np.nan);self.history.clear();self.pose_progress.clear()
+        if self.timed_scan_history is not None:self.timed_scan_history.reset()
         self.expiry.fill(0);self.laser_fusion.reset();self.router_cache.clear();self.static_visibility_cache.clear()
         self.router_cache_hits=0;self.router_cache_misses=0
         self.last_route_time=-100.;self.last_route_switch=-100.;self.plan_revision=0;self.routing_ready=False
@@ -267,9 +282,11 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
 
     def set_goal(self,goal):
         goal=np.asarray(goal,dtype=float)
-        if goal.shape!=(2,) or not np.isfinite(goal).all() or not self.static_map.lookup(goal,self.static_map.free,outside=False):
+        if goal.shape not in ((2,),(3,)) or not np.isfinite(goal).all() or not self.static_map.lookup(goal[:2],self.static_map.free,outside=False):
             raise ValueError('Goal must be finite and inside inflated known free space')
-        self.goal=goal.copy();self.last_route_time=-100.;self.routing_ready=False
+        self.goal_yaw=float(wrap(goal[2])) if len(goal)==3 else None
+        self._goal_settled_since=None
+        self.goal=goal[:2].copy();self.last_route_time=-100.;self.routing_ready=False
 
     def record_action(self,action):
         action=np.asarray(action,dtype=float)
@@ -293,13 +310,21 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
                 self.odometry_sanity_failure=True;self.localizer.last_odom=odom.copy()
         self.elapsed=float(timestamp);self._last_timestamp=self.elapsed
         self.scan=scan.copy();self.odom=odom.copy();self.measured_velocity=velocity.copy()
-        self.estimate=self.localizer.update(self.odom,self.scan)
+        from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
+        if isinstance(self.localizer,OdometryAnchoredLocalizer):
+            self.estimate=self.localizer.update(self.odom,self.scan,timestamp=self.elapsed)
+        else:self.estimate=self.localizer.update(self.odom,self.scan)
+        from neural_navigation.goal_pose import update_goal_settling
+        update_goal_settling(self)
         observation=self._observation(self.scan,initialize=self._first_observation)
         self._first_observation=False;self.previous_remaining=self.remaining
         return observation.copy(),self.diagnostics()
 
     def diagnostics(self):
-        return dict(estimated_pose=self.estimate.tolist(),localization_std=self.localizer.std.tolist(),
+        from neural_navigation.goal_pose import goal_status
+        return dict(**goal_status(self),estimated_pose=self.estimate.tolist(),localization_std=self.localizer.std.tolist(),
+                    localization_correction_reason=getattr(self.localizer,'correction_reason','legacy_unchecked'),
+                    localization_static_support_fraction=getattr(self.localizer,'static_support_fraction',None),
                     localization_scan_update_accepted=self.localizer.scan_update_accepted,
                     localization_valid_scan_fraction=self.localizer.valid_scan_fraction,
                     localization_missing_scan_updates=self.localizer.missing_scan_updates,

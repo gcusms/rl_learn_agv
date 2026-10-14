@@ -1,0 +1,238 @@
+{
+  "scope": "fixed recorded scan and odometry; no independent pose truth; not closed-loop navigation",
+  "contract": {
+    "schema": "odom_anchored_static_support_v1",
+    "calibrated": false,
+    "endpoint_gate_m": 0.15,
+    "minimum_hits": 12,
+    "minimum_support_fraction": 0.35,
+    "maximum_translation_rate_m_s": 0.04,
+    "maximum_yaw_rate_rad_s": 0.06,
+    "maximum_proposal_translation_m": 0.12,
+    "maximum_proposal_yaw_rad": 0.12,
+    "weak_axis_ratio": 0.12,
+    "minimum_cost_improvement_m": 0.001,
+    "verified_prior_cost_m": 0.02,
+    "verified_prior_support": 0.8,
+    "process_std_per_sqrt_s": [
+      0.01,
+      0.01,
+      0.008
+    ]
+  },
+  "frames": 1516,
+  "candidate_accepted_frames": 312,
+  "reasons": {
+    "accepted_static_correction": 203,
+    "innovation_rejected": 118,
+    "insufficient_static_support": 834,
+    "no_matching_improvement": 252,
+    "validated_static_prior": 109
+  },
+  "candidate_localizer_ms": {
+    "p50": 0.3003535093739629,
+    "p95": 3.4459230373613536,
+    "p99": 3.567839012248441,
+    "maximum": 3.6913109943270683
+  },
+  "missions": [
+    {
+      "mission": 1,
+      "frames": 147,
+      "recorded_displacement_m": 2.390699790748951,
+      "baseline_replay_displacement_m": 2.3925573291196462,
+      "candidate_displacement_m": 2.6199913660927776,
+      "input_odometry_displacement_m": 2.646431752518744,
+      "candidate_map_corrections": 9
+    },
+    {
+      "mission": 2,
+      "frames": 143,
+      "recorded_displacement_m": 1.2976940086355497,
+      "baseline_replay_displacement_m": 1.2975782402683702,
+      "candidate_displacement_m": 1.3449318990898027,
+      "input_odometry_displacement_m": 1.45611711714686,
+      "candidate_map_corrections": 43
+    },
+    {
+      "mission": 3,
+      "frames": 129,
+      "recorded_displacement_m": 2.2625401322426706,
+      "baseline_replay_displacement_m": 2.26196207902866,
+      "candidate_displacement_m": 2.2589510474133343,
+      "input_odometry_displacement_m": 2.2154566208419064,
+      "candidate_map_corrections": 42
+    },
+    {
+      "mission": 4,
+      "frames": 41,
+      "recorded_displacement_m": 0.2078185270101167,
+      "baseline_replay_displacement_m": 0.20911861599976198,
+      "candidate_displacement_m": 0.19519155162652552,
+      "input_odometry_displacement_m": 0.1699832006572877,
+      "candidate_map_corrections": 21
+    },
+    {
+      "mission": 5,
+      "frames": 105,
+      "recorded_displacement_m": 0.6634294371265791,
+      "baseline_replay_displacement_m": 0.6346590328543813,
+      "candidate_displacement_m": 1.1376363831958578,
+      "input_odometry_displacement_m": 1.1202781525010375,
+      "candidate_map_corrections": 28
+    },
+    {
+      "mission": 6,
+      "frames": 26,
+      "recorded_displacement_m": 0.7749635180949583,
+      "baseline_replay_displacement_m": 0.7749633290985484,
+      "candidate_displacement_m": 0.1735176917530835,
+      "input_odometry_displacement_m": 0.17351769175308315,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 7,
+      "frames": 39,
+      "recorded_displacement_m": 1.538602840281685,
+      "baseline_replay_displacement_m": 1.538604466854624,
+      "candidate_displacement_m": 0.24827251884369864,
+      "input_odometry_displacement_m": 0.24827251884369794,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 8,
+      "frames": 28,
+      "recorded_displacement_m": 0.41281542215806355,
+      "baseline_replay_displacement_m": 0.413465768067303,
+      "candidate_displacement_m": 0.006074429702957186,
+      "input_odometry_displacement_m": 0.0060744297029569185,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 9,
+      "frames": 45,
+      "recorded_displacement_m": 1.0373086058768664,
+      "baseline_replay_displacement_m": 1.0382554756956117,
+      "candidate_displacement_m": 0.14861551027774,
+      "input_odometry_displacement_m": 0.14861551027773934,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 10,
+      "frames": 108,
+      "recorded_displacement_m": 1.6416156150541719,
+      "baseline_replay_displacement_m": 1.6486738224436859,
+      "candidate_displacement_m": 0.14183322685721864,
+      "input_odometry_displacement_m": 0.14183322685721714,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 11,
+      "frames": 28,
+      "recorded_displacement_m": 0.7535072650376878,
+      "baseline_replay_displacement_m": 0.7535070803903392,
+      "candidate_displacement_m": 0.263121668348595,
+      "input_odometry_displacement_m": 0.2631216683485948,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 12,
+      "frames": 13,
+      "recorded_displacement_m": 0.24559924376558329,
+      "baseline_replay_displacement_m": 0.2455987452205472,
+      "candidate_displacement_m": 2.8572020552806083e-05,
+      "input_odometry_displacement_m": 2.8572020552626492e-05,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 13,
+      "frames": 27,
+      "recorded_displacement_m": 0.7352804785728445,
+      "baseline_replay_displacement_m": 0.7353105451485163,
+      "candidate_displacement_m": 0.054758163920033326,
+      "input_odometry_displacement_m": 0.054758163920033034,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 14,
+      "frames": 24,
+      "recorded_displacement_m": 0.12458367282594289,
+      "baseline_replay_displacement_m": 0.12458444673225207,
+      "candidate_displacement_m": 0.010889043946793487,
+      "input_odometry_displacement_m": 0.010889043946793589,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 15,
+      "frames": 20,
+      "recorded_displacement_m": 0.6724784195415188,
+      "baseline_replay_displacement_m": 0.6725405576519328,
+      "candidate_displacement_m": 0.0628141891117104,
+      "input_odometry_displacement_m": 0.06281418911171045,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 16,
+      "frames": 3,
+      "recorded_displacement_m": 0.04291244749004441,
+      "baseline_replay_displacement_m": 0.04291213965647893,
+      "candidate_displacement_m": 0.0008945857485304465,
+      "input_odometry_displacement_m": 0.0008945857485303659,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 17,
+      "frames": 94,
+      "recorded_displacement_m": 1.8030027413871832,
+      "baseline_replay_displacement_m": 1.802938217417729,
+      "candidate_displacement_m": 0.44223047642721375,
+      "input_odometry_displacement_m": 0.44223047642721347,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 18,
+      "frames": 38,
+      "recorded_displacement_m": 1.0016652279290297,
+      "baseline_replay_displacement_m": 1.0016653982195545,
+      "candidate_displacement_m": 0.16389818148210925,
+      "input_odometry_displacement_m": 0.16389818148210925,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 19,
+      "frames": 41,
+      "recorded_displacement_m": 1.3466243069965176,
+      "baseline_replay_displacement_m": 1.3443924798843039,
+      "candidate_displacement_m": 0.024847638312105475,
+      "input_odometry_displacement_m": 0.024847638312106592,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 20,
+      "frames": 17,
+      "recorded_displacement_m": 0.5085465451768381,
+      "baseline_replay_displacement_m": 0.5085466650207516,
+      "candidate_displacement_m": 0.06415667987568886,
+      "input_odometry_displacement_m": 0.06415667987568882,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 21,
+      "frames": 278,
+      "recorded_displacement_m": 3.357216485756679,
+      "baseline_replay_displacement_m": 3.356858749455194,
+      "candidate_displacement_m": 3.3842323120043334,
+      "input_odometry_displacement_m": 3.457547524280524,
+      "candidate_map_corrections": 15
+    },
+    {
+      "mission": 22,
+      "frames": 122,
+      "recorded_displacement_m": 1.4702265320401218,
+      "baseline_replay_displacement_m": 1.4706981155654957,
+      "candidate_displacement_m": 1.5849769733704315,
+      "input_odometry_displacement_m": 1.640654195305527,
+      "candidate_map_corrections": 45
+    }
+  ]
+}

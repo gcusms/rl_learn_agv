@@ -23,6 +23,7 @@ class NavigationCurriculum(gym.Env):
     def reset(self,seed=None,options=None):
         super().reset(seed=seed);rng=self.np_random
         template=(options or {}).get('training_template')
+        pose_alignment_task=bool((options or {}).get('pose_alignment_task',False))
         dynamic=self.stage!='static' and rng.random()<.35
         # Retain static tasks at every stage. Dynamic appearances start in the
         # known room so their physical trigger can be independently checked.
@@ -42,7 +43,8 @@ class NavigationCurriculum(gym.Env):
                 start=np.asarray(template['options']['start'][:2])+rng.uniform(-.1,.1,2)
                 goal=np.asarray(template['options']['goal'])+rng.uniform(-.1,.1,2)
                 if not all(m.lookup(p,m.clearance,outside=0.)>.55 for p in (start,goal)):continue
-            if np.linalg.norm(start-goal)<2.5:continue
+            if pose_alignment_task:goal=start.copy()
+            elif np.linalg.norm(start-goal)<2.5:continue
             field=self.graphs[scene].field(goal)
             r,c=[int(v) for v in m.cells(start)]
             if field.reachable[r,c] and field.value(start)<=12.:break

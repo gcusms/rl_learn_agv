@@ -1,0 +1,48 @@
+{
+  "parent_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "seed": 101401,
+  "steps": 250,
+  "goal_contract": {
+    "schema": "quality_goal_pose_v1",
+    "dimensions": 303,
+    "prefix_dimensions": 300,
+    "appended_features": [
+      "sin_goal_yaw_error",
+      "cos_goal_yaw_error",
+      "goal_yaw_required"
+    ],
+    "position_tolerance_m": 0.12,
+    "yaw_tolerance_rad": 0.15,
+    "stopped_linear_m_s": 0.03,
+    "stopped_angular_rad_s": 0.08,
+    "settle_seconds": 0.4,
+    "control_period_s": 0.2,
+    "scan_history_offsets_s": [
+      -0.4,
+      -0.2,
+      0.0
+    ],
+    "calibrated": false
+  },
+  "localizer_router_weights_frozen": true,
+  "localization_gate_enabled": false,
+  "stage": "static",
+  "num_envs": 1,
+  "torch_threads": 1,
+  "soft_average_cpu_cores": 0.5,
+  "reward_scale": 0.016666666666666666,
+  "deployment_approved": false,
+  "reference_strength": 2.0,
+  "reference_kl_budget": 0.02,
+  "reference_excludes_heading_required_within_m": 0.8,
+  "scope": "bounded training-entry smoke test",
+  "reference_statistics": {
+    "reference_kl": 0.0,
+    "eligible_fraction": 0.0,
+    "cache_states": 0,
+    "accepted_optimizer_steps": 8,
+    "rolled_back_optimizer_steps": 0,
+    "update_stopped": false,
+    "reference_kl_budget": 0.02
+  }
+}

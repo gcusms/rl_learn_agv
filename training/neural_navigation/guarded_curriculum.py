@@ -73,8 +73,17 @@ class GuardedNavigationCurriculum(NavigationCurriculum):
         reward-=body_penalty
         self.previous_executed=executed.copy()
         failure=e.collision_events>old_collisions or e.hard_guard_activations>old_guards
-        done=bool(diagnostics['estimated_goal_distance_m']<.12)
+        done=bool(diagnostics['estimated_goal_pose_reached'])
         verified=bool(done and info['true_goal_distance_m']<=.2 and not failure)
+        if self.core.goal_yaw is not None:
+            from neural_navigation.goal_pose import contract
+            goal_contract=contract();true_yaw_error=float(abs(wrap(self.core.goal_yaw-e.truth[2])))
+            true_velocity=np.asarray(info['actual_velocity'])
+            verified=bool(verified and info['true_goal_distance_m']<goal_contract['position_tolerance_m']
+                and true_yaw_error<goal_contract['yaw_tolerance_rad']
+                and abs(true_velocity[0])<goal_contract['stopped_linear_m_s']
+                and abs(true_velocity[1])<goal_contract['stopped_angular_rad_s'])
+            info.update(true_goal_yaw_error_rad=true_yaw_error)
         truncated=bool(e.steps>=self.max_steps and not done)
         if failure:reward=min(reward,0.)-100.;done=True;truncated=False
         elif done:reward+=50. if verified else -50.

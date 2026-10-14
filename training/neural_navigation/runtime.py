@@ -148,7 +148,7 @@ from this same deterministic transform, and report its override frequency.
     now=timestamp if received_timestamp is None else received_timestamp
     executed,reason=guard.check(core,command,timestamp,now,scan_valid,rear_clearance_known)
     diagnostics=core.diagnostics()
-    if diagnostics['estimated_goal_distance_m']<.12 and reason in (None,'learned_route_incomplete'):
+    if diagnostics['estimated_goal_pose_reached'] and reason in (None,'learned_route_incomplete'):
         executed=np.zeros(2);reason='estimated_goal_reached'
     executed_action=np.array([executed[0]/(.2 if executed[0]>=0 else .08),executed[1]/.5])
     core.record_action(executed_action)
@@ -161,6 +161,8 @@ from this same deterministic transform, and report its override frequency.
 class SensorNavigationRuntime:
     def __init__(self,bundle,map_path,initial_pose,goal,route_mode='raw'):
         bundle=Path(bundle);hardware=json.loads((bundle/'hardware.json').read_text())
+        if len(goal)==3 and not (bundle/'goal_pose_observation.json').exists():
+            raise ValueError('Directional goals require a goal-pose trained bundle; legacy actor is position-only')
         self.core=NavigationCore(StaticMap(map_path,radius=.3),LidarSpec(hardware['lidar']),bundle,route_mode=route_mode)
         self.core.reset(initial_pose,goal)
         self.context=None

@@ -9,8 +9,9 @@ from experiments.anchored_masked_ppo import AnchoredMaskedPPO
 
 
 class QualityAnchoredPPO(AnchoredMaskedPPO):
+    observation_dim=TOTAL_DIM
     def snapshot_reference(self):
-        if self.observation_space.shape!=(TOTAL_DIM,) or self.action_space.n!=12:
+        if self.observation_space.shape!=(self.observation_dim,) or self.action_space.n!=12:
             raise ValueError('Quality masked policy required')
         self.reference_policy=copy.deepcopy(self.policy)
         self.reference_policy.set_training_mode(False);self.reference_policy.requires_grad_(False)
@@ -21,7 +22,7 @@ class QualityAnchoredPPO(AnchoredMaskedPPO):
             &(observations[:,295:299]<.5).all(dim=1))
 
     def remember_clear_states(self):
-        observations=torch.as_tensor(self.rollout_buffer.observations.reshape(-1,TOTAL_DIM),device=self.device)
+        observations=torch.as_tensor(self.rollout_buffer.observations.reshape(-1,self.observation_dim),device=self.device)
         masks=torch.as_tensor(self.rollout_buffer.action_masks.reshape(-1,12),device=self.device)
         keep=self.eligible(observations,masks);observations=observations[keep];masks=masks[keep]
         if len(observations)>128:
