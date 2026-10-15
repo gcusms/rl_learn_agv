@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-10-15T16:47:31+08:00",
+  "documentation_only": true,
+  "documentation_branch": "docs/localization-validation-20261015",
+  "documentation_parent": "57a5925",
+  "experimental_branch": "fix/localization-mapping-20261015",
+  "experimental_base_commit": "a17929bfe9e86c3872536f66efa80214dffa2b46",
+  "experimental_worktree_has_uncommitted_changes": true,
+  "experimental_sources_and_candidate_weights_included_in_this_documentation_commit": false,
+  "reports": {
+    "reports/localization_mapping_20261015/sparse_repair_20261015/SUMMARY.json": "6e9333961d01fd7ad82582b5b558c3cf87f95fa3f74ad1dbb766cf6fce6f1d06",
+    "reports/localization_mapping_20261015/sparse_repair_20261015/temporal_current_28/RESULTS.json": "e6515117022a347c301893a8dc467ca011fd150c7b53b295b96c6b4167b0ce17",
+    "reports/localization_mapping_20261015/sparse_repair_20261015/recorded_temporal/replay.json": "883bdb71f0c69e3612e5c227e537294be34059abf4314a7d3aea2a5de10208ea",
+    "reports/localization_mapping_20261015/constraints_repair_20261015/SUMMARY.json": "2ff5feed152031a160f786b58b2f56c59867a06a55a31e86e230af0cf424b10f",
+    "reports/localization_mapping_20261015/constraints_repair_20261015/uncertainty_28/RESULTS.json": "51a3976aa60a14f3cf1e4c67bf2127c5a2d2147ea63f1a7ef88b62ee5245cf28",
+    "reports/localization_mapping_20261015/blind_repair_20261015/SUMMARY.json": "95cc03f6f60ff485e309a2d02d2f2664ba44f9f5a479138a0232755e4cbd4d36"
+  },
+  "source_files": {
+    "training/neural_navigation/fast_static_localizer.py": "4a885792352ae2834c56351010cf3f30db4a89bf3bb13760d55b66fbfdad72d6",
+    "training/neural_navigation/static_tracking_kernel.cpp": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "training/neural_navigation/weak_geometry_uncertainty.py": "38b7a50d389214f7093520aa5cf41cf0cf8dbf39cb5d4a24c110915e4d14eb21",
+    "training/experiments/benchmark_sparse_localization.py": "45e3ab10260636d8fd20fbced11ddd2642ebe45d0a083d9eb19c02d75968dd2b",
+    "training/experiments/benchmark_constraint_uncertainty.py": "af7eaab230c0b2fda1ad881c77977ba2643e9ccaceb64220d61daa5285a40642",
+    "training/experiments/replay_odom_adaptation.py": "101a206fe067524160be1443490248cc124f743a18b22fd2e61077133ffb02c8",
+    "training/experiments/evaluate_docking_navigation.py": "2d4de1aaacf253fc0e4f4c84cbf93ac7dd1fc84030573dd09924b48980021f9c"
+  },
+  "benchmark_source_files_at_execution": {
+    "experiments/benchmark_sparse_localization.py": "45e3ab10260636d8fd20fbced11ddd2642ebe45d0a083d9eb19c02d75968dd2b",
+    "neural_navigation/fast_static_localizer.py": "4e8d79389f2299160c30242351da703cc5525c03f596c22385fb37d0833862ab",
+    "neural_navigation/static_tracking_kernel.cpp": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7"
+  },
+  "candidate_manifest_sha256": "c9399498124f4911e3dc8d7e097b57b3047ecc128710ada4331f3c35823147d7",
+  "candidate_files_sha256": {
+    "quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "hardware.json": "fc70333f1813a1844572ba7b5ecb67adc5ede3f5437089019e5da2b96cf7f48b",
+    "localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "actor.pt": "fd40e1d33a9b954345ff014b546e790a668316d8b3b37fe98ed5ee2d4856164a",
+    "docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "navigation_preservation.json": "ab08c002952f9448b6957c31ad5e316a29f60f7e659ffb440f734492779a096e",
+    "localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d"
+  },
+  "limitations": [
+    "No independent real-world absolute pose reference in the recorded session.",
+    "Frozen development/regression tasks are not sealed final tests.",
+    "Source file hashes identify local experimental contents, not a clean reproducible code release."
+  ]
+}
