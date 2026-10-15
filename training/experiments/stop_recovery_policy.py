@@ -115,6 +115,9 @@ class StopRecoveryPPO(StopFeedbackPPO):
         clip = self.clip_range(self._current_progress_remaining)
         logs = {k: [] for k in ['entropy_loss', 'policy_gradient_loss', 'value_loss',
             'approx_kl', 'clip_fraction', 'actor_recovery_fraction']}
+        retention = getattr(self, 'demonstration_retention_contract', None)
+        if retention is not None:
+            logs.update(demonstration_retention_loss=[], demonstration_retention_samples=[])
         running = True
         loss = None
         for _ in range(self.n_epochs):
@@ -132,6 +135,14 @@ class StopRecoveryPPO(StopFeedbackPPO):
                 if count and self.target_kl is not None and kl > 1.5*self.target_kl:
                     running = False
                     break
+                if retention is not None:
+                    retained, replay_count = torch.zeros((), device=self.device), 0
+                    if count:
+                        from experiments.demonstration_retention import loss as retention_loss
+                        retained, replay_count = retention_loss(self)
+                        loss = loss+retention['coefficient']*retained
+                    logs['demonstration_retention_loss'].append(float(retained.detach()))
+                    logs['demonstration_retention_samples'].append(replay_count)
                 self.policy.optimizer.zero_grad()
                 loss.backward()
                 if not count:
@@ -144,7 +155,7 @@ class StopRecoveryPPO(StopFeedbackPPO):
             if not running:
                 break
         for k, values in logs.items():
-            self.logger.record('train/'+k, float(np.mean(values)))
+            self.logger.record('train/'+k, float(np.mean(values)) if values else 0.)
         self.logger.record('train/explained_variance', explained_variance(
             self.rollout_buffer.values.flatten(), self.rollout_buffer.returns.flatten()))
         self.logger.record('train/n_updates', self._n_updates, exclude='tensorboard')
@@ -233,4 +244,6 @@ def export_recovery(model, bundle, output):
     card.update(method='demonstration-initialized masked PPO recovery residual',
         frozen_components=['base_navigation_actor', 'localizer', 'router', 'directional_terminal_actor'],
         recovery_contract=specification, manifest_sha256=hashlib.sha256((output/'manifest.json').read_bytes()).hexdigest())
+    if getattr(model, 'demonstration_retention_contract', None) is not None:
+        card['training_demonstration_retention'] = model.demonstration_retention_contract
     p.write_text(json.dumps(card, indent=2)+'\n')

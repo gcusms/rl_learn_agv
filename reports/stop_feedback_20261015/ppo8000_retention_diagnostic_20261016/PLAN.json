@@ -1,0 +1,18 @@
+{
+  "purpose": "Determine whether completed8k PPO forgot demonstrated safe recovery choices, then compare the first common physical decision of the known regressed task. Also distinguish actual versus proposed waiting in the now-complete hard00 trace.",
+  "inputs": {
+    "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy.zip": "855fae8bbc391c2c729f2692d88910bc9b50f5e15c697400809ee838728a2c6d",
+    "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/policy_bc.zip": "2062c2ae96aaa9837923c1cc717196875336b6716e18203013405ca2c1cefab0",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/demonstrations.npz": "d5e94192da5bff7e36a90ab675e183bddc03af94e4870e8f49794aa52081575c"
+  },
+  "model_or_runtime_change": false,
+  "new_physical_runs": false,
+  "soft_cpu_cores": 0.05,
+  "limitations": [
+    "Demonstration disagreement alone is not unsafe behavior.",
+    "One physical regression and one trained-history recovery are not broad acceptance."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

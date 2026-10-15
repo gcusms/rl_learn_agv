@@ -72,6 +72,9 @@ def main():
         help='Maximum supervised initialization updates (1..1000); never counted as PPO steps')
     parser.add_argument('--reference-bc', type=Path,
         help='Require byte-identical policy/optimizer initialization to this previously evaluated BC checkpoint')
+    parser.add_argument('--demo-retention-coefficient', type=float, default=0.,
+        help='Optional training-only balanced demonstration replay loss (0 disables; maximum 0.5)')
+    parser.add_argument('--demo-retention-batch-size', type=int, default=128)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--steady-base', action='store_true',
         help='Bound random exploration of the frozen base outside learnable recovery; keep stop legal')
@@ -81,8 +84,13 @@ def main():
         help='Validate one physical prefix and two model-controlled frames; no PPO training or navigation score')
     args = parser.parse_args()
     if (args.output.exists() or not 1000 <= args.steps <= 8000 or args.steps % 250
-            or not 1 <= args.bc_updates <= 1000):
-        parser.error('Fresh output, 1000..8000 PPO steps in multiples of 250, and 1..1000 BC updates required')
+            or not 1 <= args.bc_updates <= 1000
+            or not np.isfinite(args.demo_retention_coefficient)
+            or not 0 <= args.demo_retention_coefficient <= .5
+            or not 2 <= args.demo_retention_batch_size <= 1024
+            or args.demo_retention_batch_size % 2):
+        parser.error('Fresh output, 1000..8000 PPO steps in multiples of250, 1..1000 BC updates, '
+            'retention coefficient0..0.5 and even replay batch size2..1024 required')
     args.output = args.output.resolve()
     args.output.mkdir(parents=True)
     torch.set_num_threads(1)
@@ -109,6 +117,9 @@ def main():
     np.savez_compressed(args.output/'demonstrations.npz', observations=obs, masks=masks, choices=choices)
     config = dict(steps=args.steps, seed=args.seed, cpu_cores=args.cpu_cores,
         maximum_bc_updates=args.bc_updates,
+        demonstration_retention=dict(enabled=args.demo_retention_coefficient > 0.,
+            coefficient=args.demo_retention_coefficient, batch_size=args.demo_retention_batch_size,
+            runtime_teacher=False, environment_steps_added=0),
         reference_bc=None if args.reference_bc is None else dict(path=str(args.reference_bc),
             sha256=hashlib.sha256(args.reference_bc.read_bytes()).hexdigest()),
         recovery_contract=model.recovery_contract, prefixes=prefixes, demonstration_sources=sources,
@@ -166,6 +177,13 @@ def main():
                 physical_prefix_frames=env.initialization_frames, additional_ppo_steps=0,
                 not_navigation_acceptance=True, resource=budget.statistics(), deployment_approved=False)
             return
+        if args.demo_retention_coefficient:
+            from experiments.demonstration_retention import configure
+            specification = configure(model, obs, masks, choices,
+                coefficient=args.demo_retention_coefficient,
+                batch_size=args.demo_retention_batch_size, seed=args.seed+1)
+            (args.output/'DEMONSTRATION_RETENTION.json').write_text(
+                json.dumps(specification, indent=2)+'\n')
         model.save(args.output/'policy_initial.zip')
         save_status(status='ppo_training', target_steps=args.steps, deployment_approved=False)
         model.set_env(Monitor(env))
@@ -180,6 +198,7 @@ def main():
             initialization_frames=env.initialization_frames, initialized_episodes=env.warmup_count,
             counts=progress.counts, reasons=progress.reasons, resource=budget.statistics(),
             frozen_base_sha256=frozen_base_digest(model.policy),
+            demonstration_retention=getattr(model, 'demonstration_retention_contract', None),
             feedback_schema=WAIT_SCHEMA, recovery_contract=model.recovery_contract, deployment_approved=False)
     except BaseException as error:
         save_status(status='failed', additional_ppo_steps=model.num_timesteps,

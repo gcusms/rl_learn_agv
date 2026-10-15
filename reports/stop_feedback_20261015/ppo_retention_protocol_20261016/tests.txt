@@ -1,0 +1,28 @@
+test_configuration_does_not_change_inference_or_global_sampling_rng (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_illegal_labels_masks_and_unsupported_examples_are_rejected (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_no_replay_or_actor_update_without_supported_live_samples (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_real_ppo_update_keeps_original_rollout_actions_likelihoods_and_step_count (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_replay_loss_has_only_residual_actor_gradients (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_runtime_export_remains_masked_model_inference (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_save_reload_preserves_demonstrations_and_next_replay_sample (experiments.test_demonstration_retention.DemonstrationRetentionTests) ... ok
+test_actual_ppo_update_uses_recovery_support_and_keeps_base_frozen (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_checkpoint_and_torchscript_preserve_learned_choices_and_contract (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_demonstration_learning_updates_recovery_and_preserves_base_and_critic (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_failed_or_tampered_episodes_are_not_demonstrations (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_initialization_exactly_matches_original_masked_actor (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_invalid_or_empty_demonstration_suffix_is_rejected (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_large_residual_cannot_change_any_protected_state (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_physical_initialization_waits_are_excluded_from_new_probe_labels (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_invalid_sensing_and_near_goal_are_protected_even_with_large_residual (experiments.test_proactive_recovery.ProactiveRecoveryTests) ... ok
+test_offline_intervals_include_early_turn_and_late_waits_but_exclude_prefix_waits (experiments.test_proactive_recovery.ProactiveRecoveryTests) ... ok
+test_sampling_update_and_saved_export_share_the_new_contract (experiments.test_proactive_recovery.ProactiveRecoveryTests) ... ok
+test_successful_early_maneuver_is_learnable_without_changing_initial_choices (experiments.test_proactive_recovery.ProactiveRecoveryTests) ... ok
+test_only_frozen_region_sampling_changes_and_stop_stays_possible (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_recovery_update_keeps_frozen_actor_and_has_finite_actual_ppo_likelihoods (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_roundtrip_and_export_preserve_versioned_distribution_and_choices (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_sampling_likelihood_and_masked_execution_describe_the_same_action (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 217.436s
+
+OK

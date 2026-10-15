@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-10-16T05:02:42.959688+08:00",
+  "diagnostic": "reports/stop_feedback_20261015/ppo8000_retention_diagnostic_20261016/RESULTS.json",
+  "diagnostic_sha256": "1e44e3f7f2b41ccd22ca855ee51de1e1bbbf9dc85568b8f3f6fa1de23d91ec38",
+  "problem": "Completed8k PPO changes428 of2030 known successful demonstration choices, including6 of37 valid waits; the formerly safe original motion_profile_015 collides. Some new hard tasks improve, so neither all policy changes nor all waits are failures.",
+  "single_training_change": "Optional balanced replay of verified masked stop/movement demonstrations as an auxiliary loss during supported PPO actor updates. Default old training stays byte-compatible in behavior.",
+  "coefficient": 0.05,
+  "batch_size": 128,
+  "sampling_rng": "dedicated checkpointed NumPy generator; no use of policy/action sampling RNG",
+  "unchanged": [
+    "436D/439D observation contract",
+    "12 original actions and stop availability",
+    "body/margins/masks/guards",
+    "on-policy sampled action/log probability and likelihood ratio",
+    "localizer/router/base and docking actor",
+    "reward,dt,physical dynamics"
+  ],
+  "implementation_requirements": [
+    "Only physically verified demonstration loader supplies experiment data.",
+    "Illegal mask,label,dimension or unsupported examples fail before training.",
+    "Replay must not count as physical PPO environment steps.",
+    "Replay must not run on minibatches without trainable recovery support.",
+    "Checkpoint save/load preserves replay data and independent RNG.",
+    "Runtime actor/export graph must not contain a teacher or replay computation."
+  ],
+  "admission_to_new_physical_training": "Wait for the existing full18 and prefix/generic-condition validation; do not start another8k job merely because unit checks pass.",
+  "evaluation_required": [
+    "Same initialization and untouched unregularized8k as controlled references.",
+    "Original14 and all hard4, both old prefixes,90/95/106 related states,12 frozen paired conditions.",
+    "Actual executed wait, reasonable only-stop, collision and physically useful arrival."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "diagnostic_sha256_when_planned": "b5f72abb1729ce35d9870c16a9cf6657d23ae0a5850a0ed1ab9c065165c1d1f5",
+  "diagnostic_capture_amendment": "Same computed retention and first-divergence metrics; added immutable physical report/trace copies so future background rows cannot invalidate the evidence."
+}

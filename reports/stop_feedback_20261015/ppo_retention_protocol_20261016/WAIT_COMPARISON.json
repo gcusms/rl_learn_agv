@@ -1,0 +1,285 @@
+{
+  "completed": true,
+  "physical_tasks_per_model": 18,
+  "source_sha256": {
+    "parent_bc800": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+    "ppo8000": "61efd691aebde3c925a07ec1c16ef5a84989b6fde3560f56bd1a24a38ff71461"
+  },
+  "summary": {
+    "parent_bc800": {
+      "augmented_bc800": {
+        "tasks": 18,
+        "safe_success": 15,
+        "collisions": 3,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "enroute_voluntary_wait_s": 4.60000000000008,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 4.60000000000008,
+        "unfinished_task_executed_idle_with_motion_s": 4.60000000000008,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 39.2000000000014,
+        "longest_unfinished_executed_wait_s": 0.999999999999801,
+        "only_stop_s": 39.2000000000014,
+        "longest_unfinished_task_wait_s": 0.999999999999801,
+        "long_unfinished_task_wait_segments": 0,
+        "releases_without_further_motion": 0
+      }
+    },
+    "ppo8000": {
+      "augmented_ppo8000": {
+        "tasks": 18,
+        "safe_success": 16,
+        "collisions": 2,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "enroute_voluntary_wait_s": 5.200000000000671,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 5.200000000000671,
+        "unfinished_task_executed_idle_with_motion_s": 5.200000000000671,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 38.000000000003276,
+        "longest_unfinished_executed_wait_s": 0.8000000000001251,
+        "only_stop_s": 38.000000000003276,
+        "longest_unfinished_task_wait_s": 0.8000000000001251,
+        "long_unfinished_task_wait_segments": 0,
+        "releases_without_further_motion": 0
+      }
+    }
+  },
+  "common_safe_successes": 14,
+  "common_success_waits": [
+    {
+      "case_id": "recovery_holdout_02",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 3.000000000000007,
+        "only_stop_s": 3.400000000000354,
+        "longest_unfinished_executed_wait_s": 0.999999999999801,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.40000000000006253,
+        "only_stop_s": 6.200000000000507,
+        "longest_unfinished_executed_wait_s": 0.40000000000006253,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "only_stop_s": 3.3999999999998565,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000010232,
+        "only_stop_s": 2.800000000000331,
+        "longest_unfinished_executed_wait_s": 0.20000000000010232,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "motion_profile_002",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "only_stop_s": 4.000000000000199,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000010232,
+        "only_stop_s": 3.8000000000012335,
+        "longest_unfinished_executed_wait_s": 0.20000000000010232,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "motion_profile_000",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 1.999999999999602,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 1.5999999999996817,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 3.599999999999781,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.6000000000000938,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_00",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_05",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_12",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_17",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_24",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "localization_nav_31",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "only_stop_s": 0.8000000000000185,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "only_stop_s": 1.8000000000001037,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "releases_without_further_motion": 0
+      }
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "parent": {
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "only_stop_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "releases_without_further_motion": 0
+      },
+      "ppo": {
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "only_stop_s": 0.9999999999999076,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "releases_without_further_motion": 0
+      }
+    }
+  ],
+  "lost_successes": [
+    "motion_profile_015"
+  ],
+  "gained_successes": [
+    "recovery_holdout_00",
+    "recovery_holdout_01"
+  ],
+  "resource": {
+    "seconds": 33.712989199964795,
+    "cpu_seconds": 1.6953530680000002,
+    "average_cpu_cores": 0.0502878299501775,
+    "peak_rss_mib": 79.4375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_runs": 0,
+  "limitations": [
+    "A short wait ending in collision is not a successful recovery.",
+    "Only-stop intervals remain necessary-stop statistics; do not force motion from them.",
+    "Only the common-safe subset permits a waiting comparison without a different terminal outcome."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

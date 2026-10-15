@@ -1,0 +1,80 @@
+{
+  "completed": true,
+  "sampled_frames": 8000,
+  "causally_verified_sampled_frames": 8000,
+  "separately_verified_initialization_frames": 4060,
+  "initialized_episodes": 21,
+  "recovery_actor_supported_frames": 5230,
+  "supported_motion_samples": 4632,
+  "supported_wait_samples": 598,
+  "only_stop_frames": 1284,
+  "longest_observed_choice_wait_s": 5.0,
+  "exact_sampling_checks": [
+    {
+      "rollout": "rollout_000250.npz",
+      "checkpoint": "policy_initial.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 5.245208740234375e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_001000.npz",
+      "checkpoint": "policy_step_1000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 5.245208740234375e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_002000.npz",
+      "checkpoint": "policy_step_2000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 5.125999450683594e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_003000.npz",
+      "checkpoint": "policy_step_3000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 5.841255187988281e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_004000.npz",
+      "checkpoint": "policy_step_4000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 3.2186508178710938e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_005000.npz",
+      "checkpoint": "policy_step_5000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 3.5762786865234375e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_006000.npz",
+      "checkpoint": "policy_step_6000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 6.9141387939453125e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_007000.npz",
+      "checkpoint": "policy_step_7000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 3.2782554626464844e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_008000.npz",
+      "checkpoint": "policy_step_8000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 3.814697265625e-06,
+      "frozen_base_unchanged": true
+    }
+  ],
+  "initialization_is_counted_as_ppo_experience": false,
+  "deployment_approved": false,
+  "scope": "Actual causal histories and pre-update sampling likelihoods; not navigation acceptance."
+}

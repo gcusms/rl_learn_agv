@@ -1,0 +1,1285 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "variant": "augmented_ppo8000",
+      "safe_success": false,
+      "collisions": 1,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 56,
+      "physical_seconds": 11.200000000000351,
+      "voluntary_wait_s": 0.40000000000006253,
+      "enroute_voluntary_wait_s": 0.40000000000006253,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.40000000000006253,
+      "only_stop_s": 2.6000000000003,
+      "executed_idle_with_motion_available_s": 0.40000000000006253,
+      "unfinished_task_executed_idle_with_motion_s": 0.40000000000006253,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 2.6000000000003,
+      "longest_unfinished_executed_wait_s": 0.40000000000006253,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 8.799999999999976,
+          "end_s": 9.200000000000038,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.010441011784398132,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.010113685237604031
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.40000000000006253,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 8.799999999999976,
+          "end_s": 9.200000000000038,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.010441011784398132,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.010113685237604031
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.4633030092975463,
+          "geodesic_progress_m": 0.4826041118940001
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": true
+    },
+    {
+      "case_id": "recovery_holdout_00",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 223,
+      "physical_seconds": 44.40000000000426,
+      "voluntary_wait_s": 1.7999999999999972,
+      "enroute_voluntary_wait_s": 1.7999999999999972,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 1.7999999999999972,
+      "only_stop_s": 7.600000000000229,
+      "executed_idle_with_motion_available_s": 1.7999999999999972,
+      "unfinished_task_executed_idle_with_motion_s": 1.7999999999999972,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 7.600000000000229,
+      "longest_unfinished_executed_wait_s": 0.8000000000001251,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 10.000000000000163,
+          "end_s": 10.800000000000288,
+          "duration_s": 0.8000000000001251,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 6.9826746003173e-07,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 7.241082671249899e-07
+        },
+        {
+          "start_s": 11.600000000000414,
+          "end_s": 11.800000000000445,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.002606900784677034,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.00282150081896404
+        },
+        {
+          "start_s": 17.200000000000863,
+          "end_s": 17.400000000000823,
+          "duration_s": 0.1999999999999602,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 17.600000000000783,
+          "end_s": 17.800000000000743,
+          "duration_s": 0.1999999999999602,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 18.000000000000703,
+          "end_s": 18.400000000000624,
+          "duration_s": 0.3999999999999204,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.0
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.8000000000001251,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 10.000000000000163,
+          "end_s": 10.800000000000288,
+          "duration_s": 0.8000000000001251,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 6.9826746003173e-07,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 7.241082671249899e-07
+        },
+        {
+          "start_s": 11.600000000000414,
+          "end_s": 11.800000000000445,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.002606900784677034,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.00282150081896404
+        },
+        {
+          "start_s": 17.200000000000863,
+          "end_s": 17.400000000000823,
+          "duration_s": 0.1999999999999602,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 17.600000000000783,
+          "end_s": 17.800000000000743,
+          "duration_s": 0.1999999999999602,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 18.000000000000703,
+          "end_s": 18.400000000000624,
+          "duration_s": 0.3999999999999204,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.0
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.599999999999924,
+          "release_s": 5.199999999999911,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000252,
+          "physical_displacement_m": 0.3620785742836461,
+          "geodesic_progress_m": 0.3202643807669485
+        },
+        {
+          "forced_start_s": 11.800000000000445,
+          "release_s": 12.800000000000601,
+          "preceding_only_stop_s": 1.0000000000001563,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000182,
+          "physical_displacement_m": 0.012000163562874146,
+          "geodesic_progress_m": 0.012921800576789266
+        },
+        {
+          "forced_start_s": 13.000000000000632,
+          "release_s": 13.400000000000695,
+          "preceding_only_stop_s": 0.40000000000006253,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999929,
+          "physical_displacement_m": 0.0020074997708268544,
+          "geodesic_progress_m": 0.002153383144763321
+        },
+        {
+          "forced_start_s": 13.600000000000726,
+          "release_s": 17.200000000000863,
+          "preceding_only_stop_s": 3.6000000000001364,
+          "first_motion_delay_s": 1.1999999999997613,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.15648506479773241,
+          "geodesic_progress_m": 0.10709401834594523
+        },
+        {
+          "forced_start_s": 17.400000000000823,
+          "release_s": 17.600000000000783,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.7999999999998408,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.15648514288613483,
+          "geodesic_progress_m": 0.10709405101872971
+        },
+        {
+          "forced_start_s": 17.800000000000743,
+          "release_s": 18.000000000000703,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.3999999999999204,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.17215170879322944,
+          "geodesic_progress_m": 0.11160169606444237
+        },
+        {
+          "forced_start_s": 20.400000000000226,
+          "release_s": 20.600000000000186,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.4628981623543409,
+          "geodesic_progress_m": 0.14262999862807213
+        },
+        {
+          "forced_start_s": 21.599999999999987,
+          "release_s": 22.59999999999979,
+          "preceding_only_stop_s": 0.999999999999801,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.5492174836975517,
+          "geodesic_progress_m": 0.2198237547977726
+        },
+        {
+          "forced_start_s": 33.19999999999853,
+          "release_s": 33.59999999999874,
+          "preceding_only_stop_s": 0.40000000000020464,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.9281298938474258,
+          "geodesic_progress_m": 0.9932930321831648
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 1.1999999999997613,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "recovery_holdout_02",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 186,
+      "physical_seconds": 37.000000000000476,
+      "voluntary_wait_s": 0.40000000000006253,
+      "enroute_voluntary_wait_s": 0.40000000000006253,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.40000000000006253,
+      "only_stop_s": 6.200000000000507,
+      "executed_idle_with_motion_available_s": 0.40000000000006253,
+      "unfinished_task_executed_idle_with_motion_s": 0.40000000000006253,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 6.200000000000507,
+      "longest_unfinished_executed_wait_s": 0.40000000000006253,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 13.600000000000726,
+          "end_s": 14.000000000000789,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.0
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.40000000000006253,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 13.600000000000726,
+          "end_s": 14.000000000000789,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": 0.0
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.3628805833920679,
+          "geodesic_progress_m": 0.36562378781207494
+        },
+        {
+          "forced_start_s": 9.200000000000038,
+          "release_s": 13.600000000000726,
+          "preceding_only_stop_s": 4.400000000000688,
+          "first_motion_delay_s": 0.40000000000006253,
+          "observation_window_s": 4.999999999999858,
+          "physical_displacement_m": 0.2921460520135192,
+          "geodesic_progress_m": 0.06355196099988003
+        },
+        {
+          "forced_start_s": 15.80000000000107,
+          "release_s": 17.000000000000902,
+          "preceding_only_stop_s": 1.1999999999998323,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.6822262233760333,
+          "geodesic_progress_m": 0.2483087478312398
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.40000000000006253,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "recovery_holdout_03",
+      "variant": "augmented_ppo8000",
+      "safe_success": false,
+      "collisions": 1,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 66,
+      "physical_seconds": 13.200000000000664,
+      "voluntary_wait_s": 0.20000000000003126,
+      "enroute_voluntary_wait_s": 0.20000000000003126,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.20000000000003126,
+      "only_stop_s": 4.800000000000644,
+      "executed_idle_with_motion_available_s": 0.20000000000003126,
+      "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 4.800000000000644,
+      "longest_unfinished_executed_wait_s": 0.20000000000003126,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 8.799999999999976,
+          "end_s": 9.000000000000007,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.00250619943848497,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.002712618750966289
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.20000000000003126,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 8.799999999999976,
+          "end_s": 9.000000000000007,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.00250619943848497,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.002712618750966289
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.599999999999924,
+          "release_s": 5.199999999999911,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000252,
+          "physical_displacement_m": 0.44031179901044765,
+          "geodesic_progress_m": 0.46503064285226836
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": true
+    },
+    {
+      "case_id": "recovery_holdout_01",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 193,
+      "physical_seconds": 38.40000000000119,
+      "voluntary_wait_s": 1.8000000000002814,
+      "enroute_voluntary_wait_s": 1.8000000000002814,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 1.8000000000002814,
+      "only_stop_s": 5.200000000000351,
+      "executed_idle_with_motion_available_s": 1.8000000000002814,
+      "unfinished_task_executed_idle_with_motion_s": 1.8000000000002814,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 5.200000000000351,
+      "longest_unfinished_executed_wait_s": 0.6000000000000938,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 8.399999999999913,
+          "end_s": 8.799999999999976,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0029668178682624564,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.003154360760674546
+        },
+        {
+          "start_s": 9.000000000000007,
+          "end_s": 9.200000000000038,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 1.030773994187168e-08,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 1.0921334059332821e-08
+        },
+        {
+          "start_s": 9.40000000000007,
+          "end_s": 10.000000000000163,
+          "duration_s": 0.6000000000000938,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 2.285042850940891e-12,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 2.4216184613123914e-12
+        },
+        {
+          "start_s": 10.600000000000257,
+          "end_s": 10.800000000000288,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 14.000000000000789,
+          "end_s": 14.20000000000082,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 3.1591446399798013e-13,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 3.4150460237469815e-13
+        },
+        {
+          "start_s": 14.800000000000914,
+          "end_s": 15.000000000000945,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 6.73919209657811e-06,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 7.251496745741548e-06
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.6000000000000938,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 8.399999999999913,
+          "end_s": 8.799999999999976,
+          "duration_s": 0.40000000000006253,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0029668178682624564,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.003154360760674546
+        },
+        {
+          "start_s": 9.000000000000007,
+          "end_s": 9.200000000000038,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 1.030773994187168e-08,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 1.0921334059332821e-08
+        },
+        {
+          "start_s": 9.40000000000007,
+          "end_s": 10.000000000000163,
+          "duration_s": 0.6000000000000938,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 2.285042850940891e-12,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 2.4216184613123914e-12
+        },
+        {
+          "start_s": 10.600000000000257,
+          "end_s": 10.800000000000288,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0
+        },
+        {
+          "start_s": 14.000000000000789,
+          "end_s": 14.20000000000082,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 3.1591446399798013e-13,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 3.4150460237469815e-13
+        },
+        {
+          "start_s": 14.800000000000914,
+          "end_s": 15.000000000000945,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 6.73919209657811e-06,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 7.251496745741548e-06
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.35808658359617485,
+          "geodesic_progress_m": 0.37217927930872685
+        },
+        {
+          "forced_start_s": 8.799999999999976,
+          "release_s": 9.000000000000007,
+          "preceding_only_stop_s": 0.20000000000003126,
+          "first_motion_delay_s": 3.2000000000005002,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.012285739348448385,
+          "geodesic_progress_m": 0.013266901441134848
+        },
+        {
+          "forced_start_s": 9.200000000000038,
+          "release_s": 9.40000000000007,
+          "preceding_only_stop_s": 0.20000000000003126,
+          "first_motion_delay_s": 2.8000000000004377,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.012285729008847444,
+          "geodesic_progress_m": 0.01326689038192086
+        },
+        {
+          "forced_start_s": 10.000000000000163,
+          "release_s": 10.600000000000257,
+          "preceding_only_stop_s": 0.6000000000000938,
+          "first_motion_delay_s": 1.6000000000002501,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.03369885184589684,
+          "geodesic_progress_m": 0.03592182660452181
+        },
+        {
+          "forced_start_s": 10.800000000000288,
+          "release_s": 12.200000000000507,
+          "preceding_only_stop_s": 1.4000000000002188,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000395,
+          "physical_displacement_m": 0.10942327612458094,
+          "geodesic_progress_m": 0.09619782508637398
+        },
+        {
+          "forced_start_s": 12.400000000000539,
+          "release_s": 12.800000000000601,
+          "preceding_only_stop_s": 0.40000000000006253,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000182,
+          "physical_displacement_m": 0.14093257069048606,
+          "geodesic_progress_m": 0.10074287034880491
+        },
+        {
+          "forced_start_s": 13.000000000000632,
+          "release_s": 13.800000000000757,
+          "preceding_only_stop_s": 0.8000000000001251,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999787,
+          "physical_displacement_m": 0.19984246832295402,
+          "geodesic_progress_m": 0.1120793588436455
+        },
+        {
+          "forced_start_s": 17.200000000000863,
+          "release_s": 18.200000000000664,
+          "preceding_only_stop_s": 0.999999999999801,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.5003465196836581,
+          "geodesic_progress_m": 0.3969244634942872
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 3.2000000000005002,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 292,
+      "physical_seconds": 58.20000000001132,
+      "voluntary_wait_s": 0.20000000000010232,
+      "enroute_voluntary_wait_s": 0.20000000000010232,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.20000000000010232,
+      "only_stop_s": 2.800000000000331,
+      "executed_idle_with_motion_available_s": 0.20000000000010232,
+      "unfinished_task_executed_idle_with_motion_s": 0.20000000000010232,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 2.800000000000331,
+      "longest_unfinished_executed_wait_s": 0.20000000000010232,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 40.00000000000201,
+          "end_s": 40.20000000000211,
+          "duration_s": 0.20000000000010232,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.030934162036146275,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.03069513543369151
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.20000000000010232,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 40.00000000000201,
+          "end_s": 40.20000000000211,
+          "duration_s": 0.20000000000010232,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.030934162036146275,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.03069513543369151
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 6.19999999999989,
+          "release_s": 6.5999999999998815,
+          "preceding_only_stop_s": 0.3999999999999915,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000501,
+          "physical_displacement_m": 0.37576302983159904,
+          "geodesic_progress_m": 0.33341439524613126
+        },
+        {
+          "forced_start_s": 7.199999999999869,
+          "release_s": 7.3999999999998645,
+          "preceding_only_stop_s": 0.19999999999999574,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000643,
+          "physical_displacement_m": 0.25825653969113366,
+          "geodesic_progress_m": 0.2145912249948294
+        },
+        {
+          "forced_start_s": 11.200000000000351,
+          "release_s": 12.200000000000507,
+          "preceding_only_stop_s": 1.0000000000001563,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000395,
+          "physical_displacement_m": 0.3739197582473827,
+          "geodesic_progress_m": -0.21333503945837817
+        },
+        {
+          "forced_start_s": 16.800000000000942,
+          "release_s": 17.400000000000823,
+          "preceding_only_stop_s": 0.5999999999998806,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.1567354194986114,
+          "geodesic_progress_m": -0.03613615566229633
+        },
+        {
+          "forced_start_s": 40.20000000000211,
+          "release_s": 40.60000000000232,
+          "preceding_only_stop_s": 0.40000000000020464,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.3531614209718746,
+          "geodesic_progress_m": 0.3169315133599533
+        },
+        {
+          "forced_start_s": 44.600000000004364,
+          "release_s": 44.80000000000447,
+          "preceding_only_stop_s": 0.20000000000010232,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.3643972326637186,
+          "geodesic_progress_m": 0.18592998470708522
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "motion_profile_002",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 338,
+      "physical_seconds": 67.40000000001119,
+      "voluntary_wait_s": 0.20000000000010232,
+      "enroute_voluntary_wait_s": 0.20000000000010232,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.20000000000010232,
+      "only_stop_s": 3.8000000000012335,
+      "executed_idle_with_motion_available_s": 0.20000000000010232,
+      "unfinished_task_executed_idle_with_motion_s": 0.20000000000010232,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 3.8000000000012335,
+      "longest_unfinished_executed_wait_s": 0.20000000000010232,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 42.000000000003034,
+          "end_s": 42.200000000003136,
+          "duration_s": 0.20000000000010232,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.02872360731219823,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.028624843894194285
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.20000000000010232,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 42.000000000003034,
+          "end_s": 42.200000000003136,
+          "duration_s": 0.20000000000010232,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.02872360731219823,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": 0.028624843894194285
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 26.799999999998953,
+          "release_s": 27.799999999998754,
+          "preceding_only_stop_s": 0.999999999999801,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999574,
+          "physical_displacement_m": 0.24453680836907796,
+          "geodesic_progress_m": 0.210120057958898
+        },
+        {
+          "forced_start_s": 37.20000000000058,
+          "release_s": 38.00000000000099,
+          "preceding_only_stop_s": 0.8000000000004093,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.7023539662704938,
+          "geodesic_progress_m": 0.7264506339026973
+        },
+        {
+          "forced_start_s": 40.00000000000201,
+          "release_s": 40.400000000002215,
+          "preceding_only_stop_s": 0.40000000000020464,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.6659637139066825,
+          "geodesic_progress_m": 0.6633258311905506
+        },
+        {
+          "forced_start_s": 42.200000000003136,
+          "release_s": 43.20000000000365,
+          "preceding_only_stop_s": 1.0000000000005116,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.8398793781920072,
+          "geodesic_progress_m": 0.8233558422130884
+        },
+        {
+          "forced_start_s": 45.600000000004876,
+          "release_s": 45.80000000000498,
+          "preceding_only_stop_s": 0.20000000000010232,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.6913842563896613,
+          "geodesic_progress_m": 0.7253751313091898
+        },
+        {
+          "forced_start_s": 50.00000000000713,
+          "release_s": 50.40000000000733,
+          "preceding_only_stop_s": 0.40000000000020464,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.8131628372726436,
+          "geodesic_progress_m": 0.872287935244791
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "motion_profile_000",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 136,
+      "physical_seconds": 26.999999999998913,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 1.5999999999996817,
+      "executed_idle_with_motion_available_s": 0.0,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 1.5999999999996817,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [
+        {
+          "forced_start_s": 19.800000000000345,
+          "release_s": 20.000000000000306,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.6730121798606445,
+          "geodesic_progress_m": 0.6549505797425919
+        },
+        {
+          "forced_start_s": 20.400000000000226,
+          "release_s": 20.600000000000186,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.7148271855709349,
+          "geodesic_progress_m": 0.7035216468677616
+        },
+        {
+          "forced_start_s": 21.200000000000067,
+          "release_s": 21.400000000000027,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.7482293921458916,
+          "geodesic_progress_m": 0.7417412536473343
+        },
+        {
+          "forced_start_s": 21.599999999999987,
+          "release_s": 22.59999999999979,
+          "preceding_only_stop_s": 0.999999999999801,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.399999999999125,
+          "physical_displacement_m": 0.8182051065222504,
+          "geodesic_progress_m": 0.8273476103141986
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 253,
+      "physical_seconds": 50.40000000000733,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.0,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 113,
+      "physical_seconds": 22.399999999999828,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.0,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_00",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 3,
+      "physical_seconds": 0.40000000000000024,
+      "voluntary_wait_s": 0.40000000000000024,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.40000000000000024,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_05",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 5,
+      "physical_seconds": 0.8000000000000006,
+      "voluntary_wait_s": 0.6000000000000005,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.6000000000000005,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_12",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 11,
+      "physical_seconds": 1.9999999999999793,
+      "voluntary_wait_s": 0.9999999999999787,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.9999999999999787,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_17",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 12,
+      "physical_seconds": 2.1999999999999753,
+      "voluntary_wait_s": 0.5999999999999874,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.5999999999999874,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_24",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 13,
+      "physical_seconds": 2.399999999999971,
+      "voluntary_wait_s": 0.5999999999999874,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.0,
+      "executed_idle_with_motion_available_s": 0.5999999999999874,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.0,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "localization_nav_31",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 57,
+      "physical_seconds": 11.200000000000351,
+      "voluntary_wait_s": 0.8000000000001251,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.5999999999999872,
+      "executed_idle_with_motion_available_s": 0.8000000000001251,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.5999999999999872,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [
+        {
+          "forced_start_s": 1.0000000000000007,
+          "release_s": 1.5999999999999879,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999893,
+          "physical_displacement_m": 0.37575362175391724,
+          "geodesic_progress_m": 0.36936545624714756
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 204,
+      "physical_seconds": 40.60000000000232,
+      "voluntary_wait_s": 0.20000000000003126,
+      "enroute_voluntary_wait_s": 0.20000000000003126,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.20000000000003126,
+      "only_stop_s": 1.8000000000001037,
+      "executed_idle_with_motion_available_s": 0.20000000000003126,
+      "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 1.8000000000001037,
+      "longest_unfinished_executed_wait_s": 0.20000000000003126,
+      "unfinished_executed_wait_segments": [
+        {
+          "start_s": 10.800000000000288,
+          "end_s": 11.00000000000032,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0029016461026053425,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": -0.0005554887918410856
+        }
+      ],
+      "longest_unfinished_task_wait_s": 0.20000000000003126,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 10.800000000000288,
+          "end_s": 11.00000000000032,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.0029016461026053425,
+          "minimum_legal_motion_choices": 2,
+          "geodesic_progress_m": -0.0005554887918410856
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.599999999999924,
+          "release_s": 5.199999999999911,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000252,
+          "physical_displacement_m": 0.3076476481085314,
+          "geodesic_progress_m": 0.256838053477916
+        },
+        {
+          "forced_start_s": 11.00000000000032,
+          "release_s": 12.000000000000476,
+          "preceding_only_stop_s": 1.0000000000001563,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000466,
+          "physical_displacement_m": 0.13940780788082166,
+          "geodesic_progress_m": -0.14568534233863994
+        },
+        {
+          "forced_start_s": 29.999999999998316,
+          "release_s": 30.199999999998276,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000001177,
+          "physical_displacement_m": 0.9571804052410608,
+          "geodesic_progress_m": 1.025562939174066
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "variant": "augmented_ppo8000",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 162,
+      "physical_seconds": 32.19999999999802,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 0.9999999999999076,
+      "executed_idle_with_motion_available_s": 0.0,
+      "unfinished_task_executed_idle_with_motion_s": 0.0,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 0.9999999999999076,
+      "longest_unfinished_executed_wait_s": 0.0,
+      "unfinished_executed_wait_segments": [],
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.3343770118318812,
+          "geodesic_progress_m": 0.26671731154637923
+        },
+        {
+          "forced_start_s": 23.59999999999959,
+          "release_s": 23.99999999999951,
+          "preceding_only_stop_s": 0.3999999999999204,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.9799808246791628,
+          "geodesic_progress_m": 0.9719030545036795
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    }
+  ],
+  "summary": {
+    "augmented_ppo8000": {
+      "tasks": 18,
+      "safe_success": 16,
+      "collisions": 2,
+      "timeouts": 0,
+      "false_arrivals": 0,
+      "enroute_voluntary_wait_s": 5.200000000000671,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 5.200000000000671,
+      "unfinished_task_executed_idle_with_motion_s": 5.200000000000671,
+      "unfinished_task_unexecuted_motion_s": 0.0,
+      "only_stop_executed_idle_s": 38.000000000003276,
+      "longest_unfinished_executed_wait_s": 0.8000000000001251,
+      "only_stop_s": 38.000000000003276,
+      "longest_unfinished_task_wait_s": 0.8000000000001251,
+      "long_unfinished_task_wait_segments": 0,
+      "releases_without_further_motion": 0
+    }
+  },
+  "deployment_approved": false,
+  "evaluation_sha256": "61efd691aebde3c925a07ec1c16ef5a84989b6fde3560f56bd1a24a38ff71461",
+  "method": "Actual frame durations; proposed-stop and issued-zero metrics are separate. Exclude pose-goal settling but count unfinished heading alignment; retain only-stop periods.",
+  "limitations": [
+    "A legal alternative does not guarantee useful movement or future safety.",
+    "A stopped moving proposal can be legitimate protection; issued-zero metrics alone do not identify its cause or justify motion.",
+    "Offline physical geodesic labels are metrics only, not policy inputs.",
+    "No wait count alone proves better navigation or real-world readiness."
+  ]
+}

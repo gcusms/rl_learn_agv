@@ -1,0 +1,437 @@
+{
+  "completed": true,
+  "actual_sampled_frames": 8000,
+  "supported_frames": 5230,
+  "training_run_completed": true,
+  "analysis_covers_final_training": true,
+  "checkpoint_is_pre_update": false,
+  "source_run_status_at_read": {
+    "status": "complete",
+    "additional_ppo_steps": 8000,
+    "initialization_frames": 4060,
+    "initialized_episodes": 21,
+    "counts": {
+      "decision_frames": 6716,
+      "only_stop": 1284,
+      "voluntary_wait": 601,
+      "nonzero": 6115,
+      "changed_nonzero": 0,
+      "episodes": 40,
+      "success": 26,
+      "collisions": 6,
+      "recovery_actor_frames": 5230,
+      "prefix_controlled_frames": 3578,
+      "routine_controlled_frames": 4422,
+      "recovery_wait_choices": 598,
+      "recovery_motion_choices": 4632
+    },
+    "reasons": {
+      "none": 6115,
+      "only_stop_available": 414,
+      "policy_wait": 279,
+      "learned_route_incomplete": 50,
+      "scan_unavailable": 43,
+      "laser_braking_footprint": 1093,
+      "static_braking_footprint": 6
+    },
+    "resource": {
+      "seconds": 5567.124108625983,
+      "cpu_seconds": 1948.813090138,
+      "average_cpu_cores": 0.3500574178180096,
+      "peak_rss_mib": 2459.03125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "recovery_contract": {
+      "schema": "stop_feedback_proactive_recovery_v1",
+      "feedback_schema": "stop_decision_feedback_v2",
+      "training_dimensions": 436,
+      "action_count": 12,
+      "residual_width": 64,
+      "base_actor_frozen": true,
+      "support": "valid_inputs_goal_far_and_base_stop_or_near_lidar_or_restricted_motion_or_guard_forecast",
+      "minimum_goal_distance_m": 0.3,
+      "stop_remains_selectable": true,
+      "actions_masks_guard_unchanged": true,
+      "no_runtime_teacher": true,
+      "no_elapsed_episode_time_input": true,
+      "simulator_truth_used": false,
+      "frozen_base_sampling": "98_percent_masked_greedy_plus_2_percent_uniform_legal",
+      "outside_support_uniform_exploration": 0.02,
+      "inside_support_distribution_unchanged": false,
+      "deterministic_initial_choices_preserved": true,
+      "stochastic_initial_parity_claimed": false,
+      "sampling_likelihood_and_export_share_head": true,
+      "no_post_sampling_action_replacement": true,
+      "residual_can_act_before_base_stops": true,
+      "inside_existing_stop_support_distribution_unchanged": true,
+      "latest_lidar_history_slice": [
+        144,
+        216
+      ],
+      "lidar_normalization_m": 12.0,
+      "learning_support_nearest_lidar_range_m": 0.8,
+      "context_is_learning_support_not_motion_permission": true
+    },
+    "deployment_approved": false
+  },
+  "policy_checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy.zip",
+  "checkpoint_collected_timesteps": 8000,
+  "optimizer_epochs_completed": 117,
+  "last_rollout_included_in_checkpoint_updates": true,
+  "checkpoint_updates_through_steps": 8000,
+  "bc_to_ppo": {
+    "frozen_base_unchanged": true,
+    "residual_parameter_delta_l2": {
+      "mlp_extractor.policy_net.residual.0.weight": 1.4671986103057861,
+      "mlp_extractor.policy_net.residual.0.bias": 0.06631416082382202,
+      "mlp_extractor.policy_net.residual.2.weight": 0.7656312584877014,
+      "mlp_extractor.policy_net.residual.2.bias": 0.08602608740329742,
+      "action_net.residual.weight": 0.3123485743999481,
+      "action_net.residual.bias": 0.029033131897449493
+    },
+    "supported_argmax_changes": 1214,
+    "maximum_supported_probability_change": 0.9996761083602905
+  },
+  "offline_choice_transitions": {
+    "bc_wait_to_ppo_motion": 31,
+    "bc_motion_to_ppo_wait": 2,
+    "different_motion_choice": 1181,
+    "long_wait_threshold_s": 1.0,
+    "long_prior_wait_with_choices_frames": 476,
+    "long_wait_bc_wait_to_ppo_motion": 2,
+    "physical_improvement_proven": false
+  },
+  "choice_transitions_by_source": {
+    "physical_prefix_early_avoidance_t6": {
+      "supported_frames": 614,
+      "bc_wait_to_ppo_motion": 13,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 144,
+      "long_prior_wait_with_choices_frames": 16,
+      "long_wait_bc_wait_to_ppo_motion": 2
+    },
+    "train_failure_motion_profile_015": {
+      "supported_frames": 21,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 3,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "supported_frames": 1219,
+      "bc_wait_to_ppo_motion": 4,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 48,
+      "long_prior_wait_with_choices_frames": 460,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "supported_frames": 100,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 13,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "supported_frames": 675,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 228,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_00": {
+      "supported_frames": 30,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 11,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "supported_frames": 550,
+      "bc_wait_to_ppo_motion": 2,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 168,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_stop_go_variation_0": {
+      "supported_frames": 130,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 31,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_05": {
+      "supported_frames": 594,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 235,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_01": {
+      "supported_frames": 154,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 51,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_stop_go_variation_1": {
+      "supported_frames": 123,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 27,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_02": {
+      "supported_frames": 146,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 23,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_02": {
+      "supported_frames": 143,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 1,
+      "different_motion_choice": 42,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_w11_e7": {
+      "supported_frames": 329,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 49,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_01": {
+      "supported_frames": 107,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 30,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_03": {
+      "supported_frames": 40,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 10,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_04": {
+      "supported_frames": 128,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 1,
+      "different_motion_choice": 38,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_05": {
+      "supported_frames": 127,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 30,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    }
+  },
+  "supported_training_sources": {
+    "physical_prefix_early_avoidance_t6": 614,
+    "train_failure_motion_profile_015": 21,
+    "physical_prefix_w11_training_stall_t90": 1219,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": 100,
+    "physical_prefix_rotation_stall_t20": 675,
+    "train_failure_proactive_variation_00": 30,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": 550,
+    "train_failure_stop_go_variation_0": 130,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_05": 594,
+    "train_failure_proactive_variation_01": 154,
+    "train_failure_stop_go_variation_1": 123,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_02": 146,
+    "train_failure_proactive_variation_02": 143,
+    "train_failure_w11_e7": 329,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_01": 107,
+    "train_failure_proactive_variation_03": 40,
+    "train_failure_proactive_variation_04": 128,
+    "train_failure_proactive_variation_05": 127
+  },
+  "offline_sensitivity": {
+    "previous_reason_none": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 5230,
+      "changed_argmax_in_common_supported_states": 15,
+      "changed_argmax_in_supported_states": 15,
+      "max_probability_change_in_supported_states": 0.8387283086776733,
+      "actual_motion_samples_changed": 14
+    },
+    "without_contact_scores": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 5230,
+      "changed_argmax_in_common_supported_states": 82,
+      "changed_argmax_in_supported_states": 82,
+      "max_probability_change_in_supported_states": 0.9961464405059814,
+      "actual_motion_samples_changed": 76
+    },
+    "without_wait_timers": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 5230,
+      "changed_argmax_in_common_supported_states": 2,
+      "changed_argmax_in_supported_states": 2,
+      "max_probability_change_in_supported_states": 0.17750340700149536,
+      "actual_motion_samples_changed": 2
+    },
+    "without_explanations": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 5230,
+      "changed_argmax_in_common_supported_states": 367,
+      "changed_argmax_in_supported_states": 367,
+      "max_probability_change_in_supported_states": 0.9999560713768005,
+      "actual_motion_samples_changed": 325
+    }
+  },
+  "frozen_base_sampling_by_case": {
+    "physical_prefix_early_avoidance_t6": {
+      "frames": 914,
+      "frozen_frames": 300,
+      "sampled_choice_differs_from_frozen_greedy": 3,
+      "recovery_frames": 614
+    },
+    "train_failure_motion_profile_015": {
+      "frames": 55,
+      "frozen_frames": 34,
+      "sampled_choice_differs_from_frozen_greedy": 3,
+      "recovery_frames": 21
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "frames": 1750,
+      "frozen_frames": 531,
+      "sampled_choice_differs_from_frozen_greedy": 3,
+      "recovery_frames": 1219
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "frames": 164,
+      "frozen_frames": 64,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 100
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "frames": 914,
+      "frozen_frames": 239,
+      "sampled_choice_differs_from_frozen_greedy": 5,
+      "recovery_frames": 675
+    },
+    "train_failure_proactive_variation_00": {
+      "frames": 67,
+      "frozen_frames": 37,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 30
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "frames": 841,
+      "frozen_frames": 291,
+      "sampled_choice_differs_from_frozen_greedy": 4,
+      "recovery_frames": 550
+    },
+    "train_failure_stop_go_variation_0": {
+      "frames": 210,
+      "frozen_frames": 80,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 130
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_05": {
+      "frames": 838,
+      "frozen_frames": 244,
+      "sampled_choice_differs_from_frozen_greedy": 4,
+      "recovery_frames": 594
+    },
+    "train_failure_proactive_variation_01": {
+      "frames": 239,
+      "frozen_frames": 85,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 154
+    },
+    "train_failure_stop_go_variation_1": {
+      "frames": 201,
+      "frozen_frames": 78,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 123
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_02": {
+      "frames": 273,
+      "frozen_frames": 127,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 146
+    },
+    "train_failure_proactive_variation_02": {
+      "frames": 216,
+      "frozen_frames": 73,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 143
+    },
+    "train_failure_w11_e7": {
+      "frames": 700,
+      "frozen_frames": 371,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 329
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_01": {
+      "frames": 175,
+      "frozen_frames": 68,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 107
+    },
+    "train_failure_proactive_variation_03": {
+      "frames": 64,
+      "frozen_frames": 24,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 40
+    },
+    "train_failure_proactive_variation_04": {
+      "frames": 176,
+      "frozen_frames": 48,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 128
+    },
+    "train_failure_proactive_variation_05": {
+      "frames": 203,
+      "frozen_frames": 76,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 127
+    }
+  },
+  "frozen_base_sampling_summary": {
+    "frames": 2770,
+    "sampled_choice_differs_from_frozen_greedy": 27,
+    "interpretation": "Actual stochastic samples outside trainable support; different from deterministic deployment, not evidence that every deviation is harmful."
+  },
+  "policy_sha256": "855fae8bbc391c2c729f2692d88910bc9b50f5e15c697400809ee838728a2c6d",
+  "resource": {
+    "seconds": 9.680816526990384,
+    "cpu_seconds": 3.52861359,
+    "average_cpu_cores": 0.36449545140765016,
+    "peak_rss_mib": 718.7578125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "deployment_approved": false,
+  "limitations": [
+    "Reused actual training states, not new closed-loop tasks.",
+    "A pre-update checkpoint has observed its last rollout but has not optimized on it; an interim analysis is not a complete training or navigation result.",
+    "Substituted explanations can be outside the training distribution.",
+    "Proactive contact ablations can also change the learnable-support gate; common-support and gate changes are reported separately.",
+    "Sensitivity does not prove that feedback caused safe recovery or that PPO improved navigation."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-16T05:19:59.402171+08:00",
+  "classification": "progress",
+  "previous_goal_turn_classification": "progress",
+  "previous_turn_evidence": "Published complete portable progress snapshot on GitHub ship and verified exact remote commit,tree,and8keyfiles; source goal work retained separately.",
+  "this_turn_evidence": [
+    "Completed8k causal audit and full18 navigation now retained.",
+    "Diagnosed428 old-label changes including6 reasonable waits and an actual original-task collision with an identical common prefix.",
+    "Implemented optional training-only demonstration retention;23 relevant tests passed.",
+    "Paired recorded-rollout update reduces forgetting metrics, with exact legacy network/optimizer parity when disabled.",
+    "Audited issued waits in36 actual complete navigation traces without new physical runs."
+  ],
+  "training_with_new_regularizer_started": false,
+  "new_regularized_physical_steps": 0,
+  "original_deployment_replaced": false,
+  "source_units": [
+    {
+      "MainPID": "1685195",
+      "Id": "rl-proactive-augmented-ppo-pipeline-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "574cd062c1ba456582be6a076593e1b8"
+    },
+    {
+      "MainPID": "1703879",
+      "Id": "rl-w11-success-bc-validation-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "0a60e5c1f18e42ffbef70efd548ac652"
+    },
+    {
+      "MainPID": "1708031",
+      "Id": "rl-w11-paired-v2-after-validation-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "5011449a519943149d7d682002f8cb1b"
+    }
+  ],
+  "physical_reports": {
+    "proactive_augmented_ppo8000_navigation_20261016": {
+      "completed": true,
+      "finished_tasks": 18,
+      "safe": 16,
+      "collisions": 2,
+      "timeouts": 0
+    },
+    "proactive_augmented_ppo8000_prefixes_20261016": {
+      "completed": true,
+      "finished_tasks": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0
+    },
+    "proactive_augmented_ppo8000_w11_20261016": {
+      "completed": false,
+      "finished_tasks": 1,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 1
+    },
+    "w11_recovery_bc800_navigation_20261016": {
+      "completed": false,
+      "finished_tasks": 17,
+      "safe": 15,
+      "collisions": 1,
+      "timeouts": 1
+    }
+  },
+  "existing_auxiliary_soft_cpu_cores": 0.15,
+  "existing_main_validation_soft_cpu_cores": 0.35,
+  "completed_diagnostic_soft_cpu_cores": 0.05,
+  "remote_ship_unchanged": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}
