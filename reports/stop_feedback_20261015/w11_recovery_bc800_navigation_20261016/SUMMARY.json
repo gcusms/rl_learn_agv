@@ -1,0 +1,229 @@
+{
+  "completed": true,
+  "own_parent_to_candidate": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 18,
+    "common_successes": 15,
+    "lost_successes": [],
+    "gained_successes": [
+      "recovery_holdout_03"
+    ],
+    "safety_nonregression": true,
+    "common_success_travel_m": [
+      51.65585932097553,
+      51.51082372520161
+    ],
+    "common_success_seconds": [
+      369.20000000002,
+      369.0000000000199
+    ],
+    "total_travel_relative_change": -0.0028077278682502316,
+    "total_time_relative_change": -0.0005417118093177242,
+    "pairs": [
+      {
+        "case_id": "motion_profile_015",
+        "travel_relative_change": -0.010110121108850012,
+        "time_relative_change": 0.02500000000000968
+      },
+      {
+        "case_id": "recovery_holdout_02",
+        "travel_relative_change": -0.015069794867339281,
+        "time_relative_change": -0.03804347826088861
+      },
+      {
+        "case_id": "train_failure_w11_e7",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_0",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_1",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": true,
+    "all_regression_checks_passed": true,
+    "larger_training_gate_passed": false,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "candidate_to_separate_ppo": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 18,
+    "common_successes": 14,
+    "lost_successes": [
+      "motion_profile_015",
+      "recovery_holdout_03"
+    ],
+    "gained_successes": [
+      "recovery_holdout_00",
+      "recovery_holdout_01"
+    ],
+    "safety_nonregression": false,
+    "common_success_travel_m": [
+      45.12024372066495,
+      45.93950758752906
+    ],
+    "common_success_seconds": [
+      319.80000000001326,
+      354.20000000002966
+    ],
+    "total_travel_relative_change": 0.018157345778894385,
+    "total_time_relative_change": 0.10756722951849595,
+    "pairs": [
+      {
+        "case_id": "recovery_holdout_02",
+        "travel_relative_change": -0.00229586911397206,
+        "time_relative_change": 0.045197740113017915
+      },
+      {
+        "case_id": "train_failure_w11_e7",
+        "travel_relative_change": 0.19218914648301522,
+        "time_relative_change": 0.5729729729732587
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.032441216318082944,
+        "time_relative_change": 0.19928825622773738
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": -0.0821250147369662,
+        "time_relative_change": -0.17177914110428272
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": -8.976244462111094e-05,
+        "time_relative_change": -0.019455252918294974
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": -0.050155071461137624,
+        "time_relative_change": -0.026086956521734317
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_0",
+        "travel_relative_change": 0.0421033897651899,
+        "time_relative_change": 0.20833333333344783
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_1",
+        "travel_relative_change": -0.015291862816652513,
+        "time_relative_change": 0.018987341772153776
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": false,
+    "all_regression_checks_passed": false,
+    "larger_training_gate_passed": false,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "original14": {
+    "tasks": 14,
+    "parent_safe": 14,
+    "new_bc_safe": 14,
+    "separate_ppo_safe": 13
+  },
+  "new_candidate_additional_ppo_steps": 0,
+  "parent_full_reset_reused_not_reexecuted": true,
+  "all_condition_results_kept": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

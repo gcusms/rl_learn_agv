@@ -1,5 +1,5 @@
 {
-  "recorded_at": "2026-10-16T05:19:59.402171+08:00",
+  "recorded_at": "2026-10-16T05:26:21.069812+08:00",
   "classification": "progress",
   "previous_goal_turn_classification": "progress",
   "previous_turn_evidence": "Published complete portable progress snapshot on GitHub ship and verified exact remote commit,tree,and8keyfiles; source goal work retained separately.",
@@ -8,7 +8,8 @@
     "Diagnosed428 old-label changes including6 reasonable waits and an actual original-task collision with an identical common prefix.",
     "Implemented optional training-only demonstration retention;23 relevant tests passed.",
     "Paired recorded-rollout update reduces forgetting metrics, with exact legacy network/optimizer parity when disabled.",
-    "Audited issued waits in36 actual complete navigation traces without new physical runs."
+    "Audited issued waits in36 actual complete navigation traces without new physical runs.",
+    "Completed new2089-label BC18-task gate:16safe,1collision,1timeout,all14originalsuccesses and paired efficiency retained; different failure pattern from the separate8k PPO."
   ],
   "training_with_new_regularizer_started": false,
   "new_regularized_physical_steps": 0,
@@ -56,9 +57,9 @@
       "timeouts": 1
     },
     "w11_recovery_bc800_navigation_20261016": {
-      "completed": false,
-      "finished_tasks": 17,
-      "safe": 15,
+      "completed": true,
+      "finished_tasks": 18,
+      "safe": 16,
       "collisions": 1,
       "timeouts": 1
     }
@@ -68,5 +69,15 @@
   "completed_diagnostic_soft_cpu_cores": 0.05,
   "remote_ship_unchanged": true,
   "goal_achieved": false,
-  "deployment_approved": false
+  "deployment_approved": false,
+  "new_bc_full18_completed": true,
+  "new_bc_original14_preserved": true,
+  "new_bc_full_gate": {
+    "tasks": 18,
+    "safe": 16,
+    "collisions": 1,
+    "timeouts": 1,
+    "safety_and_efficiency_nonregression": true,
+    "all_tasks_success": false
+  }
 }
