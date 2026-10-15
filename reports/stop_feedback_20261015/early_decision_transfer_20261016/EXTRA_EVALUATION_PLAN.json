@@ -1,0 +1,34 @@
+{
+  "created_at": "2026-10-16T07:12:03.718122+08:00",
+  "declared_before_new_candidate_results_exist": true,
+  "extra_cases": 8,
+  "case_file": "reports/stop_feedback_20261015/early_decision_transfer_20261016/extra_cases.json",
+  "case_file_sha256": "0dd895111fb0581cffb3fa9e9223df2a79f69032c1b165d828f890f850b6d7ed",
+  "source_development_case_file": "reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/gate_cases.json",
+  "source_file_sha256": "189a7c05290a3824e5e23005ce8606e0b70d633c10103e406bfcde3aacddd03a",
+  "same_map_not_unseen_map": true,
+  "new_random_seeds_not_used_in_data": true,
+  "intended_candidate": "models/stop_feedback_20261015/early_transfer_bc800_s231015/bc_portable",
+  "intended_baseline": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+  "first_gates": "Preserve existing14 normal/directional tasks; separately test2 new training routes,remaining2 difficulty cases,original prefixes and3 W11 histories.",
+  "sensor_groups": {
+    "normal": 4,
+    "extra_invalid_beams": 4
+  },
+  "no_new_physical_process_started": true,
+  "physical_evaluation_admitted": false,
+  "conditions_for_physical_admission": [
+    "Current paired PPO and rotation experiment outcomes inspected.",
+    "Candidate complete,source verified and metadata finalized.",
+    "Reuse a verified free main or auxiliary slot."
+  ],
+  "resource": {
+    "seconds": 0.3081576860276982,
+    "cpu_seconds": 0.015793508999999983,
+    "average_cpu_cores": 0.051251387572336625,
+    "peak_rss_mib": 59.80859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

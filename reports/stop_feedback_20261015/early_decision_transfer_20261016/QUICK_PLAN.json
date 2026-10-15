@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-16T07:16:54.074538+08:00",
+  "execution_decision": "Allow an independent data-only three-case check in the freed auxiliary slot while the original fixed PPO pair continues. Full acceptance still requires all original tasks and extra conditions.",
+  "supersedes_full_ppo_pair_wait_for_this_initialization_only_test": true,
+  "justification": "This changes only demonstration data,not PPO retention or geometry; independent sampling and CPU-slot dependencies preserve the ongoing comparison.",
+  "dependencies": {
+    "rl-early-transfer-bc-20261016.service": "b3bccbc8b1734f5f8b4b413e60fa5dd9",
+    "rl-rotation-escape-t106-20261016.service": "0c1097f6e7a14733a1ab0a849356eac1"
+  },
+  "candidate_model": "models/stop_feedback_20261015/early_transfer_bc800_s231015",
+  "baseline_bundle": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+  "baseline_results": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json",
+  "teacher_results": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json",
+  "geometry_results": "reports/stop_feedback_20261015/rotation_escape_t106_protocol_20261016/RESULTS.json",
+  "output": "reports/stop_feedback_20261015/early_transfer_bc800_quick_20261016",
+  "roles": {
+    "motion_profile_015": "known_success_regression",
+    "recovery_holdout_00": "new_training_rehearsal",
+    "recovery_holdout_01": "new_training_rehearsal"
+  },
+  "inputs": {
+    "reports/stop_feedback_20261015/early_decision_transfer_20261016/after_geometry.py": "6ee319bbdd65fd852fff8cdd56c59696d5c3b500529fdd45a2eaf4a0b22f9b6e",
+    "reports/stop_feedback_20261015/early_decision_transfer_20261016/finalize_metadata.py": "1fe71f0000bc8c48462058e69e1e2879859f86a1b40a89621ca81eea147bb12b",
+    "reports/stop_feedback_20261015/early_decision_transfer_20261016/BC_PLAN.json": "8cf66b2beb38585aa54c9d608ef25270c138c2bed4612388e15f72880b352162",
+    "reports/stop_feedback_20261015/early_decision_transfer_20261016/RESULTS.json": "7b6177fa43174bb2a7fce29c1c77d1dc1bba3766c0a2239778429ed6bff8126b",
+    "reports/stop_feedback_20261015/early_decision_transfer_20261016/quick_cases.json": "dc9373fb2f4d5c33bab9f95c5b856c5f0b5a76051fee787a63f963b8d873c62c",
+    "reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/gate_cases.json": "189a7c05290a3824e5e23005ce8606e0b70d633c10103e406bfcde3aacddd03a",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json": "d5ab8e5fe7ecd445c2de7d5f639539b60f357b0d3f6604ef8b323edf116043dc",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json": "61efd691aebde3c925a07ec1c16ef5a84989b6fde3560f56bd1a24a38ff71461",
+    "training/experiments/evaluate_docking_navigation.py": "2d4de1aaacf253fc0e4f4c84cbf93ac7dd1fc84030573dd09924b48980021f9c",
+    "training/experiments/paired_navigation_gate.py": "e079c71d70817f4cc37ce9f0c509db2a8e3abf77d4d00a72a63977d506892907",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/neural_navigation/decision_feedback.py": "ab9fa6ef47fc863d793afdf9fb43bb4a6dbd6090959a0c8c97f52af31e61cc0f"
+  },
+  "physical_admission_requires_complete_and_fitted_bc": true,
+  "soft_cpu_cores": 0.15,
+  "maximum_simultaneous_auxiliary_physical_simulations": 1,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}
