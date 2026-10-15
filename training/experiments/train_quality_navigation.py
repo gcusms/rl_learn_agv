@@ -54,7 +54,9 @@ def export(policy,components,output):
     traced.save(str(output/'actor.pt'))
     for name in ('hardware.json','localizer.pt','router.pt','quality_observation.json'):
         shutil.copy2(components/name,output/name)
-    manifest=dict(policy_sha256=digest(policy),observation_contract=contract(),action_contract=action_contract(),
+    for name in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
+        if (components/name).exists():shutil.copy2(components/name,output/name)
+    manifest=dict(policy_sha256=digest(policy),observation_contract=contract(),action_contract=json.loads((components/'hardware.json').read_text())['policy_action'],
         comparison_inputs=256,exact_action_parity=True,deployment_approved=False,
         requires_quality_feature_generator=True,
         files={p.name:digest(p) for p in output.iterdir() if p.is_file()})

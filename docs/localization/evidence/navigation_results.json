@@ -1,0 +1,87 @@
+{
+  "scope": "12 frozen development/regression tasks; 28 previously used localization replays; no new real-world ground truth",
+  "deployment_approved": false,
+  "compared_with": "temporal_native_candidate, not the original deployed quality recovery 2k model",
+  "temporal_baseline": {
+    "tasks": 12,
+    "success": 10,
+    "collisions": 2,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "combined_candidate": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "parking": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "ppo": {
+    "stop_go_ppo": {
+      "status": "complete",
+      "additional_steps": 2000,
+      "before": {
+        "tasks": 12,
+        "success": 11,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "after": {
+        "tasks": 12,
+        "success": 11,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "after_parking": {
+        "tasks": 6,
+        "success": 6,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "total_travel_relative_change": 0.02104673198804985,
+      "total_time_relative_change": -0.009057971014494126,
+      "demonstrated_development_success_improvement": false,
+      "no_regression_on_these_tasks": false
+    },
+    "critical_clone_ppo": {
+      "status": "complete",
+      "additional_steps": 2000,
+      "before": {
+        "tasks": 12,
+        "success": 11,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "after": {
+        "tasks": 12,
+        "success": 11,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "after_parking": {
+        "tasks": 6,
+        "success": 6,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "total_travel_relative_change": 0.08775237142484893,
+      "total_time_relative_change": 0.03804347826089338,
+      "demonstrated_development_success_improvement": false,
+      "no_regression_on_these_tasks": false
+    }
+  },
+  "original_bundle_replaced": false
+}

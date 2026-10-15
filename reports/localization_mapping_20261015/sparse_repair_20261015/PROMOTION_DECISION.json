@@ -1,0 +1,21 @@
+{
+  "completed": true,
+  "original_deployment_preserved": true,
+  "new_model_promoted": false,
+  "reason": "Known-map localization replay improves; closed-loop navigation still has two collisions versus one in the archived v6 reference.",
+  "original_reference": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "source": "archived matched-case results; no fresh full 12-task reference run"
+  },
+  "latest_candidates": {
+    "tasks": 12,
+    "success": 10,
+    "collisions": 2,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "additional_ppo_steps": 3000,
+  "physical_robot_or_firmware_changed": false
+}

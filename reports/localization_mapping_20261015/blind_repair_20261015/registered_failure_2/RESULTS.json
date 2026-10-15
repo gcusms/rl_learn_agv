@@ -1,0 +1,106 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "8a3e74953271ec9873c9fb8f44d0dd6d44fb577b55800a654d3fa38b4a74e376",
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 1.9510997310138494,
+      "frames": 700,
+      "final_xy_error_m": 1.8982965685201105,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004255237589506923,
+      "localization_yaw_p95_rad": 0.001180538263925168,
+      "stop_choices": 633,
+      "only_stop_frames": 631,
+      "stop_reasons": {
+        "None": 79,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 617
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 97,
+      "runtime_ms": {
+        "p95": 121.10919295228084,
+        "p99": 155.44740107550749,
+        "maximum": 184.15004096459597
+      },
+      "variant": "registered_motion",
+      "trace_sha256": "a88e5dc77294d475da3ff663716eb8c65135c96263713cccc99f14bba6b9bd3d"
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 1.522772211223357,
+      "frames": 56,
+      "final_xy_error_m": 3.156276921532565,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004535493025330103,
+      "localization_yaw_p95_rad": 0.0013054562557613947,
+      "stop_choices": 16,
+      "only_stop_frames": 16,
+      "stop_reasons": {
+        "None": 48,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 2,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 17,
+      "runtime_ms": {
+        "p95": 133.7888490234036,
+        "p99": 140.997787687229,
+        "maximum": 143.53324699914083
+      },
+      "variant": "registered_motion",
+      "trace_sha256": "96ca75ce50b7264a510d8126d06accb114027b4134a43f09b97f8123f8011540"
+    }
+  ],
+  "resource": {
+    "seconds": 265.2429522279999,
+    "cpu_seconds": 106.113239759,
+    "average_cpu_cores": 0.4000605439943461,
+    "peak_rss_mib": 2068.37890625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "original_release_stop_go": {
+      "registered_motion": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_training_failure": {
+      "registered_motion": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "started_unix": 1792037052.9319472,
+  "additional_ppo_steps": 1000,
+  "deployment_approved": false,
+  "finished_unix": 1792037455.913067,
+  "counts": {
+    "nonzero": 872,
+    "changed_nonzero": 0,
+    "wait_with_alternative": 25,
+    "only_stop": 103,
+    "trainable_recovery": 145,
+    "recorded_frames": 603,
+    "general_frames": 397,
+    "episodes": 6,
+    "success": 4,
+    "collisions": 2
+  },
+  "resource": {
+    "seconds": 404.2951504889643,
+    "cpu_seconds": 141.782927745,
+    "average_cpu_cores": 0.35069163598307895,
+    "peak_rss_mib": 2451.609375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "training_is_not_deployment_acceptance": true,
+  "ppo": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -1.8289255499839783,
+    "train/policy_gradient_loss": -5.089491401122359e-05,
+    "train/value_loss": 0.6151571422815323,
+    "train/approx_kl": 7.032078403051978e-06,
+    "train/clip_fraction": 0.0,
+    "train/recovery_fraction": 0.352,
+    "train/explained_variance": -2.830575466156006,
+    "train/n_updates": 48.0,
+    "train/clip_range": 0.2,
+    "train/loss": 0.2987228333950043
+  }
+}

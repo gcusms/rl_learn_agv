@@ -1,0 +1,35 @@
+{
+  "schema": "fast_static_tracking_native_v1",
+  "calibrated": false,
+  "beams": 60,
+  "iterations": 4,
+  "endpoint_gate_m": 0.18,
+  "angular_gate_rad": 0.02,
+  "maximum_endpoint_gate_m": 0.35,
+  "minimum_hits": 12,
+  "minimum_support_fraction": 0.35,
+  "huber_m": 0.05,
+  "damping": 0.02,
+  "weak_axis_ratio": 0.04,
+  "minimum_eigenvalue": 0.02,
+  "yaw_length_scale_m": 3.0,
+  "maximum_correction_m": 0.12,
+  "maximum_correction_rad": 0.15,
+  "correction_rate_m_s": 0.3,
+  "correction_rate_rad_s": 0.5,
+  "process_std_per_sqrt_s": [
+    0.012,
+    0.012,
+    0.012
+  ],
+  "measurement_std_m": 0.06,
+  "covariance_floor": [
+    0.04,
+    0.04,
+    0.03
+  ],
+  "correlation_seconds": 0.5,
+  "supplied_initial_pose_required": true,
+  "global_relocalization": false,
+  "kernel": "static_refine_v1"
+}

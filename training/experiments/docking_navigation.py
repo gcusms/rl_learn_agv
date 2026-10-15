@@ -101,7 +101,7 @@ def export_docking(model,components,output):
         expected=ACTIONS[model.predict(obs,action_masks=masks_from_observation(obs[:,:282]),deterministic=True)[0]]
         np.testing.assert_array_equal(actor(torch.from_numpy(obs)).numpy(),expected)
     actor.save(str(output/'actor.pt'))
-    for name in ('hardware.json','router.pt','localizer.pt','localization_contract.json'):
+    for name in ('hardware.json','router.pt','localizer.pt','localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
         if (Path(components)/name).exists():shutil.copy2(Path(components)/name,output/name)
     for name,data in [('goal_pose_observation.json',goal_contract()),('quality_observation.json',quality_contract()),
                       ('docking_contract.json',docking_contract(model.policy.terminal_radius))]:
@@ -110,7 +110,7 @@ def export_docking(model,components,output):
     manifest=dict(sensor_core='learned-terminal-goal-pose',
         required_runtime='experiments.docking_navigation.DockingRuntime',
         observation_contract=goal_contract(),quality_prefix_contract=quality_contract(),
-        action_contract=action_contract(),docking_contract=docking_contract(model.policy.terminal_radius),
+        action_contract=json.loads((Path(components)/'hardware.json').read_text())['policy_action'],docking_contract=docking_contract(model.policy.terminal_radius),
         requires_quality_feature_generator=True,exact_action_parity=True,
         comparison_inputs=len(obs),deployment_approved=False,
         files={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in output.iterdir()})

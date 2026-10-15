@@ -41,6 +41,10 @@ class EmergencyStop:
             config.get('response_angular_acceleration_rad_s2',1.)],float)
         if not np.isfinite(np.r_[self.response_gain,self.response_acceleration]).all() or self.response_gain<=0 or min(self.response_acceleration)<=0:
             raise ValueError('Positive finite motion response parameters required')
+        self.predictive_constraint=None
+        if config.get('predictive_action_constraint') is not None:
+            from neural_navigation.predictive_constraint import PredictiveConstraint
+            self.predictive_constraint=PredictiveConstraint(config['predictive_action_constraint'],self.half*2,self.braking_acceleration)
 
     def _trajectory(self,core,command,age):
         horizon=abs(command[0])/self.braking_acceleration+max(age,0)+.2
@@ -107,6 +111,8 @@ class EmergencyStop:
             elif now-self.reverse_started>1.5:
                 command[0]=0.;projection_reason='reverse_duration_limit'
         else:self.reverse_started=None
+        if reason is None and self.predictive_constraint is not None:
+            reason=self.predictive_constraint.rejection(core,command,age)
         if reason is None:
             valid=np.isfinite(core.scan)&(core.scan>=core.lidar.range_min)&(core.scan<core.lidar.range_max)
             m=core.lidar.mount;angle=core.lidar.angles[valid]+m[3]
@@ -152,10 +158,13 @@ from this same deterministic transform, and report its override frequency.
         executed=np.zeros(2);reason='estimated_goal_reached'
     executed_action=np.array([executed[0]/(.2 if executed[0]>=0 else .08),executed[1]/.5])
     core.record_action(executed_action)
-    return dict(timestamp=float(timestamp),proposed_action=proposed.tolist(),model_command=command.tolist(),
+    result=dict(timestamp=float(timestamp),proposed_action=proposed.tolist(),model_command=command.tolist(),
                 command=executed.tolist(),safety_override=reason not in (None,'estimated_goal_reached'),
                 stop_reason=reason,diagnostics=diagnostics,guard_memory_points=len(guard.memory.entries) if guard.memory else 0,
                 uncertainty_calibrated=False,braking_model_calibrated=False)
+    if getattr(guard,'predictive_constraint',None) is not None:
+        result['predictive_constraint']=guard.predictive_constraint.diagnostics(core)
+    return result
 
 
 class SensorNavigationRuntime:
@@ -172,8 +181,9 @@ class SensorNavigationRuntime:
             self.context=SafetyContext(hardware['policy_observation']['schema'])
         dimensions=hardware.get('policy_observation',{}).get('dimensions',235)
         if 'policy_action' in hardware:
-            from neural_navigation.masked_actions import action_contract
-            if hardware['policy_action']!=action_contract() or self.context is None or self.context.schema not in PREDICTIVE_SCHEMAS:
+            from neural_navigation.masked_actions import validate_hardware_action
+            validate_hardware_action(hardware)
+            if self.context is None or self.context.schema not in PREDICTIVE_SCHEMAS:
                 raise ValueError('Mismatched masked velocity action/observation contract')
         self.policy=PortablePolicy(bundle/'actor.pt',dimensions)
         self.guard=EmergencyStop(hardware['robot_footprint_m'],memory_config=hardware.get('near_field_memory'))

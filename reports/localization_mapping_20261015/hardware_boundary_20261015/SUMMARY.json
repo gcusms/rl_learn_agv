@@ -1,0 +1,91 @@
+{
+  "deployment_approved": false,
+  "model_replaced": false,
+  "additional_ppo_steps": 0,
+  "simulated_recovery": {
+    "snapshot_total": 28,
+    "snapshot_proposed": 10,
+    "stationary_total": 24,
+    "stationary_confirmed": 10,
+    "incorrect_snapshot_proposals": 0,
+    "incorrect_stationary_accepts": 0,
+    "confirmed_xy_max_m": 0.013581207706226507,
+    "confirmed_yaw_max_rad": 0.004163731801798853
+  },
+  "real_confirmed": 0,
+  "real_cases": 6,
+  "real_accuracy_measured": false,
+  "real_search_cpu_reduction_fraction": 0.43582060210432416,
+  "real_search_before_after": [
+    {
+      "mission": 1,
+      "before_cpu_s": 2.083531644000001,
+      "after_cpu_s": 1.016458275,
+      "before_complete": true,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "free_space_contradiction"
+    },
+    {
+      "mission": 7,
+      "before_cpu_s": 4.002068396000009,
+      "after_cpu_s": 2.019596979999995,
+      "before_complete": false,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "no_supported_pose"
+    },
+    {
+      "mission": 10,
+      "before_cpu_s": 4.002721259999995,
+      "after_cpu_s": 2.5603733529999992,
+      "before_complete": false,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "no_supported_pose"
+    },
+    {
+      "mission": 13,
+      "before_cpu_s": 4.0034193549999895,
+      "after_cpu_s": 2.283956892000017,
+      "before_complete": false,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "no_supported_pose"
+    },
+    {
+      "mission": 19,
+      "before_cpu_s": 4.003376075999988,
+      "after_cpu_s": 2.4026388039999897,
+      "before_complete": false,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "no_supported_pose"
+    },
+    {
+      "mission": 22,
+      "before_cpu_s": 1.868716414999966,
+      "after_cpu_s": 0.9801590599999859,
+      "before_complete": true,
+      "after_complete": true,
+      "confirmed": false,
+      "reason": "no_supported_pose"
+    }
+  ],
+  "simulation_resource": {
+    "seconds": 61.51881613204023,
+    "cpu_seconds": 21.54420908,
+    "average_cpu_cores": 0.3502051963054495,
+    "peak_rss_mib": 96.08984375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "sensor_simulator_memory_mib_before": 1981.09375,
+  "sensor_simulator_memory_mib_after": 95.0546875,
+  "limitations": [
+    "Reused development maps/cases, not unseen-map generalization.",
+    "Snapshot proposals and stopped confirmations are not navigation success.",
+    "No independent real pose truth or Orin hardware timing is available.",
+    "No automatic loss detector or deployment entry point was enabled.",
+    "Unknown-map SLAM and the existing dynamic collision remain unresolved."
+  ]
+}

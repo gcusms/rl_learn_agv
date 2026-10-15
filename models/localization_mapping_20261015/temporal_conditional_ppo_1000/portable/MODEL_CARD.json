@@ -1,0 +1,20 @@
+{
+  "deployment_approved": false,
+  "additional_ppo_steps": 1000,
+  "method": "masked PPO learned recovery residual",
+  "localization_frontend": "fast_static_tracking_temporal_native_v1",
+  "base_navigation_weights_frozen": true,
+  "directional_approach_actor_frozen": true,
+  "unchanged_actions_and_guard": true,
+  "training_is_not_acceptance": true,
+  "selected_for_deployment": false,
+  "acceptance": "not_approved_due_collision_regression",
+  "evaluation": {
+    "report": "reports/localization_mapping_20261015/sparse_repair_20261015/conditional_closed_loop_12/RESULTS.json",
+    "sha256": "fa8dd545ff77272da79180d6a76c6cd8fc2e57b612d938751983e040737c6ad5",
+    "complete": true,
+    "tasks": 12,
+    "success": 10,
+    "collisions": 2
+  }
+}

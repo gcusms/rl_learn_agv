@@ -13,6 +13,8 @@ class LaserMapFusion:
     def reset(self):
         self.first_seen=np.full(self.shape,np.nan);self.last_seen=np.full(self.shape,-100.);self.hard_expiry=np.zeros(self.shape)
         self.hard=np.zeros(self.shape,bool);self.layer=np.zeros(self.shape,np.float32);self.cleared=0;self.far_pending=0
+        self.observed_hard=np.zeros(self.shape,bool)
+        self.routing_hard=self.hard.copy()
         self.forecast_cells=0
         self.last_alignment_supported=False
         if getattr(self,'predictor',None):self.predictor.reset()
@@ -53,6 +55,11 @@ class LaserMapFusion:
         env.expiry[:]=self.hard_expiry
         occupied=self.hard_expiry>now
         self.hard=distance_transform_edt(~occupied)*env.grid_res<=.32 if occupied.any() else np.zeros(self.shape,bool)
+        # Keep measured/persistent occupancy separate from forecast-only cells.
+        # Optional route acceptance uses this distinction; the original hard
+        # layer and all guard/actor sensor data retain the forecast as before.
+        self.observed_hard=self.hard.copy()
+        future=np.zeros(self.shape,bool)
         if self.predictor is not None:
             if getattr(env.localizer,'scan_update_accepted',True):
                 self.last_alignment_supported=getattr(env.localizer,'map_agreement',1.)>=.5
@@ -73,5 +80,15 @@ class LaserMapFusion:
         recent=(now-self.last_seen<.8)&~occupied
         soft=distance_transform_edt(~recent)*env.grid_res<=.32 if recent.any() else np.zeros(self.shape,bool)
         self.layer=np.maximum(self.hard.astype(np.float32),soft.astype(np.float32)*.02)
+        from neural_navigation.routing_contract import soft_forecast_contract
+        routing=getattr(env,'routing_contract',None)
+        self.routing_hard=self.hard.copy()
+        if routing==soft_forecast_contract():
+            # A time-unioned forecast is not a wall occupied simultaneously.
+            # Keep all measured/persistent cells hard; local action prediction
+            # and raw footprint checks still veto unsafe velocities.
+            self.routing_hard=self.observed_hard.copy()
+            self.layer=np.maximum(self.observed_hard.astype(np.float32),
+                np.maximum(future.astype(np.float32)*routing['forecast_cost'],soft.astype(np.float32)*.02))
         self.far_pending=int(np.count_nonzero(hit&~close&~confirmed));env.unmatched_returns=len(ends)
         return self.layer

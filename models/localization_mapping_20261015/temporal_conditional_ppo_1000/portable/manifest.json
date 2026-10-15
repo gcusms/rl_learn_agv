@@ -1,0 +1,261 @@
+{
+  "sensor_core": "learned-terminal-goal-pose",
+  "required_runtime": "experiments.docking_navigation.DockingRuntime",
+  "observation_contract": {
+    "schema": "quality_goal_pose_v1",
+    "dimensions": 303,
+    "prefix_dimensions": 300,
+    "appended_features": [
+      "sin_goal_yaw_error",
+      "cos_goal_yaw_error",
+      "goal_yaw_required"
+    ],
+    "position_tolerance_m": 0.12,
+    "yaw_tolerance_rad": 0.15,
+    "stopped_linear_m_s": 0.03,
+    "stopped_angular_rad_s": 0.08,
+    "settle_seconds": 0.4,
+    "control_period_s": 0.2,
+    "scan_history_offsets_s": [
+      -0.4,
+      -0.2,
+      0.0
+    ],
+    "calibrated": false
+  },
+  "quality_prefix_contract": {
+    "schema": "quality_prediction_append_v1",
+    "prefix_dimensions": 282,
+    "dimensions": 300,
+    "commands_m_s_rad_s": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "fields": [
+      "12_directional_response_risk_scores",
+      "pose_supported",
+      "observed_moving_track",
+      "held_moving_track",
+      "unknown_velocity_track",
+      "degraded_contour_track",
+      "maximum_track_age_over_0.8"
+    ],
+    "horizon_s": 2.4,
+    "period_s": 0.2,
+    "margin_m": 0.04,
+    "velocity_error_floor_m_s": 0.025,
+    "residual_scale": 2.0,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "contour_hold_s": 0.6,
+    "contour_recovery_measurements": 2,
+    "thresholds_calibrated": false,
+    "absence_of_support_means": "unknown",
+    "simulator_truth_used": false,
+    "commands_issued": false
+  },
+  "action_contract": {
+    "schema": "masked_velocity_choices_v1",
+    "choices": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "normalized_actions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.25,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.25,
+        -1.0
+      ],
+      [
+        0.05000000074505806,
+        1.0
+      ],
+      [
+        0.05000000074505806,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "stop_index": 0,
+    "mask_source": "current_sensor_guard_probe_acceptance",
+    "wait_always_allowed": true,
+    "future_safety_certified": false,
+    "simulator_truth_used": false
+  },
+  "docking_contract": {
+    "schema": "learned_terminal_actor_v2",
+    "observation_dimensions": 303,
+    "activation_distance_m": 0.1,
+    "requires_directional_goal": true,
+    "actions": 12,
+    "frozen_navigation_actor": true,
+    "teacher_at_runtime": false,
+    "action_space_expanded": false,
+    "slow_rotation_calibrated": false
+  },
+  "requires_quality_feature_generator": true,
+  "exact_action_parity": true,
+  "comparison_inputs": 512,
+  "deployment_approved": false,
+  "files": {
+    "quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "hardware.json": "fc70333f1813a1844572ba7b5ecb67adc5ede3f5437089019e5da2b96cf7f48b",
+    "localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "actor.pt": "2c19eb6bb289bb0905f06e1359f999c0c4c1fea6d824054c4ca566fdb46a9563",
+    "docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "navigation_preservation.json": "16c7cb68cec27d3f4484e8e2cff0858caaaf1ff1efc95d84143b58a56b40ceb0",
+    "localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d"
+  },
+  "navigation_preservation_contract": {
+    "schema": "frozen_base_localization_recovery_v1",
+    "approach_radius_m": 0.3,
+    "original_directional_actor_unchanged": true,
+    "base_navigation_weights_frozen": true,
+    "trainable_component": "sensor-gated recovery residual",
+    "teacher_at_runtime": false,
+    "unchanged_actions": true,
+    "comparison_inputs": 512
+  },
+  "localization_method": "fast_static_tracking_temporal_native_v1",
+  "localization_is_neural": false,
+  "requires_supplied_initial_map_pose": true,
+  "parent_manifest_sha256": "fc8da66e7a4d15dc968c9dbe875425cfbc5c87c64909204468cd19bd0c9716c4",
+  "native_kernel": {
+    "architecture": "x86_64",
+    "source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "build": "g++ -O3 -DNDEBUG -std=c++17 -shared -fPIC -I/usr/include/eigen3",
+    "runtime_compilation": false
+  }
+}

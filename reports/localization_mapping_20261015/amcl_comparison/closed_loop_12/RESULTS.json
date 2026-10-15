@@ -1,0 +1,79 @@
+{
+  "completed": false,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "ac9b0e732af341bed119345b3c5ac659eccdae56b67a0fff83731cd58de723dd",
+  "rows": [
+    {
+      "case_id": "motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 53.00000000000866,
+      "travel_m": 8.705807032298067,
+      "frames": 266,
+      "final_xy_error_m": 0.10527108577573624,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.006306550803337646,
+      "localization_yaw_p95_rad": 0.002713883453396404,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 265,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 135.86410152493045,
+        "p99": 154.8023589246441,
+        "maximum": 162.65984601341188
+      },
+      "variant": "fast_static",
+      "trace_sha256": "338938cd22e5267eb42098c18cbc5899bb162601822ec19c44c214876e2ebace"
+    },
+    {
+      "case_id": "motion_profile_000",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 32.79999999999833,
+      "travel_m": 3.7144557010199675,
+      "frames": 165,
+      "final_xy_error_m": 0.09491668358590087,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.008074493101572496,
+      "localization_yaw_p95_rad": 0.002931871640607393,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 164,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 136.30992161342874,
+        "p99": 153.30979390768334,
+        "maximum": 156.14074398763478
+      },
+      "variant": "fast_static",
+      "trace_sha256": "9ef70a99c4ebbda5c0c42b41555c44b2bef9ffe524f6540b0e7b081999d81b74"
+    }
+  ],
+  "resource": {
+    "seconds": 337.7217324569938,
+    "cpu_seconds": 67.637693467,
+    "average_cpu_cores": 0.20027640203940128,
+    "peak_rss_mib": 2065.27734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

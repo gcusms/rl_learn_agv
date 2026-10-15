@@ -1,0 +1,130 @@
+{
+  "completed": true,
+  "training_running": false,
+  "new_ppo_steps": 0,
+  "deployment_approved": false,
+  "source": "final packed-ray implementation",
+  "scope": "known-map local tracking and measured-motion input; no real pose truth, SLAM or navigation acceptance",
+  "simulation": {
+    "temporal": {
+      "trajectories": 22,
+      "frames": 2855,
+      "xy_p95_m": 0.18506209008721322,
+      "yaw_p95_rad": 0.026626949770572915,
+      "mean_final_xy_m": 0.03423184923100293,
+      "cpu_p95_ms": 7.880705000001242,
+      "cpu_max_ms": 13.368122000002813
+    },
+    "ray_consistent": {
+      "trajectories": 22,
+      "frames": 2855,
+      "xy_p95_m": 0.18035254809240048,
+      "yaw_p95_rad": 0.023871443291547268,
+      "mean_final_xy_m": 0.03269386530992327,
+      "cpu_p95_ms": 14.589768799998021,
+      "cpu_max_ms": 23.2343979999996
+    }
+  },
+  "recorded_motion": {
+    "frames": 15634,
+    "valid_frames": 15634,
+    "reasons": {
+      "ok": 15634
+    },
+    "gyro_bias_final_rad_s": 9.240824545367606e-05,
+    "bias_updates": 2922,
+    "cpu_p95_ms": 0.7619013499994054,
+    "cpu_max_ms": 2.357504999999094,
+    "uses_future_measurements": false,
+    "wheel_or_command_pose_used": false,
+    "accuracy_measured": false,
+    "reference_pose_available": false
+  },
+  "recorded_localization": {
+    "recorded_ekf": {
+      "segments": 22,
+      "skipped": 0,
+      "algorithms": {
+        "temporal": {
+          "accepted_scan_frames": 832,
+          "ray_inconsistent_correction_frames": 0,
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "accepted_scan_frames": 583,
+          "ray_inconsistent_correction_frames": 46,
+          "excluded_static_hits_total": 8975
+        }
+      }
+    },
+    "measured_wheel_gyro": {
+      "segments": 22,
+      "skipped": 0,
+      "algorithms": {
+        "temporal": {
+          "accepted_scan_frames": 830,
+          "ray_inconsistent_correction_frames": 0,
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "accepted_scan_frames": 606,
+          "ray_inconsistent_correction_frames": 25,
+          "excluded_static_hits_total": 8762
+        }
+      }
+    }
+  },
+  "ray_packing": {
+    "paired_npz_files": 73,
+    "maximum_prediction_difference": 0.0,
+    "candidate_cpu_p95_before_ms": 17.97821899999991,
+    "candidate_cpu_p95_after_ms": 14.589768799998021,
+    "relative_p95_reduction": 0.18847529891597747
+  },
+  "implementation_checks": {
+    "tests_run": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "suites": [
+      "training.test_measured_odometry",
+      "training.test_verified_static_localizer",
+      "training.test_fast_static_localizer",
+      "training.test_global_relocalizer"
+    ]
+  },
+  "bundle_check": {
+    "completed": true,
+    "manifest_valid": true,
+    "files_checked": 9,
+    "preserved": {
+      "actor.pt": true,
+      "router.pt": true,
+      "hardware.json": true,
+      "docking_contract.json": true,
+      "goal_pose_observation.json": true
+    },
+    "observation_dimensions": 303,
+    "goal_yaw_retained": 0.1141283507869515,
+    "command": [
+      0.0,
+      0.5
+    ],
+    "stop_reason": null,
+    "scope": "one frozen sensor-frame load/contract smoke test, not docking or navigation acceptance",
+    "deployment_approved": false
+  },
+  "resource": {
+    "seconds": 285.86418758297805,
+    "cpu_seconds": 100.08812947999999,
+    "average_cpu_cores": 0.3501247579357849,
+    "peak_rss_mib": 130.05859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "storage": {
+    "bundle_mib": 0.5462150573730469,
+    "report_mib": 3.293938636779785,
+    "disk_free_gib": 6.056346893310547
+  }
+}

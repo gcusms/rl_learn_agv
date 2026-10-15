@@ -1,0 +1,139 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "before": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "after": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "before_parking": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "after_parking": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "additional_ppo_steps": 2000,
+  "demonstrated_development_success_improvement": false,
+  "no_regression_on_these_tasks": false,
+  "count_nonregression": true,
+  "paired_gate": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 12,
+    "common_successes": 11,
+    "lost_successes": [],
+    "gained_successes": [],
+    "safety_nonregression": true,
+    "common_success_travel_m": [
+      29.06082173101071,
+      31.61097775346168
+    ],
+    "common_success_seconds": [
+      220.8000000000177,
+      229.2000000000236
+    ],
+    "total_travel_relative_change": 0.08775237142484893,
+    "total_time_relative_change": 0.03804347826089338,
+    "pairs": [
+      {
+        "case_id": "train_failure_w11_e7",
+        "travel_relative_change": 0.2731523374674212,
+        "time_relative_change": 0.29015544041464647
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.032394485202530854,
+        "time_relative_change": 0.042704626334533646
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": 0.2638811023921199,
+        "time_relative_change": -0.09202453987730042
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": 0.01780541643616318,
+        "time_relative_change": -0.042801556420248854
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": -0.0023349732022572844,
+        "time_relative_change": 0.008695652173911439
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": -0.02148553511029272,
+        "time_relative_change": -0.017857142857145125
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": false,
+    "all_regression_checks_passed": false,
+    "larger_training_gate_passed": false,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "training_counts": {
+    "nonzero": 893,
+    "changed_nonzero": 0,
+    "wait_with_alternative": 44,
+    "only_stop": 1063,
+    "trainable_recovery": 377,
+    "early_trainable_frames": 247,
+    "recorded_frames": 1208,
+    "general_frames": 792,
+    "episodes": 7,
+    "success": 2,
+    "collisions": 3
+  },
+  "further_training_gate_passed": false,
+  "localization_accuracy_training": false,
+  "unknown_map_slam_training": false,
+  "limitation": "Small previously used regression set; no hardware acceptance or promotion"
+}

@@ -13,3 +13,5 @@
 *.jpg binary
 # Preserve the exact training-source snapshot, including historical EOF spacing.
 models/recovery_20261012/training_source_snapshot/** whitespace=-blank-at-eof
+# Keep historical training snapshots byte-for-byte, including original whitespace.
+models/**/source_snapshot/** -whitespace

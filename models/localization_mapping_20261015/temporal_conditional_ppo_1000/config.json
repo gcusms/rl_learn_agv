@@ -1,0 +1,44 @@
+{
+  "steps": 1000,
+  "seed": 118615,
+  "parent_policy_sha256": "a6b934cace6081f441307a2a702f5e8e3e3f56f66173af96750eea849e3df0de",
+  "bundle_manifest_sha256": "fc8da66e7a4d15dc968c9dbe875425cfbc5c87c64909204468cd19bd0c9716c4",
+  "reward_unchanged": true,
+  "reward_scale": 0.016666666666666666,
+  "guard_unchanged": true,
+  "localizer_router_frozen": true,
+  "terminal_actor_frozen": true,
+  "normal_navigation_base_frozen": true,
+  "recovery_prior_scale": 0.16666666666666666,
+  "sampling_and_update_share_masks_and_logits": true,
+  "recorded_training_cases": [
+    {
+      "scene": "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "stage": "robust",
+      "options": {
+        "start": [
+          6.2250000000000005,
+          2.725,
+          0.017376951571745902
+        ],
+        "goal": [
+          7.125,
+          5.7250000000000005
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09295138997376881,
+        "hold_s": 3.4079953972433437
+      },
+      "source_training_case_id": "train_failure_w11_e7"
+    }
+  ],
+  "additional_training_is_not_independent_evaluation": true,
+  "deployment_approved": false,
+  "conditional_actor_loss": true,
+  "resume_recovery": true,
+  "parent_checkpoint_steps": 2000
+}

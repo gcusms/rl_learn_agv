@@ -1,0 +1,37 @@
+{
+  "steps": 2000,
+  "target_steps": 2000,
+  "counts": {
+    "nonzero": 1050,
+    "changed_nonzero": 0,
+    "wait_with_alternative": 113,
+    "only_stop": 837,
+    "trainable_recovery": 573,
+    "early_trainable_frames": 269,
+    "recorded_frames": 1745,
+    "general_frames": 255,
+    "episodes": 7,
+    "success": 2,
+    "collisions": 3
+  },
+  "resource": {
+    "seconds": 693.093496387999,
+    "cpu_seconds": 277.23794403399995,
+    "average_cpu_cores": 0.4000007870205148,
+    "peak_rss_mib": 2181.42578125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -0.681443989276886,
+    "train/policy_gradient_loss": 0.823008120059967,
+    "train/value_loss": 0.07655690424144268,
+    "train/approx_kl": 2.086162567138672e-07,
+    "train/clip_fraction": 0.0,
+    "train/recovery_fraction": 0.004,
+    "train/explained_variance": 0.5179556012153625,
+    "train/n_updates": 28.0,
+    "train/clip_range": 0.2,
+    "train/loss": 0.8499008417129517
+  }
+}

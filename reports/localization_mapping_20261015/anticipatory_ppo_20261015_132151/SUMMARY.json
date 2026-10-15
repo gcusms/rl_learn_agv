@@ -1,0 +1,68 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "before": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "after": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "before_parking": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "after_parking": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "additional_ppo_steps": 2000,
+  "demonstrated_development_success_improvement": false,
+  "no_regression_on_these_tasks": true,
+  "training_counts": {
+    "nonzero": 1443,
+    "changed_nonzero": 0,
+    "wait_with_alternative": 128,
+    "only_stop": 429,
+    "trainable_recovery": 895,
+    "early_trainable_frames": 382,
+    "recorded_frames": 1547,
+    "general_frames": 453,
+    "episodes": 4,
+    "success": 2,
+    "collisions": 0
+  },
+  "further_training_gate_passed": false,
+  "localization_accuracy_training": false,
+  "unknown_map_slam_training": false,
+  "limitation": "Small previously used regression set; no hardware acceptance or promotion",
+  "paired_efficiency": {
+    "cases": 5,
+    "scope": "same five dynamic tasks completed safely before and after PPO",
+    "seconds": {
+      "before": 201.80000000001738,
+      "after": 207.8000000000223,
+      "change_percent": 2.973240832509605
+    },
+    "travel_m": {
+      "before": 27.886603758669636,
+      "after": 28.97772080826508,
+      "change_percent": 3.9126924850295897
+    }
+  },
+  "no_regression_scope": "arrival, collision, false-arrival and parking counts only; excludes efficiency",
+  "efficiency_regression": true
+}

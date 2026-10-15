@@ -36,6 +36,19 @@ def inspect_bundle(config_path):
         raise ValueError('Action contract mismatch')
     quality = json.loads((bundle/'quality_observation.json').read_text())
     directional_core=sensor_core in ('odom-goal-pose','learned-terminal-goal-pose')
+    hardware=json.loads((bundle/'hardware.json').read_text())
+    from neural_navigation.masked_actions import validate_hardware_action
+    if hardware.get('policy_action')!=manifest['action_contract']:
+        raise ValueError('Hardware/manifest action contract mismatch')
+    validate_hardware_action(hardware)
+    if (bundle/'uncertainty_contract.json').exists():
+        from neural_navigation.weak_geometry_uncertainty import contract as uncertainty_contract
+        if 'uncertainty_contract.json' not in manifest['files'] or json.loads((bundle/'uncertainty_contract.json').read_text())!=uncertainty_contract():
+            raise ValueError('Uncertainty contract mismatch')
+    if (bundle/'routing_contract.json').exists():
+        from neural_navigation.routing_contract import contract as routing_contract
+        if 'routing_contract.json' not in manifest['files'] or json.loads((bundle/'routing_contract.json').read_text())!=routing_contract():
+            raise ValueError('Routing acceptance contract mismatch')
     expected_quality=manifest.get('quality_prefix_contract') if directional_core else manifest['observation_contract']
     if quality != expected_quality:
         raise ValueError('Quality feature contract mismatch')
@@ -49,8 +62,10 @@ def inspect_bundle(config_path):
         if (bundle/'localization_contract.json').exists() and (
             'localization_contract.json' not in manifest['files'] or
             json.loads((bundle/'localization_contract.json').read_text()).get('schema') not in
-                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4','odom_anchored_static_support_v5','odom_anchored_static_support_v6')):
+                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4','odom_anchored_static_support_v5','odom_anchored_static_support_v6','fast_static_tracking_v1','fast_static_tracking_native_v1','fast_static_tracking_v2','fast_static_tracking_native_v2','fast_static_tracking_temporal_v1','fast_static_tracking_temporal_native_v1')):
             raise ValueError('Localization contract mismatch')
+        if (bundle/'localization_contract.json').exists() and json.loads((bundle/'localization_contract.json').read_text()).get('schema') in ('fast_static_tracking_native_v1','fast_static_tracking_native_v2','fast_static_tracking_temporal_native_v1') and 'localization_kernel.so' not in manifest['files']:
+            raise ValueError('Missing native localization kernel hash')
     if sensor_core=='learned-terminal-goal-pose':
         if 'docking_contract.json' not in manifest['files']:
             raise ValueError('Missing terminal policy contract hash')

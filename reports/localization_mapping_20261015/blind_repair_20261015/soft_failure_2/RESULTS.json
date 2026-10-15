@@ -1,0 +1,104 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "8a3e74953271ec9873c9fb8f44d0dd6d44fb577b55800a654d3fa38b4a74e376",
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 1.6167547897498031,
+      "frames": 700,
+      "final_xy_error_m": 1.792989473601955,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004998127576982709,
+      "localization_yaw_p95_rad": 0.0011247529861721172,
+      "stop_choices": 647,
+      "only_stop_frames": 260,
+      "stop_reasons": {
+        "None": 94,
+        "laser_braking_footprint": 606
+      },
+      "voluntary_wait_frames": 387,
+      "predictive_constraint_frames": 46,
+      "runtime_ms": {
+        "p95": 102.00932047446246,
+        "p99": 136.5021387359593,
+        "maximum": 156.96099598426372
+      },
+      "variant": "soft_forecast",
+      "trace_sha256": "1b1dfea460dfbb38dde473351a3d7c28cf12b4ab77cdd5fdb7be969674543399"
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 1.635490688257396,
+      "frames": 56,
+      "final_xy_error_m": 3.0665443849641925,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004384243894629746,
+      "localization_yaw_p95_rad": 0.0013054562557613947,
+      "stop_choices": 16,
+      "only_stop_frames": 16,
+      "stop_reasons": {
+        "None": 50,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 15,
+      "runtime_ms": {
+        "p95": 138.91247048741207,
+        "p99": 176.79400564520625,
+        "maximum": 189.75189398042858
+      },
+      "variant": "soft_forecast",
+      "trace_sha256": "5acbd82550f9a189cb56e2e9c32897706a03b96794950c756f5d5900fea4ccea"
+    }
+  ],
+  "resource": {
+    "seconds": 201.61711791105336,
+    "cpu_seconds": 80.663013159,
+    "average_cpu_cores": 0.40008018165692555,
+    "peak_rss_mib": 2068.52734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "original_release_stop_go": {
+      "soft_forecast": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_training_failure": {
+      "soft_forecast": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 0,
+        "timeouts": 1,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

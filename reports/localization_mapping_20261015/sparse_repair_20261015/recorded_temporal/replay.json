@@ -1,0 +1,267 @@
+{
+  "scope": "fixed recorded scan and odometry; no independent pose truth; not closed-loop navigation",
+  "contract": {
+    "schema": "fast_static_tracking_temporal_v1",
+    "calibrated": false,
+    "beams": 60,
+    "iterations": 4,
+    "endpoint_gate_m": 0.18,
+    "angular_gate_rad": 0.02,
+    "maximum_endpoint_gate_m": 0.35,
+    "minimum_hits": 3,
+    "minimum_support_fraction": 0.35,
+    "huber_m": 0.05,
+    "damping": 0.02,
+    "weak_axis_ratio": 0.01,
+    "minimum_eigenvalue": 0.01,
+    "yaw_length_scale_m": 3.0,
+    "maximum_correction_m": 0.12,
+    "maximum_correction_rad": 0.15,
+    "correction_rate_m_s": 0.3,
+    "correction_rate_rad_s": 0.5,
+    "process_std_per_sqrt_s": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "measurement_std_m": 0.06,
+    "covariance_floor": [
+      0.04,
+      0.04,
+      0.03
+    ],
+    "correlation_seconds": 0.5,
+    "supplied_initial_pose_required": true,
+    "global_relocalization": false,
+    "information_reference_hits": 60,
+    "support_history_offsets_s": [
+      -0.4,
+      -0.2,
+      0.0
+    ],
+    "history_tolerance_s": 0.05,
+    "history_current_ray_tolerance_m": 0.1,
+    "history_requires_current_static_hit": true,
+    "history_information_average": true
+  },
+  "frames": 1516,
+  "candidate_accepted_frames": 832,
+  "reasons": {
+    "accepted_static_correction": 717,
+    "insufficient_static_support": 684,
+    "validated_static_prior": 115
+  },
+  "candidate_localizer_ms": {
+    "p50": 3.590391017496586,
+    "p95": 7.344953992287628,
+    "p99": 9.479868764174167,
+    "maximum": 12.722007988486439
+  },
+  "missions": [
+    {
+      "mission": 1,
+      "frames": 147,
+      "recorded_displacement_m": 2.390699790748951,
+      "baseline_replay_displacement_m": 2.3925573291196462,
+      "candidate_displacement_m": 2.432809981999328,
+      "input_odometry_displacement_m": 2.646431752518744,
+      "candidate_map_corrections": 118
+    },
+    {
+      "mission": 2,
+      "frames": 143,
+      "recorded_displacement_m": 1.2976940086355497,
+      "baseline_replay_displacement_m": 1.2975782402683702,
+      "candidate_displacement_m": 1.4144457179102103,
+      "input_odometry_displacement_m": 1.45611711714686,
+      "candidate_map_corrections": 118
+    },
+    {
+      "mission": 3,
+      "frames": 129,
+      "recorded_displacement_m": 2.2625401322426706,
+      "baseline_replay_displacement_m": 2.26196207902866,
+      "candidate_displacement_m": 2.2323243329854163,
+      "input_odometry_displacement_m": 2.2154566208419064,
+      "candidate_map_corrections": 116
+    },
+    {
+      "mission": 4,
+      "frames": 41,
+      "recorded_displacement_m": 0.2078185270101167,
+      "baseline_replay_displacement_m": 0.20911861599976198,
+      "candidate_displacement_m": 0.16175820203866448,
+      "input_odometry_displacement_m": 0.1699832006572877,
+      "candidate_map_corrections": 39
+    },
+    {
+      "mission": 5,
+      "frames": 105,
+      "recorded_displacement_m": 0.6634294371265791,
+      "baseline_replay_displacement_m": 0.6346590328543813,
+      "candidate_displacement_m": 1.1052880804366225,
+      "input_odometry_displacement_m": 1.1202781525010375,
+      "candidate_map_corrections": 62
+    },
+    {
+      "mission": 6,
+      "frames": 26,
+      "recorded_displacement_m": 0.7749635180949583,
+      "baseline_replay_displacement_m": 0.7749633290985484,
+      "candidate_displacement_m": 0.1735176917530835,
+      "input_odometry_displacement_m": 0.17351769175308315,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 7,
+      "frames": 39,
+      "recorded_displacement_m": 1.538602840281685,
+      "baseline_replay_displacement_m": 1.538604466854624,
+      "candidate_displacement_m": 0.24827251884369864,
+      "input_odometry_displacement_m": 0.24827251884369794,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 8,
+      "frames": 28,
+      "recorded_displacement_m": 0.41281542215806355,
+      "baseline_replay_displacement_m": 0.413465768067303,
+      "candidate_displacement_m": 0.006074429702957186,
+      "input_odometry_displacement_m": 0.0060744297029569185,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 9,
+      "frames": 45,
+      "recorded_displacement_m": 1.0373086058768664,
+      "baseline_replay_displacement_m": 1.0382554756956117,
+      "candidate_displacement_m": 0.14861551027774,
+      "input_odometry_displacement_m": 0.14861551027773934,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 10,
+      "frames": 108,
+      "recorded_displacement_m": 1.6416156150541719,
+      "baseline_replay_displacement_m": 1.6486738224436859,
+      "candidate_displacement_m": 0.14183322685721864,
+      "input_odometry_displacement_m": 0.14183322685721714,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 11,
+      "frames": 28,
+      "recorded_displacement_m": 0.7535072650376878,
+      "baseline_replay_displacement_m": 0.7535070803903392,
+      "candidate_displacement_m": 0.263121668348595,
+      "input_odometry_displacement_m": 0.2631216683485948,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 12,
+      "frames": 13,
+      "recorded_displacement_m": 0.24559924376558329,
+      "baseline_replay_displacement_m": 0.2455987452205472,
+      "candidate_displacement_m": 2.8572020552806083e-05,
+      "input_odometry_displacement_m": 2.8572020552626492e-05,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 13,
+      "frames": 27,
+      "recorded_displacement_m": 0.7352804785728445,
+      "baseline_replay_displacement_m": 0.7353105451485163,
+      "candidate_displacement_m": 0.054758163920033326,
+      "input_odometry_displacement_m": 0.054758163920033034,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 14,
+      "frames": 24,
+      "recorded_displacement_m": 0.12458367282594289,
+      "baseline_replay_displacement_m": 0.12458444673225207,
+      "candidate_displacement_m": 0.010889043946793487,
+      "input_odometry_displacement_m": 0.010889043946793589,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 15,
+      "frames": 20,
+      "recorded_displacement_m": 0.6724784195415188,
+      "baseline_replay_displacement_m": 0.6725405576519328,
+      "candidate_displacement_m": 0.0628141891117104,
+      "input_odometry_displacement_m": 0.06281418911171045,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 16,
+      "frames": 3,
+      "recorded_displacement_m": 0.04291244749004441,
+      "baseline_replay_displacement_m": 0.04291213965647893,
+      "candidate_displacement_m": 0.0008945857485304465,
+      "input_odometry_displacement_m": 0.0008945857485303659,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 17,
+      "frames": 94,
+      "recorded_displacement_m": 1.8030027413871832,
+      "baseline_replay_displacement_m": 1.802938217417729,
+      "candidate_displacement_m": 0.44223047642721375,
+      "input_odometry_displacement_m": 0.44223047642721347,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 18,
+      "frames": 38,
+      "recorded_displacement_m": 1.0016652279290297,
+      "baseline_replay_displacement_m": 1.0016653982195545,
+      "candidate_displacement_m": 0.16389818148210925,
+      "input_odometry_displacement_m": 0.16389818148210925,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 19,
+      "frames": 41,
+      "recorded_displacement_m": 1.3466243069965176,
+      "baseline_replay_displacement_m": 1.3443924798843039,
+      "candidate_displacement_m": 0.024847638312105475,
+      "input_odometry_displacement_m": 0.024847638312106592,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 20,
+      "frames": 17,
+      "recorded_displacement_m": 0.5085465451768381,
+      "baseline_replay_displacement_m": 0.5085466650207516,
+      "candidate_displacement_m": 0.06415667987568886,
+      "input_odometry_displacement_m": 0.06415667987568882,
+      "candidate_map_corrections": 0
+    },
+    {
+      "mission": 21,
+      "frames": 278,
+      "recorded_displacement_m": 3.357216485756679,
+      "baseline_replay_displacement_m": 3.356858749455194,
+      "candidate_displacement_m": 3.371707832478238,
+      "input_odometry_displacement_m": 3.457547524280524,
+      "candidate_map_corrections": 157
+    },
+    {
+      "mission": 22,
+      "frames": 122,
+      "recorded_displacement_m": 1.4702265320401218,
+      "baseline_replay_displacement_m": 1.4706981155654957,
+      "candidate_displacement_m": 1.7034213533347147,
+      "input_odometry_displacement_m": 1.640654195305527,
+      "candidate_map_corrections": 107
+    }
+  ],
+  "resource": {
+    "seconds": 422.36893005197635,
+    "cpu_seconds": 21.146389443,
+    "average_cpu_cores": 0.05006615766078661,
+    "peak_rss_mib": 535.93359375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

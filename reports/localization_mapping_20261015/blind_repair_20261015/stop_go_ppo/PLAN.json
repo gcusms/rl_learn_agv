@@ -1,0 +1,18 @@
+{
+  "bundle": "/home/ubuntu/rl_learn/.real-adaptation-20261014/models/localization_mapping_20261015/contour_mask_candidate/portable",
+  "bundle_manifest_sha256": "46a676957f8fdaf111f5b31433853d513323a4929c361dc2e6a7683271e3f004",
+  "checkpoint": "/home/ubuntu/rl_learn/.real-adaptation-20261014/models/quality_recovery_20261014/policy_2000.zip",
+  "checkpoint_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "cases_sha256": "e7acdf9f7a95df61bb5d75948fb1ebcc87c758054afea82fd35ce8e61f99fe42",
+  "training_cases_sha256": "6232b2bbbde488f46536f07bb6771c4c57019eca31024c10c38e069fdf8f8c79",
+  "recorded_episodes_per_cycle": 3,
+  "resource_policy": {
+    "soft_cpu_cores": 0.4,
+    "systemd_cpu_quota_percent": 50,
+    "systemd_memory_high_gib": 3,
+    "systemd_memory_max_gib": 4,
+    "threads": 1
+  },
+  "evaluation_scope": "paired reused development/regression cases, not unseen-map generalization",
+  "trainable": "early sensor-gated residual and critic; normal base, localizer, router and directional approach frozen"
+}

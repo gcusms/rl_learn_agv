@@ -1,0 +1,270 @@
+[
+  {
+    "id": "motion_profile_002",
+    "category": "reversal",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100002,
+    "start": [
+      7.875,
+      6.525,
+      0.5829383550326908
+    ],
+    "goal": [
+      1.175,
+      6.075
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.15477787921727554,
+    "odom_scale": 1.0,
+    "reverse_after_event_s": 3.499490583194487,
+    "pilot_category": "original_release_reversal",
+    "max_steps": 700
+  },
+  {
+    "id": "motion_profile_000",
+    "category": "reversal",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100000,
+    "start": [
+      4.025,
+      6.325,
+      -0.1976957613730801
+    ],
+    "goal": [
+      1.0250000000000001,
+      6.4750000000000005
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.15980235837435755,
+    "odom_scale": 1.0,
+    "reverse_after_event_s": 3.2303119923550105,
+    "pilot_category": "original_release_reversal",
+    "max_steps": 700
+  },
+  {
+    "id": "train_failure_w11_e7",
+    "category": "training_failure",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 1962350169,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09295138997376881,
+    "hold_s": 3.4079953972433437,
+    "pilot_category": "original_release_training_failure",
+    "max_steps": 700
+  },
+  {
+    "id": "motion_profile_015",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100015,
+    "start": [
+      8.325000000000001,
+      1.175,
+      1.6233780945997562
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.0960091377313955,
+    "odom_scale": 1.0,
+    "actor_pause_after_event_s": [
+      [
+        2.0,
+        4.0
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "original_release_stop_go",
+    "max_steps": 700
+  },
+  {
+    "id": "independent_dynamic_000",
+    "category": "dynamic_independent",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 88000,
+    "start": [
+      6.675000000000001,
+      0.875,
+      -1.7310662652092546
+    ],
+    "goal": [
+      8.475,
+      6.875
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.14387713498867125,
+    "hold_s": 3.264840754820615,
+    "odom_scale": 1.0,
+    "pilot_category": "original_release_dynamic_independent",
+    "max_steps": 700
+  },
+  {
+    "id": "independent_dynamic_001",
+    "category": "dynamic_independent",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 88001,
+    "start": [
+      3.875,
+      1.075,
+      0.006250673522645744
+    ],
+    "goal": [
+      1.5750000000000002,
+      3.225
+    ],
+    "obstacle": "sudden_block",
+    "obstacle_speed_m_s": 0.12647418228857432,
+    "hold_s": 2.9591756979299406,
+    "odom_scale": 1.0,
+    "pilot_category": "original_release_dynamic_independent",
+    "max_steps": 700
+  },
+  {
+    "id": "localization_nav_00",
+    "pilot_category": "boundary_alignment",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_00",
+    "seed": 116010,
+    "start": [
+      6.325,
+      5.925000000000001,
+      -2.4959996746185684
+    ],
+    "goal": [
+      6.325,
+      5.925000000000001,
+      -2.4959996746185684
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "sensor_max_range_m": 10.0
+  },
+  {
+    "id": "localization_nav_05",
+    "pilot_category": "boundary_alignment",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_01",
+    "seed": 116015,
+    "start": [
+      4.775,
+      6.275,
+      0.8440693116527509
+    ],
+    "goal": [
+      4.775,
+      6.275,
+      0.9990693116527511
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "sensor_max_range_m": 10.0
+  },
+  {
+    "id": "localization_nav_12",
+    "pilot_category": "boundary_alignment",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_00",
+    "seed": 116022,
+    "start": [
+      1.175,
+      2.6750000000000003,
+      -1.120328134550304
+    ],
+    "goal": [
+      1.175,
+      2.6750000000000003,
+      -1.620328134550304
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "initial_prior_offset": [
+      0.06,
+      -0.04,
+      0.04
+    ],
+    "sensor_max_range_m": 10.0
+  },
+  {
+    "id": "localization_nav_17",
+    "pilot_category": "approach_and_stop",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_01",
+    "seed": 116027,
+    "start": [
+      8.575000000000001,
+      1.925,
+      -2.9756814400476794
+    ],
+    "goal": [
+      8.214997241092885,
+      1.864717363736459,
+      -2.8756814400476793
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "sensor_max_range_m": 10.0
+  },
+  {
+    "id": "localization_nav_24",
+    "pilot_category": "approach_and_stop",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_00",
+    "seed": 116034,
+    "start": [
+      1.175,
+      6.575,
+      -2.5330547273487762
+    ],
+    "goal": [
+      0.8675714566533719,
+      6.360800759911104,
+      -2.703054727348776
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "sensor_max_range_m": 10.0
+  },
+  {
+    "id": "localization_nav_31",
+    "pilot_category": "approach_and_stop",
+    "category": "static",
+    "scene": "assets/navigation_stage2_dataset/validation_01",
+    "seed": 116041,
+    "start": [
+      4.125,
+      6.525,
+      -0.7499611345159547
+    ],
+    "goal": [
+      4.583656305353834,
+      6.097750704893409,
+      2.3916315190738384
+    ],
+    "odom_scale": 1.0,
+    "max_steps": 150,
+    "dropout_windows": [
+      [
+        1.0,
+        1.4
+      ]
+    ],
+    "sensor_max_range_m": 10.0
+  }
+]

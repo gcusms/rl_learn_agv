@@ -1,0 +1,47 @@
+{
+  "completed": false,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "8c48dccda27fd9ffe4dbc8df7f19f9f061f6a085e39808fafe2819ed1a9432fe",
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 16.40000000000102,
+      "travel_m": 2.2071609832167507,
+      "frames": 82,
+      "final_xy_error_m": 1.9142816066948358,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00337582660447021,
+      "localization_yaw_p95_rad": 0.0011086461454599575,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 82
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 117.52997331204826,
+        "p99": 132.00733565317924,
+        "maximum": 158.51973404642195
+      },
+      "variant": "temporal_ppo_2000",
+      "trace_sha256": "1de08ace6fa9369b4f69b4ccba30a9886a2e16832b220a99fa482ec8cab4b6ab"
+    }
+  ],
+  "resource": {
+    "seconds": 39.25285059196176,
+    "cpu_seconds": 13.758746259,
+    "average_cpu_cores": 0.3505158492060582,
+    "peak_rss_mib": 1645.75390625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

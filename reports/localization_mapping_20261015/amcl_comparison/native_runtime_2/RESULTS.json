@@ -1,0 +1,101 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "08b23e8a843be7f964d3a6109771574f94f00241d6093d1c92b0abda7a27859b",
+  "rows": [
+    {
+      "case_id": "localization_nav_12",
+      "category": "boundary_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.9999999999999793,
+      "travel_m": 0.0,
+      "frames": 11,
+      "final_xy_error_m": 0.02672626905918131,
+      "final_yaw_error_rad": 0.012685399605454784,
+      "localization_xy_p95_m": 0.005476245117421211,
+      "localization_yaw_p95_rad": 0.0026764407999306794,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 10,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 122.806909494102,
+        "p99": 143.90752511098984,
+        "maximum": 149.18267901521176
+      },
+      "variant": "fast_native",
+      "trace_sha256": "d858c0e7f70e8b2f80676b472a3465166b0db14ad2f8b946294aec208c8abe04"
+    },
+    {
+      "case_id": "localization_nav_31",
+      "category": "approach_and_stop",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 0.5738979954505263,
+      "frames": 57,
+      "final_xy_error_m": 0.05361096972390381,
+      "final_yaw_error_rad": 0.0031409660656436245,
+      "localization_xy_p95_m": 0.014446924730416278,
+      "localization_yaw_p95_rad": 0.002260578360975973,
+      "stop_choices": 8,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 52,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "runtime_ms": {
+        "p95": 89.133116370067,
+        "p99": 91.60683147842064,
+        "maximum": 92.04200300155208
+      },
+      "variant": "fast_native",
+      "trace_sha256": "f95993c39cc022e4e4d074bb540a9188a1b2c8e22cbca50fb35b22e170ddd829"
+    }
+  ],
+  "resource": {
+    "seconds": 60.872764833969995,
+    "cpu_seconds": 12.234526289000001,
+    "average_cpu_cores": 0.20098522421923137,
+    "peak_rss_mib": 2263.00390625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "approach_and_stop": {
+      "fast_native": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "boundary_alignment": {
+      "fast_native": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

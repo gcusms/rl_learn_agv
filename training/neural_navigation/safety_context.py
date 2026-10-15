@@ -77,6 +77,10 @@ class SafetyContext:
         # All probes see the same sensor frame. Transform/clear the copied
         # memory once, rather than repeating that work for each command.
         # The live guard and its reverse timer remain untouched.
+        # Prepare once on the live frame; cloned probes and actual execution
+        # reuse exactly this cache, including tracking history.
+        if getattr(guard,'predictive_constraint',None) is not None:
+            guard.predictive_constraint.prepare(core)
         snapshot = copy.deepcopy(guard)
         if snapshot.memory is not None:
             points, uncertainty = snapshot.memory.update(core)

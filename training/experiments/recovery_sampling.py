@@ -4,22 +4,32 @@ from experiments.fixed_training_replay import reset_training_episode
 from experiments.train_masked_navigation import Progress
 import json
 import numpy as np
+import gymnasium as gym
 
 
 class ScheduledRecoveryCurriculum(FocusedMaskedCurriculum):
-    def __init__(self,*args,recorded_cases=(),**kwargs):
+    def __init__(self,*args,recorded_cases=(),recorded_episodes_per_cycle=1,**kwargs):
         if not recorded_cases:raise ValueError('Recorded training cases required')
+        if recorded_episodes_per_cycle not in (1,3):raise ValueError('Use one-in-two or three-in-four recorded episodes')
+        self.recorded_episodes_per_cycle=recorded_episodes_per_cycle
+        self.recorded_case_index=0
         self.recovery_reset_index=0;self.current_recovery_episode=False
         kwargs['replay_probability']=0.
         super().__init__(*args,recorded_cases=recorded_cases,**kwargs)
 
     def reset(self,seed=None,options=None):
         if seed is not None:
-            self.recovery_reset_index=0;self.replay_rng=np.random.default_rng(seed)
-        focused=not options and self.recovery_reset_index%2==0
+            self.recovery_reset_index=0;self.recorded_case_index=0;self.replay_rng=np.random.default_rng(seed)
+            gym.Env.reset(self,seed=seed)
+        focused=not options and self.recovery_reset_index%(self.recorded_episodes_per_cycle+1)<self.recorded_episodes_per_cycle
         if focused:
-            case=self.recorded_cases[(self.recovery_reset_index//2)%len(self.recorded_cases)]
+            case=self.recorded_cases[self.recorded_case_index%len(self.recorded_cases)]
+            self.recorded_case_index+=1
+            # Replaying an exact simulator seed must not rewind the curriculum
+            # generator and repeat the same general task after every replay.
+            curriculum_rng=self.np_random
             obs,info=reset_training_episode(self,case)
+            self.np_random=curriculum_rng
         else:obs,info=super().reset(seed=seed,options=options)
         self.recovery_reset_index+=1;self.current_recovery_episode=focused
         return obs,dict(info,focused_training_replay=focused)

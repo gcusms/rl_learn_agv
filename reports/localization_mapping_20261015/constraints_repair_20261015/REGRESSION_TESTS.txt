@@ -1,0 +1,213 @@
+test_duplicate_scan_cannot_repeat_information_or_correction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_missing_scan_grows_uncertainty_and_keeps_lateral_feedback (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_opt_in_core_does_not_require_neural_localizer_checkpoint (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_reset_clears_history (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_runtime_rejects_unhashed_optional_native_component (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_sparse_contract_does_not_force_fit_or_keep_stale_geometry_rank (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_sparse_wall_corrects_only_observed_direction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_history_compensates_measured_lateral_and_yaw_motion (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_history_rejects_current_free_space_contradiction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_support_needs_current_ray_and_physical_history (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_unknown_endpoint_is_not_static_evidence (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_unmapped_returns_do_not_drag_pose (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_wall_corrects_normal_but_not_tangent (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_blind_reverse_preserves_only_collision_checked_model_rotation (training.test_navigation_runtime.RuntimeTests) ... ok
+test_braking_footprint_and_blind_reverse_stop (training.test_navigation_runtime.RuntimeTests) ... ok
+test_executed_action_history_records_emergency_stop (training.test_navigation_runtime.RuntimeTests) ... ok
+test_stale_or_unavailable_scan_stops (training.test_navigation_runtime.RuntimeTests) ... ok
+test_balanced_alignment_has_real_exposure_and_legacy_objective (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_duplicate_timestamps_do_not_accumulate_correction (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_expired_candidate_does_not_become_executed_action_history (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_goal_yaw_wrap_settling_and_motion (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_history_physical_offsets_match_at_5_and_10_hz (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_legacy_actor_rejects_heading_task (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_migration_masks_export_runtime_and_optimizer (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_missing_uncertainty_depends_on_time_not_frame_count (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_runtime_does_not_override_actor_rotation_at_wrong_heading (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_single_wall_validates_pose_without_inventing_along_wall_motion (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_static_support_can_still_correct_a_small_initial_offset (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_turning_odometry_rotates_local_translation_into_map (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_unmapped_foreground_cannot_pull_pose_and_scan_is_preserved (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_wrong_heading_is_not_arrival_and_reset_clears_settling (training.test_real_adaptation.RealAdaptationTests) ... ok
+test_held_and_unknown_velocity_flags_remain_explicit (training.test_quality_prediction_context.QualityContextTests) ... ok
+test_prefix_unchanged_and_unknown_pose_differs_from_empty_supported (training.test_quality_prediction_context.QualityContextTests) ... ok
+test_reference_protection_does_not_anchor_unknown_quality (training.test_quality_prediction_context.QualityContextTests) ... ok
+test_warm_start_preserves_actor_critic_and_adam_with_zero_new_columns (training.test_quality_prediction_context.QualityContextTests) ... ok
+test_export_runtime_and_stale_scan_use_same_masks (training.test_masked_navigation.MaskedNavigationTests) ... ERROR
+test_focused_training_reset_and_bounded_export_share_native_masks (training.test_masked_navigation.MaskedNavigationTests) ... ERROR
+test_gaussian_density_migration_and_portable_masked_inference (training.test_masked_navigation.MaskedNavigationTests) ... ERROR
+test_native_ppo_rollouts_store_valid_executed_choices (training.test_masked_navigation.MaskedNavigationTests) ... ERROR
+test_unknown_retains_only_wait_and_risk_does_not_forbid_legal_wait (training.test_masked_navigation.MaskedNavigationTests) ... ok
+test_budget_rollback_restores_policy_and_optimizer (training.test_anchored_masked_ppo.AnchoredMaskedTests) ... ok
+test_reference_uses_current_masks_and_has_no_gradient (training.test_anchored_masked_ppo.AnchoredMaskedTests) ... ok
+test_wait_blockage_and_supported_motion_are_not_anchored (training.test_anchored_masked_ppo.AnchoredMaskedTests) ... ok
+test_zero_strength_matches_native_training_and_export_has_no_reference (training.test_anchored_masked_ppo.AnchoredMaskedTests) ... ok
+test_clearance_reward_measures_body_not_sensor_and_ignores_unknown (training.test_guarded_curriculum.GuardedCurriculumTests) ... ok
+test_contact_remains_failure_even_if_legacy_environment_reports_success (training.test_guarded_curriculum.GuardedCurriculumTests) ... ERROR
+test_training_uses_identical_deployed_core_and_executed_action_history (training.test_guarded_curriculum.GuardedCurriculumTests) ... ERROR
+test_adapter_accepts_terminal_contract_and_rejects_wrong_runtime_or_gate (training.experiments.test_docking_navigation.DockingTests) ... ERROR
+test_heading_counterfactuals_preserve_all_sensor_fields_and_groups (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_learning_changes_terminal_branch_and_preserves_navigation (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_portable_has_identical_deterministic_choices (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_reference_uses_heading_sign_and_keeps_stop_legal (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_rollout_and_update_use_identical_masked_likelihood (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_staged_gate_keeps_approach_with_navigation_and_export_matches (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_stationary_and_moving_away_cannot_farm_progress (training.experiments.test_docking_navigation.DockingTests) ... ok
+test_turn_response_is_opt_in_and_keeps_position_gate (training.experiments.test_docking_navigation.DockingTests) ... ok
+
+======================================================================
+ERROR: test_export_runtime_and_stale_scan_use_same_masks (training.test_masked_navigation.MaskedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_masked_navigation.py", line 113, in test_export_runtime_and_stale_scan_use_same_masks
+    model=warm_start(self.source/'policy.zip')
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/experiments/masked_navigation.py", line 88, in warm_start
+    old=PPO.load(checkpoint,device='cpu')
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py", line 681, in load
+    data, params, pytorch_variables = load_from_zip_file(
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 403, in load_from_zip_file
+    file = open_path(load_path, "r", verbose=verbose, suffix="zip")
+  File "/usr/lib/python3.10/functools.py", line 889, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 291, in open_path_pathlib
+    return open_path_pathlib(path, mode, verbose, suffix)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 272, in open_path_pathlib
+    raise error
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 264, in open_path_pathlib
+    return open_path(path.open("rb"), mode, verbose, suffix)
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/safety_context_20261011/recovery_probes_v3_16000/candidate/policy.zip.zip'
+
+======================================================================
+ERROR: test_focused_training_reset_and_bounded_export_share_native_masks (training.test_masked_navigation.MaskedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_masked_navigation.py", line 24, in test_focused_training_reset_and_bounded_export_share_native_masks
+    records=[json.loads(line) for line in (ROOT/'runs/safety_context_20261011/plain_recovery_control_12000/candidate/episodes.jsonl').read_text().splitlines()]
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/safety_context_20261011/plain_recovery_control_12000/candidate/episodes.jsonl'
+
+======================================================================
+ERROR: test_gaussian_density_migration_and_portable_masked_inference (training.test_masked_navigation.MaskedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_masked_navigation.py", line 61, in test_gaussian_density_migration_and_portable_masked_inference
+    old=PPO.load(self.source/'policy.zip',device='cpu')
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/base_class.py", line 681, in load
+    data, params, pytorch_variables = load_from_zip_file(
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 403, in load_from_zip_file
+    file = open_path(load_path, "r", verbose=verbose, suffix="zip")
+  File "/usr/lib/python3.10/functools.py", line 889, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 291, in open_path_pathlib
+    return open_path_pathlib(path, mode, verbose, suffix)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 272, in open_path_pathlib
+    raise error
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/stable_baselines3/common/save_util.py", line 264, in open_path_pathlib
+    return open_path(path.open("rb"), mode, verbose, suffix)
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/safety_context_20261011/recovery_probes_v3_16000/candidate/policy.zip.zip'
+
+======================================================================
+ERROR: test_native_ppo_rollouts_store_valid_executed_choices (training.test_masked_navigation.MaskedNavigationTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_masked_navigation.py", line 88, in test_native_ppo_rollouts_store_valid_executed_choices
+    for name in ('hardware.json','localizer.pt','router.pt'):shutil.copy2(self.source/name,components/name)
+  File "/usr/lib/python3.10/shutil.py", line 434, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/lib/python3.10/shutil.py", line 254, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/safety_context_20261011/recovery_probes_v3_16000/candidate/hardware.json'
+
+======================================================================
+ERROR: test_contact_remains_failure_even_if_legacy_environment_reports_success (training.test_guarded_curriculum.GuardedCurriculumTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_guarded_curriculum.py", line 43, in test_contact_remains_failure_even_if_legacy_environment_reports_success
+    observation,_=self.env.reset(seed=90001);e=self.env.active
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/guarded_curriculum.py", line 44, in reset
+    _,info=super().reset(seed=seed,options=options);e=self.active
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/curriculum.py", line 68, in reset
+    self.active=StressNavigationEnv(case=case,components=self.components,scene_dir=scene,route_mode=self.route_mode,max_steps=self.max_steps)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/stress_env.py", line 34, in __init__
+    super().__init__(**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/room_env.py", line 22, in __init__
+    super().__init__(**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/env.py", line 31, in __init__
+    super().__init__(localizer='learned_attention',localizer_factory=lambda m,l:LearnedLocalizer(m,l,components/'localizer.pt'),**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/navrl/physical_env.py", line 11, in __init__
+    super().__init__(scene_file='physical_scene.xml',**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/navrl/env.py", line 38, in __init__
+    if localizer_factory is not None:self.localizer=localizer_factory(self.map,self.lidar)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/env.py", line 31, in <lambda>
+    super().__init__(localizer='learned_attention',localizer_factory=lambda m,l:LearnedLocalizer(m,l,components/'localizer.pt'),**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/models.py", line 86, in __init__
+    checkpoint=torch.load(checkpoint,map_location='cpu',weights_only=True)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 1484, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/optimization_stage3_20261011/portable_forecast_directional/localizer.pt'
+
+======================================================================
+ERROR: test_training_uses_identical_deployed_core_and_executed_action_history (training.test_guarded_curriculum.GuardedCurriculumTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/test_guarded_curriculum.py", line 28, in test_training_uses_identical_deployed_core_and_executed_action_history
+    observation,_=self.env.reset(seed=90001);e=self.env.active;source=json.loads(self.env.training_case_json)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/guarded_curriculum.py", line 44, in reset
+    _,info=super().reset(seed=seed,options=options);e=self.active
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/curriculum.py", line 68, in reset
+    self.active=StressNavigationEnv(case=case,components=self.components,scene_dir=scene,route_mode=self.route_mode,max_steps=self.max_steps)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/stress_env.py", line 34, in __init__
+    super().__init__(**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/room_env.py", line 22, in __init__
+    super().__init__(**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/env.py", line 31, in __init__
+    super().__init__(localizer='learned_attention',localizer_factory=lambda m,l:LearnedLocalizer(m,l,components/'localizer.pt'),**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/navrl/physical_env.py", line 11, in __init__
+    super().__init__(scene_file='physical_scene.xml',**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/navrl/env.py", line 38, in __init__
+    if localizer_factory is not None:self.localizer=localizer_factory(self.map,self.lidar)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/env.py", line 31, in <lambda>
+    super().__init__(localizer='learned_attention',localizer_factory=lambda m,l:LearnedLocalizer(m,l,components/'localizer.pt'),**kwargs)
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/neural_navigation/models.py", line 86, in __init__
+    checkpoint=torch.load(checkpoint,map_location='cpu',weights_only=True)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 1484, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ubuntu/rl_learn/.real-adaptation-20261014/training/runs/optimization_stage3_20261011/portable_forecast_directional/localizer.pt'
+
+======================================================================
+ERROR: test_adapter_accepts_terminal_contract_and_rejects_wrong_runtime_or_gate (training.experiments.test_docking_navigation.DockingTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/training/experiments/test_docking_navigation.py", line 94, in test_adapter_accepts_terminal_contract_and_rejects_wrong_runtime_or_gate
+    self.assertFalse(module.inspect_bundle(path)['deployment_approved'])
+  File "/home/ubuntu/rl_learn/.real-adaptation-20261014/deployment/ros2_recording_adapter/model_bundle.py", line 39, in inspect_bundle
+    hardware=json.loads((bundle/'hardware.json').read_text())
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+----------------------------------------------------------------------
+Ran 56 tests in 220.918s
+
+FAILED (errors=7)
+
+FOLLOW-UP: Adapter fixture hardware.json changed from literal fixture text to a valid action contract; the single adapter test passed on rerun. Six remaining errors are unavailable archived model/log fixtures, not passing tests. Final: 50 passed, 6 environment-blocked; additional new constraint/uncertainty suite: 10 passed.

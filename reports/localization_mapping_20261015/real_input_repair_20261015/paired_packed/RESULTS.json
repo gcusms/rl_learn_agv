@@ -1,0 +1,2809 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "scope": "fixed sensor replay; no closed-loop navigation, no real absolute pose truth",
+  "baseline_contract": {
+    "schema": "fast_static_tracking_temporal_v1",
+    "calibrated": false,
+    "beams": 60,
+    "iterations": 4,
+    "endpoint_gate_m": 0.18,
+    "angular_gate_rad": 0.02,
+    "maximum_endpoint_gate_m": 0.35,
+    "minimum_hits": 3,
+    "minimum_support_fraction": 0.35,
+    "huber_m": 0.05,
+    "damping": 0.02,
+    "weak_axis_ratio": 0.01,
+    "minimum_eigenvalue": 0.01,
+    "yaw_length_scale_m": 3.0,
+    "maximum_correction_m": 0.12,
+    "maximum_correction_rad": 0.15,
+    "correction_rate_m_s": 0.3,
+    "correction_rate_rad_s": 0.5,
+    "process_std_per_sqrt_s": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "measurement_std_m": 0.06,
+    "covariance_floor": [
+      0.04,
+      0.04,
+      0.03
+    ],
+    "correlation_seconds": 0.5,
+    "supplied_initial_pose_required": true,
+    "global_relocalization": false,
+    "information_reference_hits": 60,
+    "support_history_offsets_s": [
+      -0.4,
+      -0.2,
+      0.0
+    ],
+    "history_tolerance_s": 0.05,
+    "history_current_ray_tolerance_m": 0.1,
+    "history_requires_current_static_hit": true,
+    "history_information_average": true
+  },
+  "candidate_contract": {
+    "schema": "ray_consistent_static_tracking_v1",
+    "experimental": true,
+    "tracking": {
+      "schema": "fast_static_tracking_temporal_v1",
+      "calibrated": false,
+      "beams": 60,
+      "iterations": 4,
+      "endpoint_gate_m": 0.18,
+      "angular_gate_rad": 0.02,
+      "maximum_endpoint_gate_m": 0.35,
+      "minimum_hits": 3,
+      "minimum_support_fraction": 0.35,
+      "huber_m": 0.05,
+      "damping": 0.02,
+      "weak_axis_ratio": 0.01,
+      "minimum_eigenvalue": 0.01,
+      "yaw_length_scale_m": 3.0,
+      "maximum_correction_m": 0.12,
+      "maximum_correction_rad": 0.15,
+      "correction_rate_m_s": 0.3,
+      "correction_rate_rad_s": 0.5,
+      "process_std_per_sqrt_s": [
+        0.012,
+        0.012,
+        0.012
+      ],
+      "measurement_std_m": 0.06,
+      "covariance_floor": [
+        0.04,
+        0.04,
+        0.03
+      ],
+      "correlation_seconds": 0.5,
+      "supplied_initial_pose_required": true,
+      "global_relocalization": false,
+      "information_reference_hits": 60,
+      "support_history_offsets_s": [
+        -0.4,
+        -0.2,
+        0.0
+      ],
+      "history_tolerance_s": 0.05,
+      "history_current_ray_tolerance_m": 0.1,
+      "history_requires_current_static_hit": true,
+      "history_information_average": true
+    },
+    "sensor_max_range_m": 10.0,
+    "ray_endpoint_allowance_m": 0.18,
+    "maximum_new_contradicted_rays": 2,
+    "maximum_new_contradiction_fraction": 0.05,
+    "thresholds_calibrated": false,
+    "raw_obstacle_scan_unchanged": true,
+    "map_unchanged": true,
+    "supplied_initial_pose_required": true,
+    "global_relocalization": false
+  },
+  "motion_contract": {
+    "schema": "measured_wheel_gyro_odometry_v1",
+    "experimental": true,
+    "wheel_max_age_s": 0.15,
+    "imu_max_age_s": 0.05,
+    "output_max_age_s": 0.06,
+    "maximum_interval_s": 0.1,
+    "future_tolerance_s": 1e-06,
+    "maximum_linear_m_s": 0.6,
+    "maximum_yaw_rad_s": 2.0,
+    "wheel_linear_variance": 0.0025,
+    "wheel_yaw_variance": 0.04,
+    "gyro_variance": 0.01,
+    "rest_linear_m_s": 0.005,
+    "rest_yaw_rad_s": 0.01,
+    "rest_gyro_rad_s": 0.03,
+    "rest_span_s": 2.0,
+    "rest_gyro_std_rad_s": 0.01,
+    "bias_time_constant_s": 20.0,
+    "maximum_bias_rad_s": 0.02,
+    "gap_std_per_sqrt_s": [
+      0.1,
+      0.1,
+      0.1
+    ],
+    "measured_lateral_velocity_retained": true,
+    "command_velocity_used": false,
+    "repeated_pose_and_twist_fused": false,
+    "uncertainty_calibrated": false,
+    "input_frame": "base_footprint",
+    "timestamps": "one acquisition clock domain"
+  },
+  "source_sha256": {
+    "experiments/evaluate_real_input_repair.py": "ff9d7cb06a370172f84464e505c72e9e07e89a4c9ceb4189d5cc3a10844fef0f",
+    "neural_navigation/fast_static_localizer.py": "e8ece60d7fff3c92ea0cbefa8970556aeab175d1e6ca435b705e6389e569a8b6",
+    "neural_navigation/verified_static_localizer.py": "6dc4f51248cc116c1251c473fb1daaa3e3f34ee801f42ce9d038a190f3b640d1",
+    "neural_navigation/measured_odometry.py": "d667ca7fc0e35cc6f14efb0624afa37238e70817d8aebfb2e82563d31ffd61a5"
+  },
+  "record_sha256": "fcecb8e03507dca38ea712456283853bf809dab8f9c572985c58daaeb84e7606",
+  "hardware_sha256": "fc70333f1813a1844572ba7b5ecb67adc5ede3f5437089019e5da2b96cf7f48b",
+  "simulation_cases": [
+    {
+      "id": "short_00",
+      "split": "development",
+      "mode": "normal_feedback",
+      "cache_sha256": "4b16827b30f564643c54d7bc4598405a3116e5affbb1ffa37528c9fd112b3f93",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.002374632013963057,
+          "xy_p95_m": 0.004086965344446136,
+          "final_xy_m": 0.002318546197631496,
+          "yaw_p95_rad": 0.0009440778969489472,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.333711656329573,
+          "update_p95_ms": 7.9171230318024755,
+          "update_p99_ms": 8.13507562270388,
+          "update_max_ms": 8.296501997392625,
+          "cpu_mean_ms": 6.326359491803277,
+          "cpu_p95_ms": 7.910282999999962,
+          "reasons": {
+            "accepted_static_correction": 58,
+            "validated_static_prior": 3
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002374724699085266,
+          "xy_p95_m": 0.004086965344433473,
+          "final_xy_m": 0.002318546197631496,
+          "yaw_p95_rad": 0.0009440778972455988,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.470995480377898,
+          "update_p95_ms": 15.044414030853659,
+          "update_p99_ms": 15.099429828114808,
+          "update_max_ms": 15.103915997315198,
+          "cpu_mean_ms": 13.461604918032787,
+          "cpu_p95_ms": 15.036569999999916,
+          "reasons": {
+            "accepted_static_correction": 58,
+            "validated_static_prior": 3
+          },
+          "excluded_static_hits_total": 1
+        }
+      }
+    },
+    {
+      "id": "short_01",
+      "split": "development",
+      "mode": "small_initial_offset",
+      "cache_sha256": "a0d53fbf7672770a0c9e69efd88793dfcde0727cce7828f7b241d366a5be8d42",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0025611937239293694,
+          "xy_p95_m": 0.00450360890027941,
+          "final_xy_m": 0.000435130551229174,
+          "yaw_p95_rad": 0.0010990745092969156,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.686362313854768,
+          "update_p95_ms": 8.148012042511255,
+          "update_p99_ms": 8.502857806161044,
+          "update_max_ms": 8.578021021094173,
+          "cpu_mean_ms": 6.679002442622966,
+          "cpu_p95_ms": 8.140060000000116,
+          "reasons": {
+            "accepted_static_correction": 58,
+            "validated_static_prior": 3
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0025634624320721505,
+          "xy_p95_m": 0.004503608900278712,
+          "final_xy_m": 0.000435130551229174,
+          "yaw_p95_rad": 0.00114626288090669,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.20703875401714,
+          "update_p95_ms": 14.768866007216275,
+          "update_p99_ms": 15.002116584219038,
+          "update_max_ms": 15.066339983604848,
+          "cpu_mean_ms": 12.198206967213139,
+          "cpu_p95_ms": 14.76064999999993,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 6
+        }
+      }
+    },
+    {
+      "id": "short_02",
+      "split": "development",
+      "mode": "unmapped_obstacle",
+      "cache_sha256": "7e72700d084815ce160aa8413a59ba626a5acf8ae8a0bcc959f3b5c8e686c12a",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0020172919247647843,
+          "xy_p95_m": 0.003861788797272391,
+          "final_xy_m": 0.002572458861487428,
+          "yaw_p95_rad": 0.0017416882055276695,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.401320129297063,
+          "update_p95_ms": 7.875041977968067,
+          "update_p99_ms": 8.015586179681122,
+          "update_max_ms": 8.02479195408523,
+          "cpu_mean_ms": 6.393812852459031,
+          "cpu_p95_ms": 7.867391000000001,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0020172919247647843,
+          "xy_p95_m": 0.003861788797272391,
+          "final_xy_m": 0.002572458861487428,
+          "yaw_p95_rad": 0.0017416882055276695,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 11.919782823333364,
+          "update_p95_ms": 15.338436991441995,
+          "update_p99_ms": 16.919264825992283,
+          "update_max_ms": 18.450003990437835,
+          "cpu_mean_ms": 11.911362688524589,
+          "cpu_p95_ms": 15.329645000000003,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        }
+      }
+    },
+    {
+      "id": "short_03",
+      "split": "development",
+      "mode": "missing_sector",
+      "cache_sha256": "dbbecf3a6c95a01607fcfc4f21e359fc0a1262c3e88fb33516061494a7cb2021",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.002565462461028324,
+          "xy_p95_m": 0.004112196923226113,
+          "final_xy_m": 0.0015134496926431542,
+          "yaw_p95_rad": 0.0017282975096213349,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.366776067717764,
+          "update_p95_ms": 8.026920957490802,
+          "update_p99_ms": 8.249721035826951,
+          "update_max_ms": 8.268147008493543,
+          "cpu_mean_ms": 6.359355114754142,
+          "cpu_p95_ms": 8.020032999999316,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 4,
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002565462461028324,
+          "xy_p95_m": 0.004112196923226113,
+          "final_xy_m": 0.0015134496926431542,
+          "yaw_p95_rad": 0.0017282975096213349,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 10.786439765427932,
+          "update_p95_ms": 12.821706011891365,
+          "update_p99_ms": 13.610909378621727,
+          "update_max_ms": 13.641371973790228,
+          "cpu_mean_ms": 10.778629672131094,
+          "cpu_p95_ms": 12.814436000000207,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 4,
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 0
+        }
+      }
+    },
+    {
+      "id": "short_04",
+      "split": "development",
+      "mode": "command_odometry",
+      "cache_sha256": "beedd23ddada1b456de4636bdb0bdb61285cc41cf864c50505f0c41f4ceb3056",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.002474425628144974,
+          "xy_p95_m": 0.00423102053720575,
+          "final_xy_m": 0.002078181868668694,
+          "yaw_p95_rad": 0.005449464777218971,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.393583949258337,
+          "update_p95_ms": 8.904938003979623,
+          "update_p99_ms": 9.023446612991393,
+          "update_max_ms": 9.082101983949542,
+          "cpu_mean_ms": 7.385785344262329,
+          "cpu_p95_ms": 8.897613999999443,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002471759331678196,
+          "xy_p95_m": 0.00423102053720575,
+          "final_xy_m": 0.0020781818683164727,
+          "yaw_p95_rad": 0.005449464777218971,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.058452769854396,
+          "update_p95_ms": 14.548143022693694,
+          "update_p99_ms": 14.69734440324828,
+          "update_max_ms": 14.871273015160114,
+          "cpu_mean_ms": 12.050289672131168,
+          "cpu_p95_ms": 14.540054000000247,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 2
+        }
+      }
+    },
+    {
+      "id": "short_05",
+      "split": "development",
+      "mode": "command_and_unmapped",
+      "cache_sha256": "32be8b39cc18862fcfaed259ffa53905e262f093c706a61b93d43224187578bd",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0033074617627989553,
+          "xy_p95_m": 0.006023262706733322,
+          "final_xy_m": 0.0018313332272082649,
+          "yaw_p95_rad": 0.005456931399442144,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.447830623695169,
+          "update_p95_ms": 8.191285014618188,
+          "update_p99_ms": 8.211715205106884,
+          "update_max_ms": 8.217566995881498,
+          "cpu_mean_ms": 7.4403859508195955,
+          "cpu_p95_ms": 8.184265999999774,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0033197718477827195,
+          "xy_p95_m": 0.006023967504761806,
+          "final_xy_m": 0.0018140340742218073,
+          "yaw_p95_rad": 0.005456931501330864,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.533913019899522,
+          "update_p95_ms": 14.36675904551521,
+          "update_p99_ms": 14.600944612175226,
+          "update_max_ms": 14.625154028180987,
+          "cpu_mean_ms": 13.524933803278731,
+          "cpu_p95_ms": 14.353814000000575,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 8
+        }
+      }
+    },
+    {
+      "id": "short_06",
+      "split": "validation",
+      "mode": "normal_feedback",
+      "cache_sha256": "5b5dd7b5007bd3fc89f40ab0c89d638e9d503ce7054ec5512619adc366c9517a",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0071879785085867945,
+          "xy_p95_m": 0.010394573969662424,
+          "final_xy_m": 0.0036703426254985987,
+          "yaw_p95_rad": 0.0030913478162095664,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.460115938546655,
+          "update_p95_ms": 8.16432002466172,
+          "update_p99_ms": 8.352358802221715,
+          "update_max_ms": 8.399228972848505,
+          "cpu_mean_ms": 6.452707163934533,
+          "cpu_p95_ms": 8.156919999999346,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "validated_static_prior": 5
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.007347696342591297,
+          "xy_p95_m": 0.010446878976464208,
+          "final_xy_m": 0.0036703426254970995,
+          "yaw_p95_rad": 0.0030913478162752916,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 14.463584184013003,
+          "update_p95_ms": 16.38062798883766,
+          "update_p99_ms": 17.379617423284795,
+          "update_max_ms": 17.867556016426533,
+          "cpu_mean_ms": 14.454668868852435,
+          "cpu_p95_ms": 16.37281900000076,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "validated_static_prior": 5
+          },
+          "excluded_static_hits_total": 19
+        }
+      }
+    },
+    {
+      "id": "short_07",
+      "split": "validation",
+      "mode": "small_initial_offset",
+      "cache_sha256": "dfbcaaba19e2b2fefa5173fb5b6e378664d7a76893dad3d5f16c069c8d57d01c",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.006593837261050176,
+          "xy_p95_m": 0.011534493959011634,
+          "final_xy_m": 0.003142955856117588,
+          "yaw_p95_rad": 0.001616369926078498,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.532626689342996,
+          "update_p95_ms": 7.988909957930446,
+          "update_p99_ms": 8.85218777693808,
+          "update_max_ms": 8.976931974757463,
+          "cpu_mean_ms": 6.525489180327758,
+          "cpu_p95_ms": 7.981725000000495,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 7
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.006569308722340433,
+          "xy_p95_m": 0.011534493959249327,
+          "final_xy_m": 0.003142955856117588,
+          "yaw_p95_rad": 0.00156355015080889,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.771399460778738,
+          "update_p95_ms": 14.918655040673912,
+          "update_p99_ms": 16.572493768762794,
+          "update_max_ms": 18.142070970498025,
+          "cpu_mean_ms": 12.762743934426258,
+          "cpu_p95_ms": 14.910847000001226,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 7
+          },
+          "excluded_static_hits_total": 11
+        }
+      }
+    },
+    {
+      "id": "short_08",
+      "split": "validation",
+      "mode": "unmapped_obstacle",
+      "cache_sha256": "3ff07b520c9dcd774dc136b079387be7b92f47cef91744a9ab2930d78736f93a",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.008760833231911614,
+          "xy_p95_m": 0.012014199772922176,
+          "final_xy_m": 0.00614214015177658,
+          "yaw_p95_rad": 0.003338677575510207,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.04480709861506,
+          "update_p95_ms": 7.684214971959591,
+          "update_p99_ms": 8.19273500237614,
+          "update_max_ms": 8.519938972312957,
+          "cpu_mean_ms": 6.037269606557259,
+          "cpu_p95_ms": 7.677035000000387,
+          "reasons": {
+            "accepted_static_correction": 52,
+            "validated_static_prior": 9
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.00875233340345596,
+          "xy_p95_m": 0.012184627848926344,
+          "final_xy_m": 0.00595014488872364,
+          "yaw_p95_rad": 0.0033386683853144916,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.94770716502499,
+          "update_p95_ms": 15.38952998816967,
+          "update_p99_ms": 16.852680186275393,
+          "update_max_ms": 17.013895965646952,
+          "cpu_mean_ms": 12.939627688524466,
+          "cpu_p95_ms": 15.381731999999815,
+          "reasons": {
+            "accepted_static_correction": 52,
+            "validated_static_prior": 9
+          },
+          "excluded_static_hits_total": 12
+        }
+      }
+    },
+    {
+      "id": "short_09",
+      "split": "validation",
+      "mode": "missing_sector",
+      "cache_sha256": "4dafb62146f270830e71dde5db2ae9fe2ca0f7a2640e4eb2308654f789083063",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0036258309971089965,
+          "xy_p95_m": 0.006735638957483287,
+          "final_xy_m": 0.00766543017708484,
+          "yaw_p95_rad": 0.0020418505123238617,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.055165292145532,
+          "update_p95_ms": 7.724324008449912,
+          "update_p99_ms": 7.7944441814906895,
+          "update_max_ms": 7.82339897705242,
+          "cpu_mean_ms": 6.047922065573851,
+          "cpu_p95_ms": 7.717083000001068,
+          "reasons": {
+            "accepted_static_correction": 55,
+            "validated_static_prior": 3,
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0036040063822668266,
+          "xy_p95_m": 0.006735638957483287,
+          "final_xy_m": 0.00766543017708484,
+          "yaw_p95_rad": 0.0020418505123238617,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 9.863163329294471,
+          "update_p95_ms": 12.925142014864832,
+          "update_p99_ms": 13.385787792503834,
+          "update_max_ms": 13.936934003140777,
+          "cpu_mean_ms": 9.855598885245925,
+          "cpu_p95_ms": 12.917654000000667,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "validated_static_prior": 2,
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 1
+        }
+      }
+    },
+    {
+      "id": "short_10",
+      "split": "validation",
+      "mode": "command_odometry",
+      "cache_sha256": "9eeceda8ac8052f51e3a1d12774d830863deb78eae0d3dbd9560788c06c8306f",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.00879738425626162,
+          "xy_p95_m": 0.013302688864439197,
+          "final_xy_m": 0.008905716012944723,
+          "yaw_p95_rad": 0.003527072445380419,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.661270887277959,
+          "update_p95_ms": 7.86716298898682,
+          "update_p99_ms": 7.945063023362309,
+          "update_max_ms": 7.9792570322752,
+          "cpu_mean_ms": 6.653950688524557,
+          "cpu_p95_ms": 7.859927000000155,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.008779242624231671,
+          "xy_p95_m": 0.012954769397588153,
+          "final_xy_m": 0.008738249267228724,
+          "yaw_p95_rad": 0.003649932892267671,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 14.267013202131283,
+          "update_p95_ms": 16.55773399397731,
+          "update_p99_ms": 18.176535586826496,
+          "update_max_ms": 19.833959988318384,
+          "cpu_mean_ms": 14.258979688524605,
+          "cpu_p95_ms": 16.549877999999296,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 42
+        }
+      }
+    },
+    {
+      "id": "short_11",
+      "split": "validation",
+      "mode": "command_and_unmapped",
+      "cache_sha256": "d512607c00d1c5c163143eee0633daa4c412262ef08d37706a1d92dc07877f9f",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.00599816303716432,
+          "xy_p95_m": 0.01129795217529452,
+          "final_xy_m": 0.00832502938229987,
+          "yaw_p95_rad": 0.004126698447497468,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.8002546866439655,
+          "update_p95_ms": 7.870244036894292,
+          "update_p99_ms": 8.257372793741522,
+          "update_max_ms": 8.68841097690165,
+          "cpu_mean_ms": 6.792840262295135,
+          "cpu_p95_ms": 7.86303099999941,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.006007394880608471,
+          "xy_p95_m": 0.01129795217529452,
+          "final_xy_m": 0.00832502938229462,
+          "yaw_p95_rad": 0.0045717153753424,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.529948331033964,
+          "update_p95_ms": 15.034053998533636,
+          "update_p99_ms": 17.762592609506097,
+          "update_max_ms": 19.377477001398802,
+          "cpu_mean_ms": 13.52189916393462,
+          "cpu_p95_ms": 15.026428000000536,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 21
+        }
+      }
+    },
+    {
+      "id": "short_12",
+      "split": "validation",
+      "mode": "normal_feedback",
+      "cache_sha256": "e8341cf3b51e9eb042393a43a88e6d5683526a70d9072429cced8a7b3ee7cf02",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.002350845106148704,
+          "xy_p95_m": 0.0034017140583739343,
+          "final_xy_m": 0.0026260275036801214,
+          "yaw_p95_rad": 0.0009111104975585427,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.653495294186974,
+          "update_p95_ms": 7.960718008689582,
+          "update_p99_ms": 8.396165608428417,
+          "update_max_ms": 8.578546985518187,
+          "cpu_mean_ms": 6.645867409836003,
+          "cpu_p95_ms": 7.953993000000992,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002350840742707132,
+          "xy_p95_m": 0.0034017140583739343,
+          "final_xy_m": 0.0026260275036801214,
+          "yaw_p95_rad": 0.0009111114222375427,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.419641985283157,
+          "update_p95_ms": 15.19806100986898,
+          "update_p99_ms": 15.325140592176467,
+          "update_max_ms": 15.4100579675287,
+          "cpu_mean_ms": 13.411199852459095,
+          "cpu_p95_ms": 15.190095999999542,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        }
+      }
+    },
+    {
+      "id": "short_13",
+      "split": "validation",
+      "mode": "small_initial_offset",
+      "cache_sha256": "5b62caeb56597bb01360771410bce330b06f1bb4715d12ba82ac7baa11bacce6",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.00980410705634235,
+          "xy_p95_m": 0.004462033386615567,
+          "final_xy_m": 0.0026187382835520597,
+          "yaw_p95_rad": 0.0012112947414255615,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.602206897944761,
+          "update_p95_ms": 10.80853899475187,
+          "update_p99_ms": 13.201539404690266,
+          "update_max_ms": 13.376176008023322,
+          "cpu_mean_ms": 7.593971721311289,
+          "cpu_p95_ms": 10.795296000001287,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0023002101464699633,
+          "xy_p95_m": 0.003969403160157546,
+          "final_xy_m": 0.0026187382835520597,
+          "yaw_p95_rad": 0.0010383711053796318,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 14.96311360073169,
+          "update_p95_ms": 19.018285966012627,
+          "update_p99_ms": 22.56740337470546,
+          "update_max_ms": 23.24402699014172,
+          "cpu_mean_ms": 14.954447967213072,
+          "cpu_p95_ms": 19.008790000000886,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 8
+        }
+      }
+    },
+    {
+      "id": "short_14",
+      "split": "validation",
+      "mode": "unmapped_obstacle",
+      "cache_sha256": "18adfb2af52d12cfcdb394993d87e679c24d81bd91b96b42d75bf459bb7db6c8",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0025229485583848493,
+          "xy_p95_m": 0.0042591474761279075,
+          "final_xy_m": 0.002161797598897523,
+          "yaw_p95_rad": 0.0017638641313197922,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.81323182318726,
+          "update_p95_ms": 8.409732021391392,
+          "update_p99_ms": 9.849459817633033,
+          "update_max_ms": 10.038194013759494,
+          "cpu_mean_ms": 6.805919901639519,
+          "cpu_p95_ms": 8.402636999999658,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002512953258505137,
+          "xy_p95_m": 0.0042591474761279075,
+          "final_xy_m": 0.002161797598897523,
+          "yaw_p95_rad": 0.0017200941900927802,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.278689999041742,
+          "update_p95_ms": 16.9839320005849,
+          "update_p99_ms": 17.641987779643387,
+          "update_max_ms": 18.21521995589137,
+          "cpu_mean_ms": 12.270209622951,
+          "cpu_p95_ms": 16.974527999998656,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 5
+        }
+      }
+    },
+    {
+      "id": "short_15",
+      "split": "validation",
+      "mode": "missing_sector",
+      "cache_sha256": "42c81b27b55df148165aa13a3e11c848a73c345e8b2c2e03fd237aec4104a3d2",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0022073933245118447,
+          "xy_p95_m": 0.003402831223956831,
+          "final_xy_m": 0.00032500432311525053,
+          "yaw_p95_rad": 0.0019850507028618125,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.039895344388167,
+          "update_p95_ms": 7.681298011448234,
+          "update_p99_ms": 7.782942813355476,
+          "update_max_ms": 7.819193007890135,
+          "cpu_mean_ms": 6.03264598360664,
+          "cpu_p95_ms": 7.674550999997365,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "insufficient_static_support": 3,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0022073933245118447,
+          "xy_p95_m": 0.003402831223956831,
+          "final_xy_m": 0.00032500432311525053,
+          "yaw_p95_rad": 0.0019850507028618125,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 10.16544042437597,
+          "update_p95_ms": 12.287982972338796,
+          "update_p99_ms": 13.929399615153667,
+          "update_max_ms": 15.415664995089173,
+          "cpu_mean_ms": 10.157263311475699,
+          "cpu_p95_ms": 12.279877000000994,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "insufficient_static_support": 3,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        }
+      }
+    },
+    {
+      "id": "short_16",
+      "split": "validation",
+      "mode": "command_odometry",
+      "cache_sha256": "348d43682d4748b838f30816777ce1a75179f7cb10b7149822477f2733cd42f4",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.002157740820500214,
+          "xy_p95_m": 0.0033622872752869025,
+          "final_xy_m": 0.001079079415210673,
+          "yaw_p95_rad": 0.0030192261938246645,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.970464493354141,
+          "update_p95_ms": 8.272318984381855,
+          "update_p99_ms": 8.669690799433738,
+          "update_max_ms": 8.691382012329996,
+          "cpu_mean_ms": 6.962887311475453,
+          "cpu_p95_ms": 8.265333000000652,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0021731218810363048,
+          "xy_p95_m": 0.0033622872747556534,
+          "final_xy_m": 0.001079079415210673,
+          "yaw_p95_rad": 0.0030192261938246645,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.410741326109063,
+          "update_p95_ms": 14.267862017732114,
+          "update_p99_ms": 16.065486765000966,
+          "update_max_ms": 17.879875958897173,
+          "cpu_mean_ms": 12.40184873770499,
+          "cpu_p95_ms": 14.246445000001273,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 5
+        }
+      }
+    },
+    {
+      "id": "short_17",
+      "split": "validation",
+      "mode": "command_and_unmapped",
+      "cache_sha256": "eaeae6629d78c1f91e91a899795ebd66e33786030cb84f6ea9e624ff8ee6c601",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0026532731120413604,
+          "xy_p95_m": 0.004172754232351481,
+          "final_xy_m": 0.0020321533621049112,
+          "yaw_p95_rad": 0.004401923411105457,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.743605724787797,
+          "update_p95_ms": 8.102399006020278,
+          "update_p99_ms": 8.235829009208828,
+          "update_max_ms": 8.316421008203179,
+          "cpu_mean_ms": 6.736379885245841,
+          "cpu_p95_ms": 8.094966000001591,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002651151271546007,
+          "xy_p95_m": 0.0041727542323513325,
+          "final_xy_m": 0.0020321533621049112,
+          "yaw_p95_rad": 0.004826722387704763,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 10.985911002222325,
+          "update_p95_ms": 12.931444973219186,
+          "update_p99_ms": 13.212075410410762,
+          "update_max_ms": 13.350447989068925,
+          "cpu_mean_ms": 10.977752622950883,
+          "cpu_p95_ms": 12.924824000002388,
+          "reasons": {
+            "accepted_static_correction": 61
+          },
+          "excluded_static_hits_total": 6
+        }
+      }
+    },
+    {
+      "id": "short_18",
+      "split": "validation",
+      "mode": "normal_feedback",
+      "cache_sha256": "9c8d8c5ebfe33f5cd870dcefbe4102cb2816be9c4ef5d022b1d948d466e66e4b",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.010104598384371197,
+          "xy_p95_m": 0.013562725537672793,
+          "final_xy_m": 0.009533455564878078,
+          "yaw_p95_rad": 0.0037799954484127873,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.279607784369442,
+          "update_p95_ms": 7.83005403354764,
+          "update_p99_ms": 9.142380405683069,
+          "update_max_ms": 9.820872975979,
+          "cpu_mean_ms": 6.272080967213564,
+          "cpu_p95_ms": 7.807150000001428,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 7
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.010098697486501386,
+          "xy_p95_m": 0.013562725537758826,
+          "final_xy_m": 0.009516320727434299,
+          "yaw_p95_rad": 0.003970408171189099,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.659540537317268,
+          "update_p95_ms": 15.02960198558867,
+          "update_p99_ms": 16.724053805228316,
+          "update_max_ms": 18.47933098906651,
+          "cpu_mean_ms": 12.65047083606535,
+          "cpu_p95_ms": 15.021158999999784,
+          "reasons": {
+            "accepted_static_correction": 54,
+            "validated_static_prior": 7
+          },
+          "excluded_static_hits_total": 8
+        }
+      }
+    },
+    {
+      "id": "short_19",
+      "split": "validation",
+      "mode": "small_initial_offset",
+      "cache_sha256": "04eb4218c34bc3d3797383a8a1d779ca23f1c4b0de096014ce9a924ebec15ef8",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.015674868466960958,
+          "xy_p95_m": 0.019326224757970814,
+          "final_xy_m": 0.015279154421546563,
+          "yaw_p95_rad": 0.0019149439846231076,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.260918621279178,
+          "update_p95_ms": 7.903861987870187,
+          "update_p99_ms": 8.04427380207926,
+          "update_max_ms": 8.085468027275056,
+          "cpu_mean_ms": 6.25358206557367,
+          "cpu_p95_ms": 7.896854000001952,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "validated_static_prior": 5
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.015713102355743396,
+          "xy_p95_m": 0.019326224757970814,
+          "final_xy_m": 0.015279154421546563,
+          "yaw_p95_rad": 0.0019149439846231076,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.099596415814316,
+          "update_p95_ms": 14.932330988813192,
+          "update_p99_ms": 15.13426600722596,
+          "update_max_ms": 15.259900013916194,
+          "cpu_mean_ms": 13.090512540983516,
+          "cpu_p95_ms": 14.907792000002473,
+          "reasons": {
+            "accepted_static_correction": 56,
+            "validated_static_prior": 5
+          },
+          "excluded_static_hits_total": 3
+        }
+      }
+    },
+    {
+      "id": "short_20",
+      "split": "validation",
+      "mode": "unmapped_obstacle",
+      "cache_sha256": "470d5ffb3f3dbed556ac36de2675eb67f7506d936a1630f1f0d4c8011b9f0e20",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.015844018524414985,
+          "xy_p95_m": 0.022278442446290386,
+          "final_xy_m": 0.018814636520022365,
+          "yaw_p95_rad": 0.0038462280973430296,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.429850120005794,
+          "update_p95_ms": 7.814947981387377,
+          "update_p99_ms": 7.983375806361437,
+          "update_max_ms": 8.062019012868404,
+          "cpu_mean_ms": 6.422322655737971,
+          "cpu_p95_ms": 7.806793000000312,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.015843779191464007,
+          "xy_p95_m": 0.022278442446290386,
+          "final_xy_m": 0.018814636521256388,
+          "yaw_p95_rad": 0.0038462280973430296,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 11.415088924266337,
+          "update_p95_ms": 12.760134995914996,
+          "update_p99_ms": 13.054807018488644,
+          "update_max_ms": 13.2556629832834,
+          "cpu_mean_ms": 11.406135672131292,
+          "cpu_p95_ms": 12.752135999999581,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 2
+        }
+      }
+    },
+    {
+      "id": "short_21",
+      "split": "validation",
+      "mode": "missing_sector",
+      "cache_sha256": "f815387ab32db15dca6c5b2b9fc927671f6a743ab2f2bc659543f44313e2ea6a",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.0027901636434030743,
+          "xy_p95_m": 0.004799394289106702,
+          "final_xy_m": 0.0031731106013391693,
+          "yaw_p95_rad": 0.0027144488062655903,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.194228428553362,
+          "update_p95_ms": 7.802955980878323,
+          "update_p99_ms": 10.772414808161557,
+          "update_max_ms": 11.20532798813656,
+          "cpu_mean_ms": 6.186934377049426,
+          "cpu_p95_ms": 7.796193000000784,
+          "reasons": {
+            "accepted_static_correction": 57,
+            "insufficient_static_support": 3,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.002763724385669766,
+          "xy_p95_m": 0.004799394289106702,
+          "final_xy_m": 0.002866527636703802,
+          "yaw_p95_rad": 0.002691346532841976,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 10.133167886228652,
+          "update_p95_ms": 12.724689964670688,
+          "update_p99_ms": 13.23450981872156,
+          "update_max_ms": 13.826429028995335,
+          "cpu_mean_ms": 10.124969098360726,
+          "cpu_p95_ms": 12.715656999997549,
+          "reasons": {
+            "accepted_static_correction": 57,
+            "insufficient_static_support": 3,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 3
+        }
+      }
+    },
+    {
+      "id": "short_22",
+      "split": "validation",
+      "mode": "command_odometry",
+      "cache_sha256": "e7414cce9c729961bc9bd969ae58d62318115ee7c5d37bcb00d020b4abcc7692",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.005476140386248686,
+          "xy_p95_m": 0.009818713221137474,
+          "final_xy_m": 0.013631687433929927,
+          "yaw_p95_rad": 0.003950938521944725,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.543850067231926,
+          "update_p95_ms": 7.871068024542183,
+          "update_p99_ms": 8.162974030710757,
+          "update_max_ms": 8.185810002032667,
+          "cpu_mean_ms": 6.536389475410045,
+          "cpu_p95_ms": 7.864021999999693,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.0054857461926310766,
+          "xy_p95_m": 0.009818335280902637,
+          "final_xy_m": 0.013631698934168868,
+          "yaw_p95_rad": 0.003947394844675767,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 13.053555146516224,
+          "update_p95_ms": 15.45535505283624,
+          "update_p99_ms": 18.329127784818407,
+          "update_max_ms": 19.531768979504704,
+          "cpu_mean_ms": 13.044271426229157,
+          "cpu_p95_ms": 15.446839999999185,
+          "reasons": {
+            "accepted_static_correction": 59,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 5
+        }
+      }
+    },
+    {
+      "id": "short_23",
+      "split": "validation",
+      "mode": "command_and_unmapped",
+      "cache_sha256": "1fe8a39dbf7c6843adadbb79d65bdb918dc41e4a4be0ae0d351e86f546d28508",
+      "algorithms": {
+        "temporal": {
+          "frames": 61,
+          "xy_rmse_m": 0.017494192840782973,
+          "xy_p95_m": 0.021000879904408912,
+          "final_xy_m": 0.020527747796953984,
+          "yaw_p95_rad": 0.005851123283775017,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.5975258514269814,
+          "update_p95_ms": 7.887289975769818,
+          "update_p99_ms": 8.428243617527185,
+          "update_max_ms": 8.8019979884848,
+          "cpu_mean_ms": 6.590613196721285,
+          "cpu_p95_ms": 7.880360000001474,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 61,
+          "xy_rmse_m": 0.017549108568343512,
+          "xy_p95_m": 0.020999045937752283,
+          "final_xy_m": 0.020527748449589957,
+          "yaw_p95_rad": 0.00585113694692474,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 12.099141507890442,
+          "update_p95_ms": 13.682252960279584,
+          "update_p99_ms": 14.080465433653444,
+          "update_max_ms": 14.4332570489496,
+          "cpu_mean_ms": 12.090307836065552,
+          "cpu_p95_ms": 13.674417000000716,
+          "reasons": {
+            "accepted_static_correction": 60,
+            "validated_static_prior": 1
+          },
+          "excluded_static_hits_total": 16
+        }
+      }
+    },
+    {
+      "id": "long_single_long_wall",
+      "split": "validation",
+      "mode": "long_drift",
+      "cache_sha256": "96875102f16cca5092ec8fd13ad36ef75e92234e4ee43fc8909a07e989386c5b",
+      "algorithms": {
+        "temporal": {
+          "frames": 465,
+          "xy_rmse_m": 0.06113049263052079,
+          "xy_p95_m": 0.12362575386781152,
+          "final_xy_m": 0.042092751753901966,
+          "yaw_p95_rad": 0.006248898337491224,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.064700046479101,
+          "update_p95_ms": 7.534872775431722,
+          "update_p99_ms": 8.679633378051221,
+          "update_max_ms": 10.487179970368743,
+          "cpu_mean_ms": 6.057337847311802,
+          "cpu_p95_ms": 7.527934800000934,
+          "reasons": {
+            "accepted_static_correction": 423,
+            "validated_static_prior": 28,
+            "insufficient_static_support": 14
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 465,
+          "xy_rmse_m": 0.0617014013298225,
+          "xy_p95_m": 0.1245702806565236,
+          "final_xy_m": 0.04209275175389953,
+          "yaw_p95_rad": 0.006248898337488204,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 8.809596365843449,
+          "update_p95_ms": 11.109966423828153,
+          "update_p99_ms": 12.52492357278243,
+          "update_max_ms": 14.445870998315513,
+          "cpu_mean_ms": 8.801483316128996,
+          "cpu_p95_ms": 11.10204739999858,
+          "reasons": {
+            "accepted_static_correction": 423,
+            "validated_static_prior": 28,
+            "insufficient_static_support": 14
+          },
+          "excluded_static_hits_total": 2
+        }
+      }
+    },
+    {
+      "id": "long_parallel_corridor",
+      "split": "validation",
+      "mode": "long_drift",
+      "cache_sha256": "b78c59cfdadee87d15a76a405318c74e60a0bbce8e174b29be7aec9b89bbfc31",
+      "algorithms": {
+        "temporal": {
+          "frames": 362,
+          "xy_rmse_m": 0.12320440628298643,
+          "xy_p95_m": 0.20334618382989514,
+          "final_xy_m": 0.2257757101481018,
+          "yaw_p95_rad": 0.003943545625855926,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.400588734875541,
+          "update_p95_ms": 8.46629802545067,
+          "update_p99_ms": 10.03658405621536,
+          "update_max_ms": 10.454552015289664,
+          "cpu_mean_ms": 6.39328471823194,
+          "cpu_p95_ms": 8.458052800002136,
+          "reasons": {
+            "accepted_static_correction": 348,
+            "validated_static_prior": 14
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 362,
+          "xy_rmse_m": 0.11685928856104466,
+          "xy_p95_m": 0.19383812329649172,
+          "final_xy_m": 0.1926232315410811,
+          "yaw_p95_rad": 0.004993102275292946,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 8.548462723230028,
+          "update_p95_ms": 10.929348110221326,
+          "update_p99_ms": 12.002847931580616,
+          "update_max_ms": 13.746721029747277,
+          "cpu_mean_ms": 8.540506284530393,
+          "cpu_p95_ms": 10.921315700004897,
+          "reasons": {
+            "accepted_static_correction": 344,
+            "validated_static_prior": 14,
+            "insufficient_static_support": 4
+          },
+          "excluded_static_hits_total": 13
+        }
+      }
+    },
+    {
+      "id": "long_sparse_asymmetric",
+      "split": "validation",
+      "mode": "long_drift",
+      "cache_sha256": "74eca697f5f887da9cce29395c82efe94906454f3603bbe1f76b4fe69f14fd89",
+      "algorithms": {
+        "temporal": {
+          "frames": 465,
+          "xy_rmse_m": 0.1325945948626085,
+          "xy_p95_m": 0.30541077951676265,
+          "final_xy_m": 0.3448313067731698,
+          "yaw_p95_rad": 0.061253533183782946,
+          "erroneous_trusted_fraction": 0.1827956989247312,
+          "update_mean_ms": 4.8382339276804,
+          "update_p95_ms": 6.975237803999335,
+          "update_p99_ms": 7.218386342283338,
+          "update_max_ms": 7.771904987748712,
+          "cpu_mean_ms": 4.8305362967740715,
+          "cpu_p95_ms": 6.967026800001007,
+          "reasons": {
+            "accepted_static_correction": 308,
+            "validated_static_prior": 39,
+            "insufficient_static_support": 118
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 465,
+          "xy_rmse_m": 0.13166520570335175,
+          "xy_p95_m": 0.3054107795167789,
+          "final_xy_m": 0.34483130677318635,
+          "yaw_p95_rad": 0.0612535331837865,
+          "erroneous_trusted_fraction": 0.1827956989247312,
+          "update_mean_ms": 6.130550457890676,
+          "update_p95_ms": 8.511437778361142,
+          "update_p99_ms": 8.710540253669024,
+          "update_max_ms": 11.014478979632258,
+          "cpu_mean_ms": 6.123223578494739,
+          "cpu_p95_ms": 8.503775999999164,
+          "reasons": {
+            "accepted_static_correction": 307,
+            "validated_static_prior": 40,
+            "insufficient_static_support": 118
+          },
+          "excluded_static_hits_total": 4
+        }
+      }
+    },
+    {
+      "id": "long_feature_to_open",
+      "split": "validation",
+      "mode": "long_drift",
+      "cache_sha256": "918ca88517f797b1f8261618af52950059905346d440a3ad911457727117af1d",
+      "algorithms": {
+        "temporal": {
+          "frames": 465,
+          "xy_rmse_m": 0.06393389768966956,
+          "xy_p95_m": 0.1801467476569846,
+          "final_xy_m": 0.010746707375938068,
+          "yaw_p95_rad": 0.011743764341040562,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 5.129258743091737,
+          "update_p95_ms": 6.986907217651606,
+          "update_p99_ms": 7.273445473983886,
+          "update_max_ms": 10.95050695585087,
+          "cpu_mean_ms": 5.120811247311779,
+          "cpu_p95_ms": 6.979335199997649,
+          "reasons": {
+            "accepted_static_correction": 365,
+            "validated_static_prior": 9,
+            "insufficient_static_support": 91
+          },
+          "excluded_static_hits_total": 0
+        },
+        "ray_consistent": {
+          "frames": 465,
+          "xy_rmse_m": 0.06394245454451818,
+          "xy_p95_m": 0.18014682077213767,
+          "final_xy_m": 0.010746707375938068,
+          "yaw_p95_rad": 0.011743776395890125,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.818318218598644,
+          "update_p95_ms": 10.967955202795565,
+          "update_p99_ms": 11.35494546964765,
+          "update_max_ms": 11.939978983718902,
+          "cpu_mean_ms": 7.810410681720649,
+          "cpu_p95_ms": 10.960204999997814,
+          "reasons": {
+            "accepted_static_correction": 365,
+            "validated_static_prior": 9,
+            "insufficient_static_support": 91
+          },
+          "excluded_static_hits_total": 10
+        }
+      }
+    }
+  ],
+  "simulation_validation": {
+    "temporal": {
+      "trajectories": 22,
+      "frames": 2855,
+      "xy_p95_m": 0.18506209008721322,
+      "yaw_p95_rad": 0.026626949770572915,
+      "mean_final_xy_m": 0.03423184923100293,
+      "cpu_p95_ms": 7.880705000001242,
+      "cpu_max_ms": 13.368122000002813
+    },
+    "ray_consistent": {
+      "trajectories": 22,
+      "frames": 2855,
+      "xy_p95_m": 0.18035254809240048,
+      "yaw_p95_rad": 0.023871443291547268,
+      "mean_final_xy_m": 0.03269386530992327,
+      "cpu_p95_ms": 14.589768799998021,
+      "cpu_max_ms": 23.2343979999996
+    }
+  },
+  "recorded_motion": {
+    "frames": 15634,
+    "valid_frames": 15634,
+    "reasons": {
+      "ok": 15634
+    },
+    "gyro_bias_final_rad_s": 9.240824545367606e-05,
+    "bias_updates": 2922,
+    "cpu_p95_ms": 0.7619013499994054,
+    "cpu_max_ms": 2.357504999999094,
+    "uses_future_measurements": false,
+    "wheel_or_command_pose_used": false,
+    "accuracy_measured": false,
+    "reference_pose_available": false
+  },
+  "recorded_localization": [
+    {
+      "mission": 1,
+      "source": "recorded_ekf",
+      "frames": 147,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 2.432809981999328,
+          "estimated_travel_m": 2.7849715805209736,
+          "accepted_scan_frames": 147,
+          "reasons": {
+            "accepted_static_correction": 118,
+            "validated_static_prior": 29
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 9.093516399998691
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 2.4380010059846975,
+          "estimated_travel_m": 2.7265665257298903,
+          "accepted_scan_frames": 139,
+          "reasons": {
+            "ray_inconsistent_correction": 8,
+            "accepted_static_correction": 109,
+            "validated_static_prior": 30
+          },
+          "excluded_static_hits_total": 1285,
+          "cpu_p95_ms": 12.412070999995706
+        }
+      },
+      "odometry_displacement_m": 2.646431752518744
+    },
+    {
+      "mission": 1,
+      "source": "measured_wheel_gyro",
+      "frames": 147,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 2.4337074836432615,
+          "estimated_travel_m": 2.7953686590140996,
+          "accepted_scan_frames": 147,
+          "reasons": {
+            "accepted_static_correction": 111,
+            "validated_static_prior": 36
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.926320800009989
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 2.430140449948173,
+          "estimated_travel_m": 2.737325623622477,
+          "accepted_scan_frames": 141,
+          "reasons": {
+            "ray_inconsistent_correction": 6,
+            "accepted_static_correction": 102,
+            "validated_static_prior": 39
+          },
+          "excluded_static_hits_total": 1285,
+          "cpu_p95_ms": 12.446843299997568
+        }
+      },
+      "odometry_displacement_m": 2.5963488198881777
+    },
+    {
+      "mission": 2,
+      "source": "recorded_ekf",
+      "frames": 143,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.4144457179102103,
+          "estimated_travel_m": 1.9305162386710495,
+          "accepted_scan_frames": 143,
+          "reasons": {
+            "accepted_static_correction": 118,
+            "validated_static_prior": 25
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.924347700000566
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.339717937986461,
+          "estimated_travel_m": 1.9793312970152472,
+          "accepted_scan_frames": 115,
+          "reasons": {
+            "ray_inconsistent_correction": 28,
+            "accepted_static_correction": 91,
+            "validated_static_prior": 24
+          },
+          "excluded_static_hits_total": 1414,
+          "cpu_p95_ms": 12.63468499999476
+        }
+      },
+      "odometry_displacement_m": 1.45611711714686
+    },
+    {
+      "mission": 2,
+      "source": "measured_wheel_gyro",
+      "frames": 143,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.4167879255320486,
+          "estimated_travel_m": 1.8799061026992403,
+          "accepted_scan_frames": 143,
+          "reasons": {
+            "accepted_static_correction": 116,
+            "validated_static_prior": 27
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.962044500004595
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.3403176089529196,
+          "estimated_travel_m": 2.004520698493571,
+          "accepted_scan_frames": 135,
+          "reasons": {
+            "ray_inconsistent_correction": 8,
+            "accepted_static_correction": 109,
+            "validated_static_prior": 26
+          },
+          "excluded_static_hits_total": 1488,
+          "cpu_p95_ms": 12.676144900007102
+        }
+      },
+      "odometry_displacement_m": 1.4318435135165373
+    },
+    {
+      "mission": 3,
+      "source": "recorded_ekf",
+      "frames": 129,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 2.2323243329854163,
+          "estimated_travel_m": 2.4976315707982013,
+          "accepted_scan_frames": 129,
+          "reasons": {
+            "accepted_static_correction": 116,
+            "validated_static_prior": 13
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.821257999995622
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 2.2322137248774645,
+          "estimated_travel_m": 2.449116233006007,
+          "accepted_scan_frames": 128,
+          "reasons": {
+            "accepted_static_correction": 109,
+            "validated_static_prior": 19,
+            "insufficient_static_support": 1
+          },
+          "excluded_static_hits_total": 562,
+          "cpu_p95_ms": 12.389724800002
+        }
+      },
+      "odometry_displacement_m": 2.2154566208419064
+    },
+    {
+      "mission": 3,
+      "source": "measured_wheel_gyro",
+      "frames": 129,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 2.2185505090024846,
+          "estimated_travel_m": 2.485068504216491,
+          "accepted_scan_frames": 129,
+          "reasons": {
+            "accepted_static_correction": 102,
+            "validated_static_prior": 27
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.697392200003605
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 2.23309513623624,
+          "estimated_travel_m": 2.387583099842298,
+          "accepted_scan_frames": 127,
+          "reasons": {
+            "accepted_static_correction": 96,
+            "validated_static_prior": 31,
+            "ray_inconsistent_correction": 1,
+            "insufficient_static_support": 1
+          },
+          "excluded_static_hits_total": 508,
+          "cpu_p95_ms": 12.45457620000252
+        }
+      },
+      "odometry_displacement_m": 2.17648204222805
+    },
+    {
+      "mission": 4,
+      "source": "recorded_ekf",
+      "frames": 41,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.16175820203866448,
+          "estimated_travel_m": 0.3973761582347808,
+          "accepted_scan_frames": 41,
+          "reasons": {
+            "accepted_static_correction": 39,
+            "validated_static_prior": 2
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.631145000004835
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.1825738613373482,
+          "estimated_travel_m": 0.3421406539487003,
+          "accepted_scan_frames": 39,
+          "reasons": {
+            "accepted_static_correction": 33,
+            "insufficient_static_support": 2,
+            "validated_static_prior": 6
+          },
+          "excluded_static_hits_total": 152,
+          "cpu_p95_ms": 11.815339999998287
+        }
+      },
+      "odometry_displacement_m": 0.1699832006572877
+    },
+    {
+      "mission": 4,
+      "source": "measured_wheel_gyro",
+      "frames": 41,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.15747302801554008,
+          "estimated_travel_m": 0.3619377268120765,
+          "accepted_scan_frames": 41,
+          "reasons": {
+            "accepted_static_correction": 34,
+            "validated_static_prior": 7
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.497118000003411
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.19896153948245693,
+          "estimated_travel_m": 0.388491453810066,
+          "accepted_scan_frames": 39,
+          "reasons": {
+            "accepted_static_correction": 33,
+            "validated_static_prior": 6,
+            "ray_inconsistent_correction": 2
+          },
+          "excluded_static_hits_total": 129,
+          "cpu_p95_ms": 11.909224000007157
+        }
+      },
+      "odometry_displacement_m": 0.16927439740678857
+    },
+    {
+      "mission": 5,
+      "source": "recorded_ekf",
+      "frames": 105,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.1052880804365515,
+          "estimated_travel_m": 1.4675088003612677,
+          "accepted_scan_frames": 66,
+          "reasons": {
+            "accepted_static_correction": 62,
+            "validated_static_prior": 4,
+            "insufficient_static_support": 39
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.351227000006588
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.1180940606750083,
+          "estimated_travel_m": 1.4620852195925642,
+          "accepted_scan_frames": 49,
+          "reasons": {
+            "accepted_static_correction": 45,
+            "validated_static_prior": 4,
+            "insufficient_static_support": 56
+          },
+          "excluded_static_hits_total": 266,
+          "cpu_p95_ms": 11.331610999994268
+        }
+      },
+      "odometry_displacement_m": 1.1202781525010375
+    },
+    {
+      "mission": 5,
+      "source": "measured_wheel_gyro",
+      "frames": 105,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.1147459796248123,
+          "estimated_travel_m": 1.484068038679118,
+          "accepted_scan_frames": 71,
+          "reasons": {
+            "accepted_static_correction": 63,
+            "validated_static_prior": 8,
+            "insufficient_static_support": 34
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.280800199993109
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.1248943056746157,
+          "estimated_travel_m": 1.4077635883571133,
+          "accepted_scan_frames": 48,
+          "reasons": {
+            "accepted_static_correction": 41,
+            "validated_static_prior": 7,
+            "ray_inconsistent_correction": 1,
+            "insufficient_static_support": 56
+          },
+          "excluded_static_hits_total": 298,
+          "cpu_p95_ms": 11.504239999990773
+        }
+      },
+      "odometry_displacement_m": 1.1055763378713592
+    },
+    {
+      "mission": 6,
+      "source": "recorded_ekf",
+      "frames": 26,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.1735176917530835,
+          "estimated_travel_m": 0.17408828883427604,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 26
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3717527500046742
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.1735176917530835,
+          "estimated_travel_m": 0.17408828883427604,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 26
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 5.212744999997909
+        }
+      },
+      "odometry_displacement_m": 0.17351769175308315
+    },
+    {
+      "mission": 6,
+      "source": "measured_wheel_gyro",
+      "frames": 26,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.18964387018652415,
+          "estimated_travel_m": 0.19021278892806964,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 26
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.284254750001935
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.18964387018652415,
+          "estimated_travel_m": 0.19021278892806964,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 26
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 4.999370999993147
+        }
+      },
+      "odometry_displacement_m": 0.18964387018652357
+    },
+    {
+      "mission": 7,
+      "source": "recorded_ekf",
+      "frames": 39,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.24827251884369864,
+          "estimated_travel_m": 0.2505015626996099,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 39
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.2392140000008
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.24827251884369864,
+          "estimated_travel_m": 0.2505015626996099,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 39
+          },
+          "excluded_static_hits_total": 9,
+          "cpu_p95_ms": 4.974721800009263
+        }
+      },
+      "odometry_displacement_m": 0.24827251884369794
+    },
+    {
+      "mission": 7,
+      "source": "measured_wheel_gyro",
+      "frames": 39,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.2452274656427262,
+          "estimated_travel_m": 0.24845235795225973,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 39
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.282860499994399
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.2452274656427262,
+          "estimated_travel_m": 0.24845235795225973,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 39
+          },
+          "excluded_static_hits_total": 10,
+          "cpu_p95_ms": 5.03650639999762
+        }
+      },
+      "odometry_displacement_m": 0.24522746564272593
+    },
+    {
+      "mission": 8,
+      "source": "recorded_ekf",
+      "frames": 28,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.006074429702957186,
+          "estimated_travel_m": 0.006138332985297689,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3659280000003946
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.006074429702957186,
+          "estimated_travel_m": 0.006138332985297689,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 300,
+          "cpu_p95_ms": 4.926852050000007
+        }
+      },
+      "odometry_displacement_m": 0.0060744297029569185
+    },
+    {
+      "mission": 8,
+      "source": "measured_wheel_gyro",
+      "frames": 28,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.004233845533472703,
+          "estimated_travel_m": 0.007369122847746549,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3819449999962217
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.004233845533472703,
+          "estimated_travel_m": 0.007369122847746549,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 274,
+          "cpu_p95_ms": 5.058551899995933
+        }
+      },
+      "odometry_displacement_m": 0.004233845533472701
+    },
+    {
+      "mission": 9,
+      "source": "recorded_ekf",
+      "frames": 45,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.14861551027774,
+          "estimated_travel_m": 0.15062484719023336,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 45
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.1311846000003243
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.14861551027774,
+          "estimated_travel_m": 0.15062484719023336,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 45
+          },
+          "excluded_static_hits_total": 107,
+          "cpu_p95_ms": 5.267814399999792
+        }
+      },
+      "odometry_displacement_m": 0.14861551027773934
+    },
+    {
+      "mission": 9,
+      "source": "measured_wheel_gyro",
+      "frames": 45,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.14889455601793067,
+          "estimated_travel_m": 0.16167161382586306,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 45
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3938135999998167
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.14889455601793067,
+          "estimated_travel_m": 0.16167161382586306,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 45
+          },
+          "excluded_static_hits_total": 114,
+          "cpu_p95_ms": 4.791255999992927
+        }
+      },
+      "odometry_displacement_m": 0.1488945560179306
+    },
+    {
+      "mission": 10,
+      "source": "recorded_ekf",
+      "frames": 108,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.14183322685721864,
+          "estimated_travel_m": 0.22522503366604638,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 108
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.2962233499988827
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.14183322685721864,
+          "estimated_travel_m": 0.22522503366604638,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 108
+          },
+          "excluded_static_hits_total": 296,
+          "cpu_p95_ms": 5.123506100002118
+        }
+      },
+      "odometry_displacement_m": 0.14183322685721714
+    },
+    {
+      "mission": 10,
+      "source": "measured_wheel_gyro",
+      "frames": 108,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.15416652722595678,
+          "estimated_travel_m": 0.24710578701763652,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 108
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3361835999970992
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.15416652722595678,
+          "estimated_travel_m": 0.24710578701763652,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 108
+          },
+          "excluded_static_hits_total": 310,
+          "cpu_p95_ms": 4.906094350004508
+        }
+      },
+      "odometry_displacement_m": 0.15416652722595556
+    },
+    {
+      "mission": 11,
+      "source": "recorded_ekf",
+      "frames": 28,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.263121668348595,
+          "estimated_travel_m": 0.2699570990981925,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.17681389999953
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.263121668348595,
+          "estimated_travel_m": 0.2699570990981925,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 188,
+          "cpu_p95_ms": 4.7064787499955685
+        }
+      },
+      "odometry_displacement_m": 0.2631216683485948
+    },
+    {
+      "mission": 11,
+      "source": "measured_wheel_gyro",
+      "frames": 28,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.2715362480496464,
+          "estimated_travel_m": 0.27759257383284497,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.224925749995776
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.2715362480496464,
+          "estimated_travel_m": 0.27759257383284497,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 28
+          },
+          "excluded_static_hits_total": 202,
+          "cpu_p95_ms": 5.097886899999082
+        }
+      },
+      "odometry_displacement_m": 0.2715362480496461
+    },
+    {
+      "mission": 12,
+      "source": "recorded_ekf",
+      "frames": 13,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 2.8572020552806083e-05,
+          "estimated_travel_m": 4.8702487236237626e-05,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 13
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.121584199997528
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 2.8572020552806083e-05,
+          "estimated_travel_m": 4.8702487236237626e-05,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 13
+          },
+          "excluded_static_hits_total": 76,
+          "cpu_p95_ms": 4.4214733999950795
+        }
+      },
+      "odometry_displacement_m": 2.8572020552626492e-05
+    },
+    {
+      "mission": 12,
+      "source": "measured_wheel_gyro",
+      "frames": 13,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.00018463675542761964,
+          "estimated_travel_m": 0.0002162913493223221,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 13
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.0748252000032608
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.00018463675542761964,
+          "estimated_travel_m": 0.0002162913493223221,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 13
+          },
+          "excluded_static_hits_total": 76,
+          "cpu_p95_ms": 4.369805400003202
+        }
+      },
+      "odometry_displacement_m": 0.00018463675542768274
+    },
+    {
+      "mission": 13,
+      "source": "recorded_ekf",
+      "frames": 27,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.054758163920033326,
+          "estimated_travel_m": 0.05502965358923017,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 27
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3029263999887917
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.054758163920033326,
+          "estimated_travel_m": 0.05502965358923017,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 27
+          },
+          "excluded_static_hits_total": 87,
+          "cpu_p95_ms": 4.604511999998805
+        }
+      },
+      "odometry_displacement_m": 0.054758163920033034
+    },
+    {
+      "mission": 13,
+      "source": "measured_wheel_gyro",
+      "frames": 27,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.052073864657029234,
+          "estimated_travel_m": 0.052207427161557296,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 27
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.198915200006013
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.052073864657029234,
+          "estimated_travel_m": 0.052207427161557296,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 27
+          },
+          "excluded_static_hits_total": 87,
+          "cpu_p95_ms": 4.362644399998317
+        }
+      },
+      "odometry_displacement_m": 0.05207386465702908
+    },
+    {
+      "mission": 14,
+      "source": "recorded_ekf",
+      "frames": 24,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.010889043946793487,
+          "estimated_travel_m": 0.010912964268060366,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 24
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.0963197500094566
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.010889043946793487,
+          "estimated_travel_m": 0.010912964268060366,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 24
+          },
+          "excluded_static_hits_total": 3,
+          "cpu_p95_ms": 4.413330700003115
+        }
+      },
+      "odometry_displacement_m": 0.010889043946793589
+    },
+    {
+      "mission": 14,
+      "source": "measured_wheel_gyro",
+      "frames": 24,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.013475505845868591,
+          "estimated_travel_m": 0.013505533006359862,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 24
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.1304882500004396
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.013475505845868591,
+          "estimated_travel_m": 0.013505533006359862,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 24
+          },
+          "excluded_static_hits_total": 3,
+          "cpu_p95_ms": 6.271693450000981
+        }
+      },
+      "odometry_displacement_m": 0.013475505845868523
+    },
+    {
+      "mission": 15,
+      "source": "recorded_ekf",
+      "frames": 20,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.0628141891117104,
+          "estimated_travel_m": 0.06310040321514143,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 20
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 3.1635077500048685
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.0628141891117104,
+          "estimated_travel_m": 0.06310040321514143,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 20
+          },
+          "excluded_static_hits_total": 29,
+          "cpu_p95_ms": 7.0489509000054795
+        }
+      },
+      "odometry_displacement_m": 0.06281418911171045
+    },
+    {
+      "mission": 15,
+      "source": "measured_wheel_gyro",
+      "frames": 20,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.04517939390420155,
+          "estimated_travel_m": 0.04532256822998314,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 20
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 3.0145948000075866
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.04517939390420155,
+          "estimated_travel_m": 0.04532256822998314,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 20
+          },
+          "excluded_static_hits_total": 29,
+          "cpu_p95_ms": 4.9530475999951316
+        }
+      },
+      "odometry_displacement_m": 0.04517939390420147
+    },
+    {
+      "mission": 16,
+      "source": "recorded_ekf",
+      "frames": 3,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.0008945857485304465,
+          "estimated_travel_m": 0.0008948185129608981,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 1.678043599994794
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.0008945857485304465,
+          "estimated_travel_m": 0.0008948185129608981,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 18,
+          "cpu_p95_ms": 3.5593557999931136
+        }
+      },
+      "odometry_displacement_m": 0.0008945857485303659
+    },
+    {
+      "mission": 16,
+      "source": "measured_wheel_gyro",
+      "frames": 3,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.0069298608138350145,
+          "estimated_travel_m": 0.00693060776967778,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 1.547225100006244
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.0069298608138350145,
+          "estimated_travel_m": 0.00693060776967778,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 3
+          },
+          "excluded_static_hits_total": 20,
+          "cpu_p95_ms": 3.608390499999814
+        }
+      },
+      "odometry_displacement_m": 0.006929860813835052
+    },
+    {
+      "mission": 17,
+      "source": "recorded_ekf",
+      "frames": 94,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.44223047642721375,
+          "estimated_travel_m": 0.46033184451873627,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 94
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.85797710000395
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.44223047642721375,
+          "estimated_travel_m": 0.46033184451873627,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 94
+          },
+          "excluded_static_hits_total": 452,
+          "cpu_p95_ms": 5.809605749995938
+        }
+      },
+      "odometry_displacement_m": 0.44223047642721347
+    },
+    {
+      "mission": 17,
+      "source": "measured_wheel_gyro",
+      "frames": 94,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.44052947734285886,
+          "estimated_travel_m": 0.46487137811731005,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 94
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.2301190000007405
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.44052947734285886,
+          "estimated_travel_m": 0.46487137811731005,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 94
+          },
+          "excluded_static_hits_total": 442,
+          "cpu_p95_ms": 4.770178899992317
+        }
+      },
+      "odometry_displacement_m": 0.4405294773428602
+    },
+    {
+      "mission": 18,
+      "source": "recorded_ekf",
+      "frames": 38,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.16389818148210925,
+          "estimated_travel_m": 0.17035220453070485,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 38
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3947249999920923
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.16389818148210925,
+          "estimated_travel_m": 0.17035220453070485,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 38
+          },
+          "excluded_static_hits_total": 180,
+          "cpu_p95_ms": 4.656529849999202
+        }
+      },
+      "odometry_displacement_m": 0.16389818148210925
+    },
+    {
+      "mission": 18,
+      "source": "measured_wheel_gyro",
+      "frames": 38,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.16369038225793903,
+          "estimated_travel_m": 0.1717494079651559,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 38
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.070828249998158
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.16369038225793903,
+          "estimated_travel_m": 0.1717494079651559,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 38
+          },
+          "excluded_static_hits_total": 185,
+          "cpu_p95_ms": 4.2512518499947305
+        }
+      },
+      "odometry_displacement_m": 0.16369038225793878
+    },
+    {
+      "mission": 19,
+      "source": "recorded_ekf",
+      "frames": 41,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.024847638312105475,
+          "estimated_travel_m": 0.025115849946899922,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 41
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.1912840000055667
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.024847638312105475,
+          "estimated_travel_m": 0.025115849946899922,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 41
+          },
+          "excluded_static_hits_total": 113,
+          "cpu_p95_ms": 4.89713999999708
+        }
+      },
+      "odometry_displacement_m": 0.024847638312106592
+    },
+    {
+      "mission": 19,
+      "source": "measured_wheel_gyro",
+      "frames": 41,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.03511359536312605,
+          "estimated_travel_m": 0.035641024489938604,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 41
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.3536820000060743
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.03511359536312605,
+          "estimated_travel_m": 0.035641024489938604,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 41
+          },
+          "excluded_static_hits_total": 98,
+          "cpu_p95_ms": 4.81007499999464
+        }
+      },
+      "odometry_displacement_m": 0.035113595363126235
+    },
+    {
+      "mission": 20,
+      "source": "recorded_ekf",
+      "frames": 17,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.06415667987568886,
+          "estimated_travel_m": 0.06438397065784703,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 17
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.1963577999997597
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.06415667987568886,
+          "estimated_travel_m": 0.06438397065784703,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 17
+          },
+          "excluded_static_hits_total": 3,
+          "cpu_p95_ms": 5.116176399999971
+        }
+      },
+      "odometry_displacement_m": 0.06415667987568882
+    },
+    {
+      "mission": 20,
+      "source": "measured_wheel_gyro",
+      "frames": 17,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 0.045033892417387325,
+          "estimated_travel_m": 0.045376640030444323,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 17
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 2.2789005999953815
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 0.045033892417387325,
+          "estimated_travel_m": 0.045376640030444323,
+          "accepted_scan_frames": 0,
+          "reasons": {
+            "insufficient_static_support": 17
+          },
+          "excluded_static_hits_total": 2,
+          "cpu_p95_ms": 4.894386800003758
+        }
+      },
+      "odometry_displacement_m": 0.045033892417386805
+    },
+    {
+      "mission": 21,
+      "source": "recorded_ekf",
+      "frames": 278,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 3.371707832478238,
+          "estimated_travel_m": 4.909144255318184,
+          "accepted_scan_frames": 184,
+          "reasons": {
+            "insufficient_static_support": 94,
+            "accepted_static_correction": 157,
+            "validated_static_prior": 27
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.925557650001735
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 3.611828470798083,
+          "estimated_travel_m": 4.391433661501501,
+          "accepted_scan_frames": 8,
+          "reasons": {
+            "insufficient_static_support": 270,
+            "accepted_static_correction": 8
+          },
+          "excluded_static_hits_total": 1877,
+          "cpu_p95_ms": 6.193909650007611
+        }
+      },
+      "odometry_displacement_m": 3.457547524280524
+    },
+    {
+      "mission": 21,
+      "source": "measured_wheel_gyro",
+      "frames": 278,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 3.3715652355027994,
+          "estimated_travel_m": 4.762046260725177,
+          "accepted_scan_frames": 177,
+          "reasons": {
+            "insufficient_static_support": 101,
+            "accepted_static_correction": 147,
+            "validated_static_prior": 30
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.913021999990376
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 3.589718422800148,
+          "estimated_travel_m": 4.3647548013948025,
+          "accepted_scan_frames": 7,
+          "reasons": {
+            "insufficient_static_support": 271,
+            "accepted_static_correction": 7
+          },
+          "excluded_static_hits_total": 1719,
+          "cpu_p95_ms": 6.30898910000468
+        }
+      },
+      "odometry_displacement_m": 3.415254830152326
+    },
+    {
+      "mission": 22,
+      "source": "recorded_ekf",
+      "frames": 122,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.7034213533347147,
+          "estimated_travel_m": 2.202969705417235,
+          "accepted_scan_frames": 122,
+          "reasons": {
+            "accepted_static_correction": 107,
+            "validated_static_prior": 15
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.725930199995901
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.5942414671224345,
+          "estimated_travel_m": 2.265317866382856,
+          "accepted_scan_frames": 105,
+          "reasons": {
+            "accepted_static_correction": 91,
+            "validated_static_prior": 14,
+            "ray_inconsistent_correction": 10,
+            "insufficient_static_support": 7
+          },
+          "excluded_static_hits_total": 1558,
+          "cpu_p95_ms": 12.477089199992973
+        }
+      },
+      "odometry_displacement_m": 1.640654195305527
+    },
+    {
+      "mission": 22,
+      "source": "measured_wheel_gyro",
+      "frames": 122,
+      "skip": null,
+      "algorithms": {
+        "temporal": {
+          "estimated_displacement_m": 1.6970754124026541,
+          "estimated_travel_m": 2.1795697980300948,
+          "accepted_scan_frames": 122,
+          "reasons": {
+            "accepted_static_correction": 105,
+            "validated_static_prior": 17
+          },
+          "excluded_static_hits_total": 0,
+          "cpu_p95_ms": 7.963457800003937
+        },
+        "ray_consistent": {
+          "estimated_displacement_m": 1.6780830843449104,
+          "estimated_travel_m": 2.1748834764385174,
+          "accepted_scan_frames": 109,
+          "reasons": {
+            "accepted_static_correction": 94,
+            "validated_static_prior": 15,
+            "ray_inconsistent_correction": 7,
+            "insufficient_static_support": 6
+          },
+          "excluded_static_hits_total": 1483,
+          "cpu_p95_ms": 13.376385449998905
+        }
+      },
+      "odometry_displacement_m": 1.628875890142678
+    }
+  ],
+  "resource": {
+    "seconds": 285.86418758297805,
+    "cpu_seconds": 100.08812947999999,
+    "average_cpu_cores": 0.3501247579357849,
+    "peak_rss_mib": 130.05859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

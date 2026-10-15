@@ -1,0 +1,31 @@
+{
+  "completed": "2026-10-15T16:00:37.635824+08:00",
+  "deployment_approved": false,
+  "original_bundle_replaced": false,
+  "ppo_runs": {
+    "stop_go_ppo": {
+      "additional_steps": 2000,
+      "decision": "rejected",
+      "success": 11,
+      "collisions": 1,
+      "parking_success": 6,
+      "travel_relative_change": 0.02104673198804985,
+      "time_relative_change": -0.009057971014494126
+    },
+    "critical_clone_ppo": {
+      "additional_steps": 2000,
+      "decision": "rejected",
+      "success": 11,
+      "collisions": 1,
+      "parking_success": 6,
+      "travel_relative_change": 0.08775237142484893,
+      "time_relative_change": 0.03804347826089338
+    }
+  },
+  "completion_prototype": {
+    "decision": "rejected_on_sensor_shadow_before_runtime_integration",
+    "reason": "At 8.4 seconds it rejected all moving choices, unlike the V4 comparison",
+    "evidence": "completion_sensor_shadow.json"
+  },
+  "next_mechanism_to_validate": "Shared sensor-supported prediction and uncertainty for actor and action feasibility, with a new observation contract"
+}

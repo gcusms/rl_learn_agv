@@ -81,7 +81,8 @@ class DockingTests(unittest.TestCase):
         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);bundle=root/'bundle';bundle.mkdir()
-            for name in ('actor.pt','localizer.pt','router.pt','hardware.json'):(bundle/name).write_text('fixture')
+            for name in ('actor.pt','localizer.pt','router.pt'):(bundle/name).write_text('fixture')
+            (bundle/'hardware.json').write_text(json.dumps(dict(policy_action=action_contract())))
             for name,value in [('quality_observation.json',quality_contract()),('goal_pose_observation.json',goal_contract()),('docking_contract.json',docking_contract(.10))]:
                 (bundle/name).write_text(json.dumps(value))
             manifest=dict(sensor_core='learned-terminal-goal-pose',required_runtime='experiments.docking_navigation.DockingRuntime',

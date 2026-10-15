@@ -146,14 +146,42 @@ class RoomRoutingMixin:
         if not samples:return False
         points=np.array(samples);r,c=self.static_map.cells(points);r=r//4;c=c//4
         if np.any((r<0)|(r>=self.grid_h)|(c<0)|(c>=self.grid_w)):return False
-        return not np.any(self.laser_fusion.hard[r,c])
+        return not np.any(getattr(self.laser_fusion,'routing_hard',self.laser_fusion.hard)[r,c])
 
     def _segment_clear(self,a,b):
         if not self._static_visible(a,b):return False
         # Supercover also checks both cells when a segment crosses a corner.
         # No sampled gaps, and no cached dynamic occupancy.
-        free=(self.free>0)&~self.laser_fusion.hard
+        free=(self.free>0)&~getattr(self.laser_fusion,'routing_hard',self.laser_fusion.hard)
         return segment_is_free(a,b,self.static_map.origin,self.grid_res,free)
+
+    def _observed_route_clear(self,path):
+        free=(self.free>0)&~self.laser_fusion.observed_hard
+        return all(self._static_visible(a,b) and segment_is_free(a,b,self.static_map.origin,self.grid_res,free)
+            for a,b in zip(path[:-1],path[1:]))
+
+    def _confirm_forecast_detour(self,old,tail,candidate):
+        config=getattr(self,'routing_contract',None)
+        if config is None or config.get('schema')!='confirm_forecast_detour_v1':return False
+        if not self._observed_route_clear(tail):
+            self.detour_candidate=None;self.detour_since=None;return False
+        if len(candidate)<2 or np.linalg.norm(candidate[-1]-self.goal)>.12:
+            self.detour_candidate=None;self.detour_since=None;return False
+        old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
+        delta=candidate[min(2,len(candidate)-1)]-self.estimate[:2]
+        direction=np.array([np.cos(self.estimate[2]),np.sin(self.estimate[2])])
+        behind=float(delta@direction)/max(np.linalg.norm(delta),1e-9)<config['behind_cosine']
+        disruptive=behind or new_length-old_length>max(config['excess_length_m'],config['excess_length_ratio']*old_length)
+        if not disruptive:
+            self.detour_candidate=None;self.detour_since=None;return False
+        stable=False
+        if self.detour_candidate is not None:
+            distances=np.linalg.norm(candidate[:,None]-self.detour_candidate[None,:],axis=2)
+            stable=max(distances.min(axis=0).max(),distances.min(axis=1).max())<config['candidate_geometry_tolerance_m']
+        if not stable:self.detour_candidate=candidate.copy();self.detour_since=self.elapsed
+        if self.elapsed-self.detour_since>=config['confirmation_s']-1e-8:
+            self.detour_candidate=None;self.detour_since=None;return False
+        return True
 
     def _shortcut_route(self,path):
         if len(path)<3 or np.linalg.norm(path[-1]-self.goal)>.12:return path
@@ -181,9 +209,14 @@ class RoomRoutingMixin:
         if old is None or len(old)<2 or np.linalg.norm(old[-1]-self.goal)>.12:return
         nearest=int(np.argmin(np.linalg.norm(old-self.estimate[:2],axis=1)))
         tail=np.vstack([self.estimate[:2],old[nearest:]])
-        if np.linalg.norm(old[nearest]-self.estimate[:2])>.35 or not self._route_usable(tail):
+        deviation=np.linalg.norm(old[nearest]-self.estimate[:2])
+        if deviation>.35 or not self._route_usable(tail):
+            if deviation<=.35 and self._confirm_forecast_detour(old,tail,candidate):
+                self.predicted_path=old;self.plan_revision=revision;self.route_retained=True
+                self.replan_reason='confirming_forecast_only_detour';return
             self.shortcut_candidate=None;self.shortcut_since=None;self.replan_reason='confirmed_obstacle_or_route_invalid';self.last_route_switch=self.elapsed
             return
+        self.detour_candidate=None;self.detour_since=None
         old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
         improvement=old_length-new_length
         shorter=self._route_usable(candidate) and improvement>max(.5,.08*old_length)
@@ -242,10 +275,26 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
             if json.loads(goal_contract_path.read_text())!=contract():raise ValueError('Goal-pose contract mismatch')
             self.timed_scan_history=TimedScanHistory(contract()['control_period_s'])
         self.static_map=static_map;self.lidar=lidar;components=Path(components)
+        self.routing_contract=None
+        if (components/'routing_contract.json').exists():
+            from neural_navigation.routing_contract import contract as routing_contract,soft_forecast_contract
+            self.routing_contract=json.loads((components/'routing_contract.json').read_text())
+            if self.routing_contract not in (routing_contract(),soft_forecast_contract()):raise ValueError('Routing acceptance contract mismatch')
         localization_contract=components/'localization_contract.json'
         if localization_contract.exists():
-            from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
-            self.localizer=OdometryAnchoredLocalizer(static_map,lidar,components/'localizer.pt',json.loads(localization_contract.read_text()))
+            localization_config=json.loads(localization_contract.read_text())
+            if localization_config.get('schema') in ('fast_static_tracking_v1','fast_static_tracking_native_v1','fast_static_tracking_v2','fast_static_tracking_native_v2','fast_static_tracking_temporal_v1','fast_static_tracking_temporal_native_v1','ray_consistent_static_tracking_v1'):
+                from neural_navigation.fast_static_localizer import FastStaticLocalizer
+                localizer_class=FastStaticLocalizer
+                if localization_config['schema']=='ray_consistent_static_tracking_v1':
+                    from neural_navigation.verified_static_localizer import VerifiedStaticLocalizer
+                    localizer_class=VerifiedStaticLocalizer
+                self.localizer=localizer_class(static_map,lidar,localization_config,
+                    kernel_path=str((components/'localization_kernel.so').resolve()),
+                    uncertainty=json.loads((components/'uncertainty_contract.json').read_text()) if (components/'uncertainty_contract.json').exists() else None)
+            else:
+                from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
+                self.localizer=OdometryAnchoredLocalizer(static_map,lidar,components/'localizer.pt',localization_config)
         else:self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
         checkpoint=torch.load(components/'router.pt',map_location='cpu',weights_only=True)
         self.motion_prediction_config=checkpoint.get('motion_prediction')
@@ -287,6 +336,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         self.goal_yaw=float(wrap(goal[2])) if len(goal)==3 else None
         self._goal_settled_since=None
         self.goal=goal[:2].copy();self.last_route_time=-100.;self.routing_ready=False
+        self.detour_candidate=None;self.detour_since=None
 
     def replace_map(self,static_map,preserve_valid_route=False):
         """Install an observed map revision without resetting odometry or actor.
@@ -313,6 +363,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
             self.laser_fusion.hard=distance_transform_edt(~(self.expiry>self.elapsed))*self.grid_res<=.32
         if old.predictor is not None:self.laser_fusion.predictor=old.predictor
         self.last_route_time=-100.;self.routing_ready=False;self.shortcut_candidate=None;self.shortcut_since=None
+        self.detour_candidate=None;self.detour_since=None
         if preserve_valid_route and previous_ready and self._route_usable(self.predicted_path):
             # Keep the existing route in world coordinates until the regular
             # 0.4s replanning tick. New geometry and fresh laser guards apply
@@ -355,7 +406,14 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         from neural_navigation.goal_pose import goal_status
         return dict(**goal_status(self),estimated_pose=self.estimate.tolist(),localization_std=self.localizer.std.tolist(),
                     localization_correction_reason=getattr(self.localizer,'correction_reason','legacy_unchecked'),
+                    localization_observable_rank=getattr(self.localizer,'observable_rank',None),
+                    localization_covariance_calibrated=False,
+                    localization_weak_odometry_budget=(self.localizer.weak_geometry_uncertainty.floor.tolist()
+                        if getattr(self.localizer,'weak_geometry_uncertainty',None) is not None else None),
                     localization_static_support_fraction=getattr(self.localizer,'static_support_fraction',None),
+                    localization_ray_contradicted_hits=getattr(self.localizer,'ray_contradicted_hits',None),
+                    localization_ray_excluded_static_hits=getattr(self.localizer,'ray_excluded_static_hits',None),
+                    localization_new_contradicted_hits=getattr(self.localizer,'new_contradicted_hits',None),
                     localization_scan_update_accepted=self.localizer.scan_update_accepted,
                     localization_valid_scan_fraction=self.localizer.valid_scan_fraction,
                     localization_missing_scan_updates=self.localizer.missing_scan_updates,

@@ -1,0 +1,33 @@
+{
+  "functional_tests": 24,
+  "tests_passed": true,
+  "native_reference_parity_frames": 3221,
+  "maximum_native_reference_pose_difference": 1.6431300764452317e-14,
+  "navigation": {
+    "tasks": 12,
+    "success": 10,
+    "collisions": 1,
+    "timeouts": 1
+  },
+  "unchanged_component_sha256": {
+    "actor.pt": "fd40e1d33a9b954345ff014b546e790a668316d8b3b37fe98ed5ee2d4856164a",
+    "router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "hardware.json": "fc70333f1813a1844572ba7b5ecb67adc5ede3f5437089019e5da2b96cf7f48b",
+    "goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5"
+  },
+  "source_sha256": {
+    "training/neural_navigation/fast_static_localizer.py": "fbbb0cb0421606b9eb9ef3e5ff0f506e4581ee17314108e3d999cdcaa0429743",
+    "training/neural_navigation/static_tracking_kernel.cpp": "e925514ea1174b69cac26f305628a37b8ff5075e1add88b76438c73242376956",
+    "training/neural_navigation/core.py": "d3285d83b6644714e2d2dbdced7c6e8199b135ee3656dd54fe50425ae4a83c11",
+    "training/neural_navigation/experiment_budget.py": "e1292cd3a1f493fbd1aec9ada5d51e011d5cd7bbc38ddaebb164813f226e2ba5",
+    "training/neural_navigation/goal_pose_runtime.py": "6102ba34550ff38579b38af11f100f7e45df601932c5849143af890e62a6a573",
+    "deployment/ros2_recording_adapter/model_bundle.py": "79ee1485e6746312e95d2bc02a9fea7141f55dbed3efa7cf399b78851e0f8fcc"
+  },
+  "deployment_approved": false,
+  "next_priorities": [
+    "long-distance weak-geometry localization and odometry bias estimation",
+    "PPO adaptation for waiting/exiting with new localization observations",
+    "separate unknown-map SLAM and real absolute-reference validation"
+  ]
+}

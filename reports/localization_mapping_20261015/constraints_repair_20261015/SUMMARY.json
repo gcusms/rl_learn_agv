@@ -1,0 +1,137 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "weights_retrained": false,
+  "compared_with": "temporal_native_candidate, not the original deployed quality recovery 2k model",
+  "scope": "12 frozen development/regression tasks; 28 previously used localization replays; no new real-world ground truth",
+  "baseline": {
+    "tasks": 12,
+    "success": 10,
+    "collisions": 2,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "candidate": {
+    "tasks": 12,
+    "success": 11,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "dynamic_baseline": {
+    "tasks": 6,
+    "success": 4,
+    "collisions": 2,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "dynamic_candidate": {
+    "tasks": 6,
+    "success": 5,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "docking_baseline": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "docking_candidate": {
+    "tasks": 6,
+    "success": 6,
+    "collisions": 0,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "common_success_dynamic_cases": [
+    "motion_profile_002",
+    "motion_profile_000",
+    "independent_dynamic_000",
+    "independent_dynamic_001"
+  ],
+  "efficiency": {
+    "seconds": {
+      "baseline": 152.60000000001122,
+      "candidate": 163.20000000001608,
+      "change_percent": 6.946264744432562
+    },
+    "travel_m": {
+      "baseline": 24.021864180645093,
+      "candidate": 23.308099741083034,
+      "change_percent": -2.9713116109329807
+    }
+  },
+  "uncertainty_maximum_pose_difference": 0.0,
+  "unchanged_files": {
+    "actor.pt": true,
+    "router.pt": true,
+    "localizer.pt": true,
+    "localization_kernel.so": true,
+    "localization_contract.json": true,
+    "docking_contract.json": true
+  },
+  "runtime_sources_match": true,
+  "tests": {
+    "tests": 56,
+    "failures": 0,
+    "errors": 7,
+    "skipped": 0,
+    "successful": false,
+    "modules": [
+      "training.test_fast_static_localizer",
+      "training.test_navigation_runtime",
+      "training.test_real_adaptation",
+      "training.test_quality_prediction_context",
+      "training.test_masked_navigation",
+      "training.test_anchored_masked_ppo",
+      "training.test_guarded_curriculum",
+      "training.experiments.test_docking_navigation"
+    ],
+    "resource": {
+      "seconds": 223.88338458701037,
+      "cpu_seconds": 22.389031144,
+      "average_cpu_cores": 0.10000309395581204,
+      "peak_rss_mib": 2553.77734375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "additional_predictive_and_uncertainty_tests_passed": 10,
+    "available_checks_passed": true,
+    "status": "available_checks_passed; six archived fixture tests blocked",
+    "passed": 50,
+    "blocked": 6,
+    "blocked_tests": [
+      "training.test_masked_navigation.MaskedNavigationTests.test_export_runtime_and_stale_scan_use_same_masks",
+      "training.test_masked_navigation.MaskedNavigationTests.test_focused_training_reset_and_bounded_export_share_native_masks",
+      "training.test_masked_navigation.MaskedNavigationTests.test_gaussian_density_migration_and_portable_masked_inference",
+      "training.test_masked_navigation.MaskedNavigationTests.test_native_ppo_rollouts_store_valid_executed_choices",
+      "training.test_guarded_curriculum.GuardedCurriculumTests.test_contact_remains_failure_even_if_legacy_environment_reports_success",
+      "training.test_guarded_curriculum.GuardedCurriculumTests.test_training_uses_identical_deployed_core_and_executed_action_history"
+    ],
+    "unresolved_code_test_failures": 0,
+    "adapter_fixture_fix_retest": {
+      "test": "training.experiments.test_docking_navigation.DockingTests.test_adapter_accepts_terminal_contract_and_rejects_wrong_runtime_or_gate",
+      "passed": true
+    },
+    "initial_errors_preserved_in": "REGRESSION_TESTS_INITIAL.json and REGRESSION_TESTS.txt"
+  },
+  "candidate_resource": {
+    "seconds": 473.75417690799804,
+    "cpu_seconds": 189.551739866,
+    "average_cpu_cores": 0.4001056858287299,
+    "peak_rss_mib": 2409.09375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "uncertainty_resource": {
+    "seconds": 107.1396648910013,
+    "cpu_seconds": 10.727874578,
+    "average_cpu_cores": 0.10012981269741714,
+    "peak_rss_mib": 66.91796875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "remaining_failures": [
+    "motion_profile_015"
+  ]
+}

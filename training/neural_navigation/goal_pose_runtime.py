@@ -13,6 +13,9 @@ from neural_navigation.quality_prediction_context import QualityPredictionContex
 
 
 def check_files(bundle,manifest):
+    for optional in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
+        if (bundle/optional).exists() and optional not in manifest['files']:
+            raise ValueError('Missing localization component hash: '+optional)
     for name,digest in manifest['files'].items():
         if Path(name).name!=name or hashlib.sha256((bundle/name).read_bytes()).hexdigest()!=digest:
             raise ValueError('Bundle integrity failure')

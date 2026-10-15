@@ -1,0 +1,20 @@
+{
+  "case": "train_failure_w11_e7",
+  "frames": 700,
+  "voluntary_wait_with_movement_available": 269,
+  "only_stop_available": 332,
+  "sampled_moving_actions": 99,
+  "executed_moving_actions": 99,
+  "cause": "Policy waits while safe motions remain available, then settles where only stop is feasible. Not evidence of PPO likelihood/action replacement.",
+  "last_physical_pose": [
+    8.056925608578895,
+    3.9893479742316313,
+    0.7043256191531517
+  ],
+  "last_estimated_pose": [
+    8.053694505832102,
+    3.994913397767502,
+    0.7047191898536904
+  ],
+  "conclusion": "New localizer cannot be promoted without actor/route recovery adaptation; retain original release and unchanged safety margins."
+}

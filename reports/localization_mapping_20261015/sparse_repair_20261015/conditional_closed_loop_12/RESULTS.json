@@ -1,0 +1,470 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "8c48dccda27fd9ffe4dbc8df7f19f9f061f6a085e39808fafe2819ed1a9432fe",
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 16.40000000000102,
+      "travel_m": 2.2071609832167507,
+      "frames": 82,
+      "final_xy_error_m": 1.9142816066948358,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00337582660447021,
+      "localization_yaw_p95_rad": 0.0011086461454599575,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 82
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 124.23886188480537,
+        "p99": 151.21400975971474,
+        "maximum": 178.4323449828662
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "1de08ace6fa9369b4f69b4ccba30a9886a2e16832b220a99fa482ec8cab4b6ab"
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 52.00000000000815,
+      "travel_m": 8.511808202285026,
+      "frames": 261,
+      "final_xy_error_m": 0.09512002309924127,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003612921229574047,
+      "localization_yaw_p95_rad": 0.0015942369786383637,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 260,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "runtime_ms": {
+        "p95": 119.5060340105556,
+        "p99": 129.68667120439923,
+        "maximum": 159.67712900601327
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "49e6fcf15bc1f58da3a90ca0aeeb53dda041f1277bd60838631e0122e218d97b"
+    },
+    {
+      "case_id": "motion_profile_000",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 29.799999999998356,
+      "travel_m": 3.5793214079038,
+      "frames": 150,
+      "final_xy_error_m": 0.1085305459704832,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005419430160220233,
+      "localization_yaw_p95_rad": 0.0017483492735908869,
+      "stop_choices": 1,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 149,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "runtime_ms": {
+        "p95": 119.66640593891496,
+        "p99": 127.2658796649193,
+        "maximum": 130.12797996634617
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "38ef3207b1087de0942d52211ae59da60b0e5725300f070f4efb1ef8119738a9"
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.400000000000226,
+      "travel_m": 1.5070794166586805,
+      "frames": 52,
+      "final_xy_error_m": 3.1787863126585183,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004720435797538741,
+      "localization_yaw_p95_rad": 0.0013107649604623848,
+      "stop_choices": 3,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 49,
+        "scan_unavailable": 3
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 117.40581631602252,
+        "p99": 127.1054333879147,
+        "maximum": 134.0416430030018
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "00b6d6d7fb99c22c28eb926ff46a2d403d80687536ce2f4d50edbc8287cd77e1"
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "category": "original_release_dynamic_independent",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 46.20000000000518,
+      "travel_m": 7.999689375109303,
+      "frames": 232,
+      "final_xy_error_m": 0.08429738641491023,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003926793085886293,
+      "localization_yaw_p95_rad": 0.0013020947671803062,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 231,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 122.89086999371648,
+        "p99": 130.17405780556146,
+        "maximum": 138.78370897145942
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "0ae6630ea230a960b0924764352ecc30b7afb2890be3b783fcd1dc79e2cb4cd6"
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "category": "original_release_dynamic_independent",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 22.199999999999868,
+      "travel_m": 3.7757808074419428,
+      "frames": 112,
+      "final_xy_error_m": 0.11826945589543036,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004414908410932501,
+      "localization_yaw_p95_rad": 0.0012885485709693168,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 111,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 118.09892242017666,
+        "p99": 124.8820769804297,
+        "maximum": 149.13957699900493
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "1cfe1dba3175071247d2496c7d831b3051e2154fb0f5efcdf1e047bcb99a0e02"
+    },
+    {
+      "case_id": "localization_nav_00",
+      "category": "boundary_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.40000000000000024,
+      "travel_m": 0.0,
+      "frames": 3,
+      "final_xy_error_m": 0.0678508598728828,
+      "final_yaw_error_rad": 0.010893255673215752,
+      "localization_xy_p95_m": 0.004004236248699765,
+      "localization_yaw_p95_rad": 0.0009503674594814715,
+      "stop_choices": 3,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 3,
+      "runtime_ms": {
+        "p95": 121.2187291122973,
+        "p99": 121.66804583743215,
+        "maximum": 121.78037501871586
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "1fbe2f8ed2cf21294de518ef190e15fdfcfed61369cdb1ca2d2de2787e982e32"
+    },
+    {
+      "case_id": "localization_nav_05",
+      "category": "boundary_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 0.8000000000000006,
+      "travel_m": 0.0,
+      "frames": 5,
+      "final_xy_error_m": 0.014665322984974399,
+      "final_yaw_error_rad": 0.09550020458163644,
+      "localization_xy_p95_m": 0.0035844256907089263,
+      "localization_yaw_p95_rad": 0.0006561903266279145,
+      "stop_choices": 4,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 4,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "runtime_ms": {
+        "p95": 117.16549241682515,
+        "p99": 117.44657289935276,
+        "maximum": 117.51684301998466
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "d6d3697dc99af8d1865e0a0637f5dfde3047330cc6569fbddeb98d26abe89efa"
+    },
+    {
+      "case_id": "localization_nav_12",
+      "category": "boundary_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.9999999999999793,
+      "travel_m": 0.0,
+      "frames": 11,
+      "final_xy_error_m": 0.02672626905918131,
+      "final_yaw_error_rad": 0.012685399605454784,
+      "localization_xy_p95_m": 0.003762354033814008,
+      "localization_yaw_p95_rad": 0.0022774914764456256,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 10,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 6,
+      "runtime_ms": {
+        "p95": 121.23595297452994,
+        "p99": 122.40792415686883,
+        "maximum": 122.70091695245355
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "d3d3d59dd531a9c8f10ae4ba1c9e43c18ad8823b3236f5a4190bd8702a440805"
+    },
+    {
+      "case_id": "localization_nav_17",
+      "category": "approach_and_stop",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 2.1999999999999753,
+      "travel_m": 0.27258664852165043,
+      "frames": 12,
+      "final_xy_error_m": 0.05344648370671972,
+      "final_yaw_error_rad": 0.04859305485246068,
+      "localization_xy_p95_m": 0.011071977648642536,
+      "localization_yaw_p95_rad": 0.0004581619543800874,
+      "stop_choices": 4,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 9,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "runtime_ms": {
+        "p95": 118.17621840455104,
+        "p99": 120.10264048411045,
+        "maximum": 120.5842460040003
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "fe88965a73b5549f2f5fcfe559c07dfaf646a2afb500778203db80b44307fe4f"
+    },
+    {
+      "case_id": "localization_nav_24",
+      "category": "approach_and_stop",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 2.399999999999971,
+      "travel_m": 0.32773332836889674,
+      "frames": 13,
+      "final_xy_error_m": 0.042800521180644736,
+      "final_yaw_error_rad": 0.035518111916342576,
+      "localization_xy_p95_m": 0.004460569165790614,
+      "localization_yaw_p95_rad": 0.0009186571440392469,
+      "stop_choices": 4,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 10,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "runtime_ms": {
+        "p95": 119.22604799037799,
+        "p99": 121.54566962039098,
+        "maximum": 122.12557502789423
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "e749757328f44b49f27e2d41a61a655ee11ea5688975901f9307c5191b1f6b02"
+    },
+    {
+      "case_id": "localization_nav_31",
+      "category": "approach_and_stop",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 0.5738979954505263,
+      "frames": 57,
+      "final_xy_error_m": 0.05361096972390381,
+      "final_yaw_error_rad": 0.0031409660656436245,
+      "localization_xy_p95_m": 0.01335886736427475,
+      "localization_yaw_p95_rad": 0.0018562827453439267,
+      "stop_choices": 8,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 52,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 1,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 5,
+      "runtime_ms": {
+        "p95": 90.06871496094391,
+        "p99": 115.51852204604074,
+        "maximum": 115.69259298266843
+      },
+      "variant": "conditional_ppo_1000",
+      "trace_sha256": "44f9d026c684b52d27737c75eab17a97ca6add527723d4212ee706b643994833"
+    }
+  ],
+  "resource": {
+    "seconds": 595.1650791929569,
+    "cpu_seconds": 148.853728068,
+    "average_cpu_cores": 0.25010494276620776,
+    "peak_rss_mib": 2408.30078125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "approach_and_stop": {
+      "conditional_ppo_1000": {
+        "tasks": 3,
+        "success": 3,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "boundary_alignment": {
+      "conditional_ppo_1000": {
+        "tasks": 3,
+        "success": 3,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_dynamic_independent": {
+      "conditional_ppo_1000": {
+        "tasks": 2,
+        "success": 2,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_reversal": {
+      "conditional_ppo_1000": {
+        "tasks": 2,
+        "success": 2,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_stop_go": {
+      "conditional_ppo_1000": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_training_failure": {
+      "conditional_ppo_1000": {
+        "tasks": 1,
+        "success": 0,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

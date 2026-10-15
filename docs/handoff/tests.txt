@@ -1,0 +1,47 @@
+test_adapter_does_not_invoke_policy_with_missing_motion (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_command_is_not_an_input_or_motion_source (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_duplicate_cannot_integrate_and_reverse_time_rejected (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_gap_requires_explicit_reset_no_implicit_command_fallback (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_measured_arc_and_lateral_motion (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_output_cannot_extrapolate_past_freshness_or_use_future (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_stale_future_invalid_and_count_jump_hold (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_stationary_bias_requires_duration_and_motion_breaks_window (training.test_measured_odometry.MeasuredOdometryTests) ... ok
+test_blank_scan_retains_full_planar_odometry (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_core_contract_is_explicit_opt_in (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_endpoint_behind_nearer_wall_cannot_be_static_support (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_native_verifier_parity_and_rejected_information (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_normal_wall_correction_and_unobservable_tangent_preserved (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_packed_rays_match_dense_reference_with_boundaries_and_unknown (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_rejected_proposal_has_no_information_gain_or_pose_correction (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_unmapped_near_object_kept_for_avoidance_but_not_fit (training.test_verified_static_localizer.VerifiedStaticTests) ... ok
+test_duplicate_scan_cannot_repeat_information_or_correction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_missing_scan_grows_uncertainty_and_keeps_lateral_feedback (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_opt_in_core_does_not_require_neural_localizer_checkpoint (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_reset_clears_history (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_runtime_rejects_unhashed_optional_native_component (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_sparse_contract_does_not_force_fit_or_keep_stale_geometry_rank (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_sparse_wall_corrects_only_observed_direction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_history_compensates_measured_lateral_and_yaw_motion (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_history_rejects_current_free_space_contradiction (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_temporal_support_needs_current_ray_and_physical_history (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_unknown_endpoint_is_not_static_evidence (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_unmapped_returns_do_not_drag_pose (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_wall_corrects_normal_but_not_tangent (training.test_fast_static_localizer.FastStaticTests) ... ok
+test_branch_bounds_cover_children_and_outside_ray_endpoints (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_branch_search_matches_exhaustive_lattice_score (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_confirmed_pose_expires (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_finite_rays_cannot_pass_through_mapped_walls (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_fresh_stationary_confirmations_and_one_shot_result (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_global_search_recovers_without_initial_pose (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_incomplete_search_never_authorizes_reset (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_missing_and_unknown_are_not_static_evidence (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_motion_stale_frames_and_lost_confirmation_keep_hold (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_relative_odometry_uses_odom_axes_and_lateral_motion (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_runtime_handoff_clears_histories_and_preserves_directional_goal (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_symmetric_room_does_not_select_arbitrary_pose (training.test_global_relocalizer.RelocalizationTests) ... ok
+test_unmapped_returns_do_not_mutate_avoidance_scan (training.test_global_relocalizer.RelocalizationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 4.051s
+
+OK

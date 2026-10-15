@@ -126,13 +126,13 @@ def export_goal_policy(model,components,output):
     expected=ACTIONS[model.predict(inputs,action_masks=masks_from_observation(inputs[:,:282]),deterministic=True)[0]]
     with torch.no_grad():np.testing.assert_array_equal(actor(torch.from_numpy(inputs)).numpy(),expected)
     actor.save(str(output/'actor.pt'))
-    for name in ('hardware.json','localizer.pt','router.pt','localization_contract.json'):
+    for name in ('hardware.json','localizer.pt','router.pt','localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
         if (components/name).exists():shutil.copy2(components/name,output/name)
     (output/'quality_observation.json').write_text(json.dumps(quality_contract(),indent=2))
     (output/'goal_pose_observation.json').write_text(json.dumps(contract(),indent=2))
     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in output.iterdir()}
     manifest=dict(sensor_core='odom-goal-pose',required_runtime='experiments.goal_pose_navigation.GoalPoseRuntime',
-        observation_contract=contract(),quality_prefix_contract=quality_contract(),action_contract=action_contract(),
+        observation_contract=contract(),quality_prefix_contract=quality_contract(),action_contract=json.loads((components/'hardware.json').read_text())['policy_action'],
         requires_quality_feature_generator=True,exact_action_parity=True,comparison_inputs=256,
         deployment_approved=False,files=hashes)
     (output/'manifest.json').write_text(json.dumps(manifest,indent=2))

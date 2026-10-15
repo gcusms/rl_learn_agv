@@ -1,0 +1,22 @@
+{
+  "schema": "quality_goal_pose_v1",
+  "dimensions": 303,
+  "prefix_dimensions": 300,
+  "appended_features": [
+    "sin_goal_yaw_error",
+    "cos_goal_yaw_error",
+    "goal_yaw_required"
+  ],
+  "position_tolerance_m": 0.12,
+  "yaw_tolerance_rad": 0.15,
+  "stopped_linear_m_s": 0.03,
+  "stopped_angular_rad_s": 0.08,
+  "settle_seconds": 0.4,
+  "control_period_s": 0.2,
+  "scan_history_offsets_s": [
+    -0.4,
+    -0.2,
+    0.0
+  ],
+  "calibrated": false
+}

@@ -1,0 +1,731 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "independent_pose_truth_available": false,
+  "scope": "real fixed-input shadow; estimates and eligibility only, no accuracy/success or actual stationary guarantee",
+  "limitations": [
+    "Recorded commands cannot be changed; recovery does not produce a new closed-loop robot trajectory.",
+    "Reported velocity uses the recorded odometry chain, not independently measured stationary truth.",
+    "The initial/reset poses and original model estimates are not localization ground truth."
+  ],
+  "record_sha256": "fcecb8e03507dca38ea712456283853bf809dab8f9c572985c58daaeb84e7606",
+  "map_yaml_sha256": "598d6ccdd1b1ef6278bde52ff4666a44ac7b3de27bc7fb7844f51b2764cf4ac9",
+  "hardware_sha256": "fc70333f1813a1844572ba7b5ecb67adc5ede3f5437089019e5da2b96cf7f48b",
+  "source_sha256": {
+    "replay_recorded_relocalization.py": "ffb53007a5b5888c476e9c41878adc74d62de66aeeb861c68ac239c240a31dba",
+    "global_relocalizer.py": "1bb795e9253f6ee34c19e4b5d7a2518b1fea02605953a72e3721a2dc82eb35ac"
+  },
+  "cases": [
+    {
+      "mission": 1,
+      "available": true,
+      "inference_id": 2,
+      "first_scan_stamp_ns": 1791977840760514972,
+      "first_total_age_s": 0.15699323399999798,
+      "recovery": {
+        "state": "held",
+        "reason": "free_space_contradiction",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": true,
+          "search_complete": true,
+          "reason": null,
+          "pose": [
+            -0.22386144776647965,
+            -0.011291775608080526,
+            0.10877730560738375
+          ],
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.8063960671424866,
+              "lattice_pose": [
+                -0.22499999999999964,
+                -0.01499999999999968,
+                0.10471975511965992
+              ],
+              "valid": true,
+              "reason": null,
+              "pose": [
+                -0.22386144776647965,
+                -0.011291775608080526,
+                0.10877730560738375
+              ],
+              "static_fraction": 0.8596491228070176,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.07017543859649122,
+              "footprint_clear": true,
+              "hit_count": 57
+            }
+          ],
+          "cpu_seconds": 1.016458275,
+          "nodes_scored": 71728,
+          "maximum_slice_cpu_ms": 32.263576999999934
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    },
+    {
+      "mission": 7,
+      "available": true,
+      "inference_id": 593,
+      "first_scan_stamp_ns": 1791977903719315403,
+      "first_total_age_s": 0.1582203079999971,
+      "recovery": {
+        "state": "held",
+        "reason": "no_supported_pose",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": false,
+          "search_complete": true,
+          "reason": "no_supported_pose",
+          "pose": null,
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.6274587512016296,
+              "lattice_pose": [
+                0.5250000000000004,
+                -0.5149999999999997,
+                -3.07177948351002
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                0.5142971650097241,
+                -0.5051614127867692,
+                -3.060473159229993
+              ],
+              "static_fraction": 0.75,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.35714285714285715,
+              "footprint_clear": true,
+              "hit_count": 56
+            },
+            {
+              "score": 0.6087920069694519,
+              "lattice_pose": [
+                -0.47499999999999964,
+                0.5350000000000001,
+                -3.141592653589793
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.48121839055825305,
+                0.5229065976836227,
+                3.140365327017131
+              ],
+              "static_fraction": 0.7142857142857143,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5892857142857143,
+              "footprint_clear": true,
+              "hit_count": 56
+            },
+            {
+              "score": 0.6032771468162537,
+              "lattice_pose": [
+                -0.12499999999999956,
+                -0.2649999999999997,
+                -1.4660765716752366
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.1361645030393923,
+                -0.268547109386857,
+                -1.4561109225586533
+              ],
+              "static_fraction": 0.6964285714285714,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.48214285714285715,
+              "footprint_clear": true,
+              "hit_count": 56
+            }
+          ],
+          "cpu_seconds": 2.019596979999995,
+          "nodes_scored": 126912,
+          "maximum_slice_cpu_ms": 15.280053000000127
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    },
+    {
+      "mission": 10,
+      "available": true,
+      "inference_id": 705,
+      "first_scan_stamp_ns": 1791977915793750380,
+      "first_total_age_s": 0.08375377400000161,
+      "recovery": {
+        "state": "held",
+        "reason": "no_supported_pose",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": false,
+          "search_complete": true,
+          "reason": "no_supported_pose",
+          "pose": null,
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.6664883494377136,
+              "lattice_pose": [
+                -0.4249999999999998,
+                -0.8650000000000002,
+                -2.792526803190927
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.39998914245402595,
+                -0.928585233050026,
+                -2.7857820630258456
+              ],
+              "static_fraction": 0.7166666666666667,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6361525654792786,
+              "lattice_pose": [
+                -2.2249999999999996,
+                0.33499999999999996,
+                -0.24434609527920603
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -2.2332016360721343,
+                0.3639162469804645,
+                -0.24859532972147003
+              ],
+              "static_fraction": 0.7833333333333333,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5333333333333333,
+              "footprint_clear": false,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6251217126846313,
+              "lattice_pose": [
+                0.12500000000000044,
+                -0.5149999999999997,
+                -2.8623399732707004
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                0.11750433475087746,
+                -0.5141988509612911,
+                -2.8520404416993737
+              ],
+              "static_fraction": 0.7666666666666667,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.2833333333333333,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6241899132728577,
+              "lattice_pose": [
+                -0.4249999999999998,
+                0.5350000000000001,
+                2.7925268031909276
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.43630065116924444,
+                0.54377587090315,
+                2.790171351834136
+              ],
+              "static_fraction": 0.7,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.31666666666666665,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6199208498001099,
+              "lattice_pose": [
+                0.025000000000000355,
+                2.6350000000000007,
+                -1.2566370614359172
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                0.02733426521822413,
+                2.646708292450742,
+                -1.260697561831856
+              ],
+              "static_fraction": 0.75,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.4666666666666667,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6161613464355469,
+              "lattice_pose": [
+                0.025000000000000355,
+                -0.3650000000000002,
+                -2.443460952792061
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                0.02393687418121138,
+                -0.36520013514838806,
+                -2.444711584542659
+              ],
+              "static_fraction": 0.6666666666666666,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.36666666666666664,
+              "footprint_clear": true,
+              "hit_count": 60
+            }
+          ],
+          "cpu_seconds": 2.5603733529999992,
+          "nodes_scored": 148884,
+          "maximum_slice_cpu_ms": 31.522467000000276
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    },
+    {
+      "mission": 13,
+      "available": true,
+      "inference_id": 853,
+      "first_scan_stamp_ns": 1791977931439960438,
+      "first_total_age_s": 0.22276648999999793,
+      "recovery": {
+        "state": "held",
+        "reason": "no_supported_pose",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": false,
+          "search_complete": true,
+          "reason": "no_supported_pose",
+          "pose": null,
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.7421154975891113,
+              "lattice_pose": [
+                -0.5249999999999997,
+                0.7850000000000001,
+                1.5009831567151233
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.5334597582078922,
+                0.7662511643039347,
+                1.511442414776627
+              ],
+              "static_fraction": 0.8620689655172413,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.3103448275862069,
+              "footprint_clear": true,
+              "hit_count": 58
+            },
+            {
+              "score": 0.6934806108474731,
+              "lattice_pose": [
+                -0.6249999999999998,
+                1.0350000000000001,
+                2.862339973270701
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.623299427569657,
+                1.0396402459298624,
+                2.8606730737541763
+              ],
+              "static_fraction": 0.8103448275862069,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5172413793103449,
+              "footprint_clear": true,
+              "hit_count": 58
+            },
+            {
+              "score": 0.6702637076377869,
+              "lattice_pose": [
+                0.025000000000000355,
+                0.4349999999999996,
+                1.8500490071139897
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                0.03553684133001791,
+                0.4284322919487591,
+                1.849198604214795
+              ],
+              "static_fraction": 0.7241379310344828,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.3448275862068966,
+              "footprint_clear": true,
+              "hit_count": 58
+            },
+            {
+              "score": 0.6688012480735779,
+              "lattice_pose": [
+                -0.47499999999999964,
+                -0.46499999999999986,
+                3.0368728984701336
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.47499999999999964,
+                -0.46499999999999986,
+                3.0368728984701336
+              ],
+              "static_fraction": 0.7586206896551724,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5517241379310345,
+              "footprint_clear": true,
+              "hit_count": 58
+            },
+            {
+              "score": 0.6484828591346741,
+              "lattice_pose": [
+                -0.5749999999999997,
+                1.1849999999999996,
+                -3.141592653589793
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.5949379849346008,
+                1.1833690921242719,
+                3.1049859714506045
+              ],
+              "static_fraction": 0.7758620689655172,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.4482758620689655,
+              "footprint_clear": true,
+              "hit_count": 58
+            },
+            {
+              "score": 0.6449865102767944,
+              "lattice_pose": [
+                -0.22499999999999964,
+                -2.365,
+                1.2915436464758043
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -0.23961340639790793,
+                -2.3700909312988037,
+                1.285525179327732
+              ],
+              "static_fraction": 0.7931034482758621,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.6551724137931034,
+              "footprint_clear": false,
+              "hit_count": 58
+            }
+          ],
+          "cpu_seconds": 2.283956892000017,
+          "nodes_scored": 130156,
+          "maximum_slice_cpu_ms": 54.95237000000053
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    },
+    {
+      "mission": 19,
+      "available": true,
+      "inference_id": 1070,
+      "first_scan_stamp_ns": 1791977960241478655,
+      "first_total_age_s": 0.15603586800000357,
+      "recovery": {
+        "state": "held",
+        "reason": "no_supported_pose",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": false,
+          "search_complete": true,
+          "reason": "no_supported_pose",
+          "pose": null,
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.7307496666908264,
+              "lattice_pose": [
+                -0.6749999999999998,
+                0.33499999999999996,
+                -2.548180707911721
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -0.6715672403412745,
+                0.34165834042857834,
+                -2.546766521620746
+              ],
+              "static_fraction": 0.8333333333333334,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.5833333333333334,
+              "footprint_clear": false,
+              "hit_count": 60
+            },
+            {
+              "score": 0.7014914155006409,
+              "lattice_pose": [
+                2.5250000000000004,
+                1.5349999999999993,
+                1.675516081914556
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                2.5093793698608193,
+                1.5405276505705452,
+                1.6787202091626758
+              ],
+              "static_fraction": 0.8,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.38333333333333336,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6585033535957336,
+              "lattice_pose": [
+                -1.0749999999999997,
+                1.1349999999999998,
+                -2.443460952792061
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -1.0482904364349523,
+                1.1408913771069058,
+                -2.4575403479281235
+              ],
+              "static_fraction": 0.7166666666666667,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.38333333333333336,
+              "footprint_clear": false,
+              "hit_count": 60
+            },
+            {
+              "score": 0.656846284866333,
+              "lattice_pose": [
+                -2.2249999999999996,
+                -0.46499999999999986,
+                0.27925268031909267
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -2.22242343552587,
+                -0.4715332323319404,
+                0.2854897086928738
+              ],
+              "static_fraction": 0.7833333333333333,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.31666666666666665,
+              "footprint_clear": false,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6526435017585754,
+              "lattice_pose": [
+                2.875000000000001,
+                1.4349999999999996,
+                1.9547687622336491
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                2.8642149025060575,
+                1.451638218898581,
+                1.9566076158478172
+              ],
+              "static_fraction": 0.7,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.36666666666666664,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6519898176193237,
+              "lattice_pose": [
+                -0.5749999999999997,
+                2.4850000000000003,
+                -0.9773843811168246
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.5749999999999997,
+                2.4850000000000003,
+                -0.9773843811168246
+              ],
+              "static_fraction": 0.7833333333333333,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.48333333333333334,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6476351022720337,
+              "lattice_pose": [
+                -0.6249999999999998,
+                0.1849999999999996,
+                -2.234021442552742
+              ],
+              "valid": false,
+              "reason": "blocked_footprint",
+              "pose": [
+                -0.6127015973292582,
+                0.15832185928000067,
+                -2.240343168458128
+              ],
+              "static_fraction": 0.7,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.7333333333333333,
+              "footprint_clear": false,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6431968808174133,
+              "lattice_pose": [
+                -0.7249999999999996,
+                -2.3150000000000004,
+                1.0821041362364845
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.709485161191313,
+                -2.319927922442381,
+                1.086144689051869
+              ],
+              "static_fraction": 0.6833333333333333,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.48333333333333334,
+              "footprint_clear": true,
+              "hit_count": 60
+            },
+            {
+              "score": 0.6387020945549011,
+              "lattice_pose": [
+                -0.9249999999999998,
+                -0.9649999999999999,
+                -1.5707963267948966
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                -0.9322401378453645,
+                -0.9699368869846817,
+                -1.5615949781472214
+              ],
+              "static_fraction": 0.7,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.55,
+              "footprint_clear": true,
+              "hit_count": 60
+            }
+          ],
+          "cpu_seconds": 2.4026388039999897,
+          "nodes_scored": 139620,
+          "maximum_slice_cpu_ms": 45.224052000000015
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    },
+    {
+      "mission": 22,
+      "available": true,
+      "inference_id": 1396,
+      "first_scan_stamp_ns": 1791977996052448193,
+      "first_total_age_s": 0.11449905399999238,
+      "recovery": {
+        "state": "held",
+        "reason": "no_supported_pose",
+        "required_command": [
+          0.0,
+          0.0
+        ],
+        "confirmations": 0,
+        "search": {
+          "candidate_valid": false,
+          "search_complete": true,
+          "reason": "no_supported_pose",
+          "pose": null,
+          "score_gap": 0.1,
+          "modes": [
+            {
+              "score": 0.8709109425544739,
+              "lattice_pose": [
+                1.1750000000000003,
+                -0.915,
+                1.9547687622336491
+              ],
+              "valid": false,
+              "reason": "free_space_contradiction",
+              "pose": [
+                1.1708587965005506,
+                -0.9165364648148125,
+                1.9446490221592905
+              ],
+              "static_fraction": 0.8703703703703703,
+              "observable_rank": 3,
+              "ray_contradiction_fraction": 0.12962962962962962,
+              "footprint_clear": true,
+              "hit_count": 54
+            }
+          ],
+          "cpu_seconds": 0.9801590599999859,
+          "nodes_scored": 68116,
+          "maximum_slice_cpu_ms": 15.244621000000791
+        },
+        "pose": null,
+        "deployment_approved": false
+      }
+    }
+  ],
+  "resource": {
+    "seconds": 33.10722569405334,
+    "cpu_seconds": 11.589991211000001,
+    "average_cpu_cores": 0.35007437101809996,
+    "peak_rss_mib": 146.63671875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

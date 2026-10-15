@@ -1,0 +1,27 @@
+{
+  "experimental": true,
+  "deployment_approved": false,
+  "parent": "/home/ubuntu/rl_learn/.real-adaptation-20261014/models/localization_mapping_20261015/preserved_navigation_candidate/portable",
+  "method": "geometric robust static-map tracking, no particle or neural proposal search",
+  "actor_trained": false,
+  "actor_router_hardware_byte_identical": true,
+  "limitations": [
+    "Known map and initial pose required; no global relocalization or SLAM backend replacement.",
+    "Covariance is provisional, not real-world calibration.",
+    "Changed localization inputs can change policy decisions; closed-loop regression is required."
+  ],
+  "manifest_sha256": "737a176b95f107c67751b457be5e216f97f191c3796542dc948ba51ef05c2030",
+  "evaluation": {
+    "deployment_approved": false,
+    "report": "/home/ubuntu/rl_learn/.real-adaptation-20261014/reports/localization_mapping_20261015/amcl_comparison/REPORT.md",
+    "reason": "Reduced localization CPU; long-distance P95 worse than AMCL comparison and one new navigation timeout.",
+    "closed_loop": {
+      "tasks": 12,
+      "success": 10,
+      "collisions": 1,
+      "timeouts": 1
+    },
+    "functional_tests": 24,
+    "native_parity_frames": 3221
+  }
+}

@@ -1,114 +1,141 @@
-# AGV 学习导航：实车适配与方向停靠（2026-10-14–15）
+# AGV 导航项目交接
 
-最新夜间实验位于 `fix/localization-mapping-20261015` 分支：[结果报告](reports/localization_mapping_20261015/REPORT.md)、[交互回放](reports/localization_mapping_20261015/index.html)、[复现说明](reports/localization_mapping_20261015/REPRODUCE.md)。内容包括已知栅格地图定位、真实 SLAM Toolbox 在线建图、方向停车专项训练，以及原部署 2k 模型的避障回归。所有候选单独保存，实车模型没有覆盖；在线建图和长距离弱特征定位仍存在失败，不能把短程停车成绩当作整体部署验收。
+更新：2026-10-15。分支：**`handoff`**。本分支保存当前完整实验源码、候选模型、训练检查点、实车输入回放和评估报告，可在另一台电脑继续开发。
 
-实车录制核对确认当前输入包含指令平移和 EKF 融合 IMU 转向，且记录中已有轮反馈。报告分别列出运动反馈、指令平移＋IMU 近似和纯指令积分退化对照，避免把不同条件下的成绩合并。
+**当前阶段：定位输入与静态匹配修复后的验证阶段。没有后台训练；最新候选未通过实车部署验收，原 2k 模型保留。** 最新改进来自运动反馈适配和几何定位程序，本轮没有重新训练 actor 或定位网络。请先复测，不要把“文件最新”理解为“闭环效果最好”。
 
-本地 `fix/real-odom-goal-yaw-20261014` 分支新增方向停靠训练与里程计锚定定位实验。终点 PPO 最高训练到 12,500 步；按开发闭环表现保留 **5,000 步检查点**：24 项方向任务成功 23 项，上轮 303 维模型为 0/24。4 项旧位置导航仍为 3/4，横穿碰撞未修复，候选未通过部署验收。
-
-新候选为 303 维、12 动作，使用 `experiments.docking_navigation.DockingRuntime`，不要套用下面历史 300 维模型的入口。完整配对数据、定位改善与退化、检查点选择见 [本轮报告](reports/docking_training_20261014/REPORT.md)、[五版本回放](reports/docking_training_20261014/index.html)、[候选模型](models/docking_selected_5000_20261015)。本次未替换原发布模型。
-
-## 原 2k 模型历史归档
-
-原归档分支 `models/best-2026-10-14` 保存本地已查到的历史完整开发回归中到达表现最好的候选：`quality_recovery_4000` 试验的 **2,000 步中间检查点**。它继承已有预训练，不是从零只训练 2,000 步。以下保留原归档说明。
-
-**历史固定开发集：46/48 安全到达（95.8%）、1 次碰撞、1 次超时。没有通过部署验收，也没有证明最短路径、窄道或实车能力。** 这 48 项不是封存的 200 项最终验收集。
-
-## 模型与配套文件
-
-| 内容 | 路径 |
-|---|---|
-| 原始 PPO 检查点，按文件保留权重和优化器 | [policy_2000.zip](models/quality_recovery_20261014/policy_2000.zip) |
-| 新导出的推理包、学习定位和路由组件 | [portable/](models/quality_recovery_20261014/portable) |
-| 原 4,000 步试验配置；本分支选择中间 2k | [training_run_config.json](models/quality_recovery_20261014/training_run_config.json) |
-| 发布信息及 SHA256 | [RELEASE_MANIFEST.json](models/quality_recovery_20261014/RELEASE_MANIFEST.json) |
-| 历史报告、固定任务与逐任务结果 | [reports/](models/quality_recovery_20261014/reports) |
-| 9,924 帧实际历史策略输入和动作，压缩保存 | [parity_inputs.npz](models/quality_recovery_20261014/reports/parity_inputs.npz) |
-| 训练失败模板和唯一回放记录 | [training_inputs/](models/quality_recovery_20261014/training_inputs) |
-
-检查点 SHA256：`7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11`。
-
-本分支恢复了 229 个记录过哈希的历史源码文件，匹配该模型的评估版本，见 [source_restore.json](models/quality_recovery_20261014/reports/source_restore.json)。原工作区的窄道改动保留在原分支，本分支使用归档运行时。源码相符不等于随机训练能逐位复现。
-
-## 成绩与比较范围
-
-| 同一历史 48 场景开发集 | 安全到达 | 碰撞 | 超时 |
-|---|---:|---:|---:|
-| 原 masked4k 基线 | 44/48 | 3 | 1 |
-| 所选质量恢复 2k 检查点 | **46/48** | **1** | **1** |
-
-3 个旧失败转为安全，但 `independent_dynamic_013` 从旧成功退化为超时。43 个共同安全任务的用时差中位数为 0 秒，路程差中位数约 −0.00446 米，不能据此声称明显更快、更短。[配对证据](models/quality_recovery_20261014/reports/MATCHED_BASELINE_COMPARISON.json)
-
-已推送的追加 10k 恢复模型使用另一套协议，普通回放 9/9、专项 2/5，不能与 46/48 混算。今天新增 20k 的窄道试验在另一套 25 场景中训练前后都是 7/25，完整窄道均 0/13，未作为本分支模型。原始 100k 在单个静态绕障演示中曾更快、更短，同样不能当作综合排名。
-
-本分支的“较优”仅指已有完整开发回归记录，不表示任何环境下最优。
-
-## 方法与硬件约束
-
-已知二维地图、初始粗位姿、激光、里程计/速度输入；学习定位网络估计位置、神经路由网络输出路线、PPO 选择局部速度。运行时没有 Nav2、行为树或 A* 接管，但地图/激光融合、动作掩码和紧急停车仍由程序处理。
-
-- **300 维观测、12 个离散速度动作**，需要 `QualitySensorNavigationRuntime`；不能接普通 282 维或新窄道 318 维入口。
-- 前进上限 0.20 m/s、角速度上限 0.50 rad/s，无横移；这 12 个策略动作不含倒车。
-- 车体约 39.39 × 32.95 cm；220 束雷达，视野约 219.44°，保留后方盲区。详见 [hardware.json](models/quality_recovery_20261014/hardware.json)。
-- 此恢复阶段冻结定位/路由权重，使用 1/60 奖励缩放、质量状态观测、恢复片段回放和参考分布约束。原试验配置里 `completed_steps=4000` 指整个试验，归档模型实际取自 2,000 步。
-- 动力学、噪声、延迟未实车标定，Jetson Orin Nano 耗时未测；仍存在动态碰撞和无可用动作后的停车超时。
-
-## 安装与校验
-
-推荐 Python 3.10，在仓库根目录执行 CPU 示例：
+## 1. 换电脑后从这里开始
 
 ```bash
-python3 -m venv .venv
+git clone --depth 1 --branch handoff https://github.com/gcusms/rl_learn_agv.git
+cd rl_learn_agv
+```
+
+推荐先在 Ubuntu 22.04、Python 3.10 上复现。CPU 离线验证不需要 CUDA、ROS 2、显示器或实体机器人。建议预留至少 8 GB 安装空间；环境与 pip 缓存通常比模型本身大。不要复制旧机器的 `.venv`。
+
+```bash
+python3.10 -m venv .venv
 source .venv/bin/activate
+python -m pip install --upgrade pip
 python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
 python -m pip install -r training/requirements.txt
 
-PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  .venv/bin/python training/verify_best_model_release.py
+export PYTHONPATH=training:.
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+
+# 文件与模型合同、303 维方向目标、28 条仿真输入、1516 条实车输入及功能检查。
+# 输出目录必须不存在；不训练，不连接电机。
+python tools/check_handoff.py --output training/runs/handoff_check
 ```
 
-校验包内文件、历史源码和地图/传感器配置哈希，在 9,924 帧实际历史观测上比对 ZIP、TorchScript、动作掩码和记录中的执行命令。**该校验没有重新运行 48 个闭环场景。** 本次交付检查见 [release_checks.json](models/quality_recovery_20261014/reports/release_checks.json)。
+`training/requirements.lock.txt` 是旧 ROS 主机环境记录，包含系统提供的包，不作为跨电脑的 pip 安装清单。Jetson 应按本机 JetPack 安装匹配的 PyTorch，再处理其他依赖，不能照搬桌面 CUDA wheel。现有电脑可先用现成环境，无需重装。
 
-## MuJoCo 查看
-
-需要图形桌面和 OpenGL，纯模型不需要 ROS 2：
+默认运行 42 项功能检查，其中 1 项原生内核数值对照在没有内核时跳过。要完整执行 42 项：
 
 ```bash
-bash scripts/preview_best_model.bash
-bash scripts/preview_best_model.bash --case independent_dynamic_006
+# 可选：只为重建历史候选和检查 Python/C++ 一致性。
+sudo apt-get install g++ libeigen3-dev
+python tools/check_handoff.py --build-native --output training/runs/handoff_check_native
 ```
 
-空格暂停，R 重置。B 两边指向同一归档模型，不能用来作版本对比。本入口按固定任务目标导航，使用历史查看器，不包含后来版本的手动目标点和柱子搬运功能。仿真真值只用于显示/评分。
+内核在新输出目录编译并重新记录哈希，不修改已归档模型。最新射线候选默认使用 Python，本身无需编译。迁移验证见 [本次交接检查](docs/handoff/VERIFICATION.json)；实现检查通过不代表导航或实车精度验收。
 
-## 重跑固定开发测试
+## 2. 当前该看哪个模型
 
-单个案例或全部 48 案例，单线程顺序运行，输出目录必须是新的：
+| 用途 | 仓库路径 | 说明 |
+|---|---|---|
+| 最新定位实验候选 | [ray_consistent_candidate/portable](models/localization_mapping_20261015/ray_consistent_candidate/portable) | **303 维、12 动作、含目标朝向**；Python 射线一致性定位，带完整 manifest |
+| 最新候选的父版本 | [temporal_native_candidate/portable](models/localization_mapping_20261015/temporal_native_candidate/portable) | 相同 actor/router 与方向停靠合同；历史原生定位，`.so` 需在目标机重建 |
+| 原实车部署基线 | [quality_recovery_20261014](models/quality_recovery_20261014) | **300 维**、恢复阶段追加 2,000 步；包含可续训 ZIP、便携包及历史证据 |
+| 方向停靠训练的历史检查点 | [docking_selected_5000_20261015](models/docking_selected_5000_20261015) | 从专项训练中选择 5,000 步检查点；不能仅凭停车成绩替换整机基线 |
+| 未通过的后续 PPO / 算法对照 | [localization_mapping_20261015](models/localization_mapping_20261015) | 保留配置、权重、训练状态与源码快照供分析，不作为实车部署推荐 |
+
+原基线 `policy_2000.zip` 的 SHA256 为 `7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11`。最新候选与父版本的 actor、router、硬件和方向目标文件逐字节相同；变化在定位合同和配套源码。
+
+**运行时必须匹配模型。** 最新 303 维包通过 `neural_navigation.goal_pose_runtime.resolve_runtime(manifest['required_runtime'])` 解析到 `DockingRuntime`，不要直接套用原 300 维入口。加载前执行 `check_files(bundle, manifest)`；完整示例见 [check_handoff.py](tools/check_handoff.py)。单独复制 `actor.pt` 或 `localizer.pt` 不能获得这轮定位改进。
+
+车体保持约 39.39×32.95 cm、4 cm 基本保护余量；前进上限 0.20 m/s、转向上限 0.50 rad/s，当前 12 动作不包含横移和倒车。输入仍为约 219.44° 视野的 220 束雷达，后方盲区保留。最新定位按 10 m 有效范围处理，旧硬件合同的 12 m 上限不能当作实车已观察到的空闲。
+
+## 3. 目前改善了什么，还卡在哪里
+
+最新工作见 [完整定位结果](reports/localization_mapping_20261015/real_input_repair_20261015/REPORT.md)、[汇总数据](reports/localization_mapping_20261015/real_input_repair_20261015/SUMMARY.json)。
+
+| 同一固定回放：22 条原验证轨迹、2855 帧 | 上一轮时序定位 | 最新射线检查 |
+|---|---:|---:|
+| 位置误差 P95 | 18.51 cm | 18.04 cm |
+| 航向误差 P95 | 1.526° | 1.368° |
+| 各轨迹终点位置误差均值 | 3.42 cm | 3.27 cm |
+| 本机 Python 定位 CPU P95 | 7.88 ms | 14.59 ms |
+
+这是已有开发回归上的小幅改善，代价是耗时增加；不是实车精度、未见地图泛化或“超过 AMCL”的证明。本次没有重新比较 AMCL。长墙、稀疏结构和空旷区域仍有明显误差，不能保证仅比车宽 10–15 cm 的窄道通行。
+
+实车记录做了 1516 帧、22 个任务代次的固定输入对照：原 EKF 输入可接受的扫描更新从 832 帧降为 583 帧，轮速/IMU 输入从 830 降为 606 帧。射线检查增加了一道拒绝矛盾配准的条件，但**更多拒绝也可能造成更多等待**。录制没有独立绝对位姿真值，不能把估计位移变小称作实车误差达标。
+
+当前状态要分开看：
+
+- **已知地图定位：** 里程计传播＋静态支持筛选＋弱方向约束＋0.2/0.4 s 历史融合；最新增加自由射线与地图矛盾检查。需要可靠初始地图位姿。
+- **测量运动输入：** 新增实测轮速 `(vx, vy, wz)`＋IMU Z 角速度适配；保留麦轮横向测量，但不增加横移指令。积分断续后需恢复参考。必须显式接入，加载模型不会自动把底盘从指令积分切为编码器反馈。
+- **搬车重定位：** 已有全图候选搜索与停车多帧确认原型，尚未自动接入运行时。历史实车 6 段均未确认，不能宣称搬车后自动恢复已完成。
+- **边导航边建图：** 已有在线建图/SLAM 实验入口，但长距离漂移、假到达和动态任务失败尚未解决；最新已知地图回放不能替代它的验收。
+- **方向停车：** 模型及运行时接受 `(x, y, yaw)`，同位置改朝向可产生原地转向；仍需闭环停车精度、恢复后停靠与实车回归。
+- **动态避障：** 原风险输入与保护层预测来源不完全一致，停走横穿失败仍在。后两次各 2,000 步试训均为 11/12 安全到达、1 次碰撞，共同成功任务路程分别增加 2.10% 和 8.78%，未采用。
+
+原 2k 基线历史固定开发集是 **46/48 安全到达、1 碰撞、1 超时**。另一轮“9/9、专项 2/5”和最新 12 例开发对照使用不同协议，不能合并或直接排名。最新候选尚未完成与原基线同协议的完整闭环对照。
+
+## 4. 不依赖原电脑路径的实车与仿真回放
+
+已随仓库保存：
+
+- [28 条冻结仿真输入](training/assets/localization_replay_20261015)：扫描、里程计、时间和仅供评估的真值标签；地图与物理场景也在仓库中。
+- [紧凑实车输入](training/assets/real_recording_20261014)：原录制中的 1516 条决策输入、1911 条反馈、轮速/IMU 时序和 map_01 配套 PGM/YAML。
+- [实车输入来源及哈希](training/assets/real_recording_20261014/MANIFEST.json)：扫描、里程计及地图数值不变，仅去掉当前回放未使用的 JSON 字段；不是新真值数据。
+
+**完整 `record.zip`、rosbag 和相机图像未放入 Git。** 当前定位回放无需它们；若要重新提取 ROS 话题、检查 TF 或分析图像，请另行复制原始录包。手动 2D Pose 初值不能作为真值。历史报告中的原机器绝对路径保留作来源记录，下面的当前入口均使用仓库相对路径。
 
 ```bash
-PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  .venv/bin/python training/evaluate_best_model_release.py \
-  --case independent_dynamic_006 --output training/runs/best_20261014_one
+source .venv/bin/activate
+export PYTHONPATH=training:.
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 
-# 不传 --case 就运行全部 48 项，耗时较长
-PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  .venv/bin/python training/evaluate_best_model_release.py \
-  --output training/runs/best_20261014_full48
+# 本机此前约 5 分钟，软平均约 0.35 个 CPU 核；其他机器耗时需实测。
+# 不启动 ROS/MuJoCo，不修改机器人轨迹，不训练。
+nice -n 19 python -m experiments.evaluate_real_input_repair \
+  --cache training/assets/localization_replay_20261015 \
+  --analysis training/assets/real_recording_20261014/analysis \
+  --record training/assets/real_recording_20261014/record \
+  --hardware models/quality_recovery_20261014/portable/hardware.json \
+  --output training/runs/handoff_replay --cpu-cores 0.35
 ```
 
-这些入口限制计算线程，不自动替其他机器设置系统 CPU/内存配额。大型日志、视频和虚拟环境不上传；本包保留压缩的演员输入、任务和结果。
+输出 `RESULTS.json`、逐轨迹 NPZ 及资源统计。与 [历史最终回放](reports/localization_mapping_20261015/real_input_repair_20261015/paired_packed/RESULTS.json) 对照位置、航向、接受/拒绝原因；不同机器的耗时、RSS 和紧凑输入文件哈希会不同。相同轨迹再次回放不算新的独立成功样本。
 
-## 从此模型续训
+## 5. 项目结构与继续工作的入口
 
-示例追加 2,000 步并输出为新试验，不自动替换归档模型：
+| 位置 | 内容 |
+|---|---|
+| `training/neural_navigation/` | 定位、地图融合、路由、策略运行时、动作可行性和保护 |
+| `training/experiments/` | PPO、定位/建图实验、回放、配对评估和候选生成 |
+| `deployment/ros2_recording_adapter/` | 实车记录、模型适配与发布接口；需与实际 ROS 工程集成 |
+| [measured_motion](deployment/ros2_recording_adapter/examples/measured_motion/README.md) | 编码器输入和单一轮速＋IMU EKF 的接入说明及 YAML 示例 |
+| `models/` | 已归档基线、方向停车及后续独立实验；保留优化器等训练产物 |
+| `reports/` | 各轮任务、逐例结果、失败证据与回放 |
+| `tools/check_handoff.py` | 换电脑后的完整性与运行时检查 |
+| `tools/prepare_native_bundle.py` | 从原生候选源码重建目标平台内核，输出新包 |
+| [FILES.json](docs/handoff/FILES.json) | 当前代码、关键模型与回放数据的 SHA256 清单 |
 
-```bash
-PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
-  .venv/bin/python -m experiments.train_quality_navigation \
-  --checkpoint models/quality_recovery_20261014/policy_2000.zip \
-  --failure-pool models/quality_recovery_20261014/training_inputs/failure_pool.json \
-  --training-log models/quality_recovery_20261014/training_inputs/replay_episode.jsonl \
-  --replay-step 10458 --resume-quality --scheduled-recovery \
-  --steps 2000 --seed 92521 --output training/runs/best_20261014_continuation
-```
+关键源码：[静态时序定位](training/neural_navigation/fast_static_localizer.py)、[射线一致性检查](training/neural_navigation/verified_static_localizer.py)、[测量里程计适配](training/neural_navigation/measured_odometry.py)、[全局恢复原型](training/neural_navigation/global_relocalizer.py)、[方向目标运行时](training/neural_navigation/goal_pose_runtime.py)。
 
-这不是重现原检查点。后续先处理预测失真、安全死锁和窄道可执行性，再增加训练规模。
+已有分析：[硬件边界与重定位](reports/localization_mapping_20261015/hardware_boundary_20261015/REPORT.md)、[动态失败与后续入口](reports/localization_mapping_20261015/blind_repair_20261015/REPORT.md)、[弱几何与时序定位](reports/localization_mapping_20261015/sparse_repair_20261015/REPORT.md)、[方向停靠训练](reports/docking_training_20261014/REPORT.md)、[在线定位与建图](reports/localization_mapping_20261015/REPORT.md)。[先前定位方法说明](docs/localization/README.md)保留历史分支口径；[原进度概览](docs/PROGRESS_BEFORE_HANDOFF.md)包含原模型与查看器入口。
+
+## 6. 下一步按什么顺序做
+
+1. **先复现本分支。** 跑交接检查及固定输入回放，确认输入/模型合同、地图坐标、时间和数据齐全。不要把旧 300 维、当前 303 维或其他 318 维入口混用。
+2. **测准真实运动来源。** 实车用已测直线距离、左右转、制动和受阻片段对照指令、编码器和 IMU；确认轮径/符号、时间戳、数据年龄和唯一 TF 发布者。接入示例不会自动修改实车；指令超时停车需在实际发布链与底盘确认。
+3. **给定位补独立参考。** 已知位置放入/移走地图外障碍，做正常与缺失扫描、弱几何、闭环恢复的配对试验。报告真实位置/航向误差和拒绝原因，不能用模型输出或轮速积分当参考真值。
+4. **做原/新候选的闭环回归。** 同任务、相同保护和底盘，比较到达、碰撞、等待、实际路程/耗时及方向停车。先确认拒绝增加没有把机器人变成长期停车，再决定采用定位候选。
+5. **统一动态风险再定训练预算。** 在新观测合同中对齐 actor 与保护层的预测来源，明确停车风险、测量年龄和未知状态；先过横穿、反向、遮挡、静态误报和丢帧回归。此前仅 377/2000 步进入可训练范围，不能只增加等待样本。
+6. **分别推进在线建图与板端性能。** 未知环境单独评估漂移、真回环和重定位；Jetson 测端到端 P95/P99、最大延迟与超时。电脑单组件耗时不能代替 Orin 结果。之后再按失败组件选择定位监督、路由监督或 PPO 微调。
+
+恢复训练入口保留在 `training/experiments/train_localization_recovery.py`，原始检查点、各次配置、状态及源码快照也已归档。这一入口主要训练受条件启用的恢复分支，冻结 localizer/router/正常导航和方向停车；继续运行它不会直接修复定位或路由。已失败的配置仅作对照，不建议换电脑后直接接着大规模跑。
+
+运行输出放 `training/runs/`，默认不跟踪。虚拟环境、缓存、平台 `.so` 和原始大录包不提交；新模型另存目录并附配置、种子、源码版本和评估，不覆盖历史基线。

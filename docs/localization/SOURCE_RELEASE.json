@@ -1,0 +1,281 @@
+{
+  "schema": "localization_source_release_v1",
+  "created_at": "2026-10-15T17:15:10+08:00",
+  "branch": "docs/localization-validation-20261015",
+  "parent_documentation_commit": "914f8eff50536bd94adbe92183fc541230472890",
+  "scope": "Geometric localization, opt-in integration with archived 300D navigation runtime, builders, tests and frozen simulation replay.",
+  "deployment_approved": false,
+  "additional_training_steps": 0,
+  "source_files": {
+    "training/neural_navigation/core.py": "0a4f5ab2d59dd6709631b4fb8d295549754b57d762cc201de5cbee34c5bef74c",
+    "training/neural_navigation/fast_static_localizer.py": "4a885792352ae2834c56351010cf3f30db4a89bf3bb13760d55b66fbfdad72d6",
+    "training/neural_navigation/static_tracking_kernel.cpp": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "training/neural_navigation/weak_geometry_uncertainty.py": "38b7a50d389214f7093520aa5cf41cf0cf8dbf39cb5d4a24c110915e4d14eb21",
+    "training/neural_navigation/localization_bundle.py": "5e398bb83c4aff85ffe42ef770a6a2a7ae9898b1abf20fc9297ab1e397a8b245",
+    "training/neural_navigation/experiment_budget.py": "e1292cd3a1f493fbd1aec9ada5d51e011d5cd7bbc38ddaebb164813f226e2ba5",
+    "training/experiments/build_fast_localization_candidate.py": "f7558abbec87c46135faa84760288684902d7c83a68bb5a4ab04159f3e9b5263",
+    "training/experiments/benchmark_sparse_localization.py": "12a73e18c0e2d8a4ed437cdfc52482a2d0e6dea733ae6904e8473619bf3ebbad",
+    "training/experiments/benchmark_constraint_uncertainty.py": "877e0c4e006f42f4a803678a36e23927c1e3249d045167c2e995d040e4eea7ae",
+    "training/experiments/localization_replay_metrics.py": "90da0e1588059be1e80c9f3ef9cadd93a93adf46f6bb2d3a95385a22149a7216",
+    "training/experiments/replay_recorded_localization.py": "76de3037b4764d0455097718e3b8632318a7d386cca9fbc769b6c0b7061f21c2",
+    "training/test_fast_static_localizer.py": "a7a155ae139ed5830a6e79650a96af1d99d877f2731ceb81670355c99289626e",
+    "training/test_weak_geometry_uncertainty.py": "f41f77116175240c103a96ee8af9a9c97b811887f7c4e76773334c93f8880584",
+    "training/test_localization_bundle.py": "f191d787b907b839b27cc596e74d31390c90c9326c9d658e469d7b19143b3f2a",
+    "training/test_experiment_budget.py": "18215268f78952428c2436ff2db468cdfa0e35abf4180121ec76e706960966c4"
+  },
+  "unchanged_evaluated_algorithm_files": [
+    "training/neural_navigation/fast_static_localizer.py",
+    "training/neural_navigation/static_tracking_kernel.cpp",
+    "training/neural_navigation/weak_geometry_uncertainty.py"
+  ],
+  "verification": {
+    "unit_and_runtime_checks": {
+      "passed": 30,
+      "failures": 0,
+      "modules": [
+        "training.test_fast_static_localizer",
+        "training.test_weak_geometry_uncertainty",
+        "training.test_localization_bundle",
+        "training.test_experiment_budget",
+        "training.test_navigation_core",
+        "training.test_navigation_runtime"
+      ],
+      "environment_note": "Initial legacy regression attempt lacked files in a sparse local checkout; restored complete checkout and all 12 legacy/bundle checks passed."
+    },
+    "compiled_native_kernel": {
+      "architecture": "x86_64",
+      "sha256": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+      "target_rebuild_required": true
+    },
+    "runtime_smoke": {
+      "variants": [
+        "original 300D bundle",
+        "temporal native candidate",
+        "temporal Python uncertainty candidate"
+      ],
+      "all_observations_300_dimensions": true,
+      "blank_scan_stopped": true,
+      "closed_loop_navigation_acceptance": false
+    },
+    "frozen_simulation_replay": {
+      "cases": 28,
+      "frames": 3221,
+      "validation_cases": 22,
+      "pooled_validation_xy_p95_m": 0.18506209008721322,
+      "maximum_native_python_pose_difference": 1.4654943925052066e-14,
+      "resource": {
+        "seconds": 142.1708187420154,
+        "cpu_seconds": 35.551148986,
+        "average_cpu_cores": 0.2500593954552057,
+        "peak_rss_mib": 68.44140625,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "cases_summary": [
+        {
+          "id": "short_00",
+          "frames": 61,
+          "xy_p95_m": 0.004086965344446136
+        },
+        {
+          "id": "short_01",
+          "frames": 61,
+          "xy_p95_m": 0.0045036089002796304
+        },
+        {
+          "id": "short_02",
+          "frames": 61,
+          "xy_p95_m": 0.0038617887972723216
+        },
+        {
+          "id": "short_03",
+          "frames": 61,
+          "xy_p95_m": 0.0041121969232265805
+        },
+        {
+          "id": "short_04",
+          "frames": 61,
+          "xy_p95_m": 0.00423102053720575
+        },
+        {
+          "id": "short_05",
+          "frames": 61,
+          "xy_p95_m": 0.006023262706733322
+        },
+        {
+          "id": "short_06",
+          "frames": 61,
+          "xy_p95_m": 0.010394573969662424
+        },
+        {
+          "id": "short_07",
+          "frames": 61,
+          "xy_p95_m": 0.011534493959011634
+        },
+        {
+          "id": "short_08",
+          "frames": 61,
+          "xy_p95_m": 0.012014199772922176
+        },
+        {
+          "id": "short_09",
+          "frames": 61,
+          "xy_p95_m": 0.006735638957483287
+        },
+        {
+          "id": "short_10",
+          "frames": 61,
+          "xy_p95_m": 0.013302688864439197
+        },
+        {
+          "id": "short_11",
+          "frames": 61,
+          "xy_p95_m": 0.01129795217529372
+        },
+        {
+          "id": "short_12",
+          "frames": 61,
+          "xy_p95_m": 0.0034017140583739343
+        },
+        {
+          "id": "short_13",
+          "frames": 61,
+          "xy_p95_m": 0.004462033386615949
+        },
+        {
+          "id": "short_14",
+          "frames": 61,
+          "xy_p95_m": 0.0042591474761279075
+        },
+        {
+          "id": "short_15",
+          "frames": 61,
+          "xy_p95_m": 0.003402831223956831
+        },
+        {
+          "id": "short_16",
+          "frames": 61,
+          "xy_p95_m": 0.0033622872752869025
+        },
+        {
+          "id": "short_17",
+          "frames": 61,
+          "xy_p95_m": 0.004172754232351481
+        },
+        {
+          "id": "short_18",
+          "frames": 61,
+          "xy_p95_m": 0.013562725537672793
+        },
+        {
+          "id": "short_19",
+          "frames": 61,
+          "xy_p95_m": 0.019326224757970648
+        },
+        {
+          "id": "short_20",
+          "frames": 61,
+          "xy_p95_m": 0.022278442446290386
+        },
+        {
+          "id": "short_21",
+          "frames": 61,
+          "xy_p95_m": 0.004799394289106702
+        },
+        {
+          "id": "short_22",
+          "frames": 61,
+          "xy_p95_m": 0.00981871322113753
+        },
+        {
+          "id": "short_23",
+          "frames": 61,
+          "xy_p95_m": 0.021000879904408912
+        },
+        {
+          "id": "long_single_long_wall",
+          "frames": 465,
+          "xy_p95_m": 0.12362575386781188
+        },
+        {
+          "id": "long_parallel_corridor",
+          "frames": 362,
+          "xy_p95_m": 0.20334618382989517
+        },
+        {
+          "id": "long_sparse_asymmetric",
+          "frames": 465,
+          "xy_p95_m": 0.305410779516777
+        },
+        {
+          "id": "long_feature_to_open",
+          "frames": 465,
+          "xy_p95_m": 0.18014674765698638
+        }
+      ]
+    },
+    "uncertainty_replay": {
+      "cases": 28,
+      "maximum_pose_difference": 0.0,
+      "uncertainty_calibrated": false,
+      "resource": {
+        "seconds": 59.60619902203325,
+        "cpu_seconds": 11.933807016,
+        "average_cpu_cores": 0.20021083732563963,
+        "peak_rss_mib": 67.26953125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      }
+    },
+    "real_recorded_replay": {
+      "frames": 1516,
+      "scope": "fixed recorded sensor inputs; no independent absolute pose reference; not closed-loop navigation",
+      "maximum_difference_from_prior_python": 1.6681100944992977e-14,
+      "resource": {
+        "seconds": 23.383172509958968,
+        "cpu_seconds": 4.68293745,
+        "average_cpu_cores": 0.2002695505926547,
+        "peak_rss_mib": 145.03515625,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "selected_segments": [
+        {
+          "mission": 13,
+          "frames": 27,
+          "recorded_displacement_m": 0.7352804785728445,
+          "candidate_displacement_m": 0.054758163920033326,
+          "input_odometry_displacement_m": 0.054758163920033034,
+          "candidate_map_corrections": 0
+        },
+        {
+          "mission": 19,
+          "frames": 41,
+          "recorded_displacement_m": 1.3466243069965176,
+          "candidate_displacement_m": 0.024847638312105475,
+          "input_odometry_displacement_m": 0.024847638312106592,
+          "candidate_map_corrections": 0
+        }
+      ],
+      "raw_recordings_uploaded": false
+    },
+    "generated_candidate_preserves_weights_hardware_and_features": true
+  },
+  "frozen_inputs": {
+    "manifest": "training/assets/localization_replay_20261015/MANIFEST.json",
+    "manifest_sha256": "d891531dabc38d221b0ee409df1ba3554fe47f90c5cef564b4a2d78321b892b7",
+    "map_sha256": {
+      "training/assets/localization_geometry_20261015/feature_to_open/decision_map.pgm": "31a5886ade96922ab1bd72b5569590685d04801f4ff6a661664361048d5acf28",
+      "training/assets/localization_geometry_20261015/feature_to_open/decision_map.yaml": "c3e2a01f4704f548f8673fbb2c3d841f09b50e8c2040fe11d5486d3e1b1eba47",
+      "training/assets/localization_geometry_20261015/parallel_corridor/decision_map.pgm": "fc6c3e3348ea3ab6fbc385262517f4c03d030210186229db76549287299cbd48",
+      "training/assets/localization_geometry_20261015/parallel_corridor/decision_map.yaml": "c3e2a01f4704f548f8673fbb2c3d841f09b50e8c2040fe11d5486d3e1b1eba47",
+      "training/assets/localization_geometry_20261015/single_long_wall/decision_map.pgm": "68b5cff8084603f6a0f6fe69c8c005bcb45c3e1ca26d6d4a12652648ec8f7b2d",
+      "training/assets/localization_geometry_20261015/single_long_wall/decision_map.yaml": "c3e2a01f4704f548f8673fbb2c3d841f09b50e8c2040fe11d5486d3e1b1eba47",
+      "training/assets/localization_geometry_20261015/sparse_asymmetric/decision_map.pgm": "0af377a47d587021dfb6e3ab7573ce0f942c41196501b94d5dbbec890b69b217",
+      "training/assets/localization_geometry_20261015/sparse_asymmetric/decision_map.yaml": "c3e2a01f4704f548f8673fbb2c3d841f09b50e8c2040fe11d5486d3e1b1eba47"
+    }
+  },
+  "limitations": [
+    "Known map and supplied initial pose required; no global kidnapping recovery.",
+    "No new full navigation or real-world absolute accuracy acceptance.",
+    "303D docking/SLAM and rejected dynamic/PPO variants are not part of this source publication.",
+    "Native binary generated locally, not committed; rebuild on target architecture."
+  ]
+}

@@ -21,6 +21,8 @@ class MaskedNavigationCurriculum(RecoveryNavigationCurriculum):
         super().__init__(*args,**kwargs)
         if self.hardware['policy_observation']['schema'] not in PREDICTIVE_SCHEMAS:
             raise ValueError('Masked velocity choices require the V4 probe contract')
+        from neural_navigation.masked_actions import validate_hardware_action
+        validate_hardware_action(self.hardware)
         self.action_space=gym.spaces.Discrete(len(ACTIONS))
 
     def action_masks(self):

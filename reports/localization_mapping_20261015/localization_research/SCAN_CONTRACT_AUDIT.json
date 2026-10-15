@@ -1,0 +1,96 @@
+{
+  "scope": "First messages per LaserScan topic; metadata and angular coverage audit only",
+  "limit_per_topic": 10000,
+  "recording": "/home/ubuntu/rl_learn/record_analysis_20261014/raw/20261014_193644_map_01test_953a9959",
+  "model_lidar": {
+    "angle_min": -1.8915926535897931,
+    "angle_max": 1.938407346410207,
+    "beams": 220,
+    "range_min": 0.1,
+    "range_max": 12.0,
+    "mount": [
+      0.118389,
+      0.0,
+      0.116682537,
+      0.0
+    ],
+    "source": "agv/peripherals/config/lidar_filters_config_sclidar.yaml"
+  },
+  "topics": {
+    "/scan": {
+      "frames": 2041,
+      "recorded_messages": 2041,
+      "all_recorded_messages_audited": true,
+      "header_interval_p05_p50_p95_s": [
+        0.09824556112289429,
+        0.09963476657867432,
+        0.10103107690811157
+      ],
+      "receive_age_p05_p50_p95_s": [
+        0.00024437904357910156,
+        0.00045180320739746094,
+        0.0025777816772460938
+      ],
+      "scan_time_min_max_s": [
+        0.10394701361656189,
+        0.10684174299240112
+      ],
+      "time_increment_min_max_s": [
+        0.0002631570096127689,
+        0.0002631570096127689
+      ],
+      "beam_count_min_max": [
+        400,
+        400
+      ],
+      "beam_span_min_max_s": [
+        0.10499964683549479,
+        0.10499964683549479
+      ],
+      "end_minus_receipt_assuming_first_beam_p05_p50_p95_s": [
+        0.10242176055908203,
+        0.10454773902893066,
+        0.10475516319274902
+      ],
+      "end_after_receipt_assuming_first_beam_fraction": 1.0,
+      "first_range_limits_m": [
+        0.10000000149011612,
+        10.0
+      ],
+      "first_angular_limits_rad": [
+        0.0,
+        6.267477035522461
+      ],
+      "backward_headers": 0,
+      "angular_regions": {
+        "model_angular_sector": {
+          "samples": 498004,
+          "finite_hits": 468295,
+          "positive_inf": 0,
+          "nan": 29709,
+          "other": 0,
+          "finite_hits_fraction": 0.940343852659818,
+          "positive_inf_fraction": 0.0,
+          "nan_fraction": 0.05965614734018201,
+          "other_fraction": 0.0
+        },
+        "outside_model_angular_sector": {
+          "samples": 318396,
+          "finite_hits": 55310,
+          "positive_inf": 0,
+          "nan": 263086,
+          "other": 0,
+          "finite_hits_fraction": 0.17371449390067714,
+          "positive_inf_fraction": 0.0,
+          "nan_fraction": 0.8262855060993228,
+          "other_fraction": 0.0
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Receipt time is not independent acquisition-time truth.",
+    "Header semantics must be verified against the deployed driver.",
+    "Message angular extent is not evidence of usable rear coverage."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "1f01d5ed50e318a94794e08283a4638da1b5654f948b4c22fc95dac0e7c80ce7",
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 23.99999999999951,
+      "travel_m": 4.659542224645525,
+      "frames": 121,
+      "final_xy_error_m": 0.09598104431622693,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.006593400957545425,
+      "localization_yaw_p95_rad": 0.0024181542068912876,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 120,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 0,
+      "runtime_ms": {
+        "p95": 157.90564799681306,
+        "p99": 180.8296710369177,
+        "maximum": 195.24089701008052
+      },
+      "variant": "retained_teacher",
+      "trace_sha256": "8c52666a2172022fb994b6de3c7165ead1e1bdaec4fa52e8f9e2b512f432ad1b"
+    }
+  ],
+  "resource": {
+    "seconds": 467.4424974229769,
+    "cpu_seconds": 23.51710801,
+    "average_cpu_cores": 0.05031016251121893,
+    "peak_rss_mib": 1640.0703125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "original_release_training_failure": {
+      "retained_teacher": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

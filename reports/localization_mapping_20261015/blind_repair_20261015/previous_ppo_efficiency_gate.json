@@ -1,0 +1,86 @@
+{
+  "schema": "paired_navigation_development_gate_v1",
+  "tasks": 12,
+  "common_successes": 11,
+  "lost_successes": [],
+  "gained_successes": [],
+  "safety_nonregression": true,
+  "common_success_travel_m": [
+    29.06082173101071,
+    30.165104643295333
+  ],
+  "common_success_seconds": [
+    220.8000000000177,
+    226.8000000000226
+  ],
+  "total_travel_relative_change": 0.037999025715995005,
+  "total_time_relative_change": 0.027173913043498255,
+  "pairs": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "travel_relative_change": 0.20459054009672673,
+      "time_relative_change": 0.2746113989638619
+    },
+    {
+      "case_id": "motion_profile_002",
+      "travel_relative_change": -0.01002364626041008,
+      "time_relative_change": -0.003558718861211174
+    },
+    {
+      "case_id": "motion_profile_000",
+      "travel_relative_change": 0.06606934497600792,
+      "time_relative_change": -0.09815950920245287
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "travel_relative_change": 0.0024157748040427585,
+      "time_relative_change": -0.02334630350195388
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "travel_relative_change": -0.0016610726081589533,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_00",
+      "travel_relative_change": 0.0,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_05",
+      "travel_relative_change": 0.0,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_12",
+      "travel_relative_change": 0.0,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_17",
+      "travel_relative_change": 0.0,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_24",
+      "travel_relative_change": 0.0,
+      "time_relative_change": 0.0
+    },
+    {
+      "case_id": "localization_nav_31",
+      "travel_relative_change": 0.022941119839329227,
+      "time_relative_change": 0.0
+    }
+  ],
+  "limits": {
+    "total_travel_increase": 0.02,
+    "total_time_increase": 0.05,
+    "per_task_travel_increase": 0.2,
+    "per_task_time_increase": 0.2
+  },
+  "efficiency_nonregression": false,
+  "all_regression_checks_passed": false,
+  "larger_training_gate_passed": false,
+  "deployment_approved": false,
+  "scope": "Reused development tasks only; no automatic promotion"
+}

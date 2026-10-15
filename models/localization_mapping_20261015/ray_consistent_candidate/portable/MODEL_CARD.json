@@ -1,0 +1,24 @@
+{
+  "experimental": true,
+  "deployment_approved": false,
+  "actor_trained": false,
+  "parent": "/home/ubuntu/rl_learn/.real-adaptation-20261014/models/localization_mapping_20261015/temporal_native_candidate/portable",
+  "actor_router_actions_heading_contract_preserved": true,
+  "localization_uses_native_kernel": false,
+  "motion_input_changed_automatically": false,
+  "known_map_and_initial_pose_required": true,
+  "global_relocalization": false,
+  "online_slam": false,
+  "runtime_sources_sha256": {
+    "fast_static_localizer.py": "e8ece60d7fff3c92ea0cbefa8970556aeab175d1e6ca435b705e6389e569a8b6",
+    "verified_static_localizer.py": "6dc4f51248cc116c1251c473fb1daaa3e3f34ee801f42ce9d038a190f3b640d1",
+    "measured_odometry.py": "d667ca7fc0e35cc6f14efb0624afa37238e70817d8aebfb2e82563d31ffd61a5",
+    "core.py": "d9b18c7c155a95ffa64194f449c2d1c1f082752863161427ca81382e9d6e8790"
+  },
+  "limitations": [
+    "Fixed-input replay does not establish closed-loop navigation preservation.",
+    "No independent real pose truth or target-board performance measurement.",
+    "Measured wheel/gyro adapter requires explicit integration; existing ROS EKF may instead select encoder source."
+  ],
+  "manifest_sha256": "a0562970c01af6d926816a5a9912e6b406f495d899d74b3b7c38fb43760c1727"
+}

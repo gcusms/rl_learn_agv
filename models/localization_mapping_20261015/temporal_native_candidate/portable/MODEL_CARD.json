@@ -1,0 +1,24 @@
+{
+  "experimental": true,
+  "deployment_approved": false,
+  "parent": "/home/ubuntu/rl_learn/.real-adaptation-20261014/models/localization_mapping_20261015/preserved_navigation_candidate/portable",
+  "method": "geometric robust static-map tracking, no particle or neural proposal search",
+  "actor_trained": false,
+  "actor_router_hardware_byte_identical": true,
+  "limitations": [
+    "Known map and initial pose required; no global relocalization or SLAM backend replacement.",
+    "Covariance is provisional, not real-world calibration.",
+    "Changed localization inputs can change policy decisions; closed-loop regression is required."
+  ],
+  "manifest_sha256": "c9399498124f4911e3dc8d7e097b57b3047ecc128710ada4331f3c35823147d7",
+  "selected_for_deployment": false,
+  "acceptance": "not_approved_due_collision_regression",
+  "evaluation": {
+    "report": "reports/localization_mapping_20261015/sparse_repair_20261015/temporal_closed_loop_12/RESULTS.json",
+    "sha256": "e9feb8e23d6fa20520bba6795b89eaddb3cf1c98639169d972cc05e95a06b929",
+    "complete": true,
+    "tasks": 12,
+    "success": 10,
+    "collisions": 2
+  }
+}

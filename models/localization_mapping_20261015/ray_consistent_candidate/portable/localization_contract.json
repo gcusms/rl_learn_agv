@@ -1,0 +1,57 @@
+{
+  "schema": "ray_consistent_static_tracking_v1",
+  "experimental": true,
+  "tracking": {
+    "schema": "fast_static_tracking_temporal_v1",
+    "calibrated": false,
+    "beams": 60,
+    "iterations": 4,
+    "endpoint_gate_m": 0.18,
+    "angular_gate_rad": 0.02,
+    "maximum_endpoint_gate_m": 0.35,
+    "minimum_hits": 3,
+    "minimum_support_fraction": 0.35,
+    "huber_m": 0.05,
+    "damping": 0.02,
+    "weak_axis_ratio": 0.01,
+    "minimum_eigenvalue": 0.01,
+    "yaw_length_scale_m": 3.0,
+    "maximum_correction_m": 0.12,
+    "maximum_correction_rad": 0.15,
+    "correction_rate_m_s": 0.3,
+    "correction_rate_rad_s": 0.5,
+    "process_std_per_sqrt_s": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "measurement_std_m": 0.06,
+    "covariance_floor": [
+      0.04,
+      0.04,
+      0.03
+    ],
+    "correlation_seconds": 0.5,
+    "supplied_initial_pose_required": true,
+    "global_relocalization": false,
+    "information_reference_hits": 60,
+    "support_history_offsets_s": [
+      -0.4,
+      -0.2,
+      0.0
+    ],
+    "history_tolerance_s": 0.05,
+    "history_current_ray_tolerance_m": 0.1,
+    "history_requires_current_static_hit": true,
+    "history_information_average": true
+  },
+  "sensor_max_range_m": 10.0,
+  "ray_endpoint_allowance_m": 0.18,
+  "maximum_new_contradicted_rays": 2,
+  "maximum_new_contradiction_fraction": 0.05,
+  "thresholds_calibrated": false,
+  "raw_obstacle_scan_unchanged": true,
+  "map_unchanged": true,
+  "supplied_initial_pose_required": true,
+  "global_relocalization": false
+}

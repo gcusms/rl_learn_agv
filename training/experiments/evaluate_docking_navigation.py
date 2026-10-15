@@ -62,9 +62,10 @@ def evaluate(case,bundle,budget):
         prior=np.asarray(case['start'])+np.asarray(case.get('initial_prior_offset',[0,0,0]))
         runtime=runtime_class(bundle,scene/'decision_map.yaml',prior,case['goal'],'shortcut')
         labels=[];observations=[];masks=[];choices=[];commands=[];scans=[];humans=[];stops=Counter();latencies=[]
+        odometry=[];velocities=[];route_diagnostics=[];route_reasons=[];constraint_diagnostics=[]
         arrived=False;false_arrival=False;physical_since=None;c=contract();required=len(case['goal'])==3
-        parity_frames=0
-        for _ in range(case['max_steps']):
+        parity_frames=0;last_progress=time.monotonic()
+        for step_index in range(case['max_steps']):
             start=time.perf_counter()
             odom=env.observed_odometry if command_input is None else command_input.pose
             velocity_input=env.measured_velocity if command_input is None else command_input.velocity
@@ -84,6 +85,23 @@ def evaluate(case,bundle,budget):
             labels.append([env.elapsed,*env.truth,*runtime.core.estimate,xy,yaw,*velocity])
             observations.append(obs);masks.append(mask);choices.append(choice);commands.append(result['command']);stops[str(result['stop_reason'])]+=1
             scans.append(env.scan.copy());humans.append(env._humans().copy())
+            # Record the actual runtime inputs, not simulator truth substituted
+            # for odometry. This permits causal sensor replay after a failure.
+            odometry.append(np.asarray(odom).copy());velocities.append(np.asarray(velocity_input).copy())
+            core=runtime.core;loc=core.localizer
+            route_diagnostics.append([core.plan_revision,len(core.path),
+                *core.path[-1],float(getattr(loc,'observable_rank',-1)),
+                float(loc.map_agreement),*np.asarray(loc.std)])
+            route_reasons.append(core.replan_reason)
+            constraint=result.get('predictive_constraint',{})
+            constraint_diagnostics.append([constraint.get('supported_tracks',0),constraint.get('rejected_nonzero_choices',0),
+                constraint.get('compute_ms',0.),*[np.nan if v is None else v for v in constraint.get('predicted_contact_seconds',[None]*12)]])
+            if time.monotonic()-last_progress>=30.:
+                print(json.dumps(dict(evaluation_progress=True,case_id=case['id'],bundle=str(bundle),
+                    frame=step_index+1,max_frames=case['max_steps'],simulation_seconds=float(env.elapsed),
+                    travel_m=float(env.travel),nonzero_choices=int(mask[1:].sum()),
+                    stop_reason=result['stop_reason'])),flush=True)
+                last_progress=time.monotonic()
             if result['stop_reason']=='estimated_goal_reached':
                 if good and settled:arrived=True;break
                 if not good:false_arrival=True;break
@@ -104,9 +122,13 @@ def evaluate(case,bundle,budget):
             localization_xy_p95_m=float(np.percentile(np.linalg.norm(labels[:,1:3]-labels[:,4:6],axis=1),95)),
             localization_yaw_p95_rad=float(np.percentile(abs(wrap(labels[:,3]-labels[:,6])),95)),
             stop_choices=int((choices==0).sum()),only_stop_frames=int((~masks[:,1:].any(axis=1)).sum()),stop_reasons=dict(stops),
+            voluntary_wait_frames=int(((choices==0)&masks[:,1:].any(axis=1)).sum()),
+            predictive_constraint_frames=int(np.count_nonzero(np.asarray(constraint_diagnostics)[:,1])),
             runtime_ms=dict(p95=float(np.percentile(latencies,95)),p99=float(np.percentile(latencies,99)),maximum=float(max(latencies))))
         return result,dict(labels=labels,observations=np.array(observations),masks=masks,choices=choices,commands=np.array(commands),
-            scans=np.array(scans),human_positions=np.array(humans))
+            scans=np.array(scans),human_positions=np.array(humans),odometry=np.array(odometry),
+            measured_velocity=np.array(velocities),route_diagnostics=np.array(route_diagnostics),route_reasons=np.array(route_reasons),
+            constraint_diagnostics=np.array(constraint_diagnostics))
     finally:env.close()
 
 

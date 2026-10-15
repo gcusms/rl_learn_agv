@@ -1,0 +1,316 @@
+{
+  "completed": true,
+  "scope": "paired physical sensor tracking; supplied initial map pose, NOT global localization, navigation or real-world accuracy",
+  "truth": "independent MuJoCo rigid-body pose; never supplied to any localizer",
+  "candidate_contract": {
+    "schema": "fast_static_tracking_v1",
+    "calibrated": false,
+    "beams": 60,
+    "iterations": 4,
+    "endpoint_gate_m": 0.18,
+    "angular_gate_rad": 0.02,
+    "maximum_endpoint_gate_m": 0.35,
+    "minimum_hits": 12,
+    "minimum_support_fraction": 0.35,
+    "huber_m": 0.05,
+    "damping": 0.02,
+    "weak_axis_ratio": 0.04,
+    "minimum_eigenvalue": 0.02,
+    "yaw_length_scale_m": 3.0,
+    "maximum_correction_m": 0.12,
+    "maximum_correction_rad": 0.15,
+    "correction_rate_m_s": 0.3,
+    "correction_rate_rad_s": 0.5,
+    "process_std_per_sqrt_s": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "measurement_std_m": 0.06,
+    "covariance_floor": [
+      0.04,
+      0.04,
+      0.03
+    ],
+    "correlation_seconds": 0.5,
+    "supplied_initial_pose_required": true,
+    "global_relocalization": false
+  },
+  "comparison": "Nav2 1.1.19 native libraries; omni model; same initial Gaussian [.12,.12,.08], 60 beams, 10m returns; forced update each scan for all algorithms",
+  "amcl": {
+    "min_particles": 300,
+    "max_particles": 1000,
+    "alphas": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "laser": "likelihood_field_prob",
+    "sigma_hit": 0.12,
+    "z_hit": 0.9,
+    "z_rand": 0.1,
+    "skip_distance": 0.5,
+    "skip_threshold": 0.3,
+    "skip_error_threshold": 0.9,
+    "kld_error": 0.05,
+    "kld_z": 0.99
+  },
+  "timing": "single-thread local algorithm wall time, IO and quota sleeps excluded; startup measured separately; no ROS transport or 50ms polling wait",
+  "source_sha256": {
+    "experiments/amcl_offline.cpp": "6a3686c9fc1d76c45a8ff32c8df89cfee8a7c2d6a44926736aaa7825b8ea66de",
+    "experiments/benchmark_static_localization.py": "da40ba0c635c1276b959ca5be95dfe96b87e1f1520113bb777a6be3d9767e823",
+    "neural_navigation/fast_static_localizer.py": "7aa2435ea8fc9d53207402a2b30c124b91eecb9b3f3166fe9d2373a0ff6be3a3"
+  },
+  "deployment_approved": false,
+  "cases": [
+    {
+      "id": "short_00",
+      "split": "development",
+      "mode": "normal_feedback",
+      "frames": 61,
+      "cache_sha256": "4b16827b30f564643c54d7bc4598405a3116e5affbb1ffa37528c9fd112b3f93",
+      "physical_events": {
+        "collisions": 0,
+        "guards": 0
+      },
+      "algorithms": {
+        "legacy": {
+          "frames": 61,
+          "xy_rmse_m": 0.019011665966268014,
+          "xy_p95_m": 0.030838124212038208,
+          "final_xy_m": 0.011471839783923478,
+          "yaw_p95_rad": 0.006810481138530999,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 3.7048762095481402,
+          "update_p95_ms": 7.188444957137108,
+          "update_p99_ms": 7.996912812814115,
+          "update_max_ms": 8.940567029640079,
+          "startup_ms": 5.950735998339951
+        },
+        "v5": {
+          "frames": 61,
+          "xy_rmse_m": 0.005101025313888442,
+          "xy_p95_m": 0.00630102699286419,
+          "final_xy_m": 0.0016300914824103376,
+          "yaw_p95_rad": 0.002123137816989029,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.809368166385494,
+          "update_p95_ms": 9.571821021381766,
+          "update_p99_ms": 10.968015971593553,
+          "update_max_ms": 13.00383999478072,
+          "startup_ms": 5.5864599999040365
+        },
+        "fast_static": {
+          "frames": 61,
+          "xy_rmse_m": 0.003734684473579286,
+          "xy_p95_m": 0.006191981598128666,
+          "final_xy_m": 0.0018071340035222875,
+          "yaw_p95_rad": 0.0017608968463314056,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.024059862875548,
+          "update_p95_ms": 6.005392991937697,
+          "update_p99_ms": 6.309551594313234,
+          "update_max_ms": 6.32675300585106,
+          "startup_ms": 6.374559015966952
+        },
+        "amcl_standard_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.05096144825882884,
+          "xy_p95_m": 0.06894009921850773,
+          "final_xy_m": 0.07079343352620909,
+          "yaw_p95_rad": 0.012546251541329934,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 7.495449573770492,
+          "update_p95_ms": 14.002756,
+          "update_p99_ms": 15.437311,
+          "update_max_ms": 15.560229999999999,
+          "native_peak_rss_kib": 480984,
+          "mean_particles": 571.2786885245902
+        },
+        "amcl_skip_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.05096144825882884,
+          "xy_p95_m": 0.06894009921850773,
+          "final_xy_m": 0.07079343352620909,
+          "yaw_p95_rad": 0.012546251541329934,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 6.510044229508197,
+          "update_p95_ms": 12.27047,
+          "update_p99_ms": 12.3758376,
+          "update_max_ms": 12.395892,
+          "native_peak_rss_kib": 480984,
+          "mean_particles": 571.2786885245902
+        }
+      }
+    },
+    {
+      "id": "short_01",
+      "split": "development",
+      "mode": "small_initial_offset",
+      "frames": 61,
+      "cache_sha256": "a0d53fbf7672770a0c9e69efd88793dfcde0727cce7828f7b241d366a5be8d42",
+      "physical_events": {
+        "collisions": 0,
+        "guards": 0
+      },
+      "algorithms": {
+        "legacy": {
+          "frames": 61,
+          "xy_rmse_m": 0.01939918710697197,
+          "xy_p95_m": 0.03218027388553518,
+          "final_xy_m": 0.018723651397302622,
+          "yaw_p95_rad": 0.006690480786159192,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.008173805157669,
+          "update_p95_ms": 4.542834009043872,
+          "update_p99_ms": 9.61213980335741,
+          "update_max_ms": 14.949578966479748,
+          "startup_ms": 9.423405048437417
+        },
+        "v5": {
+          "frames": 61,
+          "xy_rmse_m": 0.0051618071229664,
+          "xy_p95_m": 0.00790007711648364,
+          "final_xy_m": 0.0031232944255807573,
+          "yaw_p95_rad": 0.0033980938218127754,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.977699788096437,
+          "update_p95_ms": 5.2751649636775255,
+          "update_p99_ms": 6.637753592804071,
+          "update_max_ms": 8.411368005909026,
+          "startup_ms": 3.4360349527560174
+        },
+        "fast_static": {
+          "frames": 61,
+          "xy_rmse_m": 0.004050446109493878,
+          "xy_p95_m": 0.007783405300794285,
+          "final_xy_m": 0.0035602421452329922,
+          "yaw_p95_rad": 0.001989661437817425,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 2.3277976748640423,
+          "update_p95_ms": 2.700955024920404,
+          "update_p99_ms": 2.714627771638334,
+          "update_max_ms": 2.716149960178882,
+          "startup_ms": 3.628138976637274
+        },
+        "amcl_standard_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.07261688423321885,
+          "xy_p95_m": 0.09534078894666916,
+          "final_xy_m": 0.012158355715406514,
+          "yaw_p95_rad": 0.018128671466790536,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.799123524590163,
+          "update_p95_ms": 12.863728,
+          "update_p99_ms": 13.311880399999998,
+          "update_max_ms": 13.478117,
+          "native_peak_rss_kib": 482424,
+          "mean_particles": 378.39344262295083
+        },
+        "amcl_skip_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.07261688423321885,
+          "xy_p95_m": 0.09534078894666916,
+          "final_xy_m": 0.012158355715406514,
+          "yaw_p95_rad": 0.018128671466790536,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.3789949508196715,
+          "update_p95_ms": 11.712436,
+          "update_p99_ms": 12.5086734,
+          "update_max_ms": 12.653739,
+          "native_peak_rss_kib": 482424,
+          "mean_particles": 378.39344262295083
+        }
+      }
+    },
+    {
+      "id": "short_02",
+      "split": "development",
+      "mode": "unmapped_obstacle",
+      "frames": 61,
+      "cache_sha256": "7e72700d084815ce160aa8413a59ba626a5acf8ae8a0bcc959f3b5c8e686c12a",
+      "physical_events": {
+        "collisions": 0,
+        "guards": 0
+      },
+      "algorithms": {
+        "legacy": {
+          "frames": 61,
+          "xy_rmse_m": 0.020630339993072348,
+          "xy_p95_m": 0.030380447675224524,
+          "final_xy_m": 0.03701980488952564,
+          "yaw_p95_rad": 0.014519079372846466,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 3.962861868308582,
+          "update_p95_ms": 4.94976103072986,
+          "update_p99_ms": 7.743771781679234,
+          "update_max_ms": 11.374108958989382,
+          "startup_ms": 4.809118981938809
+        },
+        "v5": {
+          "frames": 61,
+          "xy_rmse_m": 0.006113724866809671,
+          "xy_p95_m": 0.0063217227331834195,
+          "final_xy_m": 0.000962580146841731,
+          "yaw_p95_rad": 0.003800914274200373,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 4.884683061391115,
+          "update_p95_ms": 5.078329995740205,
+          "update_p99_ms": 6.937262392602857,
+          "update_max_ms": 8.702342980541289,
+          "startup_ms": 3.4520039916969836
+        },
+        "fast_static": {
+          "frames": 61,
+          "xy_rmse_m": 0.003801435849692517,
+          "xy_p95_m": 0.007083993410260449,
+          "final_xy_m": 0.003047035297479821,
+          "yaw_p95_rad": 0.0034124200597354104,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 2.280207346078986,
+          "update_p95_ms": 2.6738980086520314,
+          "update_p99_ms": 2.718999795615673,
+          "update_max_ms": 2.7217280003242195,
+          "startup_ms": 4.149420012254268
+        },
+        "amcl_standard_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.11450242063616747,
+          "xy_p95_m": 0.18118265175508752,
+          "final_xy_m": 0.03444489383457606,
+          "yaw_p95_rad": 0.03244329152247305,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 5.3593617868852474,
+          "update_p95_ms": 12.215653,
+          "update_p99_ms": 12.5889566,
+          "update_max_ms": 12.672433999999999,
+          "native_peak_rss_kib": 482712,
+          "mean_particles": 455.1311475409836
+        },
+        "amcl_skip_11": {
+          "frames": 61,
+          "xy_rmse_m": 0.11438338966710894,
+          "xy_p95_m": 0.18485242599555926,
+          "final_xy_m": 0.032441722093928614,
+          "yaw_p95_rad": 0.03510380413485947,
+          "erroneous_trusted_fraction": 0.0,
+          "update_mean_ms": 5.551010786885246,
+          "update_p95_ms": 11.300671999999999,
+          "update_p99_ms": 11.892646200000001,
+          "update_max_ms": 11.973576,
+          "native_peak_rss_kib": 482712,
+          "mean_particles": 491.73770491803276
+        }
+      }
+    }
+  ],
+  "resource": {
+    "seconds": 48.20642801298527,
+    "cpu_seconds": 6.400930289,
+    "average_cpu_cores": 0.13278167565694338,
+    "peak_rss_mib": 471.3984375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}
