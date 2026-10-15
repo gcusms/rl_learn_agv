@@ -12,7 +12,7 @@ from sb3_contrib import MaskablePPO
 from sb3_contrib.common.maskable.policies import MaskableActorCriticPolicy
 from stable_baselines3.common.utils import explained_variance
 from experiments.conditional_recovery_ppo import actor_terms
-from neural_navigation.decision_feedback import TRAIN_DIM, RISK_SLICE
+from neural_navigation.decision_feedback import TRAIN_DIM, RISK_SLICE, LEGACY_SCHEMA, contract
 
 
 def decision_support(observations):
@@ -100,6 +100,8 @@ def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4):
         raise ValueError('Native 300D quality PPO checkpoint required')
     if env.observation_space.shape!=(TRAIN_DIM,):
         raise ValueError('Explicit new feedback observation required')
+    feedback_schema=getattr(env,'feedback_schema',LEGACY_SCHEMA)
+    contract(feedback_schema)
     scale=float(old.training_reward_scale)
     if env.reward_scale!=scale:raise ValueError('Training reward units differ from checkpoint')
     new=StopFeedbackPPO(StopFeedbackPolicy,env,device='cpu',seed=seed,n_steps=250,batch_size=125,
@@ -129,10 +131,12 @@ def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4):
         copy.deepcopy(old.policy.action_net)).eval().requires_grad_(False)
     new.anchor_strength=.5
     new.training_reward_scale=scale
+    new.feedback_schema=feedback_schema
     new.feedback_migration=dict(parent_checkpoint_timesteps=old.num_timesteps,
         dimensions=TRAIN_DIM,legacy_prefix_dimensions=300,new_input_weights_initially_zero=True,
         all_actor_parameters_trainable=True,critic_uses_all_transitions=True,
         actor_support='every state with at least one nonzero legal choice',
         optimizer_moments_retained=True,reward_unchanged=True,actions_masks_guard_unchanged=True,
-        reference_stop_excluded_from_clear_anchor=True,exact_rollout_resume=False)
+        reference_stop_excluded_from_clear_anchor=True,exact_rollout_resume=False,
+        feedback_schema=feedback_schema)
     return new

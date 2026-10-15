@@ -42,6 +42,7 @@ class StopFeedbackWrapper(QualityMaskedWrapper):
         self.feedback.record(dict(timestamp=timestamp, command=info['commanded_velocity'],
                                   stop_reason=info['execution_guard_reason']))
         info.update(decision_feedback_previous_reason=self.feedback.previous_reason,
+                    decision_feedback_sensor_timestamp=timestamp,
                     decision_feedback_current_alternatives=alternatives,
                     decision_feedback_trainable_choice=bool(alternatives),
                     decision_feedback_reward_changed=False)

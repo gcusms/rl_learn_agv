@@ -82,44 +82,56 @@ def main():
     if abs(runtime.core.goal_yaw - goal[2]) > 1e-9:
         raise ValueError('Directional goal lost')
 
-    feedback = ROOT / 'models/stop_feedback_20261015/ppo_4000_s221015'
-    feedback_bundle = feedback / 'portable'
-    feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
     from neural_navigation.decision_feedback import contract as feedback_contract
-    if feedback_manifest['observation_contract'] != feedback_contract():
-        raise ValueError('The archived 4k model must retain its trained V1 semantics')
-    for name, expected in feedback_manifest['files'].items():
-        if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
-            raise ValueError('Feedback component mismatch: ' + name)
     from experiments.stop_feedback_ppo import StopFeedbackPPO
-    checkpoint = StopFeedbackPPO.load(feedback / 'policy.zip', device='cpu')
-    if checkpoint.num_timesteps != 4000 or checkpoint.observation_space.shape != (436,):
-        raise ValueError('Feedback training checkpoint mismatch')
-    exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
-    with torch.no_grad():
-        command = exported(torch.zeros((1, 439)))
-    if command.shape != (1, 2) or not torch.isfinite(command).all():
-        raise ValueError('Feedback TorchScript interface mismatch')
-    del checkpoint, exported
+    feedback_models = []
+    for folder, schema in [('ppo_4000_s221015', 'stop_decision_feedback_v1'),
+                           ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2')]:
+        feedback = ROOT / 'models/stop_feedback_20261015' / folder
+        feedback_bundle = feedback / 'portable'
+        feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
+        if feedback_manifest['observation_contract'] != feedback_contract(schema):
+            raise ValueError('Archived feedback semantics mismatch: ' + folder)
+        for name, expected in feedback_manifest['files'].items():
+            if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
+                raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
+        checkpoint = StopFeedbackPPO.load(feedback / 'policy.zip', device='cpu')
+        if checkpoint.num_timesteps != 4000 or checkpoint.observation_space.shape != (436,):
+            raise ValueError('Feedback training checkpoint mismatch: ' + folder)
+        if getattr(checkpoint, 'feedback_schema', 'stop_decision_feedback_v1') != schema:
+            raise ValueError('Feedback checkpoint semantics mismatch: ' + folder)
+        exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
+        with torch.no_grad():
+            command = exported(torch.zeros((1, 439)))
+        if command.shape != (1, 2) or not torch.isfinite(command).all():
+            raise ValueError('Feedback TorchScript interface mismatch: ' + folder)
+        feedback_models.append(dict(folder=folder, schema=schema, additional_steps=4000,
+                                    checkpoint_loaded=True, torchscript_loaded=True))
+        del checkpoint, exported
 
     if args.build_native:
         from tools.prepare_native_bundle import build
         native = build(ROOT / 'models/localization_mapping_20261015/temporal_native_candidate/portable',
                        output / 'native_reference')
         os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
-        rebuilt_feedback = build(feedback_bundle, output / 'feedback_candidate')
-        feedback_runtime = resolve_runtime(feedback_manifest['required_runtime'])(
-            rebuilt_feedback, ROOT / 'training' / case['scene'] / 'decision_map.yaml',
-            initial, goal, route_mode='shortcut')
-        feedback_result = feedback_runtime.step(data['scan'][0], data['odom'][0],
-                                               data['velocity'][0], float(data['t'][0]))
-        if (feedback_result['policy_observation_dimensions'] != 439
-                or not np.isfinite(feedback_result['command']).all()):
-            raise ValueError('Rebuilt feedback runtime smoke check failed')
+        for entry in feedback_models:
+            bundle = ROOT / 'models/stop_feedback_20261015' / entry['folder'] / 'portable'
+            feedback_manifest = json.loads((bundle / 'manifest.json').read_text())
+            rebuilt_feedback = build(bundle, output / entry['folder'])
+            feedback_runtime = resolve_runtime(feedback_manifest['required_runtime'])(
+                rebuilt_feedback, ROOT / 'training' / case['scene'] / 'decision_map.yaml',
+                initial, goal, route_mode='shortcut')
+            feedback_result = feedback_runtime.step(data['scan'][0], data['odom'][0],
+                                                   data['velocity'][0], float(data['t'][0]))
+            if (feedback_result['policy_observation_dimensions'] != 439
+                    or not np.isfinite(feedback_result['command']).all()):
+                raise ValueError('Rebuilt feedback runtime smoke check failed: ' + entry['folder'])
+            entry['native_runtime_checked'] = True
     tests = ['training.test_measured_odometry', 'training.test_verified_static_localizer',
              'training.test_fast_static_localizer', 'training.test_global_relocalizer',
              'training.test_decision_feedback', 'experiments.test_stop_feedback_ppo',
-             'training.test_navigation_runtime', 'experiments.test_audit_decision_waits']
+             'training.test_navigation_runtime', 'experiments.test_audit_decision_waits',
+             'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)
@@ -132,6 +144,7 @@ def main():
         feedback_ppo_steps=4000, feedback_training_dimensions=436, feedback_runtime_dimensions=439,
         feedback_checkpoint_loaded=True, feedback_torchscript_loaded=True,
         feedback_native_runtime_checked=args.build_native,
+        feedback_models=feedback_models,
         native_reference_rebuilt=args.build_native, implementation_tests_returncode=completed.returncode,
         python=sys.version, torch=torch.__version__, cuda_available=torch.cuda.is_available(),
         scope='Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.',

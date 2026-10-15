@@ -1,0 +1,23 @@
+{
+  "completed": true,
+  "feedback_schema": "stop_decision_feedback_v2",
+  "rollout_files": 9,
+  "sampled_frames": 2250,
+  "input_reasons_causally_verified": 2250,
+  "timer_frames_verified": 2250,
+  "maximum_timer_normalized_error": 1.7881802705232985e-09,
+  "only_stop_frames": 232,
+  "idle_with_motion_choices": 16,
+  "idle_with_choices_but_guard_label_frames": 0,
+  "longest_observed_choice_wait_s": 0.3999999910593033,
+  "positive_wait_timer_with_guard_reason": 0,
+  "long_wait_samples": [],
+  "deployment_approved": false,
+  "limitations": [
+    "Timer saturates at 5 s; a positive timer does not imply movement is useful.",
+    "A raw rollout advantage is not a normalized per-minibatch PPO actor gradient.",
+    "No collision/success claim is inferred from reason visibility or timer coverage."
+  ],
+  "training_complete_at_audit": false,
+  "declared_training_steps": 4000
+}

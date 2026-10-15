@@ -1,0 +1,407 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "variant": "prior_constraints",
+      "safe_success": false,
+      "collisions": 1,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 63,
+      "physical_seconds": 12.60000000000057,
+      "voluntary_wait_s": 0.19999999999999574,
+      "enroute_voluntary_wait_s": 0.19999999999999574,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.19999999999999574,
+      "only_stop_s": 4.000000000000519,
+      "longest_unfinished_task_wait_s": 0.19999999999999574,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 5.199999999999911,
+          "end_s": 5.399999999999907,
+          "duration_s": 0.19999999999999574,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 4.353805471024223e-06,
+          "minimum_legal_motion_choices": 11,
+          "geodesic_progress_m": 4.359412065113588e-06
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.599999999999924,
+          "release_s": 5.199999999999911,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.19999999999999574,
+          "observation_window_s": 4.800000000000252,
+          "physical_displacement_m": 0.5191391922982073,
+          "geodesic_progress_m": 0.49642520934682954
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.19999999999999574,
+      "final_command_idle": true,
+      "final_only_stop": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "variant": "stop_feedback_ppo",
+      "safe_success": false,
+      "collisions": 1,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 59,
+      "physical_seconds": 11.800000000000445,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 4.000000000000519,
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [
+        {
+          "forced_start_s": 4.599999999999924,
+          "release_s": 5.199999999999911,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000252,
+          "physical_displacement_m": 0.50003624674144,
+          "geodesic_progress_m": 0.48612632468903527
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "variant": "prior_constraints",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 152,
+      "physical_seconds": 30.199999999998276,
+      "voluntary_wait_s": 0.19999999999999574,
+      "enroute_voluntary_wait_s": 0.19999999999999574,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.19999999999999574,
+      "only_stop_s": 0.5999999999999872,
+      "longest_unfinished_task_wait_s": 0.19999999999999574,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 4.999999999999916,
+          "end_s": 5.199999999999911,
+          "duration_s": 0.19999999999999574,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 4.872149734020851e-06,
+          "minimum_legal_motion_choices": 11,
+          "geodesic_progress_m": 4.877174556661146e-06
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.19999999999999574,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.3851632565199241,
+          "geodesic_progress_m": 0.3196419403674833
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.19999999999999574,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "variant": "stop_feedback_ppo",
+      "safe_success": false,
+      "collisions": 1,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 59,
+      "physical_seconds": 11.800000000000445,
+      "voluntary_wait_s": 0.0,
+      "enroute_voluntary_wait_s": 0.0,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.0,
+      "only_stop_s": 4.000000000000519,
+      "longest_unfinished_task_wait_s": 0.0,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [],
+      "resumptions": [
+        {
+          "forced_start_s": 4.399999999999928,
+          "release_s": 4.999999999999916,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000002165,
+          "physical_displacement_m": 0.5495563368556707,
+          "geodesic_progress_m": 0.5106558971991007
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": true
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "variant": "prior_constraints",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 194,
+      "physical_seconds": 38.600000000001295,
+      "voluntary_wait_s": 0.20000000000003126,
+      "enroute_voluntary_wait_s": 0.20000000000003126,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.20000000000003126,
+      "only_stop_s": 4.000000000000661,
+      "longest_unfinished_task_wait_s": 0.20000000000003126,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 14.20000000000082,
+          "end_s": 14.400000000000851,
+          "duration_s": 0.20000000000003126,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.00045728555741523277,
+          "minimum_legal_motion_choices": 3,
+          "geodesic_progress_m": -0.0003865157711375744
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 5.799999999999899,
+          "release_s": 6.399999999999886,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000465,
+          "physical_displacement_m": 0.44414001247136875,
+          "geodesic_progress_m": 0.21322633673937696
+        },
+        {
+          "forced_start_s": 9.40000000000007,
+          "release_s": 10.200000000000195,
+          "preceding_only_stop_s": 0.8000000000001251,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.2660811100376096,
+          "geodesic_progress_m": -0.12339279509545276
+        },
+        {
+          "forced_start_s": 14.400000000000851,
+          "release_s": 15.000000000000945,
+          "preceding_only_stop_s": 0.6000000000000938,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.9999999999993605,
+          "physical_displacement_m": 0.07801760363000355,
+          "geodesic_progress_m": -0.07866737103234112
+        },
+        {
+          "forced_start_s": 25.19999999999927,
+          "release_s": 25.59999999999919,
+          "preceding_only_stop_s": 0.3999999999999204,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.5891318376538076,
+          "geodesic_progress_m": 0.616501156290939
+        },
+        {
+          "forced_start_s": 30.999999999998117,
+          "release_s": 31.199999999998077,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000001887,
+          "physical_displacement_m": 0.6489528268290188,
+          "geodesic_progress_m": 0.6572466229660605
+        },
+        {
+          "forced_start_s": 31.799999999997958,
+          "release_s": 31.999999999997918,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000002456,
+          "physical_displacement_m": 0.6906518561286793,
+          "geodesic_progress_m": 0.7003601549078365
+        },
+        {
+          "forced_start_s": 32.79999999999833,
+          "release_s": 33.99999999999894,
+          "preceding_only_stop_s": 1.200000000000614,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.600000000002353,
+          "physical_displacement_m": 0.8795517824651503,
+          "geodesic_progress_m": 0.9365078542042726
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "variant": "stop_feedback_ppo",
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "timeout": false,
+      "frames": 199,
+      "physical_seconds": 39.600000000001806,
+      "voluntary_wait_s": 0.1999999999999602,
+      "enroute_voluntary_wait_s": 0.1999999999999602,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.1999999999999602,
+      "only_stop_s": 7.400000000000304,
+      "longest_unfinished_task_wait_s": 0.1999999999999602,
+      "long_unfinished_task_waits": [],
+      "unfinished_task_wait_segments": [
+        {
+          "start_s": 29.799999999998356,
+          "end_s": 29.999999999998316,
+          "duration_s": 0.1999999999999602,
+          "includes_heading_alignment": false,
+          "physical_displacement_m": 0.00048734015360710263,
+          "minimum_legal_motion_choices": 1,
+          "geodesic_progress_m": 0.0003376958877219227
+        }
+      ],
+      "resumptions": [
+        {
+          "forced_start_s": 5.999999999999894,
+          "release_s": 6.799999999999877,
+          "preceding_only_stop_s": 0.799999999999983,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000536,
+          "physical_displacement_m": 0.3484875723796882,
+          "geodesic_progress_m": 0.2708928269970303
+        },
+        {
+          "forced_start_s": 6.999999999999873,
+          "release_s": 7.199999999999869,
+          "preceding_only_stop_s": 0.19999999999999574,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000000607,
+          "physical_displacement_m": 0.3227970807378433,
+          "geodesic_progress_m": 0.24060204463097135
+        },
+        {
+          "forced_start_s": 7.3999999999998645,
+          "release_s": 7.999999999999852,
+          "preceding_only_stop_s": 0.5999999999999872,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.8000000000007494,
+          "physical_displacement_m": 0.2900044248093582,
+          "geodesic_progress_m": 0.206602411722842
+        },
+        {
+          "forced_start_s": 8.199999999999882,
+          "release_s": 8.399999999999913,
+          "preceding_only_stop_s": 0.20000000000003126,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.26280523288021057,
+          "geodesic_progress_m": 0.17799424595061009
+        },
+        {
+          "forced_start_s": 8.799999999999976,
+          "release_s": 9.800000000000132,
+          "preceding_only_stop_s": 1.0000000000001563,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.80000000000075,
+          "physical_displacement_m": 0.21598493928887988,
+          "geodesic_progress_m": 0.13195125434857413
+        },
+        {
+          "forced_start_s": 11.800000000000445,
+          "release_s": 14.800000000000914,
+          "preceding_only_stop_s": 3.000000000000469,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999432,
+          "physical_displacement_m": 0.07186153696686118,
+          "geodesic_progress_m": -0.07776056683749033
+        },
+        {
+          "forced_start_s": 17.000000000000902,
+          "release_s": 18.000000000000703,
+          "preceding_only_stop_s": 0.999999999999801,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.37003066802386847,
+          "geodesic_progress_m": -0.3081804160021755
+        },
+        {
+          "forced_start_s": 26.199999999999072,
+          "release_s": 26.599999999998992,
+          "preceding_only_stop_s": 0.3999999999999204,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.999999999999005,
+          "physical_displacement_m": 0.38473569358507526,
+          "geodesic_progress_m": 0.42856402263363025
+        },
+        {
+          "forced_start_s": 29.999999999998316,
+          "release_s": 30.199999999998276,
+          "preceding_only_stop_s": 0.1999999999999602,
+          "first_motion_delay_s": 0.0,
+          "observation_window_s": 4.800000000001177,
+          "physical_displacement_m": 0.5610758937868925,
+          "geodesic_progress_m": 0.5332063265301907
+        }
+      ],
+      "releases_without_further_motion": 0,
+      "longest_observed_release_delay_s": 0.0,
+      "final_command_idle": true,
+      "final_only_stop": false
+    }
+  ],
+  "summary": {
+    "prior_constraints": {
+      "tasks": 3,
+      "safe_success": 2,
+      "collisions": 1,
+      "timeouts": 0,
+      "false_arrivals": 0,
+      "enroute_voluntary_wait_s": 0.6000000000000227,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.6000000000000227,
+      "only_stop_s": 8.600000000001167,
+      "longest_unfinished_task_wait_s": 0.20000000000003126,
+      "long_unfinished_task_wait_segments": 0,
+      "releases_without_further_motion": 0
+    },
+    "stop_feedback_ppo": {
+      "tasks": 3,
+      "safe_success": 1,
+      "collisions": 2,
+      "timeouts": 0,
+      "false_arrivals": 0,
+      "enroute_voluntary_wait_s": 0.1999999999999602,
+      "heading_alignment_wait_s": 0.0,
+      "unfinished_task_wait_s": 0.1999999999999602,
+      "only_stop_s": 15.400000000001342,
+      "longest_unfinished_task_wait_s": 0.1999999999999602,
+      "long_unfinished_task_wait_segments": 0,
+      "releases_without_further_motion": 0
+    }
+  },
+  "deployment_approved": false,
+  "evaluation_sha256": "c0b3cd0bdaced3162e8c255e4d9810fa6c97ea631d5ce5a785e5f5caf9c4d6a8",
+  "method": "Actual frame durations; exclude pose-goal settling but count an unfinished heading alignment; report legal-choice and only-stop periods separately.",
+  "limitations": [
+    "A legal alternative does not guarantee useful movement or future safety.",
+    "Offline physical geodesic labels are metrics only, not policy inputs.",
+    "No wait count alone proves better navigation or real-world readiness."
+  ]
+}

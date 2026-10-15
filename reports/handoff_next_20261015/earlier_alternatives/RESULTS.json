@@ -1,0 +1,165 @@
+{
+  "completed": false,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "case_id": "motion_profile_015",
+  "bundle_manifest_sha256": "d6aca3c53630b4c9b0b96057d287317860b7df00649be15ae354c5654f7f4daa",
+  "purpose": "Check whether alternative currently legal actions can avoid an archived failure.",
+  "limitations": [
+    "Fixed sensor-time intervention is not a learned decision or generalization.",
+    "No change to the shared guard, body, input observations or action history.",
+    "Successful probes are not PPO success rates and are not automatically used for training."
+  ],
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 88.59999999999191,
+      "travel_m": 7.994338742408118,
+      "frames": 444,
+      "final_xy_error_m": 0.09734611286272868,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0042634911311113695,
+      "localization_yaw_p95_rad": 0.0017493759859447788,
+      "stop_choices": 123,
+      "only_stop_frames": 37,
+      "stop_reasons": {
+        "None": 354,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 82,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 86,
+      "predictive_constraint_frames": 78,
+      "runtime_ms": {
+        "p95": 221.67203579738265,
+        "p99": 270.09716396802094,
+        "maximum": 302.4609960266389
+      },
+      "specification": {
+        "id": "earlier_right_arc",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 7
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        }
+      ],
+      "trace_sha256": "c84d8115a98804fa68bddc73a7aa563c35707c478b14621b1ede911ee10c071c",
+      "not_a_trained_policy": true
+    }
+  ],
+  "resource": {
+    "seconds": 590.2543613010203,
+    "cpu_seconds": 88.726029446,
+    "average_cpu_cores": 0.150318295404769,
+    "peak_rss_mib": 1649.421875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

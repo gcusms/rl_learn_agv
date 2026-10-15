@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.monitor import Monitor
-from neural_navigation.decision_feedback import contract, TRAIN_DIM, RUNTIME_DIM
+from neural_navigation.decision_feedback import contract, TRAIN_DIM, RUNTIME_DIM, LEGACY_SCHEMA, WAIT_SCHEMA
 from neural_navigation.decision_feedback_runtime import RUNTIME_NAME
 from neural_navigation.goal_pose_runtime import check_files
 from neural_navigation.experiment_budget import ExperimentBudget
@@ -36,6 +36,10 @@ class DirectionalFeedbackActor(torch.nn.Module):
 
 def export_candidate(model,bundle,output):
     bundle=Path(bundle);output=Path(output)
+    feedback_schema=getattr(model,'feedback_schema',LEGACY_SCHEMA)
+    feedback_contract=contract(feedback_schema)
+    if model.feedback_migration.get('feedback_schema',LEGACY_SCHEMA)!=feedback_schema:
+        raise ValueError('Export schema differs from the model training contract')
     shutil.copytree(bundle,output,ignore=shutil.ignore_patterns('MODEL_CARD.json'))
     parent=json.loads((bundle/'manifest.json').read_text())
     check_files(bundle,parent)
@@ -60,8 +64,8 @@ def export_candidate(model,bundle,output):
         unchanged_actions_masks_guard=True,reward_unchanged=True,comparison_inputs=len(obs),
         no_runtime_teacher=True,stop_remains_selectable=True)
     (output/'navigation_preservation.json').write_text(json.dumps(preservation,indent=2)+'\n')
-    (output/'decision_feedback.json').write_text(json.dumps(contract(),indent=2)+'\n')
-    manifest=dict(parent,required_runtime=RUNTIME_NAME,observation_contract=contract(),
+    (output/'decision_feedback.json').write_text(json.dumps(feedback_contract,indent=2)+'\n')
+    manifest=dict(parent,required_runtime=RUNTIME_NAME,observation_contract=feedback_contract,
         navigation_preservation_contract=preservation,deployment_approved=False,
         parent_manifest_sha256=digest(bundle/'manifest.json'),additional_ppo_steps=model.num_timesteps)
     manifest['files']=dict(parent['files'])
@@ -78,14 +82,17 @@ def export_candidate(model,bundle,output):
 
 
 class Progress(BaseCallback):
-    def __init__(self,output,budget):
+    def __init__(self,output,budget,record_rollouts=False):
         super().__init__();self.output=output;self.budget=budget
+        self.record_rollouts=record_rollouts;self.trace_steps=[]
         self.counts=dict(decision_frames=0,only_stop=0,voluntary_wait=0,nonzero=0,
             changed_nonzero=0,episodes=0,success=0,collisions=0)
         self.reasons={}
+    def _on_rollout_start(self):
+        self.trace_steps=[]
     def _on_step(self):
         self.budget.tick()
-        for info in self.locals['infos']:
+        for env_index,info in enumerate(self.locals['infos']):
             c=self.counts;c['decision_frames']+=int(info['decision_feedback_trainable_choice'])
             c['only_stop']+=int(info['masked_current_nonzero_choices']==0)
             c['voluntary_wait']+=int(info['masked_chose_wait_with_nonzero_available'])
@@ -93,6 +100,12 @@ class Progress(BaseCallback):
             c['changed_nonzero']+=int(info['nonzero_choice_changed_by_guard'])
             if c['changed_nonzero']:raise RuntimeError('PPO chosen nonzero action differs from execution')
             reason=info['decision_feedback_previous_reason'];self.reasons[reason]=self.reasons.get(reason,0)+1
+            if self.record_rollouts:
+                self.trace_steps.append(dict(sensor_timestamp=info['decision_feedback_sensor_timestamp'],
+                    sampled_choice=info['masked_choice'],executed_command=np.asarray(info['commanded_velocity']).tolist(),
+                    executed_reason=reason,nonzero_legal_choices=info['masked_current_nonzero_choices'],
+                    native_reward=info['native_reward'],true_geodesic_progress_m=info['fixed_geodesic_progress_m'],
+                    case_json=info['training_case_json'],done=bool(self.locals['dones'][env_index])))
             if 'episode' in info:
                 c['episodes']+=1;c['success']+=int(info['verified_mission_success'])
                 c['collisions']+=int(info['collision_events'])
@@ -108,12 +121,23 @@ class Progress(BaseCallback):
             if self.num_timesteps%1000==0:self.model.save(self.output/f'policy_step_{self.num_timesteps}.zip')
         return True
 
+    def _on_rollout_end(self):
+        if not self.record_rollouts:return
+        buffer=self.model.rollout_buffer
+        from experiments.feedback_rollout_trace import save_rollout
+        folder=self.output/'rollouts';folder.mkdir(exist_ok=True)
+        save_rollout(folder/f'rollout_{self.num_timesteps:06d}.npz',buffer,self.trace_steps,
+            collected_steps=self.num_timesteps,optimizer_epochs_before_update=self.model._n_updates,
+            feedback_schema=self.model.feedback_schema)
+
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('bundle','checkpoint','training-cases','output'):parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--steps',type=int,default=4000);parser.add_argument('--seed',type=int,default=221015)
     parser.add_argument('--cpu-cores',type=float,default=.35)
+    parser.add_argument('--feedback-schema',choices=(LEGACY_SCHEMA,WAIT_SCHEMA),default=LEGACY_SCHEMA)
+    parser.add_argument('--record-rollouts',action='store_true',help='Archive causal PPO states/masks and actual execution before each update')
     args=parser.parse_args()
     if args.output.exists() or not 1000<=args.steps<=10000 or args.steps%250:
         parser.error('Fresh output and 1000..10000 steps in multiples of 250 required')
@@ -121,13 +145,14 @@ def main():
     torch.set_num_threads(1);budget=ExperimentBudget(args.cpu_cores,memory_mib=3072,directory=args.output)
     cases=[training_case(c) for c in json.loads(args.training_cases.read_text())]
     env=StopFeedbackWrapper(ScheduledRecoveryCurriculum(args.bundle,stage='robust',route_mode='shortcut',
-        motion_profiles=True,recorded_cases=cases,recorded_episodes_per_cycle=1),reward_scale=1/60)
+        motion_profiles=True,recorded_cases=cases,recorded_episodes_per_cycle=1),reward_scale=1/60,
+        feedback_schema=args.feedback_schema)
     model=warm_start(args.checkpoint,env,seed=args.seed)
-    progress=Progress(args.output,budget)
-    config=dict(steps=args.steps,seed=args.seed,contract=contract(),migration=model.feedback_migration,
+    progress=Progress(args.output,budget,args.record_rollouts)
+    config=dict(steps=args.steps,seed=args.seed,contract=contract(args.feedback_schema),migration=model.feedback_migration,
         training_cases=cases,training_cases_sha256=digest(args.training_cases),
         parent_policy_sha256=digest(args.checkpoint),bundle_sha256=digest(args.bundle/'manifest.json'),
-        cpu_cores=args.cpu_cores,reward_changed=False,deployment_approved=False)
+        cpu_cores=args.cpu_cores,reward_changed=False,record_rollouts=args.record_rollouts,deployment_approved=False)
     (args.output/'config.json').write_text(json.dumps(config,indent=2)+'\n')
     kernel=Path(__file__).parents[1]/'neural_navigation/static_tracking_kernel.cpp'
     record_provenance(args.output,args.bundle,[kernel])
@@ -144,7 +169,8 @@ def main():
         torch.save(dict(torch_rng=torch.get_rng_state(),numpy_rng=np.random.get_state(),python_rng=random.getstate(),
             curriculum_rng=env.unwrapped.np_random.bit_generator.state),args.output/'random_state.pt')
         status(status='complete',additional_ppo_steps=model.num_timesteps,counts=progress.counts,
-               reasons=progress.reasons,resource=budget.statistics(),deployment_approved=False)
+               reasons=progress.reasons,resource=budget.statistics(),feedback_schema=args.feedback_schema,
+               recorded_rollouts=len(list((args.output/'rollouts').glob('*.npz'))),deployment_approved=False)
     except BaseException as error:
         status(status='failed',additional_ppo_steps=model.num_timesteps,error=repr(error),counts=progress.counts)
         raise

@@ -6,7 +6,7 @@ import gymnasium as gym
 import numpy as np
 import torch
 from navrl.geometry import ROOT
-from neural_navigation.decision_feedback import TRAIN_DIM, RUNTIME_DIM
+from neural_navigation.decision_feedback import TRAIN_DIM, RUNTIME_DIM, WAIT_SCHEMA, LEGACY_SCHEMA, contract
 from neural_navigation.masked_actions import masks_from_observation
 from experiments.stop_feedback_ppo import warm_start, decision_support, StopFeedbackPPO
 from experiments.train_stop_feedback import export_candidate
@@ -104,6 +104,35 @@ class StopFeedbackPPOTests(unittest.TestCase):
                     np.testing.assert_array_equal(before['policy_observation'],after['policy_observation'][:303])
                     np.testing.assert_array_equal(before['command'],after['command'])
                 self.assertIs(resolve_runtime('neural_navigation.decision_feedback_runtime.StopFeedbackRuntime'),StopFeedbackRuntime)
+
+    def test_v2_training_schema_survives_checkpoint_export_and_runtime(self):
+        env=Interface();env.feedback_schema=WAIT_SCHEMA
+        model=warm_start(ROOT.parent/'models/quality_recovery_20261014/policy_2000.zip',env)
+        self.assertEqual(model.feedback_schema,WAIT_SCHEMA)
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory);model.save(path/'policy.zip')
+            restored=StopFeedbackPPO.load(path/'policy.zip',device='cpu')
+            self.assertEqual(restored.feedback_schema,WAIT_SCHEMA)
+            bundle=ROOT.parent/'models/localization_mapping_20261015/ray_consistent_candidate/portable'
+            export_candidate(restored,bundle,path/'portable')
+            manifest=json.loads((path/'portable/manifest.json').read_text())
+            self.assertEqual(manifest['observation_contract'],contract(WAIT_SCHEMA))
+            from neural_navigation.decision_feedback_runtime import StopFeedbackRuntime
+            meta=json.loads((ROOT/'assets/localization_replay_20261015/short_00.json').read_text())
+            with np.load(ROOT/'assets/localization_replay_20261015/short_00.npz') as data:
+                prior=data['prior'];goal=[*prior[:2],prior[2]+.5]
+                runtime=StopFeedbackRuntime(path/'portable',ROOT/meta['case']['scene']/'decision_map.yaml',prior,goal,'shortcut')
+                result=runtime.step(data['scan'][0],data['odom'][0],data['velocity'][0],float(data['t'][0]))
+                self.assertEqual(runtime.policy.feedback.schema,WAIT_SCHEMA)
+                self.assertEqual(result['policy_observation_dimensions'],RUNTIME_DIM)
+
+    def test_export_rejects_relabelling_v1_weights_as_v2(self):
+        model=warm_start(ROOT.parent/'models/quality_recovery_20261014/policy_2000.zip',Interface())
+        self.assertEqual(model.feedback_schema,LEGACY_SCHEMA)
+        model.feedback_schema=WAIT_SCHEMA
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaises(ValueError):
+                export_candidate(model,ROOT.parent/'models/localization_mapping_20261015/ray_consistent_candidate/portable',Path(directory)/'invalid')
 
 
 if __name__=='__main__':unittest.main()

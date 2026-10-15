@@ -1,0 +1,30 @@
+{
+  "deployment_approved": false,
+  "additional_ppo_steps": 0,
+  "method": "full masked PPO with causal guard feedback",
+  "frozen_components": [
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "migration": {
+    "parent_checkpoint_timesteps": 2000,
+    "dimensions": 436,
+    "legacy_prefix_dimensions": 300,
+    "new_input_weights_initially_zero": true,
+    "all_actor_parameters_trainable": true,
+    "critic_uses_all_transitions": true,
+    "actor_support": "every state with at least one nonzero legal choice",
+    "optimizer_moments_retained": true,
+    "reward_unchanged": true,
+    "actions_masks_guard_unchanged": true,
+    "reference_stop_excluded_from_clear_anchor": true,
+    "exact_rollout_resume": false,
+    "feedback_schema": "stop_decision_feedback_v2"
+  },
+  "manifest_sha256": "7283570ab1479aa6c31b00e36e7ce41f678364f91ceb613a9800deac6f414eee",
+  "limitations": [
+    "Guard admission is not certified future safety.",
+    "An initialization/parity or training check is not navigation acceptance."
+  ]
+}

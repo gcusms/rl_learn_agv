@@ -1,0 +1,76 @@
+{
+  "schema": "agv_handoff_snapshot_v2",
+  "branch": "next",
+  "captured_at": "2026-10-15T22:20:55.606012+08:00",
+  "parent_commit": "f752ee9920b31ef748b64f4b297f1e88af37d945",
+  "deployment_approved": false,
+  "latest_training_model": "models/stop_feedback_20261015/ppo_v2_4000_s221015",
+  "training_complete": true,
+  "additional_ppo_steps": 4000,
+  "feedback_schema": "stop_decision_feedback_v2",
+  "final_policy_sha256": "4c184290f7b24eaac56893dea36294c80f74afdba4620f14eaeef661f5ace963",
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 4000,
+    "counts": {
+      "decision_frames": 3336,
+      "only_stop": 664,
+      "voluntary_wait": 440,
+      "nonzero": 2896,
+      "changed_nonzero": 0,
+      "episodes": 18,
+      "success": 14,
+      "collisions": 3
+    },
+    "reasons": {
+      "none": 2895,
+      "scan_unavailable": 34,
+      "policy_wait": 51,
+      "only_stop_available": 279,
+      "laser_braking_footprint": 737,
+      "learned_route_incomplete": 4
+    },
+    "resource": {
+      "seconds": 1806.860629013041,
+      "cpu_seconds": 632.606226584,
+      "average_cpu_cores": 0.3501134600124347,
+      "peak_rss_mib": 2461.50390625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "feedback_schema": "stop_decision_feedback_v2",
+    "recorded_rollouts": 16,
+    "deployment_approved": false
+  },
+  "recorded_rollouts": 16,
+  "causally_verified_sampled_frames": 4000,
+  "paired_evaluation_complete": false,
+  "frozen_paired_rows": 3,
+  "target_paired_rows": 28,
+  "paired_snapshot": "reports/handoff_next_20261015/v2_pipeline/paired/RESULTS.json",
+  "source_services": "reports/handoff_next_20261015/SOURCE_SERVICES.json",
+  "background_processes_transferred": false,
+  "post_snapshot_outputs_included": false,
+  "prior_v1_complete_evaluation": "reports/stop_feedback_20261015/pilot_4000_final/SUMMARY.json",
+  "prior_v1_regression": "reports/stop_feedback_20261015/recorded_rehearsal_4000/RESULTS.json",
+  "diagnostic_probe": {
+    "completed": false,
+    "frozen_rows": 1,
+    "target_rows": 4,
+    "not_a_trained_policy": true,
+    "results": "reports/handoff_next_20261015/earlier_alternatives/RESULTS.json"
+  },
+  "next_steps": [
+    "Validate checkout and model contracts using tools/check_handoff.py.",
+    "Finish/re-run the fixed 14-case paired evaluation in a fresh output directory; include variation_1 regression.",
+    "Audit why motion-admitted states remain idle using actual rollouts and executed reasons.",
+    "Diagnose motion usefulness and prediction before changing rewards or increasing training budget.",
+    "Any continued training from a 436-D model requires an explicit continuation entry; current CLI warms from 300-D.",
+    "Keep original deployment baseline. No release without safety, navigation, waiting and docking regression checks."
+  ],
+  "limitations": [
+    "Development cases are reused and include training-family tasks; not independent generalization.",
+    "The physical action probe is a timed diagnostic intervention, not a learned policy success.",
+    "Known-map localization is algorithmic; no newly learned localization weights or independent real-world ground truth.",
+    "Original raw record.zip/rosbags, virtual environments, native binaries and background jobs are not transferred."
+  ]
+}

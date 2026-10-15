@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "additional_ppo_steps": 4000,
+  "counts": {
+    "decision_frames": 3336,
+    "only_stop": 664,
+    "voluntary_wait": 440,
+    "nonzero": 2896,
+    "changed_nonzero": 0,
+    "episodes": 18,
+    "success": 14,
+    "collisions": 3
+  },
+  "reasons": {
+    "none": 2895,
+    "scan_unavailable": 34,
+    "policy_wait": 51,
+    "only_stop_available": 279,
+    "laser_braking_footprint": 737,
+    "learned_route_incomplete": 4
+  },
+  "resource": {
+    "seconds": 1806.860629013041,
+    "cpu_seconds": 632.606226584,
+    "average_cpu_cores": 0.3501134600124347,
+    "peak_rss_mib": 2461.50390625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "feedback_schema": "stop_decision_feedback_v2",
+  "recorded_rollouts": 16,
+  "deployment_approved": false
+}

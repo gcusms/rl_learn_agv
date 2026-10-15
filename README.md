@@ -1,22 +1,23 @@
 # AGV 导航项目交接
 
-更新：2026-10-15。交接分支：**`sync`**。在 `progress`（`00be45c`）基础上归档最新源码、已完成的 4k PPO 检查点、基线、精简实车录制、评估快照及历史未提交工作，可在另一台电脑继续。
+更新：2026-10-15。交接分支：**`next`**。基于 `sync`（`f752ee9`）保存当前源码、模型与优化器、实验配置、精简实车数据、评估证据和继续开发步骤。新电脑按第 1 节安装检查，再从第 7 节继续。
 
-**最新停车反馈 PPO 已完成追加 4,000 步，耗时约 28.3 分钟；归档时原电脑仍在执行 12 例原/新模型配对评估。** 新模型尚未通过验收：已完成的对照中，原横穿案例 `motion_profile_015` 两个版本仍然碰撞。不能将训练回合成绩或部分评估写成最终成功率。原部署模型没有替换；已知地图定位候选与本轮 PPO 候选分开保留。
+**本轮 V2 停车反馈 PPO 已追加训练 4,000 步，用时 30.1 分钟；14 例原/新配对评估在原电脑继续运行，上传的是 **22:20（北京时间）、3/28 条结果**的冻结快照。** V1 的 12 例评估已完成，但追加回归发现原来成功的任务发生碰撞，因此 V1 不采用；V2 也尚未通过验收。部署基线、定位候选与两个 PPO 候选分别保存。
 
-| 交接时的进度 | 已完成 | 下一步 |
+| 工作项 | 当前状态 | 下一步 |
 |---|---|---|
-| 已知地图定位 | 运动反馈适配、静态支持筛选、时序融合和射线一致性检查；22 条冻结轨迹有对照 | 独立真实位姿验证，以及同协议闭环回归 |
-| 停车原因与动态预测 | 新增 136 维反馈；58 帧初始动作一致，风险与保护层对齐；V2 等待计时修复已单独版本化 | 当前训练模型仍用 V1；V2 尚未训练，不可只改 manifest 启用 |
-| PPO 与模型导出 | 436 维训练、439 维方向运行时；4,000 步完成，网络/优化器与便携包均保存 | 先完成配对评估，分析等待与横穿碰撞，再决定下一轮 |
-| 搬车重定位、在线建图 | 研究原型和历史失败证据已归档 | 分开验证；不能用已知地图回放成绩代替 |
+| 已知地图定位 | 运动反馈适配、静态支持筛选、时序融合、射线一致性；22 条冻结轨迹有对照 | 独立真实位姿验证，以及同协议闭环回归 |
+| 停车原因与等待计时 | 新增 136 维反馈；V2 修复带保护原因的主动等待漏计，训练/保存/导出合同已接通 | 检查长等待时的合法动作、风险与训练信号，不能只看计时正确 |
+| V1 PPO | 4,000 步完成；原 12 例双方均 11 成功、1 碰撞；额外 3 例出现一次能力退化 | 保留失败证据，不部署 |
+| V2 PPO | 独立训练 4,000 步；436 维训练 / 439 维方向运行时；真实 rollout 及执行诊断已保存 | 完成扩充后的 14 例配对评估和等待审计，再决定是否继续训练 |
+| 在线建图、搬车重定位、Orin 性能 | 原型、历史结果和失败证据已归档 | 分开验证，不能用已知地图回放替代 |
 
-先按第 1 节验证交接，再按第 7 节评估已经训练完的 4k 模型。冻结的进度和逐例证据见 [SNAPSHOT.json](reports/handoff_20261015/SNAPSHOT.json)；它不会随着原电脑后台任务自动更新。详细设计与证据见[停车反馈说明](reports/stop_feedback_20261015/README.md)。
+**当前主线：让模型看见真实停车原因，并在有安全且有用的运动选项时恢复导航。** 计时修复、权重更新或动作掩码通过，不等于该问题已解决。最新冻结状态见 [交接快照](reports/handoff_next_20261015/SNAPSHOT.json)，详细方案见[停车反馈说明](reports/stop_feedback_20261015/README.md)。旧 [sync 快照](reports/handoff_20261015/SNAPSHOT.json) 保留作历史记录。
 
 ## 1. 换电脑后从这里开始
 
 ```bash
-git clone --depth 1 --branch sync https://github.com/gcusms/rl_learn_agv.git
+git clone --depth 1 --branch next https://github.com/gcusms/rl_learn_agv.git
 cd rl_learn_agv
 ```
 
@@ -39,7 +40,7 @@ python tools/check_handoff.py --output training/runs/handoff_check
 
 `training/requirements.lock.txt` 是旧 ROS 主机环境记录，包含系统提供的包，不作为跨电脑的 pip 安装清单。Jetson 应按本机 JetPack 安装匹配的 PyTorch，再处理其他依赖，不能照搬桌面 CUDA wheel。现有电脑可先用现成环境，无需重装。
 
-默认运行 69 项功能检查，其中 1 项原生内核数值对照在没有内核时跳过；另外检查 4k 模型的 436 维检查点和 439 维 TorchScript。要执行全部 69 项及 439 维原生运行时试跑：
+默认运行 78 项功能检查，其中 1 项原生内核数值对照在没有内核时跳过；另检查 V1、V2 两份 4k 检查点及各自 439 维 TorchScript。要执行全部 78 项及两种反馈合同的原生运行时试跑：
 
 ```bash
 # 可选：只为重建历史候选和检查 Python/C++ 一致性。
@@ -53,14 +54,15 @@ python tools/check_handoff.py --build-native --output training/runs/handoff_chec
 
 | 用途 | 仓库路径 | 说明 |
 |---|---|---|
-| 最新 PPO 试训候选 | [ppo_4000_s221015](models/stop_feedback_20261015/ppo_4000_s221015) | **追加 4,000 步、436/439 维、V1 反馈**；评估尚未完成，不能直接部署；最终检查点为 `policy.zip` |
+| 最新 PPO 试训候选 | [ppo_v2_4000_s221015](models/stop_feedback_20261015/ppo_v2_4000_s221015) | **追加 4,000 步、436/439 维、V2 反馈**；最终检查点为 `policy.zip`；扩充评估未完成，不可直接部署 |
+| 上一轮 PPO 对照 | [ppo_4000_s221015](models/stop_feedback_20261015/ppo_4000_s221015) | **独立追加 4,000 步、V1 反馈**；额外回归出现碰撞退化，未采用 |
 | 最新定位实验候选 | [ray_consistent_candidate/portable](models/localization_mapping_20261015/ray_consistent_candidate/portable) | **303 维、12 动作、含目标朝向**；Python 射线一致性定位，带完整 manifest |
 | 最新候选的父版本 | [temporal_native_candidate/portable](models/localization_mapping_20261015/temporal_native_candidate/portable) | 相同 actor/router 与方向停靠合同；历史原生定位，`.so` 需在目标机重建 |
 | 原实车部署基线 | [quality_recovery_20261014](models/quality_recovery_20261014) | **300 维**、恢复阶段追加 2,000 步；包含可续训 ZIP、便携包及历史证据 |
 | 方向停靠训练的历史检查点 | [docking_selected_5000_20261015](models/docking_selected_5000_20261015) | 从专项训练中选择 5,000 步检查点；不能仅凭停车成绩替换整机基线 |
 | 未通过的后续 PPO / 算法对照 | [localization_mapping_20261015](models/localization_mapping_20261015) | 保留配置、权重、训练状态与源码快照供分析，不作为实车部署推荐 |
 
-原基线 `policy_2000.zip` 的 SHA256 为 `7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11`。最新候选与父版本的 actor、router、硬件和方向目标文件逐字节相同；变化在定位合同和配套源码。
+原基线 `policy_2000.zip` 的 SHA256 为 `7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11`。射线定位候选与其时序父版本的 actor、router、硬件和方向目标文件逐字节相同；变化在定位合同和配套源码。停车反馈 PPO 候选另外更新了导航 actor，不能将两条实验混为同一模型。
 
 **运行时必须匹配模型。** 最新 303 维包通过 `neural_navigation.goal_pose_runtime.resolve_runtime(manifest['required_runtime'])` 解析到 `DockingRuntime`，不要直接套用原 300 维入口。加载前执行 `check_files(bundle, manifest)`；完整示例见 [check_handoff.py](tools/check_handoff.py)。单独复制 `actor.pt` 或 `localizer.pt` 不能获得这轮定位改进。
 
@@ -144,7 +146,7 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
 2. **测准真实运动来源。** 实车用已测直线距离、左右转、制动和受阻片段对照指令、编码器和 IMU；确认轮径/符号、时间戳、数据年龄和唯一 TF 发布者。接入示例不会自动修改实车；指令超时停车需在实际发布链与底盘确认。
 3. **给定位补独立参考。** 已知位置放入/移走地图外障碍，做正常与缺失扫描、弱几何、闭环恢复的配对试验。报告真实位置/航向误差和拒绝原因，不能用模型输出或轮速积分当参考真值。
 4. **做原/新候选的闭环回归。** 同任务、相同保护和底盘，比较到达、碰撞、等待、实际路程/耗时及方向停车。先确认拒绝增加没有把机器人变成长期停车，再决定采用定位候选。
-5. **先评估已完成的 4k 模型，再定下一轮。** 新观测已对齐 actor 与保护层的风险来源，并提供实际停车原因。此前仅 377/2000 步进入可训练范围；本轮 3336/4000 步有可选运动。第 7 节直接评估现成权重，无需先重复训练。横穿碰撞仍在；V2 计时修复仅通过功能检查，不能宣称已学习改善。
+5. **先完成 V2 的 14 例配对回归，再定下一轮。** 新观测对齐 actor 与保护层风险并记录真实原因；V2 在 4,000 步中有 3,336 步可选运动。V1 额外回归已暴露正常能力退化，必须保留该案例。第 7 节可评估现成权重，无需重复训练；要用实际闭环证明等待和避障改善。
 6. **分别推进在线建图与板端性能。** 未知环境单独评估漂移、真回环和重定位；Jetson 测端到端 P95/P99、最大延迟与超时。电脑单组件耗时不能代替 Orin 结果。之后再按失败组件选择定位监督、路由监督或 PPO 微调。
 
 恢复训练入口保留在 `training/experiments/train_localization_recovery.py`，原始检查点、各次配置、状态及源码快照也已归档。这一入口主要训练受条件启用的恢复分支，冻结 localizer/router/正常导航和方向停车；继续运行它不会直接修复定位或路由。已失败的配置仅作对照，不建议换电脑后直接接着大规模跑。
@@ -153,86 +155,96 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
 
 ## 7. 在新电脑继续最新停车反馈实验
 
-新增输入保留原 300/303 维前缀，再追加 136 维实际停车原因、逐动作拒绝类别、保护层接触风险、数据年龄和等待状态。导航 PPO 为 **436 维**，带方向目标的完整运行时为 **439 维**，使用 manifest 指定的 `StopFeedbackRuntime`。本轮导航 actor 可以更新；localizer、router 和方向停靠分支冻结，进入目标前约 0.3 m 的方向分支仍使用原模型。这次没有改变奖励、动作、车体、保护距离或速度上限。
+保留原 300/303 维前缀，追加 136 维真实执行原因、各动作拒绝类别、保护层接触预测、数据年龄和等待状态。导航 PPO **436 维**，完整方向运行时 **439 维**；按 manifest 解析 `StopFeedbackRuntime`。导航 actor 可训练，localizer、router 和近目标约 0.3 m 的方向停车分支冻结。本轮没有改变奖励、车体、12 动作、安全间距或速度上限。
 
-| 已完成的训练信息 | 数值 / 位置 |
-|---|---|
-| 原始父检查点 | `models/quality_recovery_20261014/policy_2000.zip` |
-| 本轮追加步数 / 种子 | 4,000 / `221015` |
-| 有运动选项 / 仅停止可选 | 3,336 / 664 步 |
-| 非零采样动作被保护层改写 | 0 次 |
-| 训练中已结束回合 | 18；14 次成功、3 次碰撞、1 次超时；**不是验证成功率** |
-| 训练时间 / 峰值 RSS | 1,698.84 s（28.3 分钟）/ 2,459.86 MiB |
-| 平均 CPU | 0.350 核；单线程 CPU 训练，未用 GPU |
-| 最终检查点 | `models/stop_feedback_20261015/ppo_4000_s221015/policy.zip` |
-| 完整运行包 | 同目录 `portable/`，含 actor、定位/路由权重、观测与动作合同 |
-| 配置、训练状态与来源 | 同目录 `config.json`、`status.json`、`PROVENANCE.json`、`source_snapshot/` |
-| 当前评估快照 | [逐例结果](reports/handoff_20261015/paired/RESULTS.json)、[运行进度](reports/handoff_20261015/SNAPSHOT.json) |
+### 7.1 已完成的结果及判断
 
-训练检查点包含网络和优化器，`random_state.pt` 保存随机状态；没有保存进行中 MuJoCo 环境和 rollout 缓冲，不能承诺逐步完全一致地断点续跑。`policy_step_4000.zip` 是收集最后一段 rollout 后、该段 PPO 更新前的回调产物，**最终更新后的模型用 `policy.zip`**。归档配置中的原电脑绝对路径只作来源记录，下面使用仓库相对路径。
+| 项目 | V1 | V2 |
+|---|---|---|
+| 模型目录 | `models/stop_feedback_20261015/ppo_4000_s221015` | `models/stop_feedback_20261015/ppo_v2_4000_s221015` |
+| 反馈合同 | `stop_decision_feedback_v1` | `stop_decision_feedback_v2` |
+| 初始化 | 原 300 维 `quality_recovery_20261014/policy_2000.zip` | 同一父模型独立初始化，**不是在 V1 上再加 4k** |
+| 追加步数 / 种子 | 4,000 / `221015` | 4,000 / `221015` |
+| 训练时间 / 峰值 RSS | 1,698.84 s / 2,459.86 MiB | 1,806.86 s / 2,461.50 MiB |
+| 有运动选项 / 仅停止可选 | 3,336 / 664 步 | 3,336 / 664 步 |
+| 非零采样动作被保护改写 | 0 | 0 |
+| 已结束训练回合 | 18：14 成功、3 碰撞、1 超时 | 18：14 成功、3 碰撞、1 超时；**不等于验证成功率** |
+| 原 12 例配对评估 | 原/新均 11 安全成功、1 碰撞；共同成功路程 +0.47%、耗时 +1.00% | 扩充为 14 例，冻结进度见交接快照 |
+| 额外 3 例回归 | 原基线 2/3 成功，新模型 1/3；`variation_1` 从成功退化为碰撞 | 已将两个新变体加入 14 例评估，不能漏掉这一退化 |
+| 是否可替换部署版 | 否 | 尚未验收，否 |
 
-**当前限制：** 固定 58 帧检查中新增风险与保护层一致，不代表学会了更好的避障。2k 中间检查点新增输入权重已变化，但该片段的确定性动作没有变化。4k 配对评估中，`motion_profile_015` 原、新均在 11.6 s 碰撞。不能宣称停车问题已解决或最新模型优于原部署版。
+证据：[V1 完整 12 例](reports/stop_feedback_20261015/pilot_4000_final/SUMMARY.json)、[V1 额外回归](reports/stop_feedback_20261015/recorded_rehearsal_4000/RESULTS.json)、[等待审计](reports/stop_feedback_20261015/wait_audit_4000/RESULTS.json)、[V2 实际采样因果审计](reports/stop_feedback_20261015/v2_causal_audit_4000/RESULTS.json)。原 12 例双方途中主动等待均约 0.4 s，没有足够长等待覆盖，不能据此证明长期停车问题已改善。
 
-V1 等待计时只累计标记为 `policy_wait` 的停车，漏记“零速度带激光保护原因、但其他运动仍合法”的状态。源码新增独立 `stop_decision_feedback_v2` 修复此计时并保留实际原因；**归档 4k 模型按 V1 训练、默认继续使用 V1**。V2 尚未接通训练 CLI / 导出流程，也没有训练权重；下一轮需同步修改训练与导出合同并验证，不能仅修改已有模型的 JSON。
+V1 只对 `policy_wait` 累计等待，漏掉“实际零速、仍有合法运动、但执行原因标记为激光保护”的状态。V2 修复漏计并保留真实原因，已同步接通训练 CLI、保存、导出与运行时。**V1 权重必须保持 V1 语义，不能仅改 JSON 变成 V2。** 原因和计时逐帧正确只是学习条件，不是行为改善结论。
 
-### 7.1 先评估现成模型，不重复训练
+每个模型目录保存最终 `policy.zip`、`portable/`、配置、状态、来源哈希、源码快照与 `random_state.pt`。检查点含网络及优化器；没有保存进行中的完整 MuJoCo 环境，不能承诺逐步精确续跑。`policy_step_4000.zip` 是最后 rollout 的 PPO 更新前回调产物，最终更新后的权重为 **`policy.zip`**。V2 另有 `rollouts/*.npz`，保存采样时观测、策略动作、掩码、旧概率、优势与实际执行诊断。
+
+### 7.2 优先复评现成的 V2 模型
 
 ```bash
 source .venv/bin/activate
 export PYTHONPATH=training:.
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 
-# 在本机重新编译两个新包。输出目录必须尚不存在。
+# 源码编译到新目录；输出目录均须尚不存在。
 sudo apt-get install g++ libeigen3-dev
 python tools/prepare_native_bundle.py \
   --source models/stop_feedback_20261015/baseline/portable \
-  --output training/runs/sync_baseline
+  --output training/runs/next_baseline
 python tools/prepare_native_bundle.py \
-  --source models/stop_feedback_20261015/ppo_4000_s221015/portable \
-  --output training/runs/sync_candidate
+  --source models/stop_feedback_20261015/ppo_v2_4000_s221015/portable \
+  --output training/runs/next_candidate
 
-# 完整重跑相同 12 例、两个版本，共 24 条闭环导航，不更新权重。
+# 14 例 × 原/新，共 28 条闭环，不训练、不更新模型。
 nice -n 19 python -m experiments.evaluate_docking_navigation \
-  --baseline training/runs/sync_baseline \
-  --candidate training/runs/sync_candidate \
-  --cases reports/localization_mapping_20261015/constraints_repair_20261015/all_cases.json \
+  --baseline training/runs/next_baseline \
+  --candidate training/runs/next_candidate \
+  --cases reports/stop_feedback_20261015/feedback_development_cases.json \
   --baseline-name prior_constraints --candidate-name stop_feedback_ppo \
-  --output training/runs/sync_paired --cpu-cores 0.35
+  --output training/runs/next_paired --cpu-cores 0.35
 
-# 区分任务途中、方向对齐和仅能停止的等待；输出目录必须尚不存在。
 nice -n 19 python -m experiments.audit_decision_waits \
-  --evaluation training/runs/sync_paired/RESULTS.json \
-  --output training/runs/sync_wait_audit
+  --evaluation training/runs/next_paired/RESULTS.json \
+  --output training/runs/next_wait_audit
+
+# 只检查已保存训练样本的原因/计时因果关系，不运行导航、不更新模型。
+python -m experiments.audit_feedback_rollouts \
+  --model-run models/stop_feedback_20261015/ppo_v2_4000_s221015 \
+  --output training/runs/next_rollout_audit
 ```
 
-完整评估应有 `completed=true`、24 条结果。原任务是已经使用过的开发集，不是独立测试集；原机后台后续结果不会自动出现在本次 Git 快照中。新电脑应重跑完整 24 条，当前评估器不支持在已有目录中接着追加。比较时先看安全到达、碰撞、假到达、超时及方向停车，再看共同成功任务的路径/时间和长期无进展等待。不能用减少停车时间抵消碰撞或正常任务退化。
+完整评估需 `completed=true` 且有 28 条结果。扩充任务为重复使用的开发集，部分也是训练难例，**不是独立泛化测试**。原机进程不随 Git 迁移，上传后后台新结果也不会自动出现在本次提交；冻结结果写明是否完成。当前评估器不能向已有结果目录继续追加，换电脑可在新目录完整重跑。
 
-### 7.2 训练与诊断入口
+先看安全到达、碰撞、假到达、超时和方向停车，再比较共同成功任务路程/耗时、途中主动等待及仅能停止占比。必须覆盖 V1 已退化的 `train_failure_stop_go_variation_1`。合法动作不等于有用或未来安全，不强迫前进，也不通过减少安全余量换取成绩。
 
-- `experiments.stop_feedback_pipeline`：从原 **300 维 2k** 检查点初始化新的 436 维试验，训练后自动配对评估。`--checkpoint` **不能直接换成 4k 的 436 维 `policy.zip`**，该入口目前只支持 300→436 的迁移初始化。
-- `experiments.train_stop_feedback`：单独训练和导出；原生基线必需、默认 V1、步数限 1,000～10,000 且为 250 的倍数。
-- `experiments.stop_feedback_ppo.StopFeedbackPPO.load(path, device='cpu')`：加载本轮 436 维网络和优化器；若继续微调，需要接回一致的 `StopFeedbackWrapper`，同步实现续训/导出入口，并记录新回合、步数和随机状态。单独加载不等于恢复完整环境。
-- `experiments.inspect_feedback_learning`：固定输入上的权重/概率诊断；已有 [2k 检查](reports/stop_feedback_20261015/learning_inspection_2000) 及 436 维冻结观测可复用。
-- `experiments.audit_recorded_stops`：分析原 `record.zip` 的停车原因；[分析结果](reports/stop_feedback_20261015/RECORDED_STOP_AUDIT.json) 已归档，重新提取时需另行复制原 ZIP。
+### 7.3 训练与诊断入口
 
-若需要从原基线复现实验，使用新输出目录：
+- `experiments.stop_feedback_pipeline`：从原 **300 维 2k** 检查点初始化新 436 维试验，训练后自动配对评估。支持显式 V1/V2 和 `--record-rollouts`。
+- `experiments.train_stop_feedback`：单独训练导出，默认 V1；步数限 1,000～10,000，且为 250 的倍数。
+- **续训限制：** 两个 CLI 的 `--checkpoint` 当前只支持 300→436 迁移，不能直接改成现成 436 维 `policy.zip`。`StopFeedbackPPO.load(path, device='cpu')` 可以加载网络/优化器，但继续微调需接回语义一致的 wrapper 并完善续训入口，显式记录环境重置与步数。
+- `experiments.audit_feedback_rollouts`：审计保存的真实 PPO 样本及反馈因果关系。原始 GAE 优势不等于归一化后每个 minibatch 的实际梯度，不能仅看优势符号断言不学习。
+- `experiments.inspect_feedback_learning`：固定输入权重/动作概率诊断；[2k 检查](reports/stop_feedback_20261015/learning_inspection_2000) 与 58 帧冻结观测已保存。
+- `experiments.probe_feedback_alternatives`：保持车体/掩码/保护，按指定传感器时间窗替换合法动作，检验是否存在避让方向；属于诊断性干预，**不是训练模型成功率**。已完成结果及未完成探测的冻结状态见交接快照。
+
+若需独立复现 V2，先按 7.2 重建基线，再执行以下命令；这是从原 300 维父模型新训，**不是断点续训**：
 
 ```bash
 nice -n 19 python -m experiments.stop_feedback_pipeline \
-  --baseline training/runs/sync_baseline \
+  --baseline training/runs/next_baseline \
   --checkpoint models/quality_recovery_20261014/policy_2000.zip \
   --training-cases reports/localization_mapping_20261015/blind_repair_20261015/stop_go_training_cases.json \
-  --evaluation-cases reports/localization_mapping_20261015/constraints_repair_20261015/all_cases.json \
-  --model-output training/runs/feedback_repeat_model \
-  --output training/runs/feedback_repeat_report \
-  --steps 4000 --seed 221015 --cpu-cores 0.35
+  --evaluation-cases reports/stop_feedback_20261015/feedback_development_cases.json \
+  --model-output training/runs/feedback_v2_repeat_model \
+  --output training/runs/feedback_v2_repeat_report \
+  --steps 4000 --seed 221015 --cpu-cores 0.35 \
+  --feedback-schema stop_decision_feedback_v2 --record-rollouts
 ```
 
-下一轮先完成 4k 配对结果分析，再对 V2 等待计时、可更新样本覆盖和关键碰撞前的决策单独立项。停止始终合法，不强迫前进；只剩停止可选的状态不能靠强迫 actor 探索解决。历史两例方向等待在当前基线已分别于 1.2 s、3.8 s 完成，见 [原基线复核](reports/stop_feedback_20261015/current_heading_probe/RESULTS.json)，不能将它们的改善归功于本轮 PPO。
+下一轮先定位实际长等待状态：可选的是平移还是仅转向、风险预测是否合理、可用动作是否产生真实进展，以及保留旧策略的约束是否妨碍调整；随后每次验证一个主要修改。不能仅扩大步数宣称解决。历史两例方向等待在当前基线已分别 1.2 s、3.8 s 完成，见[原基线复核](reports/stop_feedback_20261015/current_heading_probe/RESULTS.json)，不归功于本轮 PPO。
 
-### 7.3 保守的资源限制
+### 7.4 保守的资源限制
 
-`--cpu-cores 0.35` 是软平均限额；本机训练约 28 分钟，**不含随后完整配对评估**，换电脑需重新测量。默认单线程、CPU 训练，训练进程检查约 3 GiB RSS 预算。若需要硬上限，可将对应命令的 `nice -n 19` 换为下面前缀，后接 `python -m ...` 和完整参数：
+`--cpu-cores 0.35` 是软平均限额；本机单轮 4k 约 28～30 分钟，**不含随后配对评估**。默认单线程 CPU，训练进程检查约 3 GiB RSS。换机器需重新测量。需要硬上限时，可用下面前缀替换 `nice -n 19`，同一命令后接 `python -m ...` 及完整参数：
 
 ```bash
 systemd-run --user --unit=agv-feedback \
@@ -242,11 +254,11 @@ systemd-run --user --unit=agv-feedback \
   --setenv=OPENBLAS_NUM_THREADS=1 --setenv=OMP_NUM_THREADS=1 --setenv=MKL_NUM_THREADS=1
 ```
 
-`CPUQuota=50%` 表示半个 CPU 核；不是占整台多核电脑的 50%。查看 `systemctl --user status agv-feedback` 和 `journalctl --user -u agv-feedback`。原机单位名为 `rl-stop-feedback-20261015.service`，服务配置未安装到新电脑。
+`CPUQuota=50%` 是半个 CPU 核。用 `systemctl --user status agv-feedback` 或 `journalctl --user -u agv-feedback` 检查。原电脑服务为 `rl-stop-feedback-v2-20261015.service`；配置和进程不会安装到新电脑，避免同时启动重复训练。
 
 ## 8. 交接边界与历史工作
 
-本分支包含当前训练代码、模型/优化器、训练来源快照、地图、必要回放输入、已完成的诊断和冻结的部分配对评估；不包含 `.venv`、pip 缓存、平台 `.so`、ROS 编译目录和完整原始录包。新电脑重建原生包后再运行，不能跨平台直接复制 `.so`。当前跟踪文件约 550～600 MB，浅克隆可避免拉取全部历史。
+本分支包含当前训练代码、模型/优化器、训练来源快照、地图、必要回放输入、已完成的诊断、V1 完整评估及 V2 冻结配对进度；不包含 `.venv`、pip 缓存、平台 `.so`、ROS 编译目录和完整原始录包。新电脑重建原生包后再运行，不能跨平台直接复制 `.so`。当前跟踪文件约 550～600 MB，浅克隆可避免拉取全部历史。
 
 另外两个旧工作目录的未提交补丁和未归档源码保存在 [legacy_wip](docs/handoff/legacy_wip/README.md)，基准提交与文件哈希均记录。它们属于历史实现，不要覆盖当前 `training/`。原机器各工作副本及部署模型保留。
 

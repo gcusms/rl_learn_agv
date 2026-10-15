@@ -1,0 +1,258 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "a6548822474d02c0b06f4062439367a82a280030543566e6407c917ebb206a7a",
+  "rows": [
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "category": "known_development_failure_family",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 12.60000000000057,
+      "travel_m": 1.4600058863510073,
+      "frames": 63,
+      "final_xy_error_m": 3.181635132229702,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004265535701723763,
+      "localization_yaw_p95_rad": 0.0013052938730486294,
+      "stop_choices": 21,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 56,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 4
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 22,
+      "runtime_ms": {
+        "p95": 201.90558677422814,
+        "p99": 236.21759096859023,
+        "maximum": 238.65816701436415
+      },
+      "variant": "prior_constraints",
+      "trace_sha256": "00ae51f95876d0e0e14d9c7cc66b05f3c619bb0d3bcb2dac87f8bb3626edf490"
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "category": "known_development_failure_family",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.800000000000445,
+      "travel_m": 1.4395265578540244,
+      "frames": 59,
+      "final_xy_error_m": 3.1934176767423055,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0043176545694048,
+      "localization_yaw_p95_rad": 0.0015183031862494793,
+      "stop_choices": 20,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 51,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 5
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 19,
+      "runtime_ms": {
+        "p95": 215.85393582354297,
+        "p99": 253.33087953506038,
+        "maximum": 256.26040500355884
+      },
+      "variant": "stop_feedback_ppo",
+      "trace_sha256": "dbbef13e23bf09b476eb80b23da78f60c32da3b92d284b92a4eca8fdc1c98a5d"
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "category": "known_development_failure_family",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 30.199999999998276,
+      "travel_m": 5.426626534702823,
+      "frames": 152,
+      "final_xy_error_m": 0.08629952051474764,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004439937945816761,
+      "localization_yaw_p95_rad": 0.0013486923323994468,
+      "stop_choices": 5,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 148,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 4,
+      "runtime_ms": {
+        "p95": 284.5907871407689,
+        "p99": 307.8779428842246,
+        "maximum": 315.92267303494737
+      },
+      "variant": "prior_constraints",
+      "trace_sha256": "9a9f83b1db8c925d2f030e39ad8dc62cb2206ab51fa7210ff1f3ed542d07c789"
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "category": "known_development_failure_family",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.800000000000445,
+      "travel_m": 1.466313265874712,
+      "frames": 59,
+      "final_xy_error_m": 3.277484515051666,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005376439759285776,
+      "localization_yaw_p95_rad": 0.0008998605233078382,
+      "stop_choices": 20,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 53,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 17,
+      "runtime_ms": {
+        "p95": 193.2369969319552,
+        "p99": 205.23483232944272,
+        "maximum": 206.07875904534012
+      },
+      "variant": "stop_feedback_ppo",
+      "trace_sha256": "6a75ca40d88abac7fa4813b7195b0cdfbfd3f6bf48f11d53f0a95030020e5e0e"
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 38.600000000001295,
+      "travel_m": 4.578504017586601,
+      "frames": 194,
+      "final_xy_error_m": 0.11501274137748427,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00429785347131674,
+      "localization_yaw_p95_rad": 0.0014212584880933575,
+      "stop_choices": 21,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 191,
+        "laser_braking_footprint": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 38,
+      "runtime_ms": {
+        "p95": 199.7663216985529,
+        "p99": 217.77395058015816,
+        "maximum": 234.12738100159913
+      },
+      "variant": "prior_constraints",
+      "trace_sha256": "c7978ac207843d3f14e14ee97bb535b812dd6eb25d3e2dc12880ef5ddae2ea67"
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 39.600000000001806,
+      "travel_m": 4.172137315231047,
+      "frames": 199,
+      "final_xy_error_m": 0.1064463810568376,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004696333785360183,
+      "localization_yaw_p95_rad": 0.0016468882456306842,
+      "stop_choices": 38,
+      "only_stop_frames": 37,
+      "stop_reasons": {
+        "None": 198,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 66,
+      "runtime_ms": {
+        "p95": 187.28119611041618,
+        "p99": 207.03235109103863,
+        "maximum": 231.77551198750734
+      },
+      "variant": "stop_feedback_ppo",
+      "trace_sha256": "f752b5a09e2d49161eb214a2f8593f093f02a988929b425cddd63a14de7c1ca0"
+    }
+  ],
+  "resource": {
+    "seconds": 1006.7122684699716,
+    "cpu_seconds": 151.146918102,
+    "average_cpu_cores": 0.15013914386055627,
+    "peak_rss_mib": 2062.59765625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "known_development_failure_family": {
+      "prior_constraints": {
+        "tasks": 2,
+        "success": 1,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "stop_feedback_ppo": {
+        "tasks": 2,
+        "success": 0,
+        "collisions": 2,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "original_release_training_failure": {
+      "prior_constraints": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "stop_feedback_ppo": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

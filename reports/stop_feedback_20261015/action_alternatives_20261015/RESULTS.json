@@ -1,0 +1,674 @@
+{
+  "completed": true,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "case_id": "motion_profile_015",
+  "bundle_manifest_sha256": "d6aca3c53630b4c9b0b96057d287317860b7df00649be15ae354c5654f7f4daa",
+  "purpose": "Check whether alternative currently legal actions can avoid an archived failure.",
+  "limitations": [
+    "Fixed sensor-time intervention is not a learned decision or generalization.",
+    "No change to the shared guard, body, input observations or action history.",
+    "Successful probes are not PPO success rates and are not automatically used for training."
+  ],
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.600000000000414,
+      "travel_m": 1.5400185015156087,
+      "frames": 58,
+      "final_xy_error_m": 3.150412998772599,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004515988388541078,
+      "localization_yaw_p95_rad": 0.0013028019034108994,
+      "stop_choices": 17,
+      "only_stop_frames": 17,
+      "stop_reasons": {
+        "None": 53,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 2
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 17,
+      "runtime_ms": {
+        "p95": 224.963778979145,
+        "p99": 244.21531176776625,
+        "maximum": 260.0308960536495
+      },
+      "specification": {
+        "id": "unchanged_policy",
+        "start_s": -2.0,
+        "end_s": -1.0,
+        "choice": 0
+      },
+      "intervention": [],
+      "trace_sha256": "502e0327b9fc60bc267c63f567498f573ebd73ab9511f255e724f36e148ca404",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.800000000000445,
+      "travel_m": 1.3818219238292861,
+      "frames": 59,
+      "final_xy_error_m": 3.2722316976634427,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004448000012656226,
+      "localization_yaw_p95_rad": 0.0017680161963908865,
+      "stop_choices": 23,
+      "only_stop_frames": 12,
+      "stop_reasons": {
+        "None": 42,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 10,
+        "laser_braking_footprint": 4
+      },
+      "voluntary_wait_frames": 11,
+      "predictive_constraint_frames": 17,
+      "runtime_ms": {
+        "p95": 208.75188399222677,
+        "p99": 237.9939270962496,
+        "maximum": 252.8409329825081
+      },
+      "specification": {
+        "id": "early_wait",
+        "start_s": 7.4,
+        "end_s": 9.4,
+        "choice": 0
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 7.3999999999998645,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.59999999999986,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.199999999999882,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.399999999999913,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.599999999999945,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.799999999999976,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.000000000000007,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.200000000000038,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "bc39fc59fe065478f97dbf7b16451ce1dd2136138636ee3c03996e8fc6c77df7",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 1.488916093108186,
+      "frames": 56,
+      "final_xy_error_m": 3.182021959466392,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004027966412492699,
+      "localization_yaw_p95_rad": 0.0013054562557613947,
+      "stop_choices": 13,
+      "only_stop_frames": 13,
+      "stop_reasons": {
+        "None": 50,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 15,
+      "runtime_ms": {
+        "p95": 190.96831673232373,
+        "p99": 238.28858127526482,
+        "maximum": 252.60380801046267
+      },
+      "specification": {
+        "id": "slow_straight",
+        "start_s": 7.6,
+        "end_s": 9.0,
+        "choice": 3
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 7.59999999999986,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.199999999999882,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.399999999999913,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.599999999999945,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.799999999999976,
+          "requested_choice": 3,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "63f1b8e66b96d36e7c26c8b44999831e49a4b95181f20aeef0c2f600d67c1e02",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 1.635490688257396,
+      "frames": 56,
+      "final_xy_error_m": 3.0665443849641925,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004384243894629746,
+      "localization_yaw_p95_rad": 0.0013054562557613947,
+      "stop_choices": 16,
+      "only_stop_frames": 16,
+      "stop_reasons": {
+        "None": 48,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 2,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 15,
+      "runtime_ms": {
+        "p95": 196.0074942180654,
+        "p99": 224.94678370130723,
+        "maximum": 242.30750399874523
+      },
+      "specification": {
+        "id": "continue_straight",
+        "start_s": 7.8,
+        "end_s": 8.6,
+        "choice": 1
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.199999999999882,
+          "requested_choice": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.399999999999913,
+          "requested_choice": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "83cc706209a4b49ebbb828ea3768e2e9452902d9f63f3d1f17944e44088efad0",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 12.000000000000476,
+      "travel_m": 1.4944950561014942,
+      "frames": 60,
+      "final_xy_error_m": 3.1905990001908666,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004649593671213458,
+      "localization_yaw_p95_rad": 0.0013001475510604043,
+      "stop_choices": 19,
+      "only_stop_frames": 19,
+      "stop_reasons": {
+        "None": 54,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 19,
+      "runtime_ms": {
+        "p95": 221.46101548860315,
+        "p99": 241.5170977107481,
+        "maximum": 263.29628098756075
+      },
+      "specification": {
+        "id": "rotate_right",
+        "start_s": 7.8,
+        "end_s": 8.6,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.199999999999882,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.399999999999913,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "trace_sha256": "f5f54923b94a5d79cbec6f32ed59c5b2e4f824d7a85a247773108baff85013da",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 11.200000000000351,
+      "travel_m": 1.4352599899572798,
+      "frames": 56,
+      "final_xy_error_m": 3.2264728379546583,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0042016492136753986,
+      "localization_yaw_p95_rad": 0.0013635095095050342,
+      "stop_choices": 13,
+      "only_stop_frames": 12,
+      "stop_reasons": {
+        "None": 43,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 6,
+        "laser_braking_footprint": 4
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 17,
+      "runtime_ms": {
+        "p95": 190.7931294554146,
+        "p99": 219.37817563011777,
+        "maximum": 221.05945798102766
+      },
+      "specification": {
+        "id": "rotate_left",
+        "start_s": 7.6,
+        "end_s": 8.2,
+        "choice": 4
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 7.59999999999986,
+          "requested_choice": 4,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 4,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 4,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        }
+      ],
+      "trace_sha256": "4875584424911b94d1a96a0e7b33ab207f38326804a426ce2a5c0997436dcdb4",
+      "not_a_trained_policy": true
+    }
+  ],
+  "resource": {
+    "seconds": 486.6664213340264,
+    "cpu_seconds": 73.039089108,
+    "average_cpu_cores": 0.1500803957416844,
+    "peak_rss_mib": 2062.9140625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

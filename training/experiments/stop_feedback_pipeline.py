@@ -17,12 +17,15 @@ def main():
         parser.add_argument('--'+name,type=Path,required=True)
     parser.add_argument('--steps',type=int,default=4000);parser.add_argument('--seed',type=int,default=221015)
     parser.add_argument('--cpu-cores',type=float,default=.35)
+    from neural_navigation.decision_feedback import LEGACY_SCHEMA,WAIT_SCHEMA
+    parser.add_argument('--feedback-schema',choices=(LEGACY_SCHEMA,WAIT_SCHEMA),default=LEGACY_SCHEMA)
+    parser.add_argument('--record-rollouts',action='store_true')
     args=parser.parse_args()
     for name in ('baseline','checkpoint','training_cases','evaluation_cases','model_output','output'):
         setattr(args,name,getattr(args,name).resolve())
     args.output.mkdir(parents=True,exist_ok=False)
     status=dict(status='preparing',started=stamp(),training_target=args.steps,
-        deployment_approved=False,auto_replace=False)
+        deployment_approved=False,auto_replace=False,feedback_schema=args.feedback_schema)
     def save(**values):
         status.update(values,updated=stamp())
         temporary=args.output/'status.tmp';temporary.write_text(json.dumps(status,indent=2)+'\n')
@@ -35,10 +38,12 @@ def main():
         for name,source in [('training_cases.json',args.training_cases),('evaluation_cases.json',args.evaluation_cases)]:
             (args.output/name).write_bytes(source.read_bytes())
         save(status='training')
-        run([sys.executable,'-m','experiments.train_stop_feedback','--bundle',str(args.baseline),
+        training_command=[sys.executable,'-m','experiments.train_stop_feedback','--bundle',str(args.baseline),
             '--checkpoint',str(args.checkpoint),'--training-cases',str(args.training_cases),
             '--output',str(args.model_output),'--steps',str(args.steps),'--seed',str(args.seed),
-            '--cpu-cores',str(args.cpu_cores)],'training.log')
+            '--cpu-cores',str(args.cpu_cores),'--feedback-schema',args.feedback_schema]
+        if args.record_rollouts:training_command.append('--record-rollouts')
+        run(training_command,'training.log')
         training=json.loads((args.model_output/'status.json').read_text())
         if training['status']!='complete' or training['additional_ppo_steps']!=args.steps:
             raise RuntimeError('Incomplete declared training budget')
