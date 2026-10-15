@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-10-16T04:18:57.741253+08:00",
+  "dependency_unit": "rl-w11-success-bc-validation-20261016.service",
+  "dependency_invocation": "0a60e5c1f18e42ffbef70efd548ac652",
+  "purpose": "Compare against the exact 2030-label parent at the identical 90s physical state, then execute all 12 previously frozen extra conditions for both models.",
+  "parent_full_reset_report_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+  "parent": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/bc_portable",
+  "candidate": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+  "frozen_cases_sha256": "af2754c5c08c5b168f54c38d1a6a079655e6671994696b3b642ab995b3854188",
+  "sample_count_90s_per_model": 1,
+  "fresh_physical_cases": 12,
+  "fresh_model_runs": 24,
+  "resource": {
+    "soft_cpu_cores": 0.15,
+    "no_parallel_auxiliary_overlap": true
+  },
+  "independent_generalization_claimed": false,
+  "no_extra_training": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "all_category_reference_option": "--baseline --baseline-name parent_bc800; unlike --bc this includes position_regression tasks",
+  "queue_only_correction": "The initial waiting driver was stopped before any evaluation child started, to use the all-category reference option."
+}
