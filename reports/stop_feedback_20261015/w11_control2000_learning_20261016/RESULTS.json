@@ -1,0 +1,273 @@
+{
+  "completed": true,
+  "actual_sampled_frames": 2000,
+  "supported_frames": 889,
+  "training_run_completed": true,
+  "analysis_covers_final_training": true,
+  "checkpoint_is_pre_update": false,
+  "source_run_status_at_read": {
+    "status": "complete",
+    "additional_ppo_steps": 2000,
+    "initialization_frames": 1060,
+    "initialized_episodes": 5,
+    "counts": {
+      "decision_frames": 1209,
+      "only_stop": 791,
+      "voluntary_wait": 31,
+      "nonzero": 1178,
+      "changed_nonzero": 0,
+      "episodes": 8,
+      "success": 7,
+      "collisions": 0,
+      "recovery_actor_frames": 889,
+      "prefix_controlled_frames": 1202,
+      "routine_controlled_frames": 798,
+      "recovery_wait_choices": 31,
+      "recovery_motion_choices": 858
+    },
+    "reasons": {
+      "none": 1178,
+      "only_stop_available": 127,
+      "policy_wait": 13,
+      "learned_route_incomplete": 9,
+      "scan_unavailable": 8,
+      "laser_braking_footprint": 665
+    },
+    "resource": {
+      "seconds": 1497.175087494019,
+      "cpu_seconds": 524.372828761,
+      "average_cpu_cores": 0.3502414868782639,
+      "peak_rss_mib": 2408.82421875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+    "demonstration_retention": null,
+    "long_wait_exploration": null,
+    "feedback_schema": "stop_decision_feedback_v2",
+    "recovery_contract": {
+      "schema": "stop_feedback_proactive_recovery_v1",
+      "feedback_schema": "stop_decision_feedback_v2",
+      "training_dimensions": 436,
+      "action_count": 12,
+      "residual_width": 64,
+      "base_actor_frozen": true,
+      "support": "valid_inputs_goal_far_and_base_stop_or_near_lidar_or_restricted_motion_or_guard_forecast",
+      "minimum_goal_distance_m": 0.3,
+      "stop_remains_selectable": true,
+      "actions_masks_guard_unchanged": true,
+      "no_runtime_teacher": true,
+      "no_elapsed_episode_time_input": true,
+      "simulator_truth_used": false,
+      "frozen_base_sampling": "98_percent_masked_greedy_plus_2_percent_uniform_legal",
+      "outside_support_uniform_exploration": 0.02,
+      "inside_support_distribution_unchanged": false,
+      "deterministic_initial_choices_preserved": true,
+      "stochastic_initial_parity_claimed": false,
+      "sampling_likelihood_and_export_share_head": true,
+      "no_post_sampling_action_replacement": true,
+      "residual_can_act_before_base_stops": true,
+      "inside_existing_stop_support_distribution_unchanged": true,
+      "latest_lidar_history_slice": [
+        144,
+        216
+      ],
+      "lidar_normalization_m": 12.0,
+      "learning_support_nearest_lidar_range_m": 0.8,
+      "context_is_learning_support_not_motion_permission": true
+    },
+    "deployment_approved": false
+  },
+  "policy_checkpoint": "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip",
+  "checkpoint_collected_timesteps": 2000,
+  "optimizer_epochs_completed": 27,
+  "last_rollout_included_in_checkpoint_updates": true,
+  "checkpoint_updates_through_steps": 2000,
+  "bc_to_ppo": {
+    "frozen_base_unchanged": true,
+    "residual_parameter_delta_l2": {
+      "mlp_extractor.policy_net.residual.0.weight": 0.6623780727386475,
+      "mlp_extractor.policy_net.residual.0.bias": 0.04034420847892761,
+      "mlp_extractor.policy_net.residual.2.weight": 0.2689950466156006,
+      "mlp_extractor.policy_net.residual.2.bias": 0.0278436541557312,
+      "action_net.residual.weight": 0.04050134867429733,
+      "action_net.residual.bias": 0.0043833693489432335
+    },
+    "supported_argmax_changes": 196,
+    "maximum_supported_probability_change": 0.9999458193778992
+  },
+  "offline_choice_transitions": {
+    "bc_wait_to_ppo_motion": 0,
+    "bc_motion_to_ppo_wait": 2,
+    "different_motion_choice": 194,
+    "long_wait_threshold_s": 1.0,
+    "long_prior_wait_with_choices_frames": 1,
+    "long_wait_bc_wait_to_ppo_motion": 0,
+    "physical_improvement_proven": false
+  },
+  "choice_transitions_by_source": {
+    "physical_prefix_early_avoidance_t6": {
+      "supported_frames": 180,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 41,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_motion_profile_015": {
+      "supported_frames": 147,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 28,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "supported_frames": 109,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 2,
+      "different_motion_choice": 10,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "supported_frames": 96,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 15,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "supported_frames": 91,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 20,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_00": {
+      "supported_frames": 188,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 65,
+      "long_prior_wait_with_choices_frames": 1,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "supported_frames": 78,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 15,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    }
+  },
+  "supported_training_sources": {
+    "physical_prefix_early_avoidance_t6": 180,
+    "train_failure_motion_profile_015": 147,
+    "physical_prefix_w11_training_stall_t90": 109,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": 96,
+    "physical_prefix_rotation_stall_t20": 91,
+    "train_failure_proactive_variation_00": 188,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": 78
+  },
+  "offline_sensitivity": {
+    "previous_reason_none": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 889,
+      "changed_argmax_in_common_supported_states": 10,
+      "changed_argmax_in_supported_states": 10,
+      "max_probability_change_in_supported_states": 0.9291316270828247,
+      "actual_motion_samples_changed": 10
+    },
+    "without_contact_scores": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 889,
+      "changed_argmax_in_common_supported_states": 12,
+      "changed_argmax_in_supported_states": 12,
+      "max_probability_change_in_supported_states": 0.9744420647621155,
+      "actual_motion_samples_changed": 12
+    },
+    "without_wait_timers": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 889,
+      "changed_argmax_in_common_supported_states": 2,
+      "changed_argmax_in_supported_states": 2,
+      "max_probability_change_in_supported_states": 0.2699984908103943,
+      "actual_motion_samples_changed": 2
+    },
+    "without_explanations": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 889,
+      "changed_argmax_in_common_supported_states": 141,
+      "changed_argmax_in_supported_states": 141,
+      "max_probability_change_in_supported_states": 0.9999837279319763,
+      "actual_motion_samples_changed": 133
+    }
+  },
+  "frozen_base_sampling_by_case": {
+    "physical_prefix_early_avoidance_t6": {
+      "frames": 872,
+      "frozen_frames": 692,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 180
+    },
+    "train_failure_motion_profile_015": {
+      "frames": 246,
+      "frozen_frames": 99,
+      "sampled_choice_differs_from_frozen_greedy": 1,
+      "recovery_frames": 147
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "frames": 200,
+      "frozen_frames": 91,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 109
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "frames": 160,
+      "frozen_frames": 64,
+      "sampled_choice_differs_from_frozen_greedy": 2,
+      "recovery_frames": 96
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "frames": 130,
+      "frozen_frames": 39,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 91
+    },
+    "train_failure_proactive_variation_00": {
+      "frames": 255,
+      "frozen_frames": 67,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 188
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "frames": 137,
+      "frozen_frames": 59,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 78
+    }
+  },
+  "frozen_base_sampling_summary": {
+    "frames": 1111,
+    "sampled_choice_differs_from_frozen_greedy": 3,
+    "interpretation": "Actual stochastic samples outside trainable support; different from deterministic deployment, not evidence that every deviation is harmful."
+  },
+  "policy_sha256": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+  "resource": {
+    "seconds": 35.6778971630265,
+    "cpu_seconds": 1.860867588,
+    "average_cpu_cores": 0.052157434601511295,
+    "peak_rss_mib": 669.21875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "deployment_approved": false,
+  "limitations": [
+    "Reused actual training states, not new closed-loop tasks.",
+    "A pre-update checkpoint has observed its last rollout but has not optimized on it; an interim analysis is not a complete training or navigation result.",
+    "Substituted explanations can be outside the training distribution.",
+    "Proactive contact ablations can also change the learnable-support gate; common-support and gate changes are reported separately.",
+    "Sensitivity does not prove that feedback caused safe recovery or that PPO improved navigation."
+  ]
+}

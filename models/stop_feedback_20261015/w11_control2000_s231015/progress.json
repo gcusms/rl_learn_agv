@@ -1,0 +1,45 @@
+{
+  "steps": 2000,
+  "counts": {
+    "decision_frames": 1209,
+    "only_stop": 791,
+    "voluntary_wait": 31,
+    "nonzero": 1178,
+    "changed_nonzero": 0,
+    "episodes": 8,
+    "success": 7,
+    "collisions": 0,
+    "recovery_actor_frames": 889,
+    "prefix_controlled_frames": 1202,
+    "routine_controlled_frames": 798,
+    "recovery_wait_choices": 31,
+    "recovery_motion_choices": 858
+  },
+  "reasons": {
+    "none": 1178,
+    "only_stop_available": 127,
+    "policy_wait": 13,
+    "learned_route_incomplete": 9,
+    "scan_unavailable": 8,
+    "laser_braking_footprint": 665
+  },
+  "resource": {
+    "seconds": 1496.6189342470025,
+    "cpu_seconds": 523.816729021,
+    "average_cpu_cores": 0.35000006817670604,
+    "peak_rss_mib": 2408.73828125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": 0.0,
+    "train/policy_gradient_loss": 0.0,
+    "train/value_loss": 0.16631113179028034,
+    "train/approx_kl": 0.0,
+    "train/clip_fraction": 0.0,
+    "train/actor_recovery_fraction": 0.0,
+    "train/explained_variance": -18.274263381958008,
+    "train/n_updates": 23.0,
+    "train/loss": 0.06481844931840897
+  }
+}

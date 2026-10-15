@@ -1,0 +1,34 @@
+{
+  "completed": true,
+  "at": "2026-10-16T07:04:15.922624+08:00",
+  "actual_first250_samples_bit_identical": true,
+  "arrays_verified": [
+    "observations",
+    "sampled_actions",
+    "action_masks",
+    "old_log_prob",
+    "old_values",
+    "ppo_rewards",
+    "returns",
+    "advantages",
+    "episode_starts",
+    "execution_diagnostics_json",
+    "metadata_json"
+  ],
+  "includes_sampling_observations_masks_actions_old_likelihoods_returns_and_causal_execution": true,
+  "control_sha256": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+  "retained_sha256": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+  "comparison_is_before_first_ppo_update": true,
+  "resource": {
+    "seconds": 0.6367175100021996,
+    "cpu_seconds": 0.033360168999999995,
+    "average_cpu_cores": 0.05239398709151999,
+    "peak_rss_mib": 36.390625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "proves_retention_rng_did_not_change_initial_physical_sampling": true,
+  "subsequent_rollouts_expected_to_diverge_after_update": true,
+  "not_a_navigation_acceptance_result": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,97 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "recovery_holdout_00",
+      "category": "reused_development_training_candidate",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 44.40000000000426,
+      "travel_m": 5.155898387679585,
+      "frames": 223,
+      "final_xy_error_m": 0.09348936883595509,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004419370288851545,
+      "localization_yaw_p95_rad": 0.001296494160405359,
+      "stop_choices": 47,
+      "only_stop_frames": 38,
+      "stop_reasons": {
+        "None": 189,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 6,
+        "laser_braking_footprint": 24,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 9,
+      "predictive_constraint_frames": 41,
+      "runtime_ms": {
+        "p95": 176.12837980850597,
+        "p99": 225.0289855489973,
+        "maximum": 254.9547299859114
+      },
+      "variant": "augmented_ppo8000",
+      "trace_sha256": "24ba6da28f64ed56f17f6be6f3ad5415b94ccb0a1b659245de65bc15d38a5b7d",
+      "specification": {
+        "id": "development_recovery_holdout_00_ppo_success"
+      },
+      "historical_category": "untrained_recovery_conditions",
+      "source_report": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json",
+      "source_trace": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/recovery_holdout_00_augmented_ppo8000.npz",
+      "retired_as_unseen_or_holdout_task": true
+    },
+    {
+      "case_id": "recovery_holdout_01",
+      "category": "reused_development_training_candidate",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 38.40000000000119,
+      "travel_m": 4.967372966604328,
+      "frames": 193,
+      "final_xy_error_m": 0.11827475650869083,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004357257652515276,
+      "localization_yaw_p95_rad": 0.0012549803958856738,
+      "stop_choices": 35,
+      "only_stop_frames": 26,
+      "stop_reasons": {
+        "None": 185,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 9,
+      "predictive_constraint_frames": 46,
+      "runtime_ms": {
+        "p95": 213.23485680622971,
+        "p99": 227.69378678407514,
+        "maximum": 267.0828400296159
+      },
+      "variant": "augmented_ppo8000",
+      "trace_sha256": "36c71a4f5dd20b56c7033057b2e348b4e262300824ea70df0aac165236f81438",
+      "specification": {
+        "id": "development_recovery_holdout_01_ppo_success"
+      },
+      "historical_category": "untrained_recovery_conditions",
+      "source_report": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json",
+      "source_trace": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/recovery_holdout_01_augmented_ppo8000.npz",
+      "retired_as_unseen_or_holdout_task": true
+    }
+  ],
+  "source_report": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json",
+  "source_report_sha256": "61efd691aebde3c925a07ec1c16ef5a84989b6fde3560f56bd1a24a38ff71461",
+  "not_a_new_evaluation": true,
+  "no_timed_teacher": true,
+  "scope": "Already evaluated PPO successes, selected for an optional new training dataset."
+}
