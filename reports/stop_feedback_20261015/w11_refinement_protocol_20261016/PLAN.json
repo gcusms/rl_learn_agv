@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-10-16T04:03:49.145974+08:00",
+  "classification": "progress",
+  "previous_goal_turn_classification": "progress",
+  "previous_goal_turn_evidence": "Verified and uploaded actual intermediate policy and optimizer with original 2000 collected samples; not goal completion.",
+  "source_invocation": "1d2e89db5fad41b784f3a354aea5f663",
+  "source_unit": "rl-w11-early-left-probes-20261016.service",
+  "main_ppo_invocation": "574cd062c1ba456582be6a076593e1b8",
+  "diagnostic_only": true,
+  "condition": "Run two prespecified heading variations only after both original probes finish with no safe complete outcome. If any succeeds, do not run extra variants.",
+  "hypothesis": "A slightly more westward northbound heading may retain clearance to the stopped obstacle; complete original-mask physical evaluation is required, analytic geometry is not a safety certificate.",
+  "new_windows": [
+    {
+      "id": "w11_left_3p6_then_pass",
+      "windows": [
+        {
+          "start_s": 90.0,
+          "end_s": 93.6,
+          "choice": 4
+        },
+        {
+          "start_s": 93.6,
+          "end_s": 102.6,
+          "choice": 1
+        }
+      ]
+    },
+    {
+      "id": "w11_left_3p8_then_pass",
+      "windows": [
+        {
+          "start_s": 90.0,
+          "end_s": 93.8,
+          "choice": 4
+        },
+        {
+          "start_s": 93.8,
+          "end_s": 102.8,
+          "choice": 1
+        }
+      ]
+    }
+  ],
+  "unchanged": [
+    "same robot body and 4cm margin",
+    "same guard and masks",
+    "same sensor/odometry history and prefix",
+    "same rewards and running 8k experiment",
+    "stop always legal",
+    "no runtime teacher",
+    "all failures retained"
+  ],
+  "resource": {
+    "main_soft_cores": 0.35,
+    "auxiliary_soft_cores": 0.15,
+    "parallel_auxiliaries": 1
+  },
+  "demonstration_admission": "Only a complete safe trace from a completed report; reconstruct full causal history and exclude the failed initialization with minimum_sensor_timestamp_s=90.",
+  "deployment_approved": false,
+  "goal_achieved": false
+}

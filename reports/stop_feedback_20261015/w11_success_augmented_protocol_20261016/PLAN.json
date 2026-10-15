@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-10-16T04:05:47.722216+08:00",
+  "hypothesis": "A complete safe in-place-left and pass demonstration can give the residual missing action coverage before it approaches too closely, reducing avoidable long waiting while preserving justified stop.",
+  "single_primary_change": "Append supported decisions from one complete safe 90s recovery continuation; preserve the first 2030 arrays byte-for-byte.",
+  "source_safe_trace": "reports/stop_feedback_20261015/w11_early_left_probes_20261016/w11_left_turn_then_left_pass.npz",
+  "source_safe_trace_sha256": "f994d8f2af1e4009cabe1aec97a662b2c4b128a4579313b1811cd53d53a439b9",
+  "source_failure_retained": "reports/stop_feedback_20261015/w11_early_left_probes_20261016/w11_left_turn_then_reference.npz",
+  "exclude_failed_initialization": true,
+  "minimum_sensor_timestamp_s": 90.0,
+  "model": "models/stop_feedback_20261015/w11_recovery_bc800_s231015",
+  "maximum_bc_updates": 800,
+  "additional_ppo_steps": 0,
+  "seed": 231015,
+  "unchanged": [
+    "base actor/localizer/router/directional docking",
+    "body, safety margins and action set",
+    "action mask, stop and guard semantics",
+    "reward and running 8k experiment",
+    "normal 14 + hard 4 gate set"
+  ],
+  "evaluation_order": [
+    "Verify old arrays and complete physical source.",
+    "Fit demonstration initialization and inspect exact old/new label errors and TorchScript agreement.",
+    "Test actual learned continuation at the same 90s prefix, without interventions.",
+    "Run all 18 full reset tasks, both old physical prefixes and remaining w11 histories for regressions.",
+    "Only decide another PPO experiment after navigation results; fresh conditions remain separate."
+  ],
+  "resource": {
+    "soft_cpu_cores": 0.15,
+    "maximum_rss_mib": 3072,
+    "simultaneous_auxiliary_jobs": 1
+  },
+  "limitations": [
+    "The successful probe used timed actions only for offline demonstration collection.",
+    "The 90s history is now a training example, not unseen generalization.",
+    "No runtime timing or teacher is added.",
+    "A fitted action sequence does not prove the learned closed-loop continuation."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}
