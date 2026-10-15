@@ -1,0 +1,115 @@
+{
+  "source": "/home/ubuntu/rl_learn/rl_learn_agv/training/runs/safety_context_20261011/rotation_escape_probe/RESULTS.json",
+  "source_sha256": "5d199ecbd2c7ba2c15d9aee3a69336b673fa22ffaac8d572341c9c955d074938",
+  "report": {
+    "completed": true,
+    "cases": [
+      {
+        "case_id": "independent_dynamic_006",
+        "safe_success": false,
+        "arrived": false,
+        "protocol_valid": true,
+        "false_arrival": false,
+        "collisions": 0,
+        "physical_guards": 0,
+        "timeout": true,
+        "seconds": 139.99999999994517,
+        "travel_m": 3.1990716036551534,
+        "localization_error_p95_m": 0.029087232716987595,
+        "frames": 700,
+        "voluntary_wait_frames": 519,
+        "only_stop_frames": 33,
+        "emergency_stop_counts": {
+          "laser_braking_footprint": 544
+        },
+        "trace_sha256": "33ac01aa1341a37100ea79e8a925ae18729217c03c02817f89b981abf6e5cdca"
+      },
+      {
+        "case_id": "independent_dynamic_021",
+        "safe_success": false,
+        "arrived": false,
+        "protocol_valid": true,
+        "false_arrival": false,
+        "collisions": 0,
+        "physical_guards": 0,
+        "timeout": true,
+        "seconds": 139.99999999994517,
+        "travel_m": 1.9215082844687699,
+        "localization_error_p95_m": 0.016376587736815343,
+        "frames": 700,
+        "voluntary_wait_frames": 422,
+        "only_stop_frames": 220,
+        "emergency_stop_counts": {
+          "scan_unavailable": 3,
+          "learned_route_incomplete": 14,
+          "laser_braking_footprint": 622
+        },
+        "trace_sha256": "ff5f59022cbb559038dab1bc7a7109eedf6c3b62b9bbbfa402c4d9f50376ffbb"
+      },
+      {
+        "case_id": "independent_dynamic_023",
+        "safe_success": false,
+        "arrived": false,
+        "protocol_valid": true,
+        "false_arrival": false,
+        "collisions": 0,
+        "physical_guards": 0,
+        "timeout": true,
+        "seconds": 139.99999999994517,
+        "travel_m": 0.9246586585725153,
+        "localization_error_p95_m": 0.01504550437037609,
+        "frames": 700,
+        "voluntary_wait_frames": 481,
+        "only_stop_frames": 174,
+        "emergency_stop_counts": {
+          "scan_unavailable": 3,
+          "laser_braking_footprint": 644
+        },
+        "trace_sha256": "91b140d371a15384ce10247a752d1733339e278a27e29e027bbfde9345170f2f"
+      },
+      {
+        "case_id": "motion_profile_005",
+        "safe_success": false,
+        "arrived": false,
+        "protocol_valid": true,
+        "false_arrival": false,
+        "collisions": 1,
+        "physical_guards": 0,
+        "timeout": false,
+        "seconds": 25.59999999999919,
+        "travel_m": 4.105155387615721,
+        "localization_error_p95_m": 0.0880208875925967,
+        "frames": 128,
+        "voluntary_wait_frames": 0,
+        "only_stop_frames": 0,
+        "emergency_stop_counts": {},
+        "trace_sha256": "0607d6c61d98ca45efd6469c08529d5d2fa9b59e64cb9d80f775ce75662bd3af"
+      },
+      {
+        "case_id": "train_failure_w11_e7",
+        "safe_success": false,
+        "arrived": false,
+        "protocol_valid": true,
+        "false_arrival": false,
+        "collisions": 1,
+        "physical_guards": 0,
+        "timeout": false,
+        "seconds": 15.200000000000976,
+        "travel_m": 2.1565149002541917,
+        "localization_error_p95_m": 0.07354600205005475,
+        "frames": 76,
+        "voluntary_wait_frames": 0,
+        "only_stop_frames": 0,
+        "emergency_stop_counts": {},
+        "trace_sha256": "deb78f8f6d236451ad6948ad46d7f59ec3c7fae6a7bb81a0bf2f6c41ab67ec27"
+      }
+    ],
+    "started_unix": 1791753107.2671628,
+    "deployment_approved": false,
+    "actor_sha256": "9c9c5adcad5788cb4f73dec0f8d78827ce259d75c0525db491427444c3b1b90b",
+    "bundle_manifest_sha256": "77daf1eab4a045b43bf08345e22fe57888e88fde1f56cf6ea3ac23e749dcdb18",
+    "limitation": "Five repeatedly used development failures, frozen actor, changed safety-context feasibility. No manual action replacement; not broad acceptance or real hardware validation.",
+    "finished_unix": 1791753315.9853537
+  },
+  "relevance": "An older 300D full-reset probe had 0/5 safe; the flag is not a globally proven fix."
+}

@@ -1,0 +1,52 @@
+{
+  "created_at": "2026-10-16T06:38:26.121966+08:00",
+  "hardware": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable/hardware.json",
+  "map": "training/assets/room_navigation_scripted/decision_map.yaml",
+  "traces": [
+    {
+      "id": "bc_w11_t106",
+      "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_w11_20261016/w11_training_stall_t106.npz",
+      "intervals_s": [
+        [
+          106.0,
+          108.0
+        ]
+      ]
+    },
+    {
+      "id": "probe_after_four_right_creep_frames",
+      "trace": "reports/stop_feedback_20261015/w11_t106_right_creep_quarter_turn_20261016/right_creep_quarter_turn.npz",
+      "intervals_s": [
+        [
+          106.0,
+          108.0
+        ]
+      ]
+    },
+    {
+      "id": "bc_hard00_first_long_wait",
+      "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_00_w11_augmented_bc800.npz",
+      "intervals_s": [
+        [
+          19.4,
+          21.4
+        ]
+      ]
+    }
+  ],
+  "inputs": {
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "training/assets/room_navigation_scripted/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "training/assets/room_navigation_scripted/decision_map.pgm": "bf430807e27e72ec76c0408739a191b81e5a06f6baa5e9b57f735aa18487f281",
+    "reports/stop_feedback_20261015/guard_geometry_audit_20261016/replay.py": "fbe30ce47a381a28a008996984e259bb6a301b1f080d23762fdd70937cac2f36",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_w11_20261016/w11_training_stall_t106.npz": "2260cb424d82e8937c2625719f0964af72a5beee21b4b7c3b66447ef46c01f4c",
+    "reports/stop_feedback_20261015/w11_t106_right_creep_quarter_turn_20261016/right_creep_quarter_turn.npz": "7c13567ebfd070f21f495e9fdfafdaadaef6a36548e4247c534273a57e683f11",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_00_w11_augmented_bc800.npz": "ba2228d330e0009597b8c9d54b4a984f1e5c30a4f41d999d814a678a0042f6e0"
+  },
+  "scope": "Independent offline sensor/odometry geometry reconstruction; no physics and no changes to running PPO.",
+  "soft_cpu_cores": 0.05,
+  "goal_achieved": false,
+  "deployment_approved": false
+}
