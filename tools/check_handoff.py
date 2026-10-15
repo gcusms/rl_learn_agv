@@ -95,7 +95,8 @@ def main():
                            ('proactive_bc_s231015_prepared', 'stop_decision_feedback_v2'),
                            ('proactive_augmented_bc_s231015', 'stop_decision_feedback_v2'),
                            ('proactive_augmented_bc_800_s231015', 'stop_decision_feedback_v2'),
-                           ('w11_recovery_bc800_s231015', 'stop_decision_feedback_v2')]:
+                           ('w11_recovery_bc800_s231015', 'stop_decision_feedback_v2'),
+                           ('proactive_augmented_ppo_8000_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         bc_only = folder in ('proactive_bc_s231015_prepared',
                              'proactive_augmented_bc_s231015',
@@ -109,9 +110,10 @@ def main():
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        recovery = bc_only or folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
+        completed_proactive_ppo = folder == 'proactive_augmented_ppo_8000_s231015'
+        recovery = bc_only or completed_proactive_ppo or folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
         checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
-        expected_steps = 0 if bc_only else (2000 if recovery else 4000)
+        expected_steps = 8000 if completed_proactive_ppo else (0 if bc_only else (2000 if recovery else 4000))
         checkpoint_name = 'policy_bc.zip' if bc_only else 'policy.zip'
         checkpoint = checkpoint_type.load(feedback / checkpoint_name, device='cpu')
         if checkpoint.num_timesteps != expected_steps or checkpoint.observation_space.shape != (436,):
@@ -129,13 +131,24 @@ def main():
             if folder == 'steady_base_ppo_2000_s231015':
                 from experiments.steady_base_recovery import contract as steady_contract
                 expected_recovery = steady_contract()
-            elif bc_only:
+            elif bc_only or completed_proactive_ppo:
                 from experiments.proactive_recovery import contract as proactive_contract
                 expected_recovery = proactive_contract()
             if checkpoint.recovery_contract != expected_recovery:
                 raise ValueError('Recovery checkpoint semantics mismatch')
             if frozen_base_digest(checkpoint.policy) != config['frozen_base_sha256']:
                 raise ValueError('Recovery checkpoint changed the frozen base')
+        if completed_proactive_ppo:
+            status = json.loads((feedback / 'status.json').read_text())
+            if (status['status'] != 'complete' or status['additional_ppo_steps'] != expected_steps
+                    or not checkpoint.policy.optimizer.state_dict()['state']):
+                raise ValueError('Completed PPO optimizer/status mismatch')
+            actual_samples = 0
+            for rollout in sorted((feedback / 'rollouts').glob('*.npz')):
+                with np.load(rollout, allow_pickle=False) as archived:
+                    actual_samples += len(archived['observations'])
+            if actual_samples != expected_steps:
+                raise ValueError('Completed PPO rollout history mismatch')
         exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
         with torch.no_grad():
             command = exported(torch.zeros((1, 439)))
@@ -178,7 +191,8 @@ def main():
              'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives',
              'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery',
              'experiments.test_stop_recovery_policy', 'experiments.test_prefix_recovery_audit',
-             'experiments.test_steady_base_recovery', 'experiments.test_proactive_recovery']
+             'experiments.test_steady_base_recovery', 'experiments.test_proactive_recovery',
+             'experiments.test_demonstration_retention']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

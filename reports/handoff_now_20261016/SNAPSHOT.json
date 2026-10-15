@@ -1,0 +1,650 @@
+{
+  "schema": "agv_handoff_snapshot_v11",
+  "branch": "now",
+  "captured_at": "2026-10-16T05:32:21.239045+08:00",
+  "repository": "https://github.com/gcusms/rl_learn_agv",
+  "source_commit": "c7d0e4b87a2fd7149f7a0dde03861e093cafab26",
+  "previous_branch": "ship",
+  "previous_commit": "4dd364fe3d91db0e047c3dfc6b7941f7798560b2",
+  "training_completed": true,
+  "completed_ppo_run": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015",
+  "completed_ppo_steps": 8000,
+  "completed_ppo_status": {
+    "status": "complete",
+    "additional_ppo_steps": 8000,
+    "initialization_frames": 4060,
+    "initialized_episodes": 21,
+    "counts": {
+      "decision_frames": 6716,
+      "only_stop": 1284,
+      "voluntary_wait": 601,
+      "nonzero": 6115,
+      "changed_nonzero": 0,
+      "episodes": 40,
+      "success": 26,
+      "collisions": 6,
+      "recovery_actor_frames": 5230,
+      "prefix_controlled_frames": 3578,
+      "routine_controlled_frames": 4422,
+      "recovery_wait_choices": 598,
+      "recovery_motion_choices": 4632
+    },
+    "reasons": {
+      "none": 6115,
+      "only_stop_available": 414,
+      "policy_wait": 279,
+      "learned_route_incomplete": 50,
+      "scan_unavailable": 43,
+      "laser_braking_footprint": 1093,
+      "static_braking_footprint": 6
+    },
+    "resource": {
+      "seconds": 5567.124108625983,
+      "cpu_seconds": 1948.813090138,
+      "average_cpu_cores": 0.3500574178180096,
+      "peak_rss_mib": 2459.03125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "recovery_contract": {
+      "schema": "stop_feedback_proactive_recovery_v1",
+      "feedback_schema": "stop_decision_feedback_v2",
+      "training_dimensions": 436,
+      "action_count": 12,
+      "residual_width": 64,
+      "base_actor_frozen": true,
+      "support": "valid_inputs_goal_far_and_base_stop_or_near_lidar_or_restricted_motion_or_guard_forecast",
+      "minimum_goal_distance_m": 0.3,
+      "stop_remains_selectable": true,
+      "actions_masks_guard_unchanged": true,
+      "no_runtime_teacher": true,
+      "no_elapsed_episode_time_input": true,
+      "simulator_truth_used": false,
+      "frozen_base_sampling": "98_percent_masked_greedy_plus_2_percent_uniform_legal",
+      "outside_support_uniform_exploration": 0.02,
+      "inside_support_distribution_unchanged": false,
+      "deterministic_initial_choices_preserved": true,
+      "stochastic_initial_parity_claimed": false,
+      "sampling_likelihood_and_export_share_head": true,
+      "no_post_sampling_action_replacement": true,
+      "residual_can_act_before_base_stops": true,
+      "inside_existing_stop_support_distribution_unchanged": true,
+      "latest_lidar_history_slice": [
+        144,
+        216
+      ],
+      "lidar_normalization_m": 12.0,
+      "learning_support_nearest_lidar_range_m": 0.8,
+      "context_is_learning_support_not_motion_permission": true
+    },
+    "deployment_approved": false
+  },
+  "completed_ppo_sha256": "855fae8bbc391c2c729f2692d88910bc9b50f5e15c697400809ee838728a2c6d",
+  "new_bc_model": "models/stop_feedback_20261015/w11_recovery_bc800_s231015",
+  "new_bc_sha256": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+  "new_bc_demonstration_labels": 2089,
+  "new_bc_supervised_updates": 800,
+  "new_bc_additional_ppo_steps": 0,
+  "retention_regularizer_code_ready": true,
+  "retention_regularizer_new_physical_ppo_steps": 0,
+  "validation": {
+    "proactive_augmented_ppo8000_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "finished_rows": 18,
+      "expected_rows": 18,
+      "safe": 16,
+      "collisions": 2,
+      "timeouts": 0,
+      "frozen_report": "reports/handoff_now_20261016/validation/proactive_augmented_ppo8000_navigation_20261016",
+      "rows": [
+        {
+          "case_id": "motion_profile_015",
+          "variant": "augmented_ppo8000",
+          "safe_success": false,
+          "collisions": 1,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "variant": "augmented_ppo8000",
+          "safe_success": false,
+          "collisions": 1,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "motion_profile_002",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "motion_profile_000",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_00",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_05",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_12",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_17",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_24",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_31",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        }
+      ]
+    },
+    "proactive_augmented_ppo8000_prefixes_20261016": {
+      "started": true,
+      "completed": true,
+      "finished_rows": 2,
+      "expected_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "frozen_report": "reports/handoff_now_20261016/validation/proactive_augmented_ppo8000_prefixes_20261016",
+      "rows": [
+        {
+          "case_id": "rotation_stall_t20",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": 31.20000000000774,
+          "post_release_wait_with_choices_frames": 0
+        },
+        {
+          "case_id": "arc_stall_t20",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": 29.40000000000682,
+          "post_release_wait_with_choices_frames": 2
+        }
+      ]
+    },
+    "proactive_augmented_ppo8000_w11_20261016": {
+      "started": true,
+      "completed": true,
+      "finished_rows": 3,
+      "expected_rows": 3,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "frozen_report": "reports/handoff_now_20261016/validation/proactive_augmented_ppo8000_w11_20261016",
+      "rows": [
+        {
+          "case_id": "w11_training_stall_t90",
+          "variant": "augmented_ppo8000",
+          "safe_success": false,
+          "collisions": 0,
+          "timeout": true,
+          "post_release_seconds": 49.999999999945175,
+          "post_release_wait_with_choices_frames": 62
+        },
+        {
+          "case_id": "w11_training_stall_t95",
+          "variant": "augmented_ppo8000",
+          "safe_success": false,
+          "collisions": 0,
+          "timeout": true,
+          "post_release_seconds": 44.999999999945175,
+          "post_release_wait_with_choices_frames": 51
+        },
+        {
+          "case_id": "w11_training_stall_t106",
+          "variant": "augmented_ppo8000",
+          "safe_success": false,
+          "collisions": 0,
+          "timeout": true,
+          "post_release_seconds": 33.999999999945175,
+          "post_release_wait_with_choices_frames": 170
+        }
+      ]
+    },
+    "proactive_augmented_ppo8000_fresh_20261016": {
+      "started": true,
+      "completed": false,
+      "finished_rows": 3,
+      "expected_rows": 24,
+      "safe": 2,
+      "collisions": 1,
+      "timeouts": 0,
+      "frozen_report": "reports/handoff_now_20261016/validation/proactive_augmented_ppo8000_fresh_20261016",
+      "rows": [
+        {
+          "case_id": "proactive_fresh_condition_00",
+          "variant": "bc_only",
+          "safe_success": false,
+          "collisions": 1,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "proactive_fresh_condition_00",
+          "variant": "augmented_ppo8000",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "proactive_fresh_condition_01",
+          "variant": "bc_only",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        }
+      ]
+    },
+    "w11_recovery_bc800_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "finished_rows": 18,
+      "expected_rows": 18,
+      "safe": 16,
+      "collisions": 1,
+      "timeouts": 1,
+      "frozen_report": "reports/handoff_now_20261016/validation/w11_recovery_bc800_navigation_20261016",
+      "rows": [
+        {
+          "case_id": "motion_profile_015",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "variant": "w11_augmented_bc800",
+          "safe_success": false,
+          "collisions": 0,
+          "timeout": true,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "variant": "w11_augmented_bc800",
+          "safe_success": false,
+          "collisions": 1,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "motion_profile_002",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "motion_profile_000",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_00",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_05",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_12",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_17",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_24",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "localization_nav_31",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": null,
+          "post_release_wait_with_choices_frames": null
+        }
+      ]
+    },
+    "w11_recovery_bc800_early_20261016": {
+      "started": true,
+      "completed": true,
+      "finished_rows": 1,
+      "expected_rows": 1,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "frozen_report": "reports/handoff_now_20261016/validation/w11_recovery_bc800_early_20261016",
+      "rows": [
+        {
+          "case_id": "w11_training_stall_t90",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": 20.39999999997208,
+          "post_release_wait_with_choices_frames": 0
+        }
+      ]
+    },
+    "w11_recovery_bc800_prefixes_20261016": {
+      "started": true,
+      "completed": false,
+      "finished_rows": 1,
+      "expected_rows": 2,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "frozen_report": "reports/handoff_now_20261016/validation/w11_recovery_bc800_prefixes_20261016",
+      "rows": [
+        {
+          "case_id": "rotation_stall_t20",
+          "variant": "w11_augmented_bc800",
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "post_release_seconds": 25.800000000004978,
+          "post_release_wait_with_choices_frames": 1
+        }
+      ]
+    },
+    "w11_recovery_bc800_w11_20261016": {
+      "started": false,
+      "expected_rows": 3
+    },
+    "w11_recovery_parent800_early_20261016": {
+      "started": false,
+      "expected_rows": 1
+    },
+    "w11_recovery_bc800_fresh_20261016": {
+      "started": false,
+      "expected_rows": 24
+    }
+  },
+  "source_units": [
+    {
+      "MainPID": "1685195",
+      "Result": "success",
+      "Id": "rl-proactive-augmented-ppo-pipeline-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "574cd062c1ba456582be6a076593e1b8"
+    },
+    {
+      "MainPID": "1703879",
+      "Result": "success",
+      "Id": "rl-w11-success-bc-validation-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "0a60e5c1f18e42ffbef70efd548ac652"
+    },
+    {
+      "MainPID": "1708031",
+      "Result": "success",
+      "Id": "rl-w11-paired-v2-after-validation-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "5011449a519943149d7d682002f8cb1b"
+    }
+  ],
+  "local_jobs_migrate": false,
+  "exact_physics_resume_supported": false,
+  "original_deployment_model": "models/quality_recovery_20261014/policy_2000.zip",
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "original_deployment_replaced": false,
+  "independent_localization_merged": false,
+  "original14_retained_by_new_bc": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "known_remaining": [
+    "BC hard00:140s timeout,34.6s issued waiting with legal motion,92.8s only stop; hard01 collision.",
+    "Old-data8k PPO: original successful motion_profile_015 now collides; common-success time +10.27%.",
+    "Old-data8k PPO three W11 90/95/106 continuations all timed out.",
+    "New BC later histories and paired fresh validation incomplete at cutoff; see exact frozen rows.",
+    "Same-map development tests do not prove unseen-map or real hardware performance.",
+    "Retention loss code has mechanical and single recorded-rollout validation only; no new closed-loop PPO.",
+    "Native binaries, Python environments and live jobs are not portable through Git."
+  ],
+  "historical_worktree_backup": "reports/handoff_ship_20261016/other_worktrees",
+  "historical_worktree_backup_merged": false,
+  "older_worktree_edits_verified_unchanged": 20
+}

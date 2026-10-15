@@ -1,13 +1,13 @@
 {
   "date": "2026-10-16",
-  "branch": "ship",
+  "branch": "now",
   "completed": true,
-  "verified_at": "2026-10-16T04:51:14.500185+08:00",
-  "parent_commit": "5747de85a7dbd0cbc431be020069ca7155090893",
-  "scope": "Portable files, nine feedback model/checkpoint loads, actual partial PPO optimizer and7000 samples,111 unique implementation tests including a separate native parity run, one rebuilt current439D runtime frame. Not deployment acceptance.",
+  "verified_at": "2026-10-16T05:36:59.445061+08:00",
+  "source_commit": "c7d0e4b87a2fd7149f7a0dde03861e093cafab26",
+  "scope": "Pinned portable files,10feedback model/checkpoint loads including final8000PPO optimizer and actual samples, historical7000snapshot, native current439D smoke and implementation suite; not navigation or deployment acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 20814,
+    "pinned_files_checked": 22228,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -132,6 +132,18 @@
         "recovery_residual": true,
         "checkpoint_loaded": true,
         "torchscript_loaded": true
+      },
+      {
+        "folder": "proactive_augmented_ppo_8000_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 8000,
+        "bundle_name": "portable",
+        "checkpoint_name": "policy.zip",
+        "demonstration_initialization_only": false,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true
       }
     ],
     "native_reference_rebuilt": false,
@@ -170,20 +182,17 @@
       0.0,
       0.5
     ],
-    "native_python_parity_test_passed": true,
-    "scope": "One rebuilt current candidate, one runtime frame and the previously skipped native/Python parity test; not closed-loop acceptance.",
-    "deployment_approved": false
+    "native_parity_in_full_suite": true
   },
-  "unique_implementation_tests_passed": 111,
-  "initial_suite_passed": 110,
-  "initial_suite_skipped": 1,
-  "separate_previously_skipped_native_test_passed": true,
-  "snapshot": "reports/handoff_ship_20261016/SNAPSHOT.json",
-  "snapshot_sha256": "b40a81298ee1798d1fb7ff07d30c7fef8e54c847235407b2213b3bad7d0f574b",
-  "files_manifest_sha256": "adce3cb6fd9ff07cf22a882619594ba73df862f432560ee4319848089a0bfd5e",
-  "final_pinned_files": 20839,
+  "snapshot": "reports/handoff_now_20261016/SNAPSHOT.json",
+  "snapshot_sha256": "438df8e5b225d0f0b711ac59af09a848cd1599c560c81573e54490a6a9533bcc",
+  "files_manifest_sha256": "ba82cb934faa8d92e0d89654ba651c0586bed3b98f6dc85fed87614e5b436bca",
+  "final_pinned_files": 22228,
   "final_pinned_files_all_match": true,
-  "tests_log": "docs/handoff/verification_ship_tests.txt",
-  "previous_verification": "docs/handoff/GO_VERIFICATION.json",
-  "deployment_approved": false
+  "tests_log": "docs/handoff/verification_now_tests.txt",
+  "previous_verification": "docs/handoff/SHIP_VERIFICATION.json",
+  "deployment_approved": false,
+  "unique_implementation_tests_passed": 118,
+  "implementation_tests_skipped": 0,
+  "final_hash_verified_at": "2026-10-16T05:37:57.639001+08:00"
 }

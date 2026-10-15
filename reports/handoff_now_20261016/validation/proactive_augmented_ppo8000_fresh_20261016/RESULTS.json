@@ -1,0 +1,124 @@
+{
+  "completed": false,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "47233fb7955fbdb4cfe53680684163d8b7f0e4c394e49ef4d5b7b4ca7313e047",
+  "rows": [
+    {
+      "case_id": "proactive_fresh_condition_00",
+      "category": "new_pose_motion_sensor_condition_not_fit",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 14.400000000000851,
+      "travel_m": 1.3223707373131157,
+      "frames": 72,
+      "final_xy_error_m": 3.240768412653477,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004749928459071582,
+      "localization_yaw_p95_rad": 0.001159225066685599,
+      "stop_choices": 27,
+      "only_stop_frames": 23,
+      "stop_reasons": {
+        "None": 51,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 14
+      },
+      "voluntary_wait_frames": 4,
+      "predictive_constraint_frames": 19,
+      "runtime_ms": {
+        "p95": 168.62155585840813,
+        "p99": 194.65770564391292,
+        "maximum": 212.16248301789165
+      },
+      "variant": "bc_only",
+      "trace_sha256": "3fd2f501bdf6ea152f94cd319473c76e7c80da4eff97c0b71360cf43175d1b0c"
+    },
+    {
+      "case_id": "proactive_fresh_condition_00",
+      "category": "new_pose_motion_sensor_condition_not_fit",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 37.60000000000078,
+      "travel_m": 5.276557115571743,
+      "frames": 189,
+      "final_xy_error_m": 0.09042978212418688,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004760546030100276,
+      "localization_yaw_p95_rad": 0.0015196179180741783,
+      "stop_choices": 29,
+      "only_stop_frames": 23,
+      "stop_reasons": {
+        "None": 159,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 6,
+        "laser_braking_footprint": 20,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 6,
+      "predictive_constraint_frames": 18,
+      "runtime_ms": {
+        "p95": 170.51255980040875,
+        "p99": 210.95197524642575,
+        "maximum": 220.59492097469047
+      },
+      "variant": "augmented_ppo8000",
+      "trace_sha256": "28caa291f629c1b578ca4f252f3abc96703ab437c94f7c5abdbaa6438ae69321"
+    },
+    {
+      "case_id": "proactive_fresh_condition_01",
+      "category": "new_pose_motion_sensor_condition_not_fit",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 36.40000000000017,
+      "travel_m": 5.117348460558796,
+      "frames": 183,
+      "final_xy_error_m": 0.11515118018760642,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004374244678971751,
+      "localization_yaw_p95_rad": 0.00155299392304249,
+      "stop_choices": 29,
+      "only_stop_frames": 27,
+      "stop_reasons": {
+        "None": 159,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 20,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 30,
+      "runtime_ms": {
+        "p95": 187.63328738277778,
+        "p99": 218.4062813501805,
+        "maximum": 237.2554059838876
+      },
+      "variant": "bc_only",
+      "trace_sha256": "9842cceebceabed851714c1083caac9728f0d80e4eefa2246adee44dcd8f8fed"
+    }
+  ],
+  "resource": {
+    "seconds": 209.17498627200257,
+    "cpu_seconds": 73.28861951,
+    "average_cpu_cores": 0.350369902329997,
+    "peak_rss_mib": 2064.9375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}
