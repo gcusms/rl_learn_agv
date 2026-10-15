@@ -87,11 +87,19 @@ def main():
     delta = {name: float(torch.linalg.vector_norm((p.detach()-old_parameters[name].detach()).flatten()))
         for name, p in model.policy.named_parameters() if '.residual.' in name}
     sources = Counter()
+    frozen_sampling = {}
     for i, row in enumerate(labels):
-        if not supported[i]:
-            continue
         case = json.loads(row['case_json'])
         name = case.get('source_training_case_id') or case.get('scene', 'routine')
+        counts = frozen_sampling.setdefault(name, dict(frames=0, frozen_frames=0,
+            sampled_choice_differs_from_frozen_greedy=0, recovery_frames=0))
+        counts['frames'] += 1
+        counts['recovery_frames'] += int(supported[i])
+        counts['frozen_frames'] += int(not supported[i])
+        counts['sampled_choice_differs_from_frozen_greedy'] += int(
+            not supported[i] and row['sampled_choice'] != before[i].argmax())
+        if not supported[i]:
+            continue
         sources[name] += 1
     result = dict(completed=True, actual_sampled_frames=len(labels), supported_frames=int(supported.sum()),
         bc_to_ppo=dict(frozen_base_unchanged=True, residual_parameter_delta_l2=delta,
@@ -99,6 +107,11 @@ def main():
                 (before.argmax(-1) != after.argmax(-1)) & supported)),
             maximum_supported_probability_change=float(abs(before[supported]-after[supported]).max())),
         supported_training_sources=dict(sources), offline_sensitivity=substitutions,
+        frozen_base_sampling_by_case=frozen_sampling,
+        frozen_base_sampling_summary=dict(frames=int((~supported).sum()),
+            sampled_choice_differs_from_frozen_greedy=sum(
+                r['sampled_choice_differs_from_frozen_greedy'] for r in frozen_sampling.values()),
+            interpretation='Actual stochastic samples outside trainable support; different from deterministic deployment, not evidence that every deviation is harmful.'),
         policy_sha256=hashlib.sha256((args.model_run/'policy.zip').read_bytes()).hexdigest(),
         resource=budget.statistics(), deployment_approved=False,
         limitations=['Reused actual training states, not new closed-loop tasks.',

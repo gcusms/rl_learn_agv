@@ -1,0 +1,353 @@
+{
+  "completed": true,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "prefix_specification_sha256": "14c2056d3739cfeb660e80f9b5c03844c89866e6577c8a1743e0333f663bcc88",
+  "bundle_manifest_sha256": "d6aca3c53630b4c9b0b96057d287317860b7df00649be15ae354c5654f7f4daa",
+  "rows": [
+    {
+      "case_id": "training_stall_w11_t106",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.319762386941637,
+      "frames": 700,
+      "final_xy_error_m": 1.7975349225259525,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005162948270223133,
+      "localization_yaw_p95_rad": 0.0014846890014716494,
+      "stop_choices": 226,
+      "only_stop_frames": 36,
+      "stop_reasons": {
+        "None": 525,
+        "laser_braking_footprint": 175
+      },
+      "voluntary_wait_frames": 190,
+      "predictive_constraint_frames": 63,
+      "runtime_ms": {
+        "p95": 191.0259447235148,
+        "p99": 210.61558455403429,
+        "maximum": 232.2395640076138
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 170,
+      "post_release_wait_with_choices_frames": 170,
+      "post_release_only_stop_frames": 0,
+      "longest_post_release_wait_with_choices_s": 33.99999999996909,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "unchanged_reference",
+        "start_s": -2.0,
+        "end_s": -1.0,
+        "choice": 0
+      },
+      "intervention": [],
+      "trace_sha256": "5ef5826a3b13dc6f7ff45d553d92469e41ca9a0b6d6dc5fd01b589c977179f51",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "training_stall_w11_t106",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.332141870539306,
+      "frames": 700,
+      "final_xy_error_m": 1.7860073240684435,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005332848356064353,
+      "localization_yaw_p95_rad": 0.0014564803499935717,
+      "stop_choices": 216,
+      "only_stop_frames": 184,
+      "stop_reasons": {
+        "None": 548,
+        "laser_braking_footprint": 152
+      },
+      "voluntary_wait_frames": 32,
+      "predictive_constraint_frames": 63,
+      "runtime_ms": {
+        "p95": 185.42333629739002,
+        "p99": 206.0032156953821,
+        "maximum": 232.44415799854323
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 170,
+      "post_release_wait_with_choices_frames": 12,
+      "post_release_only_stop_frames": 148,
+      "longest_post_release_wait_with_choices_s": 1.799999999998363,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "slow_right_arc",
+        "start_s": 106.0,
+        "end_s": 109.0,
+        "choice": 9
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 105.99999999997608,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.1999999999759,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.39999999997572,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.59999999997554,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.79999999997536,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.99999999997517,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.19999999997499,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.39999999997481,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.59999999997463,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.79999999997445,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.99999999997426,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.19999999997408,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.3999999999739,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.59999999997372,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.79999999997354,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "abcd0a184ab57de3f616b90ad2d3fee3a424c28d94bb89a730591ebe42a42b8f",
+      "not_a_trained_policy": true
+    }
+  ],
+  "limitations": [
+    "Timed interventions are diagnostic, not learned actions or deployment rules.",
+    "A legal choice is not necessarily useful or safe throughout its continuation.",
+    "Only complete safe trajectories may later supply demonstration examples."
+  ],
+  "resource": {
+    "seconds": 1678.8870009400416,
+    "cpu_seconds": 251.977779873,
+    "average_cpu_cores": 0.15008620576126488,
+    "peak_rss_mib": 2075.734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

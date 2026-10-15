@@ -1,0 +1,142 @@
+{
+  "completed": true,
+  "captured_at": "2026-10-16T01:39:27.364984+08:00",
+  "source_report": "reports/stop_feedback_20261015/turn_recovery_20261015/RESULTS.json",
+  "source_report_sha256": "fd55b77c565fce906adafe6a55b99aeab173c15e620af01e401c58f3c9311d26",
+  "successful_trace": "reports/stop_feedback_20261015/turn_recovery_20261015/recover_forward.npz",
+  "successful_trace_sha256": "3daed5a46f69b5353dbfdd6a0d23a39d83e86fb0d38718ba2e75f1ed7f04b550",
+  "safe_expert_intervention_states": [
+    {
+      "sensor_timestamp_s": 5.999999999999894,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        -1.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 0.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.5152157352739978,
+      "latest_observation_sector_min_m": 0.515215739607811,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 6.19999999999989,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        -1.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 0.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.4969150302281288,
+      "latest_observation_sector_min_m": 0.4969150274991989,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 6.399999999999886,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        0.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 0.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.5193710153232626,
+      "latest_observation_sector_min_m": 0.5193710178136826,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 6.5999999999998815,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        0.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 0.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.525099709650859,
+      "latest_observation_sector_min_m": 0.5250997245311737,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 6.799999999999877,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        0.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 0.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.5404878852482917,
+      "latest_observation_sector_min_m": 0.5404878705739975,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 6.999999999999873,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        1.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 1.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.5540324208903706,
+      "latest_observation_sector_min_m": 0.5540324002504349,
+      "proposed_near_obstacle_context": true
+    },
+    {
+      "sensor_timestamp_s": 7.199999999999869,
+      "expert_choice": 5,
+      "old_reference_action": [
+        1.0,
+        1.0
+      ],
+      "old_base_prefers_stop": false,
+      "current_stop_only_residual_cannot_change_this_state": true,
+      "all_twelve_actions_legal": true,
+      "prediction_input_valid": true,
+      "supported_moving_tracks": 1.0,
+      "maximum_guard_contact_score": 0.0,
+      "nearest_lidar_m": 0.5684241129524334,
+      "latest_observation_sector_min_m": 0.5684241056442261,
+      "proposed_near_obstacle_context": true
+    }
+  ],
+  "critical_legal_turns_excluded_by_current_learning_support": 7,
+  "physical_truth_used_as_policy_input": false,
+  "near_range_observation_normalization_m": 12.0,
+  "proposal_is_only_learning_support_not_safety_permission": true,
+  "conclusion": "The current stop-only residual cannot represent the successful early-turn sequence, regardless of PPO step count. Steady-base sampling is a controlled distribution experiment, not a fix for this expressivity limit.",
+  "next_required_work": [
+    "Test an explicitly versioned residual that can act on valid near-obstacle or constrained-motion observations before the base stops.",
+    "Use only complete physically safe expert sources; select intended early-turn states and legitimate later recovery, excluding artificially repeated prefix waits.",
+    "Retain complete successful ordinary navigation examples; keep base weights, masks, body, docking and all stop choices.",
+    "Evaluate the original full mission from reset; prefix-only success does not establish learned early avoidance.",
+    "Verify independent dynamic/scan-loss states and fixed navigation/docking regression before claiming the goal complete."
+  ],
+  "deployment_approved": false
+}

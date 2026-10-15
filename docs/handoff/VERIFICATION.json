@@ -1,14 +1,14 @@
 {
   "date": "2026-10-16",
-  "branch": "recovery",
+  "branch": "move",
   "completed": true,
-  "verified_at": "2026-10-16T01:09:28.213295+08:00",
-  "parent_commit": "a991e91fc45dbda00a618c46370f7c2427933dd8",
+  "verified_at": "2026-10-16T01:54:45.764372+08:00",
+  "parent_commit": "054982f60648e2aaec0e3748ceb50324b057c9cd",
   "deployment_approved": false,
-  "scope": "Migration integrity, four PPO/checkpoint and TorchScript loads, five native rebuilds and 100 implementation checks. Closed-loop development evidence is reported separately; not real-world acceptance.",
+  "scope": "Migration integrity, five PPO/checkpoint and TorchScript loads, six native rebuilds and 108 implementation checks. Frozen partial development evidence is not full regression or deployment acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 13183,
+    "pinned_files_checked": 15527,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -65,6 +65,16 @@
         "checkpoint_loaded": true,
         "torchscript_loaded": true,
         "native_runtime_checked": true
+      },
+      {
+        "folder": "steady_base_ppo_2000_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 2000,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
       }
     ],
     "native_reference_rebuilt": true,
@@ -74,7 +84,7 @@
     "cuda_available": true,
     "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
     "deployment_approved": false,
-    "tests": 100,
+    "tests": 108,
     "failures": 0,
     "errors": 0,
     "skipped": 0
@@ -82,65 +92,25 @@
   "readme": {
     "completed": true,
     "relative_targets_exist": true,
-    "relative_links_checked": 31,
+    "relative_links_checked": 43,
     "bash_examples_parse": true,
-    "blocks_checked": 7
+    "blocks_checked": 8
   },
-  "other_worktree_backups": [
-    {
-      "name": "recovery",
-      "source_tracked_patch_matches_archive": true,
-      "source_untracked_files_checked": 69,
-      "source_untracked_mismatches": []
-    },
-    {
-      "name": "localization",
-      "source_tracked_patch_matches_archive": true,
-      "source_untracked_files_checked": 4,
-      "source_untracked_mismatches": []
-    }
-  ],
   "latest_training": {
     "additional_ppo_steps": 2000,
     "complete": true,
-    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8"
+    "final_policy_sha256": "b63272b7d382c6d53f23a2ee42f0cbc7726443c0c823f91533d9ec0fb55e6d9f",
+    "model": "models/stop_feedback_20261015/steady_base_ppo_2000_s231015",
+    "resource": {
+      "seconds": 1217.7449367090012,
+      "cpu_seconds": 426.52278873299997,
+      "average_cpu_cores": 0.3502562612871074,
+      "peak_rss_mib": 2436.24609375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
   },
-  "development_evaluation": {
-    "completed_rows": 42,
-    "model_metrics": {
-      "frozen_reference": {
-        "tasks": 14,
-        "safe_successes": 12,
-        "collisions": 2,
-        "timeouts": 0,
-        "false_arrivals": 0,
-        "directional_successes": 6,
-        "directional_tasks": 6
-      },
-      "bc_only": {
-        "tasks": 14,
-        "safe_successes": 13,
-        "collisions": 1,
-        "timeouts": 0,
-        "false_arrivals": 0,
-        "directional_successes": 6,
-        "directional_tasks": 6
-      },
-      "recovery_ppo": {
-        "tasks": 14,
-        "safe_successes": 13,
-        "collisions": 1,
-        "timeouts": 0,
-        "false_arrivals": 0,
-        "directional_successes": 6,
-        "directional_tasks": 6
-      }
-    },
-    "all_bc_ppo_trajectories_equal": true,
-    "all_regression_checks_passed": true,
-    "larger_training_gate_passed": false
-  },
-  "snapshot": "reports/handoff_recovery_20261016/SNAPSHOT.json",
-  "tests_log": "docs/handoff/verification_recovery_tests.txt",
-  "previous_verification": "docs/handoff/RESUME_VERIFICATION.json"
+  "original_deployment_model_preserved": true,
+  "snapshot": "reports/handoff_move_20261016/SNAPSHOT.json",
+  "tests_log": "docs/handoff/verification_move_tests.txt",
+  "previous_verification": "docs/handoff/RECOVERY_VERIFICATION.json"
 }

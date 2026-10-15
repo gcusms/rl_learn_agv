@@ -19,7 +19,7 @@ from experiments.prefix_recovery_training import PrefixRecoveryTraining
 from experiments.recovery_demonstrations import load_demonstrations, initialize_from_demonstrations
 from experiments.recovery_sampling import ScheduledRecoveryCurriculum
 from experiments.stop_feedback_navigation import StopFeedbackWrapper
-from experiments.stop_recovery_policy import warm_start_recovery, export_recovery, contract
+from experiments.stop_recovery_policy import warm_start_recovery, export_recovery
 from experiments.train_localization_recovery import training_case
 from experiments.train_stop_feedback import Progress
 from neural_navigation.decision_feedback import WAIT_SCHEMA
@@ -66,6 +66,11 @@ def main():
     parser.add_argument('--steps', type=int, default=2000)
     parser.add_argument('--seed', type=int, default=231015)
     parser.add_argument('--cpu-cores', type=float, default=.35)
+    modes = parser.add_mutually_exclusive_group()
+    modes.add_argument('--steady-base', action='store_true',
+        help='Bound random exploration of the frozen base outside learnable recovery; keep stop legal')
+    modes.add_argument('--proactive-recovery', action='store_true',
+        help='Permit a learned residual during near-obstacle approach, retaining the original action masks')
     parser.add_argument('--initialization-only', action='store_true',
         help='Validate one physical prefix and two model-controlled frames; no PPO training or navigation score')
     args = parser.parse_args()
@@ -82,12 +87,21 @@ def main():
         motion_profiles=True, recorded_cases=cases, recorded_episodes_per_cycle=1)
     env = PrefixRecoveryTraining(StopFeedbackWrapper(physical, reward_scale=1/60,
         feedback_schema=WAIT_SCHEMA), prefixes, args.output, budget)
-    model = warm_start_recovery(args.checkpoint, env, seed=args.seed)
+    if args.proactive_recovery:
+        from experiments.proactive_recovery import ProactiveRecoveryPolicy
+        model = warm_start_recovery(args.checkpoint,env,seed=args.seed,
+            policy_class=ProactiveRecoveryPolicy)
+    elif args.steady_base:
+        from experiments.steady_base_recovery import SteadyBaseRecoveryPolicy
+        model = warm_start_recovery(args.checkpoint, env, seed=args.seed,
+            policy_class=SteadyBaseRecoveryPolicy)
+    else:
+        model = warm_start_recovery(args.checkpoint, env, seed=args.seed)
     base_digest = frozen_base_digest(model.policy)
     obs, masks, choices, sources = load_demonstrations(demonstration_specs, model.policy)
     np.savez_compressed(args.output/'demonstrations.npz', observations=obs, masks=masks, choices=choices)
     config = dict(steps=args.steps, seed=args.seed, cpu_cores=args.cpu_cores,
-        recovery_contract=contract(), prefixes=prefixes, demonstration_sources=sources,
+        recovery_contract=model.recovery_contract, prefixes=prefixes, demonstration_sources=sources,
         demonstration_input_frames=len(obs), prior_checkpoint_sha256=hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
         bundle_manifest_sha256=hashlib.sha256((args.bundle/'manifest.json').read_bytes()).hexdigest(),
         frozen_base_sha256=base_digest, reward_changed=False, deployment_approved=False,
@@ -140,7 +154,7 @@ def main():
             initialization_frames=env.initialization_frames, initialized_episodes=env.warmup_count,
             counts=progress.counts, reasons=progress.reasons, resource=budget.statistics(),
             frozen_base_sha256=frozen_base_digest(model.policy),
-            feedback_schema=WAIT_SCHEMA, recovery_contract=contract(), deployment_approved=False)
+            feedback_schema=WAIT_SCHEMA, recovery_contract=model.recovery_contract, deployment_approved=False)
     except BaseException as error:
         save_status(status='failed', additional_ppo_steps=model.num_timesteps,
             error=repr(error), resource=budget.statistics(), deployment_approved=False)

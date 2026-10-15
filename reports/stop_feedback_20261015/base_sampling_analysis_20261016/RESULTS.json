@@ -1,0 +1,105 @@
+{
+  "completed": true,
+  "actual_sampled_frames": 2000,
+  "supported_frames": 214,
+  "bc_to_ppo": {
+    "frozen_base_unchanged": true,
+    "residual_parameter_delta_l2": {
+      "mlp_extractor.policy_net.residual.0.weight": 0.3363310694694519,
+      "mlp_extractor.policy_net.residual.0.bias": 0.01639413833618164,
+      "mlp_extractor.policy_net.residual.2.weight": 0.07762104272842407,
+      "mlp_extractor.policy_net.residual.2.bias": 0.006756332702934742,
+      "action_net.residual.weight": 0.05089428275823593,
+      "action_net.residual.bias": 0.005839470308274031
+    },
+    "supported_argmax_changes": 0,
+    "maximum_supported_probability_change": 0.3108639717102051
+  },
+  "supported_training_sources": {
+    "physical_prefix_rotation_stall_t20": 18,
+    "train_failure_stop_go_variation_0": 1,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": 2,
+    "train_failure_stop_go_variation_1": 11,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": 2,
+    "train_failure_w11_e7": 180
+  },
+  "offline_sensitivity": {
+    "previous_reason_none": {
+      "changed_argmax_in_supported_states": 0,
+      "max_probability_change_in_supported_states": 0.055804669857025146,
+      "actual_motion_samples_changed": 0
+    },
+    "without_contact_scores": {
+      "changed_argmax_in_supported_states": 1,
+      "max_probability_change_in_supported_states": 0.34160783886909485,
+      "actual_motion_samples_changed": 0
+    },
+    "without_wait_timers": {
+      "changed_argmax_in_supported_states": 0,
+      "max_probability_change_in_supported_states": 0.0008554458618164062,
+      "actual_motion_samples_changed": 0
+    },
+    "without_explanations": {
+      "changed_argmax_in_supported_states": 2,
+      "max_probability_change_in_supported_states": 0.578087329864502,
+      "actual_motion_samples_changed": 1
+    }
+  },
+  "frozen_base_sampling_by_case": {
+    "physical_prefix_rotation_stall_t20": {
+      "frames": 714,
+      "frozen_frames": 696,
+      "sampled_choice_differs_from_frozen_greedy": 124,
+      "recovery_frames": 18
+    },
+    "train_failure_stop_go_variation_0": {
+      "frames": 63,
+      "frozen_frames": 62,
+      "sampled_choice_differs_from_frozen_greedy": 8,
+      "recovery_frames": 1
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "frames": 159,
+      "frozen_frames": 157,
+      "sampled_choice_differs_from_frozen_greedy": 14,
+      "recovery_frames": 2
+    },
+    "train_failure_stop_go_variation_1": {
+      "frames": 222,
+      "frozen_frames": 211,
+      "sampled_choice_differs_from_frozen_greedy": 36,
+      "recovery_frames": 11
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "frames": 142,
+      "frozen_frames": 140,
+      "sampled_choice_differs_from_frozen_greedy": 14,
+      "recovery_frames": 2
+    },
+    "train_failure_w11_e7": {
+      "frames": 700,
+      "frozen_frames": 520,
+      "sampled_choice_differs_from_frozen_greedy": 199,
+      "recovery_frames": 180
+    }
+  },
+  "frozen_base_sampling_summary": {
+    "frames": 1786,
+    "sampled_choice_differs_from_frozen_greedy": 395,
+    "interpretation": "Actual stochastic samples outside trainable support; different from deterministic deployment, not evidence that every deviation is harmful."
+  },
+  "policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8",
+  "resource": {
+    "seconds": 4.798265048011672,
+    "cpu_seconds": 1.715218036,
+    "average_cpu_cores": 0.3574662964295314,
+    "peak_rss_mib": 666.7109375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "deployment_approved": false,
+  "limitations": [
+    "Reused actual training states, not new closed-loop tasks.",
+    "Substituted explanations can be outside the training distribution.",
+    "Sensitivity does not prove that feedback caused safe recovery or that PPO improved navigation."
+  ]
+}

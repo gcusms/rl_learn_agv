@@ -1,0 +1,19 @@
+test_only_frozen_region_sampling_changes_and_stop_stays_possible (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_recovery_update_keeps_frozen_actor_and_has_finite_actual_ppo_likelihoods (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_roundtrip_and_export_preserve_versioned_distribution_and_choices (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_sampling_likelihood_and_masked_execution_describe_the_same_action (experiments.test_steady_base_recovery.SteadyBaseTests) ... ok
+test_actual_ppo_update_uses_recovery_support_and_keeps_base_frozen (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_checkpoint_and_torchscript_preserve_learned_choices_and_contract (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_demonstration_learning_updates_recovery_and_preserves_base_and_critic (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_failed_or_tampered_episodes_are_not_demonstrations (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_initialization_exactly_matches_original_masked_actor (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_invalid_or_empty_demonstration_suffix_is_rejected (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_large_residual_cannot_change_any_protected_state (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_physical_initialization_waits_are_excluded_from_new_probe_labels (experiments.test_stop_recovery_policy.RecoveryPolicyTests) ... ok
+test_actual_guard_stop_counts_as_waiting_when_motion_exists (experiments.test_prefix_recovery_audit.PrefixHistoryTests) ... ok
+test_recorded_prefix_primes_reason_and_timer_but_not_ppo_step_count (experiments.test_prefix_recovery_audit.PrefixHistoryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 5.213s
+
+OK

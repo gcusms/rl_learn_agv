@@ -82,6 +82,8 @@ class RecoveryHead(torch.nn.Module):
 
 
 class StopRecoveryPolicy(MaskableActorCriticPolicy):
+    recovery_contract = staticmethod(contract)
+
     def _build(self, lr_schedule):
         super()._build(lr_schedule)
         if self.observation_space.shape != (TRAIN_DIM,) or self.action_space.n != 12:
@@ -150,7 +152,9 @@ class StopRecoveryPPO(StopFeedbackPPO):
             self.logger.record('train/loss', float(loss.detach()))
 
 
-def warm_start_recovery(checkpoint, env, seed=231015):
+def warm_start_recovery(checkpoint, env, seed=231015, policy_class=StopRecoveryPolicy):
+    if not issubclass(policy_class, StopRecoveryPolicy):
+        raise ValueError('An explicitly versioned recovery policy is required')
     old = MaskablePPO.load(checkpoint, device='cpu')
     if old.observation_space.shape != (300,) or old.action_space.n != 12:
         raise ValueError('Original native 300-D quality PPO required')
@@ -158,7 +162,7 @@ def warm_start_recovery(checkpoint, env, seed=231015):
         raise ValueError('Explicit V2 feedback training environment required')
     if env.reward_scale != float(old.training_reward_scale):
         raise ValueError('Inherited critic reward units must be preserved')
-    model = StopRecoveryPPO(StopRecoveryPolicy, env, seed=seed, device='cpu',
+    model = StopRecoveryPPO(policy_class, env, seed=seed, device='cpu',
         n_steps=250, batch_size=125, n_epochs=4, learning_rate=3e-4,
         target_kl=.02, ent_coef=.01, gamma=old.gamma, gae_lambda=old.gae_lambda,
         vf_coef=old.vf_coef, max_grad_norm=old.max_grad_norm,
@@ -197,24 +201,27 @@ def warm_start_recovery(checkpoint, env, seed=231015):
     model.exploration_schema = 'none'
     model.exploration_contract = None
     model.training_reward_scale = env.reward_scale
-    model.recovery_contract = contract()
+    model.recovery_contract = policy.recovery_contract()
     model.feedback_migration = dict(parent_checkpoint_timesteps=old.num_timesteps,
         dimensions=TRAIN_DIM, legacy_prefix_dimensions=300, feedback_schema=WAIT_SCHEMA,
         base_actor_frozen=True, all_actor_parameters_trainable=False,
-        residual_head_initially_zero=True, recovery_contract=contract(),
+        residual_head_initially_zero=True, recovery_contract=model.recovery_contract,
         critic_moments_retained=True, exact_rollout_resume=False,
         reward_unchanged=True, actions_masks_guard_unchanged=True)
     return model
 
 
 def export_recovery(model, bundle, output):
+    specification = model.policy.recovery_contract()
+    if model.recovery_contract != specification:
+        raise ValueError('Recovery export differs from the saved policy contract')
     from experiments.train_stop_feedback import export_candidate
     export_candidate(model, bundle, output)
     output = Path(output)
     p = output/'navigation_preservation.json'
     preservation = json.loads(p.read_text())
     preservation.update(navigation_actor_all_parameters_trainable=False,
-        base_navigation_actor_frozen=True, recovery_contract=contract())
+        base_navigation_actor_frozen=True, recovery_contract=specification)
     p.write_text(json.dumps(preservation, indent=2)+'\n')
     p = output/'manifest.json'
     manifest = json.loads(p.read_text())
@@ -225,5 +232,5 @@ def export_recovery(model, bundle, output):
     card = json.loads(p.read_text())
     card.update(method='demonstration-initialized masked PPO recovery residual',
         frozen_components=['base_navigation_actor', 'localizer', 'router', 'directional_terminal_actor'],
-        recovery_contract=contract(), manifest_sha256=hashlib.sha256((output/'manifest.json').read_bytes()).hexdigest())
+        recovery_contract=specification, manifest_sha256=hashlib.sha256((output/'manifest.json').read_bytes()).hexdigest())
     p.write_text(json.dumps(card, indent=2)+'\n')

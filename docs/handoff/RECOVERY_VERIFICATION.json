@@ -1,0 +1,146 @@
+{
+  "date": "2026-10-16",
+  "branch": "recovery",
+  "completed": true,
+  "verified_at": "2026-10-16T01:09:28.213295+08:00",
+  "parent_commit": "a991e91fc45dbda00a618c46370f7c2427933dd8",
+  "deployment_approved": false,
+  "scope": "Migration integrity, four PPO/checkpoint and TorchScript loads, five native rebuilds and 100 implementation checks. Closed-loop development evidence is reported separately; not real-world acceptance.",
+  "implementation": {
+    "completed": true,
+    "pinned_files_checked": 13183,
+    "model_files_checked": 9,
+    "simulation_tasks": 28,
+    "real_decisions": 1516,
+    "real_segments": 22,
+    "observation_dimensions": 303,
+    "goal_yaw_retained": true,
+    "smoke_command": [
+      0.0,
+      0.5
+    ],
+    "feedback_ppo_steps": 4000,
+    "feedback_training_dimensions": 436,
+    "feedback_runtime_dimensions": 439,
+    "feedback_checkpoint_loaded": true,
+    "feedback_torchscript_loaded": true,
+    "feedback_native_runtime_checked": true,
+    "feedback_models": [
+      {
+        "folder": "ppo_4000_s221015",
+        "schema": "stop_decision_feedback_v1",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_v2_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_explore_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "sensor_temperature_v1",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "prefix_ppo_2000_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 2000,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      }
+    ],
+    "native_reference_rebuilt": true,
+    "implementation_tests_returncode": 0,
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
+    "deployment_approved": false,
+    "tests": 100,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "readme": {
+    "completed": true,
+    "relative_targets_exist": true,
+    "relative_links_checked": 31,
+    "bash_examples_parse": true,
+    "blocks_checked": 7
+  },
+  "other_worktree_backups": [
+    {
+      "name": "recovery",
+      "source_tracked_patch_matches_archive": true,
+      "source_untracked_files_checked": 69,
+      "source_untracked_mismatches": []
+    },
+    {
+      "name": "localization",
+      "source_tracked_patch_matches_archive": true,
+      "source_untracked_files_checked": 4,
+      "source_untracked_mismatches": []
+    }
+  ],
+  "latest_training": {
+    "additional_ppo_steps": 2000,
+    "complete": true,
+    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8"
+  },
+  "development_evaluation": {
+    "completed_rows": 42,
+    "model_metrics": {
+      "frozen_reference": {
+        "tasks": 14,
+        "safe_successes": 12,
+        "collisions": 2,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "bc_only": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "recovery_ppo": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      }
+    },
+    "all_bc_ppo_trajectories_equal": true,
+    "all_regression_checks_passed": true,
+    "larger_training_gate_passed": false
+  },
+  "snapshot": "reports/handoff_recovery_20261016/SNAPSHOT.json",
+  "tests_log": "docs/handoff/verification_recovery_tests.txt",
+  "previous_verification": "docs/handoff/RESUME_VERIFICATION.json"
+}

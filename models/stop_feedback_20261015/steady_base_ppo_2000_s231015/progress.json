@@ -1,0 +1,44 @@
+{
+  "steps": 2000,
+  "counts": {
+    "decision_frames": 1737,
+    "only_stop": 263,
+    "voluntary_wait": 67,
+    "nonzero": 1670,
+    "changed_nonzero": 0,
+    "episodes": 11,
+    "success": 11,
+    "collisions": 0,
+    "recovery_actor_frames": 84,
+    "prefix_controlled_frames": 815,
+    "routine_controlled_frames": 1185,
+    "recovery_wait_choices": 61,
+    "recovery_motion_choices": 23
+  },
+  "reasons": {
+    "none": 1670,
+    "policy_wait": 18,
+    "only_stop_available": 54,
+    "scan_unavailable": 8,
+    "laser_braking_footprint": 250
+  },
+  "resource": {
+    "seconds": 1217.2645187900052,
+    "cpu_seconds": 426.042461829,
+    "average_cpu_cores": 0.3499999016257354,
+    "peak_rss_mib": 2436.24609375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -4.1429927932767896e-08,
+    "train/policy_gradient_loss": -6.883092440457261e-08,
+    "train/value_loss": 0.05844702338799834,
+    "train/approx_kl": 0.0,
+    "train/clip_fraction": 0.0,
+    "train/actor_recovery_fraction": 0.14800000000000002,
+    "train/explained_variance": -1.2522575855255127,
+    "train/n_updates": 28.0,
+    "train/loss": 0.032658860087394714
+  }
+}

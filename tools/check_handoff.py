@@ -89,7 +89,8 @@ def main():
     for folder, schema in [('ppo_4000_s221015', 'stop_decision_feedback_v1'),
                            ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2'),
                            ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2'),
-                           ('prefix_ppo_2000_s231015', 'stop_decision_feedback_v2')]:
+                           ('prefix_ppo_2000_s231015', 'stop_decision_feedback_v2'),
+                           ('steady_base_ppo_2000_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         feedback_bundle = feedback / 'portable'
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
@@ -98,7 +99,7 @@ def main():
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        recovery = folder == 'prefix_ppo_2000_s231015'
+        recovery = folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
         checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
         expected_steps = 2000 if recovery else 4000
         checkpoint = checkpoint_type.load(feedback / 'policy.zip', device='cpu')
@@ -113,7 +114,11 @@ def main():
         if recovery:
             from experiments.train_prefix_recovery import frozen_base_digest
             config = json.loads((feedback / 'config.json').read_text())
-            if checkpoint.recovery_contract != recovery_contract():
+            expected_recovery = recovery_contract()
+            if folder == 'steady_base_ppo_2000_s231015':
+                from experiments.steady_base_recovery import contract as steady_contract
+                expected_recovery = steady_contract()
+            if checkpoint.recovery_contract != expected_recovery:
                 raise ValueError('Recovery checkpoint semantics mismatch')
             if frozen_base_digest(checkpoint.policy) != config['frozen_base_sha256']:
                 raise ValueError('Recovery checkpoint changed the frozen base')
@@ -151,7 +156,8 @@ def main():
              'training.test_navigation_runtime', 'experiments.test_audit_decision_waits',
              'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives',
              'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery',
-             'experiments.test_stop_recovery_policy', 'experiments.test_prefix_recovery_audit']
+             'experiments.test_stop_recovery_policy', 'experiments.test_prefix_recovery_audit',
+             'experiments.test_steady_base_recovery', 'experiments.test_proactive_recovery']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

@@ -73,12 +73,24 @@ def load_demonstrations(specifications, policy):
                 if not np.isfinite(minimum_time) or minimum_time < 0:
                     raise ValueError('Finite nonnegative demonstration start time required')
                 keep &= times >= minimum_time-1e-8
+            intervals = specification.get('sensor_intervals_s')
+            if intervals is not None:
+                windows = np.asarray(intervals,dtype=float)
+                if (windows.ndim!=2 or windows.shape[1]!=2 or not 1<=len(windows)<=16
+                        or not np.isfinite(windows).all() or (windows[:,0]<0).any()
+                        or (windows[:,1]<=windows[:,0]).any()
+                        or (windows[1:,0]<windows[:-1,1]).any()):
+                    raise ValueError('Ordered disjoint finite nonnegative demonstration intervals required')
+                selected = ((times[:,None]>=windows[None,:,0]-1e-8)
+                    & (times[:,None]<windows[None,:,1]-1e-8)).any(-1)
+                keep &= selected
             if not keep.any():
                 raise ValueError('No supported demonstration decisions after the declared initialization')
             arrays.append((obs[keep], masks[keep], choices[keep]))
             rows.append(dict(report=str(report_path), id=specification['id'], trace_sha256=digest,
                 total_frames=len(choices), recovery_frames=int(keep.sum()),
                 minimum_sensor_timestamp_s=minimum_time,
+                sensor_intervals_s=intervals,
                 initialization_excluded=minimum_time is not None,
                 nonzero_targets=int(np.count_nonzero(choices[keep])),
                 stop_targets=int(np.count_nonzero(choices[keep] == 0))))

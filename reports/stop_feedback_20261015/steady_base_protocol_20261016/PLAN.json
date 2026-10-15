@@ -1,0 +1,41 @@
+{
+  "frozen_at": "2026-10-16T01:22:55.368814+08:00",
+  "hypothesis": "Stochastic sampling outside the frozen recovery actor support creates long detours the recovery network cannot correct there. Reduce this source of curriculum drift without forcing any recovery action.",
+  "single_major_change": "Outside trainable recovery support: 98 percent masked learned-base preference plus 2 percent uniform over all legal choices. Inside-support distribution unchanged.",
+  "reference_model": "models/stop_feedback_20261015/prefix_ppo_2000_s231015",
+  "candidate_model": "models/stop_feedback_20261015/steady_base_ppo_2000_s231015",
+  "controlled_steps": 2000,
+  "seed": 231015,
+  "old_demonstration_17_states_retained_for_single_factor_control": true,
+  "do_not_use_failed_w11_probes_as_demonstrations": true,
+  "body_actions_masks_guard_reward_sensors_and_docking_unchanged": true,
+  "stop_probability_positive_for_every_legal_frozen_state": true,
+  "no_post_sampling_action_replacement": true,
+  "inputs_sha256": {
+    "models/quality_recovery_20261014/policy_2000.zip": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+    "reports/stop_feedback_20261015/prefix_recovery_20261015/training_prefixes.json": "73210c4eec5629e1982ab65a43b2f0f50c41a477926879f46aea74b7d387399c",
+    "reports/stop_feedback_20261015/prefix_recovery_20261015/demonstration_sources.json": "4257f0e27db2649c010e17ca7ee51a5837edf2f29c20e06cba9ff77413451ae2",
+    "reports/localization_mapping_20261015/blind_repair_20261015/stop_go_training_cases.json": "6232b2bbbde488f46536f07bb6771c4c57019eca31024c10c38e069fdf8f8c79",
+    "reports/stop_feedback_20261015/feedback_development_cases.json": "ae5d996e65b1f00037b1a74dc288f8a2c4ef878a61711711737a82882e212ef0"
+  },
+  "required_checks": [
+    "Sampler/update log probability equality and original masks.",
+    "Frozen base parameters, support and deterministic initialization choices preserved.",
+    "Checkpoint/export and explicit stochastic contract.",
+    "Actual on-policy causal history and saved old log probabilities.",
+    "Same 14-task three-way BC/PPO/reference regression.",
+    "Full two prefix continuation plus unfinished held-out conditions; no smoke acceptance.",
+    "If no additional PPO or new recovery benefit is shown, report it as unproven, not success."
+  ],
+  "training_results_not_acceptance": true,
+  "deployment_approved": false,
+  "resource": {
+    "primary_soft_cpu_cores": 0.35,
+    "primary_hard_cpu_quota_percent": 50,
+    "memory_high_gib": 3,
+    "memory_max_gib": 4,
+    "nice": 19
+  },
+  "validation_execution_method": "Run final candidate on all 14 tasks. Reuse existing frozen-reference and BC results only after case/physical-source checks, identical BC state bytes, and replaying the new BC exported actor on every old BC decision. Reused results are explicitly not new independent executions.",
+  "validation_execution_method_frozen_at": "2026-10-16T01:31:25.801114+08:00"
+}
