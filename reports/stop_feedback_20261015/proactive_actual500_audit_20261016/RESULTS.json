@@ -1,0 +1,56 @@
+{
+  "completed": true,
+  "sampled_frames": 500,
+  "causally_verified_sampled_frames": 500,
+  "separately_verified_initialization_frames": 480,
+  "initialized_episodes": 2,
+  "recovery_actor_supported_frames": 395,
+  "supported_motion_samples": 247,
+  "supported_wait_samples": 148,
+  "only_stop_frames": 40,
+  "longest_observed_choice_wait_s": 5.0,
+  "exact_sampling_checks": [
+    {
+      "rollout": "rollout_000250.npz",
+      "checkpoint": "policy_initial.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 5.245208740234375e-06,
+      "frozen_base_unchanged": true
+    }
+  ],
+  "initialization_is_counted_as_ppo_experience": false,
+  "deployment_approved": false,
+  "scope": "Actual causal histories and pre-update sampling likelihoods; not navigation acceptance.",
+  "captured_at": "2026-10-16T03:31:11.464624+08:00",
+  "source_model_run": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015",
+  "source_status_at_capture": {
+    "status": "ppo_training",
+    "target_steps": 8000,
+    "deployment_approved": false
+  },
+  "target_ppo_steps": 8000,
+  "audited_through_steps": 500,
+  "audit_input_sha256": {
+    "config.json": "c4477e61d6608f8ee09f12bf9d5b4e168c26efaa5a3e08b236e786d06487da81",
+    "policy_initial.zip": "f3f02b32b4f583f11fd5644af52ab4ddafb7c05e2fedc97f4774e2056b61c209",
+    "INITIALIZATION_PARITY.json": "87a302dd546506cc580bec57545365e634ff60540971f73324e9fdc8dce281e7",
+    "rollouts/rollout_000250.npz": "0647a5c0a6884b45303338257e2d28cbfc6ef4a7b8b35a4b79fd80a2196581fd",
+    "warmups/episode_00001.npz": "656dd74d66fdbbe0e9daef4b36221a3974d50ade84817739fd661063230567eb",
+    "rollouts/rollout_000500.npz": "24076d8182aab6b143ce5ff63dec1aacb6ead71d975e843b51511a323024eea4",
+    "warmups/episode_00002.npz": "72cb62b3bea2feacac1ea62e6fe2c7da3613e37a1c6566e403f6edb55528cf60"
+  },
+  "running_process_modified": false,
+  "complete_training_audit": false,
+  "navigation_acceptance": false,
+  "resource": {
+    "seconds": 66.65324751700973,
+    "cpu_seconds": 3.333080282,
+    "average_cpu_cores": 0.0500062698542844,
+    "peak_rss_mib": 655.02734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "Published prefix of an unfinished run only; the final run requires a separate complete audit.",
+    "Causal stop explanations and exact sampling probabilities do not establish successful navigation."
+  ]
+}

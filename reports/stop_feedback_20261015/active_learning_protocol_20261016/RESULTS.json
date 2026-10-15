@@ -1,0 +1,75 @@
+{
+  "completed": true,
+  "checked_at": "2026-10-16T03:34:09.483798+08:00",
+  "classification": "progress",
+  "goal_achieved": false,
+  "evidence": {
+    "carry_archive_commit": "e159f094f1db9f320ee72581ed957427ac741cab",
+    "initialization_policy_and_optimizer_parity": true,
+    "prior_prefix_safe": 2,
+    "prior_prefix_total": 2,
+    "static_geometry_passed": 12,
+    "static_geometry_total": 12,
+    "causal_actual_ppo_samples": 500,
+    "exact_old_likelihood_samples": 250,
+    "learnable_frames_in_first500": 395,
+    "actual_ppo_progress": {
+      "steps": 1000,
+      "counts": {
+        "decision_frames": 902,
+        "only_stop": 98,
+        "voluntary_wait": 171,
+        "nonzero": 731,
+        "changed_nonzero": 0,
+        "episodes": 7,
+        "success": 3,
+        "collisions": 3,
+        "recovery_actor_frames": 710,
+        "prefix_controlled_frames": 633,
+        "routine_controlled_frames": 367,
+        "recovery_wait_choices": 169,
+        "recovery_motion_choices": 541
+      },
+      "reasons": {
+        "none": 731,
+        "only_stop_available": 72,
+        "policy_wait": 79,
+        "learned_route_incomplete": 6,
+        "scan_unavailable": 6,
+        "laser_braking_footprint": 106
+      },
+      "resource": {
+        "seconds": 834.4265669760061,
+        "cpu_seconds": 292.049123846,
+        "average_cpu_cores": 0.34999979075977555,
+        "peak_rss_mib": 2398.88671875,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "ppo": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -0.12463857885450125,
+        "train/policy_gradient_loss": -0.009207984632755739,
+        "train/value_loss": 0.18514924496412277,
+        "train/approx_kl": 0.011967555167646471,
+        "train/clip_fraction": 0.046315975952893496,
+        "train/actor_recovery_fraction": 0.6679999999999999,
+        "train/explained_variance": -1.74723482131958,
+        "train/n_updates": 10.0,
+        "train/loss": 0.08412929624319077
+      }
+    }
+  },
+  "source_primary": {
+    "unit": "rl-proactive-augmented-ppo-pipeline-20261016.service",
+    "invocation": "574cd062c1ba456582be6a076593e1b8",
+    "confirmed_live_before_record": true
+  },
+  "next_decision": "Keep the current predeclared 8k run unchanged. Retain all collision and timeout evidence, then compare the final PPO with its identical BC initialization on full-reset development tasks, recovery histories and all twelve frozen extra conditions. Do not claim the goal achieved from this sampling audit.",
+  "unknowns": [
+    "Whether trained feedback improves appropriate waiting and useful early avoidance outside demonstrations.",
+    "Whether actual w11 recovery can be completed without weakening original safety masks.",
+    "Whether any gains survive ordinary navigation and directional docking regression."
+  ],
+  "no_running_training_restarted": true,
+  "deployment_approved": false
+}
