@@ -1,13 +1,12 @@
 {
   "date": "2026-10-16",
-  "branch": "now",
+  "branch": "work",
   "completed": true,
-  "verified_at": "2026-10-16T05:36:59.445061+08:00",
-  "source_commit": "c7d0e4b87a2fd7149f7a0dde03861e093cafab26",
-  "scope": "Pinned portable files,10feedback model/checkpoint loads including final8000PPO optimizer and actual samples, historical7000snapshot, native current439D smoke and implementation suite; not navigation or deployment acceptance.",
+  "verified_at": "2026-10-16T06:15:55.280850+08:00",
+  "scope": "Current code127 implementation checks,10 model/checkpoint loads and optimizer/8000 samples, final pinned files, reused native439D directional smoke; not closed-loop acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 22228,
+    "pinned_files_checked": 23840,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -171,9 +170,21 @@
       "deployment_approved": false
     }
   },
+  "implementation_tests": 127,
+  "implementation_tests_skipped": 0,
+  "tests_log": "docs/handoff/verification_work_tests.txt",
+  "tests_log_sha256": "9035783a452fdd3e96976178402e32199f14c0b4b22fc1eed78c2b3163e5b2c5",
+  "previous_verification": "docs/handoff/NOW_VERIFICATION.json",
+  "snapshot": "reports/handoff_work_20261016/SNAPSHOT.json",
+  "snapshot_sha256": "3a5d446eb2daef96322d9bc11e9b3aa3f14eeea12c5d6e806ffa192ae5fd792b",
+  "files_manifest_sha256": "ad45eab6a4c7a779f53938fc244a1bd1a3373b4ead28817073f6971b2a1d5639",
+  "final_pinned_files": 23842,
+  "final_pinned_files_all_match": true,
+  "initial_check_pinned_files": 23840,
+  "final_integrity_check_after_documentation_and_evidence_additions": true,
   "current_candidate_native": {
-    "completed": true,
-    "rebuilt_candidate": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+    "reused_previously_rebuilt_bundle": true,
+    "new_compilation_performed": false,
     "native_source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
     "native_binary_sha256": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
     "runtime_dimensions": 439,
@@ -182,17 +193,8 @@
       0.0,
       0.5
     ],
-    "native_parity_in_full_suite": true
+    "native_parity_tests_passed": true
   },
-  "snapshot": "reports/handoff_now_20261016/SNAPSHOT.json",
-  "snapshot_sha256": "438df8e5b225d0f0b711ac59af09a848cd1599c560c81573e54490a6a9533bcc",
-  "files_manifest_sha256": "ba82cb934faa8d92e0d89654ba651c0586bed3b98f6dc85fed87614e5b436bca",
-  "final_pinned_files": 22228,
-  "final_pinned_files_all_match": true,
-  "tests_log": "docs/handoff/verification_now_tests.txt",
-  "previous_verification": "docs/handoff/SHIP_VERIFICATION.json",
-  "deployment_approved": false,
-  "unique_implementation_tests_passed": 118,
-  "implementation_tests_skipped": 0,
-  "final_hash_verified_at": "2026-10-16T05:37:57.639001+08:00"
+  "new_auxiliary_loss_physical_ppo_steps": 0,
+  "deployment_approved": false
 }

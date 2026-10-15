@@ -75,6 +75,9 @@ def main():
     parser.add_argument('--demo-retention-coefficient', type=float, default=0.,
         help='Optional training-only balanced demonstration replay loss (0 disables; maximum 0.5)')
     parser.add_argument('--demo-retention-batch-size', type=int, default=128)
+    parser.add_argument('--long-wait-exploration-coefficient', type=float, default=0.,
+        help='Optional training-only legal-prior loss for saturated supported waits;0disables,maximum0.01')
+    parser.add_argument('--long-wait-minimum-seconds', type=float, default=2.)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--steady-base', action='store_true',
         help='Bound random exploration of the frozen base outside learnable recovery; keep stop legal')
@@ -88,9 +91,14 @@ def main():
             or not np.isfinite(args.demo_retention_coefficient)
             or not 0 <= args.demo_retention_coefficient <= .5
             or not 2 <= args.demo_retention_batch_size <= 1024
-            or args.demo_retention_batch_size % 2):
+            or args.demo_retention_batch_size % 2
+            or not np.isfinite(args.long_wait_exploration_coefficient)
+            or not 0 <= args.long_wait_exploration_coefficient <= .01
+            or not np.isfinite(args.long_wait_minimum_seconds)
+            or not 1 <= args.long_wait_minimum_seconds <= 5):
         parser.error('Fresh output, 1000..8000 PPO steps in multiples of250, 1..1000 BC updates, '
-            'retention coefficient0..0.5 and even replay batch size2..1024 required')
+            'retention coefficient0..0.5,even replay batch size2..1024, '
+            'wait-exploration coefficient0..0.01 and threshold1..5s required')
     args.output = args.output.resolve()
     args.output.mkdir(parents=True)
     torch.set_num_threads(1)
@@ -120,6 +128,10 @@ def main():
         demonstration_retention=dict(enabled=args.demo_retention_coefficient > 0.,
             coefficient=args.demo_retention_coefficient, batch_size=args.demo_retention_batch_size,
             runtime_teacher=False, environment_steps_added=0),
+        long_wait_exploration=dict(enabled=args.long_wait_exploration_coefficient > 0.,
+            coefficient=args.long_wait_exploration_coefficient,
+            minimum_wait_seconds=args.long_wait_minimum_seconds,
+            runtime_rule_added=False, environment_steps_added=0),
         reference_bc=None if args.reference_bc is None else dict(path=str(args.reference_bc),
             sha256=hashlib.sha256(args.reference_bc.read_bytes()).hexdigest()),
         recovery_contract=model.recovery_contract, prefixes=prefixes, demonstration_sources=sources,
@@ -184,6 +196,13 @@ def main():
                 batch_size=args.demo_retention_batch_size, seed=args.seed+1)
             (args.output/'DEMONSTRATION_RETENTION.json').write_text(
                 json.dumps(specification, indent=2)+'\n')
+        if args.long_wait_exploration_coefficient:
+            from experiments.long_wait_exploration import configure
+            specification = configure(model,
+                coefficient=args.long_wait_exploration_coefficient,
+                minimum_wait_seconds=args.long_wait_minimum_seconds)
+            (args.output/'LONG_WAIT_EXPLORATION.json').write_text(
+                json.dumps(specification, indent=2)+'\n')
         model.save(args.output/'policy_initial.zip')
         save_status(status='ppo_training', target_steps=args.steps, deployment_approved=False)
         model.set_env(Monitor(env))
@@ -199,6 +218,7 @@ def main():
             counts=progress.counts, reasons=progress.reasons, resource=budget.statistics(),
             frozen_base_sha256=frozen_base_digest(model.policy),
             demonstration_retention=getattr(model, 'demonstration_retention_contract', None),
+            long_wait_exploration=getattr(model, 'long_wait_exploration_contract', None),
             feedback_schema=WAIT_SCHEMA, recovery_contract=model.recovery_contract, deployment_approved=False)
     except BaseException as error:
         save_status(status='failed', additional_ppo_steps=model.num_timesteps,

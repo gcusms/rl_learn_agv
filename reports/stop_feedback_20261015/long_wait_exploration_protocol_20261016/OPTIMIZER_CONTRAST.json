@@ -1,0 +1,120 @@
+{
+  "completed": true,
+  "source_files_unchanged": true,
+  "source_hashes": {
+    "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_step_8000.zip": "43de8e895edc0d7a2bdacb98d56e16306a77d9e0809268c3479e4812668f199d",
+    "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/rollouts/rollout_008000.npz": "8b215ce6c0b22485f97d2d0dd44e2f2a9ab698453d89e2fafa1d5e94c2c1c391",
+    "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/demonstrations.npz": "9230e65d69d60cff9df6f11c6165712bb19ca9672e0a495417a7bac5cc107417"
+  },
+  "actual_recorded_samples": 250,
+  "new_physical_steps": 0,
+  "source_checkpoint_optimized_through": 7750,
+  "source_checkpoint_collected_steps": 8000,
+  "old_likelihood_max_error": 3.814697265625e-06,
+  "initial_score": {
+    "examples": 2030,
+    "target_mismatches": 445,
+    "reasonable_wait_mismatches": 7,
+    "balanced_target_nll": 1.1286368370056152,
+    "mean_wait_target_probability": 0.8074817657470703,
+    "mean_motion_target_probability": 0.7567342519760132
+  },
+  "paired_updates": [
+    {
+      "variant": "original_ppo_update",
+      "long_wait_coefficient": 0.0,
+      "optimizer_epochs": 4,
+      "score": {
+        "examples": 2030,
+        "target_mismatches": 445,
+        "reasonable_wait_mismatches": 7,
+        "balanced_target_nll": 0.9954469203948975,
+        "mean_wait_target_probability": 0.8219855427742004,
+        "mean_motion_target_probability": 0.7619742751121521
+      },
+      "training_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -0.2943440303206444,
+        "train/policy_gradient_loss": -0.00582376598870793,
+        "train/value_loss": 0.019663226092234254,
+        "train/approx_kl": 0.0055785152437657914,
+        "train/clip_fraction": 0.05292045429814607,
+        "train/actor_recovery_fraction": 0.5680000000000001,
+        "train/explained_variance": 0.49237263202667236,
+        "train/n_updates": 117.0,
+        "train/loss": -0.006894107908010483
+      }
+    },
+    {
+      "variant": "exploration_ppo_update",
+      "long_wait_coefficient": 0.001,
+      "optimizer_epochs": 4,
+      "score": {
+        "examples": 2030,
+        "target_mismatches": 445,
+        "reasonable_wait_mismatches": 7,
+        "balanced_target_nll": 0.9954469203948975,
+        "mean_wait_target_probability": 0.8219855427742004,
+        "mean_motion_target_probability": 0.7619742751121521
+      },
+      "training_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -0.2943440303206444,
+        "train/policy_gradient_loss": -0.00582376598870793,
+        "train/value_loss": 0.019663226092234254,
+        "train/approx_kl": 0.0055785152437657914,
+        "train/clip_fraction": 0.05292045429814607,
+        "train/actor_recovery_fraction": 0.5680000000000001,
+        "train/long_wait_exploration_loss": 0.0,
+        "train/long_wait_exploration_samples": 0.0,
+        "train/explained_variance": 0.49237263202667236,
+        "train/n_updates": 117.0,
+        "train/loss": -0.006894107908010483
+      }
+    },
+    {
+      "variant": "legacy_ppo_update",
+      "long_wait_coefficient": 0.0,
+      "optimizer_epochs": 4,
+      "score": {
+        "examples": 2030,
+        "target_mismatches": 445,
+        "reasonable_wait_mismatches": 7,
+        "balanced_target_nll": 0.9954469203948975,
+        "mean_wait_target_probability": 0.8219855427742004,
+        "mean_motion_target_probability": 0.7619742751121521
+      },
+      "training_metrics": {
+        "train/learning_rate": 0.0003,
+        "train/entropy_loss": -0.2943440303206444,
+        "train/policy_gradient_loss": -0.00582376598870793,
+        "train/value_loss": 0.019663226092234254,
+        "train/approx_kl": 0.0055785152437657914,
+        "train/clip_fraction": 0.05292045429814607,
+        "train/actor_recovery_fraction": 0.5680000000000001,
+        "train/explained_variance": 0.49237263202667236,
+        "train/n_updates": 117.0,
+        "train/loss": -0.006894107908010483
+      }
+    }
+  ],
+  "same_initial_network_optimizer_rollout_and_minibatch_seed": true,
+  "disabled_auxiliary_losses_match_legacy_network_and_optimizer_exactly": true,
+  "legacy_train_source": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/source_snapshot/training/experiments/stop_recovery_policy.py",
+  "legacy_train_source_sha256": "7041ee34d315e96bcf1c975625f2adb40659bc6ff1553c13cabf12ebd9dd4956",
+  "exported_or_deployed": false,
+  "resource": {
+    "seconds": 43.61702966998564,
+    "cpu_seconds": 2.1983581570000004,
+    "average_cpu_cores": 0.050401372437169085,
+    "peak_rss_mib": 666.33984375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "This is a paired offline update on one recorded rollout.",
+    "The arbitrary shared minibatch permutation is not claimed to reproduce the actual historical final8k update exactly.",
+    "This single recorded-batch exploration update does not prove a physical safe recovery or unseen-scene generalization."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

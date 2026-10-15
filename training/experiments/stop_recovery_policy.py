@@ -118,6 +118,9 @@ class StopRecoveryPPO(StopFeedbackPPO):
         retention = getattr(self, 'demonstration_retention_contract', None)
         if retention is not None:
             logs.update(demonstration_retention_loss=[], demonstration_retention_samples=[])
+        exploration = getattr(self, 'long_wait_exploration_contract', None)
+        if exploration is not None:
+            logs.update(long_wait_exploration_loss=[], long_wait_exploration_samples=[])
         running = True
         loss = None
         for _ in range(self.n_epochs):
@@ -143,6 +146,15 @@ class StopRecoveryPPO(StopFeedbackPPO):
                         loss = loss+retention['coefficient']*retained
                     logs['demonstration_retention_loss'].append(float(retained.detach()))
                     logs['demonstration_retention_samples'].append(replay_count)
+                if exploration is not None:
+                    exploratory, exploratory_count = torch.zeros((), device=self.device), 0
+                    if count:
+                        from experiments.long_wait_exploration import loss as exploration_loss
+                        exploratory, exploratory_count = exploration_loss(
+                            self, batch.observations, batch.action_masks)
+                        loss = loss+exploration['coefficient']*exploratory
+                    logs['long_wait_exploration_loss'].append(float(exploratory.detach()))
+                    logs['long_wait_exploration_samples'].append(exploratory_count)
                 self.policy.optimizer.zero_grad()
                 loss.backward()
                 if not count:
@@ -246,4 +258,6 @@ def export_recovery(model, bundle, output):
         recovery_contract=specification, manifest_sha256=hashlib.sha256((output/'manifest.json').read_bytes()).hexdigest())
     if getattr(model, 'demonstration_retention_contract', None) is not None:
         card['training_demonstration_retention'] = model.demonstration_retention_contract
+    if getattr(model, 'long_wait_exploration_contract', None) is not None:
+        card['training_long_wait_exploration'] = model.long_wait_exploration_contract
     p.write_text(json.dumps(card, indent=2)+'\n')

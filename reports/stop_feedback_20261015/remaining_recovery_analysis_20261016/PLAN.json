@@ -1,0 +1,76 @@
+{
+  "created_at": "2026-10-16T05:43:07.839143+08:00",
+  "question": "Are remaining waits trainable, and did successful PPO00/01 avoid the late trap from an earlier identical state?",
+  "method": "Completed traces, same observed436D inputs/masks, three frozen policies, no new simulation.",
+  "inputs": {
+    "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/policy_bc.zip": "2062c2ae96aaa9837923c1cc717196875336b6716e18203013405ca2c1cefab0",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy.zip": "855fae8bbc391c2c729f2692d88910bc9b50f5e15c697400809ee838728a2c6d",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json": "d5ab8e5fe7ecd445c2de7d5f639539b60f357b0d3f6604ef8b323edf116043dc",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_00_w11_augmented_bc800.npz": "ba2228d330e0009597b8c9d54b4a984f1e5c30a4f41d999d814a678a0042f6e0",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_01_w11_augmented_bc800.npz": "caa04fb0ba3117ae431954da80a5d54a09806419876f3aaabe699065a5c7821b",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/RESULTS.json": "61efd691aebde3c925a07ec1c16ef5a84989b6fde3560f56bd1a24a38ff71461",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/recovery_holdout_00_augmented_ppo8000.npz": "24ba6da28f64ed56f17f6be6f3ad5415b94ccb0a1b659245de65bc15d38a5b7d",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/recovery_holdout_01_augmented_ppo8000.npz": "36c71a4f5dd20b56c7033057b2e348b4e262300824ea70df0aac165236f81438",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016/RESULTS.json": "24f28b05b9f38c4d88ae4daa1d3a185be70c0d4e47459f50747167316bc5b1e8",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016/w11_training_stall_t90.npz": "d9143b0775598bdcd82860161f4568a4a6de2056f877ad980fd638e9999fc0fd",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016/w11_training_stall_t95.npz": "df42ecf182d201e430c713a23a49f084ce3cfc555f882a03300732b646b4c7c0",
+    "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016/w11_training_stall_t106.npz": "3657916064963dbf3932e39586002a7a3d51653d71d8be17410fbb187a8fa6ca",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_early_20261016/RESULTS.json": "c7129485309e72c03d72586b96ae8220b4224ef8fede46b7b62c5e84af450f18",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_early_20261016/w11_training_stall_t90.npz": "4e0cdc3be47a066dfe0ae1a53a7d0d0f0d325d3baf3ce8a1a497610814ecc75d"
+  },
+  "models": {
+    "parent_bc800": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/policy_bc.zip",
+    "w11_bc800": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip",
+    "ppo8000": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy.zip"
+  },
+  "traces": [
+    {
+      "model": "w11_bc800",
+      "folder": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016",
+      "case_id": "recovery_holdout_00"
+    },
+    {
+      "model": "w11_bc800",
+      "folder": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016",
+      "case_id": "recovery_holdout_01"
+    },
+    {
+      "model": "ppo8000",
+      "folder": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016",
+      "case_id": "recovery_holdout_00"
+    },
+    {
+      "model": "ppo8000",
+      "folder": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016",
+      "case_id": "recovery_holdout_01"
+    },
+    {
+      "model": "ppo8000",
+      "folder": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016",
+      "case_id": "w11_training_stall_t90"
+    },
+    {
+      "model": "ppo8000",
+      "folder": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016",
+      "case_id": "w11_training_stall_t95"
+    },
+    {
+      "model": "ppo8000",
+      "folder": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_w11_20261016",
+      "case_id": "w11_training_stall_t106"
+    },
+    {
+      "model": "w11_bc800",
+      "folder": "reports/stop_feedback_20261015/w11_recovery_bc800_early_20261016",
+      "case_id": "w11_training_stall_t90"
+    }
+  ],
+  "resource": {
+    "soft_cpu_cores": 0.05,
+    "maximum_rss_mib": 2500
+  },
+  "training_started": false,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

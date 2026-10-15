@@ -1,0 +1,56 @@
+{
+  "created_at": "2026-10-16T05:48:21.153014+08:00",
+  "question": "Can the late106s state escape using its original legal0.01m/s,-0.5rad/s action9 without relaxing the existing mask?",
+  "basis": "Actual170 controlled frames choose stop although9 is legal; all3policies also stop on those same observations. Early successful trajectories do not establish late-state feasibility.",
+  "reference_bundle": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+  "dependency_unit": "rl-proactive-augmented-ppo-pipeline-20261016.service",
+  "dependency_invocation": "574cd062c1ba456582be6a076593e1b8",
+  "dependency_completed_report": "reports/stop_feedback_20261015/proactive_augmented_ppo8000_fresh_20261016/RESULTS.json",
+  "inputs": {
+    "reports/stop_feedback_20261015/proactive_protocol_20261016/w11_prefixes.json": "7c8790a148efbbc9baac2554939574bb6a767f0d2a09f7b279adbb24dcdb8b10",
+    "reports/stop_feedback_20261015/training_stall_source_20261016/train_failure_w11_e7.npz": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable/manifest.json": "681cb1d7212333f1565bc47049671f9e375da9800fd27d725d620a1f8341d343",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable/actor.pt": "137c811e02986cf627dc2d1a80989b168595408425a9873f46d50340d7d476e0",
+    "reports/stop_feedback_20261015/remaining_recovery_analysis_20261016/PLAN.json": "4c81bed6d6f7abe594305affdc9c5bd708dfd14eab4ac4a74ea3e60ec823e50c",
+    "training/experiments/probe_recovery_prefix.py": "0f30fb8e4b34cea2ea717be0037c85443b38c95212a5e3455373fcf6c158b7c9",
+    "training/experiments/probe_feedback_alternatives.py": "4977c046001f6ff2f8c1100dcaace403c1c499f519cb0b374920f65f50b32642",
+    "training/experiments/evaluate_feedback_recovery.py": "ec2b665b634abc39d38c11ead5b5b5c92107804dbb4c4c00707502b08d945a91",
+    "reports/stop_feedback_20261015/late_recovery_feasibility_20261016/prefix.json": "b22fa1ddcb4eb1525aaa009666c95d130776e12301618b6eabaedfde36cc27c5",
+    "reports/stop_feedback_20261015/late_recovery_feasibility_20261016/run.py": "f35af77c66ed72d406bf3bd2e751471d5343e4771ddcdf4598276d6265f36af3",
+    "reports/stop_feedback_20261015/late_recovery_feasibility_20261016/right_creep_quarter_turn.json": "8db3a38c3724ad2cb4bce532e3c75e5aeb1ba2e391aad2a884818e7cdfc07180",
+    "reports/stop_feedback_20261015/late_recovery_feasibility_20261016/right_creep_half_turn.json": "c5ba580584c506b5bae9e9e5d342004840371784f374ed281cfe84f3d6b21a7b"
+  },
+  "probes": [
+    {
+      "id": "right_creep_quarter_turn",
+      "specifications": "right_creep_quarter_turn.json",
+      "output": "reports/stop_feedback_20261015/w11_t106_right_creep_quarter_turn_20261016"
+    },
+    {
+      "id": "right_creep_half_turn",
+      "specifications": "right_creep_half_turn.json",
+      "output": "reports/stop_feedback_20261015/w11_t106_right_creep_half_turn_20261016"
+    }
+  ],
+  "resource": {
+    "reuse_finished_main_cpu_slot": true,
+    "soft_cpu_cores": 0.35,
+    "existing_auxiliary_soft_cpu_cores": 0.15,
+    "no_concurrent_new_training": true
+  },
+  "stop_second_probe_if_first_collision_or_guard": true,
+  "unchanged": [
+    "physical body,margins,dynamics,actions,mask,guard",
+    "full106s verified sensor/physical prefix",
+    "original700step horizon and obstacle trajectory",
+    "no model or reward changes"
+  ],
+  "limitations": [
+    "Timed choices are offline diagnostics,not navigation policy or RL results.",
+    "Only a complete safe continuation could be considered future training data.",
+    "A failed pair is not a proof no other safe recovery exists.",
+    "Do not force requested action when rejected by the original mask."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

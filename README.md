@@ -1,10 +1,10 @@
 # AGV 导航：当前进度与换机指南
 
-本次交接分支：**[`now`](https://github.com/gcusms/rl_learn_agv/tree/now)**。实验结果固定截至 **2026-10-16 05:32:21（北京时间）**。
+本次交接分支：**[`work`](https://github.com/gcusms/rl_learn_agv/tree/work)**。实验结果固定截至 **2026-10-16 06:12:03（北京时间）**。
 
-包含当前代码、原部署模型、最新恢复候选、已完成的 8k PPO 及优化器、训练示范、地图、精简实车数据、定位算法、完整成功/失败记录和继续开发命令。**目前仍是研究候选，未完成新模型的部署验收。** 原实车模型保留。
+包含当前代码、原部署模型、最新恢复候选、已完成的 8k PPO 及优化器、训练示范、地图、精简实车数据、定位算法、完整成功/失败记录和继续开发命令，另含最新等待原因与探索不足诊断、默认关闭的训练约束实验。**目前仍是研究候选，未完成新模型的部署验收。** 原实车模型保留。
 
-精确状态见 [SNAPSHOT.json](reports/handoff_now_20261016/SNAPSHOT.json)，文件哈希见 [FILES.json](docs/handoff/FILES.json)，迁移验证见 [VERIFICATION.json](docs/handoff/VERIFICATION.json)。旧 `ship` 分支是 04:44 的历史快照，旧说明保存在 [SHIP_README.md](docs/handoff/SHIP_README.md)；其“运行中”状态不代表本分支最新进度。
+精确状态见 [SNAPSHOT.json](reports/handoff_work_20261016/SNAPSHOT.json)，文件哈希见 [FILES.json](docs/handoff/FILES.json)，迁移验证见 [VERIFICATION.json](docs/handoff/VERIFICATION.json)。`now` 分支是 05:32 的固定快照，说明保存在 [NOW_README.md](docs/handoff/NOW_README.md)，旧哈希与验证结果单独归档。更早的 `ship` 说明保存在 [SHIP_README.md](docs/handoff/SHIP_README.md)。新电脑优先使用本 `work` 分支。
 
 ## 1. 当前做到哪里
 
@@ -24,7 +24,11 @@
 
 新候选全部 2,089 个示范标签和导出动作一致，原 2,030 标签及 37 个合理停车标签保留；这属于训练数据拟合，不等于所有新场景都正确。W11 首 90 秒用于物理历史初始化，之后由模型和原保护接管，没有定时教师。
 
-在本次截止时，8k PPO 的额外条件配对只完成 3/24 行；新 BC 原前缀完成 1/2，95/106 秒、直接父模型 90 秒和额外 12 条条件配对尚未完成。所有部分结果单独冻结在 [交接评估目录](reports/handoff_now_20261016/validation/)，不算完整验收。
+在本次截止时，8k PPO 的额外条件配对已完成 24/24 行：父 BC 为 8/12 到达、4 次碰撞；PPO 为 10/12 到达、1 次碰撞、1 次超时。这与原 14 项中出现退化同时成立，不能只挑增益。新 BC 原两个恢复前缀为 2/2 到达；W11 相关历史完成 2/3（90 秒到达、95 秒超时），106 秒仍在验证，直接父模型 90 秒及额外 12 条条件配对尚未完成。完整与部分结果单独冻结在 [交接评估目录](reports/handoff_work_20261016/validation/)，部分结果不算完整验收。
+
+新等待诊断：8,000 条实际 PPO 样本中，恢复分支可训练、已等待至少 2 秒且仅允许停止或动作 9 的 160 条样本全部选择停止。另做的两个固定转向窗口诊断均超时，只有最初 4 帧允许请求动作，之后被原掩码拒绝；这说明延长窗口无效，不能说明所有恢复办法都不可行。诊断不属于学习模型的成功成绩。详见 [剩余问题报告](reports/stop_feedback_20261015/remaining_recovery_analysis_20261016/REPORT.md)。
+
+新增可选的长等待探索损失已实现，默认关闭，独立于示范保留损失；**两种新约束均未用于新的物理 PPO**。新代码的实现检查与闭环收益分别记录，下一轮先做单项对照。实现兼容性及零激活的已录批次对照见 [实验报告](reports/stop_feedback_20261015/long_wait_exploration_protocol_20261016/REPORT.md)。
 
 主要证据：[新 BC 完整配对汇总](reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/SUMMARY.json)、[8k PPO 完整配对汇总](reports/stop_feedback_20261015/proactive_augmented_ppo8000_navigation_20261016/SUMMARY.json)、[8k 采样审计](reports/stop_feedback_20261015/proactive_augmented_ppo8000_audit_20261016/RESULTS.json)、[遗忘诊断](reports/stop_feedback_20261015/ppo8000_retention_diagnostic_20261016/RESULTS.json)、[示范保留方案](reports/stop_feedback_20261015/ppo_retention_protocol_20261016/REPORT.md)。
 
@@ -33,7 +37,7 @@
 先按 Ubuntu 22.04、Python 3.10、CPU 环境复现；不用复制旧虚拟环境。下列命令在同一个终端执行。
 
 ```bash
-git clone --depth 1 --branch now https://github.com/gcusms/rl_learn_agv.git
+git clone --depth 1 --branch work https://github.com/gcusms/rl_learn_agv.git
 cd rl_learn_agv
 sudo apt-get install python3.10-venv g++ libeigen3-dev
 python3.10 -m venv .venv
@@ -46,10 +50,10 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 
 # 输出目录须不存在；核对文件、模型、实际样本、输入合同和实现。
 # 此命令不启动训练，也不向电机发送指令。
-nice -n 19 python tools/check_handoff.py --output training/runs/now_check
+nice -n 19 python tools/check_handoff.py --output training/runs/work_check
 ```
 
-建议至少预留 8 GB 安装空间，下载缓存另计。Jetson 使用与 JetPack 匹配的 PyTorch，不要直接安装上述桌面 CPU 包。`training/requirements.lock.txt` 为原机版本记录。检查不依赖 ROS 2、CUDA 或显示器，不能代替闭环导航验收。 本次原机迁移验证为 118 项实现检查全部通过、无跳过，10 份反馈模型可加载，当前原生定位库已重新编译并通过 439 维单帧检查。
+建议至少预留 8 GB 安装空间，下载缓存另计。Jetson 使用与 JetPack 匹配的 PyTorch，不要直接安装上述桌面 CPU 包。`training/requirements.lock.txt` 为原机版本记录。检查不依赖 ROS 2、CUDA 或显示器，不能代替闭环导航验收。 本分支 **127 项实现检查全部通过、无跳过**，包含新增 9 项长等待损失检查；10 份反馈模型可加载，最终 8k 优化器和 8,000 条实际样本核对通过。当前 439 维原生包沿用 `now` 已重建的参考，原生一致性检查通过；本轮未重新编译全部包，具体范围见 VERIFICATION.json。
 
 闭环运行前按下一节重建原生定位库；`.so` 与 CPU 架构、系统相关，源码已上传，编译不等于训练。`check_handoff.py --build-native` 可额外检查全部原生包，耗时更长。
 
@@ -86,56 +90,58 @@ SHA256：
 ```bash
 python tools/prepare_native_bundle.py \
   --source models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable \
-  --output training/runs/now_candidate
+  --output training/runs/work_candidate
 python tools/prepare_native_bundle.py \
   --source models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/bc_portable \
-  --output training/runs/now_parent
+  --output training/runs/work_parent
 
 # 已完成 18 项的重现；包含原成功任务、困难条件、6 项方向停靠。
 nice -n 19 python -m experiments.evaluate_docking_navigation \
-  --candidate training/runs/now_candidate --candidate-name w11_bc800 \
-  --baseline training/runs/now_parent --baseline-name parent_bc800 \
+  --candidate training/runs/work_candidate --candidate-name w11_bc800 \
+  --baseline training/runs/work_parent --baseline-name parent_bc800 \
   --cases reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/gate_cases.json \
-  --output training/runs/now_gate --cpu-cores 0.35
+  --output training/runs/work_gate --cpu-cores 0.35
 
-# 优先补全尚未完成的验证：原前缀、90/95/106 秒相关历史、额外条件配对。
+# 原前缀已完成，可重现；优先补全相关历史和额外条件配对。
 nice -n 19 python -m experiments.evaluate_feedback_recovery \
-  --bundle training/runs/now_candidate \
+  --bundle training/runs/work_candidate \
   --specifications reports/stop_feedback_20261015/frozen_recovery_cases.json \
-  --output training/runs/now_prefixes --label w11_bc800 --cpu-cores 0.35
+  --output training/runs/work_prefixes --label w11_bc800 --cpu-cores 0.35
 nice -n 19 python -m experiments.evaluate_feedback_recovery \
-  --bundle training/runs/now_candidate \
+  --bundle training/runs/work_candidate \
   --specifications reports/stop_feedback_20261015/proactive_protocol_20261016/w11_prefixes.json \
-  --output training/runs/now_w11 --label w11_bc800 --cpu-cores 0.35
+  --output training/runs/work_w11 --label w11_bc800 --cpu-cores 0.35
 nice -n 19 python -m experiments.evaluate_feedback_recovery \
-  --bundle training/runs/now_parent \
+  --bundle training/runs/work_parent \
   --specifications reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/w11_t90_evaluation.json \
-  --output training/runs/now_parent90 --label parent_bc800 --cpu-cores 0.35
+  --output training/runs/work_parent90 --label parent_bc800 --cpu-cores 0.35
 nice -n 19 python -m experiments.evaluate_docking_navigation \
-  --candidate training/runs/now_candidate --candidate-name w11_bc800 \
-  --baseline training/runs/now_parent --baseline-name parent_bc800 \
+  --candidate training/runs/work_candidate --candidate-name w11_bc800 \
+  --baseline training/runs/work_parent --baseline-name parent_bc800 \
   --cases reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/fresh_cases.json \
-  --output training/runs/now_fresh --cpu-cores 0.35
+  --output training/runs/work_fresh --cpu-cores 0.35
 ```
 
 额外条件为已有地图上的 12 条冻结任务，双方共 24 行，不是全新地图测试。90 秒历史现用于训练；同历史复跑属于重现，不重复统计为独立成功。上述评估使用相同雷达、动作和保护约束。
 
-原机三个 systemd 任务在截止时继续验证，调用关系记录在 SNAPSHOT 中。**进程不会随 Git 迁移**，换电脑后使用本 README 的直接命令；原机 `run.py`、`after_preservation.py` 含机器路径和等待关系。截止后的结果不会自动进入本分支。
+原机后台任务的完成及运行状态、调用关系记录在 SNAPSHOT 中；主 8k 流程和两个晚期诊断已经结束，辅助验证及其排队任务仍在运行。**进程不会随 Git 迁移**，换电脑后使用本 README 的直接命令；原机 `run.py`、`after_preservation.py` 含机器路径和等待关系。截止后的结果不会自动进入本分支。
 
 ## 5. 下一轮训练方案和入口
 
-推荐顺序：**补全验证 → 分解等待与碰撞原因 → 确认可行恢复轨迹 → 固定同一初始化做有无保留约束对照 → 完整闭环回归**。不能因为 8k 总成功率提高就直接继续加步数。
+推荐顺序：**补全验证 → 利用已保存的等待与探索诊断 → 确认可行恢复轨迹或提前决策 → 固定同一初始化做单项约束对照 → 完整闭环回归**。不能因为 8k 总成功率提高就直接继续加步数。
 
 已新增训练期可选损失：`PPO 损失 + 系数 × 合法示范平衡交叉熵`，默认系数 0，建议首个对照 0.05、每批 128 条示范，停车与运动各半。只有当前批次存在可训练恢复样本才更新；示范不替换 PPO 的采样动作、旧概率、掩码、奖励或执行历史，不增加物理步数，推理时没有示范教师。代码与验证在 [demonstration_retention.py](training/experiments/demonstration_retention.py) 和 [约束报告](reports/stop_feedback_20261015/ppo_retention_protocol_20261016/REPORT.md)。
+
+第二个实验选项为 `--long-wait-exploration-coefficient 0.001 --long-wait-minimum-seconds 2`，默认系数同样为 0；只在合法运动可选、观测有效、远离目标、已等待且停止概率饱和的恢复状态施加合法动作均匀先验 KL，停止仍可选。详见 [实现](training/experiments/long_wait_exploration.py)。该选项与下述示范保留实验分别对照：测试它时把 `--demo-retention-coefficient` 设为 `0`，使用独立输出目录，避免一次改变两个主要因素。
 
 当前只证明实现正确及单次离线更新指标改善，**未证明新约束能改善闭环**。先完成第 4 节；确定开展独立小规模实验时，使用以下完整入口，输出到新目录：
 
 ```bash
 python tools/prepare_native_bundle.py \
   --source models/stop_feedback_20261015/baseline/portable \
-  --output training/runs/now_training_parent
+  --output training/runs/work_training_parent
 nice -n 19 python -m experiments.train_prefix_recovery \
-  --bundle training/runs/now_training_parent \
+  --bundle training/runs/work_training_parent \
   --checkpoint models/quality_recovery_20261014/policy_2000.zip \
   --training-cases reports/stop_feedback_20261015/proactive_protocol_20261016/ppo_training_cases.json \
   --prefixes reports/stop_feedback_20261015/w11_success_augmented_protocol_20261016/ppo_training_prefixes.json \
@@ -143,10 +149,10 @@ nice -n 19 python -m experiments.train_prefix_recovery \
   --reference-bc models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip \
   --bc-updates 800 --proactive-recovery --steps 2000 --seed 231015 --cpu-cores 0.35 \
   --demo-retention-coefficient 0.05 --demo-retention-batch-size 128 \
-  --output training/runs/now_retention2000
+  --output training/runs/work_retention2000
 ```
 
-配对的关闭约束实验采用相同配置、种子和 BC，把系数改为 `0`，输出改为 `training/runs/now_control2000`。两次各 2k，不能合称单个模型 4k。入口要求重新生成的 BC 网络和优化器与参考逐项一致，记录在 `INITIALIZATION_PARITY.json`；不一致需查原因，不能跳过。只检查初始化可加 `--initialization-only`，此时 PPO 为 0。
+配对的关闭约束实验采用相同配置、种子和 BC，把系数改为 `0`，输出改为 `training/runs/work_control2000`。两次各 2k，不能合称单个模型 4k。入口要求重新生成的 BC 网络和优化器与参考逐项一致，记录在 `INITIALIZATION_PARITY.json`；不一致需查原因，不能跳过。只检查初始化可加 `--initialization-only`，此时 PPO 为 0。
 
 训练后分别运行 `experiments.audit_prefix_recovery_rollouts`、`experiments.analyze_recovery_learning`，再以双方自身 BC 和配对模型做第 4 节闭环验证。必须保留原 14 项、六项方向停靠、合理停车，并单独报告困难条件与新增条件。原任务退化、碰撞增加或长等待未改善时不自动扩步数。
 
@@ -170,7 +176,7 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
   --analysis training/assets/real_recording_20261014/analysis \
   --record training/assets/real_recording_20261014/record \
   --hardware models/quality_recovery_20261014/portable/hardware.json \
-  --output training/runs/now_localization_replay --cpu-cores 0.35
+  --output training/runs/work_localization_replay --cpu-cores 0.35
 ```
 
 此回放分析原记录，不更新网络、不代表重新完成一次物理导航。
@@ -182,7 +188,7 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
 | `training/neural_navigation/` | 地图、定位、路由、方向目标、反馈特征与保护 |
 | `training/experiments/` | 快速二维闭环训练、示范审核、恢复训练、等待诊断、采样审计与评估 |
 | `models/`、`reports/stop_feedback_20261015/` | 模型、优化器、配置、源码快照及完整成功/失败结果 |
-| `reports/handoff_now_20261016/` | 本次固定状态、完成及部分验证行与对应原始轨迹 |
+| `reports/handoff_work_20261016/` | 本次固定状态、完成及部分验证行与对应原始轨迹 |
 | `reports/handoff_ship_20261016/other_worktrees/` | 其他旧工作目录 20 份未提交文件和补丁，单独备份，未混入当前运行时 |
 | `training/assets/localization_replay_20261015/` | 28 条冻结仿真输入，真值只供监督与评价 |
 | `training/assets/real_recording_20261014/` | 1,516 条实车决策、1,911 条反馈、轮速/IMU、map_01 与来源清单 |

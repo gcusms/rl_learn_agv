@@ -192,7 +192,7 @@ def main():
              'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery',
              'experiments.test_stop_recovery_policy', 'experiments.test_prefix_recovery_audit',
              'experiments.test_steady_base_recovery', 'experiments.test_proactive_recovery',
-             'experiments.test_demonstration_retention']
+             'experiments.test_demonstration_retention', 'experiments.test_long_wait_exploration']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

@@ -1,0 +1,395 @@
+{
+  "completed": true,
+  "actual_ppo_samples": 8000,
+  "actual_recorded_likelihood_groups": {
+    "all_supported": {
+      "samples": 5230,
+      "movement_samples": 4632,
+      "stop_samples": 598,
+      "sampled_action_counts": {
+        "0": 598,
+        "1": 2233,
+        "2": 121,
+        "3": 21,
+        "4": 5,
+        "5": 66,
+        "6": 601,
+        "7": 376,
+        "8": 39,
+        "9": 578,
+        "10": 466,
+        "11": 126
+      },
+      "stop_samples_with_sampled_probability_at_least_0999999": 267,
+      "stop_sampled_probability_quantiles": [
+        0.020661204248946824,
+        0.9999980926531862,
+        1.0,
+        1.0
+      ],
+      "positive_advantage_stop_samples": 284,
+      "negative_advantage_stop_samples": 314
+    },
+    "supported_long_wait": {
+      "samples": 432,
+      "movement_samples": 4,
+      "stop_samples": 428,
+      "sampled_action_counts": {
+        "0": 428,
+        "8": 1,
+        "9": 3
+      },
+      "stop_samples_with_sampled_probability_at_least_0999999": 218,
+      "stop_sampled_probability_quantiles": [
+        0.612972505803046,
+        0.9999990463261383,
+        1.0,
+        1.0
+      ],
+      "positive_advantage_stop_samples": 235,
+      "negative_advantage_stop_samples": 193
+    },
+    "only_stop_or9": {
+      "samples": 196,
+      "movement_samples": 10,
+      "stop_samples": 186,
+      "sampled_action_counts": {
+        "0": 186,
+        "9": 10
+      },
+      "stop_samples_with_sampled_probability_at_least_0999999": 171,
+      "stop_sampled_probability_quantiles": [
+        0.823018553321066,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "positive_advantage_stop_samples": 95,
+      "negative_advantage_stop_samples": 91
+    },
+    "long_wait_only_stop_or9": {
+      "samples": 160,
+      "movement_samples": 0,
+      "stop_samples": 160,
+      "sampled_action_counts": {
+        "0": 160
+      },
+      "stop_samples_with_sampled_probability_at_least_0999999": 149,
+      "stop_sampled_probability_quantiles": [
+        0.9366970620848135,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "positive_advantage_stop_samples": 92,
+      "negative_advantage_stop_samples": 68
+    }
+  },
+  "frozen_state_probabilities": [
+    {
+      "id": "w11_106_release",
+      "time_s": 106.0,
+      "actual_choice": 0,
+      "legal_actions": [
+        0,
+        9
+      ],
+      "models": {
+        "ppo8000": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0146360196472415e-08,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 1.0,
+              "action9_probability": 1.0146360196472415e-08,
+              "movement_probability": 1.0146360196472415e-08,
+              "entropy": 1.8675544311008707e-07
+            },
+            "2.0": {
+              "stop_probability": 0.9998992681503296,
+              "action9_probability": 0.0001007189930533059,
+              "movement_probability": 0.0001007189930533059,
+              "entropy": 0.0010276613757014275
+            },
+            "3.0": {
+              "stop_probability": 0.9978398084640503,
+              "action9_probability": 0.0021602180786430836,
+              "movement_probability": 0.0021602180786430836,
+              "entropy": 0.01541629433631897
+            },
+            "4.0": {
+              "stop_probability": 0.9900633692741394,
+              "action9_probability": 0.009936663322150707,
+              "movement_probability": 0.009936663322150707,
+              "entropy": 0.055710263550281525
+            }
+          }
+        },
+        "parent_bc800": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.6470981245575445e-09,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 1.0,
+              "action9_probability": 1.6471013442043159e-09,
+              "movement_probability": 1.6471013442043159e-09,
+              "entropy": 3.331138742623807e-08
+            },
+            "2.0": {
+              "stop_probability": 0.9999594688415527,
+              "action9_probability": 4.058285048813559e-05,
+              "movement_probability": 4.058285048813559e-05,
+              "entropy": 0.000450910854851827
+            },
+            "3.0": {
+              "stop_probability": 0.9988203644752502,
+              "action9_probability": 0.0011795799946412444,
+              "movement_probability": 0.0011795799946412444,
+              "entropy": 0.009132372215390205
+            },
+            "4.0": {
+              "stop_probability": 0.9936698079109192,
+              "action9_probability": 0.006330268923193216,
+              "movement_probability": 0.006330268923193216,
+              "entropy": 0.03835654631257057
+            }
+          }
+        },
+        "w11_bc800": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.2226293755190909e-08,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 1.0,
+              "action9_probability": 1.2226317736008241e-08,
+              "movement_probability": 1.2226317736008241e-08,
+              "entropy": 2.227595388148984e-07
+            },
+            "2.0": {
+              "stop_probability": 0.9998893737792969,
+              "action9_probability": 0.00011056044604629278,
+              "movement_probability": 0.00011056044604629278,
+              "entropy": 0.0011178201530128717
+            },
+            "3.0": {
+              "stop_probability": 0.9977015852928162,
+              "action9_probability": 0.0022984365932643414,
+              "movement_probability": 0.0022984365932643414,
+              "entropy": 0.01625998318195343
+            },
+            "4.0": {
+              "stop_probability": 0.9895941019058228,
+              "action9_probability": 0.010405932553112507,
+              "movement_probability": 0.010405932553112507,
+              "entropy": 0.05785859748721123
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hard00_long_wait",
+      "time_s": 19.4,
+      "actual_choice": 0,
+      "legal_actions": [
+        0,
+        5,
+        9
+      ],
+      "models": {
+        "ppo8000": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            0.999980092048645,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            2.9357389457786154e-14,
+            0.0,
+            0.0,
+            0.0,
+            1.985906965273898e-05,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 0.999980092048645,
+              "action9_probability": 1.9859106032527052e-05,
+              "movement_probability": 1.9859106032527052e-05,
+              "entropy": 0.00023491928004659712
+            },
+            "2.0": {
+              "stop_probability": 0.995563268661499,
+              "action9_probability": 0.004436627961695194,
+              "movement_probability": 0.004436798393726349,
+              "entropy": 0.028466563671827316
+            },
+            "3.0": {
+              "stop_probability": 0.9736043214797974,
+              "action9_probability": 0.02636566199362278,
+              "movement_probability": 0.02639569714665413,
+              "entropy": 0.1222144141793251
+            },
+            "4.0": {
+              "stop_probability": 0.9370576739311218,
+              "action9_probability": 0.06255447864532471,
+              "movement_probability": 0.06294235587120056,
+              "entropy": 0.23734861612319946
+            }
+          }
+        },
+        "parent_bc800": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            0.9996840953826904,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            6.469115455316364e-15,
+            0.0,
+            0.0,
+            0.0,
+            0.00031586812110617757,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 0.9996840953826904,
+              "action9_probability": 0.00031586841214448214,
+              "movement_probability": 0.00031586841214448214,
+              "entropy": 0.0028618124779313803
+            },
+            "2.0": {
+              "stop_probability": 0.9825349450111389,
+              "action9_probability": 0.017465045675635338,
+              "movement_probability": 0.017465123906731606,
+              "entropy": 0.08800365030765533
+            },
+            "3.0": {
+              "stop_probability": 0.9362163543701172,
+              "action9_probability": 0.0637662410736084,
+              "movement_probability": 0.0637836903333664,
+              "entropy": 0.23741450905799866
+            },
+            "4.0": {
+              "stop_probability": 0.8821389079093933,
+              "action9_probability": 0.11761096864938736,
+              "movement_probability": 0.11786116659641266,
+              "entropy": 0.36443156003952026
+            }
+          }
+        },
+        "w11_bc800": {
+          "current_argmax": 0,
+          "supported": true,
+          "current_probabilities": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            8.071234652851089e-15,
+            0.0,
+            0.0,
+            0.0,
+            1.2554151496146915e-08,
+            0.0,
+            0.0
+          ],
+          "hypothetical_temperature": {
+            "1.0": {
+              "stop_probability": 1.0,
+              "action9_probability": 1.2554151496146915e-08,
+              "movement_probability": 1.2554159489752692e-08,
+              "entropy": 2.2840062285922613e-07
+            },
+            "2.0": {
+              "stop_probability": 0.9998878240585327,
+              "action9_probability": 0.00011203274334548041,
+              "movement_probability": 0.00011212257231818512,
+              "entropy": 0.0011327576357871294
+            },
+            "3.0": {
+              "stop_probability": 0.9976612329483032,
+              "action9_probability": 0.0023187058977782726,
+              "movement_probability": 0.00233871815726161,
+              "entropy": 0.016619546338915825
+            },
+            "4.0": {
+              "stop_probability": 0.9892323017120361,
+              "action9_probability": 0.010471167974174023,
+              "movement_probability": 0.010767674073576927,
+              "entropy": 0.06085757911205292
+            }
+          }
+        }
+      }
+    }
+  ],
+  "hypothetical_temperature_not_enabled": true,
+  "physical_steps_added": 0,
+  "models_changed": false,
+  "resource": {
+    "seconds": 32.744837779027876,
+    "cpu_seconds": 1.6372628969999998,
+    "average_cpu_cores": 0.05000064156826025,
+    "peak_rss_mib": 653.62109375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "Masked legal actions need not be useful or safe over a complete maneuver.",
+    "A recorded stop likelihood near1only bounds competing mass subject to float precision; it is not an exact rare-action probability.",
+    "Hypothetical temperature preserves argmax on these states but does not prove navigation improvement.",
+    "No sampled action,old probability,reward,mask or deployment policy was edited."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

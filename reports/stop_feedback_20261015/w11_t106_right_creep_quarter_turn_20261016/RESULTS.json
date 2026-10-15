@@ -1,0 +1,315 @@
+{
+  "completed": true,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "prefix_specification_sha256": "b22fa1ddcb4eb1525aaa009666c95d130776e12301618b6eabaedfde36cc27c5",
+  "bundle_manifest_sha256": "681cb1d7212333f1565bc47049671f9e375da9800fd27d725d620a1f8341d343",
+  "rows": [
+    {
+      "case_id": "w11_training_stall_t106",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.336268036217053,
+      "frames": 700,
+      "final_xy_error_m": 1.7823279361576871,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005525813989781632,
+      "localization_yaw_p95_rad": 0.0014362689079390643,
+      "stop_choices": 218,
+      "only_stop_frames": 175,
+      "stop_reasons": {
+        "None": 536,
+        "laser_braking_footprint": 164
+      },
+      "voluntary_wait_frames": 43,
+      "predictive_constraint_frames": 63,
+      "runtime_ms": {
+        "p95": 141.5426839637803,
+        "p99": 165.89046199514996,
+        "maximum": 195.17479400383309
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 170,
+      "post_release_wait_with_choices_frames": 23,
+      "post_release_only_stop_frames": 139,
+      "longest_post_release_wait_with_choices_s": 2.5999999999976353,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "right_creep_quarter_turn",
+        "start_s": 106.0,
+        "end_s": 109.2,
+        "choice": 9
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 105.99999999997608,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.1999999999759,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.39999999997572,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.59999999997554,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.79999999997536,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.99999999997517,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.19999999997499,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.39999999997481,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.59999999997463,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.79999999997445,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.99999999997426,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.19999999997408,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.3999999999739,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.59999999997372,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.79999999997354,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.99999999997335,
+          "requested_choice": 9,
+          "window_index": 0,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "7c13567ebfd070f21f495e9fdfafdaadaef6a36548e4247c534273a57e683f11",
+      "not_a_trained_policy": true
+    }
+  ],
+  "limitations": [
+    "Timed interventions are diagnostic, not learned actions or deployment rules.",
+    "A legal choice is not necessarily useful or safe throughout its continuation.",
+    "Only complete safe trajectories may later supply demonstration examples."
+  ],
+  "resource": {
+    "seconds": 285.90765854599886,
+    "cpu_seconds": 100.149523012,
+    "average_cpu_cores": 0.35028625508430455,
+    "peak_rss_mib": 1654.7421875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}
