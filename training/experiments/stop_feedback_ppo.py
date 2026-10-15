@@ -65,7 +65,8 @@ class StopFeedbackPPO(MaskablePPO):
                     # Protect ordinary clear nonzero navigation. A reference
                     # stop never prevents the new actor from learning to move.
                     clear=mask[:,1:].all(-1)&(risk.max(-1).values==0)&(ref_log.argmax(-1)!=0)
-                distribution=self.policy.get_distribution(batch.observations,action_masks=batch.action_masks)
+                nominal=getattr(self.policy,'get_nominal_distribution',self.policy.get_distribution)
+                distribution=nominal(batch.observations,action_masks=batch.action_masks)
                 new_log=distribution.distribution.logits
                 anchor=(ref_log.exp()*(ref_log-new_log)).sum(-1)[clear].mean() if clear.any() else log_prob.sum()*0.
                 loss=pg+self.ent_coef*ent+self.vf_coef*vf+self.anchor_strength*anchor
@@ -94,7 +95,7 @@ class StopFeedbackPPO(MaskablePPO):
         if loss is not None:self.logger.record('train/loss',float(loss.detach()))
 
 
-def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4):
+def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4,exploration_schema='none'):
     old=MaskablePPO.load(checkpoint,device='cpu')
     if old.observation_space.shape!=(300,) or old.action_space.n!=12:
         raise ValueError('Native 300D quality PPO checkpoint required')
@@ -102,9 +103,17 @@ def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4):
         raise ValueError('Explicit new feedback observation required')
     feedback_schema=getattr(env,'feedback_schema',LEGACY_SCHEMA)
     contract(feedback_schema)
+    policy_class=StopFeedbackPolicy
+    exploration_contract=None
+    if exploration_schema!='none':
+        from experiments.feedback_exploration import SCHEMA,SensorExplorationPolicy,contract as exploration_spec
+        if exploration_schema!=SCHEMA:raise ValueError('Unsupported exploration contract')
+        from neural_navigation.decision_feedback import WAIT_SCHEMA
+        if feedback_schema!=WAIT_SCHEMA:raise ValueError('Causal exploration requires V2 waiting semantics')
+        policy_class=SensorExplorationPolicy;exploration_contract=exploration_spec()
     scale=float(old.training_reward_scale)
     if env.reward_scale!=scale:raise ValueError('Training reward units differ from checkpoint')
-    new=StopFeedbackPPO(StopFeedbackPolicy,env,device='cpu',seed=seed,n_steps=250,batch_size=125,
+    new=StopFeedbackPPO(policy_class,env,device='cpu',seed=seed,n_steps=250,batch_size=125,
         n_epochs=4,learning_rate=learning_rate,target_kl=.02,ent_coef=.01,
         gamma=old.gamma,gae_lambda=old.gae_lambda,vf_coef=old.vf_coef,max_grad_norm=old.max_grad_norm,
         policy_kwargs=copy.deepcopy(old.policy_kwargs))
@@ -132,11 +141,14 @@ def warm_start(checkpoint,env,seed=20261015,learning_rate=1e-4):
     new.anchor_strength=.5
     new.training_reward_scale=scale
     new.feedback_schema=feedback_schema
+    new.exploration_schema=exploration_schema
+    new.exploration_contract=exploration_contract
     new.feedback_migration=dict(parent_checkpoint_timesteps=old.num_timesteps,
         dimensions=TRAIN_DIM,legacy_prefix_dimensions=300,new_input_weights_initially_zero=True,
         all_actor_parameters_trainable=True,critic_uses_all_transitions=True,
         actor_support='every state with at least one nonzero legal choice',
         optimizer_moments_retained=True,reward_unchanged=True,actions_masks_guard_unchanged=True,
         reference_stop_excluded_from_clear_anchor=True,exact_rollout_resume=False,
-        feedback_schema=feedback_schema)
+        feedback_schema=feedback_schema,exploration_schema=exploration_schema,
+        stochastic_initialization_parity=exploration_schema=='none',deterministic_initialization_parity=True)
     return new

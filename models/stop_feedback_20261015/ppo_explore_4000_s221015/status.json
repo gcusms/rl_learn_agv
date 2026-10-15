@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "additional_ppo_steps": 4000,
+  "counts": {
+    "decision_frames": 2558,
+    "only_stop": 1442,
+    "voluntary_wait": 58,
+    "nonzero": 2500,
+    "changed_nonzero": 0,
+    "episodes": 16,
+    "success": 10,
+    "collisions": 4
+  },
+  "reasons": {
+    "none": 2498,
+    "scan_unavailable": 34,
+    "policy_wait": 54,
+    "only_stop_available": 261,
+    "laser_braking_footprint": 1143,
+    "learned_route_incomplete": 10
+  },
+  "resource": {
+    "seconds": 1677.8427025820129,
+    "cpu_seconds": 587.486406705,
+    "average_cpu_cores": 0.3501439114649567,
+    "peak_rss_mib": 2459.80859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "feedback_schema": "stop_decision_feedback_v2",
+  "exploration_schema": "sensor_temperature_v1",
+  "recorded_rollouts": 16,
+  "deployment_approved": false
+}

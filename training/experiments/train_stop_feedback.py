@@ -63,6 +63,7 @@ def export_candidate(model,bundle,output):
         legacy_300D_prefix_unchanged=True,training_dimensions=TRAIN_DIM,runtime_dimensions=RUNTIME_DIM,
         unchanged_actions_masks_guard=True,reward_unchanged=True,comparison_inputs=len(obs),
         no_runtime_teacher=True,stop_remains_selectable=True)
+    preservation['training_exploration_contract']=getattr(model,'exploration_contract',None)
     (output/'navigation_preservation.json').write_text(json.dumps(preservation,indent=2)+'\n')
     (output/'decision_feedback.json').write_text(json.dumps(feedback_contract,indent=2)+'\n')
     manifest=dict(parent,required_runtime=RUNTIME_NAME,observation_contract=feedback_contract,
@@ -138,6 +139,7 @@ def main():
     parser.add_argument('--cpu-cores',type=float,default=.35)
     parser.add_argument('--feedback-schema',choices=(LEGACY_SCHEMA,WAIT_SCHEMA),default=LEGACY_SCHEMA)
     parser.add_argument('--record-rollouts',action='store_true',help='Archive causal PPO states/masks and actual execution before each update')
+    parser.add_argument('--exploration',choices=('none','sensor_temperature_v1'),default='none')
     args=parser.parse_args()
     if args.output.exists() or not 1000<=args.steps<=10000 or args.steps%250:
         parser.error('Fresh output and 1000..10000 steps in multiples of 250 required')
@@ -147,12 +149,13 @@ def main():
     env=StopFeedbackWrapper(ScheduledRecoveryCurriculum(args.bundle,stage='robust',route_mode='shortcut',
         motion_profiles=True,recorded_cases=cases,recorded_episodes_per_cycle=1),reward_scale=1/60,
         feedback_schema=args.feedback_schema)
-    model=warm_start(args.checkpoint,env,seed=args.seed)
+    model=warm_start(args.checkpoint,env,seed=args.seed,exploration_schema=args.exploration)
     progress=Progress(args.output,budget,args.record_rollouts)
     config=dict(steps=args.steps,seed=args.seed,contract=contract(args.feedback_schema),migration=model.feedback_migration,
         training_cases=cases,training_cases_sha256=digest(args.training_cases),
         parent_policy_sha256=digest(args.checkpoint),bundle_sha256=digest(args.bundle/'manifest.json'),
-        cpu_cores=args.cpu_cores,reward_changed=False,record_rollouts=args.record_rollouts,deployment_approved=False)
+        cpu_cores=args.cpu_cores,reward_changed=False,record_rollouts=args.record_rollouts,
+        exploration_contract=model.exploration_contract,deployment_approved=False)
     (args.output/'config.json').write_text(json.dumps(config,indent=2)+'\n')
     kernel=Path(__file__).parents[1]/'neural_navigation/static_tracking_kernel.cpp'
     record_provenance(args.output,args.bundle,[kernel])
@@ -170,6 +173,7 @@ def main():
             curriculum_rng=env.unwrapped.np_random.bit_generator.state),args.output/'random_state.pt')
         status(status='complete',additional_ppo_steps=model.num_timesteps,counts=progress.counts,
                reasons=progress.reasons,resource=budget.statistics(),feedback_schema=args.feedback_schema,
+               exploration_schema=model.exploration_schema,
                recorded_rollouts=len(list((args.output/'rollouts').glob('*.npz'))),deployment_approved=False)
     except BaseException as error:
         status(status='failed',additional_ppo_steps=model.num_timesteps,error=repr(error),counts=progress.counts)

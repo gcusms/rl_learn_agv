@@ -20,12 +20,14 @@ def main():
     from neural_navigation.decision_feedback import LEGACY_SCHEMA,WAIT_SCHEMA
     parser.add_argument('--feedback-schema',choices=(LEGACY_SCHEMA,WAIT_SCHEMA),default=LEGACY_SCHEMA)
     parser.add_argument('--record-rollouts',action='store_true')
+    parser.add_argument('--exploration',choices=('none','sensor_temperature_v1'),default='none')
     args=parser.parse_args()
     for name in ('baseline','checkpoint','training_cases','evaluation_cases','model_output','output'):
         setattr(args,name,getattr(args,name).resolve())
     args.output.mkdir(parents=True,exist_ok=False)
     status=dict(status='preparing',started=stamp(),training_target=args.steps,
-        deployment_approved=False,auto_replace=False,feedback_schema=args.feedback_schema)
+        deployment_approved=False,auto_replace=False,feedback_schema=args.feedback_schema,
+        exploration_schema=args.exploration)
     def save(**values):
         status.update(values,updated=stamp())
         temporary=args.output/'status.tmp';temporary.write_text(json.dumps(status,indent=2)+'\n')
@@ -41,7 +43,8 @@ def main():
         training_command=[sys.executable,'-m','experiments.train_stop_feedback','--bundle',str(args.baseline),
             '--checkpoint',str(args.checkpoint),'--training-cases',str(args.training_cases),
             '--output',str(args.model_output),'--steps',str(args.steps),'--seed',str(args.seed),
-            '--cpu-cores',str(args.cpu_cores),'--feedback-schema',args.feedback_schema]
+            '--cpu-cores',str(args.cpu_cores),'--feedback-schema',args.feedback_schema,
+            '--exploration',args.exploration]
         if args.record_rollouts:training_command.append('--record-rollouts')
         run(training_command,'training.log')
         training=json.loads((args.model_output/'status.json').read_text())

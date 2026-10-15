@@ -1,0 +1,49 @@
+{
+  "completed": true,
+  "sampled_frames": 250,
+  "audited_rollouts": [
+    {
+      "rollout": "rollout_000250.npz",
+      "checkpoint": "policy_initial.zip",
+      "rollout_sha256": "78f32d3f9fce9cf298af24188faeaf650fd5d9bd1c428c3994e8d968d4c41f2f",
+      "checkpoint_sha256": "5988a7e7c49e1515c1cb10b18ffeb92b6e9460c2f44f4387839bf54d7a143bf1",
+      "sampled_frames": 250,
+      "temperature_active_frames": 118,
+      "active_nonzero_samples": 112,
+      "active_stop_samples": 6,
+      "maximum_log_probability_error": 3.5762786865234375e-06,
+      "mean_nominal_stop_probability": 0.1054815948009491,
+      "mean_exploratory_stop_probability": 0.11426543444395065,
+      "maximum_temperature": 3.0,
+      "deterministic_choices_unchanged": true,
+      "no_masked_actions": true
+    }
+  ],
+  "exploration_contract": {
+    "schema": "sensor_temperature_v1",
+    "maximum_temperature": 3.0,
+    "minimum_temperature": 1.0,
+    "idle_ramp_seconds": [
+      1.0,
+      3.0
+    ],
+    "goal_exclusion_radius_m": 0.3,
+    "sources": [
+      "current_guard_forecast",
+      "supported_moving_tracks",
+      "causal_executed_idle_with_choices_seconds"
+    ],
+    "require_scan_and_prediction_valid": true,
+    "require_motion_choice": true,
+    "sampling_and_ppo_likelihood_identical": true,
+    "deterministic_argmax_preserved": true,
+    "stop_remains_allowed": true,
+    "nominal_reference_anchor_preserved": true,
+    "simulator_truth_used": false
+  },
+  "deployment_approved": false,
+  "limitations": [
+    "Only rollouts with an exact pre-update checkpoint are checked.",
+    "Exploration and likelihood correctness are not navigation or recovery success."
+  ]
+}

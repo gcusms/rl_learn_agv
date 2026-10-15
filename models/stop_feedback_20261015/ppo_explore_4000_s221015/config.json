@@ -1,0 +1,256 @@
+{
+  "steps": 4000,
+  "seed": 221015,
+  "contract": {
+    "schema": "stop_decision_feedback_v2",
+    "prefix_dimensions": 300,
+    "training_dimensions": 436,
+    "heading_prefix_dimensions": 303,
+    "dimensions": 439,
+    "append_dimensions": 136,
+    "action_commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "fields": [
+      "12_current_guard_rejection_groups_one_hot",
+      "previous_executed_stop_reason_one_hot",
+      "12_guard_forecast_contact_scores",
+      "nonzero_choices_over_11",
+      "scan_age_over_guard_limit",
+      "previous_idle_seconds_over_5",
+      "previous_idle_with_choices_seconds_over_5",
+      "prediction_input_valid",
+      "moving_tracks_over_4",
+      "oldest_track_age_over_0.8",
+      "scan_valid"
+    ],
+    "rejection_groups": [
+      "accepted",
+      "perception_or_odometry",
+      "localization_or_route",
+      "static_geometry",
+      "laser_geometry",
+      "dynamic_prediction",
+      "projection",
+      "other"
+    ],
+    "previous_reasons": [
+      "none",
+      "nonfinite_input",
+      "stale_or_future_scan",
+      "scan_unavailable",
+      "odometry_jump",
+      "localization_uncertain",
+      "learned_route_incomplete",
+      "reverse_without_rear_visibility",
+      "reverse_duration_limit",
+      "static_braking_footprint",
+      "laser_braking_footprint",
+      "escape_not_increasing_clearance",
+      "unsafe_turn_blocked",
+      "unsafe_translation_blocked",
+      "estimated_goal_reached",
+      "other",
+      "predicted_dynamic_contact",
+      "predictive_command_contract",
+      "policy_wait",
+      "only_stop_available"
+    ],
+    "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+    "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+    "unknown_forecast_is_not_clear": true,
+    "legacy_prefix_unchanged": true,
+    "stop_always_selectable": true,
+    "simulator_truth_used": false,
+    "commands_issued": false,
+    "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+    "executed_reason_retained_during_idle": true
+  },
+  "migration": {
+    "parent_checkpoint_timesteps": 2000,
+    "dimensions": 436,
+    "legacy_prefix_dimensions": 300,
+    "new_input_weights_initially_zero": true,
+    "all_actor_parameters_trainable": true,
+    "critic_uses_all_transitions": true,
+    "actor_support": "every state with at least one nonzero legal choice",
+    "optimizer_moments_retained": true,
+    "reward_unchanged": true,
+    "actions_masks_guard_unchanged": true,
+    "reference_stop_excluded_from_clear_anchor": true,
+    "exact_rollout_resume": false,
+    "feedback_schema": "stop_decision_feedback_v2",
+    "exploration_schema": "sensor_temperature_v1",
+    "stochastic_initialization_parity": false,
+    "deterministic_initialization_parity": true
+  },
+  "training_cases": [
+    {
+      "scene": "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted",
+      "seed": 2010015,
+      "stage": "robust",
+      "options": {
+        "start": [
+          8.285000000000002,
+          1.175,
+          1.5633780945997562
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ]
+      },
+      "interventions": {
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.08640822395825595,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            3.8
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ]
+      },
+      "source_training_case_id": "train_failure_stop_go_variation_0"
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted",
+      "seed": 2010016,
+      "stage": "robust",
+      "options": {
+        "start": [
+          8.365,
+          1.175,
+          1.6833780945997563
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ]
+      },
+      "interventions": {
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.10561005150453505,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            4.2
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ]
+      },
+      "source_training_case_id": "train_failure_stop_go_variation_1"
+    },
+    {
+      "scene": "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "stage": "robust",
+      "options": {
+        "start": [
+          6.2250000000000005,
+          2.725,
+          0.017376951571745902
+        ],
+        "goal": [
+          7.125,
+          5.7250000000000005
+        ]
+      },
+      "interventions": {
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09295138997376881,
+        "hold_s": 3.4079953972433437
+      },
+      "source_training_case_id": "train_failure_w11_e7"
+    }
+  ],
+  "training_cases_sha256": "6232b2bbbde488f46536f07bb6771c4c57019eca31024c10c38e069fdf8f8c79",
+  "parent_policy_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "bundle_sha256": "f412add64da251ec875e5e3f7b402e38d8153bf3b82425fafd99ef3ccc15ce4f",
+  "cpu_cores": 0.35,
+  "reward_changed": false,
+  "record_rollouts": true,
+  "exploration_contract": {
+    "schema": "sensor_temperature_v1",
+    "maximum_temperature": 3.0,
+    "minimum_temperature": 1.0,
+    "idle_ramp_seconds": [
+      1.0,
+      3.0
+    ],
+    "goal_exclusion_radius_m": 0.3,
+    "sources": [
+      "current_guard_forecast",
+      "supported_moving_tracks",
+      "causal_executed_idle_with_choices_seconds"
+    ],
+    "require_scan_and_prediction_valid": true,
+    "require_motion_choice": true,
+    "sampling_and_ppo_likelihood_identical": true,
+    "deterministic_argmax_preserved": true,
+    "stop_remains_allowed": true,
+    "nominal_reference_anchor_preserved": true,
+    "simulator_truth_used": false
+  },
+  "deployment_approved": false
+}

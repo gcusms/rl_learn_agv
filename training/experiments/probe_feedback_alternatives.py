@@ -20,23 +20,47 @@ from neural_navigation.experiment_budget import ExperimentBudget
 from neural_navigation.masked_actions import ACTIONS, masks_from_observation
 
 
+def intervention_windows(specification):
+    """Validate disjoint diagnostic windows; never relax an action mask."""
+    windows = specification.get('windows', [specification])
+    if not isinstance(windows, list) or not 1 <= len(windows) <= 16:
+        raise ValueError('Provide one to sixteen diagnostic time windows')
+    result = []
+    for window in windows:
+        choice = window.get('choice')
+        try:
+            start, end = float(window['start_s']), float(window['end_s'])
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError('Finite ordered time window required') from error
+        if (type(choice) is not int or not 0 <= choice < 12
+                or not np.isfinite([start, end]).all() or end <= start):
+            raise ValueError('Finite ordered time window and existing action required')
+        result.append(dict(start_s=start, end_s=end, choice=choice))
+    result.sort(key=lambda window: window['start_s'])
+    if any(a['end_s'] > b['start_s'] for a, b in zip(result, result[1:])):
+        raise ValueError('Diagnostic intervention windows must not overlap')
+    return result
+
+
 class ProbeActor:
     def __init__(self, actor, core, specification):
         self.actor, self.core, self.specification = actor, core, specification
+        self.windows = intervention_windows(specification)
         self.entries = []
 
     def predict(self, observation):
         reference = self.actor.predict(observation)
         now = float(self.core.elapsed)
-        start, end, choice = (self.specification[k] for k in ('start_s', 'end_s', 'choice'))
-        if start - 1e-8 <= now < end - 1e-8:
-            mask = masks_from_observation(np.asarray(observation)[:282])
-            accepted = bool(mask[choice])
-            result = ACTIONS[choice].copy() if accepted else reference
-            self.entries.append(dict(sensor_timestamp=now, requested_choice=int(choice),
-                requested_choice_legal=accepted, replaced_reference=accepted,
-                reference_action=np.asarray(reference).tolist(), proposed_action=np.asarray(result).tolist()))
-            return result
+        for index, window in enumerate(self.windows):
+            start, end, choice = (window[k] for k in ('start_s', 'end_s', 'choice'))
+            if start - 1e-8 <= now < end - 1e-8:
+                mask = masks_from_observation(np.asarray(observation)[:282])
+                accepted = bool(mask[choice])
+                result = ACTIONS[choice].copy() if accepted else reference
+                self.entries.append(dict(sensor_timestamp=now, requested_choice=int(choice),
+                    window_index=index, requested_choice_legal=accepted, replaced_reference=accepted,
+                    reference_action=np.asarray(reference).tolist(), proposed_action=np.asarray(result).tolist()))
+                return result
         return reference
 
 
@@ -62,14 +86,11 @@ def main():
         specifications=json.loads(args.specifications.read_text())
     ids=set()
     for specification in specifications:
-        name=specification['id'];choice=specification['choice']
+        name=specification['id']
         if name in ids or Path(name).name!=name or not name:
             raise ValueError('Unique simple intervention names required')
         ids.add(name)
-        if (not isinstance(choice,int) or not 0<=choice<12 or
-            not np.isfinite([specification['start_s'],specification['end_s']]).all() or
-            specification['end_s']<=specification['start_s']):
-            raise ValueError('Finite ordered time window and existing action required')
+        intervention_windows(specification)
     (args.output / 'case.json').write_text(json.dumps(case, indent=2) + '\n')
     (args.output / 'specifications.json').write_text(json.dumps(specifications,indent=2)+'\n')
     report = dict(completed=False, not_a_trained_policy=True, deployment_approved=False,

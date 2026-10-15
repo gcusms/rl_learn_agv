@@ -1,0 +1,1358 @@
+{
+  "completed": true,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "case_id": "motion_profile_015",
+  "bundle_manifest_sha256": "d6aca3c53630b4c9b0b96057d287317860b7df00649be15ae354c5654f7f4daa",
+  "purpose": "Check whether alternative currently legal actions can avoid an archived failure.",
+  "limitations": [
+    "Fixed sensor-time intervention is not a learned decision or generalization.",
+    "No change to the shared guard, body, input observations or action history.",
+    "Successful probes are not PPO success rates and are not automatically used for training."
+  ],
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 88.59999999999191,
+      "travel_m": 7.994338742408118,
+      "frames": 444,
+      "final_xy_error_m": 0.09734611286272868,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0042634911311113695,
+      "localization_yaw_p95_rad": 0.0017493759859447788,
+      "stop_choices": 123,
+      "only_stop_frames": 37,
+      "stop_reasons": {
+        "None": 354,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 4,
+        "laser_braking_footprint": 82,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 86,
+      "predictive_constraint_frames": 78,
+      "runtime_ms": {
+        "p95": 221.67203579738265,
+        "p99": 270.09716396802094,
+        "maximum": 302.4609960266389
+      },
+      "specification": {
+        "id": "earlier_right_arc",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 7
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 7,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            -1.0
+          ]
+        }
+      ],
+      "trace_sha256": "c84d8115a98804fa68bddc73a7aa563c35707c478b14621b1ede911ee10c071c",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 1.645859266234251,
+      "frames": 700,
+      "final_xy_error_m": 3.379920958343802,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003757249420776679,
+      "localization_yaw_p95_rad": 0.0017482786479015894,
+      "stop_choices": 626,
+      "only_stop_frames": 22,
+      "stop_reasons": {
+        "None": 95,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 2,
+        "laser_braking_footprint": 600
+      },
+      "voluntary_wait_frames": 604,
+      "predictive_constraint_frames": 33,
+      "runtime_ms": {
+        "p95": 143.29595813760517,
+        "p99": 185.84538163035177,
+        "maximum": 218.7079379800707
+      },
+      "specification": {
+        "id": "earlier_right_rotation",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "trace_sha256": "ff20ff4d0208bf9133f914a9a42e6e00f170869b3d6f6e76fc57050137816486",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 12.800000000000601,
+      "travel_m": 1.929118904824873,
+      "frames": 64,
+      "final_xy_error_m": 2.9922535131479893,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0038889235574234775,
+      "localization_yaw_p95_rad": 0.0012964861121951498,
+      "stop_choices": 9,
+      "only_stop_frames": 9,
+      "stop_reasons": {
+        "None": 61,
+        "scan_unavailable": 3
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 14,
+      "runtime_ms": {
+        "p95": 185.6001611595275,
+        "p99": 196.08452520100397,
+        "maximum": 203.7761359824799
+      },
+      "specification": {
+        "id": "earlier_fast_right_arc",
+        "start_s": 6.0,
+        "end_s": 7.8,
+        "choice": 11
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.3999999999998645,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.59999999999986,
+          "requested_choice": 11,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            -1.0
+          ]
+        }
+      ],
+      "trace_sha256": "42397eec998f8d1abc0108e4d6ccbc4e2193df0262407e86836b8168883c616b",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 38.20000000000109,
+      "travel_m": 4.898552063725026,
+      "frames": 192,
+      "final_xy_error_m": 0.08838489129441324,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0039852859724279046,
+      "localization_yaw_p95_rad": 0.0013016433728935128,
+      "stop_choices": 64,
+      "only_stop_frames": 4,
+      "stop_reasons": {
+        "None": 188,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 60,
+      "predictive_constraint_frames": 10,
+      "runtime_ms": {
+        "p95": 210.53424006677227,
+        "p99": 233.33709908591118,
+        "maximum": 237.26446100044996
+      },
+      "specification": {
+        "id": "earlier_wait",
+        "start_s": 6.0,
+        "end_s": 18.0,
+        "choice": 0
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.3999999999998645,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.59999999999986,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.799999999999856,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.999999999999852,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.199999999999882,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.399999999999913,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.599999999999945,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 8.799999999999976,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.000000000000007,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.200000000000038,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.40000000000007,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.600000000000101,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 9.800000000000132,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 10.000000000000163,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 10.200000000000195,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 10.400000000000226,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 10.600000000000257,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 10.800000000000288,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 11.00000000000032,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 11.200000000000351,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 11.400000000000382,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 11.600000000000414,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 11.800000000000445,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 12.000000000000476,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 12.200000000000507,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 12.400000000000539,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 12.60000000000057,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 12.800000000000601,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 13.000000000000632,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 13.200000000000664,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 13.400000000000695,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 13.600000000000726,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 13.800000000000757,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 14.000000000000789,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 14.20000000000082,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 14.400000000000851,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 14.600000000000882,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 14.800000000000914,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 15.000000000000945,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 15.200000000000976,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 15.400000000001008,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 15.600000000001039,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 15.80000000000107,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 16.0000000000011,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 16.20000000000106,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 16.40000000000102,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 16.600000000000982,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 16.800000000000942,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 17.000000000000902,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 17.200000000000863,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 17.400000000000823,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 17.600000000000783,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 17.800000000000743,
+          "requested_choice": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "fe1f58d3f9036cf63c33104f93d56bb3d6678fbd32460792bf49ceff5b72e291",
+      "not_a_trained_policy": true
+    }
+  ],
+  "resource": {
+    "seconds": 1661.851368870004,
+    "cpu_seconds": 249.40643807100003,
+    "average_cpu_cores": 0.15007746345004785,
+    "peak_rss_mib": 2067.94140625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

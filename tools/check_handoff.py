@@ -86,7 +86,8 @@ def main():
     from experiments.stop_feedback_ppo import StopFeedbackPPO
     feedback_models = []
     for folder, schema in [('ppo_4000_s221015', 'stop_decision_feedback_v1'),
-                           ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2')]:
+                           ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2'),
+                           ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         feedback_bundle = feedback / 'portable'
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
@@ -100,12 +101,16 @@ def main():
             raise ValueError('Feedback training checkpoint mismatch: ' + folder)
         if getattr(checkpoint, 'feedback_schema', 'stop_decision_feedback_v1') != schema:
             raise ValueError('Feedback checkpoint semantics mismatch: ' + folder)
+        exploration = getattr(checkpoint, 'exploration_schema', 'none')
+        expected_exploration = 'sensor_temperature_v1' if folder == 'ppo_explore_4000_s221015' else 'none'
+        if exploration != expected_exploration:
+            raise ValueError('Feedback exploration semantics mismatch: ' + folder)
         exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
         with torch.no_grad():
             command = exported(torch.zeros((1, 439)))
         if command.shape != (1, 2) or not torch.isfinite(command).all():
             raise ValueError('Feedback TorchScript interface mismatch: ' + folder)
-        feedback_models.append(dict(folder=folder, schema=schema, additional_steps=4000,
+        feedback_models.append(dict(folder=folder, schema=schema, exploration_schema=exploration, additional_steps=4000,
                                     checkpoint_loaded=True, torchscript_loaded=True))
         del checkpoint, exported
 
@@ -131,7 +136,8 @@ def main():
              'training.test_fast_static_localizer', 'training.test_global_relocalizer',
              'training.test_decision_feedback', 'experiments.test_stop_feedback_ppo',
              'training.test_navigation_runtime', 'experiments.test_audit_decision_waits',
-             'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives']
+             'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives',
+             'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

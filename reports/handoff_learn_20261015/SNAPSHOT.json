@@ -1,0 +1,73 @@
+{
+  "schema": "agv_handoff_snapshot_v3",
+  "branch": "learn",
+  "captured_at": "2026-10-15T23:12:27.181566+08:00",
+  "parent_commit": "0df36989712a57fe1ebe8acd05cbc89fae557d2b",
+  "deployment_approved": false,
+  "latest_training_model": "models/stop_feedback_20261015/ppo_explore_4000_s221015",
+  "training_complete": true,
+  "additional_ppo_steps": 4000,
+  "feedback_schema": "stop_decision_feedback_v2",
+  "exploration_schema": "sensor_temperature_v1",
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 4000,
+    "counts": {
+      "decision_frames": 2558,
+      "only_stop": 1442,
+      "voluntary_wait": 58,
+      "nonzero": 2500,
+      "changed_nonzero": 0,
+      "episodes": 16,
+      "success": 10,
+      "collisions": 4
+    },
+    "reasons": {
+      "none": 2498,
+      "scan_unavailable": 34,
+      "policy_wait": 54,
+      "only_stop_available": 261,
+      "laser_braking_footprint": 1143,
+      "learned_route_incomplete": 10
+    },
+    "resource": {
+      "seconds": 1677.8427025820129,
+      "cpu_seconds": 587.486406705,
+      "average_cpu_cores": 0.3501439114649567,
+      "peak_rss_mib": 2459.80859375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "feedback_schema": "stop_decision_feedback_v2",
+    "exploration_schema": "sensor_temperature_v1",
+    "recorded_rollouts": 16,
+    "deployment_approved": false
+  },
+  "final_policy_sha256": "b3cee60d0e9ca8037aebdbe3d73a1f8097a3167a815e944595d215858ed5a879",
+  "recorded_rollouts": 16,
+  "paired_evaluation_complete": false,
+  "frozen_paired_rows": 1,
+  "target_paired_rows": 28,
+  "paired_snapshot": "reports/handoff_learn_20261015/explore_pipeline/paired/RESULTS.json",
+  "source_services": "reports/handoff_learn_20261015/SOURCE_SERVICES.json",
+  "background_processes_transferred": false,
+  "post_snapshot_outputs_included": false,
+  "v2_complete_evaluation": "reports/stop_feedback_20261015/pilot_v2_4000_final/SUMMARY.json",
+  "v2_regression_detected": true,
+  "causal_audit": "reports/stop_feedback_20261015/exploration_causal_audit_4000/RESULTS.json",
+  "sampling_audit": "reports/stop_feedback_20261015/exploration_sampling_audit_4000/RESULTS.json",
+  "recovery_prefix_physics_smoke": "reports/stop_feedback_20261015/prefix_physics_smoke_20261015/RESULTS.json",
+  "recovery_full_evaluation_completed": false,
+  "limitations": [
+    "New actor is experimental; no safety, navigation, long-wait or docking acceptance.",
+    "A 100-frame prefix plus one controlled frame validates state hydration only, not recovery success.",
+    "Timed physical interventions are diagnostic and are not learned-policy success.",
+    "Current training CLI warm-starts from the 300-D parent; direct 436-D continuation requires further implementation.",
+    "Original raw recording archive, virtual environments, native binaries and live processes are excluded."
+  ],
+  "next_steps": [
+    "Verify checkout and rebuild destination-native bundles.",
+    "Finish or rerun full fixed 14-case paired safety regression in a new directory.",
+    "Run full learned continuation from both verified 20-second recovery prefixes.",
+    "Retain deployment baseline until safety, navigation and docking regressions pass."
+  ]
+}

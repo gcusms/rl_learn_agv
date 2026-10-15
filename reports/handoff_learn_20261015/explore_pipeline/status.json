@@ -1,0 +1,62 @@
+{
+  "status": "paired_evaluation",
+  "started": "2026-10-15T22:42:01.973832+08:00",
+  "training_target": 4000,
+  "deployment_approved": false,
+  "auto_replace": false,
+  "feedback_schema": "stop_decision_feedback_v2",
+  "exploration_schema": "sensor_temperature_v1",
+  "updated": "2026-10-15T23:10:03.145537+08:00",
+  "command": [
+    "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python",
+    "-m",
+    "experiments.evaluate_docking_navigation",
+    "--candidate",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/models/stop_feedback_20261015/ppo_explore_4000_s221015/portable",
+    "--baseline",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/models/stop_feedback_20261015/baseline/portable",
+    "--cases",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/feedback_development_cases.json",
+    "--output",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/pilot_explore_4000_s221015/paired",
+    "--cpu-cores",
+    "0.35",
+    "--candidate-name",
+    "stop_feedback_ppo",
+    "--baseline-name",
+    "prior_constraints"
+  ],
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 4000,
+    "counts": {
+      "decision_frames": 2558,
+      "only_stop": 1442,
+      "voluntary_wait": 58,
+      "nonzero": 2500,
+      "changed_nonzero": 0,
+      "episodes": 16,
+      "success": 10,
+      "collisions": 4
+    },
+    "reasons": {
+      "none": 2498,
+      "scan_unavailable": 34,
+      "policy_wait": 54,
+      "only_stop_available": 261,
+      "laser_braking_footprint": 1143,
+      "learned_route_incomplete": 10
+    },
+    "resource": {
+      "seconds": 1677.8427025820129,
+      "cpu_seconds": 587.486406705,
+      "average_cpu_cores": 0.3501439114649567,
+      "peak_rss_mib": 2459.80859375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "feedback_schema": "stop_decision_feedback_v2",
+    "exploration_schema": "sensor_temperature_v1",
+    "recorded_rollouts": 16,
+    "deployment_approved": false
+  }
+}
