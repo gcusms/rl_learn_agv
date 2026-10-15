@@ -1,0 +1,185 @@
+{
+  "completed": true,
+  "interim": true,
+  "captured_at": "2026-10-16T06:55:34.410615+08:00",
+  "actual_physical_steps": 1750,
+  "source_progress": {
+    "steps": 1750,
+    "counts": {
+      "decision_frames": 1027,
+      "only_stop": 723,
+      "voluntary_wait": 17,
+      "nonzero": 1010,
+      "changed_nonzero": 0,
+      "episodes": 6,
+      "success": 6,
+      "collisions": 0,
+      "recovery_actor_frames": 761,
+      "prefix_controlled_frames": 1089,
+      "routine_controlled_frames": 661,
+      "recovery_wait_choices": 17,
+      "recovery_motion_choices": 744
+    },
+    "reasons": {
+      "none": 1010,
+      "only_stop_available": 120,
+      "policy_wait": 6,
+      "learned_route_incomplete": 9,
+      "scan_unavailable": 6,
+      "laser_braking_footprint": 599
+    },
+    "resource": {
+      "seconds": 1193.3022732840036,
+      "cpu_seconds": 417.655760236,
+      "average_cpu_cores": 0.34999997032319297,
+      "peak_rss_mib": 2405.421875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "ppo": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": 0.0,
+      "train/policy_gradient_loss": 0.0,
+      "train/value_loss": 0.2715137694031,
+      "train/approx_kl": 0.0,
+      "train/clip_fraction": 0.0,
+      "train/actor_recovery_fraction": 0.0,
+      "train/explained_variance": -20.119564056396484,
+      "train/n_updates": 19.0,
+      "train/loss": 0.12033288925886154
+    }
+  },
+  "training_run_completed": false,
+  "policy_or_configuration_changed": false,
+  "by_source": {
+    "physical_prefix_early_avoidance_t6": {
+      "frames": 857,
+      "only_stop": 634,
+      "recovery_supported": 180,
+      "supported_stop_with_motion_legal": 5,
+      "supported_motion": 175
+    },
+    "train_failure_motion_profile_015": {
+      "frames": 246,
+      "only_stop": 31,
+      "recovery_supported": 147,
+      "supported_stop_with_motion_legal": 3,
+      "supported_motion": 144
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "frames": 102,
+      "only_stop": 20,
+      "recovery_supported": 59,
+      "supported_stop_with_motion_legal": 0,
+      "supported_motion": 59
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "frames": 160,
+      "only_stop": 4,
+      "recovery_supported": 96,
+      "supported_stop_with_motion_legal": 0,
+      "supported_motion": 96
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "frames": 130,
+      "only_stop": 2,
+      "recovery_supported": 91,
+      "supported_stop_with_motion_legal": 2,
+      "supported_motion": 89
+    },
+    "train_failure_proactive_variation_00": {
+      "frames": 255,
+      "only_stop": 32,
+      "recovery_supported": 188,
+      "supported_stop_with_motion_legal": 7,
+      "supported_motion": 181
+    }
+  },
+  "by_rollout": [
+    {
+      "through_steps": 250,
+      "optimizer_epochs_before_update": 0,
+      "frames": 250,
+      "only_stop": 22,
+      "recovery_supported": 174,
+      "supported_stop_with_motion_legal": 3,
+      "supported_motion": 171
+    },
+    {
+      "through_steps": 500,
+      "optimizer_epochs_before_update": 4,
+      "frames": 250,
+      "only_stop": 39,
+      "recovery_supported": 159,
+      "supported_stop_with_motion_legal": 3,
+      "supported_motion": 156
+    },
+    {
+      "through_steps": 750,
+      "optimizer_epochs_before_update": 8,
+      "frames": 250,
+      "only_stop": 13,
+      "recovery_supported": 135,
+      "supported_stop_with_motion_legal": 0,
+      "supported_motion": 135
+    },
+    {
+      "through_steps": 1000,
+      "optimizer_epochs_before_update": 10,
+      "frames": 250,
+      "only_stop": 34,
+      "recovery_supported": 177,
+      "supported_stop_with_motion_legal": 9,
+      "supported_motion": 168
+    },
+    {
+      "through_steps": 1250,
+      "optimizer_epochs_before_update": 13,
+      "frames": 250,
+      "only_stop": 115,
+      "recovery_supported": 116,
+      "supported_stop_with_motion_legal": 2,
+      "supported_motion": 114
+    },
+    {
+      "through_steps": 1500,
+      "optimizer_epochs_before_update": 15,
+      "frames": 250,
+      "only_stop": 250,
+      "recovery_supported": 0,
+      "supported_stop_with_motion_legal": 0,
+      "supported_motion": 0
+    },
+    {
+      "through_steps": 1750,
+      "optimizer_epochs_before_update": 19,
+      "frames": 250,
+      "only_stop": 250,
+      "recovery_supported": 0,
+      "supported_stop_with_motion_legal": 0,
+      "supported_motion": 0
+    }
+  ],
+  "source_rollout_sha256": {
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000250.npz": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000500.npz": "865386401afdcec5bcb7a1687b3eed0f7d148ad780c53b9749e0f5cb4ab14ab5",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000750.npz": "67b2ef459bb3d99b82d1984db8c8ed298280fa1f51bc00e532923a658d9f8e5e",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001000.npz": "2b3d7f93d6f8de2fbc3b3f0f57b6bfc02014b5e4e7a22058b4d1dbff79cf1233",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001250.npz": "0773f0cb0d91cf2c5ab792a36239fc57b92293ceb2fb9251040f7ff84fb48de8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001500.npz": "ebfae1382bf0476ef7f21b535834b2aa6b7ece9e319fa5ebce2635f6397646cd",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001750.npz": "61cf1ef3c628bef9c286c54682000872ba5bcbcb3ab04e864ff08f3f9066acf6"
+  },
+  "resource": {
+    "seconds": 2.704335540009197,
+    "cpu_seconds": 0.13567837,
+    "average_cpu_cores": 0.050170686289741466,
+    "peak_rss_mib": 36.09765625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "These are actual training samples, not independent navigation validation.",
+    "A state with only stop allowed cannot establish that the policy refuses legal motion.",
+    "This interim audit does not count initialization frames or imply a final PPO model is complete."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}
