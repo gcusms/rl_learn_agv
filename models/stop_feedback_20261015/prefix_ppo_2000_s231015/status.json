@@ -1,0 +1,53 @@
+{
+  "status": "complete",
+  "additional_ppo_steps": 2000,
+  "initialization_frames": 600,
+  "initialized_episodes": 6,
+  "counts": {
+    "decision_frames": 1874,
+    "only_stop": 126,
+    "voluntary_wait": 201,
+    "nonzero": 1673,
+    "changed_nonzero": 0,
+    "episodes": 10,
+    "success": 8,
+    "collisions": 1,
+    "recovery_actor_frames": 214,
+    "prefix_controlled_frames": 714,
+    "routine_controlled_frames": 1286,
+    "recovery_wait_choices": 190,
+    "recovery_motion_choices": 24
+  },
+  "reasons": {
+    "none": 1673,
+    "policy_wait": 21,
+    "only_stop_available": 103,
+    "scan_unavailable": 8,
+    "laser_braking_footprint": 195
+  },
+  "resource": {
+    "seconds": 1257.375342370011,
+    "cpu_seconds": 440.366354614,
+    "average_cpu_cores": 0.35022665052740654,
+    "peak_rss_mib": 2393.42578125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "feedback_schema": "stop_decision_feedback_v2",
+  "recovery_contract": {
+    "schema": "stop_feedback_recovery_residual_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false
+  },
+  "deployment_approved": false
+}

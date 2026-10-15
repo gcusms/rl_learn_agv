@@ -1,0 +1,31 @@
+{
+  "schema": "full_navigation_feedback_ppo_v1",
+  "approach_radius_m": 0.3,
+  "directional_terminal_actor_preserved": true,
+  "navigation_actor_all_parameters_trainable": false,
+  "legacy_300D_prefix_unchanged": true,
+  "training_dimensions": 436,
+  "runtime_dimensions": 439,
+  "unchanged_actions_masks_guard": true,
+  "reward_unchanged": true,
+  "comparison_inputs": 512,
+  "no_runtime_teacher": true,
+  "stop_remains_selectable": true,
+  "training_exploration_contract": null,
+  "base_navigation_actor_frozen": true,
+  "recovery_contract": {
+    "schema": "stop_feedback_recovery_residual_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false
+  }
+}

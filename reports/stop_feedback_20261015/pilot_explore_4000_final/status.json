@@ -1,0 +1,204 @@
+{
+  "status": "complete",
+  "started": "2026-10-15T22:42:01.973832+08:00",
+  "training_target": 4000,
+  "deployment_approved": false,
+  "auto_replace": false,
+  "feedback_schema": "stop_decision_feedback_v2",
+  "exploration_schema": "sensor_temperature_v1",
+  "updated": "2026-10-15T23:35:00.618529+08:00",
+  "command": [
+    "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python",
+    "-m",
+    "experiments.evaluate_docking_navigation",
+    "--candidate",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/models/stop_feedback_20261015/ppo_explore_4000_s221015/portable",
+    "--baseline",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/models/stop_feedback_20261015/baseline/portable",
+    "--cases",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/feedback_development_cases.json",
+    "--output",
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/pilot_explore_4000_s221015/paired",
+    "--cpu-cores",
+    "0.35",
+    "--candidate-name",
+    "stop_feedback_ppo",
+    "--baseline-name",
+    "prior_constraints"
+  ],
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 4000,
+    "counts": {
+      "decision_frames": 2558,
+      "only_stop": 1442,
+      "voluntary_wait": 58,
+      "nonzero": 2500,
+      "changed_nonzero": 0,
+      "episodes": 16,
+      "success": 10,
+      "collisions": 4
+    },
+    "reasons": {
+      "none": 2498,
+      "scan_unavailable": 34,
+      "policy_wait": 54,
+      "only_stop_available": 261,
+      "laser_braking_footprint": 1143,
+      "learned_route_incomplete": 10
+    },
+    "resource": {
+      "seconds": 1677.8427025820129,
+      "cpu_seconds": 587.486406705,
+      "average_cpu_cores": 0.3501439114649567,
+      "peak_rss_mib": 2459.80859375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "feedback_schema": "stop_decision_feedback_v2",
+    "exploration_schema": "sensor_temperature_v1",
+    "recorded_rollouts": 16,
+    "deployment_approved": false
+  },
+  "finished": "2026-10-15T23:35:00.618491+08:00",
+  "summary": {
+    "completed": true,
+    "deployment_approved": false,
+    "before": {
+      "tasks": 14,
+      "safe_success": 12,
+      "collisions": 2,
+      "timeouts": 0,
+      "false_arrivals": 0,
+      "voluntary_wait_frames": 34,
+      "only_stop_frames": 114
+    },
+    "after": {
+      "tasks": 14,
+      "safe_success": 10,
+      "collisions": 3,
+      "timeouts": 1,
+      "false_arrivals": 0,
+      "voluntary_wait_frames": 52,
+      "only_stop_frames": 522
+    },
+    "training": {
+      "status": "complete",
+      "additional_ppo_steps": 4000,
+      "counts": {
+        "decision_frames": 2558,
+        "only_stop": 1442,
+        "voluntary_wait": 58,
+        "nonzero": 2500,
+        "changed_nonzero": 0,
+        "episodes": 16,
+        "success": 10,
+        "collisions": 4
+      },
+      "reasons": {
+        "none": 2498,
+        "scan_unavailable": 34,
+        "policy_wait": 54,
+        "only_stop_available": 261,
+        "laser_braking_footprint": 1143,
+        "learned_route_incomplete": 10
+      },
+      "resource": {
+        "seconds": 1677.8427025820129,
+        "cpu_seconds": 587.486406705,
+        "average_cpu_cores": 0.3501439114649567,
+        "peak_rss_mib": 2459.80859375,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "feedback_schema": "stop_decision_feedback_v2",
+      "exploration_schema": "sensor_temperature_v1",
+      "recorded_rollouts": 16,
+      "deployment_approved": false
+    },
+    "paired_gate": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 14,
+      "common_successes": 10,
+      "lost_successes": [
+        "train_failure_w11_e7",
+        "train_failure_stop_go_variation_1"
+      ],
+      "gained_successes": [],
+      "safety_nonregression": false,
+      "common_success_travel_m": [
+        24.482317713424106,
+        24.761971546481394
+      ],
+      "common_success_seconds": [
+        182.2000000000164,
+        186.20000000001986
+      ],
+      "total_travel_relative_change": 0.011422686215037059,
+      "total_time_relative_change": 0.021953896816702123,
+      "pairs": [
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": -0.02112275111268136,
+          "time_relative_change": 0.10320284697512294
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.05210588567326213,
+          "time_relative_change": -0.06748466257669039
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.046262678662736034,
+          "time_relative_change": 0.015564202334635846
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": -0.021774267773291167,
+          "time_relative_change": -0.017391304347822878
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.022941119839329227,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": false,
+      "larger_training_gate_passed": false,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "waiting_note": "A legal movement is not necessarily useful or future-safe; wait counts alone do not prove improvement.",
+    "scope": "Previously used development tasks, no independent real-world acceptance."
+  }
+}

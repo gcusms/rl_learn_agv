@@ -85,9 +85,11 @@ def main():
     from neural_navigation.decision_feedback import contract as feedback_contract
     from experiments.stop_feedback_ppo import StopFeedbackPPO
     feedback_models = []
+    from experiments.stop_recovery_policy import StopRecoveryPPO, contract as recovery_contract
     for folder, schema in [('ppo_4000_s221015', 'stop_decision_feedback_v1'),
                            ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2'),
-                           ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2')]:
+                           ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2'),
+                           ('prefix_ppo_2000_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         feedback_bundle = feedback / 'portable'
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
@@ -96,8 +98,11 @@ def main():
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        checkpoint = StopFeedbackPPO.load(feedback / 'policy.zip', device='cpu')
-        if checkpoint.num_timesteps != 4000 or checkpoint.observation_space.shape != (436,):
+        recovery = folder == 'prefix_ppo_2000_s231015'
+        checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
+        expected_steps = 2000 if recovery else 4000
+        checkpoint = checkpoint_type.load(feedback / 'policy.zip', device='cpu')
+        if checkpoint.num_timesteps != expected_steps or checkpoint.observation_space.shape != (436,):
             raise ValueError('Feedback training checkpoint mismatch: ' + folder)
         if getattr(checkpoint, 'feedback_schema', 'stop_decision_feedback_v1') != schema:
             raise ValueError('Feedback checkpoint semantics mismatch: ' + folder)
@@ -105,12 +110,20 @@ def main():
         expected_exploration = 'sensor_temperature_v1' if folder == 'ppo_explore_4000_s221015' else 'none'
         if exploration != expected_exploration:
             raise ValueError('Feedback exploration semantics mismatch: ' + folder)
+        if recovery:
+            from experiments.train_prefix_recovery import frozen_base_digest
+            config = json.loads((feedback / 'config.json').read_text())
+            if checkpoint.recovery_contract != recovery_contract():
+                raise ValueError('Recovery checkpoint semantics mismatch')
+            if frozen_base_digest(checkpoint.policy) != config['frozen_base_sha256']:
+                raise ValueError('Recovery checkpoint changed the frozen base')
         exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
         with torch.no_grad():
             command = exported(torch.zeros((1, 439)))
         if command.shape != (1, 2) or not torch.isfinite(command).all():
             raise ValueError('Feedback TorchScript interface mismatch: ' + folder)
-        feedback_models.append(dict(folder=folder, schema=schema, exploration_schema=exploration, additional_steps=4000,
+        feedback_models.append(dict(folder=folder, schema=schema, exploration_schema=exploration, additional_steps=expected_steps,
+                                    recovery_residual=recovery,
                                     checkpoint_loaded=True, torchscript_loaded=True))
         del checkpoint, exported
 
@@ -137,7 +150,8 @@ def main():
              'training.test_decision_feedback', 'experiments.test_stop_feedback_ppo',
              'training.test_navigation_runtime', 'experiments.test_audit_decision_waits',
              'experiments.test_feedback_rollout_trace', 'experiments.test_feedback_alternatives',
-             'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery']
+             'experiments.test_feedback_exploration', 'experiments.test_feedback_recovery',
+             'experiments.test_stop_recovery_policy', 'experiments.test_prefix_recovery_audit']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

@@ -1,0 +1,38 @@
+{
+  "completed": true,
+  "sampled_frames": 2000,
+  "causally_verified_sampled_frames": 2000,
+  "separately_verified_initialization_frames": 600,
+  "initialized_episodes": 6,
+  "recovery_actor_supported_frames": 214,
+  "supported_motion_samples": 24,
+  "supported_wait_samples": 190,
+  "only_stop_frames": 126,
+  "longest_observed_choice_wait_s": 5.0,
+  "exact_sampling_checks": [
+    {
+      "rollout": "rollout_000250.npz",
+      "checkpoint": "policy_initial.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 7.62939453125e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_001000.npz",
+      "checkpoint": "policy_step_1000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 7.152557373046875e-06,
+      "frozen_base_unchanged": true
+    },
+    {
+      "rollout": "rollout_002000.npz",
+      "checkpoint": "policy_step_2000.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 4.76837158203125e-06,
+      "frozen_base_unchanged": true
+    }
+  ],
+  "initialization_is_counted_as_ppo_experience": false,
+  "deployment_approved": false,
+  "scope": "Actual causal histories and pre-update sampling likelihoods; not navigation acceptance."
+}

@@ -1,14 +1,14 @@
 {
-  "date": "2026-10-15",
-  "branch": "learn",
+  "date": "2026-10-16",
+  "branch": "resume",
   "completed": true,
-  "verified_at": "2026-10-15T23:15:12.726344+08:00",
-  "parent_commit": "0df36989712a57fe1ebe8acd05cbc89fae557d2b",
+  "verified_at": "2026-10-16T00:09:53.363149+08:00",
+  "parent_commit": "5e9e4508efb24d3bbc666213b6cd2ed6f0d7391a",
   "deployment_approved": false,
-  "scope": "Cross-machine integrity, three PPO checkpoints and TorchScript loads, destination-native rebuild and one-frame runtime, 90 implementation checks. Not navigation or real-world acceptance.",
+  "scope": "Migration integrity, four CPU PPO/checkpoint and TorchScript loads, native rebuilds and 98 implementation checks. Not closed-loop or real-world acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 9938,
+    "pinned_files_checked": 11441,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -31,6 +31,7 @@
         "schema": "stop_decision_feedback_v1",
         "exploration_schema": "none",
         "additional_steps": 4000,
+        "recovery_residual": false,
         "checkpoint_loaded": true,
         "torchscript_loaded": true,
         "native_runtime_checked": true
@@ -40,6 +41,7 @@
         "schema": "stop_decision_feedback_v2",
         "exploration_schema": "none",
         "additional_steps": 4000,
+        "recovery_residual": false,
         "checkpoint_loaded": true,
         "torchscript_loaded": true,
         "native_runtime_checked": true
@@ -49,6 +51,17 @@
         "schema": "stop_decision_feedback_v2",
         "exploration_schema": "sensor_temperature_v1",
         "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "prefix_ppo_2000_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 2000,
+        "recovery_residual": true,
         "checkpoint_loaded": true,
         "torchscript_loaded": true,
         "native_runtime_checked": true
@@ -61,50 +74,40 @@
     "cuda_available": true,
     "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
     "deployment_approved": false,
-    "tests": 90,
+    "tests": 98,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
   "readme": {
     "relative_targets_exist": true,
+    "relative_links_checked": 25,
     "bash_examples_parse": true,
-    "blocks_checked": 6
+    "blocks_checked": 7
   },
-  "stop_feedback": {
-    "training_complete": true,
-    "additional_steps": 4000,
-    "exploration_schema": "sensor_temperature_v1",
-    "final_policy_sha256": "b3cee60d0e9ca8037aebdbe3d73a1f8097a3167a815e944595d215858ed5a879",
-    "paired_evaluation_complete_at_snapshot": false,
-    "frozen_paired_rows": 1,
-    "target_paired_rows": 28,
-    "snapshot": "reports/handoff_learn_20261015/SNAPSHOT.json",
-    "v2_full_regression_rejected": true,
-    "deployment_approved": false
+  "latest_training": {
+    "additional_ppo_steps": 2000,
+    "complete": true,
+    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8",
+    "causal_audit": "reports/stop_feedback_20261015/prefix_sampling_audit_2000/RESULTS.json",
+    "causally_verified_sampled_frames": 2000,
+    "physical_initialization_frames_not_counted_as_ppo": 600,
+    "pre_update_likelihood_verified_frames": 750,
+    "frozen_base_unchanged": true,
+    "final_ppo_paired_evaluation_completed": false,
+    "final_ppo_recovery_evaluation_completed": false
   },
-  "actual_rollout_audits": {
-    "causally_verified_frames": 4000,
-    "exact_pre_update_probability_frames": 1250,
-    "maximum_log_probability_error": 7.927417755126953e-06,
-    "not_navigation_acceptance": true
-  },
-  "physics_prefix_smoke": {
-    "cases": 2,
-    "frozen_frames_each": 100,
-    "model_controlled_frames_each": 1,
-    "sensor_and_physical_parity_verified": true,
-    "not_full_recovery_acceptance": true
-  },
+  "snapshot": "reports/handoff_resume_20261016/SNAPSHOT.json",
+  "bc_recovery_scope": "Two correlated complete continuations; not independent missions or proof of PPO improvement.",
   "source_verification_resource_limit": {
     "single_threaded": true,
-    "cpu_quota_one_core_fraction": 0.15,
+    "cpu_quota_one_core_fraction": 0.2,
     "memory_max_gib": 4
   },
   "exclusions": [
     "virtual environments and caches",
-    "native binaries",
+    "platform native binaries",
     "complete raw record.zip, rosbag and camera images",
-    "background processes and post-snapshot evaluation results"
+    "background processes"
   ]
 }

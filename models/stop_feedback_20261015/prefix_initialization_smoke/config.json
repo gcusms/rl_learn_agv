@@ -1,0 +1,82 @@
+{
+  "steps": 2000,
+  "seed": 231015,
+  "cpu_cores": 0.1,
+  "recovery_contract": {
+    "schema": "stop_feedback_recovery_residual_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false
+  },
+  "prefixes": [
+    {
+      "id": "rotation_stall_t20",
+      "case": {
+        "id": "motion_profile_015",
+        "category": "stop_go",
+        "scene": "assets/room_navigation_scripted",
+        "seed": 100015,
+        "start": [
+          8.325000000000001,
+          1.175,
+          1.6233780945997562
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ],
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.0960091377313955,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ],
+        "pilot_category": "original_release_stop_go",
+        "max_steps": 700
+      },
+      "release_s": 20.0,
+      "trace": "reports/stop_feedback_20261015/earlier_action_alternatives_complete/earlier_right_rotation.npz"
+    }
+  ],
+  "demonstration_sources": [
+    {
+      "report": "reports/stop_feedback_20261015/turn_recovery_20261015/RESULTS.json",
+      "id": "recover_forward",
+      "trace_sha256": "3daed5a46f69b5353dbfdd6a0d23a39d83e86fb0d38718ba2e75f1ed7f04b550",
+      "total_frames": 273,
+      "recovery_frames": 17,
+      "nonzero_targets": 3,
+      "stop_targets": 14
+    }
+  ],
+  "demonstration_input_frames": 17,
+  "prior_checkpoint_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "bundle_manifest_sha256": "f412add64da251ec875e5e3f7b402e38d8153bf3b82425fafd99ef3ccc15ce4f",
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "reward_changed": false,
+  "deployment_approved": false,
+  "initialization_not_counted_as_ppo_steps": true,
+  "general_and_previous_failure_tasks_retained": true,
+  "limitations": [
+    "Demonstrations are reused physical diagnostic trajectories.",
+    "Recovery rehearsal and correlated prefixes are not independent generalization."
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-15",
+  "branch": "learn",
+  "completed": true,
+  "verified_at": "2026-10-15T23:15:12.726344+08:00",
+  "parent_commit": "0df36989712a57fe1ebe8acd05cbc89fae557d2b",
+  "deployment_approved": false,
+  "scope": "Cross-machine integrity, three PPO checkpoints and TorchScript loads, destination-native rebuild and one-frame runtime, 90 implementation checks. Not navigation or real-world acceptance.",
+  "implementation": {
+    "completed": true,
+    "pinned_files_checked": 9938,
+    "model_files_checked": 9,
+    "simulation_tasks": 28,
+    "real_decisions": 1516,
+    "real_segments": 22,
+    "observation_dimensions": 303,
+    "goal_yaw_retained": true,
+    "smoke_command": [
+      0.0,
+      0.5
+    ],
+    "feedback_ppo_steps": 4000,
+    "feedback_training_dimensions": 436,
+    "feedback_runtime_dimensions": 439,
+    "feedback_checkpoint_loaded": true,
+    "feedback_torchscript_loaded": true,
+    "feedback_native_runtime_checked": true,
+    "feedback_models": [
+      {
+        "folder": "ppo_4000_s221015",
+        "schema": "stop_decision_feedback_v1",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_v2_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_explore_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "sensor_temperature_v1",
+        "additional_steps": 4000,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      }
+    ],
+    "native_reference_rebuilt": true,
+    "implementation_tests_returncode": 0,
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
+    "deployment_approved": false,
+    "tests": 90,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "readme": {
+    "relative_targets_exist": true,
+    "bash_examples_parse": true,
+    "blocks_checked": 6
+  },
+  "stop_feedback": {
+    "training_complete": true,
+    "additional_steps": 4000,
+    "exploration_schema": "sensor_temperature_v1",
+    "final_policy_sha256": "b3cee60d0e9ca8037aebdbe3d73a1f8097a3167a815e944595d215858ed5a879",
+    "paired_evaluation_complete_at_snapshot": false,
+    "frozen_paired_rows": 1,
+    "target_paired_rows": 28,
+    "snapshot": "reports/handoff_learn_20261015/SNAPSHOT.json",
+    "v2_full_regression_rejected": true,
+    "deployment_approved": false
+  },
+  "actual_rollout_audits": {
+    "causally_verified_frames": 4000,
+    "exact_pre_update_probability_frames": 1250,
+    "maximum_log_probability_error": 7.927417755126953e-06,
+    "not_navigation_acceptance": true
+  },
+  "physics_prefix_smoke": {
+    "cases": 2,
+    "frozen_frames_each": 100,
+    "model_controlled_frames_each": 1,
+    "sensor_and_physical_parity_verified": true,
+    "not_full_recovery_acceptance": true
+  },
+  "source_verification_resource_limit": {
+    "single_threaded": true,
+    "cpu_quota_one_core_fraction": 0.15,
+    "memory_max_gib": 4
+  },
+  "exclusions": [
+    "virtual environments and caches",
+    "native binaries",
+    "complete raw record.zip, rosbag and camera images",
+    "background processes and post-snapshot evaluation results"
+  ]
+}

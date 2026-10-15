@@ -1,0 +1,24 @@
+{
+  "completed": true,
+  "sampled_frames": 250,
+  "causally_verified_sampled_frames": 250,
+  "separately_verified_initialization_frames": 200,
+  "initialized_episodes": 2,
+  "recovery_actor_supported_frames": 7,
+  "supported_motion_samples": 7,
+  "supported_wait_samples": 0,
+  "only_stop_frames": 28,
+  "longest_observed_choice_wait_s": 0.19999999552965164,
+  "exact_sampling_checks": [
+    {
+      "rollout": "rollout_000250.npz",
+      "checkpoint": "policy_initial.zip",
+      "verified_samples": 250,
+      "maximum_log_probability_error": 7.62939453125e-06,
+      "frozen_base_unchanged": true
+    }
+  ],
+  "initialization_is_counted_as_ppo_experience": false,
+  "deployment_approved": false,
+  "scope": "Actual causal histories and pre-update sampling likelihoods; not navigation acceptance."
+}

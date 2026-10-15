@@ -1,0 +1,59 @@
+{
+  "deployment_approved": false,
+  "additional_ppo_steps": 0,
+  "method": "demonstration-initialized masked PPO recovery residual",
+  "frozen_components": [
+    "base_navigation_actor",
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "migration": {
+    "parent_checkpoint_timesteps": 2000,
+    "dimensions": 436,
+    "legacy_prefix_dimensions": 300,
+    "feedback_schema": "stop_decision_feedback_v2",
+    "base_actor_frozen": true,
+    "all_actor_parameters_trainable": false,
+    "residual_head_initially_zero": true,
+    "recovery_contract": {
+      "schema": "stop_feedback_recovery_residual_v1",
+      "feedback_schema": "stop_decision_feedback_v2",
+      "training_dimensions": 436,
+      "action_count": 12,
+      "residual_width": 64,
+      "base_actor_frozen": true,
+      "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+      "minimum_goal_distance_m": 0.3,
+      "stop_remains_selectable": true,
+      "actions_masks_guard_unchanged": true,
+      "no_runtime_teacher": true,
+      "no_elapsed_episode_time_input": true,
+      "simulator_truth_used": false
+    },
+    "critic_moments_retained": true,
+    "exact_rollout_resume": false,
+    "reward_unchanged": true,
+    "actions_masks_guard_unchanged": true
+  },
+  "manifest_sha256": "d4e355db2541934572367f29d501461618ac7e4356c8c2815b743a36b8cac4d1",
+  "limitations": [
+    "Guard admission is not certified future safety.",
+    "An initialization/parity or training check is not navigation acceptance."
+  ],
+  "recovery_contract": {
+    "schema": "stop_feedback_recovery_residual_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false
+  }
+}
