@@ -57,15 +57,29 @@ def load_demonstrations(specifications, policy):
             choices = data['choices'].astype(np.int64)
             if not masks[np.arange(len(choices)), choices].all():
                 raise ValueError('Illegal demonstration action')
-            obs = convert_observations(data['observations'], masks, commands, data['labels'][:, 0])
+            times = data['labels'][:, 0]
+            obs = convert_observations(data['observations'], masks, commands, times)
             away = np.linalg.norm(obs[:, 218:220]*12., axis=-1) > .3
             if not np.allclose(commands[away], COMMANDS[choices[away]], rtol=0, atol=2e-8):
                 raise ValueError('A driving demonstration was changed by the guard')
             with torch.no_grad():
                 keep = policy.recovery_support(torch.from_numpy(obs)).numpy()
+            # A frozen initialization can contain long, unnecessary waits.
+            # Its eventual successful suffix does not make those waits expert
+            # labels. Exclude initialization explicitly when using a probe.
+            minimum_time = specification.get('minimum_sensor_timestamp_s')
+            if minimum_time is not None:
+                minimum_time = float(minimum_time)
+                if not np.isfinite(minimum_time) or minimum_time < 0:
+                    raise ValueError('Finite nonnegative demonstration start time required')
+                keep &= times >= minimum_time-1e-8
+            if not keep.any():
+                raise ValueError('No supported demonstration decisions after the declared initialization')
             arrays.append((obs[keep], masks[keep], choices[keep]))
             rows.append(dict(report=str(report_path), id=specification['id'], trace_sha256=digest,
                 total_frames=len(choices), recovery_frames=int(keep.sum()),
+                minimum_sensor_timestamp_s=minimum_time,
+                initialization_excluded=minimum_time is not None,
                 nonzero_targets=int(np.count_nonzero(choices[keep])),
                 stop_targets=int(np.count_nonzero(choices[keep] == 0))))
     obs, masks, choices = [np.concatenate([a[i] for a in arrays]) for i in range(3)]

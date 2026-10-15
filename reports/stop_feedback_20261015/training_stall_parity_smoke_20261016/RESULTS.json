@@ -1,0 +1,87 @@
+{
+  "completed": true,
+  "full_replay": false,
+  "replayed_frames": 20,
+  "complete_episode_frames": 700,
+  "actual_training_rollout_sha256": {
+    "rollout_000250.npz": "d1845629047f3f7d39381dc9d0ea781494b4d9d70dc5d0f4c2ed1ee2536c59b0",
+    "rollout_000500.npz": "58247fcf5d4a0cee038789882570a7c3c787494172d42f9559145d50d5224fd4",
+    "rollout_000750.npz": "2de8b1e2341a2e7451e1aed951b1eaff753fe4d9ff7dbe568508f362dabef769",
+    "rollout_001000.npz": "3ce1f5498f26a281cab840af2b52513e0108918979251c5372d29d57ec8b8033",
+    "rollout_001250.npz": "8c9caca075cc4c8653f66be020bb8fdee6a61b825004ff5dd3bb46a0c7e6f61f",
+    "rollout_001500.npz": "bef6510b9cb17913b256408c2fbe1acc7ae1281d1948552593354b8986c539b4",
+    "rollout_001750.npz": "949dc90c2eed17076541f79473841c24bdd877723ffedbf891a05b920935366e",
+    "rollout_002000.npz": "517e7d0d132798f5f0cc1c52ae7f246219a392ac8d5ba5b0033f4ecce8d8f88b"
+  },
+  "rows": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 3.999999999999937,
+      "travel_m": 0.7203136294591539,
+      "frames": 20,
+      "final_xy_error_m": 2.5635292629155275,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003540485544032263,
+      "localization_yaw_p95_rad": 0.0009029491720825345,
+      "stop_choices": 0,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 20
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 0,
+      "runtime_ms": {
+        "p95": 165.297593260766,
+        "p99": 171.6174082440557,
+        "maximum": 173.19736198987812
+      },
+      "variant": "recorded_training_actions",
+      "trace_sha256": "f6b96d433a9d48763d47c0e28a91e3b698ee92c865e86275e2650860a728f48f",
+      "diagnostic_replay": true,
+      "not_a_trained_policy_score": true,
+      "actual_training_observations_masks_commands_and_sensor_times_verified": true
+    }
+  ],
+  "case": {
+    "id": "train_failure_w11_e7",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 1962350169,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "max_steps": 20,
+    "pilot_category": "recorded_training_stall",
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09295138997376881,
+    "hold_s": 3.4079953972433437
+  },
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 209.82835965498816,
+    "cpu_seconds": 10.525446507,
+    "average_cpu_cores": 0.050162173141450196,
+    "peak_rss_mib": 1636.51953125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "Commands replay actual stochastic training choices; this is not a fresh learned-policy test.",
+    "Original training records did not save physical poses; new physical labels come from deterministic sensor/action replay.",
+    "A stalled or failed episode must not be treated as a successful demonstration."
+  ]
+}

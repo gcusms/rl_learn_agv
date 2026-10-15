@@ -119,6 +119,28 @@ class RecoveryPolicyTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_demonstrations([dict(report=str(path), id='recover_forward')], self.model.policy)
 
+    def test_physical_initialization_waits_are_excluded_from_new_probe_labels(self):
+        # The recorded safe trajectory has 17 supported decisions: four waits
+        # precede release; three moves and ten later waits follow it. A suffix
+        # must keep the later waits, rather than treating all stops as prefix.
+        sources = [dict(report=str(SOURCE), id='recover_forward'),
+            dict(report=str(SOURCE), id='recover_forward', minimum_sensor_timestamp_s=20.)]
+        observations, masks, choices, rows = load_demonstrations(sources, self.model.policy)
+        self.assertEqual(len(observations), 30)
+        self.assertEqual(int(np.count_nonzero(choices)), 6)
+        self.assertEqual(int(np.count_nonzero(choices == 0)), 24)
+        self.assertTrue(rows[-1]['initialization_excluded'])
+        self.assertEqual(rows[-1]['recovery_frames'], 13)
+        self.assertEqual(rows[-1]['stop_targets'], 10)
+        np.testing.assert_array_equal(choices[17:20], [1, 1, 1])
+        self.assertTrue(masks[np.arange(len(choices)), choices].all())
+
+    def test_invalid_or_empty_demonstration_suffix_is_rejected(self):
+        for timestamp in [-1., float('nan'), 1000.]:
+            with self.subTest(timestamp=timestamp), self.assertRaises(ValueError):
+                load_demonstrations([dict(report=str(SOURCE), id='recover_forward',
+                    minimum_sensor_timestamp_s=timestamp)], self.model.policy)
+
     def test_actual_ppo_update_uses_recovery_support_and_keeps_base_frozen(self):
         observations, masks, choices = self.observations, self.masks, self.choices
 

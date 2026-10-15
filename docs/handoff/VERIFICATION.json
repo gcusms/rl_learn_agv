@@ -1,14 +1,14 @@
 {
   "date": "2026-10-16",
-  "branch": "resume",
+  "branch": "recovery",
   "completed": true,
-  "verified_at": "2026-10-16T00:09:53.363149+08:00",
-  "parent_commit": "5e9e4508efb24d3bbc666213b6cd2ed6f0d7391a",
+  "verified_at": "2026-10-16T01:09:28.213295+08:00",
+  "parent_commit": "a991e91fc45dbda00a618c46370f7c2427933dd8",
   "deployment_approved": false,
-  "scope": "Migration integrity, four CPU PPO/checkpoint and TorchScript loads, native rebuilds and 98 implementation checks. Not closed-loop or real-world acceptance.",
+  "scope": "Migration integrity, four PPO/checkpoint and TorchScript loads, five native rebuilds and 100 implementation checks. Closed-loop development evidence is reported separately; not real-world acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 11441,
+    "pinned_files_checked": 13183,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -74,40 +74,73 @@
     "cuda_available": true,
     "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
     "deployment_approved": false,
-    "tests": 98,
+    "tests": 100,
     "failures": 0,
     "errors": 0,
     "skipped": 0
   },
   "readme": {
+    "completed": true,
     "relative_targets_exist": true,
-    "relative_links_checked": 25,
+    "relative_links_checked": 31,
     "bash_examples_parse": true,
     "blocks_checked": 7
   },
+  "other_worktree_backups": [
+    {
+      "name": "recovery",
+      "source_tracked_patch_matches_archive": true,
+      "source_untracked_files_checked": 69,
+      "source_untracked_mismatches": []
+    },
+    {
+      "name": "localization",
+      "source_tracked_patch_matches_archive": true,
+      "source_untracked_files_checked": 4,
+      "source_untracked_mismatches": []
+    }
+  ],
   "latest_training": {
     "additional_ppo_steps": 2000,
     "complete": true,
-    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8",
-    "causal_audit": "reports/stop_feedback_20261015/prefix_sampling_audit_2000/RESULTS.json",
-    "causally_verified_sampled_frames": 2000,
-    "physical_initialization_frames_not_counted_as_ppo": 600,
-    "pre_update_likelihood_verified_frames": 750,
-    "frozen_base_unchanged": true,
-    "final_ppo_paired_evaluation_completed": false,
-    "final_ppo_recovery_evaluation_completed": false
+    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8"
   },
-  "snapshot": "reports/handoff_resume_20261016/SNAPSHOT.json",
-  "bc_recovery_scope": "Two correlated complete continuations; not independent missions or proof of PPO improvement.",
-  "source_verification_resource_limit": {
-    "single_threaded": true,
-    "cpu_quota_one_core_fraction": 0.2,
-    "memory_max_gib": 4
+  "development_evaluation": {
+    "completed_rows": 42,
+    "model_metrics": {
+      "frozen_reference": {
+        "tasks": 14,
+        "safe_successes": 12,
+        "collisions": 2,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "bc_only": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "recovery_ppo": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      }
+    },
+    "all_bc_ppo_trajectories_equal": true,
+    "all_regression_checks_passed": true,
+    "larger_training_gate_passed": false
   },
-  "exclusions": [
-    "virtual environments and caches",
-    "platform native binaries",
-    "complete raw record.zip, rosbag and camera images",
-    "background processes"
-  ]
+  "snapshot": "reports/handoff_recovery_20261016/SNAPSHOT.json",
+  "tests_log": "docs/handoff/verification_recovery_tests.txt",
+  "previous_verification": "docs/handoff/RESUME_VERIFICATION.json"
 }

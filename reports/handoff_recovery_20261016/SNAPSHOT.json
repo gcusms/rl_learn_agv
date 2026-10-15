@@ -1,0 +1,273 @@
+{
+  "schema": "agv_handoff_snapshot_v5",
+  "branch": "recovery",
+  "captured_at": "2026-10-16T01:06:56.169711+08:00",
+  "parent_commit": "a991e91fc45dbda00a618c46370f7c2427933dd8",
+  "repository": "https://github.com/gcusms/rl_learn_agv",
+  "previous_handoff_branch": "resume",
+  "latest_training_model": "models/stop_feedback_20261015/prefix_ppo_2000_s231015",
+  "training_complete": true,
+  "additional_ppo_steps": 2000,
+  "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8",
+  "final_bundle_manifest_sha256": "74874b99773e7137f8369a14a97f36f8cb7ec4b30ef47c43a1d233fac8bee3e1",
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 2000,
+    "initialization_frames": 600,
+    "initialized_episodes": 6,
+    "counts": {
+      "decision_frames": 1874,
+      "only_stop": 126,
+      "voluntary_wait": 201,
+      "nonzero": 1673,
+      "changed_nonzero": 0,
+      "episodes": 10,
+      "success": 8,
+      "collisions": 1,
+      "recovery_actor_frames": 214,
+      "prefix_controlled_frames": 714,
+      "routine_controlled_frames": 1286,
+      "recovery_wait_choices": 190,
+      "recovery_motion_choices": 24
+    },
+    "reasons": {
+      "none": 1673,
+      "policy_wait": 21,
+      "only_stop_available": 103,
+      "scan_unavailable": 8,
+      "laser_braking_footprint": 195
+    },
+    "resource": {
+      "seconds": 1257.375342370011,
+      "cpu_seconds": 440.366354614,
+      "average_cpu_cores": 0.35022665052740654,
+      "peak_rss_mib": 2393.42578125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "recovery_contract": {
+      "schema": "stop_feedback_recovery_residual_v1",
+      "feedback_schema": "stop_decision_feedback_v2",
+      "training_dimensions": 436,
+      "action_count": 12,
+      "residual_width": 64,
+      "base_actor_frozen": true,
+      "support": "masked_base_prefers_stop_and_motion_available_and_valid_inputs_and_goal_far",
+      "minimum_goal_distance_m": 0.3,
+      "stop_remains_selectable": true,
+      "actions_masks_guard_unchanged": true,
+      "no_runtime_teacher": true,
+      "no_elapsed_episode_time_input": true,
+      "simulator_truth_used": false
+    },
+    "deployment_approved": false
+  },
+  "training_statistics_are_not_evaluation": true,
+  "baseline_deployment_model": "models/quality_recovery_20261014/policy_2000.zip",
+  "baseline_checkpoint_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "deployment_baseline_replaced": false,
+  "deployment_approved": false,
+  "final_ppo_full_paired_evaluation_completed": true,
+  "final_ppo_full_recovery_evaluation_completed": true,
+  "threeway_evaluation": {
+    "results": "reports/stop_feedback_20261015/prefix_recovery_threeway_20261016/RESULTS.json",
+    "summary": "reports/stop_feedback_20261015/prefix_recovery_threeway_20261016/SUMMARY.json",
+    "completed_rows": 42,
+    "model_metrics": {
+      "frozen_reference": {
+        "tasks": 14,
+        "safe_successes": 12,
+        "collisions": 2,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "bc_only": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      },
+      "recovery_ppo": {
+        "tasks": 14,
+        "safe_successes": 13,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0,
+        "directional_successes": 6,
+        "directional_tasks": 6
+      }
+    },
+    "all_bc_ppo_trajectories_equal": true,
+    "paired_development_gate": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 14,
+      "common_successes": 12,
+      "lost_successes": [],
+      "gained_successes": [
+        "train_failure_stop_go_variation_0"
+      ],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        34.48744826571353,
+        34.56141842468863
+      ],
+      "common_success_seconds": [
+        251.00000000001597,
+        250.80000000001488
+      ],
+      "total_travel_relative_change": 0.002144842912273015,
+      "total_time_relative_change": -0.0007968127490083354,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.008094491049375208,
+          "time_relative_change": -0.04145077720209234
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.006801555063570719,
+          "time_relative_change": 0.04635761589403309
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": false,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    }
+  },
+  "prefix_evaluation": "reports/stop_feedback_20261015/prefix_ppo_recovery_2000_20261016/RESULTS.json",
+  "prefix_bc_ppo_comparison": "reports/stop_feedback_20261015/prefix_recovery_comparison_20261016/RESULTS.json",
+  "additional_ppo_navigation_benefit_demonstrated": false,
+  "actual_sampled_state_diagnostic": {
+    "samples": 2000,
+    "supported": 214,
+    "supported_argmax_changes": 0,
+    "supported_training_sources": {
+      "physical_prefix_rotation_stall_t20": 18,
+      "train_failure_stop_go_variation_0": 1,
+      "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": 2,
+      "train_failure_stop_go_variation_1": 11,
+      "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": 2,
+      "train_failure_w11_e7": 180
+    }
+  },
+  "holdout": {
+    "total_cases": 4,
+    "initialized_cases": 3,
+    "failed_initializations": 1,
+    "initialized_long_wait_cases": 0,
+    "candidate_evaluation_complete_at_capture": false,
+    "source": "reports/stop_feedback_20261015/recovery_holdout_reference_20261016/RESULTS.json",
+    "scope": "New seeds, poses and sensor conditions in the same known map; recovery continuation, not unseen-map generalization."
+  },
+  "training_stall_source": "reports/stop_feedback_20261015/training_stall_source_20261016/RESULTS.json",
+  "source_background": {
+    "unit": "rl-training-stall-probes-20261016.service",
+    "systemd": {
+      "MainPID": "1638681",
+      "Result": "success",
+      "CPUQuotaPerSecUSec": "200ms",
+      "MemoryHigh": "2147483648",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "e43a29e03b0b4a34a95772f51ced4ed2"
+    },
+    "frozen_partial_results": "reports/handoff_recovery_20261016/partial_stall_probes/RESULTS.json",
+    "completed_probes": [
+      {
+        "id": "unchanged_reference",
+        "safe_success": false,
+        "seconds": 139.99999999994517,
+        "timeout": true
+      }
+    ],
+    "all_probes_completed": false,
+    "queue_next": "Three candidate continuations from recovery_holdout_reference_20261016/prefixes.json"
+  },
+  "training_running": false,
+  "background_processes_transferred": false,
+  "post_snapshot_outputs_included": false,
+  "latest_code_change": "Allow explicit post-initialization demonstration suffix filtering; existing 2k weights unchanged.",
+  "resume_limitations": "Checkpoint and optimizer loadable, but CLI has no direct 436-D resume entry; full live physics state is not saved.",
+  "limitations": [
+    "Fixed development cases reused; not unseen-map or real-robot acceptance.",
+    "BC and final PPO trajectories match on all 14 missions and both full prefix tests; no extra deterministic PPO gain demonstrated.",
+    "motion_profile_015 still collides; stochastic w11 training stall remains unresolved.",
+    "Three held-out reference conditions do not contain long waits; a fourth failed before release.",
+    "A legal right-arc action is not proof of useful or safe recovery.",
+    "No real-world absolute localization, AMCL superiority, SLAM, kidnapping recovery or Orin budget acceptance.",
+    "Raw bags, record.zip, venv, caches, platform binaries and live services are excluded."
+  ],
+  "next_steps": [
+    "Rebuild target native bundles and run tools/check_handoff.py.",
+    "Finish physical stall alternatives without relaxing guards; verify actions are in learnable support.",
+    "Complete candidate conditions, keep failed initialization and extend unseen recovery states.",
+    "If a safe sequence exists, train from supported post-release demonstrations and retain ordinary safe waits.",
+    "Rerun paired safety, navigation, directional docking and recovery gates before scaling or replacing baseline."
+  ]
+}

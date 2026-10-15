@@ -1,0 +1,632 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "recovery_holdout_00",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 41.60000000000283,
+      "travel_m": 5.624870359638767,
+      "frames": 209,
+      "final_xy_error_m": 0.11570388724764673,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004380341328367037,
+      "localization_yaw_p95_rad": 0.0015449263732442368,
+      "stop_choices": 22,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 205,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 26,
+      "runtime_ms": {
+        "p95": 223.37703380035236,
+        "p99": 254.30014005163684,
+        "maximum": 266.6378120193258
+      },
+      "variant": "reference_continuation",
+      "trace_sha256": "6f3ba96e1e9d6dbb0e7cb79b41378082200bcb0a5d931750ed947e473341e1ea",
+      "initialization_reached_release": true,
+      "initialization": {
+        "id": "early_rotation",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "not_a_full_mission_score": true,
+      "release_motion_choices": 11,
+      "reference_release_choice": 7
+    },
+    {
+      "case_id": "recovery_holdout_01",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 39.2000000000016,
+      "travel_m": 5.601666760559382,
+      "frames": 197,
+      "final_xy_error_m": 0.08637415624232042,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0046487616584007995,
+      "localization_yaw_p95_rad": 0.0013242183857999016,
+      "stop_choices": 14,
+      "only_stop_frames": 12,
+      "stop_reasons": {
+        "None": 193,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 18,
+      "runtime_ms": {
+        "p95": 217.54100198158991,
+        "p99": 264.6585843409411,
+        "maximum": 344.7927189990878
+      },
+      "variant": "reference_continuation",
+      "trace_sha256": "f11d4e62b8c26860dbdf6dba9b0bfca73dade1f09a8fc542c184003253c1ad66",
+      "initialization_reached_release": true,
+      "initialization": {
+        "id": "early_rotation",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "not_a_full_mission_score": true,
+      "release_motion_choices": 11,
+      "reference_release_choice": 7
+    },
+    {
+      "case_id": "recovery_holdout_02",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 33.19999999999853,
+      "travel_m": 5.346615241795798,
+      "frames": 167,
+      "final_xy_error_m": 0.08371161703331469,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004268227835234569,
+      "localization_yaw_p95_rad": 0.001317716481850839,
+      "stop_choices": 7,
+      "only_stop_frames": 5,
+      "stop_reasons": {
+        "None": 163,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 13,
+      "runtime_ms": {
+        "p95": 218.4717608848586,
+        "p99": 238.94038845901377,
+        "maximum": 240.5538369785063
+      },
+      "variant": "reference_continuation",
+      "trace_sha256": "38d037d6eec2d33bb3d4f466d90a542043ca5dbd7e320346a98476f651f5e876",
+      "initialization_reached_release": true,
+      "initialization": {
+        "id": "early_rotation",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "not_a_full_mission_score": true,
+      "release_motion_choices": 11,
+      "reference_release_choice": 10
+    },
+    {
+      "case_id": "recovery_holdout_03",
+      "category": "untrained_recovery_conditions",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 15.400000000001008,
+      "travel_m": 1.490823015304878,
+      "frames": 77,
+      "final_xy_error_m": 3.2570391523419535,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004471644481270903,
+      "localization_yaw_p95_rad": 0.0013667165661190419,
+      "stop_choices": 29,
+      "only_stop_frames": 29,
+      "stop_reasons": {
+        "None": 67,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 7
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 26,
+      "runtime_ms": {
+        "p95": 215.47377643873915,
+        "p99": 228.79757800139478,
+        "maximum": 242.34590795822442
+      },
+      "variant": "reference_continuation",
+      "trace_sha256": "d46f1e506d4c30edd8dc6bc112a1a2132a19ca0fa38265c51d2d1d10700ff3b0",
+      "initialization_reached_release": false,
+      "initialization": {
+        "id": "early_rotation",
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        }
+      ],
+      "not_a_full_mission_score": true
+    }
+  ],
+  "release_s": 20.0,
+  "case_specifications_sha256": "8620e77b709986e70683054c151621d87d703606dcd73943ec68adc3104e6b6b",
+  "initialization": {
+    "id": "early_rotation",
+    "start_s": 6.0,
+    "end_s": 7.4,
+    "choice": 5
+  },
+  "training_examples": false,
+  "deployment_approved": false,
+  "scope": "New seeds, poses and sensor conditions in the same known map; recovery continuation, not unseen-map generalization.",
+  "resource": {
+    "seconds": 925.3640722659766,
+    "cpu_seconds": 138.839479746,
+    "average_cpu_cores": 0.1500376812836683,
+    "peak_rss_mib": 2064.47265625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "initialized_cases": 3,
+  "failed_initializations": 1,
+  "initialized_long_wait_cases": 0
+}

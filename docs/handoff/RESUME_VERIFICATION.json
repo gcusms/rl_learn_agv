@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-16",
+  "branch": "resume",
+  "completed": true,
+  "verified_at": "2026-10-16T00:09:53.363149+08:00",
+  "parent_commit": "5e9e4508efb24d3bbc666213b6cd2ed6f0d7391a",
+  "deployment_approved": false,
+  "scope": "Migration integrity, four CPU PPO/checkpoint and TorchScript loads, native rebuilds and 98 implementation checks. Not closed-loop or real-world acceptance.",
+  "implementation": {
+    "completed": true,
+    "pinned_files_checked": 11441,
+    "model_files_checked": 9,
+    "simulation_tasks": 28,
+    "real_decisions": 1516,
+    "real_segments": 22,
+    "observation_dimensions": 303,
+    "goal_yaw_retained": true,
+    "smoke_command": [
+      0.0,
+      0.5
+    ],
+    "feedback_ppo_steps": 4000,
+    "feedback_training_dimensions": 436,
+    "feedback_runtime_dimensions": 439,
+    "feedback_checkpoint_loaded": true,
+    "feedback_torchscript_loaded": true,
+    "feedback_native_runtime_checked": true,
+    "feedback_models": [
+      {
+        "folder": "ppo_4000_s221015",
+        "schema": "stop_decision_feedback_v1",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_v2_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "ppo_explore_4000_s221015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "sensor_temperature_v1",
+        "additional_steps": 4000,
+        "recovery_residual": false,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "prefix_ppo_2000_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 2000,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      }
+    ],
+    "native_reference_rebuilt": true,
+    "implementation_tests_returncode": 0,
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
+    "deployment_approved": false,
+    "tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "readme": {
+    "relative_targets_exist": true,
+    "relative_links_checked": 25,
+    "bash_examples_parse": true,
+    "blocks_checked": 7
+  },
+  "latest_training": {
+    "additional_ppo_steps": 2000,
+    "complete": true,
+    "final_policy_sha256": "999df576ea3af117adb4828509b1eff2df68d05d628d98a48d1ef947e547e1e8",
+    "causal_audit": "reports/stop_feedback_20261015/prefix_sampling_audit_2000/RESULTS.json",
+    "causally_verified_sampled_frames": 2000,
+    "physical_initialization_frames_not_counted_as_ppo": 600,
+    "pre_update_likelihood_verified_frames": 750,
+    "frozen_base_unchanged": true,
+    "final_ppo_paired_evaluation_completed": false,
+    "final_ppo_recovery_evaluation_completed": false
+  },
+  "snapshot": "reports/handoff_resume_20261016/SNAPSHOT.json",
+  "bc_recovery_scope": "Two correlated complete continuations; not independent missions or proof of PPO improvement.",
+  "source_verification_resource_limit": {
+    "single_threaded": true,
+    "cpu_quota_one_core_fraction": 0.2,
+    "memory_max_gib": 4
+  },
+  "exclusions": [
+    "virtual environments and caches",
+    "platform native binaries",
+    "complete raw record.zip, rosbag and camera images",
+    "background processes"
+  ]
+}

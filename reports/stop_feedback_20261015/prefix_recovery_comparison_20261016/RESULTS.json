@@ -1,0 +1,41 @@
+{
+  "completed": true,
+  "bc_vs_ppo": [
+    {
+      "case_id": "rotation_stall_t20",
+      "bc_success": true,
+      "ppo_success": true,
+      "bc_seconds": 45.80000000000498,
+      "ppo_seconds": 45.80000000000498,
+      "post_release_longest_wait_s": 0.0,
+      "array_parity": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "odometry": true,
+        "masks": true,
+        "observations": true
+      }
+    },
+    {
+      "case_id": "arc_stall_t20",
+      "bc_success": true,
+      "ppo_success": true,
+      "bc_seconds": 46.20000000000518,
+      "ppo_seconds": 46.20000000000518,
+      "post_release_longest_wait_s": 0.0,
+      "array_parity": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "odometry": true,
+        "masks": true,
+        "observations": true
+      }
+    }
+  ],
+  "scope": "Two correlated complete prefix continuations; no extra PPO benefit observed on deterministic trajectories.",
+  "deployment_approved": false
+}
