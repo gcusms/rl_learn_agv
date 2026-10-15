@@ -1,13 +1,22 @@
 # AGV 导航项目交接
 
-更新：2026-10-15。分支：**`handoff`**。本分支保存当前完整实验源码、候选模型、训练检查点、实车输入回放和评估报告，可在另一台电脑继续开发。
+更新：2026-10-15。交接分支：**`progress`**。本分支在 `handoff` 快照基础上归档最新源码、候选模型、可续训检查点、精简实车录制、评估报告和停车反馈训练入口，可在另一台电脑接着开发。
 
-**当前阶段：定位输入与静态匹配修复后的验证阶段。没有后台训练；最新候选未通过实车部署验收，原 2k 模型保留。** 最新改进来自运动反馈适配和几何定位程序，本轮没有重新训练 actor 或定位网络。请先复测，不要把“文件最新”理解为“闭环效果最好”。
+**当前没有后台训练。** 定位输入与静态匹配修复已有回放结果；最新停车反馈训练入口已经过功能检查和固定输入验证，**本轮计划的 4,000 步 PPO 尚未启动，也没有对应的已训练新模型**。原 2k 模型和方向停车模型均保留。最新候选尚未通过整机或实车部署验收。
+
+| 交接时的进度 | 已完成 | 下一步 |
+|---|---|---|
+| 已知地图定位 | 运动反馈适配、静态支持筛选、时序融合和射线一致性检查；22 条冻结轨迹有对照 | 独立真实位姿验证，以及同协议闭环回归 |
+| 停车原因与动态预测 | 新增 136 维显式反馈；58 帧旧输入前缀、初始动作完全一致，风险与保护层对齐 | 小规模闭环 PPO 和原/新模型配对评估 |
+| PPO 与模型导出 | 436 维训练、439 维方向运行时；32 项相关功能检查通过 | 实际物理环境试训，验证等待改善且不增加碰撞 |
+| 搬车重定位、在线建图 | 研究原型和历史失败证据已归档 | 分开验证；不能用已知地图回放成绩代替 |
+
+先按第 1 节验证交接，再按第 7 节继续最新实验。详细设计与证据见[停车反馈说明](reports/stop_feedback_20261015/README.md)。
 
 ## 1. 换电脑后从这里开始
 
 ```bash
-git clone --depth 1 --branch handoff https://github.com/gcusms/rl_learn_agv.git
+git clone --depth 1 --branch progress https://github.com/gcusms/rl_learn_agv.git
 cd rl_learn_agv
 ```
 
@@ -30,7 +39,7 @@ python tools/check_handoff.py --output training/runs/handoff_check
 
 `training/requirements.lock.txt` 是旧 ROS 主机环境记录，包含系统提供的包，不作为跨电脑的 pip 安装清单。Jetson 应按本机 JetPack 安装匹配的 PyTorch，再处理其他依赖，不能照搬桌面 CUDA wheel。现有电脑可先用现成环境，无需重装。
 
-默认运行 42 项功能检查，其中 1 项原生内核数值对照在没有内核时跳过。要完整执行 42 项：
+默认运行 61 项功能检查，其中 1 项原生内核数值对照在没有内核时跳过。要完整执行 61 项：
 
 ```bash
 # 可选：只为重建历史候选和检查 Python/C++ 一致性。
@@ -121,7 +130,8 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
 | `reports/` | 各轮任务、逐例结果、失败证据与回放 |
 | `tools/check_handoff.py` | 换电脑后的完整性与运行时检查 |
 | `tools/prepare_native_bundle.py` | 从原生候选源码重建目标平台内核，输出新包 |
-| [FILES.json](docs/handoff/FILES.json) | 当前代码、关键模型与回放数据的 SHA256 清单 |
+| [FILES.json](docs/handoff/FILES.json) | 本次交接代码、关键模型与回放数据的 SHA256 清单 |
+| `training/experiments/stop_feedback_pipeline.py` | 最新停车反馈 PPO 试训与原/新模型配对评估入口 |
 
 关键源码：[静态时序定位](training/neural_navigation/fast_static_localizer.py)、[射线一致性检查](training/neural_navigation/verified_static_localizer.py)、[测量里程计适配](training/neural_navigation/measured_odometry.py)、[全局恢复原型](training/neural_navigation/global_relocalizer.py)、[方向目标运行时](training/neural_navigation/goal_pose_runtime.py)。
 
@@ -129,13 +139,69 @@ nice -n 19 python -m experiments.evaluate_real_input_repair \
 
 ## 6. 下一步按什么顺序做
 
-1. **先复现本分支。** 跑交接检查及固定输入回放，确认输入/模型合同、地图坐标、时间和数据齐全。不要把旧 300 维、当前 303 维或其他 318 维入口混用。
+1. **先复现本分支。** 跑交接检查及固定输入回放，确认输入/模型合同、地图坐标、时间和数据齐全。旧 300/303 维与新实验 436/439 维入口不同，必须按 manifest 选择运行时。
 2. **测准真实运动来源。** 实车用已测直线距离、左右转、制动和受阻片段对照指令、编码器和 IMU；确认轮径/符号、时间戳、数据年龄和唯一 TF 发布者。接入示例不会自动修改实车；指令超时停车需在实际发布链与底盘确认。
 3. **给定位补独立参考。** 已知位置放入/移走地图外障碍，做正常与缺失扫描、弱几何、闭环恢复的配对试验。报告真实位置/航向误差和拒绝原因，不能用模型输出或轮速积分当参考真值。
 4. **做原/新候选的闭环回归。** 同任务、相同保护和底盘，比较到达、碰撞、等待、实际路程/耗时及方向停车。先确认拒绝增加没有把机器人变成长期停车，再决定采用定位候选。
-5. **统一动态风险再定训练预算。** 在新观测合同中对齐 actor 与保护层的预测来源，明确停车风险、测量年龄和未知状态；先过横穿、反向、遮挡、静态误报和丢帧回归。此前仅 377/2000 步进入可训练范围，不能只增加等待样本。
+5. **验证停车反馈后再定训练预算。** 新观测已对齐 actor 与保护层的风险来源，并显式提供停车原因和数据年龄。按第 7 节完成物理环境试训与配对评估，再看横穿、反向、遮挡、静态误报和丢帧回归。此前仅 377/2000 步进入可训练范围；新入口允许所有有运动选项的状态更新 actor，但等待是否改善仍需实测。
 6. **分别推进在线建图与板端性能。** 未知环境单独评估漂移、真回环和重定位；Jetson 测端到端 P95/P99、最大延迟与超时。电脑单组件耗时不能代替 Orin 结果。之后再按失败组件选择定位监督、路由监督或 PPO 微调。
 
 恢复训练入口保留在 `training/experiments/train_localization_recovery.py`，原始检查点、各次配置、状态及源码快照也已归档。这一入口主要训练受条件启用的恢复分支，冻结 localizer/router/正常导航和方向停车；继续运行它不会直接修复定位或路由。已失败的配置仅作对照，不建议换电脑后直接接着大规模跑。
 
 运行输出放 `training/runs/`，默认不跟踪。虚拟环境、缓存、平台 `.so` 和原始大录包不提交；新模型另存目录并附配置、种子、源码版本和评估，不覆盖历史基线。
+
+## 7. 在新电脑继续最新停车反馈实验
+
+新实验保留原 300 维导航输入，追加 136 维停车原因、逐动作拒绝类别、与保护层共用的接触风险和数据年龄。训练输入为 **436 维**；带目标朝向的部署候选为 **439 维**，必须使用 manifest 指定的 `StopFeedbackRuntime`。新增特征不包含仿真真值；方向停车分支、定位器、路由器冻结，完整导航 actor 可以更新。停止始终可选，不强迫车运动。
+
+本轮没有改变奖励、12 动作、车体、4 cm 基本余量或速度上限。配对基线使用历史累计轮廓预测候选，暂不合并新的射线定位变体，以免同时改变两个因素。`reports/stop_feedback_20261015/frozen_replay/initial_portable` 是**未训练的接口迁移样例**，不是效果已提升的新模型；其中平台内核需重建。
+
+```bash
+source .venv/bin/activate
+export PYTHONPATH=training:.
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+
+# 先检查新增反馈、PPO 更新、重载/导出、重定位复位和原运行时，共 32 项。
+nice -n 19 python -m unittest -v \
+  training.test_decision_feedback experiments.test_stop_feedback_ppo \
+  training.test_global_relocalizer training.test_navigation_runtime
+
+# 基线使用原生定位内核；每台电脑在新的目录重建，不复制旧 .so。
+sudo apt-get install g++ libeigen3-dev
+python tools/prepare_native_bundle.py \
+  --source models/localization_mapping_20261015/contour_mask_candidate/portable \
+  --output training/runs/stop_feedback_baseline
+
+# 在相同 58 帧已知失败输入上复核初始动作、观测前缀和保护风险的一致性。
+nice -n 19 python -m experiments.replay_decision_feedback \
+  --baseline training/runs/stop_feedback_baseline \
+  --checkpoint models/quality_recovery_20261014/policy_2000.zip \
+  --trace reports/localization_mapping_20261015/constraints_repair_20261015/combined_closed_loop_12/motion_profile_015_contour_mask_combined.npz \
+  --cases reports/localization_mapping_20261015/constraints_repair_20261015/all_cases.json \
+  --output training/runs/stop_feedback_replay
+
+# 开始新一轮 4,000 步 PPO；完成后自动进行 12 例原/新模型配对导航评估。
+# 所有输出目录必须尚不存在。新电脑从原 2k 检查点初始化本轮实验。
+nice -n 19 python -m experiments.stop_feedback_pipeline \
+  --baseline training/runs/stop_feedback_baseline \
+  --checkpoint models/quality_recovery_20261014/policy_2000.zip \
+  --training-cases reports/localization_mapping_20261015/blind_repair_20261015/stop_go_training_cases.json \
+  --evaluation-cases reports/localization_mapping_20261015/constraints_repair_20261015/all_cases.json \
+  --model-output training/runs/stop_feedback_4000_model \
+  --output training/runs/stop_feedback_4000_report \
+  --steps 4000 --seed 221015 --cpu-cores 0.35
+```
+
+`--cpu-cores 0.35` 控制软平均 CPU 用量；本轮默认单线程、CPU 训练并检查 3 GiB 进程内存预算。若还需要系统级硬限制，可将最后一个命令的 `nice -n 19` 改为下面的前缀，后面保留 `python -m ...` 及全部参数（需要可用的 systemd 用户服务）：
+
+```bash
+systemd-run --user --unit=agv-feedback \
+  --property=CPUQuota=50% --property=MemoryHigh=3G --property=MemoryMax=4G \
+  --property=Nice=19 --working-directory="$PWD" \
+  --setenv=PATH="$PATH" --setenv=PYTHONPATH=training:. \
+  --setenv=OPENBLAS_NUM_THREADS=1 --setenv=OMP_NUM_THREADS=1 --setenv=MKL_NUM_THREADS=1
+```
+
+查看 `training/runs/stop_feedback_4000_model/progress.json` 的实际步数、可更新决策帧、仅停止帧、主动等待和执行动作改写数；查看 `training/runs/stop_feedback_4000_report/status.json` 判断是在训练、配对评估还是失败。最终结果是该报告目录中的 `SUMMARY.json`。只有定位可信、运动有用时的长期等待才是优化目标，正常避让停车应保留。
+
+**继续工作的验收条件：** 相同任务下到达、碰撞、假到达和超时不退化，正常路线和方向停靠保留，再判断无进展等待与行驶效率是否改善。4,000 步是排查信号的小规模试训，不是充分训练或实车可部署的保证；流水线不自动替换部署模型。当前没有这一轮完成结果，不能把功能检查、58 帧固定回放或旧 11/12 成绩写成本轮训练成功率。

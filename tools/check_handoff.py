@@ -88,7 +88,9 @@ def main():
                        output / 'native_reference')
         os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
     tests = ['training.test_measured_odometry', 'training.test_verified_static_localizer',
-             'training.test_fast_static_localizer', 'training.test_global_relocalizer']
+             'training.test_fast_static_localizer', 'training.test_global_relocalizer',
+             'training.test_decision_feedback', 'experiments.test_stop_feedback_ppo',
+             'training.test_navigation_runtime']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)

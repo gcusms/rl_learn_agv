@@ -50,6 +50,7 @@ def reset_training_episode(env, case):
     obs, _ = env.core.update(e.scan, e.observed_odometry, e.measured_velocity, e.elapsed)
     env.guard_overrides = 0; env.guard_steps = 0; env.previous_executed = np.zeros(2)
     env.context = SafetyContext(env.hardware['policy_observation']['schema'])
+    env.context.capture_decision_feedback = getattr(env, 'capture_decision_feedback', False)
     obs = env.context.augment(obs, env.core, env.guard, e.elapsed)
     env.rejection_cost.reset(); env.previous_observation = obs.copy()
     return obs, info

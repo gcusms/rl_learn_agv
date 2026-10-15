@@ -1,13 +1,13 @@
 {
   "date": "2026-10-15",
-  "branch": "handoff",
+  "branch": "progress",
   "completed": true,
   "deployment_approved": false,
   "training_started": false,
-  "scope": "Migration/integrity verification, not new training or navigation acceptance.",
+  "scope": "Migration/integrity, causal feedback and physics wrapper checks; no new trained feedback model or navigation acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 2979,
+    "pinned_files_checked": 3015,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -25,7 +25,7 @@
     "cuda_available": true,
     "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
     "deployment_approved": false,
-    "tests": 42,
+    "tests": 61,
     "failures": 0,
     "errors": 0,
     "skipped": 0
@@ -1164,11 +1164,54 @@
       "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
     },
     "input_provenance": "training/assets/real_recording_20261014/MANIFEST.json",
-    "note": "Derived JSONL hash differs by documented field projection. All compared poses, standard deviations, acceptance, ranks, excluded hits and measured-motion states are byte-value identical to historical final replay."
+    "note": "Derived JSONL hash differs by documented field projection. All compared poses, standard deviations, acceptance, ranks, excluded hits and measured-motion states are byte-value identical to historical final replay.",
+    "evidence_from_branch": "handoff",
+    "current_revision_rerun": false,
+    "note_current_revision": "Historical full localization replay was not rerun in progress; localization implementations and inputs are unchanged. Current shared guard/runtime changes passed the 58-frame parity check and regression tests."
   },
   "optional_native": "Rebuilt on this machine into ignored output; no compiled binary committed.",
   "limitations": [
     "Existing virtualenv reused; clean pip installation not repeated.",
     "No new closed-loop, real reference-pose, global recovery, online SLAM or Orin acceptance."
-  ]
+  ],
+  "parent_handoff_commit": "5ebfa49b8904a773a8607bbed50ff8991cf58335",
+  "previous_handoff_implementation": {
+    "completed": true,
+    "pinned_files_checked": 2979,
+    "model_files_checked": 9,
+    "simulation_tasks": 28,
+    "real_decisions": 1516,
+    "real_segments": 22,
+    "observation_dimensions": 303,
+    "goal_yaw_retained": true,
+    "smoke_command": [
+      0.0,
+      0.5
+    ],
+    "native_reference_rebuilt": true,
+    "implementation_tests_returncode": 0,
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
+    "deployment_approved": false,
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "stop_feedback": {
+    "implementation_tests": 32,
+    "failures": 0,
+    "errors": 0,
+    "fixed_input_frames": 58,
+    "legacy_prefix_max_difference": 0,
+    "changed_initial_commands": 0,
+    "shared_forecast_max_difference": 1.8339890717200547e-08,
+    "physical_smoke_steps": 8,
+    "additional_ppo_steps": 0,
+    "planned_pilot_steps": 4000,
+    "trained_candidate_available": false,
+    "deployment_approved": false
+  }
 }

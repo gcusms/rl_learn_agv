@@ -366,9 +366,14 @@ def apply_confirmed_pose(runtime,recovery,scan,odom,velocity,timestamp,received_
     if runtime.guard.memory is not None:runtime.guard.memory.reset()
     if runtime.guard.predictive_constraint is not None:runtime.guard.predictive_constraint.reset()
     runtime.guard.reverse_started=None
-    if runtime.context is not None:runtime.context=SafetyContext(runtime.context.schema)
+    if runtime.context is not None:
+        capture=getattr(runtime.context,'capture_decision_feedback',False)
+        runtime.context=SafetyContext(runtime.context.schema)
+        runtime.context.capture_decision_feedback=capture
     prediction=getattr(runtime.policy,'prediction',None)
     if prediction is not None:prediction.reset();runtime.policy.last_observation=None
+    reset_hook=getattr(runtime.policy,'on_runtime_reset',None)
+    if reset_hook is not None:reset_hook(runtime.context)
     # The first fresh scan installs current odometry as the new incremental
     # anchor. It is not integrated from zero and cannot invent a displacement.
     core.update(scan,odom,velocity,timestamp);core.record_action(np.zeros(2))

@@ -33,6 +33,7 @@ class GuardedNavigationCurriculum(NavigationCurriculum):
         self.projection_cost=projection_cost
         if not np.isfinite(footprint_clearance_cost) or footprint_clearance_cost<0:raise ValueError('Footprint clearance cost must be nonnegative')
         self.footprint_clearance_cost=footprint_clearance_cost
+        self.capture_decision_feedback=False
         hardware=self.components/'hardware.json'
         self.hardware=json.loads(hardware.read_text()) if hardware.exists() else {}
         self.use_safety_context='policy_observation' in self.hardware
@@ -49,6 +50,7 @@ class GuardedNavigationCurriculum(NavigationCurriculum):
         self.guard_overrides=0;self.guard_steps=0;self.previous_executed=np.zeros(2)
         if self.use_safety_context:
             self.context=SafetyContext(self.hardware['policy_observation']['schema'])
+            self.context.capture_decision_feedback=self.capture_decision_feedback
             obs=self.context.augment(obs,self.core,self.guard,e.elapsed)
         return obs,info
 

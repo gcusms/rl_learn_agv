@@ -13,7 +13,7 @@ from neural_navigation.quality_prediction_context import QualityPredictionContex
 
 
 def check_files(bundle,manifest):
-    for optional in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
+    for optional in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json','decision_feedback.json'):
         if (bundle/optional).exists() and optional not in manifest['files']:
             raise ValueError('Missing localization component hash: '+optional)
     for name,digest in manifest['files'].items():
@@ -65,6 +65,9 @@ class DockingRuntime(GoalPoseRuntime):
 
 
 def resolve_runtime(name):
-    """Translate only the two approved legacy names; never guess from dimension."""
+    """Resolve explicit legacy or feedback runtime names; never guess dimensions."""
+    if name=='neural_navigation.decision_feedback_runtime.StopFeedbackRuntime':
+        from neural_navigation.decision_feedback_runtime import StopFeedbackRuntime
+        return StopFeedbackRuntime
     return {'experiments.goal_pose_navigation.GoalPoseRuntime':GoalPoseRuntime,
             'experiments.docking_navigation.DockingRuntime':DockingRuntime}.get(name)

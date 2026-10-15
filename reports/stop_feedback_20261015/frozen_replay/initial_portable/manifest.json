@@ -1,0 +1,389 @@
+{
+  "sensor_core": "learned-terminal-goal-pose",
+  "required_runtime": "neural_navigation.decision_feedback_runtime.StopFeedbackRuntime",
+  "observation_contract": {
+    "schema": "stop_decision_feedback_v1",
+    "prefix_dimensions": 300,
+    "training_dimensions": 436,
+    "heading_prefix_dimensions": 303,
+    "dimensions": 439,
+    "append_dimensions": 136,
+    "action_commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "fields": [
+      "12_current_guard_rejection_groups_one_hot",
+      "previous_executed_stop_reason_one_hot",
+      "12_guard_forecast_contact_scores",
+      "nonzero_choices_over_11",
+      "scan_age_over_guard_limit",
+      "previous_idle_seconds_over_5",
+      "previous_idle_with_choices_seconds_over_5",
+      "prediction_input_valid",
+      "moving_tracks_over_4",
+      "oldest_track_age_over_0.8",
+      "scan_valid"
+    ],
+    "rejection_groups": [
+      "accepted",
+      "perception_or_odometry",
+      "localization_or_route",
+      "static_geometry",
+      "laser_geometry",
+      "dynamic_prediction",
+      "projection",
+      "other"
+    ],
+    "previous_reasons": [
+      "none",
+      "nonfinite_input",
+      "stale_or_future_scan",
+      "scan_unavailable",
+      "odometry_jump",
+      "localization_uncertain",
+      "learned_route_incomplete",
+      "reverse_without_rear_visibility",
+      "reverse_duration_limit",
+      "static_braking_footprint",
+      "laser_braking_footprint",
+      "escape_not_increasing_clearance",
+      "unsafe_turn_blocked",
+      "unsafe_translation_blocked",
+      "estimated_goal_reached",
+      "other",
+      "predicted_dynamic_contact",
+      "predictive_command_contract",
+      "policy_wait",
+      "only_stop_available"
+    ],
+    "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+    "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+    "unknown_forecast_is_not_clear": true,
+    "legacy_prefix_unchanged": true,
+    "stop_always_selectable": true,
+    "simulator_truth_used": false,
+    "commands_issued": false
+  },
+  "quality_prefix_contract": {
+    "schema": "quality_prediction_append_v1",
+    "prefix_dimensions": 282,
+    "dimensions": 300,
+    "commands_m_s_rad_s": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "fields": [
+      "12_directional_response_risk_scores",
+      "pose_supported",
+      "observed_moving_track",
+      "held_moving_track",
+      "unknown_velocity_track",
+      "degraded_contour_track",
+      "maximum_track_age_over_0.8"
+    ],
+    "horizon_s": 2.4,
+    "period_s": 0.2,
+    "margin_m": 0.04,
+    "velocity_error_floor_m_s": 0.025,
+    "residual_scale": 2.0,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "contour_hold_s": 0.6,
+    "contour_recovery_measurements": 2,
+    "thresholds_calibrated": false,
+    "absence_of_support_means": "unknown",
+    "simulator_truth_used": false,
+    "commands_issued": false
+  },
+  "action_contract": {
+    "schema": "masked_velocity_choices_predictive_v2",
+    "choices": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "normalized_actions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.25,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.25,
+        -1.0
+      ],
+      [
+        0.05000000074505806,
+        1.0
+      ],
+      [
+        0.05000000074505806,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "stop_index": 0,
+    "mask_source": "current_guard_and_odometry_frame_predictive_probe_acceptance",
+    "wait_always_allowed": true,
+    "future_safety_certified": false,
+    "simulator_truth_used": false,
+    "predictive_constraint": {
+      "schema": "odometry_frame_predictive_mask_v2",
+      "horizon_s": 1.2,
+      "period_s": 0.1,
+      "reaction_s": 0.2,
+      "minimum_check_s": 0.6,
+      "margin_m": 0.04,
+      "velocity_floor_m_s": 0.025,
+      "minimum_speed_m_s": 0.04,
+      "track_max_age_s": 0.8,
+      "minimum_track_hits": 3,
+      "response_gain": 20.0,
+      "response_acceleration": [
+        0.5,
+        1.0
+      ],
+      "contour_hold_s": 0.6,
+      "contour_recovery_measurements": 2,
+      "wait_always_allowed": true,
+      "simulator_truth_used": false,
+      "calibrated": false,
+      "cumulative_contour_reference": true,
+      "contour_count_ratio": 0.8,
+      "contour_diameter_ratio": 0.75,
+      "retained_hypothesis_s": 1.2,
+      "unknown_velocity_reachable_envelope": true,
+      "retained_measurement_age_preserved": true
+    }
+  },
+  "docking_contract": {
+    "schema": "learned_terminal_actor_v2",
+    "observation_dimensions": 303,
+    "activation_distance_m": 0.1,
+    "requires_directional_goal": true,
+    "actions": 12,
+    "frozen_navigation_actor": true,
+    "teacher_at_runtime": false,
+    "action_space_expanded": false,
+    "slow_rotation_calibrated": false
+  },
+  "requires_quality_feature_generator": true,
+  "exact_action_parity": true,
+  "comparison_inputs": 512,
+  "deployment_approved": false,
+  "files": {
+    "quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "actor.pt": "9985ffa8e225bacbb80db27338ece16a491558f1f6f25eb5ce6c6516ce3f6ccc",
+    "docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "navigation_preservation.json": "a882d8eeafc5153b3b79bb80398e03cbeb41cfdfaf3329e17fa38e6a339bbfd3",
+    "localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "uncertainty_contract.json": "0baf6f30fd0729690590a960832304706f8a42414610b23c81a59a3e43e7ca10",
+    "decision_feedback.json": "59b474d3d7144f34c35595b8ecf306220787d81da66deaa0d4b39232769a3aa9"
+  },
+  "navigation_preservation_contract": {
+    "schema": "full_navigation_feedback_ppo_v1",
+    "approach_radius_m": 0.3,
+    "directional_terminal_actor_preserved": true,
+    "navigation_actor_all_parameters_trainable": true,
+    "legacy_300D_prefix_unchanged": true,
+    "training_dimensions": 436,
+    "runtime_dimensions": 439,
+    "unchanged_actions_masks_guard": true,
+    "reward_unchanged": true,
+    "comparison_inputs": 512,
+    "no_runtime_teacher": true,
+    "stop_remains_selectable": true
+  },
+  "localization_method": "fast_static_tracking_temporal_native_v1",
+  "localization_is_neural": false,
+  "requires_supplied_initial_map_pose": true,
+  "parent_manifest_sha256": "f412add64da251ec875e5e3f7b402e38d8153bf3b82425fafd99ef3ccc15ce4f",
+  "native_kernel": {
+    "architecture": "x86_64",
+    "source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "build": "g++ -O3 -DNDEBUG -std=c++17 -shared -fPIC -I/usr/include/eigen3",
+    "runtime_compilation": false
+  },
+  "handoff_rebuild": {
+    "parent_manifest_sha256": "46a676957f8fdaf111f5b31433853d513323a4929c361dc2e6a7683271e3f004",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "compiler": "11.4.0"
+  },
+  "additional_ppo_steps": 0
+}

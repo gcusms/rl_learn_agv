@@ -68,6 +68,10 @@ class SafetyContext:
         self.last_override = False
         self.last_reason = 'none'
         self.blocked_since = None
+        # Opt-in diagnostic capture for a new append-only actor contract.
+        # Legacy observations and probe decisions retain their exact semantics.
+        self.capture_decision_feedback = False
+        self.guard_probe_frame = None
 
     def observation(self, core, guard, timestamp, received_timestamp=None,
                     scan_valid=True, rear_clearance_known=False):
@@ -91,10 +95,13 @@ class SafetyContext:
                     pass  # A rejected probe cannot mutate the live memory.
             snapshot.memory = PreparedMemory()
         feasible = []
+        captured = []
         for command in self.probes:
-            executed, _ = copy.copy(snapshot).check(core, command, timestamp, now,
+            executed, reason = copy.copy(snapshot).check(core, command, timestamp, now,
                                                     scan_valid, rear_clearance_known)
             feasible.append(float(np.allclose(executed, command, atol=1e-9, rtol=0)))
+            if self.capture_decision_feedback:
+                captured.append((executed.copy(), reason))
         held = 0. if self.blocked_since is None else np.clip((timestamp-self.blocked_since)/5., 0, 1)
         reasons = np.zeros(len(REASONS))
         reasons[REASONS.index(self.last_reason)] = 1.
@@ -104,13 +111,26 @@ class SafetyContext:
             from neural_navigation.predictive_risk import PredictiveRiskContext,BoundedPoseRiskContext
             fast=[]
             for command in FAST_PROBES:
-                executed,_=copy.copy(snapshot).check(core,command,timestamp,now,scan_valid,rear_clearance_known)
+                executed,reason=copy.copy(snapshot).check(core,command,timestamp,now,scan_valid,rear_clearance_known)
                 fast.append(float(np.allclose(executed,command,atol=1e-9,rtol=0)))
+                if self.capture_decision_feedback:
+                    captured.append((executed.copy(), reason))
             if self.predictive_context is None:
                 risk_type=BoundedPoseRiskContext if self.schema==BOUNDED_PREDICTIVE_SCHEMA else PredictiveRiskContext
                 self.predictive_context=risk_type(guard.half*2)
             risk=self.predictive_context.features(core)
             result=np.r_[result,fast,risk].astype(np.float32)
+        if self.capture_decision_feedback:
+            if self.schema not in PREDICTIVE_SCHEMAS:
+                raise ValueError('Decision feedback requires all twelve masked choices')
+            zero, reason = copy.copy(snapshot).check(core, np.zeros(2), timestamp, now,
+                                                    scan_valid, rear_clearance_known)
+            from neural_navigation.masked_actions import COMMANDS
+            captured.insert(0, (zero.copy(), reason))
+            self.guard_probe_frame = dict(timestamp=float(timestamp), received_timestamp=float(now),
+                scan_valid=bool(scan_valid), commands=COMMANDS.copy(),
+                executed=np.array([row[0] for row in captured]),
+                reasons=tuple(row[1] for row in captured))
         return result
 
     def augment(self, base, core, guard, timestamp, **kwargs):
