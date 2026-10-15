@@ -4,7 +4,9 @@
 
 **本轮定位改善来自配套几何算法和配置，定位网络没有重新训练。固定输入回放已有改善，但整机导航、实车绝对精度和未知环境建图尚未验收。**
 
-本分支基于已发布的 `models/best-2026-10-14`，增加本说明和约 25 KB 的证据快照。最新实验位于本地 `fix/localization-mapping-20261015` 工作区，含未提交改动；本次文档提交没有包含这些实验源码、候选权重、原始实车录制或完整传感器缓存。远程分支中的历史模型仍是原归档版本，不能将本文当作新版可执行模型包。
+本分支基于已发布的 `models/best-2026-10-14`，现已包含定位核心、C++ 源码、候选生成器、运行时接入、功能检查和 28 条冻结仿真传感器回放。定位核心与此前本地实验逐字节一致，运行时接入限定在定位部分。历史模型权重保留，通过生成独立候选启用新定位；没有上传原始实车录制，也没有包含未通过的动态预测/追加 PPO 变体。实现与复测来源见 [SOURCE_RELEASE.json](SOURCE_RELEASE.json)。
+
+**当前分支的候选生成示例基于原 300 维、12 动作的 2k 导航包。最新本地 303 维方向停靠模型仍需要其对应完整运行时，不可直接用本分支旧 300 维入口加载。定位类也可以独立接入该运行时；上传定位算法不等于发布新的整机模型。**
 
 ## 1. 要解决的实际问题
 
@@ -82,7 +84,7 @@ flowchart LR
 
 ## 4. 当前配置与本地实现位置
 
-配置快照可直接查看：[定位合同](evidence/temporal_localization_contract.json)、[弱几何预算](evidence/uncertainty_contract.json)、[硬件](evidence/temporal_hardware.json)、[候选文件清单](evidence/temporal_manifest.json)。这些 JSON 是说明用快照，**不构成可运行部署包**。
+配置快照可直接查看：[定位合同](evidence/temporal_localization_contract.json)、[弱几何预算](evidence/uncertainty_contract.json)、[硬件](evidence/temporal_hardware.json)、[候选文件清单](evidence/temporal_manifest.json)。这些 JSON 来自此前本地候选，不可直接拼装到旧模型；新候选应使用下文生成器自动计算匹配的清单。
 
 | 参数 | 当前值/含义 |
 |---|---|
@@ -97,16 +99,22 @@ flowchart LR
 | 纠正速率上限 | 0.30 m/s、0.50 rad/s |
 | 误差预算标定 | `calibrated=false` |
 
-本地实验工作区：`/home/ubuntu/rl_learn/.real-adaptation-20261014`。下列实现尚未随本次文档提交上传，源码哈希记录于 [PROVENANCE.json](evidence/PROVENANCE.json)：
+已上传的实现入口如下。原实验快照保留在 [PROVENANCE.json](evidence/PROVENANCE.json)，本次发布文件及验证结果另外记录在 [SOURCE_RELEASE.json](SOURCE_RELEASE.json)。
 
-| 本地相对路径 | 内容 |
+| 仓库相对路径 | 内容 |
 |---|---|
 | `training/neural_navigation/fast_static_localizer.py` | 静态支持、物理时间融合、弱方向和纠正限幅 |
 | `training/neural_navigation/static_tracking_kernel.cpp` | 原生优化核 |
 | `training/neural_navigation/weak_geometry_uncertainty.py` | 未观测方向的累计误差预算 |
+| `training/neural_navigation/localization_bundle.py` | 定位组件哈希、合同和原生架构校验 |
+| `training/neural_navigation/core.py` | 显式合同选择新定位、传递实际时间戳与诊断；无合同沿用原定位 |
+| `training/experiments/build_fast_localization_candidate.py` | 从原有包生成新候选，并在当前平台编译内核 |
 | `training/experiments/benchmark_sparse_localization.py` | 冻结传感器对照和 Python/C++ 一致性 |
 | `training/experiments/benchmark_constraint_uncertainty.py` | 位姿不变与不确定性变化检查 |
-| `training/experiments/replay_odom_adaptation.py` | 实车固定输入回放 |
+| `training/experiments/replay_recorded_localization.py` | 已录制的实车固定输入回放；不依赖旧神经定位器 |
+| `training/assets/localization_replay_20261015/` | 28 条冻结仿真传感器输入及离线参考标签，约 3.3 MiB |
+
+原始扫描、观测维度、动作、车体、路由器与停车保护没有因这次定位接入被改写。无定位合同的原包继续选择原定位器，但更换定位后输入分布仍可能影响 actor，必须另做完整导航回归。
 
 ## 5. 已有什么证据
 
@@ -178,31 +186,60 @@ flowchart LR
 
 有独立参考时计算位置/航向 RMSE、P95/P99、最大误差、终点误差、按方向误差和恢复时间。无参考的历史 bag 只报告静止漂移、跳变量、纠正量、支持比例和连续性，**不报告绝对精度通过**。不确定性另外检查覆盖率和错误可信比例，不能只看标准差变大。
 
-当前本机的复测示例，**仅适用于保留完整实验代码和缓存的本地工作区；在只克隆本远程文档分支的目录不可直接运行**：
+下面可在克隆本分支后的仓库根目录运行。先按根 README 安装 Python 依赖；原生编译另需要 `g++` 与 Eigen3 头文件（Ubuntu 包为 `g++`、`libeigen3-dev`）。已有环境可直接使用。纯冻结回放不启动 ROS、MuJoCo 或电机控制进程。
 
 ```bash
-cd /home/ubuntu/rl_learn/.real-adaptation-20261014
-export PYTHONPATH=training
+export PYTHONPATH=training:.
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 
-# 28 条冻结轨迹；独立新输出目录，软平均约 0.25 个 CPU 核。
-nice -n 19 /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python \
-  -m experiments.benchmark_sparse_localization \
-  --cache reports/localization_mapping_20261015/amcl_comparison/sensor_cache \
-  --kernel models/localization_mapping_20261015/temporal_native_candidate/portable/localization_kernel.so \
-  --temporal --cpu-cores .25 \
-  --output /tmp/localization_temporal_recheck_20261015
+# 功能、合同、历史清理、缺失处理及原运行时回归。
+python -m unittest training.test_fast_static_localizer \
+  training.test_weak_geometry_uncertainty training.test_localization_bundle \
+  training.test_experiment_budget training.test_navigation_core \
+  training.test_navigation_runtime -v
 
-# 原实车记录：固定输入，仅检查纠偏，不是闭环导航。
-nice -n 19 /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python \
-  -m experiments.replay_odom_adaptation \
-  --record /home/ubuntu/rl_learn/record_analysis_20261014/raw/20261014_193644_map_01test_953a9959 \
-  --bundle models/localization_mapping_20261015/temporal_native_candidate/portable \
-  --temporal-static --cpu-cores .25 \
-  --output /tmp/localization_recorded_recheck_20261015
+# 使用原归档权重生成独立候选，不覆盖原目录。
+# 在目标板执行时会编译该目标板架构的内核，不复制桌面 .so。
+nice -n 19 python -m experiments.build_fast_localization_candidate \
+  --source models/quality_recovery_20261014/portable \
+  --output training/runs/localization_temporal_candidate \
+  --temporal --native
+
+# 28 条冻结轨迹，软平均约 0.25 个 CPU 核。
+nice -n 19 python \
+  -m experiments.benchmark_sparse_localization \
+  --cache training/assets/localization_replay_20261015 \
+  --kernel training/runs/localization_temporal_candidate/localization_kernel.so \
+  --temporal --cpu-cores .25 \
+  --output training/runs/localization_replay_check
+
+# 可选：单独生成带保守预算的候选，仍不改变位姿估计。
+nice -n 19 python -m experiments.build_fast_localization_candidate \
+  --source models/quality_recovery_20261014/portable \
+  --output training/runs/localization_budget_candidate \
+  --temporal --native --uncertainty-budget
+
+nice -n 19 python -m experiments.benchmark_constraint_uncertainty \
+  --cache training/assets/localization_replay_20261015 \
+  --reference training/runs/localization_replay_check \
+  --bundle training/runs/localization_budget_candidate \
+  --cpu-cores .20 --output training/runs/localization_budget_check
 ```
 
-上面第二条运行 Python 参考定位，用于检查时序算法；不是 ARM 原生库性能测量。复测输出目录应使用新名称，避免覆盖结果；本次文档整理没有重新运行这些长实验。
+本次源码上传前，以上 30 项功能与运行时检查通过。回放入口报告 `completed=true`、28 个案例、3,221 帧；同平台 Python/原生最大差异应低于 `1e-6`。本机复测位姿最大差异约 `1.47e-14`，22 条验证轨迹合并后 P95 为 `0.185062 m`，与此前记录一致。额外 28 条预算对照的位姿最大变化为 0。这是实现复现检查，不是实车或闭环验收。不同平台耗时应重新测量。
+
+若需要对当前本机原实车记录重放，下面路径只在保留该记录的机器上存在；原始实车录制未上传：
+
+```bash
+nice -n 19 python -m experiments.replay_recorded_localization \
+  --record /home/ubuntu/rl_learn/record_analysis_20261014/raw/20261014_193644_map_01test_953a9959 \
+  --bundle training/runs/localization_temporal_candidate \
+  --cpu-cores .20 --output training/runs/localization_recorded_check
+```
+
+上传前已用新入口复查全部 1,516 帧，与原 Python 时序定位最大位姿差约 `1.67e-14`。冻结 28 条仿真复测平均约 0.25 个 CPU 核，峰值 RSS 约 68.4 MiB；真实记录定位重放平均约 0.20 核，峰值约 145 MiB。它们都不是包含神经策略的整机资源占用。所有示例输出目录均需不存在，重复运行请更换名称。
+
+独立使用算法时，调用顺序是 `FastStaticLocalizer(map, lidar, config)` → `reset(initial_map_pose, None)` → `update(odom_xy_yaw, raw_scan, scan_timestamp)`。`odom` 是连续里程计坐标，初始位姿在地图坐标；几何地图和初始位姿须可信。原生配置还要提供已核验的 `kernel_path`；本分支 `NavigationCore` 会在加载共享库前检查 bundle 的哈希与目标架构。独立直接调用类时也应先调用 `localization_configuration(bundle)` 完成检查。
 
 ### 6.3 实车影子对照：需要补录什么
 
@@ -263,7 +300,7 @@ nice -n 19 /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python \
 
 ## 8. 如何核对本分支的证据文件
 
-[证据清单](evidence/manifest.json)记录本文附带 JSON 的 SHA256；[来源记录](evidence/PROVENANCE.json)记录本地报告与实验源码哈希。下列命令只验证文档证据是否完整，不重新跑定位、训练或实车测试，可在本分支仓库根目录直接执行：
+[证据清单](evidence/manifest.json)记录原说明附带 JSON 的 SHA256；[原来源记录](evidence/PROVENANCE.json)是先前文档提交时的历史快照，其中“未包含源码”描述的是该次提交。[源码发布清单](SOURCE_RELEASE.json)另记录本次新增代码、仿真输入与复测。下列命令只验证原文档证据是否完整，不重新跑定位、训练或实车测试，可在本分支仓库根目录直接执行：
 
 ```bash
 python3 - <<'PY'

@@ -5,6 +5,7 @@ observation methods. Static map geometry is immutable between resets.
 """
 from collections import deque
 from pathlib import Path
+import json
 import numpy as np
 import torch
 from scipy.ndimage import binary_dilation
@@ -232,7 +233,16 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
         if route_mode not in ('raw','shortcut'):raise ValueError('Unknown route mode')
         self.route_mode=route_mode
         self.static_map=static_map;self.lidar=lidar;components=Path(components)
-        self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
+        from neural_navigation.localization_bundle import localization_configuration
+        localization_config=localization_configuration(components)
+        if localization_config is None:
+            self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
+        else:
+            from neural_navigation.fast_static_localizer import FastStaticLocalizer
+            self.localizer=FastStaticLocalizer(static_map,lidar,localization_config,
+                kernel_path=str((components/'localization_kernel.so').resolve()),
+                uncertainty=json.loads((components/'uncertainty_contract.json').read_text())
+                    if (components/'uncertainty_contract.json').exists() else None)
         checkpoint=torch.load(components/'router.pt',map_location='cpu',weights_only=True)
         self.motion_prediction_config=checkpoint.get('motion_prediction')
         self.escape_start=bool(checkpoint.get('escape_start',False))
@@ -293,13 +303,21 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
                 self.odometry_sanity_failure=True;self.localizer.last_odom=odom.copy()
         self.elapsed=float(timestamp);self._last_timestamp=self.elapsed
         self.scan=scan.copy();self.odom=odom.copy();self.measured_velocity=velocity.copy()
-        self.estimate=self.localizer.update(self.odom,self.scan)
+        self.estimate=(self.localizer.update(self.odom,self.scan,self.elapsed)
+            if getattr(self.localizer,'uses_timestamps',False) else self.localizer.update(self.odom,self.scan))
         observation=self._observation(self.scan,initialize=self._first_observation)
         self._first_observation=False;self.previous_remaining=self.remaining
         return observation.copy(),self.diagnostics()
 
     def diagnostics(self):
         return dict(estimated_pose=self.estimate.tolist(),localization_std=self.localizer.std.tolist(),
+                    localization_correction_reason=getattr(self.localizer,'correction_reason','legacy_unchecked'),
+                    localization_static_support_fraction=getattr(self.localizer,'static_support_fraction',None),
+                    localization_valid_static_hits=getattr(self.localizer,'valid_static_hits',None),
+                    localization_observable_rank=getattr(self.localizer,'observable_rank',None),
+                    localization_covariance_calibrated=False,
+                    localization_weak_odometry_budget=(self.localizer.weak_geometry_uncertainty.floor.tolist()
+                        if getattr(self.localizer,'weak_geometry_uncertainty',None) is not None else None),
                     localization_scan_update_accepted=self.localizer.scan_update_accepted,
                     localization_valid_scan_fraction=self.localizer.valid_scan_fraction,
                     localization_missing_scan_updates=self.localizer.missing_scan_updates,
