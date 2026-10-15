@@ -54,6 +54,34 @@ class WaitAuditTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             measure(self.trace([1], False), .2, .2)
 
+    def test_issued_zero_after_motion_proposal_is_not_a_voluntary_stop(self):
+        trace = self.trace([1, 1, 1, 1], True)
+        trace['labels'][:, 0] = [0., .1, .5, .8]
+        trace['commands'][:3] = 0.
+        result = measure(trace, 1., .2)
+        self.assertEqual(result['unfinished_task_wait_s'], 0.)
+        self.assertAlmostEqual(result['unfinished_task_executed_idle_with_motion_s'], .8)
+        self.assertAlmostEqual(result['unfinished_task_unexecuted_motion_s'], .8)
+        self.assertAlmostEqual(result['longest_unfinished_executed_wait_s'], .8)
+
+    def test_executed_wait_excludes_only_stop_and_finished_goal(self):
+        trace = self.trace([0, 1, 0, 1], [False, True, True, True])
+        trace['commands'][:] = 0.
+        trace['labels'][2:, 7] = .05
+        result = measure(trace, .8, .2)
+        self.assertAlmostEqual(result['only_stop_executed_idle_s'], .2)
+        self.assertAlmostEqual(result['unfinished_task_executed_idle_with_motion_s'], .2)
+        self.assertAlmostEqual(result['unfinished_task_unexecuted_motion_s'], .2)
+        self.assertAlmostEqual(result['executed_idle_with_motion_available_s'], .6)
+
+    def test_executed_wait_includes_unfinished_heading_alignment(self):
+        trace = self.trace([1, 1], True, distance=.05)
+        trace['commands'][:] = 0.
+        trace['labels'][0, 8] = .17
+        result = measure(trace, .4, .12, yaw_tolerance=.15)
+        self.assertAlmostEqual(result['unfinished_task_executed_idle_with_motion_s'], .2)
+        self.assertTrue(result['unfinished_executed_wait_segments'][0]['includes_heading_alignment'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-10-16T04:33:48.413955+08:00",
+  "classification": "progress",
+  "previous_goal_turn_classification": "progress",
+  "previous_goal_turn_evidence": "Learned, teacher-free continuation completed the same 90s physical recovery; exact commands/poses verified and full navigation regression started.",
+  "issue": "Existing wait metrics measure proposed choice 0. They do not separately count an issued zero when the sampled choice was a moving command.",
+  "change": "Add issued-zero and unexecuted-motion durations with legal alternatives, excluding settled pose goals but including unfinished yaw. Preserve every legacy metric.",
+  "no_runtime_change": true,
+  "no_reward_change": true,
+  "no_policy_change": true,
+  "no_command_issued": true,
+  "legacy_auditor": "reports/stop_feedback_20261015/w11_recovery_bc800_early_20261016/source_snapshot/training/experiments/audit_decision_waits.py",
+  "legacy_auditor_sha256": "fcc0b015e5983d7cf68bb923d915ae9ded43645013e519bdf57d56176828c552",
+  "validation": "8 focused tests including three new execution/goal/time cases; compare every legacy metric on the complete parent 18 tasks, first finished candidate task and learned W11 continuation.",
+  "deployment_approved": false,
+  "goal_achieved": false
+}

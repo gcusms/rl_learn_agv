@@ -55,18 +55,28 @@ def measure(trace, end_seconds, position_tolerance, remaining=None, yaw_toleranc
         ~enroute & (labels[:, 8] >= yaw_tolerance))
     pending = enroute | heading_pending
     moving = ~idle
-    waits = []
-    for start, end in segments(voluntary & pending):
-        last = min(end, n - 1)
-        duration = float(dt[start:end].sum())
-        row = dict(start_s=float(times[start]), end_s=float(times[start] + duration),
-                   duration_s=duration,
-                   includes_heading_alignment=bool(heading_pending[start:end].any()),
-                   physical_displacement_m=float(np.linalg.norm(labels[last, 1:3] - labels[start, 1:3])),
-                   minimum_legal_motion_choices=int(masks[start:end, 1:].sum(axis=1).min()))
-        if remaining is not None:
-            row['geodesic_progress_m'] = float(remaining[start] - remaining[last])
-        waits.append(row)
+    def describe_waits(selected):
+        result = []
+        for start, end in segments(selected):
+            last = min(end, n - 1)
+            duration = float(dt[start:end].sum())
+            row = dict(start_s=float(times[start]), end_s=float(times[start] + duration),
+                       duration_s=duration,
+                       includes_heading_alignment=bool(heading_pending[start:end].any()),
+                       physical_displacement_m=float(np.linalg.norm(labels[last, 1:3] - labels[start, 1:3])),
+                       minimum_legal_motion_choices=int(masks[start:end, 1:].sum(axis=1).min()))
+            if remaining is not None:
+                row['geodesic_progress_m'] = float(remaining[start] - remaining[last])
+            result.append(row)
+        return result
+
+    waits = describe_waits(voluntary & pending)
+    executed_wait = idle & available
+    executed_waits = describe_waits(executed_wait & pending)
+    # An issued zero differs from a proposed stop. A supervisor or protection
+    # may have stopped a moving proposal; these traces alone do not identify
+    # which component did so. Retain both metrics without relabeling the cause.
+    unexecuted_motion = executed_wait & (choices != 0)
     resumptions = []
     for start, end in segments(~available):
         if end >= n or not pending[end]:
@@ -92,6 +102,12 @@ def measure(trace, end_seconds, position_tolerance, remaining=None, yaw_toleranc
                 heading_alignment_wait_s=float(dt[voluntary & heading_pending].sum()),
                 unfinished_task_wait_s=float(dt[voluntary & pending].sum()),
                 only_stop_s=float(dt[~available].sum()),
+                executed_idle_with_motion_available_s=float(dt[executed_wait].sum()),
+                unfinished_task_executed_idle_with_motion_s=float(dt[executed_wait & pending].sum()),
+                unfinished_task_unexecuted_motion_s=float(dt[unexecuted_motion & pending].sum()),
+                only_stop_executed_idle_s=float(dt[idle & ~available].sum()),
+                longest_unfinished_executed_wait_s=max((r['duration_s'] for r in executed_waits), default=0.),
+                unfinished_executed_wait_segments=executed_waits,
                 longest_unfinished_task_wait_s=max((r['duration_s'] for r in waits), default=0.),
                 long_unfinished_task_waits=[r for r in waits if r['duration_s'] >= 2. - 1e-8],
                 unfinished_task_wait_segments=waits, resumptions=resumptions,
@@ -148,14 +164,21 @@ def main():
             enroute_voluntary_wait_s=sum(r['enroute_voluntary_wait_s'] for r in group),
             heading_alignment_wait_s=sum(r['heading_alignment_wait_s'] for r in group),
             unfinished_task_wait_s=sum(r['unfinished_task_wait_s'] for r in group),
+            unfinished_task_executed_idle_with_motion_s=sum(
+                r['unfinished_task_executed_idle_with_motion_s'] for r in group),
+            unfinished_task_unexecuted_motion_s=sum(
+                r['unfinished_task_unexecuted_motion_s'] for r in group),
+            only_stop_executed_idle_s=sum(r['only_stop_executed_idle_s'] for r in group),
+            longest_unfinished_executed_wait_s=max(r['longest_unfinished_executed_wait_s'] for r in group),
             only_stop_s=sum(r['only_stop_s'] for r in group),
             longest_unfinished_task_wait_s=max(r['longest_unfinished_task_wait_s'] for r in group),
             long_unfinished_task_wait_segments=sum(len(r['long_unfinished_task_waits']) for r in group),
             releases_without_further_motion=sum(r['releases_without_further_motion'] for r in group))
     result = dict(completed=True, rows=rows, summary=summary, deployment_approved=False,
         evaluation_sha256=hashlib.sha256(args.evaluation.read_bytes()).hexdigest(),
-        method='Actual frame durations; exclude pose-goal settling but count an unfinished heading alignment; report legal-choice and only-stop periods separately.',
+        method='Actual frame durations; proposed-stop and issued-zero metrics are separate. Exclude pose-goal settling but count unfinished heading alignment; retain only-stop periods.',
         limitations=['A legal alternative does not guarantee useful movement or future safety.',
+                     'A stopped moving proposal can be legitimate protection; issued-zero metrics alone do not identify its cause or justify motion.',
                      'Offline physical geodesic labels are metrics only, not policy inputs.',
                      'No wait count alone proves better navigation or real-world readiness.'])
     (args.output / 'RESULTS.json').write_text(json.dumps(result, indent=2) + '\n')

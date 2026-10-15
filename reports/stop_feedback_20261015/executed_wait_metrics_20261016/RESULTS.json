@@ -1,0 +1,1681 @@
+{
+  "completed": true,
+  "implementation_tests": 8,
+  "unchanged_legacy_metrics_on_physical_traces": 20,
+  "rows": [
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "motion_profile_015",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "6bac30cfe48ffd63c78e1951e1f0da34b203df7648aec78f1036324fcaf04c51",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 241,
+        "physical_seconds": 48.000000000006104,
+        "voluntary_wait_s": 0.6000000000000938,
+        "enroute_voluntary_wait_s": 0.6000000000000938,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.6000000000000938,
+        "only_stop_s": 5.199999999999925,
+        "executed_idle_with_motion_available_s": 0.6000000000000938,
+        "unfinished_task_executed_idle_with_motion_s": 0.6000000000000938,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 5.199999999999925,
+        "longest_unfinished_executed_wait_s": 0.6000000000000938,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.6000000000000938,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.39711561650687516
+          },
+          {
+            "forced_start_s": 9.800000000000132,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.27888101767303675
+          },
+          {
+            "forced_start_s": 15.000000000000945,
+            "release_s": 18.200000000000664,
+            "preceding_only_stop_s": 3.1999999999997186,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.21603351852114913
+          },
+          {
+            "forced_start_s": 29.999999999998316,
+            "release_s": 30.399999999998236,
+            "preceding_only_stop_s": 0.3999999999999204,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000001319,
+            "physical_displacement_m": 0.7956814877191051
+          },
+          {
+            "forced_start_s": 39.2000000000016,
+            "release_s": 39.600000000001806,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9400317279977201
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "recovery_holdout_00",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "077898b001911e1bb67a5a73c4ca25262ac2f0206e51666f7c8539c6c6469220",
+      "safe_success": false,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 86,
+        "physical_seconds": 17.200000000000863,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 5.20000000000028,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 5.20000000000028,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.7726602300706483e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.7726602300706483e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.33090759709460943
+          },
+          {
+            "forced_start_s": 9.000000000000007,
+            "release_s": 10.200000000000195,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.3683515474458894
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "recovery_holdout_02",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "3657dd00a86a050bbd4e7dea224b8c035baf2ae96037f0972d13f16db2b90ea0",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 185,
+        "physical_seconds": 36.800000000000374,
+        "voluntary_wait_s": 3.000000000000007,
+        "enroute_voluntary_wait_s": 3.000000000000007,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 3.000000000000007,
+        "only_stop_s": 3.400000000000354,
+        "executed_idle_with_motion_available_s": 3.000000000000007,
+        "unfinished_task_executed_idle_with_motion_s": 3.000000000000007,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.400000000000354,
+        "longest_unfinished_executed_wait_s": 0.999999999999801,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.955949936884892e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 10.000000000000163,
+            "end_s": 10.200000000000195,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0029488312901720403,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 10.400000000000226,
+            "end_s": 10.600000000000257,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.002693925163147572,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 11.600000000000414,
+            "end_s": 12.000000000000476,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.8005802166979454e-14,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.400000000000539,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 12.800000000000601,
+            "end_s": 13.000000000000632,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.800000000000914,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 1.00361023743092e-07,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 27.199999999998873,
+            "end_s": 27.399999999998833,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.031038059899890662,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 27.599999999998793,
+            "end_s": 28.599999999998595,
+            "duration_s": 0.999999999999801,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.01101470953896483,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.999999999999801,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.955949936884892e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 10.000000000000163,
+            "end_s": 10.200000000000195,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0029488312901720403,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 10.400000000000226,
+            "end_s": 10.600000000000257,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.002693925163147572,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 11.600000000000414,
+            "end_s": 12.000000000000476,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.8005802166979454e-14,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.400000000000539,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 12.800000000000601,
+            "end_s": 13.000000000000632,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.800000000000914,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 1.00361023743092e-07,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 27.199999999998873,
+            "end_s": 27.399999999998833,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.031038059899890662,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 27.599999999998793,
+            "end_s": 28.599999999998595,
+            "duration_s": 0.999999999999801,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.01101470953896483,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.37503082031895946
+          },
+          {
+            "forced_start_s": 10.600000000000257,
+            "release_s": 11.600000000000414,
+            "preceding_only_stop_s": 1.0000000000001563,
+            "first_motion_delay_s": 2.200000000000344,
+            "observation_window_s": 4.800000000000608,
+            "physical_displacement_m": 0.07055980599440377
+          },
+          {
+            "forced_start_s": 12.000000000000476,
+            "release_s": 12.200000000000507,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 1.6000000000002501,
+            "observation_window_s": 4.800000000000395,
+            "physical_displacement_m": 0.10679714934518932
+          },
+          {
+            "forced_start_s": 12.400000000000539,
+            "release_s": 12.800000000000601,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 1.0000000000001563,
+            "observation_window_s": 4.800000000000182,
+            "physical_displacement_m": 0.2168321750503231
+          },
+          {
+            "forced_start_s": 13.000000000000632,
+            "release_s": 13.800000000000757,
+            "preceding_only_stop_s": 0.8000000000001251,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999787,
+            "physical_displacement_m": 0.4591133277682247
+          },
+          {
+            "forced_start_s": 14.000000000000789,
+            "release_s": 14.20000000000082,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999645,
+            "physical_displacement_m": 0.5399727663463146
+          },
+          {
+            "forced_start_s": 16.0000000000011,
+            "release_s": 16.20000000000106,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.857479677232466
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 2.200000000000344,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "recovery_holdout_03",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "21e6ff16468ffa83f8f9506f6c2a841bf8f54be00f822aac309b80f868f8162c",
+      "safe_success": false,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 63,
+        "physical_seconds": 12.60000000000057,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 4.6000000000006125,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.6000000000006125,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.5510459811195235
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "recovery_holdout_01",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "0079a20fe265dac5def6280c1795a84450bce386fe2598bd7672041fb7b4eba7",
+      "safe_success": false,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 67,
+        "physical_seconds": 13.400000000000695,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 5.200000000000706,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 5.200000000000706,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.5393399796108969
+          },
+          {
+            "forced_start_s": 8.199999999999882,
+            "release_s": 8.399999999999913,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.047105973607605565
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "train_failure_w11_e7",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "bc13dd1d0edd965e3d945f30d6a4b54991322f5fed16b4504bf66f0b528cc3cc",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 186,
+        "physical_seconds": 37.000000000000476,
+        "voluntary_wait_s": 0.20000000000003126,
+        "enroute_voluntary_wait_s": 0.20000000000003126,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000003126,
+        "only_stop_s": 3.3999999999998565,
+        "executed_idle_with_motion_available_s": 0.20000000000003126,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.3999999999998565,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.600000000000882,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.015501033984923513,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.600000000000882,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.015501033984923513,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 5.799999999999899,
+            "release_s": 6.399999999999886,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000465,
+            "physical_displacement_m": 0.44414001247136875
+          },
+          {
+            "forced_start_s": 9.40000000000007,
+            "release_s": 10.200000000000195,
+            "preceding_only_stop_s": 0.8000000000001251,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.29168580806050504
+          },
+          {
+            "forced_start_s": 14.600000000000882,
+            "release_s": 15.000000000000945,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999993605,
+            "physical_displacement_m": 0.0780177584312667
+          },
+          {
+            "forced_start_s": 25.19999999999927,
+            "release_s": 25.79999999999915,
+            "preceding_only_stop_s": 0.5999999999998806,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7284699611632619
+          },
+          {
+            "forced_start_s": 29.999999999998316,
+            "release_s": 30.199999999998276,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000001177,
+            "physical_displacement_m": 0.8147549627463901
+          },
+          {
+            "forced_start_s": 30.599999999998197,
+            "release_s": 31.399999999998037,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002029,
+            "physical_displacement_m": 0.9460897728149228
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "motion_profile_002",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "59c4ca8b3f354054a7a58ca1bab95c811402e14a150292381c81ca908869eda1",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 282,
+        "physical_seconds": 56.2000000000103,
+        "voluntary_wait_s": 0.1999999999999602,
+        "enroute_voluntary_wait_s": 0.1999999999999602,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.1999999999999602,
+        "only_stop_s": 4.000000000000199,
+        "executed_idle_with_motion_available_s": 0.1999999999999602,
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.000000000000199,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 29.199999999998475,
+            "end_s": 29.399999999998435,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00034115233426165926,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.1999999999999602,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 29.199999999998475,
+            "end_s": 29.399999999998435,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00034115233426165926,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 22.399999999999828,
+            "release_s": 23.79999999999955,
+            "preceding_only_stop_s": 1.3999999999997215,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.8912790484485975
+          },
+          {
+            "forced_start_s": 28.599999999998595,
+            "release_s": 28.799999999998555,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000182,
+            "physical_displacement_m": 0.5784516594545734
+          },
+          {
+            "forced_start_s": 28.999999999998515,
+            "release_s": 29.199999999998475,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.3999999999999204,
+            "observation_window_s": 4.800000000000466,
+            "physical_displacement_m": 0.627712909554581
+          },
+          {
+            "forced_start_s": 29.399999999998435,
+            "release_s": 29.599999999998396,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.7053416272242605
+          },
+          {
+            "forced_start_s": 31.399999999998037,
+            "release_s": 31.999999999997918,
+            "preceding_only_stop_s": 0.5999999999998806,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.7960885104674602
+          },
+          {
+            "forced_start_s": 32.599999999998225,
+            "release_s": 32.99999999999843,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8599258279588735
+          },
+          {
+            "forced_start_s": 35.79999999999986,
+            "release_s": 35.999999999999964,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9217636372742579
+          },
+          {
+            "forced_start_s": 42.60000000000334,
+            "release_s": 43.40000000000375,
+            "preceding_only_stop_s": 0.8000000000004093,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9018053924071414
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.3999999999999204,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "motion_profile_000",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "16f7deb30b0cb3926fddd0f520ff3ef1fcb6903aedc713ea623eddb579ec1d2d",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 164,
+        "physical_seconds": 32.599999999998225,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 1.999999999999602,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.999999999999602,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 24.39999999999943,
+            "release_s": 25.59999999999919,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7418221447848219
+          },
+          {
+            "forced_start_s": 29.999999999998316,
+            "release_s": 30.799999999998157,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 1.8000000000000682,
+            "physical_displacement_m": 0.32716669841246265
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "independent_dynamic_000",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "1516911f08b0adb728209e54ac22824c46d9771595dbaf879b7846a78b84b0b6",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 258,
+        "physical_seconds": 51.40000000000784,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 3.599999999999781,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.599999999999781,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 12.400000000000539,
+            "release_s": 12.60000000000057,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000253,
+            "physical_displacement_m": 0.2884704654025766
+          },
+          {
+            "forced_start_s": 13.400000000000695,
+            "release_s": 13.600000000000726,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999858,
+            "physical_displacement_m": 0.3470460233174804
+          },
+          {
+            "forced_start_s": 13.800000000000757,
+            "release_s": 14.800000000000914,
+            "preceding_only_stop_s": 1.0000000000001563,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999432,
+            "physical_displacement_m": 0.46294408226276695
+          },
+          {
+            "forced_start_s": 16.40000000000102,
+            "release_s": 16.600000000000982,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.48630943239305485
+          },
+          {
+            "forced_start_s": 19.000000000000504,
+            "release_s": 20.000000000000306,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.5016953273388335
+          },
+          {
+            "forced_start_s": 27.399999999998833,
+            "release_s": 28.399999999998634,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 5.0,
+            "physical_displacement_m": 0.9245897402543962
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "independent_dynamic_001",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "3ee7f0219432a2cfd3dd17231846b252be72176b613e4101a9cca05e6a53acfd",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 116,
+        "physical_seconds": 22.99999999999971,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.6000000000000938,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.6000000000000938,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 11.600000000000414,
+            "release_s": 11.800000000000445,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000537,
+            "physical_displacement_m": 0.8297926975676679
+          },
+          {
+            "forced_start_s": 12.000000000000476,
+            "release_s": 12.400000000000539,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000324,
+            "physical_displacement_m": 0.9118108239387788
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_00",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "6abf4737d39f3f599a8c23b021e74bb9d105825e52ca69f94b2219c4f7318b20",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 3,
+        "physical_seconds": 0.40000000000000024,
+        "voluntary_wait_s": 0.40000000000000024,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.40000000000000024,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_05",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "fe8796b2cacdd6068b4878d0f5cfc542629e2b7f742f1d07e1ceb4d35d695101",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 5,
+        "physical_seconds": 0.8000000000000006,
+        "voluntary_wait_s": 0.6000000000000005,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.6000000000000005,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_12",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "8df5d4fd3d4be6d46893b368bb8ab756b2dffddb746595d7fc960fd264b6ed4d",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 11,
+        "physical_seconds": 1.9999999999999793,
+        "voluntary_wait_s": 0.9999999999999787,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.9999999999999787,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_17",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "09092c2e3945b567bb194f75120fe2a6030a08103d3467f0f2faec645ca09b0d",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 12,
+        "physical_seconds": 2.1999999999999753,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_24",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "a9f985ce26a048a29a34d60141d84552a05b78a6bd3befcdd806e74c50db2b97",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 13,
+        "physical_seconds": 2.399999999999971,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "localization_nav_31",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "aaa428ce947d876ef94949ed9491cead71f2f24680a1a85b18b074169962ae17",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 57,
+        "physical_seconds": 11.200000000000351,
+        "voluntary_wait_s": 0.8000000000001251,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.8000000000001251,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 1.0000000000000007,
+            "release_s": 1.5999999999999879,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999893,
+            "physical_displacement_m": 0.37575362175391724
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "train_failure_stop_go_variation_0",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "b5b3fe161812b6859b7729ea95c9a9fea6ecf09441060d862fa90b268babcd3b",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 169,
+        "physical_seconds": 33.59999999999874,
+        "voluntary_wait_s": 0.1999999999999602,
+        "enroute_voluntary_wait_s": 0.1999999999999602,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.1999999999999602,
+        "only_stop_s": 0.8000000000000185,
+        "executed_idle_with_motion_available_s": 0.1999999999999602,
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.8000000000000185,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 24.99999999999931,
+            "end_s": 25.19999999999927,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030041205628035944,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.1999999999999602,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 24.99999999999931,
+            "end_s": 25.19999999999927,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030041205628035944,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.22179730534978445
+          },
+          {
+            "forced_start_s": 13.600000000000726,
+            "release_s": 13.800000000000757,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999787,
+            "physical_displacement_m": 0.6757979877741263
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "proactive_augmented_bc800_gate_20261016",
+      "case_id": "train_failure_stop_go_variation_1",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "trace_sha256": "7320aa3a0d953e40fb9d94d52cb2fb89d3d14522de5cb2e5c4627368a943310b",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 159,
+        "physical_seconds": 31.599999999997998,
+        "voluntary_wait_s": 0.20000000000003126,
+        "enroute_voluntary_wait_s": 0.20000000000003126,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000003126,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.20000000000003126,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 8.399999999999913,
+            "end_s": 8.599999999999945,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027625875980192478,
+            "minimum_legal_motion_choices": 6
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 8.399999999999913,
+            "end_s": 8.599999999999945,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027625875980192478,
+            "minimum_legal_motion_choices": 6
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.26666697589606236
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "w11_recovery_bc800_navigation_20261016",
+      "case_id": "motion_profile_015",
+      "source_report_completed": false,
+      "source_report_at_read_sha256": "f442f586e1fa975f5f7f9ccb001f7a9e84247808f399d4ae9c95886896791fd8",
+      "trace_sha256": "976b9d4d1738bd41cf6ab8f85d6789c6c0ffccf0ba169ec464f6c6966263443c",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 247,
+        "physical_seconds": 49.20000000000672,
+        "voluntary_wait_s": 0.6000000000000938,
+        "enroute_voluntary_wait_s": 0.6000000000000938,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.6000000000000938,
+        "only_stop_s": 6.199999999999726,
+        "executed_idle_with_motion_available_s": 0.6000000000000938,
+        "unfinished_task_executed_idle_with_motion_s": 0.6000000000000938,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 6.199999999999726,
+        "longest_unfinished_executed_wait_s": 0.6000000000000938,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.6000000000000938,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.39711561650687516
+          },
+          {
+            "forced_start_s": 9.800000000000132,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.27888101767303675
+          },
+          {
+            "forced_start_s": 15.000000000000945,
+            "release_s": 18.200000000000664,
+            "preceding_only_stop_s": 3.1999999999997186,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.21603351852114913
+          },
+          {
+            "forced_start_s": 28.199999999998674,
+            "release_s": 28.399999999998634,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 5.0,
+            "physical_displacement_m": 0.753709768923254
+          },
+          {
+            "forced_start_s": 28.599999999998595,
+            "release_s": 29.799999999998356,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000892,
+            "physical_displacement_m": 0.8293653968750236
+          },
+          {
+            "forced_start_s": 40.400000000002215,
+            "release_s": 40.80000000000242,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9394204478000779
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": null
+    },
+    {
+      "source": "w11_recovery_bc800_early_20261016",
+      "case_id": "w11_training_stall_t90",
+      "source_report_completed": true,
+      "source_report_at_read_sha256": "c7129485309e72c03d72586b96ae8220b4224ef8fede46b7b62c5e84af450f18",
+      "trace_sha256": "4e0cdc3be47a066dfe0ae1a53a7d0d0f0d325d3baf3ce8a1a497610814ecc75d",
+      "safe_success": true,
+      "legacy_metric_keys_preserved": 15,
+      "metrics": {
+        "frames": 553,
+        "physical_seconds": 110.39999999997208,
+        "voluntary_wait_s": 2.199999999999278,
+        "enroute_voluntary_wait_s": 2.199999999999278,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 2.199999999999278,
+        "only_stop_s": 10.999999999995502,
+        "executed_idle_with_motion_available_s": 2.199999999999278,
+        "unfinished_task_executed_idle_with_motion_s": 2.199999999999278,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 10.999999999995502,
+        "longest_unfinished_executed_wait_s": 0.5999999999994543,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.800000000000914,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025488230937137767,
+            "minimum_legal_motion_choices": 7
+          },
+          {
+            "start_s": 34.399999999999146,
+            "end_s": 34.59999999999925,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009590461888414656,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 42.200000000003136,
+            "end_s": 42.40000000000324,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.010718648944388487,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 42.80000000000344,
+            "end_s": 43.000000000003546,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.003031024821617116,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 67.80000000001083,
+            "end_s": 68.00000000001064,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.003164748213724932,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 68.40000000001028,
+            "end_s": 68.6000000000101,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0031192107304388343,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 69.00000000000973,
+            "end_s": 69.20000000000955,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.010474289964630743,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 83.59999999999646,
+            "end_s": 84.19999999999591,
+            "duration_s": 0.5999999999994543,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025676236267999394,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.5999999999994543,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.800000000000914,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025488230937137767,
+            "minimum_legal_motion_choices": 7
+          },
+          {
+            "start_s": 34.399999999999146,
+            "end_s": 34.59999999999925,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009590461888414656,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 42.200000000003136,
+            "end_s": 42.40000000000324,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.010718648944388487,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 42.80000000000344,
+            "end_s": 43.000000000003546,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.003031024821617116,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 67.80000000001083,
+            "end_s": 68.00000000001064,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.003164748213724932,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 68.40000000001028,
+            "end_s": 68.6000000000101,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0031192107304388343,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 69.00000000000973,
+            "end_s": 69.20000000000955,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.010474289964630743,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 83.59999999999646,
+            "end_s": 84.19999999999591,
+            "duration_s": 0.5999999999994543,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025676236267999394,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 6.5999999999998815,
+            "release_s": 7.199999999999869,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000607,
+            "physical_displacement_m": 0.8385442798135567
+          },
+          {
+            "forced_start_s": 16.20000000000106,
+            "release_s": 17.600000000000783,
+            "preceding_only_stop_s": 1.3999999999997215,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.16617400227565934
+          },
+          {
+            "forced_start_s": 27.599999999998793,
+            "release_s": 28.799999999998555,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000182,
+            "physical_displacement_m": 0.41467299787038114
+          },
+          {
+            "forced_start_s": 49.60000000000692,
+            "release_s": 50.20000000000723,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.2692207231490982
+          },
+          {
+            "forced_start_s": 57.80000000001112,
+            "release_s": 58.600000000011526,
+            "preceding_only_stop_s": 0.8000000000004093,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.14202026795279038
+          },
+          {
+            "forced_start_s": 59.00000000001173,
+            "release_s": 59.400000000011936,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002164,
+            "physical_displacement_m": 0.19408667758592438
+          },
+          {
+            "forced_start_s": 59.60000000001204,
+            "release_s": 59.80000000001214,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000001596,
+            "physical_displacement_m": 0.24602545044087692
+          },
+          {
+            "forced_start_s": 60.00000000001224,
+            "release_s": 60.200000000012345,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000010274,
+            "physical_displacement_m": 0.27780812472653726
+          },
+          {
+            "forced_start_s": 76.00000000000337,
+            "release_s": 76.400000000003,
+            "preceding_only_stop_s": 0.3999999999996362,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.228509965294548
+          },
+          {
+            "forced_start_s": 76.80000000000264,
+            "release_s": 78.00000000000155,
+            "preceding_only_stop_s": 1.1999999999989086,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.43766928775818753
+          },
+          {
+            "forced_start_s": 95.59999999998554,
+            "release_s": 95.79999999998536,
+            "preceding_only_stop_s": 0.1999999999998181,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.512842464259525
+          },
+          {
+            "forced_start_s": 96.79999999998445,
+            "release_s": 97.59999999998372,
+            "preceding_only_stop_s": 0.7999999999992724,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.4821730866218555
+          },
+          {
+            "forced_start_s": 98.99999999998245,
+            "release_s": 99.39999999998209,
+            "preceding_only_stop_s": 0.3999999999996362,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.42370587410379074
+          },
+          {
+            "forced_start_s": 99.5999999999819,
+            "release_s": 101.39999999998027,
+            "preceding_only_stop_s": 1.799999999998363,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.8142305473821646
+          },
+          {
+            "forced_start_s": 103.19999999997863,
+            "release_s": 103.9999999999779,
+            "preceding_only_stop_s": 0.7999999999992724,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.8300894711277196
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "post_release_metrics": {
+        "frames": 103,
+        "physical_seconds": 110.39999999997208,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 3.999999999996362,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.999999999996362,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 95.59999999998554,
+            "release_s": 95.79999999998536,
+            "preceding_only_stop_s": 0.1999999999998181,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.512842464259525
+          },
+          {
+            "forced_start_s": 96.79999999998445,
+            "release_s": 97.59999999998372,
+            "preceding_only_stop_s": 0.7999999999992724,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.4821730866218555
+          },
+          {
+            "forced_start_s": 98.99999999998245,
+            "release_s": 99.39999999998209,
+            "preceding_only_stop_s": 0.3999999999996362,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.42370587410379074
+          },
+          {
+            "forced_start_s": 99.5999999999819,
+            "release_s": 101.39999999998027,
+            "preceding_only_stop_s": 1.799999999998363,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.8142305473821646
+          },
+          {
+            "forced_start_s": 103.19999999997863,
+            "release_s": 103.9999999999779,
+            "preceding_only_stop_s": 0.7999999999992724,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.8300894711277196
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      }
+    }
+  ],
+  "no_runtime_or_training_change": true,
+  "no_new_navigation_runs": true,
+  "exact_parent_physical_recovery_result_still_pending": true,
+  "full_candidate_gate_still_pending": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}
