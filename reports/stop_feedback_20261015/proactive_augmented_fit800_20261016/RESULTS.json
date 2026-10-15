@@ -1,0 +1,173 @@
+{
+  "completed": true,
+  "model": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015",
+  "ppo_steps": 0,
+  "model_sha256": "2062c2ae96aaa9837923c1cc717196875336b6716e18203013405ca2c1cefab0",
+  "total": 2030,
+  "correct": 2030,
+  "retention_frames": 1058,
+  "retention_errors": 0,
+  "movement_errors": 0,
+  "valid_wait_errors": 0,
+  "minimum_movement_label_probability": 0.5185650587081909,
+  "minimum_wait_label_probability": 0.9927529096603394,
+  "confidence_target_met": false,
+  "target_probability_quantiles": [
+    0.5185650587081909,
+    0.8413208323717117,
+    0.9480436474084855,
+    0.9991169571876526,
+    1.0
+  ],
+  "sources": [
+    {
+      "id": "recover_forward",
+      "frames": 172,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.7144677639007568
+    },
+    {
+      "id": "train_failure_w11_e7_bc_only",
+      "frames": 122,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8077210783958435
+    },
+    {
+      "id": "motion_profile_002_bc_only",
+      "frames": 168,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.7954388856887817
+    },
+    {
+      "id": "motion_profile_000_bc_only",
+      "frames": 108,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8847223520278931
+    },
+    {
+      "id": "independent_dynamic_000_bc_only",
+      "frames": 178,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8450361490249634
+    },
+    {
+      "id": "independent_dynamic_001_bc_only",
+      "frames": 75,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8406661152839661
+    },
+    {
+      "id": "localization_nav_24_bc_only",
+      "frames": 1,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.9934291243553162
+    },
+    {
+      "id": "localization_nav_31_bc_only",
+      "frames": 3,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.9992584586143494
+    },
+    {
+      "id": "train_failure_stop_go_variation_0_bc_only",
+      "frames": 118,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.7276962995529175
+    },
+    {
+      "id": "train_failure_stop_go_variation_1_bc_only",
+      "frames": 113,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5185650587081909
+    },
+    {
+      "id": "train_failure_proactive_variation_00",
+      "frames": 130,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8169583678245544
+    },
+    {
+      "id": "train_failure_proactive_variation_01",
+      "frames": 126,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8359948396682739
+    },
+    {
+      "id": "train_failure_proactive_variation_02",
+      "frames": 129,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5424671173095703
+    },
+    {
+      "id": "train_failure_proactive_variation_03",
+      "frames": 210,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.7941309213638306
+    },
+    {
+      "id": "train_failure_proactive_variation_04",
+      "frames": 125,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.8499032258987427
+    },
+    {
+      "id": "train_failure_proactive_variation_06",
+      "frames": 117,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.6432815194129944
+    },
+    {
+      "id": "train_failure_proactive_variation_07",
+      "frames": 135,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.6177085638046265
+    }
+  ],
+  "misses": [],
+  "actual_training_arrays_verified": true,
+  "portable_actions_identical_on_all_training_states": true,
+  "base_unchanged": true,
+  "scope": "Offline fit and export consistency only; full physical navigation and generalization remain required.",
+  "resource": {
+    "seconds": 4.447704405989498,
+    "cpu_seconds": 1.5661709910000003,
+    "average_cpu_cores": 0.35213018852847267,
+    "peak_rss_mib": 664.625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "deployment_approved": false
+}

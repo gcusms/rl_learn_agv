@@ -74,9 +74,17 @@ def main():
         if name == 'without_explanations':
             x[:, 300:300+GROUP_DIM] = 0.
         with torch.no_grad():
-            np.testing.assert_array_equal(supported, model.policy.recovery_support(torch.from_numpy(x)).numpy())
+            substituted_support = model.policy.recovery_support(torch.from_numpy(x)).numpy()
+        # Proactive support itself may use contact context. Removing that
+        # context can change the gate; report this instead of assuming the
+        # intervention preserves support as the older stop-only policy did.
+        common_support = supported & substituted_support
         prediction = probabilities(model, x, masks, budget)
         substitutions[name] = dict(
+            learnable_support_changes=int(np.count_nonzero(supported != substituted_support)),
+            common_supported_states=int(common_support.sum()),
+            changed_argmax_in_common_supported_states=int(np.count_nonzero(
+                (after.argmax(-1) != prediction.argmax(-1)) & common_support)),
             changed_argmax_in_supported_states=int(np.count_nonzero(
                 (after.argmax(-1) != prediction.argmax(-1)) & supported)),
             max_probability_change_in_supported_states=float(abs(after[supported]-prediction[supported]).max()),
@@ -116,6 +124,7 @@ def main():
         resource=budget.statistics(), deployment_approved=False,
         limitations=['Reused actual training states, not new closed-loop tasks.',
             'Substituted explanations can be outside the training distribution.',
+            'Proactive contact ablations can also change the learnable-support gate; common-support and gate changes are reported separately.',
             'Sensitivity does not prove that feedback caused safe recovery or that PPO improved navigation.'])
     (args.output/'RESULTS.json').write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps(result, indent=2), flush=True)

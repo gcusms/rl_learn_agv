@@ -1,0 +1,22 @@
+{
+  "frozen_at": "2026-10-16T02:48:03.768325+08:00",
+  "preceding_goal_turn_classification": "progress",
+  "preceding_evidence": "Uploaded immutable transfer branch 0f32475; six checkpoints, seven native bundles and 108 checks passed; remote README and BC checkpoint verified byte-identical.",
+  "hypothesis": "Additional complete training conditions can teach both early waiting and avoidance instead of fitting one seven-action turn.",
+  "observed_limit": "Current proactive BC is 14/14 on reused development but 1/4 on full-reset different conditions, and w11 t90 still times out.",
+  "supervised_initialization_only": true,
+  "additional_ppo_steps": 0,
+  "seed": 231015,
+  "baseline": "models/stop_feedback_20261015/proactive_bc_s231015_prepared",
+  "unchanged_architecture": true,
+  "maximum_initialization_updates": 400,
+  "required_before_ppo": [
+    "Inspect fitted actions and probability margins separately for each source, movement and valid waiting.",
+    "All original 14 full tasks, including the six directional tasks.",
+    "All four different-condition full-reset tasks, including any regressed original success.",
+    "Both original full prefix continuations and the actual w11 prefix family.",
+    "Retain failed results. A safe scripted example is not a learned-policy success."
+  ],
+  "original_deployment_not_replaced": true,
+  "deployment_approved": false
+}

@@ -91,9 +91,13 @@ def main():
                            ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2'),
                            ('prefix_ppo_2000_s231015', 'stop_decision_feedback_v2'),
                            ('steady_base_ppo_2000_s231015', 'stop_decision_feedback_v2'),
-                           ('proactive_bc_s231015_prepared', 'stop_decision_feedback_v2')]:
+                           ('proactive_bc_s231015_prepared', 'stop_decision_feedback_v2'),
+                           ('proactive_augmented_bc_s231015', 'stop_decision_feedback_v2'),
+                           ('proactive_augmented_bc_800_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
-        bc_only = folder == 'proactive_bc_s231015_prepared'
+        bc_only = folder in ('proactive_bc_s231015_prepared',
+                             'proactive_augmented_bc_s231015',
+                             'proactive_augmented_bc_800_s231015')
         bundle_name = 'bc_portable' if bc_only else 'portable'
         feedback_bundle = feedback / bundle_name
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
@@ -102,8 +106,7 @@ def main():
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        recovery = folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015',
-                              'proactive_bc_s231015_prepared')
+        recovery = bc_only or folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
         checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
         expected_steps = 0 if bc_only else (2000 if recovery else 4000)
         checkpoint_name = 'policy_bc.zip' if bc_only else 'policy.zip'

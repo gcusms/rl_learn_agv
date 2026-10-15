@@ -1,14 +1,14 @@
 {
   "date": "2026-10-16",
-  "branch": "transfer",
+  "branch": "carry",
   "completed": true,
-  "verified_at": "2026-10-16T02:35:02.725889+08:00",
-  "parent_commit": "4e9fe191244d4bcc2aa29cbec86842c23d4f79ae",
+  "verified_at": "2026-10-16T03:20:29.941199+08:00",
+  "parent_commit": "0f324753a3c51c9a6a722538ebf30f53c6a84d5f",
   "deployment_approved": false,
-  "scope": "Migration integrity, six checkpoint and TorchScript loads, seven native rebuilds and 108 implementation checks. Known four-condition failures retained; not deployment acceptance.",
+  "scope": "Migration integrity, eight feedback checkpoint and TorchScript loads, nine native builds and 108 implementation checks. Three different-condition collisions and w11 timeouts retained; not deployment acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 17338,
+    "pinned_files_checked": 18869,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -103,6 +103,32 @@
         "checkpoint_loaded": true,
         "torchscript_loaded": true,
         "native_runtime_checked": true
+      },
+      {
+        "folder": "proactive_augmented_bc_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 0,
+        "bundle_name": "bc_portable",
+        "checkpoint_name": "policy_bc.zip",
+        "demonstration_initialization_only": true,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
+      },
+      {
+        "folder": "proactive_augmented_bc_800_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 0,
+        "bundle_name": "bc_portable",
+        "checkpoint_name": "policy_bc.zip",
+        "demonstration_initialization_only": true,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true,
+        "native_runtime_checked": true
       }
     ],
     "native_reference_rebuilt": true,
@@ -114,19 +140,14 @@
     "deployment_approved": false
   },
   "implementation_test_count": 108,
-  "implementation_test_seconds": 11.21,
-  "final_integrity_recheck": {
-    "completed": true,
-    "pinned_files_checked": 17339,
-    "reason": "Added exact original BC initialization prefix and corrected its README command after the functional run; final file hashes rechecked without rerunning unchanged tests."
-  },
-  "files_manifest_sha256": "ae5b94226944c4ecbb8bf0a1e467f421e8d0cd599b40390f4cb892d9119cefcf",
+  "implementation_test_seconds": 11.124,
+  "files_manifest_sha256": "145bff51931a8e4cf4aef1e0014255385a2072389414899983c5f9b2fc5519d9",
   "readme": "README.md",
-  "snapshot": "reports/handoff_transfer_20261016/SNAPSHOT.json",
-  "snapshot_sha256": "4706271d6d354316a8e4f59e376597bf306493e84eeaeb7872627eb0843bacab",
-  "tests_log": "docs/handoff/verification_transfer_tests.txt",
-  "latest_model": "models/stop_feedback_20261015/proactive_bc_s231015_prepared",
+  "snapshot": "reports/handoff_carry_20261016/SNAPSHOT.json",
+  "snapshot_sha256": "72edb883614a8bebdbf86e00e3cdf1ef84fea2af093367d522757a9e64b590e4",
+  "tests_log": "docs/handoff/verification_carry_tests.txt",
+  "latest_model": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015",
   "latest_additional_ppo_steps": 0,
   "original_deployment_model_preserved": true,
-  "previous_verification": "docs/handoff/MOVE_VERIFICATION.json"
+  "previous_verification": "docs/handoff/TRANSFER_VERIFICATION.json"
 }

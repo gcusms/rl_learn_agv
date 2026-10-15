@@ -2,13 +2,15 @@
 
 The initialized physics history is excluded from the PPO rollout. Ordinary
 tasks remain in the curriculum; all controlled actions use the same masks and
-guard. The old base's legal moving decisions and terminal actor stay frozen.
+guard. The base parameters and terminal actor stay frozen; the explicitly
+selected proactive residual can also learn near-obstacle moving decisions.
 """
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import random
+import zipfile
 
 import numpy as np
 import torch
@@ -66,6 +68,10 @@ def main():
     parser.add_argument('--steps', type=int, default=2000)
     parser.add_argument('--seed', type=int, default=231015)
     parser.add_argument('--cpu-cores', type=float, default=.35)
+    parser.add_argument('--bc-updates', type=int, default=400,
+        help='Maximum supervised initialization updates (1..1000); never counted as PPO steps')
+    parser.add_argument('--reference-bc', type=Path,
+        help='Require byte-identical policy/optimizer initialization to this previously evaluated BC checkpoint')
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--steady-base', action='store_true',
         help='Bound random exploration of the frozen base outside learnable recovery; keep stop legal')
@@ -74,8 +80,9 @@ def main():
     parser.add_argument('--initialization-only', action='store_true',
         help='Validate one physical prefix and two model-controlled frames; no PPO training or navigation score')
     args = parser.parse_args()
-    if args.output.exists() or not 1000 <= args.steps <= 8000 or args.steps % 250:
-        parser.error('Fresh output and 1000..8000 controlled PPO steps in multiples of 250 required')
+    if (args.output.exists() or not 1000 <= args.steps <= 8000 or args.steps % 250
+            or not 1 <= args.bc_updates <= 1000):
+        parser.error('Fresh output, 1000..8000 PPO steps in multiples of 250, and 1..1000 BC updates required')
     args.output = args.output.resolve()
     args.output.mkdir(parents=True)
     torch.set_num_threads(1)
@@ -101,6 +108,9 @@ def main():
     obs, masks, choices, sources = load_demonstrations(demonstration_specs, model.policy)
     np.savez_compressed(args.output/'demonstrations.npz', observations=obs, masks=masks, choices=choices)
     config = dict(steps=args.steps, seed=args.seed, cpu_cores=args.cpu_cores,
+        maximum_bc_updates=args.bc_updates,
+        reference_bc=None if args.reference_bc is None else dict(path=str(args.reference_bc),
+            sha256=hashlib.sha256(args.reference_bc.read_bytes()).hexdigest()),
         recovery_contract=model.recovery_contract, prefixes=prefixes, demonstration_sources=sources,
         demonstration_input_frames=len(obs), prior_checkpoint_sha256=hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),
         bundle_manifest_sha256=hashlib.sha256((args.bundle/'manifest.json').read_bytes()).hexdigest(),
@@ -117,12 +127,28 @@ def main():
     save_status(status='demonstration_initialization', target_steps=args.steps, deployment_approved=False)
     try:
         model.save(args.output/'policy_migrated.zip')
-        initialized = initialize_from_demonstrations(model, obs, masks, choices, budget)
+        initialized = initialize_from_demonstrations(model, obs, masks, choices, budget,
+            maximum_updates=args.bc_updates)
         (args.output/'INITIALIZATION.json').write_text(json.dumps(initialized, indent=2)+'\n')
         if frozen_base_digest(model.policy) != base_digest:
             raise RuntimeError('Demonstration learning changed the frozen base')
         model.demonstration_initialization = dict(initialized, source_episodes=sources)
         model.save(args.output/'policy_bc.zip')
+        if args.reference_bc is not None:
+            reference_config=json.loads((args.reference_bc.parent/'config.json').read_text())
+            if reference_config['recovery_contract']!=model.recovery_contract:
+                raise ValueError('Reference BC recovery semantics differ')
+            comparisons={}
+            with zipfile.ZipFile(args.reference_bc) as reference, zipfile.ZipFile(args.output/'policy_bc.zip') as current:
+                for name in ['policy.pth','policy.optimizer.pth']:
+                    expected=hashlib.sha256(reference.read(name)).hexdigest()
+                    actual=hashlib.sha256(current.read(name)).hexdigest()
+                    if expected!=actual:
+                        raise ValueError('PPO initialization differs from verified BC: '+name)
+                    comparisons[name]=actual
+            (args.output/'INITIALIZATION_PARITY.json').write_text(json.dumps(dict(
+                completed=True,reference=str(args.reference_bc),components_sha256=comparisons,
+                compared_before_any_ppo_update=True,exact_rollout_resume=False),indent=2)+'\n')
         export_recovery(model, args.bundle, args.output/'bc_portable')
         if args.initialization_only:
             current, _ = env.reset(seed=args.seed)

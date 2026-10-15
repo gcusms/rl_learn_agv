@@ -1,0 +1,349 @@
+{
+  "completed": true,
+  "model": "models/stop_feedback_20261015/proactive_augmented_bc_s231015",
+  "ppo_steps": 0,
+  "original_reference_frames": 1058,
+  "correct": 2006,
+  "total": 2030,
+  "sources": [
+    {
+      "id": "recover_forward",
+      "frames": 172,
+      "errors": 3,
+      "movement_errors": 3,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.025280293077230453
+    },
+    {
+      "id": "train_failure_w11_e7_bc_only",
+      "frames": 122,
+      "errors": 1,
+      "movement_errors": 1,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.49979421496391296
+    },
+    {
+      "id": "motion_profile_002_bc_only",
+      "frames": 168,
+      "errors": 2,
+      "movement_errors": 2,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.3770371377468109
+    },
+    {
+      "id": "motion_profile_000_bc_only",
+      "frames": 108,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5376915335655212
+    },
+    {
+      "id": "independent_dynamic_000_bc_only",
+      "frames": 178,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5372384786605835
+    },
+    {
+      "id": "independent_dynamic_001_bc_only",
+      "frames": 75,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5076323747634888
+    },
+    {
+      "id": "localization_nav_24_bc_only",
+      "frames": 1,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5957799553871155
+    },
+    {
+      "id": "localization_nav_31_bc_only",
+      "frames": 3,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.999345600605011
+    },
+    {
+      "id": "train_failure_stop_go_variation_0_bc_only",
+      "frames": 118,
+      "errors": 1,
+      "movement_errors": 1,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.004629518371075392
+    },
+    {
+      "id": "train_failure_stop_go_variation_1_bc_only",
+      "frames": 113,
+      "errors": 3,
+      "movement_errors": 3,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.006922765634953976
+    },
+    {
+      "id": "train_failure_proactive_variation_00",
+      "frames": 130,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.513933002948761
+    },
+    {
+      "id": "train_failure_proactive_variation_01",
+      "frames": 126,
+      "errors": 0,
+      "movement_errors": 0,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.5197782516479492
+    },
+    {
+      "id": "train_failure_proactive_variation_02",
+      "frames": 129,
+      "errors": 3,
+      "movement_errors": 3,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.2495528757572174
+    },
+    {
+      "id": "train_failure_proactive_variation_03",
+      "frames": 210,
+      "errors": 5,
+      "movement_errors": 5,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.05779587849974632
+    },
+    {
+      "id": "train_failure_proactive_variation_04",
+      "frames": 125,
+      "errors": 1,
+      "movement_errors": 1,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.38972899317741394
+    },
+    {
+      "id": "train_failure_proactive_variation_06",
+      "frames": 117,
+      "errors": 2,
+      "movement_errors": 2,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.005769111681729555
+    },
+    {
+      "id": "train_failure_proactive_variation_07",
+      "frames": 135,
+      "errors": 3,
+      "movement_errors": 3,
+      "wait_errors": 0,
+      "minimum_label_probability": 0.27281397581100464
+    }
+  ],
+  "misses": [
+    {
+      "source": "recover_forward",
+      "supported_index": 6,
+      "target": 2,
+      "choice": 0,
+      "target_probability": 0.025280293077230453,
+      "nearest_lidar_m": 0.6470145732164383
+    },
+    {
+      "source": "recover_forward",
+      "supported_index": 108,
+      "target": 1,
+      "choice": 10,
+      "target_probability": 0.46082907915115356,
+      "nearest_lidar_m": 0.7325138300657272
+    },
+    {
+      "source": "recover_forward",
+      "supported_index": 169,
+      "target": 10,
+      "choice": 1,
+      "target_probability": 0.3118530213832855,
+      "nearest_lidar_m": 1.9470348358154297
+    },
+    {
+      "source": "train_failure_w11_e7_bc_only",
+      "supported_index": 121,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.49979421496391296,
+      "nearest_lidar_m": 1.854724109172821
+    },
+    {
+      "source": "motion_profile_002_bc_only",
+      "supported_index": 41,
+      "target": 11,
+      "choice": 7,
+      "target_probability": 0.3770371377468109,
+      "nearest_lidar_m": 0.5361595451831818
+    },
+    {
+      "source": "motion_profile_002_bc_only",
+      "supported_index": 161,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.4263342022895813,
+      "nearest_lidar_m": 1.5323697924613953
+    },
+    {
+      "source": "train_failure_stop_go_variation_0_bc_only",
+      "supported_index": 6,
+      "target": 1,
+      "choice": 0,
+      "target_probability": 0.004629518371075392,
+      "nearest_lidar_m": 0.6175136268138885
+    },
+    {
+      "source": "train_failure_stop_go_variation_1_bc_only",
+      "supported_index": 7,
+      "target": 1,
+      "choice": 0,
+      "target_probability": 0.006922765634953976,
+      "nearest_lidar_m": 0.6274150907993317
+    },
+    {
+      "source": "train_failure_stop_go_variation_1_bc_only",
+      "supported_index": 53,
+      "target": 10,
+      "choice": 1,
+      "target_probability": 0.389003723859787,
+      "nearest_lidar_m": 1.1111577451229095
+    },
+    {
+      "source": "train_failure_stop_go_variation_1_bc_only",
+      "supported_index": 72,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.48137491941452026,
+      "nearest_lidar_m": 0.5175194442272186
+    },
+    {
+      "source": "train_failure_proactive_variation_02",
+      "supported_index": 84,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.48047947883605957,
+      "nearest_lidar_m": 0.5962173789739609
+    },
+    {
+      "source": "train_failure_proactive_variation_02",
+      "supported_index": 103,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.33071526885032654,
+      "nearest_lidar_m": 0.43439890444278717
+    },
+    {
+      "source": "train_failure_proactive_variation_02",
+      "supported_index": 107,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.2495528757572174,
+      "nearest_lidar_m": 0.7959295213222504
+    },
+    {
+      "source": "train_failure_proactive_variation_03",
+      "supported_index": 13,
+      "target": 7,
+      "choice": 0,
+      "target_probability": 0.08502352237701416,
+      "nearest_lidar_m": 0.6178554743528366
+    },
+    {
+      "source": "train_failure_proactive_variation_03",
+      "supported_index": 77,
+      "target": 9,
+      "choice": 1,
+      "target_probability": 0.05779587849974632,
+      "nearest_lidar_m": 0.56669881939888
+    },
+    {
+      "source": "train_failure_proactive_variation_03",
+      "supported_index": 114,
+      "target": 10,
+      "choice": 1,
+      "target_probability": 0.4431665539741516,
+      "nearest_lidar_m": 0.5194694548845291
+    },
+    {
+      "source": "train_failure_proactive_variation_03",
+      "supported_index": 173,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.3660980761051178,
+      "nearest_lidar_m": 0.5870423913002014
+    },
+    {
+      "source": "train_failure_proactive_variation_03",
+      "supported_index": 177,
+      "target": 7,
+      "choice": 0,
+      "target_probability": 0.20925530791282654,
+      "nearest_lidar_m": 0.5451766848564148
+    },
+    {
+      "source": "train_failure_proactive_variation_04",
+      "supported_index": 76,
+      "target": 1,
+      "choice": 10,
+      "target_probability": 0.38972899317741394,
+      "nearest_lidar_m": 0.7856357395648956
+    },
+    {
+      "source": "train_failure_proactive_variation_06",
+      "supported_index": 5,
+      "target": 3,
+      "choice": 0,
+      "target_probability": 0.005769111681729555,
+      "nearest_lidar_m": 0.6337048262357712
+    },
+    {
+      "source": "train_failure_proactive_variation_06",
+      "supported_index": 100,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.39893946051597595,
+      "nearest_lidar_m": 1.239105373620987
+    },
+    {
+      "source": "train_failure_proactive_variation_07",
+      "supported_index": 80,
+      "target": 1,
+      "choice": 11,
+      "target_probability": 0.38446110486984253,
+      "nearest_lidar_m": 0.9765917658805847
+    },
+    {
+      "source": "train_failure_proactive_variation_07",
+      "supported_index": 125,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.27281397581100464,
+      "nearest_lidar_m": 1.8267883658409119
+    },
+    {
+      "source": "train_failure_proactive_variation_07",
+      "supported_index": 132,
+      "target": 11,
+      "choice": 1,
+      "target_probability": 0.28767791390419006,
+      "nearest_lidar_m": 1.8223764896392822
+    }
+  ],
+  "scope": "Offline fit diagnosis only, not a navigation result",
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 3.237643042986747,
+    "cpu_seconds": 1.1334323419999999,
+    "average_cpu_cores": 0.35007946427423364,
+    "peak_rss_mib": 620.9453125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

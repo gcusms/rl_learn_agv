@@ -1,0 +1,164 @@
+{
+  "schema": "agv_handoff_snapshot_v8",
+  "branch": "carry",
+  "captured_at": "2026-10-16T03:16:12.939216+08:00",
+  "repository": "https://github.com/gcusms/rl_learn_agv",
+  "parent_commit": "0f324753a3c51c9a6a722538ebf30f53c6a84d5f",
+  "previous_handoff_branch": "transfer",
+  "models": [
+    {
+      "path": "models/stop_feedback_20261015/proactive_augmented_bc_s231015",
+      "checkpoint": "policy_bc.zip",
+      "portable": "bc_portable",
+      "sha256": "87c6de15df77c96296b6d727f72653315e425715c2d6ef0bd561065c288155f4",
+      "additional_ppo_steps": 0,
+      "fit": {
+        "update": 400,
+        "balanced_cross_entropy": 0.03816971182823181,
+        "minimum_movement_target_probability": 0.004629518371075392,
+        "minimum_wait_target_probability": 0.980746328830719,
+        "correct_choices": 2006,
+        "training_examples": 2030
+      },
+      "resource": {
+        "seconds": 74.67457854497479,
+        "cpu_seconds": 26.136577332,
+        "average_cpu_cores": 0.35000635880734887,
+        "peak_rss_mib": 1771.515625,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      }
+    },
+    {
+      "path": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015",
+      "checkpoint": "policy_bc.zip",
+      "portable": "bc_portable",
+      "sha256": "2062c2ae96aaa9837923c1cc717196875336b6716e18203013405ca2c1cefab0",
+      "additional_ppo_steps": 0,
+      "fit": {
+        "update": 800,
+        "balanced_cross_entropy": 0.006101408042013645,
+        "minimum_movement_target_probability": 0.5185650587081909,
+        "minimum_wait_target_probability": 0.9927529096603394,
+        "correct_choices": 2030,
+        "training_examples": 2030
+      },
+      "resource": {
+        "seconds": 123.69300511601614,
+        "cpu_seconds": 43.292527455000005,
+        "average_cpu_cores": 0.3499998032580289,
+        "peak_rss_mib": 1770.78125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      }
+    }
+  ],
+  "original_deployment_model": "models/quality_recovery_20261014/policy_2000.zip",
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "original_deployment_replaced": false,
+  "completed_reports": [
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "sha256": "b3640d94d685c6e472c56d5ffdfba2bafb54b5fe3246fb96b90424b51caad546",
+      "rows": 8,
+      "safe_success": 7
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_bc_w11_recovery_20261016/RESULTS.json",
+      "sha256": "c9ccca400f99dc4be5864802dee0b3b334e31d29b78b077ee9ef3a1feefdfbf5",
+      "rows": 3,
+      "safe_success": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_augmented_fit800_20261016/RESULTS.json",
+      "sha256": "88bb3da8a0ae608366bdc15c5b4f2bb61501e3db76262b77b5d1fa1c839a5727",
+      "rows": 0,
+      "safe_success": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_augmented_bc800_gate_20261016/RESULTS.json",
+      "sha256": "74eb95d3847edc937ed628ffeab2291becd5ff2b5eb4052d501a568120a75010",
+      "rows": 18,
+      "safe_success": 15
+    }
+  ],
+  "progress_captures": [
+    {
+      "source": "reports/stop_feedback_20261015/proactive_augmented_bc800_prefixes_20261016",
+      "completed": false,
+      "rows": 1,
+      "expected_rows": 2,
+      "source_report_sha256": "e08dd57a2ab5d82d87c20285b50ed9d30ef353d8ffb1fca1f2c7e52b077eb765",
+      "complete_traces": [
+        {
+          "file": "rotation_stall_t20.npz",
+          "sha256": "3b88bdcf4f4cd73f5615ad625342079257c90422e02ae6668cd612ae00eeb986"
+        }
+      ],
+      "scope": "Read-only cutoff; finished episodes only. Source-machine jobs do not migrate."
+    },
+    {
+      "source": "reports/stop_feedback_20261015/proactive_w11_early_reference_20261016",
+      "completed": false,
+      "rows": 0,
+      "expected_rows": 2,
+      "source_report_sha256": null,
+      "complete_traces": [],
+      "scope": "Read-only cutoff; finished episodes only. Source-machine jobs do not migrate."
+    },
+    {
+      "source": "reports/stop_feedback_20261015/w11_early_left_probes_20261016",
+      "completed": false,
+      "rows": 0,
+      "expected_rows": 2,
+      "source_report_sha256": null,
+      "complete_traces": [],
+      "scope": "Read-only cutoff; finished episodes only. Source-machine jobs do not migrate."
+    }
+  ],
+  "source_units": [
+    {
+      "MainPID": "1681678",
+      "Result": "success",
+      "Id": "rl-proactive-augmented-bc800-validation-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "49c1ae49ce394ceab6cb5298d078e0c5"
+    },
+    {
+      "MainPID": "1685195",
+      "Result": "success",
+      "Id": "rl-proactive-augmented-ppo-pipeline-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "574cd062c1ba456582be6a076593e1b8"
+    },
+    {
+      "MainPID": "1669548",
+      "Result": "success",
+      "Id": "rl-proactive-bc-w11-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "f5bfb58f2dab4c209c8eabe5e05f816c"
+    },
+    {
+      "MainPID": "1685581",
+      "Result": "success",
+      "Id": "rl-w11-early-left-probes-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "1d2e89db5fad41b784f3a354aea5f663"
+    }
+  ],
+  "planned_ppo_steps": 8000,
+  "source_ppo_status": null,
+  "ppo_training_started_at_cutoff": false,
+  "unfinished_source_ppo_artifacts_included": false,
+  "exact_rollout_resume_supported": false,
+  "known_remaining": [
+    "Four full-reset conditions: one safe, three collisions; latest BC is not a deployable winner.",
+    "Old proactive w11 continuations at 90/95/106 seconds all timeout; early left probes remain a hypothesis.",
+    "2030/2030 fitted actions do not prove navigation generalization; minimum movement probability .519 is below .9 target.",
+    "Actual PPO benefit, new-condition regression, known-map and online-map localization and target-board latency remain to be established."
+  ],
+  "source_services_need_not_exist_on_new_machine": true,
+  "deployment_approved": false
+}

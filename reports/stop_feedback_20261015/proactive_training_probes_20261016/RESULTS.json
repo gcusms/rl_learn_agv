@@ -1,0 +1,2493 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "train_failure_proactive_variation_00",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 45.20000000000467,
+      "travel_m": 6.181956714991161,
+      "frames": 227,
+      "final_xy_error_m": 0.1036115211559661,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004400075441382207,
+      "localization_yaw_p95_rad": 0.0014502396291269368,
+      "stop_choices": 23,
+      "only_stop_frames": 21,
+      "stop_reasons": {
+        "None": 223,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 39,
+      "runtime_ms": {
+        "p95": 170.7298883819021,
+        "p99": 210.01724330475574,
+        "maximum": 265.90877200942487
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_00",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "9d4eacb12baba7368b36d7422421e40784a3a66a8092c76fa4a8773984fb0ce3",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_01",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 36.800000000000374,
+      "travel_m": 5.064705973027436,
+      "frames": 185,
+      "final_xy_error_m": 0.10863672717916047,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004249735830774275,
+      "localization_yaw_p95_rad": 0.0011625118515977916,
+      "stop_choices": 31,
+      "only_stop_frames": 22,
+      "stop_reasons": {
+        "None": 176,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 5,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 9,
+      "predictive_constraint_frames": 42,
+      "runtime_ms": {
+        "p95": 175.43257060460735,
+        "p99": 210.08157108211884,
+        "maximum": 226.7084859777242
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_01",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "d41c92f9b6c5536a68dc62639339c935e864d8e35dcd9b63200934890e0655df",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_02",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 34.399999999999146,
+      "travel_m": 5.388314999717294,
+      "frames": 173,
+      "final_xy_error_m": 0.11523730257924011,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0045684211429991035,
+      "localization_yaw_p95_rad": 0.00138727670229919,
+      "stop_choices": 6,
+      "only_stop_frames": 5,
+      "stop_reasons": {
+        "None": 169,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 11,
+      "runtime_ms": {
+        "p95": 165.33966982970014,
+        "p99": 189.1817876440473,
+        "maximum": 201.50308799929917
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_02",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "75c97266cc80b896bd1d36adbd832ff4b430d9c522b82722631ff596f046f394",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_03",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 51.600000000007945,
+      "travel_m": 7.102312416080135,
+      "frames": 259,
+      "final_xy_error_m": 0.09689971052242818,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0043542356614484625,
+      "localization_yaw_p95_rad": 0.0014780111772269677,
+      "stop_choices": 15,
+      "only_stop_frames": 11,
+      "stop_reasons": {
+        "None": 255,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "predictive_constraint_frames": 20,
+      "runtime_ms": {
+        "p95": 185.6610929418821,
+        "p99": 221.3682068593333,
+        "maximum": 236.5009450004436
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_03",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "b366de20255ebb5ae2e124a2e6b697697dee52660129d630d813e08f5247a9c4",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_04",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 39.400000000001704,
+      "travel_m": 4.90975009695712,
+      "frames": 198,
+      "final_xy_error_m": 0.10434886257501497,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0046735078686153415,
+      "localization_yaw_p95_rad": 0.0013817799288910134,
+      "stop_choices": 41,
+      "only_stop_frames": 37,
+      "stop_reasons": {
+        "None": 187,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 7,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "predictive_constraint_frames": 47,
+      "runtime_ms": {
+        "p95": 165.9257684339536,
+        "p99": 191.78683145961259,
+        "maximum": 220.81198496744037
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_04",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "4f5809f4c973ead50c8d24da74a963e55235a662c02239b3a8fec6e8760aab6e",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_05",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 1.4562540455981976,
+      "frames": 700,
+      "final_xy_error_m": 3.391543722340663,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0043762383118115976,
+      "localization_yaw_p95_rad": 0.0011327157585728992,
+      "stop_choices": 652,
+      "only_stop_frames": 620,
+      "stop_reasons": {
+        "None": 77,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 620
+      },
+      "voluntary_wait_frames": 32,
+      "predictive_constraint_frames": 45,
+      "runtime_ms": {
+        "p95": 103.46441485162357,
+        "p99": 141.28599628340453,
+        "maximum": 175.07224198197946
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_05",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "0ead8d504de4015c6e4e87e11299aeb287898cc556e418bae23c96e87cca5922",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_06",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 35.199999999999555,
+      "travel_m": 5.321562768715411,
+      "frames": 177,
+      "final_xy_error_m": 0.09690289125168547,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0045064937456122355,
+      "localization_yaw_p95_rad": 0.001419480201462875,
+      "stop_choices": 9,
+      "only_stop_frames": 9,
+      "stop_reasons": {
+        "None": 173,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 18,
+      "runtime_ms": {
+        "p95": 170.2094403677619,
+        "p99": 194.11667940206829,
+        "maximum": 223.6933849635534
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_06",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "30bbb9ed0940db2e274bf30f6e5f397f4866ebbe329c84b633d670811fd91227",
+      "not_a_trained_policy": true
+    },
+    {
+      "case_id": "train_failure_proactive_variation_07",
+      "category": "proactive_training_variations_not_validation",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 33.79999999999884,
+      "travel_m": 5.342785220238546,
+      "frames": 170,
+      "final_xy_error_m": 0.11086230436846983,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004220971301754342,
+      "localization_yaw_p95_rad": 0.001320510770809724,
+      "stop_choices": 5,
+      "only_stop_frames": 4,
+      "stop_reasons": {
+        "None": 166,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 12,
+      "runtime_ms": {
+        "p95": 191.0998488398036,
+        "p99": 228.61078440677377,
+        "maximum": 244.83722605509683
+      },
+      "specification": {
+        "id": "train_failure_proactive_variation_07",
+        "windows": [
+          {
+            "start_s": 6.0,
+            "end_s": 7.4,
+            "choice": 5
+          },
+          {
+            "start_s": 20.0,
+            "end_s": 22.0,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 5.999999999999894,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.19999999999989,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.399999999999886,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.5999999999998815,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.799999999999877,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 6.999999999999873,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 7.199999999999869,
+          "requested_choice": 5,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.000000000000306,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.200000000000266,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.400000000000226,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.600000000000186,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 20.800000000000146,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.000000000000107,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.200000000000067,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.400000000000027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.599999999999987,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 21.799999999999947,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "trace_sha256": "1963e76be58aed419ccf462a16b31c13d8d3ceb69dd864c7fdf4668331bb5b9d",
+      "not_a_trained_policy": true
+    }
+  ],
+  "training_examples": true,
+  "not_a_trained_policy": true,
+  "deployment_approved": false,
+  "case_source_sha256": "c696bd076d751ccad0155c8b53bd7e9ccee2ddd5ddddc884c16906566e189882",
+  "declaration": {
+    "windows": [
+      {
+        "start_s": 6.0,
+        "end_s": 7.4,
+        "choice": 5
+      },
+      {
+        "start_s": 20.0,
+        "end_s": 22.0,
+        "choice": 1
+      }
+    ]
+  },
+  "scope": "Offline training probes using only currently legal intervention commands. Not policy scores or unseen-map evaluation.",
+  "reference_outside_windows": "Original frozen learned reference; preserve its early waiting decisions, original body, guard, prediction and sensors.",
+  "failed_episodes_retained": true,
+  "automatic_training_data_promotion": false,
+  "resource": {
+    "seconds": 885.7046075189719,
+    "cpu_seconds": 310.093859587,
+    "average_cpu_cores": 0.35010979614934173,
+    "peak_rss_mib": 2065.76171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "safely_completed_examples": 7
+}

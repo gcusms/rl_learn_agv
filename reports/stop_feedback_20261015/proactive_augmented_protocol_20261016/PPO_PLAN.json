@@ -1,0 +1,48 @@
+{
+  "frozen_at": "2026-10-16T03:05:13.759261+08:00",
+  "controlled_ppo_steps": 8000,
+  "seed": 231015,
+  "bc_maximum_updates": 800,
+  "policy": "stop_feedback_proactive_recovery_v1",
+  "initialization_reference": "models/stop_feedback_20261015/proactive_augmented_bc_800_s231015/policy_bc.zip",
+  "reference_policy_and_optimizer_must_match_before_ppo": true,
+  "demonstrations": "reports/stop_feedback_20261015/proactive_augmented_protocol_20261016/demonstrations.json",
+  "training_cases": "reports/stop_feedback_20261015/proactive_protocol_20261016/ppo_training_cases.json",
+  "source_prefixes": [
+    {
+      "id": "early_avoidance_t6",
+      "release_s": 6.0
+    },
+    {
+      "id": "w11_training_stall_t90",
+      "release_s": 90.0
+    },
+    {
+      "id": "rotation_stall_t20",
+      "release_s": 20.0
+    }
+  ],
+  "w11_original_training_failure_now_used_for_rehearsal": true,
+  "w11_prefix_is_no_longer_unseen_validation": true,
+  "original_guard_body_action_contract_reward_unchanged": true,
+  "stop_always_selectable": true,
+  "current_evidence": "BC matched 2030/2030 with zero retained-action errors; one full-reset development condition still collides at 17.2 seconds. Full original/docking regressions are running.",
+  "training_entry_gate": [
+    "Retain all 14 original complete-task successes including all six directional tasks.",
+    "Both original prefix continuation tasks must arrive safely.",
+    "Review all four full-reset conditions and retain every failure; these target failures may still exist before experimental RL. They are not required to be solved by BC before RL can learn.",
+    "Inspect actual BC label-fit and portable parity. A confidence/fit check is not deployment acceptance."
+  ],
+  "completion_gate": "The goal remains unachieved until useful recovery/early avoidance generalizes, appropriate stops and normal navigation/docking are retained, and actual full-mission physical outcomes support it.",
+  "after_training": [
+    "Own BC versus PPO; no credit to PPO for initialization gains.",
+    "All actual rollout histories, likelihoods and masks; frozen base digest.",
+    "All original and different-condition full tasks including collisions.",
+    "W11 rehearse/recovery and fresh tasks not used for supervised examples.",
+    "No model deployment replacement based on fitting or a small reused set."
+  ],
+  "source_cpu_soft_limit": 0.35,
+  "auxiliary_soft_limit": 0.15,
+  "status": "prepared_not_launched",
+  "deployment_approved": false
+}
