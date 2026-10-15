@@ -6,7 +6,7 @@ from neural_navigation.safety_context import SafetyContext, PREDICTIVE_SCHEMA
 from neural_navigation.masked_actions import COMMANDS
 from neural_navigation.decision_feedback import (
     DecisionFeedback, DIM, TRAIN_DIM, RUNTIME_DIM, GROUPS, FEEDBACK_REASONS,
-    GROUP_DIM, REASON_SLICE, RISK_SLICE, STAT_SLICE)
+    GROUP_DIM, REASON_SLICE, RISK_SLICE, STAT_SLICE, LEGACY_SCHEMA, WAIT_SCHEMA, contract)
 
 
 class Forecast:
@@ -125,6 +125,34 @@ class DecisionFeedbackTests(unittest.TestCase):
         core,guard,context=fixture(); f=DecisionFeedback(); f.features(core,guard,context)
         result=dict(timestamp=0.,command=[0.,0.],stop_reason=None); f.record(result)
         with self.assertRaises(ValueError):f.record(result)
+
+    def test_v2_counts_guard_labelled_zero_with_legal_alternatives(self):
+        for schema, expected in [(LEGACY_SCHEMA, 0.), (WAIT_SCHEMA, .4 / 5.)]:
+            core,guard,context=fixture()
+            f=DecisionFeedback(schema);f.features(core,guard,context)
+            f.record(dict(timestamp=0.,command=[0.,0.],stop_reason='laser_braking_footprint'))
+            core.elapsed=.4;context.observation(core,guard,.4)
+            x=f.features(core,guard,context)
+            self.assertEqual(f.previous_reason,'laser_braking_footprint')
+            self.assertAlmostEqual(x[STAT_SLICE][3],expected,places=6)
+
+    def test_v2_only_stop_and_goal_do_not_extend_choice_wait(self):
+        core,guard,context=fixture('laser_braking_footprint')
+        f=DecisionFeedback(WAIT_SCHEMA);f.features(core,guard,context)
+        f.record(dict(timestamp=0.,command=[0.,0.],stop_reason='laser_braking_footprint'))
+        self.assertIsNone(f.idle_with_choices_since)
+        core,guard,context=fixture();f=DecisionFeedback(WAIT_SCHEMA)
+        f.features(core,guard,context)
+        f.record(dict(timestamp=0.,command=[0.,0.],stop_reason='estimated_goal_reached'))
+        self.assertIsNone(f.idle_with_choices_since)
+
+    def test_feedback_timer_semantics_are_explicitly_versioned(self):
+        from pathlib import Path
+        import json
+        archived=Path(__file__).resolve().parents[1]/'reports/stop_feedback_20261015/frozen_replay/initial_portable/decision_feedback.json'
+        self.assertEqual(contract(),json.loads(archived.read_text()))
+        self.assertNotEqual(contract(WAIT_SCHEMA),contract(LEGACY_SCHEMA))
+        with self.assertRaises(ValueError):DecisionFeedback('unversioned')
 
 
 if __name__=='__main__':unittest.main()

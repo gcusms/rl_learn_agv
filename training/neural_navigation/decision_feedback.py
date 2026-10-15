@@ -20,10 +20,14 @@ STAT_SLICE = slice(RISK_SLICE.stop, RISK_SLICE.stop + 8)
 DIM = STAT_SLICE.stop
 TRAIN_DIM = 300 + DIM
 RUNTIME_DIM = 303 + DIM
+LEGACY_SCHEMA = 'stop_decision_feedback_v1'
+WAIT_SCHEMA = 'stop_decision_feedback_v2'
 
 
-def contract():
-    return dict(schema='stop_decision_feedback_v1', prefix_dimensions=300,
+def contract(schema=LEGACY_SCHEMA):
+    if schema not in (LEGACY_SCHEMA, WAIT_SCHEMA):
+        raise ValueError('Unsupported decision feedback schema')
+    result = dict(schema=schema, prefix_dimensions=300,
         training_dimensions=TRAIN_DIM, heading_prefix_dimensions=303, dimensions=RUNTIME_DIM,
         append_dimensions=DIM, action_commands=COMMANDS.tolist(),
         fields=['12_current_guard_rejection_groups_one_hot', 'previous_executed_stop_reason_one_hot',
@@ -35,6 +39,10 @@ def contract():
         contact_score='0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)',
         unknown_forecast_is_not_clear=True, legacy_prefix_unchanged=True,
         stop_always_selectable=True, simulator_truth_used=False, commands_issued=False)
+    if schema == WAIT_SCHEMA:
+        result['idle_with_choices_timer'] = 'all_executed_idle_with_nonzero_legal_choices_except_goal_reached'
+        result['executed_reason_retained_during_idle'] = True
+    return result
 
 
 def reason_group(reason):
@@ -57,7 +65,9 @@ def reason_group(reason):
 
 
 class DecisionFeedback:
-    def __init__(self):
+    def __init__(self, schema=LEGACY_SCHEMA):
+        contract(schema)
+        self.schema = schema
         self.reset()
 
     def reset(self):
@@ -138,7 +148,13 @@ class DecisionFeedback:
                 self.idle_since = now
         else:
             self.idle_since = None
-        if idle and reason == 'policy_wait':
+        idle_with_choices = idle and reason == 'policy_wait'
+        if self.schema == WAIT_SCHEMA:
+            # Zero can itself carry a footprint-stop reason while turning is
+            # legal. Retain that actual reason and still report the wait time.
+            # Timer growth does not assert that movement is useful or safe.
+            idle_with_choices = idle and self.frame_mask[1:].any() and reason != 'estimated_goal_reached'
+        if idle_with_choices:
             if self.idle_with_choices_since is None:
                 self.idle_with_choices_since = now
         else:

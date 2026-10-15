@@ -1,0 +1,76 @@
+{
+  "schema": "agv_migration_snapshot_v1",
+  "captured_at": "2026-10-15T21:25:03.364520+08:00",
+  "branch": "sync",
+  "parent_commit": "00be45ca8b3714fb8e9b2f78b1be38aa1083d8da",
+  "training": {
+    "status": "complete",
+    "additional_ppo_steps": 4000,
+    "counts": {
+      "decision_frames": 3336,
+      "only_stop": 664,
+      "voluntary_wait": 440,
+      "nonzero": 2896,
+      "changed_nonzero": 0,
+      "episodes": 18,
+      "success": 14,
+      "collisions": 3
+    },
+    "reasons": {
+      "none": 2895,
+      "scan_unavailable": 34,
+      "policy_wait": 51,
+      "only_stop_available": 279,
+      "laser_braking_footprint": 737,
+      "learned_route_incomplete": 4
+    },
+    "resource": {
+      "seconds": 1698.8393725540373,
+      "cpu_seconds": 594.828033801,
+      "average_cpu_cores": 0.3501378902625354,
+      "peak_rss_mib": 2459.859375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "deployment_approved": false
+  },
+  "final_checkpoint": "models/stop_feedback_20261015/ppo_4000_s221015/policy.zip",
+  "candidate_bundle": "models/stop_feedback_20261015/ppo_4000_s221015/portable",
+  "trained_feedback_schema": "stop_decision_feedback_v1",
+  "v2_timer_fix_trained": false,
+  "paired_evaluation": {
+    "completed": false,
+    "included_rows": 10,
+    "target_rows": 24,
+    "partial_summary": {
+      "prior_constraints": {
+        "tasks": 5,
+        "safe_success": 4,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      },
+      "stop_feedback_ppo": {
+        "tasks": 5,
+        "safe_success": 4,
+        "collisions": 1,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "complete_pairs": [
+      "train_failure_w11_e7",
+      "motion_profile_015",
+      "motion_profile_002",
+      "motion_profile_000",
+      "independent_dynamic_000"
+    ],
+    "results_sha256": "4f27bec7387040209a5041e74e946eac6f2680aa634a06e24b110e3b69cfea0f",
+    "note": "Only finished navigation rows and matching complete traces are frozen here. Not a final score; never combine partial variants as fair totals."
+  },
+  "original_machine_background_running": true,
+  "original_service": "rl-stop-feedback-20261015.service",
+  "deployment_approved": false,
+  "auto_replace": false,
+  "next_action": "Rebuild baseline/candidate native bundles, then run the full fixed 12-case paired evaluation in a new output on the target computer. No training needed to evaluate this 4k model.",
+  "scope": "Migration snapshot, no independent new real-world accuracy or navigation acceptance."
+}

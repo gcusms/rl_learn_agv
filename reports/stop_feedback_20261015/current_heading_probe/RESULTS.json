@@ -1,0 +1,104 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "a37ef8f7bf98864379778ec80894647d7729f2d9d7fcd2124174dca1ddc7baec",
+  "rows": [
+    {
+      "case_id": "docking_dev_02",
+      "category": "new_alignment",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 1.1999999999999964,
+      "travel_m": 0.0,
+      "frames": 7,
+      "final_xy_error_m": 0.019070192067748026,
+      "final_yaw_error_rad": 0.005869730378288196,
+      "localization_xy_p95_m": 0.00958855456959355,
+      "localization_yaw_p95_rad": 0.0009660107541405782,
+      "stop_choices": 5,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 6,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 5,
+      "predictive_constraint_frames": 0,
+      "runtime_ms": {
+        "p95": 150.87807920062912,
+        "p99": 159.23118944512677,
+        "maximum": 161.31946700625122
+      },
+      "variant": "current_baseline",
+      "trace_sha256": "f8bfc5a27c7971e1725661790283c759524143cabad414bbb6b998ab865c31c6"
+    },
+    {
+      "case_id": "docking_dev_11",
+      "category": "new_approach",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 3.799999999999941,
+      "travel_m": 0.42206824637530393,
+      "frames": 20,
+      "final_xy_error_m": 0.044313053506553096,
+      "final_yaw_error_rad": 0.08027359402322354,
+      "localization_xy_p95_m": 0.0062795681518734185,
+      "localization_yaw_p95_rad": 0.0011138494944279655,
+      "stop_choices": 6,
+      "only_stop_frames": 0,
+      "stop_reasons": {
+        "None": 16,
+        "learned_route_incomplete": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 6,
+      "predictive_constraint_frames": 0,
+      "runtime_ms": {
+        "p95": 150.731644561165,
+        "p99": 162.40038894407914,
+        "maximum": 165.3175750398077
+      },
+      "variant": "current_baseline",
+      "trace_sha256": "dc45305d1b2995d658afa09086196141305e0fba1e1a650c42f71badb25d84fc"
+    }
+  ],
+  "resource": {
+    "seconds": 93.37858093105024,
+    "cpu_seconds": 9.506630077,
+    "average_cpu_cores": 0.10180739503869304,
+    "peak_rss_mib": 2262.55078125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "new_alignment": {
+      "current_baseline": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    },
+    "new_approach": {
+      "current_baseline": {
+        "tasks": 1,
+        "success": 1,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

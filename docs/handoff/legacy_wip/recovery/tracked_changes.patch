@@ -1,0 +1,182 @@
+diff --git a/README.md b/README.md
+index 0c34c06..cd26049 100644
+--- a/README.md
++++ b/README.md
+@@ -9,6 +9,22 @@
+ 
+ **结论：本版完成了恢复分支续训、可选路线比较、交互仿真和模型发布，但尚未通过部署验收。** 相比上一版，5 个专项场景的安全到达率仍是 40%；开启路线优化后，一个静态绕障案例的路程缩短 19.2%、耗时下降 28.8%。这两项结果来自不同实验，不能合并成“训练后整体更好”。
+ 
++### 窄道阶段：按实车总余量 10–15 厘米设计
++
++用户应用以窄道为主，复杂围困脱困暂不做专项训练。已搭三档实体 MuJoCo 窄道，新增完整矩形扫掠及粗网格单元内位置细化原型；同一旧模型的配对预检结果及边界见 [窄道工程记录](docs/results/NARROW_PASSAGE_IMPLEMENTATION_20261013.md)。原型尚未接入默认运行，没有启动新的窄道 PPO，也不能保证10厘米余量已可通过。
++
++后续已加入六个窄路口场景、经检查的对齐信息和20动作／318维实验接口，并修正入口端墙干扰侧墙拟合的问题。旧actor仍使用12动作，新增细动作仅探测，未训练或部署。见[窄道对齐优化记录](docs/results/NARROW_ALIGNMENT_OPTIMIZATION_20261013.md)。
++
++新增独立的[20动作窄道PPO试训](docs/results/NARROW_FINE_PPO_PILOT_20261013.md)，计划1,000步并自动做旧模型／新初始／训练后配对评估。当前结果以实验status.json为准，未替换部署模型。
++
++进一步启动[低资源50,000步窄道续训](docs/results/NARROW_LONG_50000_20261013.md)：每5,000步保存和评估，探索及课程同时调整，原发布模型保留；运行结果以status.json为准。
++
++### 2026-10-13 后续优化（专项试训未通过）
++
++新增 [恢复与路线优化记录](docs/results/RECOVERY_OPTIMIZATION_20261013.md)：发现无条件路线效率比较会让动态 006 超时，已加传感器适用条件并完成 5 场景回归。**这项修复未提高专项成功率，仍为 2/5。** 独立的 2,500 步均衡恢复 PPO 试训已完成，5 组专项初始／最终配对仍为 2/5，未通过提升门槛；8 组普通回归已完成且原成功场景全部保留，原发布权重不变。
++
++下方视频及路线改善数据记录于此前实现，后续增加了上述门控，当前代码复现可能不同。不要把旧视频的单场景收益当作新代码或新训练已通过验收。
++
+ ### 版本对应关系
+ 
+ | 文档称呼 | 对应模型／配置 | 在比较中的作用 |
+diff --git a/training/neural_navigation/core.py b/training/neural_navigation/core.py
+index cbb4cce..3c4ef74 100644
+--- a/training/neural_navigation/core.py
++++ b/training/neural_navigation/core.py
+@@ -84,6 +84,10 @@ class LearnedRoutingMixin:
+             if not (0<=r<self.grid_h and 0<=c<self.grid_w):break
+             path.append(self.xy((r,c)))
+         new=np.asarray(path)
++        # Optional experimental body-aware decoder. Native bundles retain
++        # the original learned argmax route unless their core supplies it.
++        decoder=getattr(self,'_decode_motion_route',None)
++        if decoder is not None:new=decoder(q,current[0]>0,(sr,sc),(gr,gc))
+         if self.routing_ready and (len(new)!=len(self.predicted_path) or not np.allclose(new,self.predicted_path,atol=.08)):self.plan_revision+=1
+         self.predicted_path=new;self.routing_ready=True;self.last_route_time=now
+         if getattr(self,'efficient_route_selection',False):
+@@ -175,9 +179,13 @@ class RoomRoutingMixin:
+     def _neural_route(self):
+         old=self.predicted_path.copy() if self.routing_ready else None;revision=self.plan_revision
+         super()._neural_route();candidate=self.predicted_path.copy();self.route_retained=False
++        from neural_navigation.route_efficiency import sensor_route_efficiency_allowed
++        efficiency_allowed=sensor_route_efficiency_allowed(self)
++        self.route_efficiency_active=efficiency_allowed
++        self.route_candidate_count=1
+         if getattr(self,'route_mode','raw')=='shortcut':
+             candidate=self._shortcut_route(candidate);self.predicted_path=candidate.copy()
+-            if getattr(self,'efficient_route_selection',False):
++            if efficiency_allowed:
+                 from neural_navigation.route_efficiency import efficient_learned_route
+                 candidate=efficient_learned_route(self,self.route_decode_q,self.route_decode_free,candidate)
+                 self.predicted_path=candidate.copy()
+@@ -190,7 +198,7 @@ class RoomRoutingMixin:
+             return
+         old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
+         improvement=old_length-new_length
+-        minimum_improvement=(max(.15,.03*old_length) if getattr(self,'efficient_route_selection',False)
++        minimum_improvement=(max(.15,.03*old_length) if efficiency_allowed
+                              else max(.5,.08*old_length))
+         shorter=self._route_usable(candidate) and improvement>minimum_improvement
+         if shorter:
+@@ -270,6 +278,9 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
+         self.last_route_time=-100.;self.last_route_switch=-100.;self.plan_revision=0;self.routing_ready=False
+         self.recent_progress=1.;self.shortcut_candidate=None;self.shortcut_since=None
+         self.replan_reason='initial';self.route_retained=False;self.path=np.array([pose[:2]])
++        self.route_efficiency_motion_until=-np.inf
++        self.route_efficiency_motion_seen=False
++        self.route_efficiency_active=False;self.route_efficiency_gate_reason='initial'
+         self.previous_remaining=0.;self._first_observation=True;self._initialized=True
+         self.odometry_sanity_failure=False
+         self.set_goal(goal)
+diff --git a/training/neural_navigation/route_efficiency.py b/training/neural_navigation/route_efficiency.py
+index 58301ae..9547dbd 100644
+--- a/training/neural_navigation/route_efficiency.py
++++ b/training/neural_navigation/route_efficiency.py
+@@ -7,6 +7,50 @@ primary; initial goal alignment is a small tie preference, never a safety rule.
+ import numpy as np
+ 
+ 
++def sensor_route_efficiency_allowed(core):
++    """Limit geometric route comparison to supported stationary-obstacle cases.
++
++    A shorter spatial path ignores arrival time at a moving obstacle. Allow
++    supported map navigation before unmatched returns appear, or require an
++    observed, confirmed stationary track. No-track after observed motion is
++    unknown, not proof of free space. Native forecasting/guard remain active.
++    """
++    core.route_efficiency_gate_reason = 'disabled'
++    if not getattr(core, 'efficient_route_selection', False):
++        return False
++    loc = core.localizer
++    if (not getattr(loc, 'scan_update_accepted', False)
++            or not np.isfinite(loc.map_agreement) or loc.map_agreement < .8
++            or not np.isfinite(loc.std).all()
++            or max(loc.std[:2]) > .2 or loc.std[2] > .25
++            or getattr(core, 'odometry_sanity_failure', False)):
++        core.route_efficiency_gate_reason = 'unsupported_pose_or_scan'
++        return False
++    predictor = getattr(core.laser_fusion, 'predictor', None)
++    tracks = predictor.tracks if predictor is not None else []
++    now = float(core.elapsed)
++    if any(np.linalg.norm(t['velocity']) >= .04 for t in tracks):
++        core.route_efficiency_motion_until = now + 2.4
++        core.route_efficiency_motion_seen = True
++    if now < getattr(core, 'route_efficiency_motion_until', -np.inf):
++        core.route_efficiency_gate_reason = 'observed_or_recent_motion'
++        return False
++    observed = [t for t in tracks if -.05 <= now-t['time'] <= .4+1e-8
++                and np.linalg.norm(t['center']-core.estimate[:2]) <= 2.5]
++    if not observed:
++        if (getattr(core, 'unmatched_returns', 1) == 0
++                and not getattr(core, 'route_efficiency_motion_seen', False)):
++            core.route_efficiency_gate_reason = 'supported_map_without_observed_dynamic_returns'
++            return True
++        core.route_efficiency_gate_reason = 'no_observed_stationary_track'
++        return False
++    if any(t['hits'] < 3 or not np.isfinite(t['velocity']).all() for t in observed):
++        core.route_efficiency_gate_reason = 'unconfirmed_track'
++        return False
++    core.route_efficiency_gate_reason = 'confirmed_stationary_obstacle'
++    return True
++
++
+ def route_cost(path, position, goal, yaw):
+     path = np.asarray(path, float)
+     length = float(np.linalg.norm(np.diff(path, axis=0), axis=1).sum())
+diff --git a/training/test_route_efficiency.py b/training/test_route_efficiency.py
+index e24405f..deb8b9a 100644
+--- a/training/test_route_efficiency.py
++++ b/training/test_route_efficiency.py
+@@ -1,10 +1,45 @@
+ import unittest
+ from types import SimpleNamespace
+ import numpy as np
+-from neural_navigation.route_efficiency import route_cost, efficient_learned_route
++from neural_navigation.route_efficiency import route_cost, efficient_learned_route, sensor_route_efficiency_allowed
+ 
+ 
+ class RouteEfficiencyTests(unittest.TestCase):
++    def test_unknown_or_moving_obstacle_uses_native_routing(self):
++        predictor=SimpleNamespace(tracks=[])
++        core=SimpleNamespace(efficient_route_selection=True,elapsed=1.,estimate=np.zeros(3),
++            localizer=SimpleNamespace(scan_update_accepted=True,map_agreement=1.,std=np.array([.05,.05,.02])),
++            laser_fusion=SimpleNamespace(predictor=predictor))
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        core.unmatched_returns=0
++        self.assertTrue(sensor_route_efficiency_allowed(core))
++        core.unmatched_returns=1
++        track=dict(time=1.,center=np.array([1.,0.]),velocity=np.zeros(2),hits=2)
++        predictor.tracks=[track]
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        track['hits']=3
++        self.assertTrue(sensor_route_efficiency_allowed(core))
++        track['velocity']=np.array([.1,0.])
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        track['velocity']=np.zeros(2)
++        core.elapsed=2.;track['time']=2.
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        core.elapsed=3.5;track['time']=3.5
++        self.assertTrue(sensor_route_efficiency_allowed(core))
++        core.localizer.scan_update_accepted=False
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++
++    def test_occluded_or_far_track_does_not_prove_stationary_local_scene(self):
++        track=dict(time=0.,center=np.array([1.,0.]),velocity=np.zeros(2),hits=3)
++        core=SimpleNamespace(efficient_route_selection=True,elapsed=1.,estimate=np.zeros(3),
++            localizer=SimpleNamespace(scan_update_accepted=True,map_agreement=1.,std=np.array([.05,.05,.02])),
++            laser_fusion=SimpleNamespace(predictor=SimpleNamespace(tracks=[track])))
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        track['time']=1.;track['center']=np.array([4.,0.])
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++        track['center']=np.array([1.,0.]);track['velocity'][0]=np.nan
++        self.assertFalse(sensor_route_efficiency_allowed(core))
++
+     def test_full_length_beats_initial_goalward_direction(self):
+         position=np.array([0.,0.]);goal=np.array([2.,0.])
+         long=np.array([[0,0],[1,0],[1,4],[2,4],[2,0]],float)

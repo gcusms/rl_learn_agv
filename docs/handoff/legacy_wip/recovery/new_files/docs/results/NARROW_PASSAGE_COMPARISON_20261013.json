@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "geometry_tests_passed": 6,
+  "rows": [
+    {
+      "variant": "原圆形几何",
+      "run": "narrow_first_pair_20261013",
+      "case_id": "narrow_150_centered",
+      "safe_success": false,
+      "arrived": false,
+      "protocol_valid": true,
+      "false_arrival": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 0.0,
+      "localization_error_p95_m": 0.04759669140645046,
+      "frames": 700,
+      "voluntary_wait_frames": 699,
+      "only_stop_frames": 0,
+      "emergency_stop_counts": {
+        "learned_route_incomplete": 700
+      }
+    },
+    {
+      "variant": "矩形网格采样",
+      "run": "narrow_first_pair_20261013",
+      "case_id": "narrow_150_centered",
+      "safe_success": false,
+      "arrived": false,
+      "protocol_valid": true,
+      "false_arrival": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 0.0,
+      "localization_error_p95_m": 0.04142847904941661,
+      "frames": 700,
+      "voluntary_wait_frames": 624,
+      "only_stop_frames": 0,
+      "emergency_stop_counts": {
+        "learned_route_incomplete": 700
+      }
+    },
+    {
+      "variant": "矩形＋单元内位置细化",
+      "run": "narrow_anchored_pair_20261013",
+      "case_id": "narrow_150_centered",
+      "safe_success": false,
+      "arrived": false,
+      "protocol_valid": true,
+      "false_arrival": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 0.7462084159381082,
+      "localization_error_p95_m": 0.03275034761065458,
+      "frames": 700,
+      "voluntary_wait_frames": 616,
+      "only_stop_frames": 53,
+      "emergency_stop_counts": {
+        "learned_route_incomplete": 658,
+        "static_braking_footprint": 6
+      }
+    }
+  ],
+  "anchored_source_verified": true,
+  "training_started": false,
+  "deployment_approved": false
+}

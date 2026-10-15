@@ -1,0 +1,47 @@
+{
+  "status": "complete",
+  "all_source_hashes_unchanged": false,
+  "changed_files": [
+    "prototypes/test_narrow_observation.py"
+  ],
+  "behavioral_sources_unchanged": true,
+  "reason": "Only entrance-wall unit test was added/adjusted while this trial ran. Runtime, guard, feature extraction and fixture source match their snapshots.",
+  "actor_sha256": "78d0a075d4eb16ccb823fe0adc62f4156ed9e5ed0300fb707033f86d33271886",
+  "cases": [
+    {
+      "variant": "anchored",
+      "frames": 110,
+      "simulated_seconds": 21.999999999999908,
+      "travel_m": 0.7462084159381082,
+      "safe_success": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "screening_limit_reached": true,
+      "route_states": {
+        "legacy": 110
+      },
+      "localization_error_p95_m": 0.038775336407726055,
+      "fine_probe_frames": 0,
+      "fine_action_available_frames": 0,
+      "scan_corridor_supported_frames": 0
+    },
+    {
+      "variant": "alignment_information",
+      "frames": 110,
+      "simulated_seconds": 21.999999999999908,
+      "travel_m": 0.7462084159381082,
+      "safe_success": false,
+      "collisions": 0,
+      "physical_guards": 0,
+      "screening_limit_reached": true,
+      "route_states": {
+        "executable": 31,
+        "initial_alignment_required": 79
+      },
+      "localization_error_p95_m": 0.038775336407726055,
+      "fine_probe_frames": 22,
+      "fine_action_available_frames": 20,
+      "scan_corridor_supported_frames": 22
+    }
+  ]
+}

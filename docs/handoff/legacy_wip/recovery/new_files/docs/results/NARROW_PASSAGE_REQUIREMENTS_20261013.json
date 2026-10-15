@@ -1,0 +1,45 @@
+{
+  "status": "requirements_and_geometry_audit_only",
+  "extra_width_definition": "total corridor width minus maximum external robot width; not per side",
+  "hardware_source": "models/recovery_20261012/portable/hardware.json",
+  "hardware_sha256": "72731b5de656c7378687bc3c1b1565dac9df56052b1bb5e3136dd5202a6cdf30",
+  "configured_length_m": 0.393924904,
+  "configured_width_m": 0.329460022,
+  "robot_real_calibrated": false,
+  "static_margin_per_side_m": 0.04,
+  "current_planning_circle_radius_m": 0.3,
+  "existing_planner_supports_required_width": false,
+  "targets": [
+    {
+      "extra_total_m": 0.15,
+      "corridor_width_m": 0.47946002200000004,
+      "centered_wall_gap_per_side_m": 0.075,
+      "remaining_per_side_after_configured_margin_m": 0.034999999999999996,
+      "ideal_yaw_limit_deg": 9.12821503859048
+    },
+    {
+      "extra_total_m": 0.125,
+      "corridor_width_m": 0.454460022,
+      "centered_wall_gap_per_side_m": 0.0625,
+      "remaining_per_side_after_configured_margin_m": 0.0225,
+      "ideal_yaw_limit_deg": 5.693943003089001
+    },
+    {
+      "extra_total_m": 0.1,
+      "corridor_width_m": 0.429460022,
+      "centered_wall_gap_per_side_m": 0.05,
+      "remaining_per_side_after_configured_margin_m": 0.010000000000000002,
+      "ideal_yaw_limit_deg": 2.464472111245318
+    }
+  ],
+  "ideal_yaw_assumptions": "straight parallel walls, centered exact pose, oriented expanded rectangle, no discretization or uncertainty; not a control threshold or safety guarantee",
+  "complex_entrapment_specialist_training": false,
+  "required_scenarios": [
+    "straight narrow corridor",
+    "entrance alignment",
+    "wide-space turn before narrow corridor",
+    "temporary blockage and resumed navigation",
+    "scan interruption with safe resumed localization"
+  ],
+  "deployment_model_replaced": false
+}

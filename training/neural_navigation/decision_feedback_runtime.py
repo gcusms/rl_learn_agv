@@ -6,17 +6,17 @@ from neural_navigation.goal_pose_runtime import check_files
 from neural_navigation.quality_prediction_context import QualityPredictionContext, contract as quality_contract
 from neural_navigation.goal_pose import append_goal_features, contract as goal_contract
 from neural_navigation.docking_contract import docking_contract
-from neural_navigation.decision_feedback import DecisionFeedback, contract, RUNTIME_DIM
+from neural_navigation.decision_feedback import DecisionFeedback, contract, RUNTIME_DIM, LEGACY_SCHEMA
 
 
 RUNTIME_NAME = 'neural_navigation.decision_feedback_runtime.StopFeedbackRuntime'
 
 
 class FeedbackInput:
-    def __init__(self, policy, core, guard, context):
+    def __init__(self, policy, core, guard, context, feedback_schema=LEGACY_SCHEMA):
         self.policy=policy; self.core=core; self.guard=guard; self.context=context
         self.prediction=QualityPredictionContext(guard.half*2)
-        self.feedback=DecisionFeedback(); self.last_observation=None
+        self.feedback=DecisionFeedback(feedback_schema); self.last_observation=None
 
     def predict(self, prefix):
         quality=self.prediction.augment(prefix, self.core)
@@ -32,9 +32,11 @@ class FeedbackInput:
 class StopFeedbackRuntime(SensorNavigationRuntime):
     def __init__(self, bundle, *args, **kwargs):
         bundle=Path(bundle); manifest=json.loads((bundle/'manifest.json').read_text())
-        if manifest['required_runtime']!=RUNTIME_NAME or manifest['observation_contract']!=contract():
+        feedback_schema=manifest['observation_contract'].get('schema')
+        expected_feedback=contract(feedback_schema)
+        if manifest['required_runtime']!=RUNTIME_NAME or manifest['observation_contract']!=expected_feedback:
             raise ValueError('Explicit stop decision runtime/observation contract required')
-        if json.loads((bundle/'decision_feedback.json').read_text())!=contract():
+        if json.loads((bundle/'decision_feedback.json').read_text())!=expected_feedback:
             raise ValueError('Decision feedback component contract mismatch')
         if (manifest['quality_prefix_contract']!=quality_contract()
             or json.loads((bundle/'quality_observation.json').read_text())!=quality_contract()
@@ -49,7 +51,7 @@ class StopFeedbackRuntime(SensorNavigationRuntime):
             raise ValueError('Native V4 guard prefix required')
         self.context.capture_decision_feedback=True
         self.policy.observation_dimensions=RUNTIME_DIM
-        self.policy=FeedbackInput(self.policy, self.core, self.guard, self.context)
+        self.policy=FeedbackInput(self.policy, self.core, self.guard, self.context, feedback_schema)
 
     def step(self, *args, **kwargs):
         result=super().step(*args, **kwargs)

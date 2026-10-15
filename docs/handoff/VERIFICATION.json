@@ -1,11 +1,56 @@
 {
   "date": "2026-10-15",
-  "branch": "progress",
+  "branch": "sync",
   "completed": true,
   "deployment_approved": false,
-  "training_started": false,
-  "scope": "Migration/integrity, causal feedback and physics wrapper checks; no new trained feedback model or navigation acceptance.",
+  "scope": "Migration integrity, 4k checkpoint/TorchScript loading, native rebuild, one-frame runtime and implementation checks. Full paired evaluation is incomplete at archive time.",
+  "parent_commit": "00be45ca8b3714fb8e9b2f78b1be38aa1083d8da",
+  "training_started": true,
+  "additional_feedback_ppo_steps": 4000,
   "implementation": {
+    "completed": true,
+    "pinned_files_checked": 7540,
+    "model_files_checked": 9,
+    "simulation_tasks": 28,
+    "real_decisions": 1516,
+    "real_segments": 22,
+    "observation_dimensions": 303,
+    "goal_yaw_retained": true,
+    "smoke_command": [
+      0.0,
+      0.5
+    ],
+    "feedback_ppo_steps": 4000,
+    "feedback_training_dimensions": 436,
+    "feedback_runtime_dimensions": 439,
+    "feedback_checkpoint_loaded": true,
+    "feedback_torchscript_loaded": true,
+    "feedback_native_runtime_checked": true,
+    "native_reference_rebuilt": true,
+    "implementation_tests_returncode": 0,
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
+    "deployment_approved": false,
+    "tests": 69,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_compile_check": "compileall passed for tools, neural_navigation, experiments and ROS recording adapter",
+  "stop_feedback": {
+    "training_complete": true,
+    "trained_schema": "stop_decision_feedback_v1",
+    "v2_timer_fix_trained": false,
+    "final_policy_sha256": "852a950c01e8216f7caa7b97b118d302de10c9a4c2fed42bdeb9a73427afbedc",
+    "paired_evaluation_complete": false,
+    "frozen_paired_rows": 10,
+    "target_paired_rows": 24,
+    "deployment_approved": false,
+    "source": "reports/handoff_20261015/SNAPSHOT.json"
+  },
+  "previous_progress_implementation": {
     "completed": true,
     "pinned_files_checked": 3015,
     "model_files_checked": 9,
@@ -30,1188 +75,1160 @@
     "errors": 0,
     "skipped": 0
   },
-  "source_compile_check": "compileall passed for tools, neural_navigation, experiments and ROS recording adapter",
-  "replay": {
-    "completed": true,
-    "simulation_tasks": 28,
-    "validation_trajectories": 22,
-    "validation_frames": 2855,
-    "real_decisions": 1516,
-    "real_segments": 22,
-    "motion_frames": 15634,
-    "skipped_real_comparisons": 0,
-    "files_exactly_equal": 73,
-    "excluded_fields": [
-      "cpu",
-      "*_cpu"
-    ],
-    "comparison": [
-      {
-        "file": "long_feature_to_open.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "long_parallel_corridor.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "long_single_long_wall.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "long_sparse_asymmetric.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "measured_motion.npz",
-        "identical_fields": [
-          "states",
-          "valid",
-          "gyro_z",
-          "bias"
-        ]
-      },
-      {
-        "file": "real_01_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_01_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_02_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_02_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_03_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_03_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_04_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_04_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_05_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_05_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_06_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_06_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_07_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_07_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_08_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_08_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_09_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_09_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_10_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_10_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_11_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_11_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_12_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_12_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_13_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_13_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_14_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_14_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_15_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_15_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_16_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_16_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_17_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_17_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_18_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_18_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_19_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_19_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_20_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_20_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_21_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_21_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_22_measured_wheel_gyro.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "real_22_recorded_ekf.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_00.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_01.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_02.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_03.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_04.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_05.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_06.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_07.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_08.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_09.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_10.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_11.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_12.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_13.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_14.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_15.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_16.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_17.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_18.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_19.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_20.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_21.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_22.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      },
-      {
-        "file": "short_23.npz",
-        "identical_fields": [
-          "temporal_poses",
-          "temporal_stds",
-          "temporal_excluded",
-          "temporal_rank",
-          "temporal_accepted",
-          "ray_consistent_poses",
-          "ray_consistent_stds",
-          "ray_consistent_excluded",
-          "ray_consistent_rank",
-          "ray_consistent_accepted"
-        ]
-      }
-    ],
-    "validation": {
-      "temporal": {
-        "trajectories": 22,
-        "frames": 2855,
-        "xy_p95_m": 0.18506209008721322,
-        "yaw_p95_rad": 0.026626949770572915,
-        "mean_final_xy_m": 0.03423184923100293,
-        "cpu_p95_ms": 7.837212600001559,
-        "cpu_max_ms": 12.161981000001987
-      },
-      "ray_consistent": {
-        "trajectories": 22,
-        "frames": 2855,
-        "xy_p95_m": 0.18035254809240048,
-        "yaw_p95_rad": 0.023871443291547268,
-        "mean_final_xy_m": 0.03269386530992327,
-        "cpu_p95_ms": 13.688207299998465,
-        "cpu_max_ms": 22.135247999999663
-      }
-    },
-    "resource": {
-      "seconds": 272.71203436300857,
-      "cpu_seconds": 95.468436175,
-      "average_cpu_cores": 0.3500704924811694,
-      "peak_rss_mib": 86.12890625,
-      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
-    },
-    "input_provenance": "training/assets/real_recording_20261014/MANIFEST.json",
-    "note": "Derived JSONL hash differs by documented field projection. All compared poses, standard deviations, acceptance, ranks, excluded hits and measured-motion states are byte-value identical to historical final replay.",
-    "evidence_from_branch": "handoff",
-    "current_revision_rerun": false,
-    "note_current_revision": "Historical full localization replay was not rerun in progress; localization implementations and inputs are unchanged. Current shared guard/runtime changes passed the 58-frame parity check and regression tests."
+  "previous_replay": {
+    "source": "Inherited handoff/progress replay evidence; not re-executed for this sync archive.",
+    "rerun_this_archive": false,
+    "results": {
+      "completed": true,
+      "simulation_tasks": 28,
+      "validation_trajectories": 22,
+      "validation_frames": 2855,
+      "real_decisions": 1516,
+      "real_segments": 22,
+      "motion_frames": 15634,
+      "skipped_real_comparisons": 0,
+      "files_exactly_equal": 73,
+      "excluded_fields": [
+        "cpu",
+        "*_cpu"
+      ],
+      "comparison": [
+        {
+          "file": "long_feature_to_open.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "long_parallel_corridor.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "long_single_long_wall.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "long_sparse_asymmetric.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "measured_motion.npz",
+          "identical_fields": [
+            "states",
+            "valid",
+            "gyro_z",
+            "bias"
+          ]
+        },
+        {
+          "file": "real_01_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_01_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_02_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_02_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_03_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_03_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_04_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_04_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_05_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_05_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_06_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_06_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_07_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_07_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_08_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_08_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_09_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_09_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_10_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_10_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_11_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_11_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_12_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_12_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_13_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_13_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_14_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_14_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_15_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_15_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_16_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_16_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_17_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_17_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_18_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_18_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_19_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_19_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_20_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_20_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_21_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_21_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_22_measured_wheel_gyro.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "real_22_recorded_ekf.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_00.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_01.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_02.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_03.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_04.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_05.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_06.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_07.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_08.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_09.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_10.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_11.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_12.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_13.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_14.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_15.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_16.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_17.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_18.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_19.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_20.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_21.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_22.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        },
+        {
+          "file": "short_23.npz",
+          "identical_fields": [
+            "temporal_poses",
+            "temporal_stds",
+            "temporal_excluded",
+            "temporal_rank",
+            "temporal_accepted",
+            "ray_consistent_poses",
+            "ray_consistent_stds",
+            "ray_consistent_excluded",
+            "ray_consistent_rank",
+            "ray_consistent_accepted"
+          ]
+        }
+      ],
+      "validation": {
+        "temporal": {
+          "trajectories": 22,
+          "frames": 2855,
+          "xy_p95_m": 0.18506209008721322,
+          "yaw_p95_rad": 0.026626949770572915,
+          "mean_final_xy_m": 0.03423184923100293,
+          "cpu_p95_ms": 7.837212600001559,
+          "cpu_max_ms": 12.161981000001987
+        },
+        "ray_consistent": {
+          "trajectories": 22,
+          "frames": 2855,
+          "xy_p95_m": 0.18035254809240048,
+          "yaw_p95_rad": 0.023871443291547268,
+          "mean_final_xy_m": 0.03269386530992327,
+          "cpu_p95_ms": 13.688207299998465,
+          "cpu_max_ms": 22.135247999999663
+        }
+      },
+      "resource": {
+        "seconds": 272.71203436300857,
+        "cpu_seconds": 95.468436175,
+        "average_cpu_cores": 0.3500704924811694,
+        "peak_rss_mib": 86.12890625,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "input_provenance": "training/assets/real_recording_20261014/MANIFEST.json",
+      "note": "Derived JSONL hash differs by documented field projection. All compared poses, standard deviations, acceptance, ranks, excluded hits and measured-motion states are byte-value identical to historical final replay.",
+      "evidence_from_branch": "handoff",
+      "current_revision_rerun": false,
+      "note_current_revision": "Historical full localization replay was not rerun in progress; localization implementations and inputs are unchanged. Current shared guard/runtime changes passed the 58-frame parity check and regression tests."
+    }
   },
-  "optional_native": "Rebuilt on this machine into ignored output; no compiled binary committed.",
+  "optional_native": {
+    "rebuilt": true,
+    "destination_runtime_439D_smoke_passed": true,
+    "native_parity_check_passed": true,
+    "platform_binaries_committed": false,
+    "rebuild_tool": "tools/prepare_native_bundle.py"
+  },
   "limitations": [
-    "Existing virtualenv reused; clean pip installation not repeated.",
-    "No new closed-loop, real reference-pose, global recovery, online SLAM or Orin acceptance."
-  ],
-  "parent_handoff_commit": "5ebfa49b8904a773a8607bbed50ff8991cf58335",
-  "previous_handoff_implementation": {
-    "completed": true,
-    "pinned_files_checked": 2979,
-    "model_files_checked": 9,
-    "simulation_tasks": 28,
-    "real_decisions": 1516,
-    "real_segments": 22,
-    "observation_dimensions": 303,
-    "goal_yaw_retained": true,
-    "smoke_command": [
-      0.0,
-      0.5
-    ],
-    "native_reference_rebuilt": true,
-    "implementation_tests_returncode": 0,
-    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
-    "torch": "2.8.0+cu126",
-    "cuda_available": true,
-    "scope": "Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.",
-    "deployment_approved": false,
-    "tests": 42,
-    "failures": 0,
-    "errors": 0,
-    "skipped": 0
-  },
-  "stop_feedback": {
-    "implementation_tests": 32,
-    "failures": 0,
-    "errors": 0,
-    "fixed_input_frames": 58,
-    "legacy_prefix_max_difference": 0,
-    "changed_initial_commands": 0,
-    "shared_forecast_max_difference": 1.8339890717200547e-08,
-    "physical_smoke_steps": 8,
-    "additional_ppo_steps": 0,
-    "planned_pilot_steps": 4000,
-    "trained_candidate_available": false,
-    "deployment_approved": false
-  }
+    "Full paired navigation evaluation is not yet complete in the frozen archive.",
+    "The known crossing failure remains a collision for both models in completed rows.",
+    "Implementation and fixed-input checks do not establish real accuracy, safety or superiority to AMCL.",
+    "No completed independent online-SLAM, kidnapped-robot or Jetson acceptance.",
+    "Checkpoints retain weights/optimizer and random state, but not the live environment/rollout buffer."
+  ]
 }

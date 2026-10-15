@@ -1,0 +1,42 @@
+{
+  "steps": 4000,
+  "counts": {
+    "decision_frames": 3336,
+    "only_stop": 664,
+    "voluntary_wait": 440,
+    "nonzero": 2896,
+    "changed_nonzero": 0,
+    "episodes": 18,
+    "success": 14,
+    "collisions": 3
+  },
+  "reasons": {
+    "none": 2895,
+    "scan_unavailable": 34,
+    "policy_wait": 51,
+    "only_stop_available": 279,
+    "laser_braking_footprint": 737,
+    "learned_route_incomplete": 4
+  },
+  "resource": {
+    "seconds": 1698.4790522980038,
+    "cpu_seconds": 594.467736426,
+    "average_cpu_cores": 0.3500000401074706,
+    "peak_rss_mib": 2459.84765625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo": {
+    "train/learning_rate": 0.0001,
+    "train/entropy_loss": -0.08224238216644153,
+    "train/policy_gradient_loss": -0.0025471782893653483,
+    "train/value_loss": 0.18488011229783297,
+    "train/approx_kl": 8.958912661682916e-05,
+    "train/clip_fraction": 0.0,
+    "train/actor_decision_fraction": 0.132,
+    "train/clear_reference_kl": 0.0,
+    "train/explained_variance": -13.570379257202148,
+    "train/n_updates": 57.0,
+    "train/clip_range": 0.2,
+    "train/loss": 0.048587098717689514
+  }
+}

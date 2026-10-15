@@ -1,0 +1,103 @@
+## fix/localization-mapping-20261015
+ M deployment/ros2_recording_adapter/model_bundle.py
+ M training/experiments/docking_navigation.py
+ M training/experiments/evaluate_docking_navigation.py
+ M training/experiments/goal_pose_navigation.py
+ M training/experiments/masked_navigation.py
+ M training/experiments/recovery_sampling.py
+ M training/experiments/replay_odom_adaptation.py
+ M training/experiments/test_docking_navigation.py
+ M training/experiments/train_quality_navigation.py
+ M training/neural_navigation/core.py
+ M training/neural_navigation/experiment_budget.py
+ M training/neural_navigation/goal_pose_runtime.py
+ M training/neural_navigation/laser_fusion.py
+ M training/neural_navigation/masked_actions.py
+ M training/neural_navigation/runtime.py
+ M training/neural_navigation/safety_context.py
+?? deployment/ros2_recording_adapter/examples/
+?? models/localization_mapping_20261015/anticipatory_ppo_20261015_132151/
+?? models/localization_mapping_20261015/contour_mask_candidate/
+?? models/localization_mapping_20261015/critical_clone_ppo_20261015/
+?? models/localization_mapping_20261015/fast_native_candidate/
+?? models/localization_mapping_20261015/fast_static_candidate/
+?? models/localization_mapping_20261015/predictive_mask_candidate/
+?? models/localization_mapping_20261015/ray_consistent_candidate/
+?? models/localization_mapping_20261015/registered_mask_candidate/
+?? models/localization_mapping_20261015/registered_residual_candidate/
+?? models/localization_mapping_20261015/soft_forecast_candidate/
+?? models/localization_mapping_20261015/sparse_native_candidate/
+?? models/localization_mapping_20261015/stop_go_ppo_20261015/
+?? models/localization_mapping_20261015/temporal_conditional_ppo_1000/
+?? models/localization_mapping_20261015/temporal_native_candidate/
+?? models/localization_mapping_20261015/temporal_recovery_ppo_2000/
+?? models/localization_mapping_20261015/temporal_recovery_ppo_2000_startup_failed/
+?? models/localization_mapping_20261015/temporal_route_candidate/
+?? reports/localization_mapping_20261015/ACTIVE_TRAINING.json
+?? reports/localization_mapping_20261015/amcl_comparison/
+?? reports/localization_mapping_20261015/anticipatory_ppo_20261015_132151/
+?? reports/localization_mapping_20261015/blind_repair_20261015/
+?? reports/localization_mapping_20261015/constraints_repair_20261015/
+?? reports/localization_mapping_20261015/hardware_boundary_20261015/
+?? reports/localization_mapping_20261015/localization_research/
+?? reports/localization_mapping_20261015/real_input_repair_20261015/
+?? reports/localization_mapping_20261015/sparse_repair_20261015/
+?? training/experiments/amcl_offline.cpp
+?? training/experiments/anticipatory_recovery_ppo.py
+?? training/experiments/audit_dynamic_risk_input.py
+?? training/experiments/audit_recorded_scan_contract.py
+?? training/experiments/audit_recorded_sensor_consistency.py
+?? training/experiments/benchmark_constraint_uncertainty.py
+?? training/experiments/benchmark_global_relocalization.py
+?? training/experiments/benchmark_native_static.py
+?? training/experiments/benchmark_sparse_localization.py
+?? training/experiments/benchmark_static_localization.py
+?? training/experiments/build_constraint_candidate.py
+?? training/experiments/build_fast_localization_candidate.py
+?? training/experiments/build_soft_forecast_candidate.py
+?? training/experiments/build_stop_go_training_cases.py
+?? training/experiments/build_verified_localization_candidate.py
+?? training/experiments/conditional_recovery_ppo.py
+?? training/experiments/constraint_ppo_pipeline.py
+?? training/experiments/critical_actor_clone.py
+?? training/experiments/diagnose_contour_completion.py
+?? training/experiments/diagnose_contour_motion.py
+?? training/experiments/evaluate_prediction_velocity.py
+?? training/experiments/evaluate_real_input_repair.py
+?? training/experiments/finalize_real_input_repair.py
+?? training/experiments/inspect_recovery_logits.py
+?? training/experiments/paired_navigation_gate.py
+?? training/experiments/plot_blind_repair.py
+?? training/experiments/recorded_action_parity.py
+?? training/experiments/replay_recorded_relocalization.py
+?? training/experiments/summarize_blind_repair.py
+?? training/experiments/summarize_constraint_repair.py
+?? training/experiments/summarize_hardware_boundary.py
+?? training/experiments/summarize_sparse_repair.py
+?? training/experiments/summarize_static_localization.py
+?? training/experiments/test_anticipatory_recovery_ppo.py
+?? training/experiments/test_conditional_recovery_ppo.py
+?? training/experiments/test_critical_actor_clone.py
+?? training/experiments/test_paired_navigation_gate.py
+?? training/experiments/train_localization_recovery.py
+?? training/neural_navigation/contour_completion.py
+?? training/neural_navigation/contour_history.py
+?? training/neural_navigation/contour_translation.py
+?? training/neural_navigation/fast_static_localizer.py
+?? training/neural_navigation/global_relocalizer.py
+?? training/neural_navigation/measured_odometry.py
+?? training/neural_navigation/predictive_constraint.py
+?? training/neural_navigation/routing_contract.py
+?? training/neural_navigation/static_tracking_kernel.cpp
+?? training/neural_navigation/verified_static_localizer.py
+?? training/neural_navigation/weak_geometry_uncertainty.py
+?? training/test_contour_translation.py
+?? training/test_experiment_budget.py
+?? training/test_fast_static_localizer.py
+?? training/test_forecast_detour.py
+?? training/test_global_relocalizer.py
+?? training/test_measured_odometry.py
+?? training/test_predictive_constraint.py
+?? training/test_soft_forecast_route.py
+?? training/test_verified_static_localizer.py
+?? training/test_weak_geometry_uncertainty.py

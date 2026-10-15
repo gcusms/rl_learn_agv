@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-11",
+  "hardware": {
+    "cpu": "Intel Xeon E5-2696 v3",
+    "physical_cores": 18,
+    "logical_cpus": 36,
+    "ram_gib": 62,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "vram_gib": 6
+  },
+  "cpu_benchmark": {
+    "device": "cpu",
+    "torch": "2.8.0+cu126",
+    "cuda_available": false,
+    "results": [
+      {
+        "envs": 4,
+        "steps": 1000,
+        "train_seconds": 18.91115651200016,
+        "steps_per_second": 52.87883897346233,
+        "setup_seconds": 6.9041587930005335,
+        "n_steps": 250,
+        "batch_size": 250,
+        "n_epochs": 4,
+        "anchor_batches": 4
+      },
+      {
+        "envs": 8,
+        "steps": 2000,
+        "train_seconds": 19.080045962997247,
+        "steps_per_second": 104.82155042386617,
+        "setup_seconds": 6.799616897998931,
+        "n_steps": 250,
+        "batch_size": 250,
+        "n_epochs": 4,
+        "anchor_batches": 4
+      },
+      {
+        "envs": 12,
+        "steps": 3000,
+        "train_seconds": 19.44597654899917,
+        "steps_per_second": 154.2735584628894,
+        "setup_seconds": 6.961498090000532,
+        "n_steps": 250,
+        "batch_size": 250,
+        "n_epochs": 4,
+        "anchor_batches": 4
+      }
+    ],
+    "profile": "         978218 function calls (973684 primitive calls) in 4.894 seconds\n\n   Ordered by: cumulative time\n   List reduced from 416 to 18 due to restriction <18>\n\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n       64    0.000    0.000    4.844    0.076 /home/ubuntu/rl_learn/rl_learn_agv/training/train_room_navigation_v3.py:62(step)\n       64    0.002    0.000    4.843    0.076 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/room_env.py:116(step)\n       64    1.139    0.018    4.841    0.076 /home/ubuntu/rl_learn/rl_learn_agv/training/navrl/physical_env.py:160(step)\n       64    0.006    0.000    1.524    0.024 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/room_env.py:95(_observation)\n       64    0.007    0.000    1.476    0.023 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/env.py:111(_observation)\n       26    0.003    0.000    1.406    0.054 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/room_env.py:66(_neural_route)\n       26    0.008    0.000    0.738    0.028 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/env.py:88(_neural_route)\n 1038/282    0.002    0.000    0.698    0.002 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1769(_wrapped_call_impl)\n 1038/282    0.003    0.000    0.697    0.002 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1777(_call_impl)\n       26    0.054    0.002    0.668    0.026 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/models.py:80(forward)\n       51    0.030    0.001    0.656    0.013 /home/ubuntu/rl_learn/rl_learn_agv/training/neural_navigation/room_env.py:55(_route_usable)\n     2560    0.038    0.000    0.655    0.000 /home/ubuntu/rl_learn/rl_learn_agv/training/navrl/physical_env.py:90(_minimum_gap)\n     2548    0.447    0.000    0.447    0.000 {built-in method torch.conv2d}\n     2744    0.134    0.000    0.445    0.000 /home/ubuntu/rl_learn/rl_learn_agv/training/navrl/map.py:42(visible)\n     2560    0.370    0.000    0.370    0.000 {built-in method mujoco._functions.mj_step}\n     2560    0.331    0.000    0.331    0.000 {built-in method mujoco._functions.mj_forward}\n     5120    0.064    0.000    0.279    0.000 /home/ubuntu/rl_learn/rl_learn_agv/training/navrl/physical_env.py:42(wall_gap)\n     5120    0.151    0.000    0.272    0.000 /home/ubuntu/rl_learn/rl_learn_agv/training/navrl/physical_env.py:36(robot_gap)\n\n\n"
+  },
+  "cuda_benchmark": {
+    "device": "cuda",
+    "torch": "2.8.0+cu126",
+    "cuda_available": true,
+    "results": [
+      {
+        "envs": 8,
+        "steps": 2000,
+        "train_seconds": 20.317012928000622,
+        "steps_per_second": 98.43966763655636,
+        "setup_seconds": 7.390661208002712,
+        "n_steps": 250,
+        "batch_size": 250,
+        "n_epochs": 4,
+        "anchor_batches": 4
+      }
+    ],
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU"
+  },
+  "limitations": [
+    "Single short rollout per configuration; no convergence or quality conclusion",
+    "CPU 4-worker preliminary test overlapped the first CUDA benchmark; excluded from fair comparison",
+    "CPU 8/12 and final CUDA 8 benchmarks were sequential",
+    "Increasing workers changes rollout size and demonstration-anchor frequency per transition",
+    "Measurements exclude startup, checkpoint IO and independent evaluation",
+    "Benchmark uses archived v3 parent and unchanged TrainingMission; does not export trained policies"
+  ],
+  "source": "training/remote/train_parallel.py-equivalent sampling, PPO update and four demonstration-anchor batches; n_steps=250, batch_size=250, n_epochs=4"
+}

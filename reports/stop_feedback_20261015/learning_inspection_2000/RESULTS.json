@@ -1,0 +1,149 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "checkpoint": "models/stop_feedback_20261015/ppo_4000_s221015/policy_initial.zip",
+      "checkpoint_sha256": "8be007f9015813a311d6135651443fbb7c43a21bcba8dbaa760ace8ce2ca02f7",
+      "collected_steps": 0,
+      "optimizer_epochs": 0,
+      "new_input_weights_l2": 0.0,
+      "maximum_new_input_first_layer_contribution": 0.0,
+      "changed_choices_on_same_states": 0,
+      "mean_initial_to_current_kl": 0.0,
+      "zero_feedback_attribution_kl": 0.0,
+      "zero_feedback_changed_choices": 0,
+      "critical_frames": [
+        {
+          "timestamp": 7.59999999999986,
+          "parent_choice": 1,
+          "checkpoint_choice": 1,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 7.799999999999856,
+          "parent_choice": 1,
+          "checkpoint_choice": 1,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 7.999999999999852,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 8.199999999999882,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 6,
+          "predicted_contact_score": 0.23076923191547394
+        },
+        {
+          "timestamp": 8.399999999999913,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 7,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 8.599999999999945,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 7,
+          "predicted_contact_score": 0.07692307978868484
+        },
+        {
+          "timestamp": 8.799999999999976,
+          "parent_choice": 0,
+          "checkpoint_choice": 0,
+          "legal_motion_choices": 0,
+          "predicted_contact_score": 0.692307710647583
+        }
+      ]
+    },
+    {
+      "checkpoint": "models/stop_feedback_20261015/ppo_4000_s221015/policy_step_2000.zip",
+      "checkpoint_sha256": "6c66e7c1eaff51c8d52d9c3725545b67d002ac6969745eed8780e0c6a678114b",
+      "collected_steps": 2000,
+      "optimizer_epochs": 28,
+      "new_input_weights_l2": 0.2754552364349365,
+      "maximum_new_input_first_layer_contribution": 0.12835164368152618,
+      "changed_choices_on_same_states": 0,
+      "mean_initial_to_current_kl": 0.003165466245263815,
+      "zero_feedback_attribution_kl": 0.0009606186067685485,
+      "zero_feedback_changed_choices": 0,
+      "critical_frames": [
+        {
+          "timestamp": 7.59999999999986,
+          "parent_choice": 1,
+          "checkpoint_choice": 1,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 7.799999999999856,
+          "parent_choice": 1,
+          "checkpoint_choice": 1,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 7.999999999999852,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 11,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 8.199999999999882,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 6,
+          "predicted_contact_score": 0.23076923191547394
+        },
+        {
+          "timestamp": 8.399999999999913,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 7,
+          "predicted_contact_score": 0.0
+        },
+        {
+          "timestamp": 8.599999999999945,
+          "parent_choice": 7,
+          "checkpoint_choice": 7,
+          "legal_motion_choices": 7,
+          "predicted_contact_score": 0.07692307978868484
+        },
+        {
+          "timestamp": 8.799999999999976,
+          "parent_choice": 0,
+          "checkpoint_choice": 0,
+          "legal_motion_choices": 0,
+          "predicted_contact_score": 0.692307710647583
+        }
+      ]
+    }
+  ],
+  "frames": 58,
+  "trace_sha256": "ccd66913aee51ae9af63f0faaedf059ef0bc7feac168124d51007dad316b39de",
+  "initial_bundle_manifest_sha256": "420a294d2c73973f4031696d57f6007f531f8e9782abe3ae6a2c35a2d12cca47",
+  "scope": "Fixed old-trajectory policy/weight inspection; no new navigation outcome.",
+  "zero_feedback_is_valid_observation": false,
+  "deployment_approved": false,
+  "limitations": [
+    "A changed choice or nonzero feature weight does not prove useful or safe movement.",
+    "Zero-feedback attribution is a numerical intervention outside the feature contract.",
+    "Checkpoint callbacks run before that rollout update; collected steps and optimizer epochs differ."
+  ],
+  "resource": {
+    "seconds": 99.2921863720403,
+    "cpu_seconds": 9.935385398000001,
+    "average_cpu_cores": 0.10006210721126499,
+    "peak_rss_mib": 656.703125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

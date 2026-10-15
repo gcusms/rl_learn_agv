@@ -1,7 +1,7 @@
 """New observation wrapper; original physics, rewards, masks and actions."""
 import gymnasium as gym
 import numpy as np
-from neural_navigation.decision_feedback import DecisionFeedback, TRAIN_DIM
+from neural_navigation.decision_feedback import DecisionFeedback, TRAIN_DIM, LEGACY_SCHEMA
 from neural_navigation.masked_actions import masks_from_observation
 from experiments.quality_masked_navigation import QualityMaskedWrapper
 
@@ -16,10 +16,11 @@ class FeedbackInterface(gym.Env):
 
 
 class StopFeedbackWrapper(QualityMaskedWrapper):
-    def __init__(self, env, reward_scale=1.):
+    def __init__(self, env, reward_scale=1., feedback_schema=LEGACY_SCHEMA):
         super().__init__(env, reward_scale)
         env.capture_decision_feedback = True
-        self.feedback = DecisionFeedback()
+        self.feedback_schema = feedback_schema
+        self.feedback = DecisionFeedback(feedback_schema)
         self.observation_space = gym.spaces.Box(-1, 1, (TRAIN_DIM,), np.float32)
 
     def _augment(self, prefix):

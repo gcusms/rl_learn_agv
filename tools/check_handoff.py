@@ -82,15 +82,44 @@ def main():
     if abs(runtime.core.goal_yaw - goal[2]) > 1e-9:
         raise ValueError('Directional goal lost')
 
+    feedback = ROOT / 'models/stop_feedback_20261015/ppo_4000_s221015'
+    feedback_bundle = feedback / 'portable'
+    feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
+    from neural_navigation.decision_feedback import contract as feedback_contract
+    if feedback_manifest['observation_contract'] != feedback_contract():
+        raise ValueError('The archived 4k model must retain its trained V1 semantics')
+    for name, expected in feedback_manifest['files'].items():
+        if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
+            raise ValueError('Feedback component mismatch: ' + name)
+    from experiments.stop_feedback_ppo import StopFeedbackPPO
+    checkpoint = StopFeedbackPPO.load(feedback / 'policy.zip', device='cpu')
+    if checkpoint.num_timesteps != 4000 or checkpoint.observation_space.shape != (436,):
+        raise ValueError('Feedback training checkpoint mismatch')
+    exported = torch.jit.load(str(feedback_bundle / 'actor.pt'), map_location='cpu').eval()
+    with torch.no_grad():
+        command = exported(torch.zeros((1, 439)))
+    if command.shape != (1, 2) or not torch.isfinite(command).all():
+        raise ValueError('Feedback TorchScript interface mismatch')
+    del checkpoint, exported
+
     if args.build_native:
         from tools.prepare_native_bundle import build
         native = build(ROOT / 'models/localization_mapping_20261015/temporal_native_candidate/portable',
                        output / 'native_reference')
         os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
+        rebuilt_feedback = build(feedback_bundle, output / 'feedback_candidate')
+        feedback_runtime = resolve_runtime(feedback_manifest['required_runtime'])(
+            rebuilt_feedback, ROOT / 'training' / case['scene'] / 'decision_map.yaml',
+            initial, goal, route_mode='shortcut')
+        feedback_result = feedback_runtime.step(data['scan'][0], data['odom'][0],
+                                               data['velocity'][0], float(data['t'][0]))
+        if (feedback_result['policy_observation_dimensions'] != 439
+                or not np.isfinite(feedback_result['command']).all()):
+            raise ValueError('Rebuilt feedback runtime smoke check failed')
     tests = ['training.test_measured_odometry', 'training.test_verified_static_localizer',
              'training.test_fast_static_localizer', 'training.test_global_relocalizer',
              'training.test_decision_feedback', 'experiments.test_stop_feedback_ppo',
-             'training.test_navigation_runtime']
+             'training.test_navigation_runtime', 'experiments.test_audit_decision_waits']
     completed = subprocess.run([sys.executable, '-m', 'unittest', '-v', *tests],
                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     (output / 'tests.txt').write_text(completed.stdout)
@@ -100,6 +129,9 @@ def main():
     report = dict(completed=True, pinned_files_checked=len(pinned), model_files_checked=len(manifest['files']),
         simulation_tasks=len(tasks), real_decisions=len(decisions), real_segments=22,
         observation_dimensions=303, goal_yaw_retained=True, smoke_command=result['command'],
+        feedback_ppo_steps=4000, feedback_training_dimensions=436, feedback_runtime_dimensions=439,
+        feedback_checkpoint_loaded=True, feedback_torchscript_loaded=True,
+        feedback_native_runtime_checked=args.build_native,
         native_reference_rebuilt=args.build_native, implementation_tests_returncode=completed.returncode,
         python=sys.version, torch=torch.__version__, cuda_available=torch.cuda.is_available(),
         scope='Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.',
