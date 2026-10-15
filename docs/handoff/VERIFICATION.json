@@ -1,13 +1,13 @@
 {
   "date": "2026-10-16",
-  "branch": "go",
+  "branch": "ship",
   "completed": true,
-  "verified_at": "2026-10-16T03:58:31.749538+08:00",
-  "parent_commit": "5128e0fa121905cbe2e8496622376a8b32dbbebf",
-  "scope": "Migration integrity, eight full feedback checkpoint/TorchScript loads, nine native rebuilds, 108 implementation tests, plus partial 2k PPO/optimizer and masked inference over 250 actual samples. Not closed-loop deployment acceptance.",
+  "verified_at": "2026-10-16T04:51:14.500185+08:00",
+  "parent_commit": "5747de85a7dbd0cbc431be020069ca7155090893",
+  "scope": "Portable files, nine feedback model/checkpoint loads, actual partial PPO optimizer and7000 samples,111 unique implementation tests including a separate native parity run, one rebuilt current439D runtime frame. Not deployment acceptance.",
   "implementation": {
     "completed": true,
-    "pinned_files_checked": 19524,
+    "pinned_files_checked": 20814,
     "model_files_checked": 9,
     "simulation_tasks": 28,
     "real_decisions": 1516,
@@ -23,7 +23,7 @@
     "feedback_runtime_dimensions": 439,
     "feedback_checkpoint_loaded": true,
     "feedback_torchscript_loaded": true,
-    "feedback_native_runtime_checked": true,
+    "feedback_native_runtime_checked": false,
     "feedback_models": [
       {
         "folder": "ppo_4000_s221015",
@@ -35,8 +35,7 @@
         "demonstration_initialization_only": false,
         "recovery_residual": false,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "ppo_v2_4000_s221015",
@@ -48,8 +47,7 @@
         "demonstration_initialization_only": false,
         "recovery_residual": false,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "ppo_explore_4000_s221015",
@@ -61,8 +59,7 @@
         "demonstration_initialization_only": false,
         "recovery_residual": false,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "prefix_ppo_2000_s231015",
@@ -74,8 +71,7 @@
         "demonstration_initialization_only": false,
         "recovery_residual": true,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "steady_base_ppo_2000_s231015",
@@ -87,8 +83,7 @@
         "demonstration_initialization_only": false,
         "recovery_residual": true,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "proactive_bc_s231015_prepared",
@@ -100,8 +95,7 @@
         "demonstration_initialization_only": true,
         "recovery_residual": true,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "proactive_augmented_bc_s231015",
@@ -113,8 +107,7 @@
         "demonstration_initialization_only": true,
         "recovery_residual": true,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
       },
       {
         "folder": "proactive_augmented_bc_800_s231015",
@@ -126,11 +119,22 @@
         "demonstration_initialization_only": true,
         "recovery_residual": true,
         "checkpoint_loaded": true,
-        "torchscript_loaded": true,
-        "native_runtime_checked": true
+        "torchscript_loaded": true
+      },
+      {
+        "folder": "w11_recovery_bc800_s231015",
+        "schema": "stop_decision_feedback_v2",
+        "exploration_schema": "none",
+        "additional_steps": 0,
+        "bundle_name": "bc_portable",
+        "checkpoint_name": "policy_bc.zip",
+        "demonstration_initialization_only": true,
+        "recovery_residual": true,
+        "checkpoint_loaded": true,
+        "torchscript_loaded": true
       }
     ],
-    "native_reference_rebuilt": true,
+    "native_reference_rebuilt": false,
     "implementation_tests_returncode": 0,
     "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
     "torch": "2.8.0+cu126",
@@ -139,26 +143,47 @@
     "deployment_approved": false,
     "training_snapshot": {
       "completed": true,
-      "snapshot_files_checked": 41,
-      "source_collected_steps": 2750,
-      "checkpoint_collected_steps": 2000,
-      "checkpoint_optimized_through_steps": 1750,
-      "optimizer_epochs_completed": 20,
+      "snapshot_files_checked": 361,
+      "source_collected_steps": 7250,
+      "checkpoint_collected_steps": 7000,
+      "checkpoint_optimized_through_steps": 6750,
+      "optimizer_epochs_completed": 97,
       "optimizer_loaded": true,
       "original_base_unchanged": true,
-      "actual_samples_archived": 2000,
+      "actual_samples_archived": 7000,
       "masked_inference_frames": 250,
-      "checkpoint_sha256": "9e55a9d7ffe1f434b640708cc82ecae7c488bf5ddf099eec6316ba7630b96799",
+      "checkpoint_sha256": "fd0f37302865c919e7daa9bc2873b3f24f1f5c86676ceeac0e239f103bed9e0c",
       "training_completed": false,
       "exact_rollout_resume_supported": false,
       "closed_loop_acceptance": false,
       "deployment_approved": false
     }
   },
-  "snapshot": "reports/handoff_go_20261016/SNAPSHOT.json",
-  "snapshot_sha256": "3342ffe10d31fb828e408837d00ef7489f12b2b0dddda21be685a893bbd7ac7f",
-  "files_manifest_sha256": "9dd663bf2d74858f273613ffabb2639346d7aa4374887f061aae9d347c5be395",
-  "tests_log": "docs/handoff/verification_go_tests.txt",
-  "previous_verification": "docs/handoff/CARRY_VERIFICATION.json",
+  "current_candidate_native": {
+    "completed": true,
+    "rebuilt_candidate": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/bc_portable",
+    "native_source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "native_binary_sha256": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "runtime_dimensions": 439,
+    "goal_yaw_retained": true,
+    "finite_command": [
+      0.0,
+      0.5
+    ],
+    "native_python_parity_test_passed": true,
+    "scope": "One rebuilt current candidate, one runtime frame and the previously skipped native/Python parity test; not closed-loop acceptance.",
+    "deployment_approved": false
+  },
+  "unique_implementation_tests_passed": 111,
+  "initial_suite_passed": 110,
+  "initial_suite_skipped": 1,
+  "separate_previously_skipped_native_test_passed": true,
+  "snapshot": "reports/handoff_ship_20261016/SNAPSHOT.json",
+  "snapshot_sha256": "b40a81298ee1798d1fb7ff07d30c7fef8e54c847235407b2213b3bad7d0f574b",
+  "files_manifest_sha256": "adce3cb6fd9ff07cf22a882619594ba73df862f432560ee4319848089a0bfd5e",
+  "final_pinned_files": 20839,
+  "final_pinned_files_all_match": true,
+  "tests_log": "docs/handoff/verification_ship_tests.txt",
+  "previous_verification": "docs/handoff/GO_VERIFICATION.json",
   "deployment_approved": false
 }

@@ -1,0 +1,591 @@
+diff --git a/deployment/ros2_recording_adapter/model_bundle.py b/deployment/ros2_recording_adapter/model_bundle.py
+index 7b477ff..d53741b 100644
+--- a/deployment/ros2_recording_adapter/model_bundle.py
++++ b/deployment/ros2_recording_adapter/model_bundle.py
+@@ -36,6 +36,19 @@ def inspect_bundle(config_path):
+         raise ValueError('Action contract mismatch')
+     quality = json.loads((bundle/'quality_observation.json').read_text())
+     directional_core=sensor_core in ('odom-goal-pose','learned-terminal-goal-pose')
++    hardware=json.loads((bundle/'hardware.json').read_text())
++    from neural_navigation.masked_actions import validate_hardware_action
++    if hardware.get('policy_action')!=manifest['action_contract']:
++        raise ValueError('Hardware/manifest action contract mismatch')
++    validate_hardware_action(hardware)
++    if (bundle/'uncertainty_contract.json').exists():
++        from neural_navigation.weak_geometry_uncertainty import contract as uncertainty_contract
++        if 'uncertainty_contract.json' not in manifest['files'] or json.loads((bundle/'uncertainty_contract.json').read_text())!=uncertainty_contract():
++            raise ValueError('Uncertainty contract mismatch')
++    if (bundle/'routing_contract.json').exists():
++        from neural_navigation.routing_contract import contract as routing_contract
++        if 'routing_contract.json' not in manifest['files'] or json.loads((bundle/'routing_contract.json').read_text())!=routing_contract():
++            raise ValueError('Routing acceptance contract mismatch')
+     expected_quality=manifest.get('quality_prefix_contract') if directional_core else manifest['observation_contract']
+     if quality != expected_quality:
+         raise ValueError('Quality feature contract mismatch')
+@@ -49,8 +62,10 @@ def inspect_bundle(config_path):
+         if (bundle/'localization_contract.json').exists() and (
+             'localization_contract.json' not in manifest['files'] or
+             json.loads((bundle/'localization_contract.json').read_text()).get('schema') not in
+-                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4','odom_anchored_static_support_v5','odom_anchored_static_support_v6')):
++                ('odom_anchored_static_support_v1','odom_anchored_static_support_v2','odom_anchored_static_support_v3','odom_anchored_static_support_v4','odom_anchored_static_support_v5','odom_anchored_static_support_v6','fast_static_tracking_v1','fast_static_tracking_native_v1','fast_static_tracking_v2','fast_static_tracking_native_v2','fast_static_tracking_temporal_v1','fast_static_tracking_temporal_native_v1')):
+             raise ValueError('Localization contract mismatch')
++        if (bundle/'localization_contract.json').exists() and json.loads((bundle/'localization_contract.json').read_text()).get('schema') in ('fast_static_tracking_native_v1','fast_static_tracking_native_v2','fast_static_tracking_temporal_native_v1') and 'localization_kernel.so' not in manifest['files']:
++            raise ValueError('Missing native localization kernel hash')
+     if sensor_core=='learned-terminal-goal-pose':
+         if 'docking_contract.json' not in manifest['files']:
+             raise ValueError('Missing terminal policy contract hash')
+diff --git a/training/experiments/docking_navigation.py b/training/experiments/docking_navigation.py
+index 19f7eb5..fd61c07 100644
+--- a/training/experiments/docking_navigation.py
++++ b/training/experiments/docking_navigation.py
+@@ -101,7 +101,7 @@ def export_docking(model,components,output):
+         expected=ACTIONS[model.predict(obs,action_masks=masks_from_observation(obs[:,:282]),deterministic=True)[0]]
+         np.testing.assert_array_equal(actor(torch.from_numpy(obs)).numpy(),expected)
+     actor.save(str(output/'actor.pt'))
+-    for name in ('hardware.json','router.pt','localizer.pt','localization_contract.json'):
++    for name in ('hardware.json','router.pt','localizer.pt','localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
+         if (Path(components)/name).exists():shutil.copy2(Path(components)/name,output/name)
+     for name,data in [('goal_pose_observation.json',goal_contract()),('quality_observation.json',quality_contract()),
+                       ('docking_contract.json',docking_contract(model.policy.terminal_radius))]:
+@@ -110,7 +110,7 @@ def export_docking(model,components,output):
+     manifest=dict(sensor_core='learned-terminal-goal-pose',
+         required_runtime='experiments.docking_navigation.DockingRuntime',
+         observation_contract=goal_contract(),quality_prefix_contract=quality_contract(),
+-        action_contract=action_contract(),docking_contract=docking_contract(model.policy.terminal_radius),
++        action_contract=json.loads((Path(components)/'hardware.json').read_text())['policy_action'],docking_contract=docking_contract(model.policy.terminal_radius),
+         requires_quality_feature_generator=True,exact_action_parity=True,
+         comparison_inputs=len(obs),deployment_approved=False,
+         files={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in output.iterdir()})
+diff --git a/training/experiments/evaluate_docking_navigation.py b/training/experiments/evaluate_docking_navigation.py
+index b5f6250..822d119 100644
+--- a/training/experiments/evaluate_docking_navigation.py
++++ b/training/experiments/evaluate_docking_navigation.py
+@@ -62,9 +62,10 @@ def evaluate(case,bundle,budget):
+         prior=np.asarray(case['start'])+np.asarray(case.get('initial_prior_offset',[0,0,0]))
+         runtime=runtime_class(bundle,scene/'decision_map.yaml',prior,case['goal'],'shortcut')
+         labels=[];observations=[];masks=[];choices=[];commands=[];scans=[];humans=[];stops=Counter();latencies=[]
++        odometry=[];velocities=[];route_diagnostics=[];route_reasons=[];constraint_diagnostics=[]
+         arrived=False;false_arrival=False;physical_since=None;c=contract();required=len(case['goal'])==3
+-        parity_frames=0
+-        for _ in range(case['max_steps']):
++        parity_frames=0;last_progress=time.monotonic()
++        for step_index in range(case['max_steps']):
+             start=time.perf_counter()
+             odom=env.observed_odometry if command_input is None else command_input.pose
+             velocity_input=env.measured_velocity if command_input is None else command_input.velocity
+@@ -84,6 +85,23 @@ def evaluate(case,bundle,budget):
+             labels.append([env.elapsed,*env.truth,*runtime.core.estimate,xy,yaw,*velocity])
+             observations.append(obs);masks.append(mask);choices.append(choice);commands.append(result['command']);stops[str(result['stop_reason'])]+=1
+             scans.append(env.scan.copy());humans.append(env._humans().copy())
++            # Record the actual runtime inputs, not simulator truth substituted
++            # for odometry. This permits causal sensor replay after a failure.
++            odometry.append(np.asarray(odom).copy());velocities.append(np.asarray(velocity_input).copy())
++            core=runtime.core;loc=core.localizer
++            route_diagnostics.append([core.plan_revision,len(core.path),
++                *core.path[-1],float(getattr(loc,'observable_rank',-1)),
++                float(loc.map_agreement),*np.asarray(loc.std)])
++            route_reasons.append(core.replan_reason)
++            constraint=result.get('predictive_constraint',{})
++            constraint_diagnostics.append([constraint.get('supported_tracks',0),constraint.get('rejected_nonzero_choices',0),
++                constraint.get('compute_ms',0.),*[np.nan if v is None else v for v in constraint.get('predicted_contact_seconds',[None]*12)]])
++            if time.monotonic()-last_progress>=30.:
++                print(json.dumps(dict(evaluation_progress=True,case_id=case['id'],bundle=str(bundle),
++                    frame=step_index+1,max_frames=case['max_steps'],simulation_seconds=float(env.elapsed),
++                    travel_m=float(env.travel),nonzero_choices=int(mask[1:].sum()),
++                    stop_reason=result['stop_reason'])),flush=True)
++                last_progress=time.monotonic()
+             if result['stop_reason']=='estimated_goal_reached':
+                 if good and settled:arrived=True;break
+                 if not good:false_arrival=True;break
+@@ -104,9 +122,13 @@ def evaluate(case,bundle,budget):
+             localization_xy_p95_m=float(np.percentile(np.linalg.norm(labels[:,1:3]-labels[:,4:6],axis=1),95)),
+             localization_yaw_p95_rad=float(np.percentile(abs(wrap(labels[:,3]-labels[:,6])),95)),
+             stop_choices=int((choices==0).sum()),only_stop_frames=int((~masks[:,1:].any(axis=1)).sum()),stop_reasons=dict(stops),
++            voluntary_wait_frames=int(((choices==0)&masks[:,1:].any(axis=1)).sum()),
++            predictive_constraint_frames=int(np.count_nonzero(np.asarray(constraint_diagnostics)[:,1])),
+             runtime_ms=dict(p95=float(np.percentile(latencies,95)),p99=float(np.percentile(latencies,99)),maximum=float(max(latencies))))
+         return result,dict(labels=labels,observations=np.array(observations),masks=masks,choices=choices,commands=np.array(commands),
+-            scans=np.array(scans),human_positions=np.array(humans))
++            scans=np.array(scans),human_positions=np.array(humans),odometry=np.array(odometry),
++            measured_velocity=np.array(velocities),route_diagnostics=np.array(route_diagnostics),route_reasons=np.array(route_reasons),
++            constraint_diagnostics=np.array(constraint_diagnostics))
+     finally:env.close()
+ 
+ 
+diff --git a/training/experiments/goal_pose_navigation.py b/training/experiments/goal_pose_navigation.py
+index 494f572..cc0ec1a 100644
+--- a/training/experiments/goal_pose_navigation.py
++++ b/training/experiments/goal_pose_navigation.py
+@@ -126,13 +126,13 @@ def export_goal_policy(model,components,output):
+     expected=ACTIONS[model.predict(inputs,action_masks=masks_from_observation(inputs[:,:282]),deterministic=True)[0]]
+     with torch.no_grad():np.testing.assert_array_equal(actor(torch.from_numpy(inputs)).numpy(),expected)
+     actor.save(str(output/'actor.pt'))
+-    for name in ('hardware.json','localizer.pt','router.pt','localization_contract.json'):
++    for name in ('hardware.json','localizer.pt','router.pt','localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
+         if (components/name).exists():shutil.copy2(components/name,output/name)
+     (output/'quality_observation.json').write_text(json.dumps(quality_contract(),indent=2))
+     (output/'goal_pose_observation.json').write_text(json.dumps(contract(),indent=2))
+     hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in output.iterdir()}
+     manifest=dict(sensor_core='odom-goal-pose',required_runtime='experiments.goal_pose_navigation.GoalPoseRuntime',
+-        observation_contract=contract(),quality_prefix_contract=quality_contract(),action_contract=action_contract(),
++        observation_contract=contract(),quality_prefix_contract=quality_contract(),action_contract=json.loads((components/'hardware.json').read_text())['policy_action'],
+         requires_quality_feature_generator=True,exact_action_parity=True,comparison_inputs=256,
+         deployment_approved=False,files=hashes)
+     (output/'manifest.json').write_text(json.dumps(manifest,indent=2))
+diff --git a/training/experiments/masked_navigation.py b/training/experiments/masked_navigation.py
+index 0c4d39b..51eb06e 100644
+--- a/training/experiments/masked_navigation.py
++++ b/training/experiments/masked_navigation.py
+@@ -21,6 +21,8 @@ class MaskedNavigationCurriculum(RecoveryNavigationCurriculum):
+         super().__init__(*args,**kwargs)
+         if self.hardware['policy_observation']['schema'] not in PREDICTIVE_SCHEMAS:
+             raise ValueError('Masked velocity choices require the V4 probe contract')
++        from neural_navigation.masked_actions import validate_hardware_action
++        validate_hardware_action(self.hardware)
+         self.action_space=gym.spaces.Discrete(len(ACTIONS))
+ 
+     def action_masks(self):
+diff --git a/training/experiments/recovery_sampling.py b/training/experiments/recovery_sampling.py
+index d7ce7d4..dce059c 100644
+--- a/training/experiments/recovery_sampling.py
++++ b/training/experiments/recovery_sampling.py
+@@ -4,22 +4,32 @@ from experiments.fixed_training_replay import reset_training_episode
+ from experiments.train_masked_navigation import Progress
+ import json
+ import numpy as np
++import gymnasium as gym
+ 
+ 
+ class ScheduledRecoveryCurriculum(FocusedMaskedCurriculum):
+-    def __init__(self,*args,recorded_cases=(),**kwargs):
++    def __init__(self,*args,recorded_cases=(),recorded_episodes_per_cycle=1,**kwargs):
+         if not recorded_cases:raise ValueError('Recorded training cases required')
++        if recorded_episodes_per_cycle not in (1,3):raise ValueError('Use one-in-two or three-in-four recorded episodes')
++        self.recorded_episodes_per_cycle=recorded_episodes_per_cycle
++        self.recorded_case_index=0
+         self.recovery_reset_index=0;self.current_recovery_episode=False
+         kwargs['replay_probability']=0.
+         super().__init__(*args,recorded_cases=recorded_cases,**kwargs)
+ 
+     def reset(self,seed=None,options=None):
+         if seed is not None:
+-            self.recovery_reset_index=0;self.replay_rng=np.random.default_rng(seed)
+-        focused=not options and self.recovery_reset_index%2==0
++            self.recovery_reset_index=0;self.recorded_case_index=0;self.replay_rng=np.random.default_rng(seed)
++            gym.Env.reset(self,seed=seed)
++        focused=not options and self.recovery_reset_index%(self.recorded_episodes_per_cycle+1)<self.recorded_episodes_per_cycle
+         if focused:
+-            case=self.recorded_cases[(self.recovery_reset_index//2)%len(self.recorded_cases)]
++            case=self.recorded_cases[self.recorded_case_index%len(self.recorded_cases)]
++            self.recorded_case_index+=1
++            # Replaying an exact simulator seed must not rewind the curriculum
++            # generator and repeat the same general task after every replay.
++            curriculum_rng=self.np_random
+             obs,info=reset_training_episode(self,case)
++            self.np_random=curriculum_rng
+         else:obs,info=super().reset(seed=seed,options=options)
+         self.recovery_reset_index+=1;self.current_recovery_episode=focused
+         return obs,dict(info,focused_training_replay=focused)
+diff --git a/training/experiments/replay_odom_adaptation.py b/training/experiments/replay_odom_adaptation.py
+index 02927ed..77e349c 100644
+--- a/training/experiments/replay_odom_adaptation.py
++++ b/training/experiments/replay_odom_adaptation.py
+@@ -14,14 +14,23 @@ def main():
+     p=argparse.ArgumentParser();p.add_argument('--record',type=Path,required=True);p.add_argument('--bundle',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
+     p.add_argument('--turn-response-v4',action='store_true',help='Opt-in bounded yaw response; leave v3 default unchanged')
+     p.add_argument('--precision-v5',action='store_true',help='Reduced residual deadband and bounded startup refinement')
++    p.add_argument('--fast-static',action='store_true',help='Experimental geometric tracking; no neural scorer')
++    p.add_argument('--temporal-static',action='store_true',help='Physical-time static support; no extrapolated unknown returns')
++    p.add_argument('--cpu-cores',type=float,default=.35)
+     a=p.parse_args();configuration=precision_contract() if a.precision_v5 else turn_response_contract() if a.turn_response_v4 else contract()
+     torch.set_num_threads(1);a.output.mkdir(parents=True,exist_ok=True)
++    from neural_navigation.experiment_budget import ExperimentBudget
++    budget=ExperimentBudget(a.cpu_cores,directory=a.output)
+     rows=[json.loads(l)['data'] for l in (a.record/'decisions.jsonl').open()]
+     run=next((a.record/'snapshots/runs').iterdir())
+     m=StaticMap(run/'prepared_map/map.yaml',radius=.3);lidar=LidarSpec(json.loads((a.bundle/'hardware.json').read_text())['lidar'])
+     previous=None;poses=[];old=[];reasons=[];timings=[];accepted=[]
+     baseline=LearnedLocalizer(m,lidar,a.bundle/'localizer.pt')
+-    candidate=OdometryAnchoredLocalizer(m,lidar,a.bundle/'localizer.pt',configuration)
++    if a.fast_static or a.temporal_static:
++        from neural_navigation.fast_static_localizer import FastStaticLocalizer,contract as fast_contract,temporal_contract
++        configuration=temporal_contract() if a.temporal_static else fast_contract()
++        candidate=FastStaticLocalizer(m,lidar,configuration)
++    else:candidate=OdometryAnchoredLocalizer(m,lidar,a.bundle/'localizer.pt',configuration)
+     for r in rows:
+         if r['mission_id']!=previous:
+             baseline.reset(r['initial'],None);candidate.reset(r['initial'],None);previous=r['mission_id']
+@@ -29,12 +38,14 @@ def main():
+         old.append(baseline.update(odom,scan));start=time.perf_counter()
+         poses.append(candidate.update(odom,scan,t));timings.append((time.perf_counter()-start)*1000)
+         reasons.append(candidate.correction_reason);accepted.append(candidate.scan_update_accepted)
++        budget.tick()
+     poses=np.array(poses);old=np.array(old);recorded=np.array([r['result']['diagnostics']['estimated_pose'] for r in rows]);missions=[]
+     for mid in sorted(set(r['mission_id'] for r in rows)):
+         ix=np.flatnonzero([r['mission_id']==mid for r in rows]);od=np.array([rows[i]['inputs']['odom'] for i in ix])
+         def distance(x):return float(np.linalg.norm(x[-1,:2]-x[0,:2]))
+         missions.append(dict(mission=mid,frames=len(ix),recorded_displacement_m=distance(recorded[ix]),baseline_replay_displacement_m=distance(old[ix]),candidate_displacement_m=distance(poses[ix]),input_odometry_displacement_m=distance(od),candidate_map_corrections=sum(reasons[i]=='accepted_static_correction' for i in ix)))
+     result=dict(scope='fixed recorded scan and odometry; no independent pose truth; not closed-loop navigation',contract=configuration,frames=len(rows),candidate_accepted_frames=int(sum(accepted)),reasons={s:reasons.count(s) for s in sorted(set(reasons))},candidate_localizer_ms=dict(p50=float(np.percentile(timings,50)),p95=float(np.percentile(timings,95)),p99=float(np.percentile(timings,99)),maximum=float(max(timings))),missions=missions)
++    result['resource']=budget.statistics()
+     (a.output/'replay.json').write_text(json.dumps(result,indent=2));np.savez_compressed(a.output/'replay.npz',candidate=poses,baseline=old,recorded=recorded)
+     print(json.dumps({k:v for k,v in result.items() if k!='missions'},indent=2));print([r for r in missions if r['mission'] in (13,19)])
+ 
+diff --git a/training/experiments/test_docking_navigation.py b/training/experiments/test_docking_navigation.py
+index 01b55fd..7ecdb24 100644
+--- a/training/experiments/test_docking_navigation.py
++++ b/training/experiments/test_docking_navigation.py
+@@ -81,7 +81,8 @@ class DockingTests(unittest.TestCase):
+         module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+         with tempfile.TemporaryDirectory() as directory:
+             root=Path(directory);bundle=root/'bundle';bundle.mkdir()
+-            for name in ('actor.pt','localizer.pt','router.pt','hardware.json'):(bundle/name).write_text('fixture')
++            for name in ('actor.pt','localizer.pt','router.pt'):(bundle/name).write_text('fixture')
++            (bundle/'hardware.json').write_text(json.dumps(dict(policy_action=action_contract())))
+             for name,value in [('quality_observation.json',quality_contract()),('goal_pose_observation.json',goal_contract()),('docking_contract.json',docking_contract(.10))]:
+                 (bundle/name).write_text(json.dumps(value))
+             manifest=dict(sensor_core='learned-terminal-goal-pose',required_runtime='experiments.docking_navigation.DockingRuntime',
+diff --git a/training/experiments/train_quality_navigation.py b/training/experiments/train_quality_navigation.py
+index f62796c..939e294 100644
+--- a/training/experiments/train_quality_navigation.py
++++ b/training/experiments/train_quality_navigation.py
+@@ -54,7 +54,9 @@ def export(policy,components,output):
+     traced.save(str(output/'actor.pt'))
+     for name in ('hardware.json','localizer.pt','router.pt','quality_observation.json'):
+         shutil.copy2(components/name,output/name)
+-    manifest=dict(policy_sha256=digest(policy),observation_contract=contract(),action_contract=action_contract(),
++    for name in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
++        if (components/name).exists():shutil.copy2(components/name,output/name)
++    manifest=dict(policy_sha256=digest(policy),observation_contract=contract(),action_contract=json.loads((components/'hardware.json').read_text())['policy_action'],
+         comparison_inputs=256,exact_action_parity=True,deployment_approved=False,
+         requires_quality_feature_generator=True,
+         files={p.name:digest(p) for p in output.iterdir() if p.is_file()})
+diff --git a/training/neural_navigation/core.py b/training/neural_navigation/core.py
+index c78dc07..3e39be3 100644
+--- a/training/neural_navigation/core.py
++++ b/training/neural_navigation/core.py
+@@ -146,15 +146,43 @@ class RoomRoutingMixin:
+         if not samples:return False
+         points=np.array(samples);r,c=self.static_map.cells(points);r=r//4;c=c//4
+         if np.any((r<0)|(r>=self.grid_h)|(c<0)|(c>=self.grid_w)):return False
+-        return not np.any(self.laser_fusion.hard[r,c])
++        return not np.any(getattr(self.laser_fusion,'routing_hard',self.laser_fusion.hard)[r,c])
+ 
+     def _segment_clear(self,a,b):
+         if not self._static_visible(a,b):return False
+         # Supercover also checks both cells when a segment crosses a corner.
+         # No sampled gaps, and no cached dynamic occupancy.
+-        free=(self.free>0)&~self.laser_fusion.hard
++        free=(self.free>0)&~getattr(self.laser_fusion,'routing_hard',self.laser_fusion.hard)
+         return segment_is_free(a,b,self.static_map.origin,self.grid_res,free)
+ 
++    def _observed_route_clear(self,path):
++        free=(self.free>0)&~self.laser_fusion.observed_hard
++        return all(self._static_visible(a,b) and segment_is_free(a,b,self.static_map.origin,self.grid_res,free)
++            for a,b in zip(path[:-1],path[1:]))
++
++    def _confirm_forecast_detour(self,old,tail,candidate):
++        config=getattr(self,'routing_contract',None)
++        if config is None or config.get('schema')!='confirm_forecast_detour_v1':return False
++        if not self._observed_route_clear(tail):
++            self.detour_candidate=None;self.detour_since=None;return False
++        if len(candidate)<2 or np.linalg.norm(candidate[-1]-self.goal)>.12:
++            self.detour_candidate=None;self.detour_since=None;return False
++        old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
++        delta=candidate[min(2,len(candidate)-1)]-self.estimate[:2]
++        direction=np.array([np.cos(self.estimate[2]),np.sin(self.estimate[2])])
++        behind=float(delta@direction)/max(np.linalg.norm(delta),1e-9)<config['behind_cosine']
++        disruptive=behind or new_length-old_length>max(config['excess_length_m'],config['excess_length_ratio']*old_length)
++        if not disruptive:
++            self.detour_candidate=None;self.detour_since=None;return False
++        stable=False
++        if self.detour_candidate is not None:
++            distances=np.linalg.norm(candidate[:,None]-self.detour_candidate[None,:],axis=2)
++            stable=max(distances.min(axis=0).max(),distances.min(axis=1).max())<config['candidate_geometry_tolerance_m']
++        if not stable:self.detour_candidate=candidate.copy();self.detour_since=self.elapsed
++        if self.elapsed-self.detour_since>=config['confirmation_s']-1e-8:
++            self.detour_candidate=None;self.detour_since=None;return False
++        return True
++
+     def _shortcut_route(self,path):
+         if len(path)<3 or np.linalg.norm(path[-1]-self.goal)>.12:return path
+         sparse=[path[0]];index=0
+@@ -181,9 +209,14 @@ class RoomRoutingMixin:
+         if old is None or len(old)<2 or np.linalg.norm(old[-1]-self.goal)>.12:return
+         nearest=int(np.argmin(np.linalg.norm(old-self.estimate[:2],axis=1)))
+         tail=np.vstack([self.estimate[:2],old[nearest:]])
+-        if np.linalg.norm(old[nearest]-self.estimate[:2])>.35 or not self._route_usable(tail):
++        deviation=np.linalg.norm(old[nearest]-self.estimate[:2])
++        if deviation>.35 or not self._route_usable(tail):
++            if deviation<=.35 and self._confirm_forecast_detour(old,tail,candidate):
++                self.predicted_path=old;self.plan_revision=revision;self.route_retained=True
++                self.replan_reason='confirming_forecast_only_detour';return
+             self.shortcut_candidate=None;self.shortcut_since=None;self.replan_reason='confirmed_obstacle_or_route_invalid';self.last_route_switch=self.elapsed
+             return
++        self.detour_candidate=None;self.detour_since=None
+         old_length=continuous_remaining(tail,self.estimate[:2]);new_length=continuous_remaining(candidate,self.estimate[:2])
+         improvement=old_length-new_length
+         shorter=self._route_usable(candidate) and improvement>max(.5,.08*old_length)
+@@ -242,10 +275,26 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
+             if json.loads(goal_contract_path.read_text())!=contract():raise ValueError('Goal-pose contract mismatch')
+             self.timed_scan_history=TimedScanHistory(contract()['control_period_s'])
+         self.static_map=static_map;self.lidar=lidar;components=Path(components)
++        self.routing_contract=None
++        if (components/'routing_contract.json').exists():
++            from neural_navigation.routing_contract import contract as routing_contract,soft_forecast_contract
++            self.routing_contract=json.loads((components/'routing_contract.json').read_text())
++            if self.routing_contract not in (routing_contract(),soft_forecast_contract()):raise ValueError('Routing acceptance contract mismatch')
+         localization_contract=components/'localization_contract.json'
+         if localization_contract.exists():
+-            from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
+-            self.localizer=OdometryAnchoredLocalizer(static_map,lidar,components/'localizer.pt',json.loads(localization_contract.read_text()))
++            localization_config=json.loads(localization_contract.read_text())
++            if localization_config.get('schema') in ('fast_static_tracking_v1','fast_static_tracking_native_v1','fast_static_tracking_v2','fast_static_tracking_native_v2','fast_static_tracking_temporal_v1','fast_static_tracking_temporal_native_v1','ray_consistent_static_tracking_v1'):
++                from neural_navigation.fast_static_localizer import FastStaticLocalizer
++                localizer_class=FastStaticLocalizer
++                if localization_config['schema']=='ray_consistent_static_tracking_v1':
++                    from neural_navigation.verified_static_localizer import VerifiedStaticLocalizer
++                    localizer_class=VerifiedStaticLocalizer
++                self.localizer=localizer_class(static_map,lidar,localization_config,
++                    kernel_path=str((components/'localization_kernel.so').resolve()),
++                    uncertainty=json.loads((components/'uncertainty_contract.json').read_text()) if (components/'uncertainty_contract.json').exists() else None)
++            else:
++                from neural_navigation.odom_anchored_localizer import OdometryAnchoredLocalizer
++                self.localizer=OdometryAnchoredLocalizer(static_map,lidar,components/'localizer.pt',localization_config)
+         else:self.localizer=LearnedLocalizer(static_map,lidar,components/'localizer.pt')
+         checkpoint=torch.load(components/'router.pt',map_location='cpu',weights_only=True)
+         self.motion_prediction_config=checkpoint.get('motion_prediction')
+@@ -287,6 +336,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
+         self.goal_yaw=float(wrap(goal[2])) if len(goal)==3 else None
+         self._goal_settled_since=None
+         self.goal=goal[:2].copy();self.last_route_time=-100.;self.routing_ready=False
++        self.detour_candidate=None;self.detour_since=None
+ 
+     def replace_map(self,static_map,preserve_valid_route=False):
+         """Install an observed map revision without resetting odometry or actor.
+@@ -313,6 +363,7 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
+             self.laser_fusion.hard=distance_transform_edt(~(self.expiry>self.elapsed))*self.grid_res<=.32
+         if old.predictor is not None:self.laser_fusion.predictor=old.predictor
+         self.last_route_time=-100.;self.routing_ready=False;self.shortcut_candidate=None;self.shortcut_since=None
++        self.detour_candidate=None;self.detour_since=None
+         if preserve_valid_route and previous_ready and self._route_usable(self.predicted_path):
+             # Keep the existing route in world coordinates until the regular
+             # 0.4s replanning tick. New geometry and fresh laser guards apply
+@@ -355,7 +406,14 @@ class NavigationCore(RoomRoutingMixin,LearnedRoutingMixin):
+         from neural_navigation.goal_pose import goal_status
+         return dict(**goal_status(self),estimated_pose=self.estimate.tolist(),localization_std=self.localizer.std.tolist(),
+                     localization_correction_reason=getattr(self.localizer,'correction_reason','legacy_unchecked'),
++                    localization_observable_rank=getattr(self.localizer,'observable_rank',None),
++                    localization_covariance_calibrated=False,
++                    localization_weak_odometry_budget=(self.localizer.weak_geometry_uncertainty.floor.tolist()
++                        if getattr(self.localizer,'weak_geometry_uncertainty',None) is not None else None),
+                     localization_static_support_fraction=getattr(self.localizer,'static_support_fraction',None),
++                    localization_ray_contradicted_hits=getattr(self.localizer,'ray_contradicted_hits',None),
++                    localization_ray_excluded_static_hits=getattr(self.localizer,'ray_excluded_static_hits',None),
++                    localization_new_contradicted_hits=getattr(self.localizer,'new_contradicted_hits',None),
+                     localization_scan_update_accepted=self.localizer.scan_update_accepted,
+                     localization_valid_scan_fraction=self.localizer.valid_scan_fraction,
+                     localization_missing_scan_updates=self.localizer.missing_scan_updates,
+diff --git a/training/neural_navigation/experiment_budget.py b/training/neural_navigation/experiment_budget.py
+index ada5672..6dbeb3f 100644
+--- a/training/neural_navigation/experiment_budget.py
++++ b/training/neural_navigation/experiment_budget.py
+@@ -5,22 +5,36 @@ import time
+ from pathlib import Path
+ 
+ 
++def peak_rss_mib():
++    # On Linux, ru_maxrss may retain the parent's pre-exec high water mark.
++    # VmHWM belongs to this executable, like the native AMCL measurement.
++    try:
++        for line in Path('/proc/self/status').read_text().splitlines():
++            if line.startswith('VmHWM:'):return float(line.split()[1])/1024
++    except OSError:pass
++    return resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024
++
++
+ class ExperimentBudget:
+     def __init__(self,cores=.5,memory_mib=4096,directory='.'):
+         if not 0<cores<=1:raise ValueError('At most one CPU core for this experiment')
+         self.cores=float(cores);self.memory_mib=memory_mib;self.directory=Path(directory)
+         self.started=time.monotonic();self.cpu_started=time.process_time()
+     def tick(self):
+-        if resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024>self.memory_mib:
++        if resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024>self.memory_mib and peak_rss_mib()>self.memory_mib:
+             raise RuntimeError('Experiment exceeded its conservative RSS budget')
+         if shutil.disk_usage(self.directory).free<512*1024**2:
+             raise RuntimeError('Less than 512MiB disk remains; stop without deleting user files')
+         delay=(time.process_time()-self.cpu_started)/self.cores-(time.monotonic()-self.started)
+-        while delay>0:
++        # Timing the limiter consumes CPU too. Chasing a sub-millisecond
++        # positive remainder can feed itself with thousands of tiny sleeps,
++        # especially at conservative quotas. A 2ms deadband avoids that loop;
++        # the global average budget catches up on the following tick.
++        while delay>.002:
+             time.sleep(min(.2,delay))
+             delay=(time.process_time()-self.cpu_started)/self.cores-(time.monotonic()-self.started)
+     def statistics(self):
+         wall=time.monotonic()-self.started;cpu=time.process_time()-self.cpu_started
+         return dict(seconds=wall,cpu_seconds=cpu,average_cpu_cores=cpu/max(wall,1e-9),
+-                    peak_rss_mib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024,
++                    peak_rss_mib=peak_rss_mib(),
+                     resource_limits='single-thread CPU soft average quota; RSS/disk checked between steps')
+diff --git a/training/neural_navigation/goal_pose_runtime.py b/training/neural_navigation/goal_pose_runtime.py
+index 6bf9d7f..0fddd2d 100644
+--- a/training/neural_navigation/goal_pose_runtime.py
++++ b/training/neural_navigation/goal_pose_runtime.py
+@@ -13,6 +13,9 @@ from neural_navigation.quality_prediction_context import QualityPredictionContex
+ 
+ 
+ def check_files(bundle,manifest):
++    for optional in ('localization_contract.json','localization_kernel.so','routing_contract.json','uncertainty_contract.json'):
++        if (bundle/optional).exists() and optional not in manifest['files']:
++            raise ValueError('Missing localization component hash: '+optional)
+     for name,digest in manifest['files'].items():
+         if Path(name).name!=name or hashlib.sha256((bundle/name).read_bytes()).hexdigest()!=digest:
+             raise ValueError('Bundle integrity failure')
+diff --git a/training/neural_navigation/laser_fusion.py b/training/neural_navigation/laser_fusion.py
+index ee50dc2..3028e09 100644
+--- a/training/neural_navigation/laser_fusion.py
++++ b/training/neural_navigation/laser_fusion.py
+@@ -13,6 +13,8 @@ class LaserMapFusion:
+     def reset(self):
+         self.first_seen=np.full(self.shape,np.nan);self.last_seen=np.full(self.shape,-100.);self.hard_expiry=np.zeros(self.shape)
+         self.hard=np.zeros(self.shape,bool);self.layer=np.zeros(self.shape,np.float32);self.cleared=0;self.far_pending=0
++        self.observed_hard=np.zeros(self.shape,bool)
++        self.routing_hard=self.hard.copy()
+         self.forecast_cells=0
+         self.last_alignment_supported=False
+         if getattr(self,'predictor',None):self.predictor.reset()
+@@ -53,6 +55,11 @@ class LaserMapFusion:
+         env.expiry[:]=self.hard_expiry
+         occupied=self.hard_expiry>now
+         self.hard=distance_transform_edt(~occupied)*env.grid_res<=.32 if occupied.any() else np.zeros(self.shape,bool)
++        # Keep measured/persistent occupancy separate from forecast-only cells.
++        # Optional route acceptance uses this distinction; the original hard
++        # layer and all guard/actor sensor data retain the forecast as before.
++        self.observed_hard=self.hard.copy()
++        future=np.zeros(self.shape,bool)
+         if self.predictor is not None:
+             if getattr(env.localizer,'scan_update_accepted',True):
+                 self.last_alignment_supported=getattr(env.localizer,'map_agreement',1.)>=.5
+@@ -73,5 +80,15 @@ class LaserMapFusion:
+         recent=(now-self.last_seen<.8)&~occupied
+         soft=distance_transform_edt(~recent)*env.grid_res<=.32 if recent.any() else np.zeros(self.shape,bool)
+         self.layer=np.maximum(self.hard.astype(np.float32),soft.astype(np.float32)*.02)
++        from neural_navigation.routing_contract import soft_forecast_contract
++        routing=getattr(env,'routing_contract',None)
++        self.routing_hard=self.hard.copy()
++        if routing==soft_forecast_contract():
++            # A time-unioned forecast is not a wall occupied simultaneously.
++            # Keep all measured/persistent cells hard; local action prediction
++            # and raw footprint checks still veto unsafe velocities.
++            self.routing_hard=self.observed_hard.copy()
++            self.layer=np.maximum(self.observed_hard.astype(np.float32),
++                np.maximum(future.astype(np.float32)*routing['forecast_cost'],soft.astype(np.float32)*.02))
+         self.far_pending=int(np.count_nonzero(hit&~close&~confirmed));env.unmatched_returns=len(ends)
+         return self.layer
+diff --git a/training/neural_navigation/masked_actions.py b/training/neural_navigation/masked_actions.py
+index f8bebad..7ea0c63 100644
+--- a/training/neural_navigation/masked_actions.py
++++ b/training/neural_navigation/masked_actions.py
+@@ -6,11 +6,32 @@ COMMANDS=np.vstack([np.zeros(2),RECOVERY_PROBES,FAST_PROBES])
+ ACTIONS=(COMMANDS/np.array([.2,.5])).astype(np.float32)
+ 
+ 
+-def action_contract():
+-    return dict(schema='masked_velocity_choices_v1',choices=COMMANDS.tolist(),
++def action_contract(predictive=False):
++    value=dict(schema='masked_velocity_choices_v1',choices=COMMANDS.tolist(),
+         normalized_actions=ACTIONS.tolist(),stop_index=0,
+         mask_source='current_sensor_guard_probe_acceptance',wait_always_allowed=True,
+         future_safety_certified=False,simulator_truth_used=False)
++    if predictive:
++        from neural_navigation.predictive_constraint import contract,cumulative_contract,registered_contract
++        value.update(schema='masked_velocity_choices_predictive_v2',
++            mask_source='current_guard_and_odometry_frame_predictive_probe_acceptance',
++            predictive_constraint=(registered_contract(True) if predictive=='registered_residual' else registered_contract() if predictive=='registered' else
++                cumulative_contract() if predictive=='cumulative' else contract()))
++    return value
++
++
++def validate_action_contract(value):
++    if value not in (action_contract(),action_contract(True),action_contract('cumulative'),action_contract('registered'),action_contract('registered_residual')):
++        raise ValueError('Unsupported masked action contract')
++    return value!=action_contract()
++
++
++def validate_hardware_action(hardware):
++    value=hardware['policy_action'];predictive=validate_action_contract(value)
++    actual=hardware.get('near_field_memory',{}).get('predictive_action_constraint')
++    if predictive!=bool(actual) or predictive and actual!=value['predictive_constraint']:
++        raise ValueError('Hardware/action predictive mask contract mismatch')
++    return predictive
+ 
+ 
+ def masks_from_observation(observation):
+diff --git a/training/neural_navigation/runtime.py b/training/neural_navigation/runtime.py
+index 7df9fa9..6c34302 100644
+--- a/training/neural_navigation/runtime.py
++++ b/training/neural_navigation/runtime.py
+@@ -41,6 +41,10 @@ class EmergencyStop:
+             config.get('response_angular_acceleration_rad_s2',1.)],float)
+         if not np.isfinite(np.r_[self.response_gain,self.response_acceleration]).all() or self.response_gain<=0 or min(self.response_acceleration)<=0:
+             raise ValueError('Positive finite motion response parameters required')
++        self.predictive_constraint=None
++        if config.get('predictive_action_constraint') is not None:
++            from neural_navigation.predictive_constraint import PredictiveConstraint
++            self.predictive_constraint=PredictiveConstraint(config['predictive_action_constraint'],self.half*2,self.braking_acceleration)
+ 
+     def _trajectory(self,core,command,age):
+         horizon=abs(command[0])/self.braking_acceleration+max(age,0)+.2
+@@ -107,6 +111,8 @@ class EmergencyStop:
+             elif now-self.reverse_started>1.5:
+                 command[0]=0.;projection_reason='reverse_duration_limit'
+         else:self.reverse_started=None
++        if reason is None and self.predictive_constraint is not None:
++            reason=self.predictive_constraint.rejection(core,command,age)
+         if reason is None:
+             valid=np.isfinite(core.scan)&(core.scan>=core.lidar.range_min)&(core.scan<core.lidar.range_max)
+             m=core.lidar.mount;angle=core.lidar.angles[valid]+m[3]
+@@ -152,10 +158,13 @@ from this same deterministic transform, and report its override frequency.
+         executed=np.zeros(2);reason='estimated_goal_reached'
+     executed_action=np.array([executed[0]/(.2 if executed[0]>=0 else .08),executed[1]/.5])
+     core.record_action(executed_action)
+-    return dict(timestamp=float(timestamp),proposed_action=proposed.tolist(),model_command=command.tolist(),
++    result=dict(timestamp=float(timestamp),proposed_action=proposed.tolist(),model_command=command.tolist(),
+                 command=executed.tolist(),safety_override=reason not in (None,'estimated_goal_reached'),
+                 stop_reason=reason,diagnostics=diagnostics,guard_memory_points=len(guard.memory.entries) if guard.memory else 0,
+                 uncertainty_calibrated=False,braking_model_calibrated=False)
++    if getattr(guard,'predictive_constraint',None) is not None:
++        result['predictive_constraint']=guard.predictive_constraint.diagnostics(core)
++    return result
+ 
+ 
+ class SensorNavigationRuntime:
+@@ -172,8 +181,9 @@ class SensorNavigationRuntime:
+             self.context=SafetyContext(hardware['policy_observation']['schema'])
+         dimensions=hardware.get('policy_observation',{}).get('dimensions',235)
+         if 'policy_action' in hardware:
+-            from neural_navigation.masked_actions import action_contract
+-            if hardware['policy_action']!=action_contract() or self.context is None or self.context.schema not in PREDICTIVE_SCHEMAS:
++            from neural_navigation.masked_actions import validate_hardware_action
++            validate_hardware_action(hardware)
++            if self.context is None or self.context.schema not in PREDICTIVE_SCHEMAS:
+                 raise ValueError('Mismatched masked velocity action/observation contract')
+         self.policy=PortablePolicy(bundle/'actor.pt',dimensions)
+         self.guard=EmergencyStop(hardware['robot_footprint_m'],memory_config=hardware.get('near_field_memory'))
+diff --git a/training/neural_navigation/safety_context.py b/training/neural_navigation/safety_context.py
+index 1ab3e03..8197bfe 100644
+--- a/training/neural_navigation/safety_context.py
++++ b/training/neural_navigation/safety_context.py
+@@ -77,6 +77,10 @@ class SafetyContext:
+         # All probes see the same sensor frame. Transform/clear the copied
+         # memory once, rather than repeating that work for each command.
+         # The live guard and its reverse timer remain untouched.
++        # Prepare once on the live frame; cloned probes and actual execution
++        # reuse exactly this cache, including tracking history.
++        if getattr(guard,'predictive_constraint',None) is not None:
++            guard.predictive_constraint.prepare(core)
+         snapshot = copy.deepcopy(guard)
+         if snapshot.memory is not None:
+             points, uncertainty = snapshot.memory.update(core)

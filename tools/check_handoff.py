@@ -94,11 +94,13 @@ def main():
                            ('steady_base_ppo_2000_s231015', 'stop_decision_feedback_v2'),
                            ('proactive_bc_s231015_prepared', 'stop_decision_feedback_v2'),
                            ('proactive_augmented_bc_s231015', 'stop_decision_feedback_v2'),
-                           ('proactive_augmented_bc_800_s231015', 'stop_decision_feedback_v2')]:
+                           ('proactive_augmented_bc_800_s231015', 'stop_decision_feedback_v2'),
+                           ('w11_recovery_bc800_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         bc_only = folder in ('proactive_bc_s231015_prepared',
                              'proactive_augmented_bc_s231015',
-                             'proactive_augmented_bc_800_s231015')
+                             'proactive_augmented_bc_800_s231015',
+                             'w11_recovery_bc800_s231015')
         bundle_name = 'bc_portable' if bc_only else 'portable'
         feedback_bundle = feedback / bundle_name
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
