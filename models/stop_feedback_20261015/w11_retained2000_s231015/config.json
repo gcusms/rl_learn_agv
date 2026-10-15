@@ -1,0 +1,395 @@
+{
+  "steps": 2000,
+  "seed": 231015,
+  "cpu_cores": 0.35,
+  "maximum_bc_updates": 800,
+  "demonstration_retention": {
+    "enabled": true,
+    "coefficient": 0.05,
+    "batch_size": 128,
+    "runtime_teacher": false,
+    "environment_steps_added": 0
+  },
+  "long_wait_exploration": {
+    "enabled": false,
+    "coefficient": 0.0,
+    "minimum_wait_seconds": 2.0,
+    "runtime_rule_added": false,
+    "environment_steps_added": 0
+  },
+  "reference_bc": {
+    "path": "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip",
+    "sha256": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8"
+  },
+  "recovery_contract": {
+    "schema": "stop_feedback_proactive_recovery_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "valid_inputs_goal_far_and_base_stop_or_near_lidar_or_restricted_motion_or_guard_forecast",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false,
+    "frozen_base_sampling": "98_percent_masked_greedy_plus_2_percent_uniform_legal",
+    "outside_support_uniform_exploration": 0.02,
+    "inside_support_distribution_unchanged": false,
+    "deterministic_initial_choices_preserved": true,
+    "stochastic_initial_parity_claimed": false,
+    "sampling_likelihood_and_export_share_head": true,
+    "no_post_sampling_action_replacement": true,
+    "residual_can_act_before_base_stops": true,
+    "inside_existing_stop_support_distribution_unchanged": true,
+    "latest_lidar_history_slice": [
+      144,
+      216
+    ],
+    "lidar_normalization_m": 12.0,
+    "learning_support_nearest_lidar_range_m": 0.8,
+    "context_is_learning_support_not_motion_permission": true
+  },
+  "prefixes": [
+    {
+      "id": "early_avoidance_t6",
+      "case": {
+        "id": "motion_profile_015",
+        "category": "stop_go",
+        "scene": "assets/room_navigation_scripted",
+        "seed": 100015,
+        "start": [
+          8.325000000000001,
+          1.175,
+          1.6233780945997562
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ],
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.0960091377313955,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ],
+        "pilot_category": "original_release_stop_go",
+        "max_steps": 700
+      },
+      "release_s": 6.0,
+      "trace": "reports/stop_feedback_20261015/turn_recovery_20261015/recover_forward.npz"
+    },
+    {
+      "id": "w11_training_stall_t90",
+      "case": {
+        "id": "train_failure_w11_e7",
+        "scene": "assets/room_navigation_scripted",
+        "seed": 1962350169,
+        "start": [
+          6.2250000000000005,
+          2.725,
+          0.017376951571745902
+        ],
+        "goal": [
+          7.125,
+          5.7250000000000005
+        ],
+        "max_steps": 700,
+        "pilot_category": "recorded_training_stall",
+        "odom_scale": 1.0,
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.09295138997376881,
+        "hold_s": 3.4079953972433437
+      },
+      "release_s": 90.0,
+      "trace": "reports/stop_feedback_20261015/training_stall_source_20261016/train_failure_w11_e7.npz"
+    },
+    {
+      "id": "rotation_stall_t20",
+      "case": {
+        "id": "motion_profile_015",
+        "category": "stop_go",
+        "scene": "assets/room_navigation_scripted",
+        "seed": 100015,
+        "start": [
+          8.325000000000001,
+          1.175,
+          1.6233780945997562
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ],
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.0960091377313955,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ],
+        "pilot_category": "original_release_stop_go",
+        "max_steps": 700
+      },
+      "release_s": 20.0,
+      "trace": "reports/stop_feedback_20261015/earlier_action_alternatives_complete/earlier_right_rotation.npz"
+    }
+  ],
+  "demonstration_sources": [
+    {
+      "report": "reports/stop_feedback_20261015/turn_recovery_20261015/RESULTS.json",
+      "id": "recover_forward",
+      "trace_sha256": "3daed5a46f69b5353dbfdd6a0d23a39d83e86fb0d38718ba2e75f1ed7f04b550",
+      "total_frames": 273,
+      "recovery_frames": 172,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": [
+        [
+          0.0,
+          19.8
+        ],
+        [
+          20.0,
+          140.0
+        ]
+      ],
+      "initialization_excluded": false,
+      "nonzero_targets": 159,
+      "stop_targets": 13
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "train_failure_w11_e7_bc_only",
+      "trace_sha256": "4a16d9c2e304693238b10cc3adf56ab97d1267c09227403c7a7d0a88684804a7",
+      "total_frames": 186,
+      "recovery_frames": 122,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 121,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "motion_profile_002_bc_only",
+      "trace_sha256": "6d828089b20cd4eba7a4e0b9f46791b1f98e2ed08431c7ee561a437be08de402",
+      "total_frames": 282,
+      "recovery_frames": 168,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 167,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "motion_profile_000_bc_only",
+      "trace_sha256": "fdf7deef36b82322b8f878d513a0de6746a5f2b114a86ea6b0f007d66a89b3a3",
+      "total_frames": 164,
+      "recovery_frames": 108,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 108,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "independent_dynamic_000_bc_only",
+      "trace_sha256": "ec9c5065956ad59fa4118bcf272fc79c001fc67cfeae77d9695e8b1005c5bb6f",
+      "total_frames": 258,
+      "recovery_frames": 178,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 178,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "independent_dynamic_001_bc_only",
+      "trace_sha256": "8113982483668d7219fef0bf7e8309f4bd96e8d8921677308af29dda23e77b8e",
+      "total_frames": 116,
+      "recovery_frames": 75,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 75,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "localization_nav_24_bc_only",
+      "trace_sha256": "b5877dd46c6fc62082ca4057dc93326cb7432d51df17e003178910cc4f240174",
+      "total_frames": 13,
+      "recovery_frames": 1,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 1,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "localization_nav_31_bc_only",
+      "trace_sha256": "9afded326e8dcb1c7aa8e85f10a4d5f02265d78682edbd0a4179fbbbf54673c9",
+      "total_frames": 57,
+      "recovery_frames": 3,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 3,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "train_failure_stop_go_variation_0_bc_only",
+      "trace_sha256": "5115f01812348d49a2ca3ff21519ad5294dec1fa4260109930f0ac8b5fa9776e",
+      "total_frames": 169,
+      "recovery_frames": 118,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 117,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_protocol_20261016/normal_navigation/RESULTS.json",
+      "id": "train_failure_stop_go_variation_1_bc_only",
+      "trace_sha256": "004dbc447a96af91880cfdd649748ce1923aae58a0d3dc39def2be844262ea08",
+      "total_frames": 159,
+      "recovery_frames": 113,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 112,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_00",
+      "trace_sha256": "9d4eacb12baba7368b36d7422421e40784a3a66a8092c76fa4a8773984fb0ce3",
+      "total_frames": 227,
+      "recovery_frames": 130,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 128,
+      "stop_targets": 2
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_01",
+      "trace_sha256": "d41c92f9b6c5536a68dc62639339c935e864d8e35dcd9b63200934890e0655df",
+      "total_frames": 185,
+      "recovery_frames": 126,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 117,
+      "stop_targets": 9
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_02",
+      "trace_sha256": "75c97266cc80b896bd1d36adbd832ff4b430d9c522b82722631ff596f046f394",
+      "total_frames": 173,
+      "recovery_frames": 129,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 128,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_03",
+      "trace_sha256": "b366de20255ebb5ae2e124a2e6b697697dee52660129d630d813e08f5247a9c4",
+      "total_frames": 259,
+      "recovery_frames": 210,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 207,
+      "stop_targets": 3
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_04",
+      "trace_sha256": "4f5809f4c973ead50c8d24da74a963e55235a662c02239b3a8fec6e8760aab6e",
+      "total_frames": 198,
+      "recovery_frames": 125,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 121,
+      "stop_targets": 4
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_06",
+      "trace_sha256": "30bbb9ed0940db2e274bf30f6e5f397f4866ebbe329c84b633d670811fd91227",
+      "total_frames": 177,
+      "recovery_frames": 117,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 117,
+      "stop_targets": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_training_probes_20261016/RESULTS.json",
+      "id": "train_failure_proactive_variation_07",
+      "trace_sha256": "1963e76be58aed419ccf462a16b31c13d8d3ceb69dd864c7fdf4668331bb5b9d",
+      "total_frames": 170,
+      "recovery_frames": 135,
+      "minimum_sensor_timestamp_s": null,
+      "sensor_intervals_s": null,
+      "initialization_excluded": false,
+      "nonzero_targets": 134,
+      "stop_targets": 1
+    },
+    {
+      "report": "reports/stop_feedback_20261015/w11_early_left_probes_20261016/RESULTS.json",
+      "id": "w11_left_turn_then_left_pass",
+      "trace_sha256": "f994d8f2af1e4009cabe1aec97a662b2c4b128a4579313b1811cd53d53a439b9",
+      "total_frames": 553,
+      "recovery_frames": 59,
+      "minimum_sensor_timestamp_s": 90.0,
+      "sensor_intervals_s": null,
+      "initialization_excluded": true,
+      "nonzero_targets": 59,
+      "stop_targets": 0
+    }
+  ],
+  "demonstration_input_frames": 2089,
+  "prior_checkpoint_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "bundle_manifest_sha256": "f412add64da251ec875e5e3f7b402e38d8153bf3b82425fafd99ef3ccc15ce4f",
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "reward_changed": false,
+  "deployment_approved": false,
+  "initialization_not_counted_as_ppo_steps": true,
+  "general_and_previous_failure_tasks_retained": true,
+  "limitations": [
+    "Demonstrations are reused physical diagnostic trajectories.",
+    "Recovery rehearsal and correlated prefixes are not independent generalization."
+  ]
+}

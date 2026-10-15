@@ -1,0 +1,88 @@
+{
+  "completed": false,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "f73b00907ec78067db472864d039fdbd9f9b6630486956db3f139dd07c15b6a0",
+  "rows": [
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 59.80000000001214,
+      "travel_m": 7.847258845319275,
+      "frames": 300,
+      "final_xy_error_m": 0.10140965304543383,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0042865110932966514,
+      "localization_yaw_p95_rad": 0.001501014300379855,
+      "stop_choices": 32,
+      "only_stop_frames": 22,
+      "stop_reasons": {
+        "None": 288,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 3,
+        "laser_braking_footprint": 5,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 10,
+      "predictive_constraint_frames": 38,
+      "runtime_ms": {
+        "p95": 192.911246305448,
+        "p99": 222.89614410605282,
+        "maximum": 263.36935203289613
+      },
+      "variant": "control2000",
+      "trace_sha256": "7848d48569a7cb13110a7df217987db49575e8d81fa9abfe1a3147edfd4950fb"
+    },
+    {
+      "case_id": "recovery_holdout_00",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 35.999999999999964,
+      "travel_m": 5.342428855187622,
+      "frames": 181,
+      "final_xy_error_m": 0.1006373250388578,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00490446211773647,
+      "localization_yaw_p95_rad": 0.0012442299850352612,
+      "stop_choices": 11,
+      "only_stop_frames": 9,
+      "stop_reasons": {
+        "None": 176,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 1,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 12,
+      "runtime_ms": {
+        "p95": 196.59641000907868,
+        "p99": 228.01045357482508,
+        "maximum": 230.07501696702093
+      },
+      "variant": "control2000",
+      "trace_sha256": "26abc1fe57e3bc5bbada6d51af9eb8c6e89c488e4f9dfc2ff81fc9a211604fe2"
+    }
+  ],
+  "resource": {
+    "seconds": 237.89646567899035,
+    "cpu_seconds": 83.32922556,
+    "average_cpu_cores": 0.35027517253006063,
+    "peak_rss_mib": 2069.03515625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

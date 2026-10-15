@@ -1,0 +1,735 @@
+{
+  "completed": true,
+  "interim": true,
+  "at": "2026-10-16T07:21:51.036431+08:00",
+  "source_actual_samples_through": 1250,
+  "collision_episode_number": 7,
+  "episode_log": {
+    "episode": {
+      "r": -1.585458,
+      "l": 25,
+      "t": 818.323236
+    },
+    "success": false,
+    "collisions": 1,
+    "case": {
+      "scene": "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted",
+      "seed": 100015,
+      "stage": "robust",
+      "options": {
+        "start": [
+          8.325000000000001,
+          1.175,
+          1.6233780945997562
+        ],
+        "goal": [
+          6.9750000000000005,
+          5.575
+        ]
+      },
+      "interventions": {
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.0960091377313955,
+        "odom_scale": 1.0,
+        "actor_pause_after_event_s": [
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "dropout_after_event_s": [
+          [
+            1.2,
+            1.8
+          ]
+        ]
+      },
+      "source_training_case_id": "physical_prefix_early_avoidance_t6"
+    }
+  },
+  "examined_episode_frames": 25,
+  "all_sampled_choices_originally_legal": true,
+  "shared_initial_observations": 1,
+  "first_divergence_from_first_same_prefix_episode": {
+    "type": "different_sampled_actions_on_identical_observation",
+    "sensor_timestamp_s": 5.999999999999894,
+    "first_episode_choice": 5,
+    "later_episode_choice": 11,
+    "first_episode_sampled_probability": 0.9780480861663818,
+    "later_episode_sampled_probability": 0.05968468263745308
+  },
+  "frames": [
+    {
+      "sensor_timestamp_s": 5.999999999999894,
+      "sampled_choice": 11,
+      "sampled_choice_probability": 0.05968468263745308,
+      "executed_command": [
+        0.2,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.0,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.515215739607811,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5738691634923387,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 6.19999999999989,
+      "sampled_choice": 1,
+      "sampled_choice_probability": 0.05979220196604729,
+      "executed_command": [
+        0.2,
+        0.0
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.0,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.4904462993144989,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5422264883416902,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 6.399999999999886,
+      "sampled_choice": 1,
+      "sampled_choice_probability": 0.19712519645690918,
+      "executed_command": [
+        0.2,
+        0.0
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.49691954255104065,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5331196259463463,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 6.5999999999998815,
+      "sampled_choice": 11,
+      "sampled_choice_probability": 0.8854173421859741,
+      "executed_command": [
+        0.2,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.47922147810459137,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5117925915122521,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 6.799999999999877,
+      "sampled_choice": 1,
+      "sampled_choice_probability": 0.8980939984321594,
+      "executed_command": [
+        0.2,
+        0.0
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.47502703964710236,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.49689507051843296,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 6.999999999999873,
+      "sampled_choice": 10,
+      "sampled_choice_probability": 0.40463748574256897,
+      "executed_command": [
+        0.2,
+        0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.75,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.4734105169773102,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.4870697357670094,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 7.199999999999869,
+      "sampled_choice": 10,
+      "sampled_choice_probability": 0.9682057499885559,
+      "executed_command": [
+        0.2,
+        0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.4701438546180725,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5011765519930855,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 7.3999999999998645,
+      "sampled_choice": 1,
+      "sampled_choice_probability": 0.027905402705073357,
+      "executed_command": [
+        0.2,
+        0.0
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.45201605558395386,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5033367976958875,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 7.59999999999986,
+      "sampled_choice": 10,
+      "sampled_choice_probability": 0.528549075126648,
+      "executed_command": [
+        0.2,
+        0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.3076923191547394,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.42315812408924103,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5110844524277132,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 7.799999999999856,
+      "sampled_choice": 1,
+      "sampled_choice_probability": 0.6017539501190186,
+      "executed_command": [
+        0.2,
+        0.0
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.38746820390224457,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.5236944867894594,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 7.999999999999852,
+      "sampled_choice": 7,
+      "sampled_choice_probability": 0.9318445920944214,
+      "executed_command": [
+        0.05,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.3801877498626709,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.3736394493079233,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 8.199999999999882,
+      "sampled_choice": 7,
+      "sampled_choice_probability": 0.993994414806366,
+      "executed_command": [
+        0.05,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.3493972197175026,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.13172566123921556,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 8.399999999999913,
+      "sampled_choice": 7,
+      "sampled_choice_probability": 0.9948217272758484,
+      "executed_command": [
+        0.05,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        5,
+        7,
+        9
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.38461539149284363,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.3212902396917343,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": 0.08182889150173495,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 8.599999999999945,
+      "sampled_choice": 5,
+      "sampled_choice_probability": 0.1796918660402298,
+      "executed_command": [
+        0.0,
+        -0.5
+      ],
+      "nonzero_legal_choices": [
+        5,
+        9
+      ],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.4615384638309479,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.32083292305469513,
+      "previous_executed_reason": "none",
+      "executed_reason": "none",
+      "native_reward": -0.022165039322724032,
+      "recovery_actor_supported": true
+    },
+    {
+      "sensor_timestamp_s": 8.799999999999976,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.7692307829856873,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.25,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.3278818130493164,
+      "previous_executed_reason": "none",
+      "executed_reason": "learned_route_incomplete",
+      "native_reward": -0.07371750632561355,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 9.000000000000007,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 0.9230769276618958,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.32033421099185944,
+      "previous_executed_reason": "learned_route_incomplete",
+      "executed_reason": "learned_route_incomplete",
+      "native_reward": -0.06569303312583984,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 9.200000000000038,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.30867093801498413,
+      "previous_executed_reason": "learned_route_incomplete",
+      "executed_reason": "learned_route_incomplete",
+      "native_reward": -0.06918639502402509,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 9.40000000000007,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.27732107788324356,
+      "previous_executed_reason": "learned_route_incomplete",
+      "executed_reason": "learned_route_incomplete",
+      "native_reward": -0.07188272744728887,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 9.600000000000101,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.2530554234981537,
+      "previous_executed_reason": "learned_route_incomplete",
+      "executed_reason": "only_stop_available",
+      "native_reward": -0.07327899308311399,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 9.800000000000132,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.24048907309770584,
+      "previous_executed_reason": "only_stop_available",
+      "executed_reason": "only_stop_available",
+      "native_reward": -0.07506545020760211,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 10.000000000000163,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.5,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.22441095113754272,
+      "previous_executed_reason": "only_stop_available",
+      "executed_reason": "only_stop_available",
+      "native_reward": -0.07502038234818514,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 10.200000000000195,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.75,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.22481656819581985,
+      "previous_executed_reason": "only_stop_available",
+      "executed_reason": "only_stop_available",
+      "native_reward": -0.07767864688766578,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 10.400000000000226,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.75,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.20089218020439148,
+      "previous_executed_reason": "only_stop_available",
+      "executed_reason": "laser_braking_footprint",
+      "native_reward": -0.08092768747258533,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 10.600000000000257,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.75,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.17165081575512886,
+      "previous_executed_reason": "laser_braking_footprint",
+      "executed_reason": "laser_braking_footprint",
+      "native_reward": -0.08266353192747267,
+      "recovery_actor_supported": false
+    },
+    {
+      "sensor_timestamp_s": 10.800000000000288,
+      "sampled_choice": 0,
+      "sampled_choice_probability": 1.0,
+      "executed_command": [
+        0.0,
+        0.0
+      ],
+      "nonzero_legal_choices": [],
+      "selected_rejection_group": "accepted",
+      "selected_forecast_risk": 1.0,
+      "predictor_input_valid": true,
+      "moving_tracks_scaled": 0.75,
+      "scan_valid": true,
+      "nearest_pooled_lidar_m": 0.15602821111679077,
+      "previous_executed_reason": "laser_braking_footprint",
+      "executed_reason": "laser_braking_footprint",
+      "native_reward": -100.13165858966545,
+      "recovery_actor_supported": false
+    }
+  ],
+  "source_rollout_sha256": {
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000250.npz": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000500.npz": "46b8e8912e396c3be8af643039921bc6981452e04024bffa09ff27f4072fcf2b",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000750.npz": "5fb254bd50016d5bfdfc0bbdd3489dd6184005a808b57ed35c919122a52c978c",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001000.npz": "fdafbf10cfac339df75c36632c6cbfaf68632c927e30bcfb66d21035a3b2165f",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001250.npz": "35a4df302315a01b9170185410c735756bffd7cf348ddb7bbb54c63d8c039399"
+  },
+  "no_new_physics_or_commands": true,
+  "current_policy_or_configuration_changed": false,
+  "limitations": [
+    "This is an audit of actual sampled training states,not a new model evaluation.",
+    "Pooled lidar and forecast feedback alone cannot identify the precise physical contact geometry.",
+    "A currently admitted action is not a guarantee of future safety.",
+    "The first and later episode used different sampling policies after PPO updates; this is not an independent paired-navigation score."
+  ],
+  "resource": {
+    "seconds": 73.63215797900921,
+    "cpu_seconds": 3.684421434,
+    "average_cpu_cores": 0.05003821068303256,
+    "peak_rss_mib": 41.171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

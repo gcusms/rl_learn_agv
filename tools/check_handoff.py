@@ -96,12 +96,16 @@ def main():
                            ('proactive_augmented_bc_s231015', 'stop_decision_feedback_v2'),
                            ('proactive_augmented_bc_800_s231015', 'stop_decision_feedback_v2'),
                            ('w11_recovery_bc800_s231015', 'stop_decision_feedback_v2'),
-                           ('proactive_augmented_ppo_8000_s231015', 'stop_decision_feedback_v2')]:
+                           ('proactive_augmented_ppo_8000_s231015', 'stop_decision_feedback_v2'),
+                           ('w11_control2000_s231015', 'stop_decision_feedback_v2'),
+                           ('w11_retained2000_s231015', 'stop_decision_feedback_v2'),
+                           ('early_transfer_bc800_s231015', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
         bc_only = folder in ('proactive_bc_s231015_prepared',
                              'proactive_augmented_bc_s231015',
                              'proactive_augmented_bc_800_s231015',
-                             'w11_recovery_bc800_s231015')
+                             'w11_recovery_bc800_s231015',
+                             'early_transfer_bc800_s231015')
         bundle_name = 'bc_portable' if bc_only else 'portable'
         feedback_bundle = feedback / bundle_name
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
@@ -110,10 +114,13 @@ def main():
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        completed_proactive_ppo = folder == 'proactive_augmented_ppo_8000_s231015'
+        completed_proactive_ppo = folder in ('proactive_augmented_ppo_8000_s231015',
+                                           'w11_control2000_s231015',
+                                           'w11_retained2000_s231015')
         recovery = bc_only or completed_proactive_ppo or folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
         checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
-        expected_steps = 8000 if completed_proactive_ppo else (0 if bc_only else (2000 if recovery else 4000))
+        expected_steps = 8000 if folder == 'proactive_augmented_ppo_8000_s231015' else (
+            0 if bc_only else (2000 if recovery else 4000))
         checkpoint_name = 'policy_bc.zip' if bc_only else 'policy.zip'
         checkpoint = checkpoint_type.load(feedback / checkpoint_name, device='cpu')
         if checkpoint.num_timesteps != expected_steps or checkpoint.observation_space.shape != (436,):

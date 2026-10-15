@@ -1,0 +1,297 @@
+{
+  "completed": true,
+  "at": "2026-10-16T07:27:45.166717+08:00",
+  "scope": "Offline original-label retention after two complete independent 2k PPO runs; not navigation acceptance.",
+  "independent_physical_steps_per_trained_model": 2000,
+  "retention": {
+    "reference": {
+      "policy_sha256": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+      "groups": {
+        "all2089": {
+          "examples": 2089,
+          "correct_examples": 2089,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9908693432807922,
+          "minimum_target_probability": 0.5789691209793091
+        },
+        "original2030": {
+          "examples": 2030,
+          "correct_examples": 2030,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9907832741737366,
+          "minimum_target_probability": 0.5789691209793091
+        },
+        "additional_w11_59": {
+          "examples": 59,
+          "correct_examples": 59,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9938316345214844,
+          "minimum_target_probability": 0.9332156181335449
+        },
+        "reasonable_wait37": {
+          "examples": 37,
+          "correct_examples": 37,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9994217157363892,
+          "minimum_target_probability": 0.9937825798988342
+        },
+        "movement2052": {
+          "examples": 2052,
+          "correct_examples": 2052,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9907151460647583,
+          "minimum_target_probability": 0.5789691209793091
+        }
+      },
+      "physical_ppo_steps": 0,
+      "optimizer_state_present": true,
+      "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e"
+    },
+    "control": {
+      "policy_sha256": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+      "groups": {
+        "all2089": {
+          "examples": 2089,
+          "correct_examples": 1830,
+          "mismatches": 259,
+          "wait_to_motion": 0,
+          "motion_to_wait": 1,
+          "different_motion": 258,
+          "mean_target_probability": 0.8635721206665039,
+          "minimum_target_probability": 1.3061147757960356e-13
+        },
+        "original2030": {
+          "examples": 2030,
+          "correct_examples": 1774,
+          "mismatches": 256,
+          "wait_to_motion": 0,
+          "motion_to_wait": 1,
+          "different_motion": 255,
+          "mean_target_probability": 0.8624342679977417,
+          "minimum_target_probability": 1.3061147757960356e-13
+        },
+        "additional_w11_59": {
+          "examples": 59,
+          "correct_examples": 56,
+          "mismatches": 3,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 3,
+          "mean_target_probability": 0.902722179889679,
+          "minimum_target_probability": 0.020214678719639778
+        },
+        "reasonable_wait37": {
+          "examples": 37,
+          "correct_examples": 37,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9988067150115967,
+          "minimum_target_probability": 0.9861127734184265
+        },
+        "movement2052": {
+          "examples": 2052,
+          "correct_examples": 1793,
+          "mismatches": 259,
+          "wait_to_motion": 0,
+          "motion_to_wait": 1,
+          "different_motion": 258,
+          "mean_target_probability": 0.8611336946487427,
+          "minimum_target_probability": 1.3061147757960356e-13
+        }
+      },
+      "physical_ppo_steps": 2000,
+      "optimizer_state_present": true,
+      "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+      "training_counts": {
+        "decision_frames": 1209,
+        "only_stop": 791,
+        "voluntary_wait": 31,
+        "nonzero": 1178,
+        "changed_nonzero": 0,
+        "episodes": 8,
+        "success": 7,
+        "collisions": 0,
+        "recovery_actor_frames": 889,
+        "prefix_controlled_frames": 1202,
+        "routine_controlled_frames": 798,
+        "recovery_wait_choices": 31,
+        "recovery_motion_choices": 858
+      },
+      "training_resource": {
+        "seconds": 1497.175087494019,
+        "cpu_seconds": 524.372828761,
+        "average_cpu_cores": 0.3502414868782639,
+        "peak_rss_mib": 2408.82421875,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "demonstration_retention": null,
+      "initialization_frames_excluded": 1060,
+      "actual_sampling_audit": "reports/stop_feedback_20261015/w11_control2000_audit_20261016/RESULTS.json",
+      "final_training_state_changes": {
+        "bc_wait_to_ppo_motion": 0,
+        "bc_motion_to_ppo_wait": 2,
+        "different_motion_choice": 194,
+        "long_wait_threshold_s": 1.0,
+        "long_prior_wait_with_choices_frames": 1,
+        "long_wait_bc_wait_to_ppo_motion": 0,
+        "physical_improvement_proven": false
+      }
+    },
+    "retained": {
+      "policy_sha256": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+      "groups": {
+        "all2089": {
+          "examples": 2089,
+          "correct_examples": 1851,
+          "mismatches": 238,
+          "wait_to_motion": 0,
+          "motion_to_wait": 4,
+          "different_motion": 234,
+          "mean_target_probability": 0.8688980937004089,
+          "minimum_target_probability": 1.0493956324353348e-05
+        },
+        "original2030": {
+          "examples": 2030,
+          "correct_examples": 1801,
+          "mismatches": 229,
+          "wait_to_motion": 0,
+          "motion_to_wait": 4,
+          "different_motion": 225,
+          "mean_target_probability": 0.8699901103973389,
+          "minimum_target_probability": 1.0493956324353348e-05
+        },
+        "additional_w11_59": {
+          "examples": 59,
+          "correct_examples": 50,
+          "mismatches": 9,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 9,
+          "mean_target_probability": 0.8313254714012146,
+          "minimum_target_probability": 0.048672012984752655
+        },
+        "reasonable_wait37": {
+          "examples": 37,
+          "correct_examples": 37,
+          "mismatches": 0,
+          "wait_to_motion": 0,
+          "motion_to_wait": 0,
+          "different_motion": 0,
+          "mean_target_probability": 0.9989932179450989,
+          "minimum_target_probability": 0.9892151951789856
+        },
+        "movement2052": {
+          "examples": 2052,
+          "correct_examples": 1814,
+          "mismatches": 238,
+          "wait_to_motion": 0,
+          "motion_to_wait": 4,
+          "different_motion": 234,
+          "mean_target_probability": 0.8665523529052734,
+          "minimum_target_probability": 1.0493956324353348e-05
+        }
+      },
+      "physical_ppo_steps": 2000,
+      "optimizer_state_present": true,
+      "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+      "training_counts": {
+        "decision_frames": 1853,
+        "only_stop": 147,
+        "voluntary_wait": 99,
+        "nonzero": 1754,
+        "changed_nonzero": 0,
+        "episodes": 11,
+        "success": 9,
+        "collisions": 1,
+        "recovery_actor_frames": 1366,
+        "prefix_controlled_frames": 842,
+        "routine_controlled_frames": 1158,
+        "recovery_wait_choices": 99,
+        "recovery_motion_choices": 1267
+      },
+      "training_resource": {
+        "seconds": 1584.9873455780325,
+        "cpu_seconds": 555.083327545,
+        "average_cpu_cores": 0.3502130973434147,
+        "peak_rss_mib": 2450.6796875,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "demonstration_retention": {
+        "schema": "masked_balanced_demo_retention_v1",
+        "coefficient": 0.05,
+        "batch_size": 128,
+        "training_examples": 2089,
+        "stop_examples": 37,
+        "movement_examples": 2052,
+        "examples_sha256": "76dd82f53121a9209f831f421ad3f9eed0ae18d9a37cb42fe4ceec04569d6400",
+        "update_support": "PPO minibatches with trainable recovery actor samples",
+        "independent_checkpointed_sampling_rng": true,
+        "environment_steps_added": 0,
+        "runtime_teacher": false,
+        "actions_masks_likelihoods_unchanged": true
+      },
+      "initialization_frames_excluded": 1160,
+      "actual_sampling_audit": "reports/stop_feedback_20261015/w11_retained2000_audit_20261016/RESULTS.json",
+      "final_training_state_changes": {
+        "bc_wait_to_ppo_motion": 0,
+        "bc_motion_to_ppo_wait": 2,
+        "different_motion_choice": 255,
+        "long_wait_threshold_s": 1.0,
+        "long_prior_wait_with_choices_frames": 76,
+        "long_wait_bc_wait_to_ppo_motion": 0,
+        "physical_improvement_proven": false
+      }
+    }
+  },
+  "inputs_sha256": {
+    "PLAN.json": "b592a9f0c141d53ddd47cc2b5ffe4cd9fa4afdc8fdb65b3311fc3282bd2533dc",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/demonstrations.npz": "d5e94192da5bff7e36a90ab675e183bddc03af94e4870e8f49794aa52081575c",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+    "models/stop_feedback_20261015/w11_control2000_s231015/status.json": "c1a04d37172802796d655d22b7c588217acefe244ce8e966de48950854096f42",
+    "reports/stop_feedback_20261015/w11_control2000_audit_20261016/RESULTS.json": "99df2e8b32ce19629578fafbfc50ea3bbe7a54f984a3c734dfba89d85210377d",
+    "reports/stop_feedback_20261015/w11_control2000_learning_20261016/RESULTS.json": "9b0e082def2b0b357ff3af88b7ea90284136e9cb2c40f9aef742b96fb4d19e42",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy.zip": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/status.json": "aa2502dc75b3a9debdbc91767c96879b77c67071a2a956cb7ba3fb76e9629eb5",
+    "reports/stop_feedback_20261015/w11_retained2000_audit_20261016/RESULTS.json": "4b7ef15f25df7ba51d33220e573e0e1d1f6a03d1dff4083ace1e838decccee1e",
+    "reports/stop_feedback_20261015/w11_retained2000_learning_20261016/RESULTS.json": "1afd3d7f45155c01a54983b912713f45fd56b61d7d64eccf542ed09783179f0b"
+  },
+  "source_sha256": "6da380853791145d48e135f0320bd77d704f22d56adfb2e23d8949c67a0a5e8e",
+  "additional_environment_steps": 0,
+  "physical_environment_created": false,
+  "current_model_or_runtime_changed": false,
+  "all_frozen_bases_equal": true,
+  "resource": {
+    "seconds": 32.870056639018,
+    "cpu_seconds": 1.723440848,
+    "average_cpu_cores": 0.05243194031963457,
+    "peak_rss_mib": 668.625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "Different action labels can still describe a useful maneuver; a mismatch alone is not a collision.",
+    "Training episode outcomes are on-policy exposure, not matched independent navigation scores.",
+    "The retained run has an actual training collision; lower wait counts cannot establish safety.",
+    "Independent closed-loop paired results are required before preferring either PPO variant.",
+    "Neither run is a continuation of the old 8k simulator state."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}
