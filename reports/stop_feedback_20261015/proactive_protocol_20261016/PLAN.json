@@ -1,0 +1,79 @@
+{
+  "frozen_at": "2026-10-16T02:00:19.930679+08:00",
+  "preceding_goal_turn_classification": "progress",
+  "preceding_evidence": "Committed/pushed move snapshot, completed independent steady-base 2k training and actual causal/sampling audits; all 108 migration checks passed. Two complete prefixes reached safely but no extra deterministic PPO gain; the known full-task collision persists.",
+  "objective": "Learn why stopping occurs and choose useful legal recovery or early avoidance, while preserving valid stopping, normal navigation and directional docking.",
+  "hypothesis": "Stop-only support cannot learn seven legal early turns in a complete safe trajectory. Expand learnable context and retain checked normal-task choices.",
+  "scope": "Multi-component feasibility experiment: support plus explicitly curated demonstrations. Additional PPO must be compared with its own BC initialization.",
+  "code_contract": {
+    "schema": "stop_feedback_proactive_recovery_v1",
+    "feedback_schema": "stop_decision_feedback_v2",
+    "training_dimensions": 436,
+    "action_count": 12,
+    "residual_width": 64,
+    "base_actor_frozen": true,
+    "support": "valid_inputs_goal_far_and_base_stop_or_near_lidar_or_restricted_motion_or_guard_forecast",
+    "minimum_goal_distance_m": 0.3,
+    "stop_remains_selectable": true,
+    "actions_masks_guard_unchanged": true,
+    "no_runtime_teacher": true,
+    "no_elapsed_episode_time_input": true,
+    "simulator_truth_used": false,
+    "frozen_base_sampling": "98_percent_masked_greedy_plus_2_percent_uniform_legal",
+    "outside_support_uniform_exploration": 0.02,
+    "inside_support_distribution_unchanged": false,
+    "deterministic_initial_choices_preserved": true,
+    "stochastic_initial_parity_claimed": false,
+    "sampling_likelihood_and_export_share_head": true,
+    "no_post_sampling_action_replacement": true,
+    "residual_can_act_before_base_stops": true,
+    "inside_existing_stop_support_distribution_unchanged": true,
+    "latest_lidar_history_slice": [
+      144,
+      216
+    ],
+    "lidar_normalization_m": 12.0,
+    "learning_support_nearest_lidar_range_m": 0.8,
+    "context_is_learning_support_not_motion_permission": true
+  },
+  "bc": {
+    "seed": 231015,
+    "maximum_updates": 400,
+    "positive_and_stop_groups_equal_weight": true
+  },
+  "before_ppo": [
+    "Inspect BC fitting on every source and the seven early turns.",
+    "Evaluate the original failing motion_profile_015 from the actual reset without a steering prefix.",
+    "Retain failures; scripted probes are diagnostic, never scored as learned navigation."
+  ],
+  "required_validation": [
+    "Original 14 complete missions including six directional tasks.",
+    "Two full prefix continuations, including valid waiting statistics.",
+    "Previously frozen held-out conditions with failed initialization retained.",
+    "Fresh held-out failure families/maps before deployment acceptance.",
+    "PPO sampled actions/old likelihoods/original masks, frozen base and actual executed history."
+  ],
+  "unresolved_training_stall": "All w11 prefix diagnostic continuations tried so far time out; none supplies a safe expert.",
+  "no_forced_runtime_maneuver_or_minimum_speed": true,
+  "no_guard_or_body_relaxation": true,
+  "inputs_sha256": {
+    "models/quality_recovery_20261014/policy_2000.zip": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+    "reports/stop_feedback_20261015/turn_recovery_20261015/RESULTS.json": "fd55b77c565fce906adafe6a55b99aeab173c15e620af01e401c58f3c9311d26",
+    "reports/stop_feedback_20261015/prefix_recovery_threeway_20261016/RESULTS.json": "c876a725f3fdcfa7743f3bb29d47a2e764c177b711337a2918aac28e31aebaa2"
+  },
+  "primary_soft_cpu_cores": 0.35,
+  "auxiliary_soft_cpu_cores": 0.15,
+  "deployment_approved": false,
+  "training_case_aliases": {
+    "train_failure_motion_profile_015": "motion_profile_015"
+  },
+  "pre_fit_preparation_correction": {
+    "at": "2026-10-16T02:02:43.562314+08:00",
+    "reason": "Rehearsal loader requires the train_failure_ prefix; exact failure case relabelled without changing any physics, seed, sensors, interventions or goals.",
+    "first_launch_stopped_before_model_construction_and_fitting": true
+  },
+  "bc_model": "models/stop_feedback_20261015/proactive_bc_s231015_prepared",
+  "full_development_evaluation_order": "Same 14 physical cases, motion_profile_015 first for early failure feedback; pair comparisons use case IDs.",
+  "additional_full_reset_holdout": "All four pre-frozen same-map holdout conditions, without scripted early-turn initialization; original frozen reference versus new BC. No omitted failed initialization.",
+  "bc_fit_acceptance_note": "All source argmax choices must match for the feasibility probe; a worst target probability below 0.9 is reported as a missed confidence threshold, not hidden."
+}

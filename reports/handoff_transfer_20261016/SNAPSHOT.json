@@ -1,0 +1,165 @@
+{
+  "schema": "agv_handoff_snapshot_v7",
+  "branch": "transfer",
+  "captured_at": "2026-10-16T02:32:11.609399+08:00",
+  "repository": "https://github.com/gcusms/rl_learn_agv",
+  "parent_commit": "4e9fe191244d4bcc2aa29cbec86842c23d4f79ae",
+  "previous_handoff_branch": "move",
+  "original_deployment_model": "models/quality_recovery_20261014/policy_2000.zip",
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "original_deployment_replaced": false,
+  "latest_model": "models/stop_feedback_20261015/proactive_bc_s231015_prepared",
+  "latest_checkpoint": "policy_bc.zip",
+  "latest_portable": "bc_portable",
+  "latest_checkpoint_sha256": "52caac64481389449fdf053bd1f7a9841bd61032bcd520904643a2bd38711b2b",
+  "latest_manifest_sha256": "10da968ad20ff04f1bf5840a73fb0af51679c0fdc9014c409fb14cfb7f42535e",
+  "latest_stage": "demonstration_initialization_only",
+  "latest_additional_ppo_steps": 0,
+  "latest_fit": {
+    "update": 400,
+    "balanced_cross_entropy": 0.009071911685168743,
+    "minimum_movement_target_probability": 0.5670350790023804,
+    "minimum_wait_target_probability": 0.9986022114753723,
+    "correct_choices": 1058,
+    "training_examples": 1058
+  },
+  "latest_training_resource": {
+    "seconds": 100.84386786696268,
+    "cpu_seconds": 35.29525022,
+    "average_cpu_cores": 0.34999897332937413,
+    "peak_rss_mib": 1775.35546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "latest_completed_ppo": "models/stop_feedback_20261015/steady_base_ppo_2000_s231015",
+  "latest_completed_ppo_steps": 2000,
+  "completed_reports": [
+    {
+      "report": "reports/stop_feedback_20261015/steady_base_navigation_2000_20261016/RESULTS.json",
+      "sha256": "a4bf66c7f772e0981183feeef9443071538b51d1231e07e5c78d2467bc3f66c9",
+      "rows": 14,
+      "safe_success": 13,
+      "collisions": 1,
+      "timeouts": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/steady_base_holdout_2000_20261016/RESULTS.json",
+      "sha256": "a56b4f2173d14dfc6fe3fd20baaa40ca74002eba4402524437aa4747ec32e230",
+      "rows": 3,
+      "safe_success": 3,
+      "collisions": 0,
+      "timeouts": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_bc_navigation_20261016/RESULTS.json",
+      "sha256": "ad0454fba039040954c8c3197e434ca9a30343361704d59b2b97c390448664af",
+      "rows": 14,
+      "safe_success": 14,
+      "collisions": 0,
+      "timeouts": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_bc_prefix_recovery_20261016/RESULTS.json",
+      "sha256": "13eab4d3f75cbc48ddd63acd29a17e5092d09f307837d23e18cd540afc3c914b",
+      "rows": 2,
+      "safe_success": 2,
+      "collisions": 0,
+      "timeouts": 0
+    },
+    {
+      "report": "reports/stop_feedback_20261015/proactive_bc_full_reset_holdout_20261016/RESULTS.json",
+      "sha256": "165f9cc2078a0b6baf7f6192d802f26e58e115d6ba0de5bd77b307b9fa199707",
+      "rows": 8,
+      "safe_success": 2,
+      "collisions": 6,
+      "timeouts": 0
+    }
+  ],
+  "live_progress_captures": [
+    {
+      "captured_at": "2026-10-16T02:32:11.547718+08:00",
+      "source": "reports/stop_feedback_20261015/proactive_bc_w11_recovery_20261016",
+      "source_report_sha256": null,
+      "completed": false,
+      "completed_rows": 0,
+      "expected_rows": 3,
+      "copied_complete_traces": [],
+      "scope": "Read-only progress snapshot. Only complete immutable episode traces are included; unfinished episodes and running services do not migrate.",
+      "deployment_approved": false
+    },
+    {
+      "captured_at": "2026-10-16T02:32:11.548210+08:00",
+      "source": "reports/stop_feedback_20261015/proactive_w11_early_reference_20261016",
+      "source_report_sha256": null,
+      "completed": false,
+      "completed_rows": 0,
+      "expected_rows": 2,
+      "copied_complete_traces": [],
+      "scope": "Read-only progress snapshot. Only complete immutable episode traces are included; unfinished episodes and running services do not migrate.",
+      "deployment_approved": false
+    },
+    {
+      "captured_at": "2026-10-16T02:32:11.565089+08:00",
+      "source": "reports/stop_feedback_20261015/proactive_training_probes_20261016",
+      "source_report_sha256": "d9f85106b2f57266f659b2d07c22ee44b12ee3630f04c3da9a4613d114f262f9",
+      "completed": false,
+      "completed_rows": 5,
+      "expected_rows": 8,
+      "copied_complete_traces": [
+        "train_failure_proactive_variation_00.npz",
+        "train_failure_proactive_variation_01.npz",
+        "train_failure_proactive_variation_02.npz",
+        "train_failure_proactive_variation_03.npz",
+        "train_failure_proactive_variation_04.npz"
+      ],
+      "scope": "Read-only progress snapshot. Only complete immutable episode traces are included; unfinished episodes and running services do not migrate.",
+      "deployment_approved": false
+    }
+  ],
+  "source_units": [
+    {
+      "MainPID": "0",
+      "Result": "success",
+      "Id": "rl-proactive-bc-navigation-20261016.service",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    },
+    {
+      "MainPID": "0",
+      "Result": "success",
+      "Id": "rl-proactive-bc-holdout-20261016.service",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    },
+    {
+      "MainPID": "1669548",
+      "Result": "success",
+      "Id": "rl-proactive-bc-w11-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "f5bfb58f2dab4c209c8eabe5e05f816c"
+    },
+    {
+      "MainPID": "1671093",
+      "Result": "success",
+      "Id": "rl-proactive-training-data-v2-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "59a584d5d9da42049d92600992f8f922"
+    }
+  ],
+  "planned_ppo_steps": 8000,
+  "planned_ppo_started": false,
+  "automatic_training_data_promotion": false,
+  "known_remaining": [
+    "Appropriate waiting and early avoidance must generalize: latest full-reset different-condition comparison is 1/4 safe with one prior success regressed.",
+    "The real stochastic w11 failure prefix remains unproven; late motion can be legal without useful complete recovery.",
+    "No new learned localizer; open/sparse geometry, online mapping, global kidnap recovery and Orin Nano latency remain unaccepted.",
+    "No exact mid-episode training continuation CLI; use explicit independent run and record seed/initialization."
+  ],
+  "migration": "Sources, models, optimizer checkpoints, RNG artifacts and required reduced replay data are included; running processes, venv, caches, platform binaries and full raw bag are not.",
+  "source_background_work_migrated": false,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

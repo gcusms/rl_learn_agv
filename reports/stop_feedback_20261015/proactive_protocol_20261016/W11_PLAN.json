@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-10-16T02:18:00.752862+08:00",
+  "cases": [
+    90,
+    95,
+    106
+  ],
+  "candidate": "models/stop_feedback_20261015/proactive_bc_s231015_prepared/bc_portable",
+  "baseline": "models/stop_feedback_20261015/ppo_4000_s221015/initial_portable",
+  "reused_baseline_106": {
+    "report": "reports/stop_feedback_20261015/training_stall_probes_20261016/RESULTS.json",
+    "sha256": "3d5fdda259a60e943dc5c41686874dc963346a6aa00dbece0d7d48f9ce60023f",
+    "variant": "unchanged_reference",
+    "not_a_new_execution": true
+  },
+  "main_question": "Can the learned policy recover from the actual stochastic failure history before or at the late stop, rather than merely choosing motion?",
+  "no_forced_post_release_actions": true,
+  "unchanged_hardware_masks_guard_and_sensors": true,
+  "initialization_time_is_not_model_controlled_time": true,
+  "scope": "Correlated sensor/action prefixes of another known training failure, not unseen maps or full-mission scores.",
+  "all_timeouts_and_collisions_retained": true,
+  "deployment_approved": false
+}

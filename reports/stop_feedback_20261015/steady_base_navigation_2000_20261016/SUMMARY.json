@@ -1,0 +1,588 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "reference_report_sha256": "c876a725f3fdcfa7743f3bb29d47a2e764c177b711337a2918aac28e31aebaa2",
+  "candidate_report_sha256": "a4bf66c7f772e0981183feeef9443071538b51d1231e07e5c78d2467bc3f66c9",
+  "final_policy_sha256": "b63272b7d382c6d53f23a2ee42f0cbc7726443c0c823f91533d9ec0fb55e6d9f",
+  "reused_reference_metrics": {
+    "frozen_reference": {
+      "tasks": 14,
+      "safe_successes": 12,
+      "collisions": 2,
+      "timeouts": 0,
+      "false_arrivals": 0
+    },
+    "bc_only": {
+      "tasks": 14,
+      "safe_successes": 13,
+      "collisions": 1,
+      "timeouts": 0,
+      "false_arrivals": 0
+    },
+    "recovery_ppo": {
+      "tasks": 14,
+      "safe_successes": 13,
+      "collisions": 1,
+      "timeouts": 0,
+      "false_arrivals": 0
+    }
+  },
+  "new_candidate_metrics": {
+    "tasks": 14,
+    "safe_successes": 13,
+    "collisions": 1,
+    "timeouts": 0,
+    "false_arrivals": 0
+  },
+  "paired_gates": {
+    "frozen_reference": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 14,
+      "common_successes": 12,
+      "lost_successes": [],
+      "gained_successes": [
+        "train_failure_stop_go_variation_0"
+      ],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        34.48744826571353,
+        34.56141842468863
+      ],
+      "common_success_seconds": [
+        251.00000000001597,
+        250.80000000001488
+      ],
+      "total_travel_relative_change": 0.002144842912273015,
+      "total_time_relative_change": -0.0007968127490083354,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.008094491049375208,
+          "time_relative_change": -0.04145077720209234
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.006801555063570719,
+          "time_relative_change": 0.04635761589403309
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": false,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "bc_only": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 14,
+      "common_successes": 13,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        39.90689363764089,
+        39.90689363764089
+      ],
+      "common_success_seconds": [
+        284.4000000000136,
+        284.4000000000136
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": false,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "recovery_ppo": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 14,
+      "common_successes": 13,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        39.90689363764089,
+        39.90689363764089
+      ],
+      "common_success_seconds": [
+        284.4000000000136,
+        284.4000000000136
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": false,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    }
+  },
+  "physical_runtime_sources_unchanged": 68,
+  "bc_weights_bytewise_equal": true,
+  "new_bc_export_full_reference_replay": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "frames": 186,
+      "all_actions_equal": true,
+      "source_trace_sha256": "4a16d9c2e304693238b10cc3adf56ab97d1267c09227403c7a7d0a88684804a7",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "frames": 58,
+      "all_actions_equal": true,
+      "source_trace_sha256": "bb2e94a6f3c97d26b31b0411022d10e7ac2675765a53f6baa5768e973e6c7551",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "motion_profile_002",
+      "frames": 282,
+      "all_actions_equal": true,
+      "source_trace_sha256": "6d828089b20cd4eba7a4e0b9f46791b1f98e2ed08431c7ee561a437be08de402",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "motion_profile_000",
+      "frames": 164,
+      "all_actions_equal": true,
+      "source_trace_sha256": "fdf7deef36b82322b8f878d513a0de6746a5f2b114a86ea6b0f007d66a89b3a3",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "frames": 258,
+      "all_actions_equal": true,
+      "source_trace_sha256": "ec9c5065956ad59fa4118bcf272fc79c001fc67cfeae77d9695e8b1005c5bb6f",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "frames": 116,
+      "all_actions_equal": true,
+      "source_trace_sha256": "8113982483668d7219fef0bf7e8309f4bd96e8d8921677308af29dda23e77b8e",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_00",
+      "frames": 3,
+      "all_actions_equal": true,
+      "source_trace_sha256": "57550e32816503e18a2b125e1a23df99b13ca011f96666f5568970f5d980c1e0",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_05",
+      "frames": 5,
+      "all_actions_equal": true,
+      "source_trace_sha256": "31617d1d692046f051aa5c523175e7f97df48b600e0e7b255f8eeb199b21057c",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_12",
+      "frames": 11,
+      "all_actions_equal": true,
+      "source_trace_sha256": "a4c91671adc3f8a68a2322ec05aeca32940ac3b30c26d93a0fa87eacbe222f6b",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_17",
+      "frames": 12,
+      "all_actions_equal": true,
+      "source_trace_sha256": "e74e6732946cdbd1186e605cb401b00fc4b4dda32b227f6fda22acfa5de0d119",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_24",
+      "frames": 13,
+      "all_actions_equal": true,
+      "source_trace_sha256": "b5877dd46c6fc62082ca4057dc93326cb7432d51df17e003178910cc4f240174",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "localization_nav_31",
+      "frames": 57,
+      "all_actions_equal": true,
+      "source_trace_sha256": "9afded326e8dcb1c7aa8e85f10a4d5f02265d78682edbd0a4179fbbbf54673c9",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "frames": 169,
+      "all_actions_equal": true,
+      "source_trace_sha256": "5115f01812348d49a2ca3ff21519ad5294dec1fa4260109930f0ac8b5fa9776e",
+      "not_new_independent_execution": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "frames": 159,
+      "all_actions_equal": true,
+      "source_trace_sha256": "004dbc447a96af91880cfdd649748ce1923aae58a0d3dc39def2be844262ea08",
+      "not_new_independent_execution": true
+    }
+  ],
+  "bc_to_final_trajectory_comparison": [
+    {
+      "case_id": "train_failure_w11_e7",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "motion_profile_002",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "motion_profile_000",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_00",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_05",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_12",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_17",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_24",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "localization_nav_31",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "arrays_equal": {
+        "choices": true,
+        "commands": true,
+        "labels": true,
+        "scans": true,
+        "observations": true
+      },
+      "all_equal": true
+    }
+  ],
+  "all_bc_to_final_trajectories_equal": true,
+  "limitations": [
+    "Reference and BC mission results are reused, not new executions.",
+    "Fixed reused development cases are not unseen-map or real deployment acceptance.",
+    "Fewer random frozen-base deviations or parameter changes alone do not prove learned recovery."
+  ]
+}

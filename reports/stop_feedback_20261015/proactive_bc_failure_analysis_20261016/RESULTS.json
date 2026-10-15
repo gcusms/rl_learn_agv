@@ -1,0 +1,114 @@
+{
+  "completed": true,
+  "created_at": "2026-10-16T02:21:04.442803+08:00",
+  "scope": "First actual failed full-reset validation condition, compared with its separately recorded physically safe scripted-turn diagnostic. Analysis only; these holdout observations/labels are not training examples.",
+  "first_action_difference": {
+    "index": 26,
+    "sensor_s": 5.199999999999911,
+    "safe_probe_choice": 0,
+    "model_choice": 1,
+    "prior_physical_pose_equal": true,
+    "current_lidar_equal": true
+  },
+  "offline_policy_queries_on_safe_diagnostic": [
+    {
+      "sensor_s": 0.0,
+      "safe_probe_choice": 10,
+      "model_choice_on_safe_input": 10,
+      "probability_of_safe_probe_choice": 0.9816666841506958,
+      "learnable_support": false
+    },
+    {
+      "sensor_s": 3.999999999999937,
+      "safe_probe_choice": 1,
+      "model_choice_on_safe_input": 1,
+      "probability_of_safe_probe_choice": 0.9922811388969421,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 4.999999999999916,
+      "safe_probe_choice": 0,
+      "model_choice_on_safe_input": 0,
+      "probability_of_safe_probe_choice": 1.0,
+      "learnable_support": false
+    },
+    {
+      "sensor_s": 5.999999999999894,
+      "safe_probe_choice": 5,
+      "model_choice_on_safe_input": 11,
+      "probability_of_safe_probe_choice": 2.0520740662277603e-08,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 6.19999999999989,
+      "safe_probe_choice": 5,
+      "model_choice_on_safe_input": 5,
+      "probability_of_safe_probe_choice": 0.5224855542182922,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 6.799999999999877,
+      "safe_probe_choice": 5,
+      "model_choice_on_safe_input": 5,
+      "probability_of_safe_probe_choice": 0.998239278793335,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 7.199999999999869,
+      "safe_probe_choice": 5,
+      "model_choice_on_safe_input": 5,
+      "probability_of_safe_probe_choice": 0.9748358726501465,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 7.999999999999852,
+      "safe_probe_choice": 11,
+      "model_choice_on_safe_input": 11,
+      "probability_of_safe_probe_choice": 0.995429515838623,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 10.000000000000163,
+      "safe_probe_choice": 7,
+      "model_choice_on_safe_input": 5,
+      "probability_of_safe_probe_choice": 0.00029250478837639093,
+      "learnable_support": true
+    },
+    {
+      "sensor_s": 11.600000000000414,
+      "safe_probe_choice": 0,
+      "model_choice_on_safe_input": 0,
+      "probability_of_safe_probe_choice": 1.0,
+      "learnable_support": false
+    }
+  ],
+  "last_observation_before_contact": {
+    "sensor_s": 11.600000000000414,
+    "last_observed_linear_speed": 1.9379819804767808e-30,
+    "legal_choices": [
+      0
+    ],
+    "rejection_group_by_choice": [
+      "accepted",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction",
+      "dynamic_prediction"
+    ],
+    "nearest_lidar_history_m": 0.16706257313489914
+  },
+  "source_sha256": {
+    "models/stop_feedback_20261015/proactive_bc_s231015_prepared/policy_bc.zip": "52caac64481389449fdf053bd1f7a9841bd61032bcd520904643a2bd38711b2b",
+    "reports/stop_feedback_20261015/recovery_holdout_reference_20261016/recovery_holdout_00.npz": "6f3ba96e1e9d6dbb0e7cb79b41378082200bcb0a5d931750ed947e473341e1ea",
+    "reports/stop_feedback_20261015/proactive_bc_full_reset_holdout_20261016/recovery_holdout_00_proactive_bc.npz": "3e8e3f806761b0552f0f03816a5cf61ff5b3047608dcca92a2fb043ed4154f2e"
+  },
+  "independent_causal_proof_of_a_single_failure_mechanism": false,
+  "deployment_approved": false
+}

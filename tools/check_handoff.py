@@ -90,19 +90,24 @@ def main():
                            ('ppo_v2_4000_s221015', 'stop_decision_feedback_v2'),
                            ('ppo_explore_4000_s221015', 'stop_decision_feedback_v2'),
                            ('prefix_ppo_2000_s231015', 'stop_decision_feedback_v2'),
-                           ('steady_base_ppo_2000_s231015', 'stop_decision_feedback_v2')]:
+                           ('steady_base_ppo_2000_s231015', 'stop_decision_feedback_v2'),
+                           ('proactive_bc_s231015_prepared', 'stop_decision_feedback_v2')]:
         feedback = ROOT / 'models/stop_feedback_20261015' / folder
-        feedback_bundle = feedback / 'portable'
+        bc_only = folder == 'proactive_bc_s231015_prepared'
+        bundle_name = 'bc_portable' if bc_only else 'portable'
+        feedback_bundle = feedback / bundle_name
         feedback_manifest = json.loads((feedback_bundle / 'manifest.json').read_text())
         if feedback_manifest['observation_contract'] != feedback_contract(schema):
             raise ValueError('Archived feedback semantics mismatch: ' + folder)
         for name, expected in feedback_manifest['files'].items():
             if name != 'localization_kernel.so' and digest(feedback_bundle / name) != expected:
                 raise ValueError('Feedback component mismatch: ' + folder + '/' + name)
-        recovery = folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015')
+        recovery = folder in ('prefix_ppo_2000_s231015', 'steady_base_ppo_2000_s231015',
+                              'proactive_bc_s231015_prepared')
         checkpoint_type = StopRecoveryPPO if recovery else StopFeedbackPPO
-        expected_steps = 2000 if recovery else 4000
-        checkpoint = checkpoint_type.load(feedback / 'policy.zip', device='cpu')
+        expected_steps = 0 if bc_only else (2000 if recovery else 4000)
+        checkpoint_name = 'policy_bc.zip' if bc_only else 'policy.zip'
+        checkpoint = checkpoint_type.load(feedback / checkpoint_name, device='cpu')
         if checkpoint.num_timesteps != expected_steps or checkpoint.observation_space.shape != (436,):
             raise ValueError('Feedback training checkpoint mismatch: ' + folder)
         if getattr(checkpoint, 'feedback_schema', 'stop_decision_feedback_v1') != schema:
@@ -118,6 +123,9 @@ def main():
             if folder == 'steady_base_ppo_2000_s231015':
                 from experiments.steady_base_recovery import contract as steady_contract
                 expected_recovery = steady_contract()
+            elif bc_only:
+                from experiments.proactive_recovery import contract as proactive_contract
+                expected_recovery = proactive_contract()
             if checkpoint.recovery_contract != expected_recovery:
                 raise ValueError('Recovery checkpoint semantics mismatch')
             if frozen_base_digest(checkpoint.policy) != config['frozen_base_sha256']:
@@ -128,6 +136,8 @@ def main():
         if command.shape != (1, 2) or not torch.isfinite(command).all():
             raise ValueError('Feedback TorchScript interface mismatch: ' + folder)
         feedback_models.append(dict(folder=folder, schema=schema, exploration_schema=exploration, additional_steps=expected_steps,
+                                    bundle_name=bundle_name, checkpoint_name=checkpoint_name,
+                                    demonstration_initialization_only=bc_only,
                                     recovery_residual=recovery,
                                     checkpoint_loaded=True, torchscript_loaded=True))
         del checkpoint, exported
@@ -138,7 +148,7 @@ def main():
                        output / 'native_reference')
         os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
         for entry in feedback_models:
-            bundle = ROOT / 'models/stop_feedback_20261015' / entry['folder'] / 'portable'
+            bundle = ROOT / 'models/stop_feedback_20261015' / entry['folder'] / entry['bundle_name']
             feedback_manifest = json.loads((bundle / 'manifest.json').read_text())
             rebuilt_feedback = build(bundle, output / entry['folder'])
             feedback_runtime = resolve_runtime(feedback_manifest['required_runtime'])(

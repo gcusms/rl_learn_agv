@@ -1,0 +1,57 @@
+{
+  "frozen_at": "2026-10-16T02:12:34.909742+08:00",
+  "hypothesis": "Train the expanded policy from the verified early approach as well as the old late stop, and cover independent small pose/dynamic/sensor variations instead of only memorizing one seven-action turn.",
+  "controlled_steps": 8000,
+  "seed": 231015,
+  "model": "models/stop_feedback_20261015/proactive_ppo_8000_s231015",
+  "initialization_model": "models/stop_feedback_20261015/proactive_bc_s231015_prepared",
+  "new_base_checkpoint_or_extra_guard_relaxation": false,
+  "unchanged_reward": true,
+  "kept_original_demonstrations_and_normal_retention": true,
+  "source_guard_and_physically_checked_early_prefix_s": 6.0,
+  "late_prefix_s": 20.0,
+  "prefix_is_initialization_not_ppo_experience": true,
+  "training_variations": 8,
+  "training_case_count": 12,
+  "previously_frozen_four_conditions_not_used_as_training_cases": true,
+  "physical_static_connectivity_checked": true,
+  "normal_navigation_bc_gate": "All original 14 tasks safe, no lost normal success; both complete prefix tests must finish before queued training starts.",
+  "required_after_training": [
+    "All actual causal histories and pre-update sampling likelihoods.",
+    "Own identical BC initialization versus PPO; no attribution of BC gains to PPO.",
+    "All original 14 full missions and six directional tasks.",
+    "Both full original prefix continuations and w11 prefixes at 90/95/106 seconds.",
+    "All four full-reset development holdout conditions; keep collision results.",
+    "Further fresh conditions/families before deployment acceptance."
+  ],
+  "stop_is_always_selectable": true,
+  "source_cpu_soft_limit": 0.35,
+  "auxiliary_soft_limit": 0.15,
+  "original_deployment_model_replaced": false,
+  "deployment_approved": false,
+  "inputs_sha256": {
+    "reports/stop_feedback_20261015/proactive_protocol_20261016/ppo_training_cases.json": "c696bd076d751ccad0155c8b53bd7e9ccee2ddd5ddddc884c16906566e189882",
+    "reports/stop_feedback_20261015/proactive_protocol_20261016/ppo_training_prefixes.json": "33894a7e65b304aa9171fc1f32de4dcc68905567b9e4dbbe9ce13ec4e8c7e811",
+    "reports/stop_feedback_20261015/proactive_protocol_20261016/demonstrations.json": "7d968a8562184f58bf9a31aad6ce535fb4d3753158c9fb399ffb25d01c077111"
+  },
+  "status": "prepared_not_launched",
+  "before_training_data_step": {
+    "at": "2026-10-16T02:22:57.184954+08:00",
+    "reason": "At identical observed state and physical pose, the failed unseen-condition policy first departs from a safe diagnostic at 5.2 s: it moves while the reference waits. Last observed state before collision has zero physical speed and only stop legal, with all movement rejected by dynamic prediction. Preserve appropriate early waiting in the new training examples.",
+    "declared_training_probe": "Frozen original learned reference outside legal right-turn window 6.0..7.4 s and legal forward window 20.0..22.0 s; same two interventions as the complete safe source.",
+    "sample_count": 8,
+    "all_failed_probes_retained": true,
+    "scripted_success_is_not_neural_navigation_score": true,
+    "no_probe_examples_collected_before_recipe_change": true,
+    "stopped_waiting_job": "rl-proactive-training-data-20261016.service",
+    "evidence": "reports/stop_feedback_20261015/proactive_bc_failure_analysis_20261016/RESULTS.json"
+  },
+  "superseded_precollection_recipe": {
+    "at": "2026-10-16T02:15:17.664864+08:00",
+    "reason": "The first independent full-reset condition still collides despite exact BC fit, so collect physically verified training variations before expanding PPO. Do not train on the four development holdout conditions.",
+    "declared_training_probe": "one legal right-turn window from 6.0 to 7.4 seconds followed by the archived stop-only BC policy",
+    "sample_count": 8,
+    "all_failed_probes_retained": true,
+    "scripted_success_is_not_neural_navigation_score": true
+  }
+}
