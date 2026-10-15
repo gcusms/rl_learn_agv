@@ -1,0 +1,141 @@
+{
+  "completed": true,
+  "scope": "Offline probability at an identical actual sensor/history input, not a physical maneuver or recovery result.",
+  "source_warmup": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/warmups/episode_00002.npz",
+  "source_warmup_sha256": "72cb62b3bea2feacac1ea62e6fe2c7da3613e37a1c6566e403f6edb55528cf60",
+  "observation_sha256": "b1ad77a7215bbe80f9703832f4e462aba57da33f28cb3fb183820c4e65e704b2",
+  "prefix_id": "w11_training_stall_t90",
+  "release_s": 90.0,
+  "masks": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "commands": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0
+    ],
+    [
+      0.1,
+      0.0
+    ],
+    [
+      0.05,
+      0.0
+    ],
+    [
+      0.0,
+      0.5
+    ],
+    [
+      0.0,
+      -0.5
+    ],
+    [
+      0.05,
+      0.5
+    ],
+    [
+      0.05,
+      -0.5
+    ],
+    [
+      0.01,
+      0.5
+    ],
+    [
+      0.01,
+      -0.5
+    ],
+    [
+      0.2,
+      0.5
+    ],
+    [
+      0.2,
+      -0.5
+    ]
+  ],
+  "previous_executed_reason": "none",
+  "previous_choice_wait_s": 0.0,
+  "rows": [
+    {
+      "name": "own_bc",
+      "checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_bc.zip",
+      "checkpoint_sha256": "f3f02b32b4f583f11fd5644af52ab4ddafb7c05e2fedc97f4774e2056b61c209",
+      "collected_timesteps": 0,
+      "optimizer_epochs_completed": 0,
+      "recovery_support": true,
+      "greedy_choice": 10,
+      "probabilities": [
+        4.939398334791179e-10,
+        0.0012523435289040208,
+        1.9631857028912236e-08,
+        1.521574671814463e-10,
+        4.399145492328671e-10,
+        5.1377231514957044e-20,
+        6.610948912566528e-05,
+        1.2520241320368967e-17,
+        4.298760103438326e-08,
+        1.7149637160338936e-21,
+        0.9986816048622131,
+        8.42998563207846e-14
+      ],
+      "pure_left_turn_probability": 4.399145492328671e-10,
+      "pure_right_turn_probability": 5.1377231514957044e-20,
+      "wait_probability": 4.939398334791179e-10
+    },
+    {
+      "name": "pre_update_1000",
+      "checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_step_1000.zip",
+      "checkpoint_sha256": "ace9c5db92b0312d9a712c32124fe6f23a45e3c029bb3bb92c7037da31521242",
+      "collected_timesteps": 1000,
+      "optimizer_epochs_completed": 10,
+      "recovery_support": true,
+      "greedy_choice": 10,
+      "probabilities": [
+        8.683963548250517e-10,
+        0.0025135627947747707,
+        2.1193331534163917e-08,
+        1.6549593639947346e-10,
+        5.787635926068901e-10,
+        7.096604133647194e-20,
+        6.047137503628619e-05,
+        1.3385566539689265e-17,
+        5.246330658792431e-08,
+        1.817843093029826e-21,
+        0.9974258542060852,
+        1.3717380096395226e-13
+      ],
+      "pure_left_turn_probability": 5.787635926068901e-10,
+      "pure_right_turn_probability": 7.096604133647194e-20,
+      "wait_probability": 8.683963548250517e-10
+    }
+  ],
+  "teacher_left_maneuver_feasibility_not_yet_confirmed": true,
+  "actions_executed": false,
+  "training_modified": false,
+  "resource": {
+    "seconds": 21.69669489801163,
+    "cpu_seconds": 1.0913732189999998,
+    "average_cpu_cores": 0.0503013580699804,
+    "peak_rss_mib": 614.86328125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

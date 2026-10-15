@@ -1,0 +1,206 @@
+{
+  "completed": true,
+  "actual_sampled_frames": 1000,
+  "supported_frames": 710,
+  "training_run_completed": false,
+  "analysis_covers_final_training": false,
+  "checkpoint_is_pre_update": true,
+  "source_run_status_at_read": {
+    "status": "ppo_training",
+    "target_steps": 8000,
+    "deployment_approved": false
+  },
+  "policy_checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_step_1000.zip",
+  "checkpoint_collected_timesteps": 1000,
+  "optimizer_epochs_completed": 10,
+  "last_rollout_included_in_checkpoint_updates": false,
+  "checkpoint_updates_through_steps": 750,
+  "bc_to_ppo": {
+    "frozen_base_unchanged": true,
+    "residual_parameter_delta_l2": {
+      "mlp_extractor.policy_net.residual.0.weight": 0.2961329519748688,
+      "mlp_extractor.policy_net.residual.0.bias": 0.015176216140389442,
+      "mlp_extractor.policy_net.residual.2.weight": 0.1307612955570221,
+      "mlp_extractor.policy_net.residual.2.bias": 0.01199436280876398,
+      "action_net.residual.weight": 0.02559804543852806,
+      "action_net.residual.bias": 0.002205892000347376
+    },
+    "supported_argmax_changes": 25,
+    "maximum_supported_probability_change": 0.853682279586792
+  },
+  "offline_choice_transitions": {
+    "bc_wait_to_ppo_motion": 1,
+    "bc_motion_to_ppo_wait": 1,
+    "different_motion_choice": 23,
+    "long_wait_threshold_s": 1.0,
+    "long_prior_wait_with_choices_frames": 156,
+    "long_wait_bc_wait_to_ppo_motion": 0,
+    "physical_improvement_proven": false
+  },
+  "choice_transitions_by_source": {
+    "physical_prefix_early_avoidance_t6": {
+      "supported_frames": 155,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 6,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_motion_profile_015": {
+      "supported_frames": 21,
+      "bc_wait_to_ppo_motion": 1,
+      "bc_motion_to_ppo_wait": 1,
+      "different_motion_choice": 1,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "supported_frames": 249,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 1,
+      "long_prior_wait_with_choices_frames": 156,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "supported_frames": 100,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 7,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "supported_frames": 101,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 3,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "train_failure_proactive_variation_00": {
+      "supported_frames": 30,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 1,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "supported_frames": 54,
+      "bc_wait_to_ppo_motion": 0,
+      "bc_motion_to_ppo_wait": 0,
+      "different_motion_choice": 4,
+      "long_prior_wait_with_choices_frames": 0,
+      "long_wait_bc_wait_to_ppo_motion": 0
+    }
+  },
+  "supported_training_sources": {
+    "physical_prefix_early_avoidance_t6": 155,
+    "train_failure_motion_profile_015": 21,
+    "physical_prefix_w11_training_stall_t90": 249,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": 100,
+    "physical_prefix_rotation_stall_t20": 101,
+    "train_failure_proactive_variation_00": 30,
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": 54
+  },
+  "offline_sensitivity": {
+    "previous_reason_none": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 710,
+      "changed_argmax_in_common_supported_states": 1,
+      "changed_argmax_in_supported_states": 1,
+      "max_probability_change_in_supported_states": 0.6386392712593079,
+      "actual_motion_samples_changed": 1
+    },
+    "without_contact_scores": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 710,
+      "changed_argmax_in_common_supported_states": 7,
+      "changed_argmax_in_supported_states": 7,
+      "max_probability_change_in_supported_states": 0.98731529712677,
+      "actual_motion_samples_changed": 7
+    },
+    "without_wait_timers": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 710,
+      "changed_argmax_in_common_supported_states": 0,
+      "changed_argmax_in_supported_states": 0,
+      "max_probability_change_in_supported_states": 0.1274011731147766,
+      "actual_motion_samples_changed": 0
+    },
+    "without_explanations": {
+      "learnable_support_changes": 0,
+      "common_supported_states": 710,
+      "changed_argmax_in_common_supported_states": 39,
+      "changed_argmax_in_supported_states": 39,
+      "max_probability_change_in_supported_states": 0.9990076422691345,
+      "actual_motion_samples_changed": 36
+    }
+  },
+  "frozen_base_sampling_by_case": {
+    "physical_prefix_early_avoidance_t6": {
+      "frames": 253,
+      "frozen_frames": 98,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 155
+    },
+    "train_failure_motion_profile_015": {
+      "frames": 55,
+      "frozen_frames": 34,
+      "sampled_choice_differs_from_frozen_greedy": 3,
+      "recovery_frames": 21
+    },
+    "physical_prefix_w11_training_stall_t90": {
+      "frames": 250,
+      "frozen_frames": 1,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 249
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/navigation_stage2_dataset/train_00": {
+      "frames": 164,
+      "frozen_frames": 64,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 100
+    },
+    "physical_prefix_rotation_stall_t20": {
+      "frames": 130,
+      "frozen_frames": 29,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 101
+    },
+    "train_failure_proactive_variation_00": {
+      "frames": 67,
+      "frozen_frames": 37,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 30
+    },
+    "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/assets/room_navigation_scripted": {
+      "frames": 81,
+      "frozen_frames": 27,
+      "sampled_choice_differs_from_frozen_greedy": 0,
+      "recovery_frames": 54
+    }
+  },
+  "frozen_base_sampling_summary": {
+    "frames": 290,
+    "sampled_choice_differs_from_frozen_greedy": 3,
+    "interpretation": "Actual stochastic samples outside trainable support; different from deterministic deployment, not evidence that every deviation is harmful."
+  },
+  "policy_sha256": "ace9c5db92b0312d9a712c32124fe6f23a45e3c029bb3bb92c7037da31521242",
+  "resource": {
+    "seconds": 29.26685280696256,
+    "cpu_seconds": 1.5098004150000004,
+    "average_cpu_cores": 0.05158738539323982,
+    "peak_rss_mib": 657.30078125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "deployment_approved": false,
+  "limitations": [
+    "Reused actual training states, not new closed-loop tasks.",
+    "A pre-update checkpoint has observed its last rollout but has not optimized on it; an interim analysis is not a complete training or navigation result.",
+    "Substituted explanations can be outside the training distribution.",
+    "Proactive contact ablations can also change the learnable-support gate; common-support and gate changes are reported separately.",
+    "Sensitivity does not prove that feedback caused safe recovery or that PPO improved navigation."
+  ]
+}

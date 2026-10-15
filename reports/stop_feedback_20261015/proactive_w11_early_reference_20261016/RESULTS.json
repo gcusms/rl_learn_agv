@@ -1,0 +1,113 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "w11_training_stall_t90",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 9.764517300567704,
+      "frames": 700,
+      "final_xy_error_m": 1.8241996329192829,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004905961085809075,
+      "localization_yaw_p95_rad": 0.0013804180347957377,
+      "stop_choices": 153,
+      "only_stop_frames": 133,
+      "stop_reasons": {
+        "None": 606,
+        "laser_braking_footprint": 94
+      },
+      "voluntary_wait_frames": 20,
+      "predictive_constraint_frames": 80,
+      "runtime_ms": {
+        "p95": 189.14644936739919,
+        "p99": 211.42624278727453,
+        "maximum": 236.61508603254333
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 450,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 90.0,
+      "post_release_seconds": 49.999999999945175,
+      "model_controlled_frames": 250,
+      "post_release_wait_with_choices_frames": 9,
+      "post_release_only_stop_frames": 98,
+      "longest_post_release_wait_with_choices_s": 0.7999999999992724,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "variant": "frozen_reference",
+      "trace_sha256": "df4a2002124d1f9e753058fad4473df945378671286c4b362a83ca0e841225ea"
+    },
+    {
+      "case_id": "w11_training_stall_t95",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 9.96101213242861,
+      "frames": 700,
+      "final_xy_error_m": 1.810210481853447,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004679164472178328,
+      "localization_yaw_p95_rad": 0.0013863664618927625,
+      "stop_choices": 84,
+      "only_stop_frames": 44,
+      "stop_reasons": {
+        "None": 679,
+        "laser_braking_footprint": 21
+      },
+      "voluntary_wait_frames": 40,
+      "predictive_constraint_frames": 81,
+      "runtime_ms": {
+        "p95": 186.09592176799194,
+        "p99": 207.1157502627466,
+        "maximum": 231.00676503963768
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.0,
+      "post_release_seconds": 44.999999999945175,
+      "model_controlled_frames": 225,
+      "post_release_wait_with_choices_frames": 29,
+      "post_release_only_stop_frames": 9,
+      "longest_post_release_wait_with_choices_s": 4.399999999995998,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "variant": "frozen_reference",
+      "trace_sha256": "05211742e094a3e53778c6fba49c7bd482ca985282d99b7b1dd94eb58e1e7d0e"
+    }
+  ],
+  "label": "frozen_reference",
+  "specifications_sha256": "5098c4fc84417124fa158257d46cf206083b51c81a1a66bbf8ae594be4eedcdc",
+  "bundle_manifest_sha256": "d6aca3c53630b4c9b0b96057d287317860b7df00649be15ae354c5654f7f4daa",
+  "scope": "Learned continuation after a fixed, independently verified sensor/action prefix; reused development traces.",
+  "limitations": [
+    "Correlated recovery states from previously used trajectories, not independent missions.",
+    "Prefix is scripted initialization, not a claim that the model chose the earlier maneuver."
+  ],
+  "resource": {
+    "seconds": 1755.5292692889925,
+    "cpu_seconds": 263.481271216,
+    "average_cpu_cores": 0.1500865156880652,
+    "peak_rss_mib": 2075.5234375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

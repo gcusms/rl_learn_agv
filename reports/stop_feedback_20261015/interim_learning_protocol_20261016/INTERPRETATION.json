@@ -1,0 +1,17 @@
+{
+  "completed": true,
+  "goal_achieved": false,
+  "actual_updated_checkpoint": true,
+  "collected_steps": 1000,
+  "optimized_experience_through": 750,
+  "supported_argmax_changes": 25,
+  "feedback_ablation_changes": 39,
+  "long_prior_wait_states": 156,
+  "long_wait_stop_to_motion": 0,
+  "observed_gap": "The sampled decisions now change and depend on feedback, but the 156 long-wait states still do not change from BC stop to motion.",
+  "next_action": "Retain the current 8k controlled experiment. Await the already-running early-left physical probes to determine whether a full safe recovery example can cover the real stalled history before preparing any new demonstration data. Keep all failed outcomes.",
+  "model_understanding_or_physical_success_proven": false,
+  "training_restart_required": false,
+  "no_guard_or_reward_relaxation": true,
+  "deployment_approved": false
+}

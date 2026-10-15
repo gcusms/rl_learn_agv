@@ -1,0 +1,233 @@
+{
+  "completed": true,
+  "checked_at": "2026-10-16T03:49:08.728640+08:00",
+  "classification": "progress",
+  "goal_achieved": false,
+  "first_updated_checkpoint_collected_steps": 1000,
+  "first_updated_checkpoint_optimized_through": 750,
+  "supported_decision_changes": 25,
+  "choice_transitions": {
+    "bc_wait_to_ppo_motion": 1,
+    "bc_motion_to_ppo_wait": 1,
+    "different_motion_choice": 23,
+    "long_wait_threshold_s": 1.0,
+    "long_prior_wait_with_choices_frames": 156,
+    "long_wait_bc_wait_to_ppo_motion": 0,
+    "physical_improvement_proven": false
+  },
+  "feedback_group_ablation": {
+    "learnable_support_changes": 0,
+    "common_supported_states": 710,
+    "changed_argmax_in_common_supported_states": 39,
+    "changed_argmax_in_supported_states": 39,
+    "max_probability_change_in_supported_states": 0.9990076422691345,
+    "actual_motion_samples_changed": 36
+  },
+  "release_probe": {
+    "completed": true,
+    "scope": "Offline probability at an identical actual sensor/history input, not a physical maneuver or recovery result.",
+    "source_warmup": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/warmups/episode_00002.npz",
+    "source_warmup_sha256": "72cb62b3bea2feacac1ea62e6fe2c7da3613e37a1c6566e403f6edb55528cf60",
+    "observation_sha256": "b1ad77a7215bbe80f9703832f4e462aba57da33f28cb3fb183820c4e65e704b2",
+    "prefix_id": "w11_training_stall_t90",
+    "release_s": 90.0,
+    "masks": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "previous_executed_reason": "none",
+    "previous_choice_wait_s": 0.0,
+    "rows": [
+      {
+        "name": "own_bc",
+        "checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_bc.zip",
+        "checkpoint_sha256": "f3f02b32b4f583f11fd5644af52ab4ddafb7c05e2fedc97f4774e2056b61c209",
+        "collected_timesteps": 0,
+        "optimizer_epochs_completed": 0,
+        "recovery_support": true,
+        "greedy_choice": 10,
+        "probabilities": [
+          4.939398334791179e-10,
+          0.0012523435289040208,
+          1.9631857028912236e-08,
+          1.521574671814463e-10,
+          4.399145492328671e-10,
+          5.1377231514957044e-20,
+          6.610948912566528e-05,
+          1.2520241320368967e-17,
+          4.298760103438326e-08,
+          1.7149637160338936e-21,
+          0.9986816048622131,
+          8.42998563207846e-14
+        ],
+        "pure_left_turn_probability": 4.399145492328671e-10,
+        "pure_right_turn_probability": 5.1377231514957044e-20,
+        "wait_probability": 4.939398334791179e-10
+      },
+      {
+        "name": "pre_update_1000",
+        "checkpoint": "models/stop_feedback_20261015/proactive_augmented_ppo_8000_s231015/policy_step_1000.zip",
+        "checkpoint_sha256": "ace9c5db92b0312d9a712c32124fe6f23a45e3c029bb3bb92c7037da31521242",
+        "collected_timesteps": 1000,
+        "optimizer_epochs_completed": 10,
+        "recovery_support": true,
+        "greedy_choice": 10,
+        "probabilities": [
+          8.683963548250517e-10,
+          0.0025135627947747707,
+          2.1193331534163917e-08,
+          1.6549593639947346e-10,
+          5.787635926068901e-10,
+          7.096604133647194e-20,
+          6.047137503628619e-05,
+          1.3385566539689265e-17,
+          5.246330658792431e-08,
+          1.817843093029826e-21,
+          0.9974258542060852,
+          1.3717380096395226e-13
+        ],
+        "pure_left_turn_probability": 5.787635926068901e-10,
+        "pure_right_turn_probability": 7.096604133647194e-20,
+        "wait_probability": 8.683963548250517e-10
+      }
+    ],
+    "teacher_left_maneuver_feasibility_not_yet_confirmed": true,
+    "actions_executed": false,
+    "training_modified": false,
+    "resource": {
+      "seconds": 21.69669489801163,
+      "cpu_seconds": 1.0913732189999998,
+      "average_cpu_cores": 0.0503013580699804,
+      "peak_rss_mib": 614.86328125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "supervised_pure_left_turn_frames": 2,
+  "total_supervised_frames": 2030,
+  "final_mode_backward_compatibility": {
+    "completed": true,
+    "reference": "steady_base_learning_analysis_2000_20261016/RESULTS.json",
+    "unchanged_metrics": [
+      "actual_sampled_frames",
+      "supported_frames",
+      "bc_to_ppo",
+      "supported_training_sources",
+      "frozen_base_sampling_summary",
+      "policy_sha256"
+    ]
+  },
+  "complete_reference_prefix_failures": 2,
+  "current_ppo_progress": {
+    "steps": 2250,
+    "counts": {
+      "decision_frames": 1870,
+      "only_stop": 380,
+      "voluntary_wait": 186,
+      "nonzero": 1684,
+      "changed_nonzero": 0,
+      "episodes": 13,
+      "success": 8,
+      "collisions": 3,
+      "recovery_actor_frames": 1381,
+      "prefix_controlled_frames": 1215,
+      "routine_controlled_frames": 1035,
+      "recovery_wait_choices": 183,
+      "recovery_motion_choices": 1198
+    },
+    "reasons": {
+      "none": 1684,
+      "only_stop_available": 155,
+      "policy_wait": 92,
+      "learned_route_incomplete": 8,
+      "scan_unavailable": 14,
+      "laser_braking_footprint": 291,
+      "static_braking_footprint": 6
+    },
+    "resource": {
+      "seconds": 1653.1473868939793,
+      "cpu_seconds": 578.601539281,
+      "average_cpu_cores": 0.34999997209450706,
+      "peak_rss_mib": 2444.0078125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "ppo": {
+      "train/learning_rate": 0.0003,
+      "train/entropy_loss": -0.1339185064037641,
+      "train/policy_gradient_loss": 0.0006052127730515148,
+      "train/value_loss": 0.05520355080564817,
+      "train/approx_kl": 0.014486214525812688,
+      "train/clip_fraction": 0.05791919274876515,
+      "train/actor_recovery_fraction": 0.7559999999999999,
+      "train/explained_variance": -3.6432571411132812,
+      "train/n_updates": 23.0,
+      "train/loss": 0.008649779483675957
+    }
+  },
+  "conclusion": "PPO changes actual decisions and responds to feedback, but early updated policy still does not improve the recorded long-wait choices. At the identical all-legal release input it strongly prefers a forward left arc over a stationary left turn; that action has only two supervised examples. This supports evaluating and adding a complete safe recovery demonstration if the live probes establish one; it does not prove a maneuver is safe or that 8k PPO will fail.",
+  "next_required": "Finish the predeclared 8k run and its paired full navigation evaluation. Wait on the same live early-left probe invocation; only consider safe complete probe continuations with minimum_sensor_timestamp_s=90, retaining every failed probe and preserving all 2030 original labels.",
+  "runtime_teacher_added": false,
+  "original_deployment_replaced": false,
+  "deployment_approved": false
+}
