@@ -1,0 +1,46 @@
+{
+  "steps": 2750,
+  "counts": {
+    "decision_frames": 2346,
+    "only_stop": 404,
+    "voluntary_wait": 187,
+    "nonzero": 2159,
+    "changed_nonzero": 0,
+    "episodes": 15,
+    "success": 9,
+    "collisions": 3,
+    "recovery_actor_frames": 1761,
+    "prefix_controlled_frames": 1465,
+    "routine_controlled_frames": 1285,
+    "recovery_wait_choices": 184,
+    "recovery_motion_choices": 1577
+  },
+  "reasons": {
+    "none": 2159,
+    "only_stop_available": 174,
+    "policy_wait": 93,
+    "learned_route_incomplete": 8,
+    "scan_unavailable": 19,
+    "laser_braking_footprint": 291,
+    "static_braking_footprint": 6
+  },
+  "resource": {
+    "seconds": 2095.470284709998,
+    "cpu_seconds": 733.4146486120001,
+    "average_cpu_cores": 0.35000002336635416,
+    "peak_rss_mib": 2444.0078125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "ppo": {
+    "train/learning_rate": 0.0003,
+    "train/entropy_loss": -0.19513842277228832,
+    "train/policy_gradient_loss": -0.006096133027387651,
+    "train/value_loss": 0.054573082365095615,
+    "train/approx_kl": 0.012671234834391615,
+    "train/clip_fraction": 0.06729266094043851,
+    "train/actor_recovery_fraction": 0.804,
+    "train/explained_variance": -2.756795883178711,
+    "train/n_updates": 31.0,
+    "train/loss": 0.005692323669791222
+  }
+}

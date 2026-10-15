@@ -38,7 +38,8 @@ def main():
     torch.set_num_threads(1)
     from neural_navigation.goal_pose_runtime import check_files, resolve_runtime
 
-    pinned = json.loads((ROOT / 'docs/handoff/FILES.json').read_text())['files']
+    handoff = json.loads((ROOT / 'docs/handoff/FILES.json').read_text())
+    pinned = handoff['files']
     for name, expected in pinned.items():
         if digest(ROOT / name) != expected:
             raise ValueError('Handoff file mismatch: ' + name)
@@ -145,6 +146,11 @@ def main():
                                     checkpoint_loaded=True, torchscript_loaded=True))
         del checkpoint, exported
 
+    training_snapshot = None
+    if handoff.get('training_snapshot'):
+        from tools.check_training_snapshot import verify
+        training_snapshot = verify(ROOT, handoff['training_snapshot'])
+
     if args.build_native:
         from tools.prepare_native_bundle import build
         native = build(ROOT / 'models/localization_mapping_20261015/temporal_native_candidate/portable',
@@ -187,7 +193,7 @@ def main():
         native_reference_rebuilt=args.build_native, implementation_tests_returncode=completed.returncode,
         python=sys.version, torch=torch.__version__, cuda_available=torch.cuda.is_available(),
         scope='Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.',
-        deployment_approved=False)
+        deployment_approved=False, training_snapshot=training_snapshot)
     (output / 'RESULTS.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))
 
