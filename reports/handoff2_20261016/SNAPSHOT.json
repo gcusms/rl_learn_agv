@@ -1,10 +1,10 @@
 {
-  "schema": "agv_handoff_snapshot_v17",
+  "schema": "agv_handoff_snapshot_v18",
   "branch": "handoff2",
-  "captured_at": "2026-10-16T12:49:16.277437+08:00",
+  "captured_at": "2026-10-16T13:28:02.560431+08:00",
   "source_commit": "4734789b35c0057e82f73c9ce183022983d702e3",
-  "previous_handoff_branch": "continue",
-  "previous_handoff_commit": "c4d4d41a7120ff9122859f7a0c4ed079cff1ef6a",
+  "previous_handoff_branch": "handoff2",
+  "previous_handoff_commit": "bb7561306b06add2170de45dc689a992e95e1517",
   "models": {
     "deployment": {
       "folder": "models/quality_recovery_20261014",
@@ -790,16 +790,16 @@
       },
       "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
     },
-    "latest_followup_partial": {
+    "latest_followup_first8": {
       "started": true,
-      "completed": false,
+      "completed": true,
       "expected_rows": 8,
-      "finished_rows": 5,
-      "safe": 5,
+      "finished_rows": 8,
+      "safe": 8,
       "collisions": 0,
       "timeouts": 0,
       "report": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json",
-      "report_sha256": "c25756e5e3eecf470060dfb04f7f0380cad92803b2086ed509d10f2f8d38578b",
+      "report_sha256": "5337e58be0f3616f1a1f19b18044910d8d809bdbc27d5753f9a47b3077b605d0",
       "row_path": [
         "rows"
       ],
@@ -808,21 +808,132 @@
         "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_00.npz": "1bfc62db3384e574bbd3614274c170cdbc5621425ec54ee0280798aea6e5d5a6",
         "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_01.npz": "f9fa39c403d2710ec71f6c9422bd297d3636f0cee51ada77bcd31b98bd4e43a6",
         "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_train_failure_w11_e7.npz": "a7fd529967ac78e09a46cbb0e5b23c08ec7a1a5ac89f7f6411a042b0b8a4f1b7",
-        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34"
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/motion15_motion_profile_015.npz": "84814addda7439cec200e7870c05778ccd84fc38c6ff86b128b88f517b392d4a",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual95_w11_training_stall_t95.npz": "51bc584573626566846e0ca25e75672427205fbecf3d0120b8e345c9799b82d9",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual90_w11_training_stall_t90.npz": "87187c83fc410a9eca271710280fb1c4fffc14062a3076b819b3939e7ac63df9"
       },
-      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_full18": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 18,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "full18_rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_00.npz": "1bfc62db3384e574bbd3614274c170cdbc5621425ec54ee0280798aea6e5d5a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_01.npz": "f9fa39c403d2710ec71f6c9422bd297d3636f0cee51ada77bcd31b98bd4e43a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_train_failure_w11_e7.npz": "a7fd529967ac78e09a46cbb0e5b23c08ec7a1a5ac89f7f6411a042b0b8a4f1b7",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/motion15_motion_profile_015.npz": "84814addda7439cec200e7870c05778ccd84fc38c6ff86b128b88f517b392d4a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_02.npz": "9232970aeea206e7f6c3ebc29b5c26963cec76321e6e8c45cbe4ff5a3629a0ee",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_03.npz": "2dd0dd3840ac3fb8af55fa581cbaf7018eb627b120e7a81d2d6091940a91998a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_motion_profile_000.npz": "2c693aaf419f1a43975a28cecead177912411c71acb71b04ab1fbdf97e28bee2",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_independent_dynamic_000.npz": "2f196d29395bf8e33da3ee1c827a9af335b96e1a84e64f7b7415168a54a261c1",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_independent_dynamic_001.npz": "d5acecf21c91e4d9f61d741d5d7d19f0ef46492cd1cde7b262fded66fba8cafe",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_00.npz": "7167b493fe3c613d06d4cc4a2cd238824c488a3d41f0333495d074ea65763ceb",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_05.npz": "ffefe91d8b3e8ae88ceb9aefcef8aeb340168c0b858d296d0c8c2d27655d6d24",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_12.npz": "038cb2ecb34a288ae27617b03a80943d7961d9f489b07c1c21e0bdd5fbca4fcf",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_17.npz": "055f85d395d82340fd7038f44f3e4187bd642f5d0e7d88aa3a9e74f935785523",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_24.npz": "bf96dc483dce6464d1c41c8113316a67b5144c144a461604859e75bbada77661",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_31.npz": "d43c7598ed1b07353f07848507cf09ec32cb80ef36b02711ece77434e24e6c2c",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_train_failure_stop_go_variation_0.npz": "255f31a470966e0d7ec6bf954f1ef2545517a33ffcfde07c2651877be825b4af",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_train_failure_stop_go_variation_1.npz": "1b132182720b79f71feed65e4604421a0aa01f11eda81324fe3b8b70362a874d"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_fresh12": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 8,
+      "collisions": 4,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "fresh12",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/regressed_fresh33_localization_nav_33.npz": "96b2dccbe0791cf93090fc85b23f24ab7bf9cd602136e156ef823343d429004e",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_00.npz": "22f12f68d9e3d508632da6f6ac458937a6befc2986e39de34372623d22652349",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_01.npz": "aea3eb697b17840a1f6e56ac4ea016af0cacee69bfd6e14353e7c9ef8ea89a37",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_02.npz": "cbc2f67cf102e0c633be8b0b61dc78f1257b8a88abfe8d44c999c8ba4c7db9c0",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_03.npz": "62f8226cd5f63a0cd089f90928f86aad0c12914ee3de2ab2c397b81d6a0bf142",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_04.npz": "33c9bf8e325a336cd70addbc72997dc83ae5f272991f3dab0d002ca144bddedd",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_05.npz": "9e7571eee9840a8946725b4fca0423d8f655e147476b9cfad0294fd3659f205a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_06.npz": "f9686f607d23ee33c70ab22ba06f26206974534802b48cdbdca17d9faac292d4",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_07.npz": "51c2d69a426f88f5a9b5fada3295083200c95bbf709973aa986d0b45a59bb09c",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_32.npz": "c8aaad491d553efad5123f1fb099dedb890ba852050cb50712f8dda02151a68f",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_36.npz": "88dacbe4afe92b4d7112e9006bc0acab407a64d8a1013bf13e6c4e0beb972c44",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_37.npz": "2cf6ea7e8cdf1634487dbac699086e074152d34f529d080c782443190283a4d1"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_original_prefixes2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "original_prefixes2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/original_prefixes2_rotation_stall_t20.npz": "d4601c092df6fdcea6658275e1fb5ed6210203e8bf2d2460216056044e628d4e",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/original_prefixes2_arc_stall_t20.npz": "307309e7163347401ed81c3e3aa32ad97ee4e49e96defc3e851b64ec3d363cf1"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_heading2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "heading2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/heading2_docking_dev_02.npz": "c8f5bd0b3b755796780665710de85924b0bd3e344d463923511ed5d887ebda0f",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/heading2_docking_dev_11.npz": "a062cbe3d47ed79a7e724012097d2948764ecab7e6b2011928450d4db8d41137"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
     }
   },
-  "source_capture": "reports/handoff2_20261016/CAPTURE.json",
+  "source_capture": "reports/handoff2_20261016/UPDATE_CAPTURE.json",
   "source_process_record": "reports/handoff2_20261016/SOURCE_PROCESS.json",
   "model_check": "reports/handoff2_20261016/MODEL_CHECK.json",
   "native_check": "reports/handoff2_20261016/NATIVE_SMOKE.json",
-  "latest_candidate_first8_finished": 5,
-  "latest_candidate_first8_pending": 3,
-  "latest_candidate_full18_finished": 4,
-  "latest_candidate_full18_pending": 14,
-  "latest_candidate_extra12_finished": 1,
-  "latest_candidate_extra12_pending": 11,
+  "latest_candidate_first8_finished": 8,
+  "latest_candidate_first8_pending": 0,
+  "latest_candidate_full18_finished": 18,
+  "latest_candidate_full18_pending": 0,
+  "latest_candidate_extra12_finished": 12,
+  "latest_candidate_extra12_pending": 0,
   "new_ppo_steps_since_continue": 0,
   "latest_additional_supervised_updates": 400,
   "ppo_training_running_at_capture": false,
@@ -835,16 +946,27 @@
     "actual95_extra12_safe": 8,
     "actual95_extra12_collisions": 4,
     "actual95_extra12_efficiency_gate": false,
-    "latest_frozen_safe": 5,
+    "latest_frozen_safe": 8,
     "repaired_task_seconds_before": 48.0,
     "repaired_task_seconds_after": 38.6,
-    "actual106_safe_recovery": false
+    "actual106_safe_recovery": false,
+    "latest_full18_safe": 18,
+    "latest_extra12_safe": 8,
+    "latest_extra12_collisions": 4,
+    "latest_original_prefixes_safe": 2,
+    "latest_heading_probes_safe": 2,
+    "latest_extra12_efficiency_vs_diagnostic": false,
+    "latest_extra12_efficiency_vs_direct_parent": true
   },
   "limitations": [
-    "Previously used development tasks, not unseen-map generalization.",
-    "Latest candidate has partial regression and must not replace deployment.",
-    "No actual106 failed probe was admitted as a positive example.",
-    "Raw record.zip, virtual environments, caches and platform .so are excluded.",
+    "Previously used development tasks and overlapping groups, not independent unseen-map generalization.",
+    "Four dynamic collisions and a diagnostic-parent efficiency failure remain; no deployment approval.",
+    "No actual106 failed probe or unverified early-yield state was admitted as a positive example.",
+    "Early-yield physical trial is running; fit and validation are queued, with no new model in this capture.",
+    "Raw record.zip, environments, caches and platform .so are excluded.",
     "Source processes and post-cutoff results do not migrate automatically."
-  ]
+  ],
+  "early_yield_fit_started_at_capture": false,
+  "new_ppo_steps_since_previous_capture": 0,
+  "early_yield_new_model_exists_in_snapshot": false
 }

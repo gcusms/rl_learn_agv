@@ -1,5 +1,5 @@
 {
-  "completed": false,
+  "completed": true,
   "rows": [
     {
       "case_id": "localization_nav_33",
@@ -192,10 +192,327 @@
       "trace_sha256": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
       "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz",
       "model_only_after_initialization": true
+    },
+    {
+      "case_id": "motion_profile_015",
+      "category": "original_release_stop_go",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 50.40000000000733,
+      "travel_m": 6.406049554703328,
+      "frames": 253,
+      "final_xy_error_m": 0.08414237841265969,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00421343793829452,
+      "localization_yaw_p95_rad": 0.0014425068274664273,
+      "stop_choices": 34,
+      "only_stop_frames": 31,
+      "stop_reasons": {
+        "None": 247,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 3,
+      "predictive_constraint_frames": 45,
+      "runtime_ms": {
+        "p95": 205.36131142871452,
+        "p99": 238.39283363427955,
+        "maximum": 289.63214199757203
+      },
+      "group": "motion15",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "84814addda7439cec200e7870c05778ccd84fc38c6ff86b128b88f517b392d4a",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/motion15_motion_profile_015.npz",
+      "model_only_after_initialization": true
+    },
+    {
+      "case_id": "w11_training_stall_t95",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 114.79999999996808,
+      "travel_m": 10.277240608290278,
+      "frames": 575,
+      "final_xy_error_m": 0.11399579776586649,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0046301695065347915,
+      "localization_yaw_p95_rad": 0.0013750217022925335,
+      "stop_choices": 68,
+      "only_stop_frames": 55,
+      "stop_reasons": {
+        "None": 572,
+        "laser_braking_footprint": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 13,
+      "predictive_constraint_frames": 83,
+      "runtime_ms": {
+        "p95": 157.1380799869075,
+        "p99": 181.29899016465058,
+        "maximum": 217.59721997659653
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.0,
+      "post_release_seconds": 19.79999999996808,
+      "model_controlled_frames": 100,
+      "post_release_wait_with_choices_frames": 2,
+      "post_release_only_stop_frames": 20,
+      "longest_post_release_wait_with_choices_s": 0.1999999999998181,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "group": "actual95",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "51bc584573626566846e0ca25e75672427205fbecf3d0120b8e345c9799b82d9",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual95_w11_training_stall_t95.npz",
+      "model_only_after_initialization": true
+    },
+    {
+      "case_id": "w11_training_stall_t90",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 110.39999999997208,
+      "travel_m": 10.141140378741188,
+      "frames": 553,
+      "final_xy_error_m": 0.09393691355948053,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00459213417667537,
+      "localization_yaw_p95_rad": 0.0014265870169715808,
+      "stop_choices": 66,
+      "only_stop_frames": 55,
+      "stop_reasons": {
+        "None": 552,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 11,
+      "predictive_constraint_frames": 84,
+      "runtime_ms": {
+        "p95": 155.9590012067929,
+        "p99": 181.69810375198728,
+        "maximum": 219.10945000126958
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 450,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 90.0,
+      "post_release_seconds": 20.39999999997208,
+      "model_controlled_frames": 103,
+      "post_release_wait_with_choices_frames": 0,
+      "post_release_only_stop_frames": 20,
+      "longest_post_release_wait_with_choices_s": 0.0,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "group": "actual90",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "87187c83fc410a9eca271710280fb1c4fffc14062a3076b819b3939e7ac63df9",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual90_w11_training_stall_t90.npz",
+      "model_only_after_initialization": true
     }
   ],
   "gates": {
-    "fresh33_per_case_parent_efficiency": true
+    "fresh33_per_case_parent_efficiency": true,
+    "normal4": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 4,
+      "common_successes": 4,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        23.26212897036617,
+        23.26212897036617
+      ],
+      "common_success_seconds": [
+        176.00000000001623,
+        176.00000000001623
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "normal5": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 5,
+      "common_successes": 5,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        29.638184171358073,
+        29.6681785250695
+      ],
+      "common_success_seconds": [
+        226.20000000002346,
+        226.40000000002357
+      ],
+      "total_travel_relative_change": 0.0010120172524068494,
+      "total_time_relative_change": 0.0008841732979667505,
+      "pairs": [
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": 0.0047042180103396,
+          "time_relative_change": 0.003984063745021471
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "actual95": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 1,
+      "common_successes": 1,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        10.277240608290278,
+        10.277240608290278
+      ],
+      "common_success_seconds": [
+        114.79999999996808,
+        114.79999999996808
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "w11_training_stall_t95",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "actual90": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 1,
+      "common_successes": 1,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        10.141140378741188,
+        10.141140378741188
+      ],
+      "common_success_seconds": [
+        110.39999999997208,
+        110.39999999997208
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "w11_training_stall_t90",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    }
   },
   "new_ppo_steps": 0,
   "new_optimizer_updates": 0,
@@ -205,10 +522,13 @@
   "goal_achieved": false,
   "deployment_approved": false,
   "resource": {
-    "seconds": 522.0346385589801,
-    "cpu_seconds": 182.797722415,
-    "average_cpu_cores": 0.35016397172339614,
-    "peak_rss_mib": 2349.95703125,
+    "seconds": 1165.1023427979671,
+    "cpu_seconds": 407.950527871,
+    "average_cpu_cores": 0.3501413677457003,
+    "peak_rss_mib": 2378.80859375,
     "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
-  }
+  },
+  "bounded_gates_passed": true,
+  "at": "2026-10-16T12:59:14.296652+08:00",
+  "reason": "Bounded gates completed; full development regression and unresolved actual106 remain required."
 }

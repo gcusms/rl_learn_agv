@@ -1,10 +1,10 @@
 # AGV 强化学习导航：换机交接
 
-交接分支：**[handoff2](https://github.com/gcusms/rl_learn_agv/tree/handoff2)**。冻结时间：**2026-10-16 12:49:16，北京时间**。本分支接续 `continue`，保存源码、定位算法、原部署与研究模型、优化器、示范数据、必要地图、精简实车记录，以及成功和失败的评估轨迹。
+交接分支：**[handoff2](https://github.com/gcusms/rl_learn_agv/tree/handoff2)**。最新冻结时间：**2026-10-16 13:28:02，北京时间**。本分支接续 `continue`，保存源码、定位算法、原部署与研究模型、优化器、示范数据、必要地图、精简实车记录，以及成功和失败的评估轨迹。
 
-**当前重点：让模型理解停车原因，并在确有安全运动机会时恢复导航。最新候选已改善一个绕行变慢的任务，但完整验收尚未完成；106 秒停滞仍未解决，原实车模型未替换。** 截止时没有 PPO 在训练，原电脑有一个低资源物理评估进程运行；这里只保存已完成结果，后台进程不会迁移。
+**当前重点：让模型理解停车原因，并在确有安全运动机会时恢复导航。最新候选完成首轮 8/8、常规 18/18 安全到达；额外动态场景仍为 8/12，4 次碰撞，106 秒停滞仍未解决，尚未通过部署验收。** 截止时没有新增 PPO 训练；原电脑正在进行一次提前让行的物理可行性试验，后续拟合和验证排队等待。其结果未进入本次快照，后台进程不会迁移。
 
-精确文件与模型哈希见 [交接快照](reports/handoff2_20261016/SNAPSHOT.json) 和 [文件清单](docs/handoff/FILES.json)。历史报告中的“当前”“运行中”“未上传”均只描述各自生成时间；本页与本次快照优先。
+精确文件与模型哈希见 [交接快照](reports/handoff2_20261016/SNAPSHOT.json)、[新增进度来源](reports/handoff2_20261016/UPDATE_CAPTURE.json) 和 [文件清单](docs/handoff/FILES.json)。历史报告中的“当前”“运行中”“未上传”均只描述各自生成时间；本页与本次快照优先。
 
 ## 1. 新电脑怎么接着做
 
@@ -49,7 +49,7 @@ python tools/prepare_native_bundle.py \
 | 原实车版 | `models/quality_recovery_20261014/policy_2000.zip`（相对仓库根目录） | 保留实车部署原文件 | 不能拿不同任务集历史成绩直接排名 |
 | 诊断父版 | `early_transfer_bc800_s231015/` | 常规 18/18；额外 8/12 | 额外 4 次碰撞，95/106 秒接管超时 |
 | actual95 父候选 | `actual95_transfer_bc400_s231016/` | 常规 **18/18**；90/95 秒恢复到达；额外等待 2.4 秒后到达；原恢复 2/2、方向探针 2/2 | 额外仍为 8/12；该组总时间增加 6.05%，效率门槛失败；106 秒仍超时 |
-| **最新研究候选** | **`recovery_followup_bc400_s231016/`** | 冻结时 **5/5 安全到达**：4 项正常任务＋1 项补训任务；该补训任务由 48.0 秒恢复至 38.6 秒 | 尚未完成预定 8 项，以及完整 18 项／额外 12 项回归；不是部署升级 |
+| **最新研究候选** | **`recovery_followup_bc400_s231016/`** | **首轮 8/8、常规 18/18**；90/95 秒恢复、原恢复历史 2/2、方向探针 2/2；补训任务由 48.0 秒恢复至 38.6 秒 | 额外仍为 **8/12、4 次碰撞**；该组相对诊断父版的路程增幅 **2.0113%**，略超 2% 门槛；106 秒未解决 |
 
 最新模型：`models/stop_feedback_20261015/recovery_followup_bc400_s231016/policy_bc.zip`。
 
@@ -61,38 +61,46 @@ SHA256：`dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212`。
 
 模型目录均包含检查点、`bc_portable/` 导出包、示范、优化器／随机状态、配置和来源。恢复检查点使用 `experiments.stop_recovery_policy.StopRecoveryPPO.load(..., device='cpu')`；配套包按 manifest 加载。已有两组独立 2k PPO 的 `policy.zip` 也保留；监督更新、评估和初始化帧均不算 PPO 步数。
 
-## 3. 换机后先验证，接着训练的条件
+## 3. 已完成什么，换机后接着做什么
 
-冻结记录：新候选预定 8 项已完成 5 项，见 [已完成结果](reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json)。剩余为 `motion_profile_015`、95 秒接管和 90 秒接管；原机截止后的结果不会自动进入此分支。先核实原机是否已有完成结果，避免重复算成新实验。
+冻结记录：[首轮 8 项](reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json) 和 [后续完整回归](reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json) 均已完成。常规 18 项复用首轮中的 5 项，额外 12 项复用首轮中的 1 项，不能把重叠任务算成独立重复成功。
 
-在第 1 节环境中，先补一项正常导航：
+| 检查 | 最新结果 | 与直接父候选对比 |
+|---|---|---|
+| 常规 18 项 | 18/18 安全到达，安全及效率门槛通过 | 总时间 +0.246%，总路程 +0.443% |
+| 额外动态 12 项 | 8 到达、4 碰撞；原碰撞项未解决 | 共同成功任务总时间 -6.304%，总路程 +0.216%；相对更早诊断父版的路程门槛仍失败 |
+| 95 秒恢复 | 到达，114.8 秒／10.277 米；有可行动作时等待 2 帧 | 保留此前修复 |
+| 90 秒恢复 | 到达，110.4 秒／约 10.141 米 | 保留此前修复 |
+| 原恢复历史／方向探针 | 2/2／2/2 安全到达 | 保留对应旧任务能力，探针数量不足以代表全面停靠验收 |
+
+先完成第 1 节的文件和模型检查。若需验证新电脑的完整物理环境，可串行复现一项已完成的正常任务；这属于环境复现，不是新的泛化成绩：
 
 ```bash
 nice -n 19 python -m experiments.evaluate_docking_navigation \
   --candidate training/runs/handoff2_native \
   --candidate-name recovery_followup_bc400 \
-  --cases reports/handoff2_20261016/pending_gate_cases.json \
+  --cases reports/handoff2_20261016/smoke_cases.json \
   --output training/runs/handoff2_gate --cpu-cores 0.35
 
 python tools/check_handoff_gate.py \
   --normal-result training/runs/handoff2_gate/RESULTS.json
 ```
 
-门槛通过后，再独立检查 95/90 秒接管；与上一条物理任务串行：
+接下来优先处理额外动态场景 `01/02/04/05`。237 帧传感器回放已复现原始观测、动作和执行，并发现“继续运动预测有碰撞、此处停车预测无碰撞”的提前让行信号；这些仅是待验证假设，不能直接作为正确停车标签。两份候选在信号处仍偏向前进，恢复分支实际处于启用状态。见 [预测回放](reports/stop_feedback_20261015/early_yield_replay_20261016/README.md)、[策略概率检查](reports/stop_feedback_20261015/early_yield_policy_audit_20261016/RESULTS.json)。
 
-```bash
-nice -n 19 python -m experiments.evaluate_feedback_recovery \
-  --bundle training/runs/handoff2_native \
-  --specifications reports/handoff2_20261016/pending_recovery_specifications.json \
-  --label recovery_followup_bc400 \
-  --output training/runs/handoff2_recovery --cpu-cores 0.35
-```
+原机已按下列顺序排队，截止后结果需另外同步；新电脑不要把排队视为完成：
 
-之后补齐常规剩余 13 项、额外条件剩余 11 项、原恢复历史 2 项和方向探针 2 项，并保留 2.4 秒等待对照。清单和配对依据见 [NEXT_STEPS.json](reports/handoff2_20261016/NEXT_STEPS.json)。每次用新输出目录，按 `case_id` 合并，不重复计数；成功、碰撞、超时、假到达、路径、耗时分别统计。
+1. **验证完整提前让行轨迹。** 原 `actual95` actor 配合离线教师，仅允许根据当时雷达跟踪、里程计、反馈速度和动作掩码提前选择停车；连续 3 帧确认可行后交还模型，不强制运动。不向教师提供障碍物真值或未来轨迹。研究预测时域为 5 秒，部署保护参数保持原样。
+2. **只对合格完整轨迹补训。** 必须安全到达、实际发生让行、恢复模型控制、具有至少 10 帧受支持的恢复运动，独立采样车体间距不低于 4 cm。失败、超时、仅停车不恢复均不进入正示范。合格后最多追加 400 次监督更新，保留旧 2,505 条标签及 57 条必要停车；新增 PPO 仍为 0。
+3. **新模型独立接管验证。** 先验证训练来源任务，再验证未参与拟合的动态项 02/04/05，以及旧正常、恢复任务。不得带教师获得成功后宣称模型已学会；通过小门槛后仍需完整回归。
+
+计划及截止状态见 [NEXT_STEPS.json](reports/handoff2_20261016/NEXT_STEPS.json) 和 [原机进程记录](reports/handoff2_20261016/SOURCE_PROCESS.json)。三段原型脚本保存在 `reports/stop_feedback_20261015/early_yield_{physical,fit,validation}_20261016/`。脚本含原机 systemd 依赖、固定输出路径和 manifest 哈希，**不可在新电脑原目录直接重跑**。迁移时在新目录建立可配置入口，用归档结果验收替代原机服务等待、使用新编译的 native 包，并重新记录输入哈希；保持原方案及门槛。历史 `pending_*`、`remaining_*` 文件属于 12:49 的旧交接计划，本页和最新 `NEXT_STEPS.json` 优先。
+
+另需为最新候选补充“95 秒后额外等待 2.4 秒”的配对回归；现有成功记录属于其父候选。所有实验使用新输出目录，按 `case_id` 合并，不重复计数；成功、碰撞、超时、假到达、路径、耗时分别统计。
 
 106 秒问题不能靠“动作合法”就宣称解决：传感器／记忆回放、三组物理试验及一次阶段转向试验已归档，均未得到完整安全恢复，不作为正示范。当前雷达和历史记忆都可能否决动作，恢复分支实际已启用。需要验证更早避免进入余量过小状态，或找到相同约束下完整安全恢复的证据；不能清空盲区记忆、缩小车体、降低 4 cm 余量或强制前进换取成功率。
 
-只有安全与效率回归通过，再设计小规模、单因素 PPO。入口是 `python -m experiments.train_prefix_recovery --help`。已保存网络／Adam／RNG，但当前 CLI 不支持任意最终检查点连同半回合物理状态、扫描历史无缝恢复；`--reference-bc` 也不是通用续训开关。不要在历史 `reports/**/run.py` 原目录重跑，它们固定输出路径和原机服务依赖。
+只有安全与效率回归通过，再设计小规模、单因素 PPO。入口是 `python -m experiments.train_prefix_recovery --help`。已保存网络／Adam／RNG，但当前 CLI 不支持任意最终检查点连同半回合物理状态、扫描历史无缝恢复；`--reference-bc` 也不是通用续训开关。需要从已保存的模型状态建立新实验，不能直接追加步数并假定定位器、路由器也在更新。
 
 ## 4. 代码、定位与数据位置
 

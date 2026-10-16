@@ -1,4 +1,5 @@
 {
+  "captured_at": "2026-10-16T13:28:02.560431+08:00",
   "latest_model": {
     "folder": "models/stop_feedback_20261015/recovery_followup_bc400_s231016",
     "checkpoint": "policy_bc.zip",
@@ -7,90 +8,85 @@
     "additional_ppo_steps": 0,
     "approved_as_new_deployment": false
   },
-  "latest_evaluation_completed": false,
-  "frozen_first8_finished": 5,
-  "frozen_first8_pending": 3,
+  "latest_evaluation_completed": true,
+  "frozen_first8_finished": 8,
+  "frozen_first8_pending": 0,
+  "full18_finished": 18,
+  "full18_pending": 0,
+  "extra12_finished": 12,
+  "extra12_safe": 8,
+  "extra12_collisions": 4,
+  "original_prefixes_finished": 2,
+  "heading_probes_finished": 2,
   "ordered": [
     {
       "step": 1,
-      "kind": "normal_navigation_gate",
-      "count": 1,
-      "cases": "reports/handoff2_20261016/pending_gate_cases.json",
-      "merge_with": "reports/handoff2_20261016/finished_normal4_rows.json",
-      "check": "python tools/check_handoff_gate.py --normal-result <new-result>/RESULTS.json"
+      "kind": "portable_environment_verification",
+      "command": "python3 tools/check_transfer.py; python tools/check_handoff_models.py",
+      "no_physics_or_optimizer": true
     },
     {
       "step": 2,
-      "kind": "recovery95_then90",
-      "count": 2,
-      "specifications": "reports/handoff2_20261016/pending_recovery_specifications.json",
-      "compare_with": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
-      "baseline_rows": [
-        [
-          "actual95_learned_validation_20261016/RESULTS.json",
-          "recovered_rows"
-        ],
-        [
-          "actual95_broad_regression_20261016/RESULTS.json",
-          "groups",
-          "w11_t90",
-          "rows"
-        ]
-      ]
+      "kind": "optional_single_case_environment_reproduction",
+      "cases": "reports/handoff2_20261016/smoke_cases.json",
+      "not_new_generalization_or_independent_success": true
     },
     {
       "step": 3,
-      "kind": "remaining_full_navigation",
-      "count": 13,
-      "cases": "reports/handoff2_20261016/remaining_full13_cases.json",
-      "merge_with": [
-        "reports/handoff2_20261016/finished_normal4_rows.json",
-        "new gate result motion_profile_015"
-      ],
-      "expected_unique_total": 18,
-      "parent_report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
-      "parent_row_path": [
-        "full18_rows"
-      ]
+      "kind": "early_yield_complete_physical_source",
+      "status_at_capture": "running_on_original_machine_not_completed_in_this_snapshot",
+      "report_folder": "reports/stop_feedback_20261015/early_yield_physical_20261016",
+      "maximum_trials": 1,
+      "source_actor": "actual95_transfer_bc400_s231016",
+      "teacher_may_only_select_legal_stop": true,
+      "teacher_uses_current_sensor_tracking_not_future_or_truth": true
     },
     {
       "step": 4,
-      "kind": "remaining_extra_conditions",
-      "count": 11,
-      "cases": "reports/handoff2_20261016/remaining_fresh11_cases.json",
-      "merge_with": "reports/handoff2_20261016/finished_fresh1_rows.json",
-      "expected_unique_total": 12,
-      "parent_report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
-      "parent_row_path": [
-        "groups",
-        "fresh12",
-        "rows"
-      ]
+      "kind": "conditional_supervised_fit",
+      "status_at_capture": "queued_not_started",
+      "report_folder": "reports/stop_feedback_20261015/early_yield_fit_20261016",
+      "parent": "recovery_followup_bc400_s231016",
+      "maximum_supervised_updates": 400,
+      "complete_safe_source_required": true,
+      "min_sampled_post_yield_clearance_m": 0.04,
+      "min_supported_model_motion_frames_after_release": 10,
+      "preserve_old_examples": 2505,
+      "preserve_old_stop_examples": 57,
+      "new_ppo_steps": 0
     },
     {
       "step": 5,
-      "kind": "original_recovery_history",
-      "count": 2,
-      "specifications": "reports/stop_feedback_20261015/w11_recovery_bc800_prefixes_20261016/specifications.json"
+      "kind": "conditional_learned_model_only_validation",
+      "status_at_capture": "queued_not_started",
+      "report_folder": "reports/stop_feedback_20261015/early_yield_validation_20261016",
+      "maximum_cases": 8,
+      "runtime_teacher": false,
+      "complete_regression_still_required": true
     },
     {
       "step": 6,
-      "kind": "heading_probes",
-      "count": 2,
-      "cases": "reports/stop_feedback_20261015/heading_probe_cases.json"
+      "kind": "retained_additional_wait_2_4s",
+      "parent_protocol": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/PLAN.json",
+      "note": "Existing successful result is for the actual95 parent, not dd29 followup. Use a fresh output and portable runner."
     },
     {
       "step": 7,
-      "kind": "actual95_additional_wait_2_4s",
-      "protocol": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/PLAN.json",
-      "note": "Define a new portable experiment/output for this candidate. Historical run.py pins old model/services; never rerun it in place."
+      "kind": "consider_single_factor_ppo_only_after_evidence_and_regression",
+      "currently_admitted": false
     }
   ],
+  "portability": {
+    "background_processes_migrate": false,
+    "archived_run_scripts_depend_on_original_services_and_fixed_outputs": true,
+    "use_new_output_native_bundle_and_fresh_input_hashes": true,
+    "archived_pending_files_from_1249_are_superseded": true
+  },
   "unresolved": [
-    "actual106 complete safe recovery or prevention at the same real-car constraints",
-    "four original extra-condition collisions",
-    "complete new-model safety/efficiency regression",
-    "unseen maps, real sensor-time calibration and target-board P95/P99"
+    "four dynamic-condition collisions",
+    "actual106 complete safe recovery or prevention",
+    "extra12 path increase 2.011285% vs diagnostic parent exceeds 2% gate",
+    "unseen maps, real time/sensor calibration and target-board P95/P99"
   ],
   "frozen_components": [
     "base_actor",
@@ -109,5 +105,5 @@
   "new_ppo_admitted": false,
   "deployment_approved": false,
   "goal_achieved": false,
-  "resume_limitation": "Models/Adam/RNG/data saved; CLI does not restore an arbitrary half-episode physics/history state."
+  "resume_limitation": "Model/Adam/RNG/data saved; CLI does not restore an arbitrary half-episode physics/history state."
 }
