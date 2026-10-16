@@ -1,0 +1,14 @@
+{
+  "horizon_s": 5.0,
+  "period_s": 0.2,
+  "margin_m": 0.04,
+  "velocity_uncertainty_floor_m_s": 0.025,
+  "adaptive_track_uncertainty": true,
+  "finite_measured_response": true,
+  "trigger": "nominal moving action predicts contact while stopping predicts no contact",
+  "release": "three consecutive valid frames with a supported moving track, legal forward or nominal motion, and no forecast contact",
+  "unknown_prediction_releases_yield": false,
+  "teacher_override_action": 0,
+  "no_forced_motion_on_release": true,
+  "no_absolute_episode_time_trigger": true
+}

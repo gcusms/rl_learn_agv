@@ -29,13 +29,13 @@ def main():
     base = ROOT / 'models/stop_feedback_20261015'
     with np.load(base / 'early_transfer_bc800_s231015/demonstrations.npz', allow_pickle=False) as z:
         original = {key:z[key].copy() for key in ('observations', 'masks', 'choices')}
-    with np.load(base / 'actual95_transfer_bc400_s231016/demonstrations.npz', allow_pickle=False) as z:
-        previous = {key:z[key].copy() for key in ('observations', 'masks', 'choices')}
     rows = []
-    for folder, count, correct_expected in (
-        ('actual95_transfer_bc400_s231016', 2421, 2421),
-        ('actual95_control_bc400_s231016', 2355, 2354),
-        ('recovery_followup_bc400_s231016', 2505, 2505),
+    for folder, count, correct_expected, parent in (
+        ('actual95_transfer_bc400_s231016', 2421, 2421, None),
+        ('actual95_control_bc400_s231016', 2355, 2354, None),
+        ('recovery_followup_bc400_s231016', 2505, 2505, 'actual95_transfer_bc400_s231016'),
+        ('early_yield_bc400_s231016', 2638, 2638, 'recovery_followup_bc400_s231016'),
+        ('early_yield_remaining_bc600_s231016', 2915, 2915, 'early_yield_bc400_s231016'),
     ):
         path = base / folder
         bundle = path / 'bc_portable'
@@ -62,7 +62,10 @@ def main():
             obs, masks, labels = [z[key].copy() for key in ('observations', 'masks', 'choices')]
         if obs.shape != (count, 436) or masks.shape != (count, 12):
             raise ValueError('Dataset dimensions changed')
-        expected_data = previous if count == 2505 else original
+        expected_data = original
+        if parent is not None:
+            with np.load(base / parent / 'demonstrations.npz', allow_pickle=False) as z:
+                expected_data = {key: z[key].copy() for key in ('observations', 'masks', 'choices')}
         retained_count = len(expected_data['choices'])
         for key, value in zip(('observations', 'masks', 'choices'), (obs, masks, labels)):
             np.testing.assert_array_equal(value[:retained_count], expected_data[key])

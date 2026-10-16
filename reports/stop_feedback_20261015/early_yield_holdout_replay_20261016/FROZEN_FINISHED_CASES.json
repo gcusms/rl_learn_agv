@@ -1,0 +1,86 @@
+{
+  "completed": true,
+  "scope": "Exactly two finished collision episodes, not the entire in-progress evaluation",
+  "source_evaluation_completed_at_capture": false,
+  "source_report_sha256": "7d9b7d4f08c1e95dc938db301e8c69717d03e1bbd4344941ea199a44aa76e531",
+  "at": "2026-10-16T13:56:24.957845+08:00",
+  "rows": [
+    {
+      "case_id": "early_yield_sensor_holdout_02_0",
+      "category": "unfitted_sensor_seed_same_development_map",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.200000000000195,
+      "travel_m": 1.4602467145695326,
+      "frames": 51,
+      "final_xy_error_m": 3.267854762428087,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0061945405935516906,
+      "localization_yaw_p95_rad": 0.0010914810831326172,
+      "stop_choices": 14,
+      "only_stop_frames": 14,
+      "stop_reasons": {
+        "None": 44,
+        "scan_unavailable": 3,
+        "laser_braking_footprint": 4
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 16,
+      "runtime_ms": {
+        "p95": 144.69510249909945,
+        "p99": 160.07158398861066,
+        "maximum": 161.2903269706294
+      },
+      "group": "heldout_sensor_conditions",
+      "variant": "early_yield_remaining_bc600",
+      "trace_path": "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_0_early_yield_remaining_bc600.npz",
+      "trace_sha256": "6b4e42c46326966a7506bf10eb1bf08470925e5077f2d98e078d2b46a52aa079",
+      "learned_model_only_after_initialization": true
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_02_1",
+      "category": "unfitted_sensor_seed_same_development_map",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 1,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 10.400000000000226,
+      "travel_m": 1.4029571086469705,
+      "frames": 52,
+      "final_xy_error_m": 3.295372124577153,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005086062004582162,
+      "localization_yaw_p95_rad": 0.001232693446516575,
+      "stop_choices": 14,
+      "only_stop_frames": 13,
+      "stop_reasons": {
+        "None": 40,
+        "scan_unavailable": 3,
+        "learned_route_incomplete": 6,
+        "laser_braking_footprint": 3
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 16,
+      "runtime_ms": {
+        "p95": 124.42870258237234,
+        "p99": 136.0331434995169,
+        "maximum": 144.38214898109436
+      },
+      "group": "heldout_sensor_conditions",
+      "variant": "early_yield_remaining_bc600",
+      "trace_path": "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_1_early_yield_remaining_bc600.npz",
+      "trace_sha256": "60da91783b92d511091d77579824b67a078b5dcf43084a8c6eba4ad67d4f8bbf",
+      "learned_model_only_after_initialization": true
+    }
+  ]
+}

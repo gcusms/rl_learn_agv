@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-16T13:38:05.039295+08:00",
+  "hypothesis": "Additional complete-safe early-yield-and-resume data can cover remaining current-model collision conditions without erasing legal recovery and necessary waiting.",
+  "parent_checkpoint": "models/stop_feedback_20261015/early_yield_bc400_s231016/policy_bc.zip",
+  "parent_sha256": "1b55a06047a25f45e4290ea294ca8bf8fe9310c38d1e5517da4ad5765a43ffd2",
+  "source_trials": [
+    "early_yield_condition02_20261016",
+    "early_yield_condition05_20261016"
+  ],
+  "unchanged_teacher_forecast_horizon_s": 5.0,
+  "unchanged_release_confirmations": 3,
+  "maximum_source_physical_trials": 2,
+  "maximum_supervised_updates": 600,
+  "source_selection": "Each source independently requires complete safe physical arrival, actual legal-stop yield and return to model, sampled post-yield gap>=0.04m, >=10 supported model motion frames after release, and both stop/move labels. Failed or partial sources never positive.",
+  "old_examples_required": 2638,
+  "old_stop_labels_required": 95,
+  "learned_validation_order": [
+    "original_conditions_01_02_04_05",
+    "heldout_sensor_conditions_paired_with_1b55",
+    "retained_fresh33",
+    "normal_w11",
+    "actual95",
+    "actual90"
+  ],
+  "original_conditions_all_safe_required_before_holdout_expansion": true,
+  "heldout_cases_sha256": "daf24c39f76e68a5cc207889912f7fe0c25364e3e46573e4914e896dfa60adfc",
+  "heldout_four_cases_never_used_for_positive_fitting": true,
+  "heldout_maps_are_previously_used_development_maps": true,
+  "body_margin_masks_blind_memory_deadlines_and_action_set_unchanged": true,
+  "no_runtime_teacher_or_forced_motion_in_learned_validation": true,
+  "full18_extra12_heading_wait_regressions_required_later": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "new_ppo_steps": 0,
+  "physical_jobs": 1,
+  "cpu_soft_cores": 0.35,
+  "cpu_hard_quota": "50%",
+  "nice": 19,
+  "memory_max": "4GiB",
+  "threads": 1
+}

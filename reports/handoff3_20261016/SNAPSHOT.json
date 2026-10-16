@@ -1,0 +1,1103 @@
+{
+  "schema": "agv_handoff_snapshot_v19",
+  "branch": "handoff3",
+  "captured_at": "2026-10-16T14:06:06.818631+08:00",
+  "source_commit": "4734789b35c0057e82f73c9ce183022983d702e3",
+  "previous_handoff_branch": "handoff2",
+  "previous_handoff_commit": "e971855786b1689206d156e2391384a3bc335556",
+  "source_capture": "reports/handoff3_20261016/UPDATE_CAPTURE.json",
+  "source_process_record": "reports/handoff3_20261016/SOURCE_PROCESS.json",
+  "model_check": "reports/handoff3_20261016/MODEL_CHECK.json",
+  "next_steps": "docs/handoff/NEXT_STEPS.md",
+  "models": {
+    "deployment": {
+      "folder": "models/quality_recovery_20261014",
+      "checkpoint": "policy_2000.zip",
+      "sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "reference_bc": {
+      "folder": "models/stop_feedback_20261015/w11_recovery_bc800_s231015",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "control_2k": {
+      "folder": "models/stop_feedback_20261015/w11_control2000_s231015",
+      "checkpoint": "policy.zip",
+      "sha256": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+      "additional_ppo_steps": 2000,
+      "approved_as_new_deployment": false
+    },
+    "retained_2k": {
+      "folder": "models/stop_feedback_20261015/w11_retained2000_s231015",
+      "checkpoint": "policy.zip",
+      "sha256": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+      "additional_ppo_steps": 2000,
+      "approved_as_new_deployment": false
+    },
+    "diagnostic_bc": {
+      "folder": "models/stop_feedback_20261015/early_transfer_bc800_s231015",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "8b597401b2dc9a089c5921036639a78e9ca6fa430559b0a144127f9220a8f0bd",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "latest_actual95": {
+      "folder": "models/stop_feedback_20261015/actual95_transfer_bc400_s231016",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+      "additional_supervised_updates": 400,
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "matched_control": {
+      "folder": "models/stop_feedback_20261015/actual95_control_bc400_s231016",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "fef34d6d3ec0170c83935319fae7080227f10a9e06396b71f334a663a4d922cc",
+      "additional_supervised_updates": 400,
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "latest_followup": {
+      "folder": "models/stop_feedback_20261015/recovery_followup_bc400_s231016",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212",
+      "additional_supervised_updates": 400,
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "early_yield_first": {
+      "folder": "models/stop_feedback_20261015/early_yield_bc400_s231016",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "1b55a06047a25f45e4290ea294ca8bf8fe9310c38d1e5517da4ad5765a43ffd2",
+      "additional_supervised_updates": 400,
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "latest_research_candidate": {
+      "folder": "models/stop_feedback_20261015/early_yield_remaining_bc600_s231016",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "d736f543da3b672b20b63b61b1943b114851cd66d951a5534658bee10ea0c143",
+      "additional_supervised_updates": 600,
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    }
+  },
+  "validation": {
+    "w11_control2000_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 17,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/RESULTS.json",
+      "report_sha256": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_015_control2000.npz": "7848d48569a7cb13110a7df217987db49575e8d81fa9abfe1a3147edfd4950fb",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_00_control2000.npz": "26abc1fe57e3bc5bbada6d51af9eb8c6e89c488e4f9dfc2ff81fc9a211604fe2",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_02_control2000.npz": "b34f3d64621f103700cc086c181222b2e4a55389d461e703079cae07daf8699e",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_03_control2000.npz": "a7d3aa60cff7d41cd9490d6fa121b2a2e5beb4c48cd7ce8cfd9a5e50eacd1b52",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_01_control2000.npz": "77c922cf4792ca055a21ecc56512c65711e18035b6cc4ef4d24d08993453ced3",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_w11_e7_control2000.npz": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_002_control2000.npz": "dfb653278936e316417be199db647071935c0fe8f612abbebcdd084910aa4f33",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_000_control2000.npz": "1e34fd157f6e2502faf73f73bbbcb5526b53a2488ae40610d9af19210f799954",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_000_control2000.npz": "0a1072cef321cb8399e9ad5fbafdba23b2fa4a1eeb6e81adbcdbadf157afb06f",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_001_control2000.npz": "e06df246f1d283ff0f57d983acd6be5068993bedf2f1d81395c6c2908554ed1c",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_00_control2000.npz": "82c8a92d332d0f9e54fea977b8f1b2ca45a4b6e1f58382f83b4adf9960463170",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_05_control2000.npz": "3ffbd342d4d1c6cc715899463976a2e573de950cb141598b518cb0c42b48fb80",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_12_control2000.npz": "bf4ae1fb4ab2882552a466322fe728d9adfacbd989bf64e0ebeb6b516144ea3c",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_17_control2000.npz": "5a48a41b06b70672c16c7e0bb37c1abd56df12fcd80b911af980abcf81a04149",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_24_control2000.npz": "00b494450cf955562c6ab35aafd8344313f27f53d2a75f6db8df017292e25a6e",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_31_control2000.npz": "b07f9b62061939e6462a1e74e392ea09594020a2b17fc0fecfdc4c7081bbd645",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_0_control2000.npz": "cc0664702365d190a004e18739bbe9203b2a7abf55dc695b8e0125618ad6c181",
+        "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_1_control2000.npz": "8c67cf49c816620594d5cdf8b39cdc3235b222a12e734787e959bbda822514a9"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_control2000_prefixes_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/RESULTS.json",
+      "report_sha256": "3ae82ac230fb1a47955396eeadca27c770020d92cfce856b10097afbd7bc5ddb",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/rotation_stall_t20.npz": "97b7c355e6a2de486bc757201782ed2eeedc5c6354fb75135c6b38790a4059a8",
+        "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/arc_stall_t20.npz": "c5634c110cba7bce74299fad6ea5f39a129d41766579f0caef049bde3ab09a96"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_control2000_w11_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "report": "reports/stop_feedback_20261015/w11_control2000_w11_20261016/RESULTS.json",
+      "report_sha256": "d1ec833f15f37de3b66db20feff27003644d0f7e4032a7c3f16a8c8f6924f99d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t90.npz": "7b5859908c3de682b9365389dcba59872b746442c83bce4823ca140be3d81fc4",
+        "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t95.npz": "8c3c562494455296cdad0f946bb739cea974bfd43bfb366b2d0a93658b3bcf73",
+        "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t106.npz": "bf67e6ad49f708c810218395202f268d4cfd9eb6926404dbb8a0899aae7d5931"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_control2000_fresh_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 7,
+      "collisions": 4,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/RESULTS.json",
+      "report_sha256": "cdc25448677647bff4e5f99e8b1413c20179fc1f2da5fbc0435dc457b64e2160",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_00_control2000.npz": "8ad5e6744c055e7981c32b58bdcd54ceeebfda3d6127ae1a853e53601202febb",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_01_control2000.npz": "3cf9a44797ad4012ca0ec5dfd90ce66e974b2530a48a7226a2d5e9a1ddf895f9",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_02_control2000.npz": "ceb22f4c0bacacdd48ca3d9d5582dda367a8122467a6d98e99add1cad78c1e7c",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_03_control2000.npz": "a8967d5d0859fa6471266d6c0c9c9c89e14ef98d27d4efceb8a37597f90a9c88",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_04_control2000.npz": "aa5ee1c050c9052786a045eb03938178194871919023cf79f0e0c9cc6c419595",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_05_control2000.npz": "8efc8f48f1ee31f5f1bf61e7374fdc783318d829811cf5896a13e1c64a277d6e",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_06_control2000.npz": "1cb737490d9f0df5700d64033e5df7f91c49b748fe200848c79fd80aa08acc63",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_07_control2000.npz": "2247fe6e2d5b43342d9a089805d054ced75f0ae78cead8390977ab4918e1756b",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_32_control2000.npz": "896322fa6b89d8d44837ceec8d45d5d2614e2cc83d1d8e2c1a8e74d17eb9ba33",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_33_control2000.npz": "9836dda3dda99406eecb5f89dea2cce0a614524406127b47859b4eafa2392830",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_36_control2000.npz": "2d1bee8401a9c71e4494296d96e6de858dd2ca2369b1542e79edda6a6b605cd6",
+        "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_37_control2000.npz": "62d0b0b81d5dc0a325d5a8ffbadb00accbe8bfd42084d91edb708087ff3546d7"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_retained2000_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 16,
+      "collisions": 1,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/RESULTS.json",
+      "report_sha256": "599f20bf2dad7bf4bbd58d64cfbb976d07ae4d4f84f0042317c2d1fb8296e561",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_015_retained2000.npz": "2a89b9440e41824ba690a51ab6db62c0c5542ce52f30c771c1faf5b2921524b1",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_00_retained2000.npz": "e340c58a112009a51aa0ca99322bc30a7494caf197baeb8d3cd06f03646943f3",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_02_retained2000.npz": "635d6a27a9ef43667163e3541243b9d57e9652e027e205cdf12b29b140df953e",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_03_retained2000.npz": "c2ec4d5f4f91c823e7acdb39819c131071b7d9100eabf211b2d53ef707dbf915",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_01_retained2000.npz": "0b2882cfc0fd5d5fc1d4b89e64ef4131ee13c5ef720a73d56cbd67a3c6b751c9",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_w11_e7_retained2000.npz": "656e023edc0ea0193b4516a80f153b5f619cb244a28670e74edd36ad76d54e0e",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_002_retained2000.npz": "94e2f76788be0965f831e007bfca62bbf5b151542efa667adf31360e387236d4",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_000_retained2000.npz": "5db027bcb8da8f2c55396ff2176c444ad831a18c7443c2afa9fb85e9ae938dd0",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/independent_dynamic_000_retained2000.npz": "75c3431b223b45de858458db7f827eb8c403737740c64cce08675fedfff05bdd",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/independent_dynamic_001_retained2000.npz": "cf75837f016de1c341269b1e4d38244ba9e2603587e7ff8d2436ddefa45c02fa",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_00_retained2000.npz": "7fbe8ae1f6a1f6365684efeb6b7a93464bb3fab9c79ce03ad5c100ab853d0fcc",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_05_retained2000.npz": "4c513b5adfd594cad8efe08c2f197556686bd5e06cbd9c993871f27bb3634ad7",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_12_retained2000.npz": "658ab04b66d30d8b49f6dafac99151ab0b862edc37502fb45feb07b8f9107b3f",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_17_retained2000.npz": "39b6088dca82ec8b33dcda311bfa3db634ac8a8998e8ed2d8509d8ad13c07fb1",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_24_retained2000.npz": "c22dd5a5d68ef8e45fab46bf84e72e565b3a23a03606cf4bd3e52b561596fea3",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_31_retained2000.npz": "e8c258fab5c567506be8d249c2a5ab991e1d18267b2d3620b59f31d73615297c",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_stop_go_variation_0_retained2000.npz": "377374d8532ba8c3b8c3bb6bf1941d219d673173f8906f4257221a2c56cdb929",
+        "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_stop_go_variation_1_retained2000.npz": "ece23d2af454c45b110282aa40471acab8fe6715dc3ad9ee60ba59d43b5d6b48"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_retained2000_prefixes_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/w11_retained2000_prefixes_20261016/RESULTS.json",
+      "report_sha256": "13722610eaf99866808ca9be4f9cf50e86924cbf184afb7744b04670a6aaef3d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_retained2000_prefixes_20261016/rotation_stall_t20.npz": "fab4756eaf289d291d2426227d774695fa82557932f40b99f90d34fe046764c5",
+        "reports/stop_feedback_20261015/w11_retained2000_prefixes_20261016/arc_stall_t20.npz": "790a6417fc12da228da604a984133879cf6bbf398cec198fa1ba1de39eb034d5"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_retained2000_w11_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 2,
+      "report": "reports/stop_feedback_20261015/w11_retained2000_w11_20261016/RESULTS.json",
+      "report_sha256": "0d6cbb9dd0d3363a05503ddf2bfa2c5b2a583916274e7e8e6c425756fe105084",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_retained2000_w11_20261016/w11_training_stall_t90.npz": "94ba25230a5ac95f60fd80a909808f45ad6d5521a9271d11489b510dff489cbf",
+        "reports/stop_feedback_20261015/w11_retained2000_w11_20261016/w11_training_stall_t95.npz": "47f1a1bdb87e310788e34e0e1c826eb3931750dcff703d6789446a6837a77d88",
+        "reports/stop_feedback_20261015/w11_retained2000_w11_20261016/w11_training_stall_t106.npz": "37e0617c0b22e87f0348b1a370e4e7912a6e3ce9dc6d0fa641ff42e6306fb816"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "w11_retained2000_fresh_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 11,
+      "collisions": 1,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/RESULTS.json",
+      "report_sha256": "cd72429dbfe3b517947334f950a2f57be580ba2559aa65dcae235627cc662ea4",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_00_retained2000.npz": "5aa9839064b8c84f5bf73138ef342e142b2008b0a8477f568f740e9a0269f05b",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_01_retained2000.npz": "db2298eb9311891d1f80465d09d04007031262926eef5c6112c88335fe1d6446",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_02_retained2000.npz": "8434648f5b387f88fef369a08a0f163cdbfdbeefd6a855e20bc9f3166f1fed94",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_03_retained2000.npz": "b92eafbc83562489648fa37c58b339dd8ca769801fba8dd5a6fd06c4fb6978e0",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_04_retained2000.npz": "185dffbf5680f6f0aad74c14738d7aa28ba190a7a1c5240df89ff2e48fb92c25",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_05_retained2000.npz": "d2c263f2a01e7990f40585c167a3f84d127b7bf11302bc32cacc9b5aca1d7bd1",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_06_retained2000.npz": "7d7abfbf0b911e1e9638f3c3e1219c3e6dbddf35923cecf21e9ed4bac933cca4",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/proactive_fresh_condition_07_retained2000.npz": "2e6fe0f1f8945110043a3272f722ae288ec2a762c1dc2e7fb28cb3a3cc1da18f",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/localization_nav_32_retained2000.npz": "735423603e082a02840330470ba83f5314b6ad0004b60247d315a5eab6b6ffb5",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/localization_nav_33_retained2000.npz": "e5eb5da9c9a3771a37167bee6c03e891f20b8275afade5ecdc4b678eec2cdd7a",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/localization_nav_36_retained2000.npz": "95bcabf00bf9889cccb125bb2f8eccd12620564f64c604ee60c0bd1269fea496",
+        "reports/stop_feedback_20261015/w11_retained2000_fresh_20261016/localization_nav_37_retained2000.npz": "7cab5eb078b36880d7b4c61ef33e9ddc8f1a908802ca3b943cd1f9656a0ab104"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_diagnostic_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 6,
+      "finished_rows": 6,
+      "safe": 6,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/RESULTS.json",
+      "report_sha256": "5bc64d9c268f20b80102acb0ec90974812ba086b1938a5d922e67afd5465c558",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/motion_profile_015_early_transfer_diagnostic.npz": "2764d2de2fe330bb0e7831c65ed1d4b68df65bf89b71b18b5df5b89f14d1c5e9",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/recovery_holdout_00_early_transfer_diagnostic.npz": "6b07872a61593f2af6b73d5743aab51b73f64404712972bdaf218d4a03340132",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/recovery_holdout_01_early_transfer_diagnostic.npz": "d3b891e45f6e505d3eaca9a6bd0d526598fbe911bc2ebef8254be8b37ae74752",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_02_early_transfer_diagnostic.npz": "a903977474858b677b53cfc88f1f64119326dee2d4e1db66c331c85aca361b6d",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_06_early_transfer_diagnostic.npz": "e555319e208731f641fc5bab484df3ebad6f0553a23b1ae3403dea615a002185",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_07_early_transfer_diagnostic.npz": "0b900ecdb49fc08ba1a3edd1998b8f5db64e9f058f9e0c141e782adf00a0ae38"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_diagnostic_reference_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 3,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/RESULTS.json",
+      "report_sha256": "973e911cbf078ba58c08b0bedf7b763d7a3bc570499cbb7d733abbc0115bdeee",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_02_w11_bc800_reference.npz": "d6be6d4ae4131ed179a6576e5943ee06100e07b8257d1c73a1e478e050438aa7",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_06_w11_bc800_reference.npz": "d2d1a51764424259511b9aef64056570f9ad67620ddcc366fabff7b636decad9",
+        "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_07_w11_bc800_reference.npz": "635a1682558e39db8a51bf69ce9502dadbbe0705e100385e2f09d790c79b7a58"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_remaining15_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 15,
+      "finished_rows": 15,
+      "safe": 15,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/RESULTS.json",
+      "report_sha256": "633e9344981ff90b5244e31b802f15b864ae5955394ff3710349d2032093d861",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/recovery_holdout_02_early_transfer_diagnostic.npz": "2d23d961d2d9d2bc6a6d3fd21fc47475fe09b122d8117fb6c917623bad56d7ef",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/recovery_holdout_03_early_transfer_diagnostic.npz": "3464b6a3affe5982287ee8dfed4bc7cd604882d7b3b89a30e2764dc86f98e40b",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_w11_e7_early_transfer_diagnostic.npz": "2257a81c794acb299bc1bb8c9ca013edbe5323c46390de573489efa88ad0ddd3",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/motion_profile_002_early_transfer_diagnostic.npz": "23f81fbb9c50cd7a78dc4d706ddb129e88aaf36e361a469a825e8d86b670e7c2",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/motion_profile_000_early_transfer_diagnostic.npz": "016b78bbef17f44e5d0a4df6be42183852577bcc3dc0cc89e70b3ef91b8f6fa8",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/independent_dynamic_000_early_transfer_diagnostic.npz": "b5908114fe6e971fc69b0a48b3fb6b632c90061ea7a927bda40edbd26174df49",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/independent_dynamic_001_early_transfer_diagnostic.npz": "7816fa33ea5aa11dbbc6f5f87002d7961571fe25a6cfa2e2f220971a46fda4d6",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_00_early_transfer_diagnostic.npz": "95b8503851934471d7640c7d362bc48cd7d389073188560a84601e050d27c6d2",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_05_early_transfer_diagnostic.npz": "3f5b44c63d0c7aea9ad656274c6af8300571792299f6b405c0a6a2f8ff36ccb9",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_12_early_transfer_diagnostic.npz": "b4bd5213c4582d242be24f7c0c9947517f3df098d8f5b23aec989944af227894",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_17_early_transfer_diagnostic.npz": "c912456c3924ecd9225aa2754519459bba95bdb4a35c462ed7a7ecdbf6eb405d",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_24_early_transfer_diagnostic.npz": "30666a2238e3ddf8947934c842d9ae9a9c99b51429d1bdb140d9fb7a80c4c0a3",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_31_early_transfer_diagnostic.npz": "c0c712f79055daf89b8fd06a6ab56b79647997bf0c8657028d8fcf588a873d14",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_stop_go_variation_0_early_transfer_diagnostic.npz": "2c1fecda13fb710c545b38fc9ec5466ec6bc99a98c48299e3124a01038aae948",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_stop_go_variation_1_early_transfer_diagnostic.npz": "b3eca58c4da37f753801c17997a3f161aec4817335c163044957d2a3a0b450aa"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "reference_control_wait_t32_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/reference_control_wait_t32_20261016/RESULTS.json",
+      "report_sha256": "17f3297baf0241d8ceb340d9fee326aac4bc8f061c4100ac803158c296abe63d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/reference_control_wait_t32_20261016/control_w11_wait_t32.npz": "e6c845d2670c54aee7656755ea6ec0f16a819a760210502494c7946a16cbe6d4"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "feasible_wait_probe_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/feasible_wait_probe_navigation_20261016/RESULTS.json",
+      "report_sha256": "6eed578606d776759132420676718320b946cc3e9d529edea79b0c6b0f75d265",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/feasible_wait_probe_navigation_20261016/legal_pause_train_failure_w11_e7.npz": "90d6db8b243eace2789c9d89aee4fb4b219a97c78adfa10f4fb1df03ecf92a30",
+        "reports/stop_feedback_20261015/feasible_wait_probe_navigation_20261016/legal_pause_motion_profile_002.npz": "2643c8c5ef25f492ac943d1bdb826c63f1676eec15c55dc50289037556f235a6"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_verified_w11_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 2,
+      "report": "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/RESULTS.json",
+      "report_sha256": "f54457ae20dd103887297ec7e9908c3da10e848a34d33451f216597a6a5b3a29",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/w11_training_stall_t90.npz": "9461190b759ce51c9ee73812f11057801c183e34c8313683bfac1cbe4378c2e6",
+        "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/w11_training_stall_t95.npz": "7ac807148dc51def7d7dd92cc8ec2a03127cdf9131a8faa804ed7f279933b254",
+        "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/w11_training_stall_t106.npz": "b35084cc8de1f8bdc8aa644a9d17494cf042d7085bedfea839d643e1eed2b283"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_verified_prefixes_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_verified_prefixes_20261016/RESULTS.json",
+      "report_sha256": "0dba0f334cedd2e82df87729ea1127a13f114bd8736691237737378991449049",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_verified_prefixes_20261016/rotation_stall_t20.npz": "71c8302472eb5d445876a0bfbea5f57f03ed2a01ba2c207a29bc23d84a1235f1",
+        "reports/stop_feedback_20261015/early_transfer_verified_prefixes_20261016/arc_stall_t20.npz": "8532703bc00de57c1b304a608283954ee869f176f83dac5fdb1acddbae890745"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "early_transfer_verified_fresh_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 8,
+      "collisions": 4,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/RESULTS.json",
+      "report_sha256": "483151d974991fa9020c716d5b961378c785fc790fd506d156b717e49bbab28f",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_00_early_transfer_verified.npz": "e847d6403aab69159ca49a8348215c0d8c4664184899bec83c621150a6a4ca1f",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_01_early_transfer_verified.npz": "ab564a86259af694351a7dade9a9acb42c04c0ae54767088aaff5e3ed443326f",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_02_early_transfer_verified.npz": "c14eb79f980276bc973d42d4f4a08270351c685d1a8ac2c53c5e92b7fcc6b87a",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_03_early_transfer_verified.npz": "394531adc05e1d5672c244d32088aa662d7c45f434102ba60a9af23793732960",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_04_early_transfer_verified.npz": "b06a2e849d033264c08a9e3b1fcd80d42a965924dc037d8c35d1b0856f6b7f54",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_05_early_transfer_verified.npz": "c50c6255ef35922e7a2beea7f8b2f5a81b2437e5f573555042973fe1bc62978f",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_06_early_transfer_verified.npz": "f745e016618ecbd2922559304255bd2dc64f44caeb2475d1acf6d76a2da9e342",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/proactive_fresh_condition_07_early_transfer_verified.npz": "037d89ba3881e7673830108956b79be4c8fbb6f5bd85f72ed4186a05da93feab",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/localization_nav_32_early_transfer_verified.npz": "77a1e1b76086db51604b056386ea08785dc2feb679eb7603f48ec785eaa46f4e",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/localization_nav_33_early_transfer_verified.npz": "86039da32fd079a46118603721988b26b2da3a58b35d441ae20a44780a6cc87b",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/localization_nav_36_early_transfer_verified.npz": "0e07806d2271a4d189bec394f65a11719ded71f318a3d3496d4b33de2973b6da",
+        "reports/stop_feedback_20261015/early_transfer_verified_fresh_20261016/localization_nav_37_early_transfer_verified.npz": "35add7dcecd99dd39d4a8171f0d00175af78e5b64841ee5e3a598aa17b980762"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual_t95_left_physical_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/actual_t95_left_physical_20261016/RESULTS.json",
+      "report_sha256": "57cc390017dc28bb64760b560511c0dba63476e1db4d1b7f7c1a0d64af770ec4",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual_t95_left_physical_20261016/actual95_left_then_pass_1_6s.npz": "03b4adb02f0b81a6692dd324082748421853718d046bf3b6bbd9e2651797b4fe",
+        "reports/stop_feedback_20261015/actual_t95_left_physical_20261016/actual95_left_then_pass_3_4s.npz": "563326342d1aa6c976576f3a12b53ad793d45b065bc46d1eed3803536d8daa37"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual_t106_action9_probe_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "report": "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/RESULTS.json",
+      "report_sha256": "8429be12fa3c2f2bc60954f452cf532994377c262d84d3207f97b8a6934956af",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/actual_t106_action9_4frames.npz": "d260610db906565318578242cf1e102be41a344a8634d7a3166a5612b2c98a06",
+        "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/actual_t106_action9_12frames.npz": "6063b753077611ade118fba079bd61f64306aa18d77b0262ff1134b6ce2d2d8c",
+        "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/actual_t106_action9_24frames.npz": "7a40883ea4abf5f7cc66748aa99773a6e3b38d83a036527baf28aa42092d3d19"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "committed_right_actual_t106_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 2,
+      "report": "reports/stop_feedback_20261015/committed_right_actual_t106_20261016/RESULTS.json",
+      "report_sha256": "6ba0e29261169c378af0547f19726416595874b89dd9b15d402a182531929a1d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/committed_right_actual_t106_20261016/right_direction_3s.npz": "6111de025a9b4ad5a6ea87721cc9b9070a58746416c29a539a345f3ee276d200",
+        "reports/stop_feedback_20261015/committed_right_actual_t106_20261016/right_direction_6s.npz": "4aa8545f2d4bca66652dc9b5c8cacf0538324757e6fe59daf7325514104c81c1"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_matched_control_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 2,
+      "report": "reports/stop_feedback_20261015/actual95_matched_control_20261016/RESULTS.json",
+      "report_sha256": "ce704ee85268c079f3722d7989a0c72ed1f8c95ebe50d02026b82064fa2b9da2",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_matched_control_20261016/physical/w11_training_stall_t95.npz": "60f0579ca85c6d02b88b2ea0f9cfad656e17b823ce62396913fa86b1ce903697",
+        "reports/stop_feedback_20261015/actual95_matched_control_20261016/physical/w11_training_stall_t106.npz": "5d05624f4f3a69dead2890d4668c58fda8dad3e666607bf164231351a9e1791e"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_wait_verified_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/RESULTS.json",
+      "report_sha256": "e15444eee29d26d29e09e0f792b7222887bd04abb59182a6c1fbd424809f7209",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_wait_verified_20261016/physical/new_data.npz": "3a55618439b5efdf92550f0280e7c3bbd1096a469d3547584cc269472504003f",
+        "reports/stop_feedback_20261015/actual95_wait_verified_20261016/physical/matched_old_data.npz": "9711a54292dd55baedf20f50cfdc0d4f0d77818abc28dc60fa4ebcf4c6d39470"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "diagnostic_parent_full18": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 18,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_transfer_regression_20261016/RESULTS.json",
+      "report_sha256": "d68e14ef2fccfcc80a629a387adb7e60963874d3a8753143dacf6045bc4217f0",
+      "row_path": [
+        "candidate_rows"
+      ],
+      "trace_paths": {
+        "reports/handoff_save_20261016/validation/early_transfer_diagnostic_navigation_20261016/motion_profile_015_early_transfer_diagnostic.npz": "2764d2de2fe330bb0e7831c65ed1d4b68df65bf89b71b18b5df5b89f14d1c5e9",
+        "reports/handoff_save_20261016/validation/early_transfer_diagnostic_navigation_20261016/recovery_holdout_00_early_transfer_diagnostic.npz": "6b07872a61593f2af6b73d5743aab51b73f64404712972bdaf218d4a03340132",
+        "reports/handoff_save_20261016/validation/early_transfer_diagnostic_navigation_20261016/recovery_holdout_01_early_transfer_diagnostic.npz": "d3b891e45f6e505d3eaca9a6bd0d526598fbe911bc2ebef8254be8b37ae74752",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/recovery_holdout_02_early_transfer_diagnostic.npz": "2d23d961d2d9d2bc6a6d3fd21fc47475fe09b122d8117fb6c917623bad56d7ef",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/recovery_holdout_03_early_transfer_diagnostic.npz": "3464b6a3affe5982287ee8dfed4bc7cd604882d7b3b89a30e2764dc86f98e40b",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_w11_e7_early_transfer_diagnostic.npz": "2257a81c794acb299bc1bb8c9ca013edbe5323c46390de573489efa88ad0ddd3",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/motion_profile_002_early_transfer_diagnostic.npz": "23f81fbb9c50cd7a78dc4d706ddb129e88aaf36e361a469a825e8d86b670e7c2",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/motion_profile_000_early_transfer_diagnostic.npz": "016b78bbef17f44e5d0a4df6be42183852577bcc3dc0cc89e70b3ef91b8f6fa8",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/independent_dynamic_000_early_transfer_diagnostic.npz": "b5908114fe6e971fc69b0a48b3fb6b632c90061ea7a927bda40edbd26174df49",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/independent_dynamic_001_early_transfer_diagnostic.npz": "7816fa33ea5aa11dbbc6f5f87002d7961571fe25a6cfa2e2f220971a46fda4d6",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_00_early_transfer_diagnostic.npz": "95b8503851934471d7640c7d362bc48cd7d389073188560a84601e050d27c6d2",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_05_early_transfer_diagnostic.npz": "3f5b44c63d0c7aea9ad656274c6af8300571792299f6b405c0a6a2f8ff36ccb9",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_12_early_transfer_diagnostic.npz": "b4bd5213c4582d242be24f7c0c9947517f3df098d8f5b23aec989944af227894",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_17_early_transfer_diagnostic.npz": "c912456c3924ecd9225aa2754519459bba95bdb4a35c462ed7a7ecdbf6eb405d",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_24_early_transfer_diagnostic.npz": "30666a2238e3ddf8947934c842d9ae9a9c99b51429d1bdb140d9fb7a80c4c0a3",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/localization_nav_31_early_transfer_diagnostic.npz": "c0c712f79055daf89b8fd06a6ab56b79647997bf0c8657028d8fcf588a873d14",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_stop_go_variation_0_early_transfer_diagnostic.npz": "2c1fecda13fb710c545b38fc9ec5466ec6bc99a98c48299e3124a01038aae948",
+        "reports/stop_feedback_20261015/early_transfer_remaining15_navigation_20261016/train_failure_stop_go_variation_1_early_transfer_diagnostic.npz": "b3eca58c4da37f753801c17997a3f161aec4817335c163044957d2a3a0b450aa"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "latest_actual_stalls": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/actual95_learned_validation_20261016/RESULTS.json",
+      "report_sha256": "980928d16f7b8c27133cb683057f6febb5990af482ee66825d04bbbc5c2aef4d",
+      "row_path": [
+        "recovered_rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/w11_training_stall_t95.npz": "e27c75b9a199a78d4ae94298b885443b1272adf8da37d16636f09aae36852381",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/w11_training_stall_t106.npz": "c6731f661a030b92adb8a3e4566b18704d9689ad9ceac126dc5a2390d1b33879"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "latest_normal4": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 4,
+      "finished_rows": 4,
+      "safe": 4,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_learned_validation_20261016/RESULTS.json",
+      "report_sha256": "980928d16f7b8c27133cb683057f6febb5990af482ee66825d04bbbc5c2aef4d",
+      "row_path": [
+        "normal_rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/train_failure_w11_e7.npz": "7ea7aebb32a8ae2ce03a6515777c1be604b856064ea62da665d901eddd98e3b4",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/motion_profile_002.npz": "c848ad4b03ba65bcab27dcdd6b3ae9d50be6f5d95c00e169d5cd24ff0d92cbc3",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/recovery_holdout_00.npz": "2208596861a1829a6affa7a251ceacd4bd53f84750aaaaee083f4086c1f023f8",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/recovery_holdout_01.npz": "ad6c4c70edcd5f22a1213ee77b9fe2562f066015ad0e646df97e4156aac0f3ef"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_completed_full18": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 18,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "fd26f1c9a250b7df3b60d9d97ed5f526440b052e2d8e9faa0b3371482fed0609",
+      "row_path": [
+        "full18_rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/train_failure_w11_e7.npz": "7ea7aebb32a8ae2ce03a6515777c1be604b856064ea62da665d901eddd98e3b4",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/motion_profile_002.npz": "c848ad4b03ba65bcab27dcdd6b3ae9d50be6f5d95c00e169d5cd24ff0d92cbc3",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/recovery_holdout_00.npz": "2208596861a1829a6affa7a251ceacd4bd53f84750aaaaee083f4086c1f023f8",
+        "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/recovery_holdout_01.npz": "ad6c4c70edcd5f22a1213ee77b9fe2562f066015ad0e646df97e4156aac0f3ef",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_motion_profile_015.npz": "8be15695664edc6d0c54eac8a96d471b495e73ad04acfff24b84d6fa2766b39a",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_recovery_holdout_02.npz": "17385b98f0a99954d26b256e6c0cba53a7ca16a140d84b2a150c945516216919",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_recovery_holdout_03.npz": "22dcbd7e21cce98192d7c832ae6e2d4debfb4f62a1a700d9ab498f2224e5287c",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_motion_profile_000.npz": "6ab53ca61491ba97013104b831c439de2693e60be210298ad46fb43db31b775e",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_independent_dynamic_000.npz": "64e5d87870952182d46e613d9d11b94051685d18396337031773b5cd96dd7a91",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_independent_dynamic_001.npz": "952d99ad0864faf5d1ecae6f245692c04bc83116283beff5470c60317f025db8",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_00.npz": "1c81274d8a167f0c7f4b48de2ce436eef49694e80567d38642eb6a9e2b36299c",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_05.npz": "56ccf686b1fffeb232ec8ea3fbf872b1792ac25ca610284d08b5d2d8a6cc1fd6",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_12.npz": "4a6f731368420e7a4b6fe90ce1357eb01663a98095a708d9e5eebdce1bcb0629",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_17.npz": "8ab22c6839c0372a3e4bf523fa8fb1b379e99dce1ab6aedafe488fb9ca5c8e98",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_24.npz": "38d7251f1f5d25b90c8dfc88387c024d9785f36611df6c7b953ea088eb824a70",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_localization_nav_31.npz": "751e70394f81e220b817be2ca83e1388b8ef5f6f540dde86de06529a6629113d",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_train_failure_stop_go_variation_0.npz": "feaf8766c1a15792aa4214e1a7ec3c548109d376b6433ef39a829a3cfab30caf",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/remaining_full14_train_failure_stop_go_variation_1.npz": "ab474f97b647adf20931b413e510cc1ea31439898498561f83f002fe8e779a42"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_broad_fresh12": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 8,
+      "collisions": 4,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "fd26f1c9a250b7df3b60d9d97ed5f526440b052e2d8e9faa0b3371482fed0609",
+      "row_path": [
+        "groups",
+        "fresh12",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_00.npz": "07fc7eacbdda7ca859ac90b10eec6c80cddfe5cab566b1f258b4954a81153104",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_01.npz": "21917167f7b5e18c33331462bbee7e4a84c14c2308d7fd963b5784e5d39c2a75",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_02.npz": "642a31f7c400df38fad33be1dbe491ab17fbd4e5eacf3a9eb8eaaaa7ef281093",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_03.npz": "086c168fa9e3fe0a681574532b72b040e0cbac5d1e2eb8f5fdce535ff1233d78",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_04.npz": "0392bca2cff190c7c26e8d9911e90f770d4404b49da4c45913c071bfd66e35d0",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_05.npz": "5426cc784744b1d5a73e43f5600aefae567a20a1e7881b574312c41c66b9a7dd",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_06.npz": "f0b0bc5e2b424a1b725dac4d5c88ad1e657c8667e89a4430dcbc3b88c0275740",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_07.npz": "95e2b0685dd99e5abe6bf44c89bcc4fd71e69547e99469b127f28ee5b3468ab5",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_localization_nav_32.npz": "d400d3de3f5328ab74c032460bf9b8457d09a4dd25cd111a1e0895531028a285",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_localization_nav_33.npz": "c3758c9dd3fcd55910eb7b06aea9ca4764a0b03f2403c2df7f64c93b203097b4",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_localization_nav_36.npz": "3a7cd4ccc6e5a2210f21f35fc1c3a2153f60d3441ff3cd1664a13ace8919e653",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/fresh12_localization_nav_37.npz": "0434b72eccedd9af8ea0213b62707f195c01ec432f0fbfdd0e85a25a0f1d0301"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_broad_original_prefixes2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "fd26f1c9a250b7df3b60d9d97ed5f526440b052e2d8e9faa0b3371482fed0609",
+      "row_path": [
+        "groups",
+        "original_prefixes2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/original_prefixes2_rotation_stall_t20.npz": "36026cd482bf1900ced959137dc0124bde68fb4d872042e3e543a0e47fbd1903",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/original_prefixes2_arc_stall_t20.npz": "2b69da1fb2cc5c7d56c51988ea02ff065189c29d02ca9efa1ab7c7ad18027061"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_broad_heading2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "fd26f1c9a250b7df3b60d9d97ed5f526440b052e2d8e9faa0b3371482fed0609",
+      "row_path": [
+        "groups",
+        "heading2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/heading2_docking_dev_02.npz": "95be773b1f44a7e64bcded34d58bbe62113ed016fd19ab3a4e342e530aefa039",
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/heading2_docking_dev_11.npz": "3062aaad9186147a5000fbb82c6106a26a7bdfcd73480411c2856be0b2e4e4cb"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual95_broad_w11_t90": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "fd26f1c9a250b7df3b60d9d97ed5f526440b052e2d8e9faa0b3371482fed0609",
+      "row_path": [
+        "groups",
+        "w11_t90",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual95_broad_regression_20261016/physical/w11_t90_w11_training_stall_t90.npz": "86cc5a7ad5378dd61fba8e1cd3e84699153f5637921cac67b115998ddc4915f5"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual106_confirmed_free_diagnostic": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "report": "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/RESULTS.json",
+      "report_sha256": "a1f191718a0d267c7ef87c8bf6e92be5dc02ab6d7b0c3b731132fcb64e0d954d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/physical/model_only.npz": "05205f24427591463bec22c6cf84ff46a20823bf1d8746bd404ad90fc7ef35b5",
+        "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/physical/expert_right_1_6.npz": "0bd0b9937f20abbea8bb86a6d94c55e5a2e048c19fbd19790946c195eece35fc",
+        "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/physical/expert_right_3_4.npz": "833ed29a4f11ad4f5c34f4b9085ffd4853c17e05170b04eba92c21ad35e20406"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "actual106_sensor_turn_diagnostic": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/actual106_sensor_turn_probe_20261016/RESULTS.json",
+      "report_sha256": "77876fc707a8fa67278a6a4f0bcf34687e62408d2d786534033fa51f69f4afb0",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/actual106_sensor_turn_probe_20261016/actual106_sensor_turn_then_pass.npz": "ed4dec903618d51732a70103e2fd5d505ce3f95d892e171ce2394d4cd1e818dd"
+      },
+      "scope": "Reused development tasks, initialization prefixes and diagnostic probes; not independent generalization."
+    },
+    "latest_followup_first8": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 8,
+      "finished_rows": 8,
+      "safe": 8,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json",
+      "report_sha256": "5337e58be0f3616f1a1f19b18044910d8d809bdbc27d5753f9a47b3077b605d0",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/regressed_fresh33_localization_nav_33.npz": "96b2dccbe0791cf93090fc85b23f24ab7bf9cd602136e156ef823343d429004e",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_00.npz": "1bfc62db3384e574bbd3614274c170cdbc5621425ec54ee0280798aea6e5d5a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_01.npz": "f9fa39c403d2710ec71f6c9422bd297d3636f0cee51ada77bcd31b98bd4e43a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_train_failure_w11_e7.npz": "a7fd529967ac78e09a46cbb0e5b23c08ec7a1a5ac89f7f6411a042b0b8a4f1b7",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/motion15_motion_profile_015.npz": "84814addda7439cec200e7870c05778ccd84fc38c6ff86b128b88f517b392d4a",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual95_w11_training_stall_t95.npz": "51bc584573626566846e0ca25e75672427205fbecf3d0120b8e345c9799b82d9",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual90_w11_training_stall_t90.npz": "87187c83fc410a9eca271710280fb1c4fffc14062a3076b819b3939e7ac63df9"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_full18": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 18,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "full18_rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_00.npz": "1bfc62db3384e574bbd3614274c170cdbc5621425ec54ee0280798aea6e5d5a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_recovery_holdout_01.npz": "f9fa39c403d2710ec71f6c9422bd297d3636f0cee51ada77bcd31b98bd4e43a6",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_train_failure_w11_e7.npz": "a7fd529967ac78e09a46cbb0e5b23c08ec7a1a5ac89f7f6411a042b0b8a4f1b7",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/motion15_motion_profile_015.npz": "84814addda7439cec200e7870c05778ccd84fc38c6ff86b128b88f517b392d4a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_02.npz": "9232970aeea206e7f6c3ebc29b5c26963cec76321e6e8c45cbe4ff5a3629a0ee",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_03.npz": "2dd0dd3840ac3fb8af55fa581cbaf7018eb627b120e7a81d2d6091940a91998a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_motion_profile_000.npz": "2c693aaf419f1a43975a28cecead177912411c71acb71b04ab1fbdf97e28bee2",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_independent_dynamic_000.npz": "2f196d29395bf8e33da3ee1c827a9af335b96e1a84e64f7b7415168a54a261c1",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_independent_dynamic_001.npz": "d5acecf21c91e4d9f61d741d5d7d19f0ef46492cd1cde7b262fded66fba8cafe",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_00.npz": "7167b493fe3c613d06d4cc4a2cd238824c488a3d41f0333495d074ea65763ceb",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_05.npz": "ffefe91d8b3e8ae88ceb9aefcef8aeb340168c0b858d296d0c8c2d27655d6d24",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_12.npz": "038cb2ecb34a288ae27617b03a80943d7961d9f489b07c1c21e0bdd5fbca4fcf",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_17.npz": "055f85d395d82340fd7038f44f3e4187bd642f5d0e7d88aa3a9e74f935785523",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_24.npz": "bf96dc483dce6464d1c41c8113316a67b5144c144a461604859e75bbada77661",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_localization_nav_31.npz": "d43c7598ed1b07353f07848507cf09ec32cb80ef36b02711ece77434e24e6c2c",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_train_failure_stop_go_variation_0.npz": "255f31a470966e0d7ec6bf954f1ef2545517a33ffcfde07c2651877be825b4af",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_train_failure_stop_go_variation_1.npz": "1b132182720b79f71feed65e4604421a0aa01f11eda81324fe3b8b70362a874d"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_fresh12": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 8,
+      "collisions": 4,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "fresh12",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/regressed_fresh33_localization_nav_33.npz": "96b2dccbe0791cf93090fc85b23f24ab7bf9cd602136e156ef823343d429004e",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_00.npz": "22f12f68d9e3d508632da6f6ac458937a6befc2986e39de34372623d22652349",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_01.npz": "aea3eb697b17840a1f6e56ac4ea016af0cacee69bfd6e14353e7c9ef8ea89a37",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_02.npz": "cbc2f67cf102e0c633be8b0b61dc78f1257b8a88abfe8d44c999c8ba4c7db9c0",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_03.npz": "62f8226cd5f63a0cd089f90928f86aad0c12914ee3de2ab2c397b81d6a0bf142",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_04.npz": "33c9bf8e325a336cd70addbc72997dc83ae5f272991f3dab0d002ca144bddedd",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_05.npz": "9e7571eee9840a8946725b4fca0423d8f655e147476b9cfad0294fd3659f205a",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_06.npz": "f9686f607d23ee33c70ab22ba06f26206974534802b48cdbdca17d9faac292d4",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_proactive_fresh_condition_07.npz": "51c2d69a426f88f5a9b5fada3295083200c95bbf709973aa986d0b45a59bb09c",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_32.npz": "c8aaad491d553efad5123f1fb099dedb890ba852050cb50712f8dda02151a68f",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_36.npz": "88dacbe4afe92b4d7112e9006bc0acab407a64d8a1013bf13e6c4e0beb972c44",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/fresh12_localization_nav_37.npz": "2cf6ea7e8cdf1634487dbac699086e074152d34f529d080c782443190283a4d1"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_original_prefixes2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "original_prefixes2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/original_prefixes2_rotation_stall_t20.npz": "d4601c092df6fdcea6658275e1fb5ed6210203e8bf2d2460216056044e628d4e",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/original_prefixes2_arc_stall_t20.npz": "307309e7163347401ed81c3e3aa32ad97ee4e49e96defc3e851b64ec3d363cf1"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "latest_followup_heading2": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+      "report_sha256": "0d51dd3d87a4200eaef8039b50b79be4db70bd30560199a1c836667931b0623c",
+      "row_path": [
+        "groups",
+        "heading2",
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/heading2_docking_dev_02.npz": "c8f5bd0b3b755796780665710de85924b0bd3e344d463923511ed5d887ebda0f",
+        "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/heading2_docking_dev_11.npz": "a062cbe3d47ed79a7e724012097d2948764ecab7e6b2011928450d4db8d41137"
+      },
+      "scope": "Reused development tasks, with overlapping evaluations; not independent generalization."
+    },
+    "early_yield_physical_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_yield_physical_20261016/RESULTS.json",
+      "report_sha256": "947d4739d7cf7d3144d4996c11fac939b4cbec1fbf3fd3fc21e4a179c1bbd9c8",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_yield_physical_20261016/early_yield_proactive_fresh_condition_01.npz": "16786e69dcd2afbf6cc29ee26f389bbc1c750340dc65a952318aa7c5cd6dfecc"
+      },
+      "scope": "Development-map trials; teacher sources are not learned-policy success; paired variants and reused groups are not independent repeats."
+    },
+    "early_yield_condition02_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_yield_condition02_20261016/RESULTS.json",
+      "report_sha256": "cb1ae9dadff1719aee9f056d9e952886bdc7633ccad52f9820b273bc79bdec3d",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_yield_condition02_20261016/early_yield_proactive_fresh_condition_02.npz": "9b604b79ddd99ed65269a6fec93d0ca1912c8d7f9e3f19c48608e73448138ef7"
+      },
+      "scope": "Development-map trials; teacher sources are not learned-policy success; paired variants and reused groups are not independent repeats."
+    },
+    "early_yield_condition05_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 1,
+      "finished_rows": 1,
+      "safe": 1,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_yield_condition05_20261016/RESULTS.json",
+      "report_sha256": "fac22d06f56ef35b8bf55724cad9293325fb41b61f0b04c8a14e45a9bd71c215",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_yield_condition05_20261016/early_yield_proactive_fresh_condition_05.npz": "b633dd57e896cff1cd328444883a7a04e61476094f4d692e7601ef13b0349dc8"
+      },
+      "scope": "Development-map trials; teacher sources are not learned-policy success; paired variants and reused groups are not independent repeats."
+    },
+    "early_yield_validation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 4,
+      "finished_rows": 4,
+      "safe": 2,
+      "collisions": 2,
+      "timeouts": 0,
+      "report": "reports/stop_feedback_20261015/early_yield_validation_20261016/RESULTS.json",
+      "report_sha256": "3764bc6ff620f7efd3edbf5da090158b2365412e3d7e7c1ad4e35e99482a8fbc",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_yield_validation_20261016/physical/source_condition_01_proactive_fresh_condition_01.npz": "31ca9b9338aff06ed949a9c1eb6a098e5da90950e30029bb6ef24241e22ad1e2",
+        "reports/stop_feedback_20261015/early_yield_validation_20261016/physical/unfitted_conditions_proactive_fresh_condition_02.npz": "59fa7c3d9f8f0586aab424921a912440363f7c1002ee3367b3d87ea17a680af1",
+        "reports/stop_feedback_20261015/early_yield_validation_20261016/physical/unfitted_conditions_proactive_fresh_condition_04.npz": "b46b82f1a3bae2ee5eaa9a46595c555894864a110cf670ffdd36ba1886ee175c",
+        "reports/stop_feedback_20261015/early_yield_validation_20261016/physical/unfitted_conditions_proactive_fresh_condition_05.npz": "2138ce9fce1187857b09770b3d595eae067a10f4bdae1e0ea6c533a307a9c68a"
+      },
+      "scope": "Development-map trials; teacher sources are not learned-policy success; paired variants and reused groups are not independent repeats."
+    },
+    "early_yield_remaining_validation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 6,
+      "collisions": 5,
+      "timeouts": 1,
+      "report": "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/RESULTS.json",
+      "report_sha256": "e27ceb228df03f8f9cc39cbe537015f6512b4028581decf9940680fec6676399",
+      "row_path": [
+        "rows"
+      ],
+      "trace_paths": {
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/original_collision_conditions_proactive_fresh_condition_01_early_yield_remaining_bc600.npz": "a30fa80a89e7664c061881b344009e07a5b91f19e63f7ae3b16063fa98ffd7be",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/original_collision_conditions_proactive_fresh_condition_02_early_yield_remaining_bc600.npz": "5cc62254645557b4251074037a62f8e975ebe98faa17241a56babe5708c7d523",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/original_collision_conditions_proactive_fresh_condition_04_early_yield_remaining_bc600.npz": "fa42143bc067c10d9efc9f983d0e8ac417df9836a5d9fe381d3e6f0c1ca4a4cb",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/original_collision_conditions_proactive_fresh_condition_05_early_yield_remaining_bc600.npz": "9f0c0bc860a7c66b01561c4c3bc99c4885f9dbbdf65ce56794ebd8b2e3ea1232",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_0_prior_1b55.npz": "6e9c5ca2d334442c4b9c46d72de98f2bdd30544284505641a8113b59594f7947",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_0_early_yield_remaining_bc600.npz": "6b4e42c46326966a7506bf10eb1bf08470925e5077f2d98e078d2b46a52aa079",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_1_prior_1b55.npz": "d6989615e5fcc65b735c1a6751e66045a4ca495eee5f77ae5ba480f6507a67a9",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_02_1_early_yield_remaining_bc600.npz": "60da91783b92d511091d77579824b67a078b5dcf43084a8c6eba4ad67d4f8bbf",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_05_0_prior_1b55.npz": "6e8d683c74d07306b1f9d289290a04a911d55b62615b24a4574a8ec55a063088",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_05_0_early_yield_remaining_bc600.npz": "06c6132e45b5760a6880d89d7363885476c809633d0dbea499c935997f0ef6b5",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_05_1_prior_1b55.npz": "0616bb39286355bf0b0edce92e5abf37eb52e9800c2755529c23eeb9e2db8729",
+        "reports/stop_feedback_20261015/early_yield_remaining_validation_20261016/physical/heldout_sensor_conditions_early_yield_sensor_holdout_05_1_early_yield_remaining_bc600.npz": "d9adc1f730a803dda0ed8e98e266e9cd9d97094e3de3bea1127bd915d1b5650e"
+      },
+      "scope": "Development-map trials; teacher sources are not learned-policy success; paired variants and reused groups are not independent repeats.",
+      "declared_maximum_rows": 16,
+      "stopped_by_failed_predeclared_gate": true,
+      "unrun_rows": 4,
+      "reason": "Unfitted sensor seeds did not all retain safety/efficiency; no expansion"
+    }
+  },
+  "new_ppo_steps_since_previous_handoff": 0,
+  "latest_additional_supervised_updates": 600,
+  "ppo_training_running_at_capture": false,
+  "physical_evaluation_running_at_capture": false,
+  "original_deployment_replaced": false,
+  "deployment_approved": false,
+  "goal_achieved": false,
+  "latest_research_results": {
+    "original_conditions_safe": 4,
+    "original_conditions_total": 4,
+    "heldout_sensor_conditions_safe": 1,
+    "heldout_sensor_conditions_total": 4,
+    "heldout_sensor_conditions_collisions": 3,
+    "physical_episodes_finished": 12,
+    "declared_episode_limit": 16,
+    "remaining_four_not_run": true,
+    "broad_regression_skipped": true,
+    "new_input_contract_trained": false
+  },
+  "adequately_broadly_evaluated_model": "latest_followup",
+  "broadly_evaluated_results": {
+    "normal_safe": 18,
+    "normal_total": 18,
+    "extra_safe": 8,
+    "extra_total": 12,
+    "extra_collisions": 4,
+    "actual106_safe_recovery": false
+  },
+  "experimental_prototype": {
+    "path": "training/neural_navigation/long_motion_risk.py",
+    "sha256": "d6a35f78aa304f728af6a192b8a59f37b32a416e753b47bac4042a33baf55a0b",
+    "integrated_in_runtime": false,
+    "syntax_checked": true,
+    "reference_equivalence_checked": false,
+    "performance_checked": false,
+    "proposed_runtime_dimensions": 481,
+    "proposed_training_dimensions": 478,
+    "proposed_contract_finalized": false
+  },
+  "limitations": [
+    "No candidate approved for deployment; latest sensor-seed gate failed.",
+    "All reported physical cases use development maps; no unseen-map or target-hardware acceptance.",
+    "Teacher trajectories and fit-label accuracy are not learned navigation success.",
+    "The 16-episode maximum ended after 12 by a predeclared failure gate; no missing row is counted as success.",
+    "New risk prototype is unverified and not used by existing models.",
+    "Raw record.zip, environments, caches and architecture-specific .so files are excluded.",
+    "Old service-bound drivers require new configurable entrypoints and rebuilt native manifests before rerun."
+  ]
+}
