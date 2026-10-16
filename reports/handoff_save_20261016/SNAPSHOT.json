@@ -1,0 +1,264 @@
+{
+  "schema": "agv_handoff_snapshot_v14",
+  "branch": "save",
+  "capture_started_at": "2026-10-16T08:40:05.787962+08:00",
+  "captured_at": "2026-10-16T08:40:06.090501+08:00",
+  "source_commit": "75c73087d0f3338cbba1e970fc1e52b7f805648d",
+  "previous_handoff_branch": "dev",
+  "models": {
+    "deployment": {
+      "folder": "models/quality_recovery_20261014",
+      "checkpoint": "policy_2000.zip",
+      "sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "reference_bc": {
+      "folder": "models/stop_feedback_20261015/w11_recovery_bc800_s231015",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    },
+    "control_2k": {
+      "folder": "models/stop_feedback_20261015/w11_control2000_s231015",
+      "checkpoint": "policy.zip",
+      "sha256": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+      "additional_ppo_steps": 2000,
+      "approved_as_new_deployment": false
+    },
+    "retained_2k": {
+      "folder": "models/stop_feedback_20261015/w11_retained2000_s231015",
+      "checkpoint": "policy.zip",
+      "sha256": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+      "additional_ppo_steps": 2000,
+      "approved_as_new_deployment": false
+    },
+    "diagnostic_bc": {
+      "folder": "models/stop_feedback_20261015/early_transfer_bc800_s231015",
+      "checkpoint": "policy_bc.zip",
+      "sha256": "8b597401b2dc9a089c5921036639a78e9ca6fa430559b0a144127f9220a8f0bd",
+      "additional_ppo_steps": 0,
+      "approved_as_new_deployment": false
+    }
+  },
+  "validation": {
+    "w11_control2000_navigation_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 18,
+      "finished_rows": 18,
+      "safe": 17,
+      "collisions": 0,
+      "timeouts": 1,
+      "report": "reports/handoff_save_20261016/validation/w11_control2000_navigation_20261016/RESULTS.json",
+      "report_sha256": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4",
+      "trace_files": {
+        "motion_profile_015_control2000.npz": "7848d48569a7cb13110a7df217987db49575e8d81fa9abfe1a3147edfd4950fb",
+        "recovery_holdout_00_control2000.npz": "26abc1fe57e3bc5bbada6d51af9eb8c6e89c488e4f9dfc2ff81fc9a211604fe2",
+        "recovery_holdout_02_control2000.npz": "b34f3d64621f103700cc086c181222b2e4a55389d461e703079cae07daf8699e",
+        "recovery_holdout_03_control2000.npz": "a7d3aa60cff7d41cd9490d6fa121b2a2e5beb4c48cd7ce8cfd9a5e50eacd1b52",
+        "recovery_holdout_01_control2000.npz": "77c922cf4792ca055a21ecc56512c65711e18035b6cc4ef4d24d08993453ced3",
+        "train_failure_w11_e7_control2000.npz": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+        "motion_profile_002_control2000.npz": "dfb653278936e316417be199db647071935c0fe8f612abbebcdd084910aa4f33",
+        "motion_profile_000_control2000.npz": "1e34fd157f6e2502faf73f73bbbcb5526b53a2488ae40610d9af19210f799954",
+        "independent_dynamic_000_control2000.npz": "0a1072cef321cb8399e9ad5fbafdba23b2fa4a1eeb6e81adbcdbadf157afb06f",
+        "independent_dynamic_001_control2000.npz": "e06df246f1d283ff0f57d983acd6be5068993bedf2f1d81395c6c2908554ed1c",
+        "localization_nav_00_control2000.npz": "82c8a92d332d0f9e54fea977b8f1b2ca45a4b6e1f58382f83b4adf9960463170",
+        "localization_nav_05_control2000.npz": "3ffbd342d4d1c6cc715899463976a2e573de950cb141598b518cb0c42b48fb80",
+        "localization_nav_12_control2000.npz": "bf4ae1fb4ab2882552a466322fe728d9adfacbd989bf64e0ebeb6b516144ea3c",
+        "localization_nav_17_control2000.npz": "5a48a41b06b70672c16c7e0bb37c1abd56df12fcd80b911af980abcf81a04149",
+        "localization_nav_24_control2000.npz": "00b494450cf955562c6ab35aafd8344313f27f53d2a75f6db8df017292e25a6e",
+        "localization_nav_31_control2000.npz": "b07f9b62061939e6462a1e74e392ea09594020a2b17fc0fecfdc4c7081bbd645",
+        "train_failure_stop_go_variation_0_control2000.npz": "cc0664702365d190a004e18739bbe9203b2a7abf55dc695b8e0125618ad6c181",
+        "train_failure_stop_go_variation_1_control2000.npz": "8c67cf49c816620594d5cdf8b39cdc3235b222a12e734787e959bbda822514a9"
+      },
+      "variants": [
+        "control2000"
+      ]
+    },
+    "w11_control2000_prefixes_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 2,
+      "finished_rows": 2,
+      "safe": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/handoff_save_20261016/validation/w11_control2000_prefixes_20261016/RESULTS.json",
+      "report_sha256": "3ae82ac230fb1a47955396eeadca27c770020d92cfce856b10097afbd7bc5ddb",
+      "trace_files": {
+        "rotation_stall_t20.npz": "97b7c355e6a2de486bc757201782ed2eeedc5c6354fb75135c6b38790a4059a8",
+        "arc_stall_t20.npz": "c5634c110cba7bce74299fad6ea5f39a129d41766579f0caef049bde3ab09a96"
+      },
+      "variants": [
+        "control2000"
+      ]
+    },
+    "w11_control2000_w11_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 3,
+      "finished_rows": 3,
+      "safe": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "report": "reports/handoff_save_20261016/validation/w11_control2000_w11_20261016/RESULTS.json",
+      "report_sha256": "d1ec833f15f37de3b66db20feff27003644d0f7e4032a7c3f16a8c8f6924f99d",
+      "trace_files": {
+        "w11_training_stall_t90.npz": "7b5859908c3de682b9365389dcba59872b746442c83bce4823ca140be3d81fc4",
+        "w11_training_stall_t95.npz": "8c3c562494455296cdad0f946bb739cea974bfd43bfb366b2d0a93658b3bcf73",
+        "w11_training_stall_t106.npz": "bf67e6ad49f708c810218395202f268d4cfd9eb6926404dbb8a0899aae7d5931"
+      },
+      "variants": [
+        "control2000"
+      ]
+    },
+    "w11_control2000_fresh_20261016": {
+      "started": true,
+      "completed": true,
+      "expected_rows": 12,
+      "finished_rows": 12,
+      "safe": 7,
+      "collisions": 4,
+      "timeouts": 1,
+      "report": "reports/handoff_save_20261016/validation/w11_control2000_fresh_20261016/RESULTS.json",
+      "report_sha256": "cdc25448677647bff4e5f99e8b1413c20179fc1f2da5fbc0435dc457b64e2160",
+      "trace_files": {
+        "proactive_fresh_condition_00_control2000.npz": "8ad5e6744c055e7981c32b58bdcd54ceeebfda3d6127ae1a853e53601202febb",
+        "proactive_fresh_condition_01_control2000.npz": "3cf9a44797ad4012ca0ec5dfd90ce66e974b2530a48a7226a2d5e9a1ddf895f9",
+        "proactive_fresh_condition_02_control2000.npz": "ceb22f4c0bacacdd48ca3d9d5582dda367a8122467a6d98e99add1cad78c1e7c",
+        "proactive_fresh_condition_03_control2000.npz": "a8967d5d0859fa6471266d6c0c9c9c89e14ef98d27d4efceb8a37597f90a9c88",
+        "proactive_fresh_condition_04_control2000.npz": "aa5ee1c050c9052786a045eb03938178194871919023cf79f0e0c9cc6c419595",
+        "proactive_fresh_condition_05_control2000.npz": "8efc8f48f1ee31f5f1bf61e7374fdc783318d829811cf5896a13e1c64a277d6e",
+        "proactive_fresh_condition_06_control2000.npz": "1cb737490d9f0df5700d64033e5df7f91c49b748fe200848c79fd80aa08acc63",
+        "proactive_fresh_condition_07_control2000.npz": "2247fe6e2d5b43342d9a089805d054ced75f0ae78cead8390977ab4918e1756b",
+        "localization_nav_32_control2000.npz": "896322fa6b89d8d44837ceec8d45d5d2614e2cc83d1d8e2c1a8e74d17eb9ba33",
+        "localization_nav_33_control2000.npz": "9836dda3dda99406eecb5f89dea2cce0a614524406127b47859b4eafa2392830",
+        "localization_nav_36_control2000.npz": "2d1bee8401a9c71e4494296d96e6de858dd2ca2369b1542e79edda6a6b605cd6",
+        "localization_nav_37_control2000.npz": "62d0b0b81d5dc0a325d5a8ffbadb00accbe8bfd42084d91edb708087ff3546d7"
+      },
+      "variants": [
+        "control2000"
+      ]
+    },
+    "w11_retained2000_navigation_20261016": {
+      "started": true,
+      "completed": false,
+      "expected_rows": 18,
+      "finished_rows": 16,
+      "safe": 14,
+      "collisions": 1,
+      "timeouts": 1,
+      "report": "reports/handoff_save_20261016/validation/w11_retained2000_navigation_20261016/RESULTS.json",
+      "report_sha256": "5ff8843fd9ebf23d26454fdb040d5b296693521e8e80ee0881170ca477ec582f",
+      "trace_files": {
+        "motion_profile_015_retained2000.npz": "2a89b9440e41824ba690a51ab6db62c0c5542ce52f30c771c1faf5b2921524b1",
+        "recovery_holdout_00_retained2000.npz": "e340c58a112009a51aa0ca99322bc30a7494caf197baeb8d3cd06f03646943f3",
+        "recovery_holdout_02_retained2000.npz": "635d6a27a9ef43667163e3541243b9d57e9652e027e205cdf12b29b140df953e",
+        "recovery_holdout_03_retained2000.npz": "c2ec4d5f4f91c823e7acdb39819c131071b7d9100eabf211b2d53ef707dbf915",
+        "recovery_holdout_01_retained2000.npz": "0b2882cfc0fd5d5fc1d4b89e64ef4131ee13c5ef720a73d56cbd67a3c6b751c9",
+        "train_failure_w11_e7_retained2000.npz": "656e023edc0ea0193b4516a80f153b5f619cb244a28670e74edd36ad76d54e0e",
+        "motion_profile_002_retained2000.npz": "94e2f76788be0965f831e007bfca62bbf5b151542efa667adf31360e387236d4",
+        "motion_profile_000_retained2000.npz": "5db027bcb8da8f2c55396ff2176c444ad831a18c7443c2afa9fb85e9ae938dd0",
+        "independent_dynamic_000_retained2000.npz": "75c3431b223b45de858458db7f827eb8c403737740c64cce08675fedfff05bdd",
+        "independent_dynamic_001_retained2000.npz": "cf75837f016de1c341269b1e4d38244ba9e2603587e7ff8d2436ddefa45c02fa",
+        "localization_nav_00_retained2000.npz": "7fbe8ae1f6a1f6365684efeb6b7a93464bb3fab9c79ce03ad5c100ab853d0fcc",
+        "localization_nav_05_retained2000.npz": "4c513b5adfd594cad8efe08c2f197556686bd5e06cbd9c993871f27bb3634ad7",
+        "localization_nav_12_retained2000.npz": "658ab04b66d30d8b49f6dafac99151ab0b862edc37502fb45feb07b8f9107b3f",
+        "localization_nav_17_retained2000.npz": "39b6088dca82ec8b33dcda311bfa3db634ac8a8998e8ed2d8509d8ad13c07fb1",
+        "localization_nav_24_retained2000.npz": "c22dd5a5d68ef8e45fab46bf84e72e565b3a23a03606cf4bd3e52b561596fea3",
+        "localization_nav_31_retained2000.npz": "e8c258fab5c567506be8d249c2a5ab991e1d18267b2d3620b59f31d73615297c"
+      },
+      "variants": [
+        "retained2000"
+      ]
+    },
+    "w11_retained2000_prefixes_20261016": {
+      "started": false,
+      "expected_rows": 2,
+      "finished_rows": 0
+    },
+    "w11_retained2000_w11_20261016": {
+      "started": false,
+      "expected_rows": 3,
+      "finished_rows": 0
+    },
+    "w11_retained2000_fresh_20261016": {
+      "started": false,
+      "expected_rows": 12,
+      "finished_rows": 0
+    },
+    "early_transfer_diagnostic_navigation_20261016": {
+      "started": true,
+      "completed": false,
+      "expected_rows": 6,
+      "finished_rows": 5,
+      "safe": 5,
+      "collisions": 0,
+      "timeouts": 0,
+      "report": "reports/handoff_save_20261016/validation/early_transfer_diagnostic_navigation_20261016/RESULTS.json",
+      "report_sha256": "4431ed6c87318761172bd65c12d230caed0fee3bdf0296e44435fd8376809989",
+      "trace_files": {
+        "motion_profile_015_early_transfer_diagnostic.npz": "2764d2de2fe330bb0e7831c65ed1d4b68df65bf89b71b18b5df5b89f14d1c5e9",
+        "recovery_holdout_00_early_transfer_diagnostic.npz": "6b07872a61593f2af6b73d5743aab51b73f64404712972bdaf218d4a03340132",
+        "recovery_holdout_01_early_transfer_diagnostic.npz": "d3b891e45f6e505d3eaca9a6bd0d526598fbe911bc2ebef8254be8b37ae74752",
+        "train_failure_proactive_variation_02_early_transfer_diagnostic.npz": "a903977474858b677b53cfc88f1f64119326dee2d4e1db66c331c85aca361b6d",
+        "train_failure_proactive_variation_06_early_transfer_diagnostic.npz": "e555319e208731f641fc5bab484df3ebad6f0553a23b1ae3403dea615a002185"
+      },
+      "variants": [
+        "early_transfer_diagnostic"
+      ]
+    },
+    "early_transfer_diagnostic_reference_20261016": {
+      "started": false,
+      "expected_rows": 3,
+      "finished_rows": 0
+    },
+    "reference_control_wait_t32_20261016": {
+      "started": false,
+      "expected_rows": 1,
+      "finished_rows": 0
+    }
+  },
+  "source_units": [
+    {
+      "MainPID": "1750546",
+      "Result": "success",
+      "Id": "rl-w11-retention-pair-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "ccf6796d00f34b44add304cf192a1dae"
+    },
+    {
+      "MainPID": "1787520",
+      "Result": "success",
+      "Id": "rl-post-aux-fixed-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "c60bf2973f184188ac26018fd1539489"
+    },
+    {
+      "MainPID": "1790276",
+      "Result": "success",
+      "Id": "rl-reference-wait-t32-20261016.service",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "5fff3c9bd509498f98fa49fe15800c46"
+    }
+  ],
+  "original_deployment_replaced": false,
+  "local_jobs_migrate": false,
+  "exact_physical_rollout_resume_supported": false,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "remaining": [
+    "Finish the retained-model fixed evaluations and compare original successes, not only total arrivals.",
+    "Finish the diagnostic BC/reference tasks and the t32 reference continuation; no result is assumed in advance.",
+    "The control 2k regressed on the original W11 success and all three historical W11 recoveries.",
+    "The retained 2k recovered the full-start W11, but it has other failures; this is not deployment acceptance.",
+    "Long-wait useful demonstrations and actual learnable-state exposure remain insufficient.",
+    "Localization networks/router are frozen in recovery training; real localization and Orin latency remain unaccepted.",
+    "Source-PC services and post-snapshot outputs are not transferred by Git."
+  ]
+}

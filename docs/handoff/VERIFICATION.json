@@ -1,6 +1,6 @@
 {
   "completed": true,
-  "pinned_files_checked": 24951,
+  "pinned_files_checked": 27208,
   "model_files_checked": 9,
   "simulation_tasks": 28,
   "real_decisions": 1516,
@@ -175,7 +175,9 @@
       "torchscript_loaded": true
     }
   ],
-  "native_reference_rebuilt": false,
+  "native_reference_rebuilt": true,
+  "native_reference_bundle": "/tmp/agv-save-clean-final-aqqoyxxw/training/runs/save_clean_verification/native_reference",
+  "all_feedback_native_bundles_rebuilt": false,
   "implementation_tests_returncode": 0,
   "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
   "torch": "2.8.0+cu126",
@@ -199,18 +201,34 @@
     "closed_loop_acceptance": false,
     "deployment_approved": false
   },
-  "branch": "dev",
-  "verified_at": "2026-10-16T07:38:24.866629+08:00",
-  "implementation_tests_run": 127,
+  "branch": "save",
+  "verified_at": "2026-10-16T00:52:12.907822+00:00",
+  "integrity_check": {
+    "completed": true,
+    "at": "2026-10-16T00:50:54.241307+00:00",
+    "branch": "save",
+    "snapshot": "reports/handoff_save_20261016/SNAPSHOT.json",
+    "pinned_files_checked": 27208,
+    "finished_traces_checked": 56,
+    "model_hashes_checked": 5,
+    "new_physical_steps": 0,
+    "new_training_steps": 0,
+    "deployment_approved": false,
+    "scope": "Byte integrity and frozen completion metadata; no navigation/real-world acceptance."
+  },
+  "source_export": {
+    "root": "/tmp/agv-save-clean-final-aqqoyxxw",
+    "files": 27210,
+    "platform_libraries_exported": 0,
+    "source_content": "Git index paths only; no .git, .venv, caches or untracked outputs; read-only input files share storage."
+  },
+  "implementation_tests": 127,
   "implementation_tests_skipped": 0,
-  "all_implementation_tests_passed": true,
-  "files_manifest_sha256": "418ab786a795ef6add4d0b02b1778c8690b84009d20778f08799e2371a7c880c",
-  "source_check_unit": "rl-dev-handoff-final-check-20261016.service",
-  "native_verifier_parity_test_passed": true,
-  "native_reference_reused_existing_build": "training/runs/recovery_handoff_check_20261016/native_reference",
-  "all_native_bundles_rebuilt_this_verification": false,
-  "native_reference_is_platform_specific_and_excluded_from_git": true,
-  "physical_navigation_acceptance": false,
-  "original_deployment_replaced": false,
-  "goal_achieved": false
+  "tests_file": "docs/handoff/verification_save_tests.txt",
+  "tests_sha256": "60b82882c752fb2daf96ff4d9407a745bfa66a49ac12034d6951e6fbdf667021",
+  "files_manifest_sha256": "47ed6228351acbd92c17af19f2379b9551d0297a752f5abe3f25b18ca279409d",
+  "source_hardware_execution": "Models explicitly loaded on CPU; CUDA availability is informational.",
+  "native_check": "Temporal native reference rebuilt on exported sources; Python ray candidate checked separately.",
+  "new_ppo_steps_for_this_handoff": 0,
+  "independent_navigation_or_real_acceptance": false
 }

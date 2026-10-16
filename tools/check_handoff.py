@@ -52,6 +52,14 @@ def main():
         if digest(ROOT / 'training/neural_navigation' / name) != expected:
             raise ValueError('Candidate runtime mismatch: ' + name)
 
+    # The ray-consistency candidate above is Python-based. Native parity uses
+    # a separate temporal reference; Git excludes its shared library, so build
+    # that reference from pinned source instead of skipping the native test.
+    from tools.prepare_native_bundle import build
+    native = build(ROOT / 'models/localization_mapping_20261015/temporal_native_candidate/portable',
+                   output / 'native_reference')
+    os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
+
     frozen = ROOT / 'training/assets/localization_replay_20261015'
     tasks = json.loads((frozen / 'TASKS.json').read_text())
     if len(tasks) != 28:
@@ -174,10 +182,6 @@ def main():
         training_snapshot = verify(ROOT, handoff['training_snapshot'])
 
     if args.build_native:
-        from tools.prepare_native_bundle import build
-        native = build(ROOT / 'models/localization_mapping_20261015/temporal_native_candidate/portable',
-                       output / 'native_reference')
-        os.environ['HANDOFF_NATIVE_BUNDLE'] = str(native)
         for entry in feedback_models:
             bundle = ROOT / 'models/stop_feedback_20261015' / entry['folder'] / entry['bundle_name']
             feedback_manifest = json.loads((bundle / 'manifest.json').read_text())
@@ -213,7 +217,9 @@ def main():
         feedback_checkpoint_loaded=True, feedback_torchscript_loaded=True,
         feedback_native_runtime_checked=args.build_native,
         feedback_models=feedback_models,
-        native_reference_rebuilt=args.build_native, implementation_tests_returncode=completed.returncode,
+        native_reference_rebuilt=True, native_reference_bundle=str(native),
+        all_feedback_native_bundles_rebuilt=args.build_native,
+        implementation_tests_returncode=completed.returncode,
         python=sys.version, torch=torch.__version__, cuda_available=torch.cuda.is_available(),
         scope='Integrity, input contracts, one-frame runtime and implementation checks; no closed-loop or real accuracy acceptance.',
         deployment_approved=False, training_snapshot=training_snapshot)
