@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-16T12:14:25.414967+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/actual106_safe_source_20261016/collect.py": "a1b7073d171875c8719c6eb5a558df43d4ec7980c1d5fb5a6a5577a327547325",
+    "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/run.py": "70458482506eac73d01c0a6ecd09edfb88224c91fdaf1939bee7786d3f737cce",
+    "reports/stop_feedback_20261015/actual106_confirmed_free_probe_verified_20261016/PLAN.json": "0fdb8e5739dc71d99627cdca98428d71ba7dee37af6d07c3faffa05122273c1c",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/policy_bc.zip": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/demonstrations.npz": "b0bc54ff8c6be944570aa8ae00c673875d1d662946284f5d9b1f864599e85a03",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/actor.pt": "dade1343a371562496bdffb95c1bd920b82416e97d57a50b5ee47bec5a1b6798",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "training/experiments/recovery_demonstrations.py": "b41f5afaf961476732cffab24286e0ad66254459df2c37a5fae6af393afcbad1",
+    "reports/stop_feedback_20261015/actual106_memory_context_20261016/replay.py": "a91261ef77a549b2a187360b1606a781413bdfe515fb36f95a44c2aab97b87f8"
+  },
+  "predecessor": "rl-actual106-confirmed-free-probe-verified-20261016.service",
+  "predecessor_invocation": "c11a5f4314444733a00bc138120fbe44",
+  "maximum_sources": 1,
+  "exclude_all_initialization_and_waiting_before_first_expert_window": true,
+  "only_complete_safe_physical_arrival": true,
+  "require_post106_frame_sampled_truth_gap_at_least_m": 0.04,
+  "stop_labels_remain_in_old_dataset": true,
+  "no_failed_positive_examples": true,
+  "no_optimization_or_physical_simulation": true,
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "deployment_approved": false,
+  "goal_achieved": false
+}

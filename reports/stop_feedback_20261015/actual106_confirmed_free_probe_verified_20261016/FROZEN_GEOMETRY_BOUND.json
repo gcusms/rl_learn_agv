@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-16T12:24:27.166353+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/training_stall_source_20261016/train_failure_w11_e7.npz": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "training/assets/room_navigation_scripted/physical_scene.json": "5e5a99cdafd464a2ac9e9689266ccc378dece711181234dc734d9c8dabeaba2d"
+  },
+  "truth_used_only_for_independent_frozen_geometry_score": true,
+  "source_time_s": 105.99999999997608,
+  "robot_circumscribed_radius_m": 0.2567687364573663,
+  "human_clearance_lower_bounds_m": [
+    0.04055626216283248,
+    21.345544696571235
+  ],
+  "wall_clearance_lower_bounds_m": [
+    3.471993670876869,
+    3.614468856208398,
+    6.736512362469072,
+    2.349950164616196,
+    1.9946025982924382,
+    2.050855197490683,
+    5.336512362469072,
+    2.0365123624690717,
+    0.33651236246907246,
+    0.9499501646161956
+  ],
+  "all_heading_frozen_geometry_clearance_lower_bound_m": 0.04055626216283248,
+  "excess_above_guard4cm_m": 0.0005562621628324785,
+  "robot_center_held_fixed": true,
+  "human_geometry_held_fixed": true,
+  "not_a_measured_sensor_margin": true,
+  "not_full_mission_or_dynamic_physical_feasibility": true,
+  "conclusion": "The scored frozen geometry has only about0.56mm excess for arbitrary-heading rotation beyond4cm. This does not certify any sensor-admissible rotation or justify reducing the guard margin.",
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

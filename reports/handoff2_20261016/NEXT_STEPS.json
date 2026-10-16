@@ -1,0 +1,113 @@
+{
+  "latest_model": {
+    "folder": "models/stop_feedback_20261015/recovery_followup_bc400_s231016",
+    "checkpoint": "policy_bc.zip",
+    "sha256": "dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212",
+    "additional_supervised_updates": 400,
+    "additional_ppo_steps": 0,
+    "approved_as_new_deployment": false
+  },
+  "latest_evaluation_completed": false,
+  "frozen_first8_finished": 5,
+  "frozen_first8_pending": 3,
+  "ordered": [
+    {
+      "step": 1,
+      "kind": "normal_navigation_gate",
+      "count": 1,
+      "cases": "reports/handoff2_20261016/pending_gate_cases.json",
+      "merge_with": "reports/handoff2_20261016/finished_normal4_rows.json",
+      "check": "python tools/check_handoff_gate.py --normal-result <new-result>/RESULTS.json"
+    },
+    {
+      "step": 2,
+      "kind": "recovery95_then90",
+      "count": 2,
+      "specifications": "reports/handoff2_20261016/pending_recovery_specifications.json",
+      "compare_with": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "baseline_rows": [
+        [
+          "actual95_learned_validation_20261016/RESULTS.json",
+          "recovered_rows"
+        ],
+        [
+          "actual95_broad_regression_20261016/RESULTS.json",
+          "groups",
+          "w11_t90",
+          "rows"
+        ]
+      ]
+    },
+    {
+      "step": 3,
+      "kind": "remaining_full_navigation",
+      "count": 13,
+      "cases": "reports/handoff2_20261016/remaining_full13_cases.json",
+      "merge_with": [
+        "reports/handoff2_20261016/finished_normal4_rows.json",
+        "new gate result motion_profile_015"
+      ],
+      "expected_unique_total": 18,
+      "parent_report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "parent_row_path": [
+        "full18_rows"
+      ]
+    },
+    {
+      "step": 4,
+      "kind": "remaining_extra_conditions",
+      "count": 11,
+      "cases": "reports/handoff2_20261016/remaining_fresh11_cases.json",
+      "merge_with": "reports/handoff2_20261016/finished_fresh1_rows.json",
+      "expected_unique_total": 12,
+      "parent_report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+      "parent_row_path": [
+        "groups",
+        "fresh12",
+        "rows"
+      ]
+    },
+    {
+      "step": 5,
+      "kind": "original_recovery_history",
+      "count": 2,
+      "specifications": "reports/stop_feedback_20261015/w11_recovery_bc800_prefixes_20261016/specifications.json"
+    },
+    {
+      "step": 6,
+      "kind": "heading_probes",
+      "count": 2,
+      "cases": "reports/stop_feedback_20261015/heading_probe_cases.json"
+    },
+    {
+      "step": 7,
+      "kind": "actual95_additional_wait_2_4s",
+      "protocol": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/PLAN.json",
+      "note": "Define a new portable experiment/output for this candidate. Historical run.py pins old model/services; never rerun it in place."
+    }
+  ],
+  "unresolved": [
+    "actual106 complete safe recovery or prevention at the same real-car constraints",
+    "four original extra-condition collisions",
+    "complete new-model safety/efficiency regression",
+    "unseen maps, real sensor-time calibration and target-board P95/P99"
+  ],
+  "frozen_components": [
+    "base_actor",
+    "localizer",
+    "router",
+    "heading_docking"
+  ],
+  "resource": {
+    "physical_jobs": 1,
+    "soft_cpu_cores": 0.35,
+    "hard_cpu_quota": "50%",
+    "memory_max": "4GiB",
+    "nice": 19,
+    "threads": 1
+  },
+  "new_ppo_admitted": false,
+  "deployment_approved": false,
+  "goal_achieved": false,
+  "resume_limitation": "Models/Adam/RNG/data saved; CLI does not restore an arbitrary half-episode physics/history state."
+}

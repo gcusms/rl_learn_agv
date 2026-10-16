@@ -1,0 +1,59 @@
+{
+  "completed": true,
+  "models": [
+    {
+      "folder": "actual95_transfer_bc400_s231016",
+      "checkpoint_sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+      "examples": 2421,
+      "correct": 2421,
+      "previous_examples_retained": 2355,
+      "all_stop_labels_retained": 57,
+      "exported_decisions_checked": 244,
+      "optimizer_and_rng_loaded": true,
+      "frozen_base_unchanged": true,
+      "native_libraries_to_rebuild": [
+        "localization_kernel.so"
+      ]
+    },
+    {
+      "folder": "actual95_control_bc400_s231016",
+      "checkpoint_sha256": "fef34d6d3ec0170c83935319fae7080227f10a9e06396b71f334a663a4d922cc",
+      "examples": 2355,
+      "correct": 2354,
+      "previous_examples_retained": 2355,
+      "all_stop_labels_retained": 55,
+      "exported_decisions_checked": 178,
+      "optimizer_and_rng_loaded": true,
+      "frozen_base_unchanged": true,
+      "native_libraries_to_rebuild": [
+        "localization_kernel.so"
+      ]
+    },
+    {
+      "folder": "recovery_followup_bc400_s231016",
+      "checkpoint_sha256": "dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212",
+      "examples": 2505,
+      "correct": 2505,
+      "previous_examples_retained": 2421,
+      "all_stop_labels_retained": 57,
+      "exported_decisions_checked": 268,
+      "optimizer_and_rng_loaded": true,
+      "frozen_base_unchanged": true,
+      "native_libraries_to_rebuild": [
+        "localization_kernel.so"
+      ]
+    }
+  ],
+  "resource": {
+    "seconds": 28.54548138094833,
+    "cpu_seconds": 4.291246534,
+    "average_cpu_cores": 0.1503301512674451,
+    "peak_rss_mib": 696.265625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "deployment_approved": false,
+  "scope": "Model/data/export portability checks; no navigation acceptance."
+}

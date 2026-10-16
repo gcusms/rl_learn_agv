@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-16T12:43:40.415065+08:00",
+  "objective": "\u89e3\u51b3\u6a21\u578b\u4e0d\u77e5\u9053\u81ea\u5df1\u4e3a\u4ec0\u4e48\u88ab\u505c\u8f66\u548c\u6709\u53ef\u884c\u52a8\u4f5c\u5374\u4e0d\u5c1d\u8bd5",
+  "previous_goal_turn_classification": "verified_wait",
+  "previous_progress": "Confirmed the exact live regression and queued-probe handles; verified the completed fixed GitHub migration. No additional training or physical branch was restarted.",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "new_ppo_steps": 0,
+  "fixed_github_snapshot": {
+    "branch": "continue",
+    "commit": "c4d4d41a7120ff9122859f7a0c4ed079cff1ef6a",
+    "captured_at": "2026-10-16T11:29:48.501310+08:00",
+    "post_snapshot_research_automatically_uploaded": false
+  },
+  "latest_checkpoint": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/policy_bc.zip",
+  "latest_sha256": "dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212",
+  "matched_control_and_hold_evidence": {
+    "old_data_control_actual95_safe": false,
+    "new_data_actual95_safe": true,
+    "old_data_control_wait2_4_safe": false,
+    "new_data_wait2_4_safe": true,
+    "matched_control_actual106_safe": false,
+    "new_data_actual106_safe": false
+  },
+  "live_handles": {
+    "rl-recovery-followup-validation-20261016.service": "MainPID=1870649\nResult=success\nActiveState=active\nInvocationID=f3c34211bf3f40a295a16cb7afc30c72\n"
+  },
+  "soft_cpu_total_cores": 0.35,
+  "physical_main_cores": 0.35,
+  "nonphysical_replay_cores": 0.0,
+  "remaining_requirements": [
+    "Finish bounded normal/recovery regression without weakening safety or efficiency gates.",
+    "Full18 and extra12 validation for newly fitted followup remains pending.",
+    "Actual106 learned complete safe recovery remains unresolved; rejected and failed probes cannot become positive examples.",
+    "General full-time memory configuration, independent environments and real-lidar calibration remain unverified.",
+    "Preserve necessary waiting, heading behavior and exact executed-action accounting; no model replacement until required gates pass."
+  ],
+  "deployment_approved": false,
+  "current_progress": [
+    "Completed actual95 full18 plus broader groups; extra12 efficiency still failed.",
+    "Completed170-frame actor support/logit audit and601-frame replay separating current laser and memory vetoes.",
+    "Completed three106 component trials and one odometry-phase expert trial; all zero collisions and timeouts, no106 positive source admitted.",
+    "Added84 decisions from a complete safe parent task to exact2421 old examples;400 supervised updates, all2505 correct and57 old stops retained; no newPPO.",
+    "Independently reloaded model/optimizer/RNG and checked268 portable decisions.",
+    "Closed-loop fresh33 safely recovered38.6s/5.602m versus direct-parent48s/5.659m; serial normal/recovery validation is live."
+  ],
+  "offline_audit": "reports/stop_feedback_20261015/actual106_policy_parts_verified_20261016/RESULTS.json",
+  "offline_audit_completed": true,
+  "completed_broad_regression": {
+    "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+    "full18_safe": 18,
+    "full18_efficiency_nonregression": true,
+    "fresh12_safe": 8,
+    "fresh12_collisions": 4,
+    "fresh12_original_failures_unchanged": true,
+    "fresh12_time_relative_increase": 0.060455192034166716,
+    "fresh12_efficiency_nonregression": false,
+    "original_prefixes_safe": 2,
+    "heading_safe": 2,
+    "w11_t90_safe": true,
+    "larger_training_or_deployment_approved": false
+  },
+  "actual106_component_model_only": {
+    "completed": true,
+    "timeout": true,
+    "collisions": 0,
+    "post_release_frames": 170,
+    "wait_with_legal_choices_frames": 169,
+    "experimental_memory_does_not_solve_learned_recovery": true
+  },
+  "current_local_readme": "reports/stop_feedback_20261015/goal_followup_20261016/README.md",
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "original_deployment_replaced": false
+}

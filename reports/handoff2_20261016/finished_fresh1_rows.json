@@ -1,0 +1,40 @@
+[
+  {
+    "case_id": "localization_nav_33",
+    "category": "retained_validation_map_new_longer_route_for_recovery",
+    "safe_success": true,
+    "physical_arrival": true,
+    "false_arrival": false,
+    "protocol_valid": true,
+    "collisions": 0,
+    "input_odometry": "noisy_motion_feedback",
+    "physical_guards": 0,
+    "timeout": false,
+    "seconds": 38.600000000001295,
+    "travel_m": 5.602187519855858,
+    "frames": 194,
+    "final_xy_error_m": 0.036984697659916854,
+    "final_yaw_error_rad": 0.023811908279835592,
+    "localization_xy_p95_m": 0.014035049312261226,
+    "localization_yaw_p95_rad": 0.0031675446126290473,
+    "stop_choices": 8,
+    "only_stop_frames": 3,
+    "stop_reasons": {
+      "None": 192,
+      "learned_route_incomplete": 1,
+      "estimated_goal_reached": 1
+    },
+    "voluntary_wait_frames": 5,
+    "predictive_constraint_frames": 13,
+    "runtime_ms": {
+      "p95": 156.3922640052624,
+      "p99": 182.3316008376423,
+      "maximum": 188.36204096442088
+    },
+    "group": "regressed_fresh33",
+    "variant": "recovery_followup_bc400",
+    "trace_sha256": "96b2dccbe0791cf93090fc85b23f24ab7bf9cd602136e156ef823343d429004e",
+    "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/regressed_fresh33_localization_nav_33.npz",
+    "model_only_after_initialization": true
+  }
+]

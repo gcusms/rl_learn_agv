@@ -1,0 +1,516 @@
+{
+  "completed": true,
+  "at": "2026-10-16T11:53:02.003902+08:00",
+  "source_plan_sha256": "e8528b23542464e23c544663d4baec0f0a5bfc8f35c68996b31e066939c30eb9",
+  "source_failure": {
+    "error": "TypeError('Object of type bool_ is not JSON serializable')",
+    "automatically_restarted": false,
+    "new_physical_steps": 0,
+    "goal_achieved": false
+  },
+  "source_replay": "reports/stop_feedback_20261015/actual106_memory_context_20261016/replay.npz",
+  "source_replay_sha256": "2c523c66dab23d8f49ac4be65c1abea9051d6d9483819f5d493454beffd904de",
+  "original_pinned_inputs_verified": 85,
+  "original_runtime_replay_restarted": false,
+  "original_json_failure_preserved": true,
+  "fixtures": {
+    "duplicate_time_not_counted": true,
+    "unknown_resets_confirmation": true,
+    "three_distinct_free_frames_required": true,
+    "unseen_rear_retained": true,
+    "map_pose_correction_does_not_move_memory": true,
+    "occluding_surface_does_not_clear": true
+  },
+  "frozen_prefix_frames": 530,
+  "frozen_prefix_observations_bit_identical": true,
+  "all700_base235_features_bit_identical": true,
+  "all700_saved_actor_proposals_exactly_reproduced": true,
+  "recorded_choices_and_commands_bit_identical": true,
+  "original_pose_and_execution_assertions_passed_before_array_archival": true,
+  "original_exact_maximum_pose_difference_not_retained": true,
+  "post106_frames": 170,
+  "independent_motion_proposals": 3,
+  "independent_motion_choice_counts": {
+    "0": 167,
+    "3": 1,
+    "8": 2
+  },
+  "frames_with_new_geometry_permissions": 109,
+  "local_geometry_checks": [
+    {
+      "time_s": 107.99999999997426,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06457542364470814
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 108.99999999997335,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850621209165281
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 108.99999999997335,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06458119291817871
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 109.99999999997245,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850330942360155
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 109.99999999997245,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06453319433154131
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 110.99999999997154,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850631652786215
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 110.99999999997154,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0646686722842359
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 111.99999999997063,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 111.99999999997063,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06465063044526626
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 112.99999999996972,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06849784502796152
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 112.99999999996972,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0644704294005532
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 115.99999999996699,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 115.99999999996699,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0647872599647476
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 116.99999999996608,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06848883142646245
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 116.99999999996608,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06435709260544453
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 117.99999999996517,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06849637957898791
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 117.99999999996517,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06455284108584014
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 118.99999999996426,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 118.99999999996426,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0649242471594354
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 119.99999999996335,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 119.99999999996335,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06474353209963463
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 120.99999999996244,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 122.99999999996062,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06846369524963286
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 122.99999999996062,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0642504150925911
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 123.99999999995971,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 123.99999999995971,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06495784152615802
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 124.9999999999588,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 124.9999999999588,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06481560914805057
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 128.99999999995518,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 128.99999999995518,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0646798769638024
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 129.99999999995427,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0685059807559254
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 129.99999999995427,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06459509759027482
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 135.9999999999488,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 135.9999999999488,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0649265801992348
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 136.9999999999479,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.0684962152982353
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 136.9999999999479,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06444203871837323
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 138.99999999994608,
+      "choice": 5,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06850729289712176
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    },
+    {
+      "time_s": 138.99999999994608,
+      "choice": 7,
+      "independent_model_proposes_this": false,
+      "minimum_truth_gap_m": {
+        "nominal": 0.06850729289712176,
+        "finite_response": 0.06485767174013124
+      },
+      "samples": 41,
+      "horizon_s": 0.2,
+      "nonphysical_counterfactual_geometry_only": true
+    }
+  ],
+  "resource": {
+    "seconds": 18.852752053993754,
+    "cpu_seconds": 2.830495174,
+    "average_cpu_cores": 0.15013697554041666,
+    "peak_rss_mib": 482.7890625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "physical_runtime_hypothesis_admitted": false,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "limitations": [
+    "Recorded commands, not independent model proposals, generated this replay history.",
+    "Truth only audits local geometry; it is not a policy or localization input.",
+    "0.2s geometry with interpolated baseline pedestrian motion is not complete reactive physics or escape.",
+    "Repaired JSON serialization only; no model, mask or source runtime modification."
+  ]
+}

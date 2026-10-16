@@ -1,52 +1,17 @@
-# AGV 强化学习导航：当前进度与换机续接
+# AGV 强化学习导航：换机交接
 
-交接分支：**[`continue`](https://github.com/gcusms/rl_learn_agv/tree/continue)**。本分支接续 `backup` 的 2026-10-16 09:38 快照，包含随后完成的代码、模型、训练状态、成功／失败轨迹和评估结果。**准确截止时间、原机任务状态及模型 SHA256 见 [SNAPSHOT.json](reports/handoff_continue_20261016/SNAPSHOT.json)**；更早文档中的“当前”仅指各自时间。
+交接分支：**[handoff2](https://github.com/gcusms/rl_learn_agv/tree/handoff2)**。冻结时间：**2026-10-16 12:49:16，北京时间**。本分支接续 `continue`，保存源码、定位算法、原部署与研究模型、优化器、示范数据、必要地图、精简实车记录，以及成功和失败的评估轨迹。
 
-**最新候选已改善一个真实复现的停车状态；106 秒停滞仍未解决，尚未替换实车模型。目前没有新一轮 PPO 在训练，原机本轮物理评估也均已结束。** 换机后先检查文件与模型，再完成剩余回归；无需重复已经完成的全部训练。
+**当前重点：让模型理解停车原因，并在确有安全运动机会时恢复导航。最新候选已改善一个绕行变慢的任务，但完整验收尚未完成；106 秒停滞仍未解决，原实车模型未替换。** 截止时没有 PPO 在训练，原电脑有一个低资源物理评估进程运行；这里只保存已完成结果，后台进程不会迁移。
 
-## 1. 当前成果与边界
+精确文件与模型哈希见 [交接快照](reports/handoff2_20261016/SNAPSHOT.json) 和 [文件清单](docs/handoff/FILES.json)。历史报告中的“当前”“运行中”“未上传”均只描述各自生成时间；本页与本次快照优先。
 
-当前研究目标是解决“模型不知道为什么停车”和“有可行动作却不尝试”。观测已加入逐动作拒绝原因、雷达质量、预测风险及实际停车历史。恢复分支采用可训练 residual；基础 actor、localizer、router 和方向停靠部分冻结。**继续恢复训练不会直接改善冻结的定位网络或路由网络。**
+## 1. 新电脑怎么接着做
 
-| 版本 | 训练／数据 | 已完成的主要评估 | 主要限制 |
-|---|---|---|---|
-| 原实车质量恢复模型 | 历史 PPO 2k | 历史开发记录 46/48 | 与下面任务集不同，不可直接排名；保留原文件 |
-| 参考 BC | 2,089 标签，800 次监督更新 | 完整任务 16/18 安全到达；原成功保留 14/14 | 额外条件 7/12，到达外有 5 次碰撞 |
-| 对照 PPO | 从参考 BC 独立追加 2,000 步 | 完整任务 17/18；原成功保留 13/14 | W11 回退，未通过升级 |
-| 示范保留 PPO | 独立追加 2,000 步，保留系数 0.05 | 完整任务 16/18；额外条件 11/12 | 丢失原成功任务，未通过升级 |
-| 诊断父 BC | 2,355 标签，800 次监督更新 | **完整任务 18/18**；原恢复历史 2/2；额外条件 8/12；W11 历史 1/3 | 额外条件仍有 4 次碰撞，95/106 秒历史接管超时；原全标签准入失败记录保留 |
-| **最新 actual95 候选** | 父 BC ＋66 条成功恢复决策，追加 **400 次监督更新，新增 PPO 0 步** | 95 秒接管安全到达；4 项旧任务全部安全、时间及路程与父版一致；额外停车 2.4 秒后仍自主到达 | **106 秒仍超时；完整 18 项中仅检查了 4 项，额外 12 项及方向停靠待回归** |
-
-上述“额外条件”仍来自使用过的地图；历史接管是带固定初始化的恢复测试。不能合成独立泛化成功率，也不能据此宣称实车可部署或定位优于 AMCL。
-
-完整证据：[两组 PPO 的 35 行分类对照](reports/stop_feedback_20261015/retention_followup_20261016/FULL35_PAIR.json)、[诊断父版完整 18 项](reports/stop_feedback_20261015/early_transfer_regression_20261016/RESULTS.json)、[诊断父版剩余分类](reports/stop_feedback_20261015/actual_stop_validation_20261016/RESULTS_main.json)。
-
-## 2. 最新恢复实验具体改善了什么
-
-在同一 W11 场景，先按原轨迹重建 475 帧传感器与动作历史，到 95 秒后由候选模型独立接管：
-
-| 检查 | 最新候选 | 匹配追加 400 次更新、仍使用旧数据的对照 |
-|---|---|---|
-| 95 秒接管 | **114.8 秒到达，10.277 米**；接管后 19.8 秒；0 碰撞、0 外部保护接管 | 超时 140 秒；有运动可选却等待 170 帧 |
-| 95 秒后实际再停车 2.4 秒，97.4 秒释放 | **138.0 秒到达，12.324 米**；释放后 40.6 秒；有运动可选却等待 1 帧 | 超时 140 秒；有运动可选却等待 148 帧 |
-| 106 秒接管 | 超时，接管后 170 帧全部停车 | 超时，接管后 170 帧全部停车 |
-
-第二行的初始化确实执行了零速度并更新传感器／物理状态；释放后没有插入专家动作。两组初始化已逐帧配对。它只检查复用任务的新等待时序，不是陌生地图泛化；路径也仍较长，尚不满足“最快、最短”的目标。
-
-最新模型拟合 **2,421/2,421** 标签正确，原 2,355 条样本逐字节保留，55 条必要停车均保留。完整成功探针中提取了 66 条新增决策（64 条运动、2 条停车）；失败的 106 秒尝试未作为正示范。独立导出检查复算了 95 秒接管后全部 100 个动作，与保存的模型完全一致。
-
-证据：[训练与来源](reports/stop_feedback_20261015/actual95_transfer_20261016/README.md)、[模型独立接管及 4 项回归](reports/stop_feedback_20261015/actual95_learned_validation_20261016/RESULTS.json)、[导出动作一致性](reports/stop_feedback_20261015/actual95_transfer_20261016/verified_actual95/RESULTS.json)、[等更新次数对照](reports/stop_feedback_20261015/actual95_matched_control_20261016/physical/RESULTS.json)、[2.4 秒停车配对](reports/stop_feedback_20261015/actual95_wait_verified_20261016/RESULTS.json)。
-
-另有等待分布温度校准原型，仅完成离线分布／导出一致性检查，没有用于上述候选、闭环、PPO 或部署；不要与本次新增示范的收益混为一项。
-
-另有 106 秒近场记忆的传感器回放：原拒绝动作得到复现，3/4 厘米连续自由证据参数也未立即打开有效脱困通道。仅有当前扫描时部分动作看似可行，不能据此删除历史障碍记忆。该项没有修改运行时、放宽保护或产生新物理训练步，见 [审计结果](reports/stop_feedback_20261015/actual106_memory_replay_20261016/RESULTS.json)。
-
-## 3. 新电脑拉取与安装
-
-建议先在 Ubuntu 22.04、Python 3.10、CPU 环境复现。私有仓库需要新电脑已有 GitHub 访问权限。
+建议先用 Ubuntu 22.04、Python 3.10、CPU 复现。仓库为私有仓库，新电脑需已有 GitHub 访问权限。
 
 ```bash
-git clone --depth 1 --branch continue https://github.com/gcusms/rl_learn_agv.git
+git clone --depth 1 --branch handoff2 https://github.com/gcusms/rl_learn_agv.git
 cd rl_learn_agv
 python3 tools/check_transfer.py
 
@@ -58,93 +23,95 @@ python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/
 python -m pip install -r training/requirements.txt
 export PYTHONPATH=training:.
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-nice -n 19 python tools/check_continue_models.py
+nice -n 19 python tools/check_handoff_models.py
 ```
 
-`check_transfer.py` 仅依赖 Python 标准库，核对文件、快照、模型与完成轨迹的哈希；`check_continue_models.py` 再加载新增两份模型和优化器，核对训练／动作合同、原样本、必要停车和导出动作一致性。**两者都不启动训练或物理导航。** 本次两份新增检查点的原样本、优化器和共 192 条导出动作接口检查通过；还从已上传源码重建定位库并通过一帧 439 维运行时检查，见 [模型检查](reports/handoff_continue_20261016/MODEL_CHECK.json) 与 [重建检查](reports/handoff_continue_20261016/NATIVE_SMOKE.json)。 此前算法实现 127 项检查通过的记录保留在 `docs/handoff/SAVE_VERIFICATION.json`；该历史记录不代表本次重新进行实车验收。
+第一项检查只需 Python 标准库，检查文件、模型和完成轨迹；第二项重新加载三份最近检查点、Adam、随机状态，检查观测、动作掩码、原始数据和导出动作一致性。它们都不训练、不运行物理导航。
 
-仓库约 1.3 GB；新机建议另留至少 8 GB 安装环境及缓存。先单进程、单线程、`nice -n 19`，闭环软预算 **0.35 核**，至少保留 4 GiB 可用内存。需要硬限制时，在相关命令前加 `systemd-run --user --scope -p CPUQuota=50% -p MemoryMax=4G`。Jetson 应使用与 JetPack 匹配的 PyTorch，不能直接使用桌面 CPU wheel；目标板端 P95/P99 尚待实测。
+已在交接目录完成三模型检查：示范复算分别为 2,421/2,421、对照 2,354/2,355、最新 2,505/2,505，所有必要停车保留，共检查 690 条导出动作。对照那一条不匹配是原有记录，不应改成通过。见 [MODEL_CHECK.json](reports/handoff2_20261016/MODEL_CHECK.json)。
 
-虚拟环境、缓存和平台 `.so` 不随 Git 迁移。运行完整导航前，从上传的 C++ 源码重建本机定位包：
+平台 `.so` 不随 Git 迁移；完整运行前，从已上传 C++ 源码重建新电脑的定位包：
 
 ```bash
 python tools/prepare_native_bundle.py \
-  --source models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable \
-  --output training/runs/continue_latest_native
+  --source models/stop_feedback_20261015/recovery_followup_bc400_s231016/bc_portable \
+  --output training/runs/handoff2_native
 ```
 
-输出目录必须不存在；该命令生成新包和对应 manifest，不修改已归档模型。编译用于匹配新机架构，不是重新训练。历史计划中的原机绝对路径、PID 和 `.so` 哈希只作审计；换机应使用相对路径及重建后的新包。
+输出目录必须不存在；此命令生成独立包与 manifest，不改归档权重。编译是适配硬件架构，不是重新训练。该源码已在本机重新编译，并用录制的一帧数据验证了最新模型 439 维运行时接口，见 [NATIVE_SMOKE.json](reports/handoff2_20261016/NATIVE_SMOKE.json)。这不代表在 Jetson 上已验收。Jetson 需按 JetPack 安装对应 PyTorch。
 
-## 4. 关键模型、代码与数据位置
+仓库约 1.3 GB；建议另留至少 8 GB 安装环境及缓存。先单线程、单物理任务、Nice19；评估命令的软预算保持 **0.35 核**。可在命令前加 `systemd-run --user --scope -p CPUQuota=50% -p MemoryMax=4G` 提供硬限制。源电脑资源不足时，不要并行开评估或重新训练。
 
-| 相对路径 | 用途 |
-|---|---|
-| `models/quality_recovery_20261014/policy_2000.zip` | 原实车部署模型，SHA256 `7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11` |
-| `models/stop_feedback_20261015/actual95_transfer_bc400_s231016/` | **最新研究候选**；`policy_bc.zip`、`bc_portable/`、示范、优化器、RNG、配置及来源 |
-| `models/stop_feedback_20261015/actual95_control_bc400_s231016/` | 相同额外更新次数、旧数据的公平对照 |
-| `models/stop_feedback_20261015/early_transfer_bc800_s231015/` | 完整任务 18/18 的诊断父版；仍有额外条件失败 |
-| `models/stop_feedback_20261015/w11_recovery_bc800_s231015/` | 参考 BC |
-| `models/stop_feedback_20261015/w11_{control,retained}2000_s231015/` | 两组独立 2k PPO；最终 `policy.zip`、优化器、实际 rollout |
-| `models/localization_mapping_20261015/ray_consistent_candidate/portable/` | 独立射线一致性定位候选，未混入恢复对照 |
-| `models/docking_selected_5000_20261015/` | 位置＋目标朝向停靠模型 |
-| `training/neural_navigation/` | 地图、定位、路由、安全与预测、停车反馈、方向目标运行时 |
-| `training/experiments/` | BC／PPO、回放审计、配对及闭环评估入口 |
-| `training/assets/real_recording_20261014/` | map_01、1,516 条实车决策、1,911 条反馈及精简轮速／IMU 数据 |
-| `training/assets/localization_replay_20261015/` | 28 条冻结仿真回放；真值仅供训练监督和评价 |
-| `reports/stop_feedback_20261015/` | 正负实验、来源、完整轨迹及各自完成状态 |
-| `reports/handoff_continue_20261016/` | 本次快照、已完成 4 项及待评估 14 项清单 |
-| `deployment/ros2_recording_adapter/` | ROS 2 记录与接入接口；控制不依赖 Nav2 行为树 |
+## 2. 模型选哪一个
 
-最新 `policy_bc.zip` SHA256：`4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed`。所有主要模型哈希见快照。
+| 模型 | 文件夹（位于 `models/stop_feedback_20261015/`） | 已完成结果 | 尚未通过 |
+|---|---|---|---|
+| 原实车版 | `models/quality_recovery_20261014/policy_2000.zip`（相对仓库根目录） | 保留实车部署原文件 | 不能拿不同任务集历史成绩直接排名 |
+| 诊断父版 | `early_transfer_bc800_s231015/` | 常规 18/18；额外 8/12 | 额外 4 次碰撞，95/106 秒接管超时 |
+| actual95 父候选 | `actual95_transfer_bc400_s231016/` | 常规 **18/18**；90/95 秒恢复到达；额外等待 2.4 秒后到达；原恢复 2/2、方向探针 2/2 | 额外仍为 8/12；该组总时间增加 6.05%，效率门槛失败；106 秒仍超时 |
+| **最新研究候选** | **`recovery_followup_bc400_s231016/`** | 冻结时 **5/5 安全到达**：4 项正常任务＋1 项补训任务；该补训任务由 48.0 秒恢复至 38.6 秒 | 尚未完成预定 8 项，以及完整 18 项／额外 12 项回归；不是部署升级 |
 
-`policy_bc.zip` 为监督初始化；PPO 最终产物为 `policy.zip`。`policy_step_2000.zip` 在最终更新前保存，不能代替最终文件。恢复检查点用 `experiments.stop_recovery_policy.StopRecoveryPPO.load(..., device='cpu')`，运行时严格按配套 manifest 加载。
+最新模型：`models/stop_feedback_20261015/recovery_followup_bc400_s231016/policy_bc.zip`。
 
-## 5. 换机后下一步：先补齐回归
+SHA256：`dd29ed24e25191af8265d832dd0edda072160d1204f4a18b280dbf265eb3e212`。
 
-1. 最新候选剩余完整任务 **14 项**，不要重跑并重复计数已完成 4 项。待评估清单已经固定，见下方命令。
-2. 再检查额外条件 12 项、原恢复历史 2 项和方向停靠 6 项。保留 95/106 秒及 2.4 秒停车对照，按类别报告到达、碰撞、超时、假到达、路程与时间。
-3. 106 秒状态先证明存在“相同约束下完整安全脱困”的可行经验；5 种显式动作探针均未成功，合法动作不等于有效脱困。不要给失败片段打成功标签或仅增加 PPO 步数。
-4. 额外条件 12 项中含 4 项方向目标，另加原方向探针 2 项，共同组成 6 项停靠回归。回归通过后，再设计小规模、单主要改动的 PPO；最后测试未使用地图和实车退化数据。不能缩小轮廓、放宽掩码、强制前进或无视盲区换取成功率。
+本轮从 actual95 候选派生，加入一条完整安全旧轨迹的 84 个决策，追加 **400 次监督更新，新增 PPO 0 步**。原 2,421 条输入、掩码及标签逐字节保留，57 条停车标签保留；共 2,505 条标签拟合正确。未更新基础 actor、localizer、router、方向停靠，也未修改车体、动作或保护余量。
 
-激活第 3 节环境并重建包后，在仓库根目录串行执行，输出目录必须不存在：
+同一任务 `localization_nav_33`：诊断父版 38.6 秒／5.602 米，actual95 父候选 48.0 秒／5.659 米，新候选 **38.6 秒／5.602 米**，比直接父版减少 9.4 秒。此任务参与了补训，不能称为陌生地图泛化；标签正确也不能替代闭环成功。
+
+模型目录均包含检查点、`bc_portable/` 导出包、示范、优化器／随机状态、配置和来源。恢复检查点使用 `experiments.stop_recovery_policy.StopRecoveryPPO.load(..., device='cpu')`；配套包按 manifest 加载。已有两组独立 2k PPO 的 `policy.zip` 也保留；监督更新、评估和初始化帧均不算 PPO 步数。
+
+## 3. 换机后先验证，接着训练的条件
+
+冻结记录：新候选预定 8 项已完成 5 项，见 [已完成结果](reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json)。剩余为 `motion_profile_015`、95 秒接管和 90 秒接管；原机截止后的结果不会自动进入此分支。先核实原机是否已有完成结果，避免重复算成新实验。
+
+在第 1 节环境中，先补一项正常导航：
 
 ```bash
 nice -n 19 python -m experiments.evaluate_docking_navigation \
-  --candidate training/runs/continue_latest_native \
-  --candidate-name actual95_transfer_bc400 \
-  --cases reports/handoff_continue_20261016/pending_navigation_cases.json \
-  --output training/runs/continue_remaining14 --cpu-cores 0.35
+  --candidate training/runs/handoff2_native \
+  --candidate-name recovery_followup_bc400 \
+  --cases reports/handoff2_20261016/pending_gate_cases.json \
+  --output training/runs/handoff2_gate --cpu-cores 0.35
 
-# 独立重现 95/106 秒接管；不要与上面的物理评估并行。
-nice -n 19 python -m experiments.evaluate_feedback_recovery \
-  --bundle training/runs/continue_latest_native \
-  --specifications reports/stop_feedback_20261015/actual95_learned_validation_20261016/prefixes.json \
-  --label actual95_transfer_bc400 \
-  --output training/runs/continue_actual_stalls --cpu-cores 0.35
+python tools/check_handoff_gate.py \
+  --normal-result training/runs/handoff2_gate/RESULTS.json
 ```
 
-剩余 14 项与 `reports/handoff_continue_20261016/finished_navigation_rows.json` 按 `case_id` 合并，确认恰为 18 个唯一任务。父版配对依据为 `reports/stop_feedback_20261015/early_transfer_regression_20261016/RESULTS.json` 的 `candidate_rows`，配对函数为 `experiments.paired_navigation_gate.compare`。其余任务入口见 [NEXT_STEPS.json](reports/handoff_continue_20261016/NEXT_STEPS.json)。
+门槛通过后，再独立检查 95/90 秒接管；与上一条物理任务串行：
 
-## 6. 续训入口与注意事项
+```bash
+nice -n 19 python -m experiments.evaluate_feedback_recovery \
+  --bundle training/runs/handoff2_native \
+  --specifications reports/handoff2_20261016/pending_recovery_specifications.json \
+  --label recovery_followup_bc400 \
+  --output training/runs/handoff2_recovery --cpu-cores 0.35
+```
 
-PPO 入口为 `python -m experiments.train_prefix_recovery --help`；完整旧 2k 协议保留在 `reports/stop_feedback_20261015/retention_pair_20261016/PLAN.json`，最新 2,421 条示范及来源在 `actual95_transfer_bc400_s231016/demonstrations.npz` 和 `reports/stop_feedback_20261015/actual95_transfer_20261016/demonstrations.json`。
+之后补齐常规剩余 13 项、额外条件剩余 11 项、原恢复历史 2 项和方向探针 2 项，并保留 2.4 秒等待对照。清单和配对依据见 [NEXT_STEPS.json](reports/handoff2_20261016/NEXT_STEPS.json)。每次用新输出目录，按 `case_id` 合并，不重复计数；成功、碰撞、超时、假到达、路径、耗时分别统计。
 
-已保存网络、优化器、随机状态、课程配置与实际样本。当前训练 CLI **不能直接恢复任意最终检查点的同一半回合物理状态、扫描历史及全部运行记忆**；`--reference-bc` 是初始化一致性检查，不是任意 PPO 检查点续训开关。载入文件用于设计后续实验，不应把重新初始化的独立实验写成无缝追加旧训练步数。历史 `reports/**/run.py` 固定了输出及服务依赖，是可审计实验源码；不要在原目录直接重跑，换机优先使用上面的通用入口。
+106 秒问题不能靠“动作合法”就宣称解决：传感器／记忆回放、三组物理试验及一次阶段转向试验已归档，均未得到完整安全恢复，不作为正示范。当前雷达和历史记忆都可能否决动作，恢复分支实际已启用。需要验证更早避免进入余量过小状态，或找到相同约束下完整安全恢复的证据；不能清空盲区记忆、缩小车体、降低 4 cm 余量或强制前进换取成功率。
 
-原机两组 2k 各约 25／26 分钟（0.35 核），峰值 RSS 约 2.4 GiB；最新 400 次监督更新约 58 秒、686 MiB。监督更新、探针、初始化帧和评估均不算 PPO 步数；两组各 2k 也不等于一份模型训练 4k。
+只有安全与效率回归通过，再设计小规模、单因素 PPO。入口是 `python -m experiments.train_prefix_recovery --help`。已保存网络／Adam／RNG，但当前 CLI 不支持任意最终检查点连同半回合物理状态、扫描历史无缝恢复；`--reference-bc` 也不是通用续训开关。不要在历史 `reports/**/run.py` 原目录重跑，它们固定输出路径和原机服务依赖。
 
-## 7. 定位、实车与停靠状态
+## 4. 代码、定位与数据位置
 
-定位优化主要来自里程计传播、静态支持筛选、弱方向约束、时序融合和自由射线矛盾检查；不是本次恢复 PPO 学出来的。独立冻结回放 22 条、2,855 帧上，时序父版／射线候选的位置 P95 为 **18.51／18.04 cm**，航向 P95 为 **1.526／1.368°**，CPU P95 为 **7.88／14.59 ms**。精度收益有限，耗时增加；详见 [定位算法及验证](docs/localization/README.md)。
+| 路径 | 内容 |
+|---|---|
+| `training/neural_navigation/` | 地图、定位、路由、雷达与安全、停车反馈、方向目标运行时 |
+| `training/experiments/` | BC／PPO、回放诊断、固定任务评估、配对门槛 |
+| `docs/localization/README.md` | 定位算法优化、编译原因、数据及验证办法 |
+| `models/localization_mapping_20261015/ray_consistent_candidate/portable/` | 独立定位候选，未混入本次恢复对照 |
+| `models/docking_selected_5000_20261015/` | 位置＋目标朝向停靠模型 |
+| `training/assets/real_recording_20261014/` | map_01、1,516 条实车决策、1,911 条反馈及精简轮速／IMU |
+| `training/assets/localization_replay_20261015/` | 冻结定位回放；真值只供监督／评价 |
+| `reports/stop_feedback_20261015/` | 正负实验、来源、训练与完整评估轨迹 |
+| `deployment/ros2_recording_adapter/` | ROS 2 录制与接入；导航控制不依赖 Nav2 行为树 |
 
-实车录包没有独立绝对位姿真值。已知地图、边导航边建图、稀疏开放区域、搬车重定位应分别验收；未证明超过 AMCL、长期无漂移或适配 Jetson 全程延迟。6%～12% 无效束、连续盲区、10/12 米量程、0.1/0.2 秒历史帧、新增障碍未入静态图及指令积分误差仍要依据实测验证。
+定位改善主要来自里程计传播、静态支持筛选、弱方向约束、时序融合和自由射线检查，不是本轮恢复 BC／PPO 更新的定位网络。独立 22 条、2,855 帧回放中，时序父版／射线候选位置 P95 为 18.51／18.04 cm，CPU P95 为 7.88／14.59 ms；精度小幅改善、耗时增加。实车没有独立绝对位姿真值，未证明超过 AMCL。已知地图、边建图边导航、开放稀疏区、搬车重定位仍需分开验收。
 
-当前车体约 **39.39×32.95 cm**，4 cm 安全余量；220 束原始扫描、约 219.44° 视野，保留后方盲区。12 个离散 `(vx,wz)` 动作，无横移、无倒车；最高前进 0.20 m/s、角速度 0.50 rad/s。恢复训练 436 维，带方向运行时 439 维，原部署 300 维；模型、特征和合同必须配套。位置＋目标朝向停靠已支持，同位置不同朝向可以转向；最新恢复候选仍需停靠回归。
+当前模型车体约 39.39×32.95 cm，4 cm 安全余量；220 束、约 219.44° 视野，保留后方盲区；12 个离散 `(vx,wz)` 动作，无横移、无倒车，最高 0.20 m/s、0.50 rad/s。恢复训练 436 维、带朝向运行时 439 维、原部署 300 维，必须配套权重和观测合同。支持位置＋朝向目标及原地转向停靠；新候选仍需停靠回归。
 
-## 8. 快照范围与原机任务
+原始 `record.zip`、rosbag／相机、虚拟环境、缓存和平台 `.so` 未上传。本轮所需精简实车数据已包含；重新提取完整话题时需另行复制原机 `/home/ubuntu/rl_learn/record.zip`，哈希见对应数据 MANIFEST。
 
-本分支保留已完成轨迹及成功／失败记录；本次捕获时，原机恢复验证、匹配对照与近场记忆审计均已结束；没有在运行的 PPO 或物理评估。后台进程、systemd 状态和 PID 不会迁移，也不会在新电脑自动恢复。截止时间之后生成的文件不会自动更新 GitHub。
-
-完整 `record.zip`、原始 rosbag／相机图像、虚拟环境、缓存、平台二进制未上传；本轮分析需要的精简实车数据已包含。若要重新提取原始话题，另行复制原机 `/home/ubuntu/rl_learn/record.zip`，源哈希和内容索引见 `training/assets/real_recording_20261014/MANIFEST.json`。
-
-[上一份 09:38 交接说明](docs/handoff/BACKUP_README.md) 保留历史状态，不作为本分支最新进度。换机以本页、当前快照和各报告 `completed` 字段为准。
+上一份交接保留在 [continue README](docs/handoff/CONTINUE_README.md)。当前已完成、待验证和原机进程状态以本次快照为准；不自动替换实车模型。
