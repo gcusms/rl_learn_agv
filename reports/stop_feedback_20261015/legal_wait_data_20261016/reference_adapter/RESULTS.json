@@ -1,0 +1,68 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 56.2000000000103,
+      "travel_m": 8.523292938705772,
+      "frames": 282,
+      "final_xy_error_m": 0.09695110034671721,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00397518813506744,
+      "localization_yaw_p95_rad": 0.0016281160780376106,
+      "stop_choices": 22,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 281,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 43,
+      "runtime_ms": {
+        "p95": 217.14005897811148,
+        "p99": 246.4616563130403,
+        "maximum": 263.01589800277725
+      },
+      "variant": "w11_augmented_bc800",
+      "trace_sha256": "10fc0bdc5b10709046260beeb8783ffb48b5652758a6fd5fc7b88e563411c8e7",
+      "specification": {
+        "id": "motion_profile_002",
+        "category": "reversal",
+        "scene": "assets/room_navigation_scripted",
+        "seed": 100002,
+        "start": [
+          7.875,
+          6.525,
+          0.5829383550326908
+        ],
+        "goal": [
+          1.175,
+          6.075
+        ],
+        "obstacle": "crossing",
+        "obstacle_speed_m_s": 0.15477787921727554,
+        "odom_scale": 1.0,
+        "reverse_after_event_s": 3.499490583194487,
+        "pilot_category": "original_release_reversal",
+        "max_steps": 700
+      }
+    }
+  ],
+  "format_adapter_only": true,
+  "new_physical_steps": 0,
+  "original_report": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json",
+  "original_report_sha256": "d5ab8e5fe7ecd445c2de7d5f639539b60f357b0d3f6604ef8b323edf116043dc",
+  "original_trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_002_w11_augmented_bc800.npz",
+  "original_trace_sha256": "10fc0bdc5b10709046260beeb8783ffb48b5652758a6fd5fc7b88e563411c8e7",
+  "arrays_or_labels_modified": false,
+  "deployment_approved": false
+}

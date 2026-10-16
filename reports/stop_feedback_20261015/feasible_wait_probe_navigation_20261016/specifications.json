@@ -1,0 +1,60 @@
+[
+  {
+    "id": "legal_pause_train_failure_w11_e7",
+    "case": {
+      "id": "train_failure_w11_e7",
+      "category": "training_failure",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "start": [
+        6.2250000000000005,
+        2.725,
+        0.017376951571745902
+      ],
+      "goal": [
+        7.125,
+        5.7250000000000005
+      ],
+      "odom_scale": 1.0,
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09295138997376881,
+      "hold_s": 3.4079953972433437,
+      "pilot_category": "original_release_training_failure",
+      "max_steps": 700
+    },
+    "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_w11_e7_w11_augmented_bc800.npz",
+    "source_trace_sha256": "de1da96347e2aaaf59f346371ef479b53e6f6d279fce7bfaaace4382fecd16bb",
+    "pause_s": 2.6,
+    "hold_s": 2.4,
+    "release_s": 5.0
+  },
+  {
+    "id": "legal_pause_motion_profile_002",
+    "case": {
+      "id": "motion_profile_002",
+      "category": "reversal",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 100002,
+      "start": [
+        7.875,
+        6.525,
+        0.5829383550326908
+      ],
+      "goal": [
+        1.175,
+        6.075
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.15477787921727554,
+      "odom_scale": 1.0,
+      "reverse_after_event_s": 3.499490583194487,
+      "pilot_category": "original_release_reversal",
+      "max_steps": 700
+    },
+    "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_002_w11_augmented_bc800.npz",
+    "source_trace_sha256": "10fc0bdc5b10709046260beeb8783ffb48b5652758a6fd5fc7b88e563411c8e7",
+    "pause_s": 7.8,
+    "hold_s": 2.4,
+    "release_s": 10.2
+  }
+]

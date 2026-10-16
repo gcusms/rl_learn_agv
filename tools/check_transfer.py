@@ -30,13 +30,14 @@ def main():
     if args.output is not None and args.output.exists():
         parser.error('The output directory must not exist')
     index = json.loads((ROOT / 'docs/handoff/FILES.json').read_text())
-    if index['branch'] != 'save':
-        raise ValueError('Expected the save handoff manifest')
+    branch = index.get('branch')
+    if not isinstance(branch, str) or not branch:
+        raise ValueError('Missing handoff branch metadata')
     for name, expected in index['files'].items():
         if digest(checked_path(name)) != expected:
             raise ValueError('File checksum mismatch: ' + name)
     snapshot = json.loads(checked_path(index['snapshot']).read_text())
-    if snapshot['branch'] != 'save' or snapshot['deployment_approved']:
+    if snapshot['branch'] != branch or snapshot['deployment_approved']:
         raise ValueError('Snapshot metadata mismatch')
     trace_count = 0
     for name, item in snapshot['validation'].items():
@@ -61,7 +62,7 @@ def main():
     for name, item in snapshot['models'].items():
         if digest(checked_path(item['folder'] + '/' + item['checkpoint'])) != item['sha256']:
             raise ValueError('Model checksum mismatch: ' + name)
-    report = dict(completed=True, at=datetime.now(timezone.utc).isoformat(), branch='save',
+    report = dict(completed=True, at=datetime.now(timezone.utc).isoformat(), branch=branch,
         snapshot=index['snapshot'], pinned_files_checked=len(index['files']),
         finished_traces_checked=trace_count, model_hashes_checked=len(snapshot['models']),
         new_physical_steps=0, new_training_steps=0, deployment_approved=False,

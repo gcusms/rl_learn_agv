@@ -1,0 +1,188 @@
+{
+  "completed": false,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "ad51d8ace3cdecd30e86deb4424b134cc58f74ebcb1e46e48080451e7e6e52e3",
+  "rows": [
+    {
+      "case_id": "recovery_holdout_02",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 32.599999999998225,
+      "travel_m": 5.412566389134776,
+      "frames": 164,
+      "final_xy_error_m": 0.1088681507016671,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004024926427996466,
+      "localization_yaw_p95_rad": 0.0013856548937895895,
+      "stop_choices": 6,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 160,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 3,
+      "predictive_constraint_frames": 9,
+      "runtime_ms": {
+        "p95": 217.65368111955468,
+        "p99": 258.09034646023076,
+        "maximum": 289.19631498865783
+      },
+      "variant": "early_transfer_diagnostic",
+      "trace_sha256": "2d23d961d2d9d2bc6a6d3fd21fc47475fe09b122d8117fb6c917623bad56d7ef"
+    },
+    {
+      "case_id": "recovery_holdout_03",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 40.20000000000211,
+      "travel_m": 5.720713590341238,
+      "frames": 202,
+      "final_xy_error_m": 0.1078467047866481,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004554813601155579,
+      "localization_yaw_p95_rad": 0.0015432150956087296,
+      "stop_choices": 18,
+      "only_stop_frames": 17,
+      "stop_reasons": {
+        "None": 198,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 23,
+      "runtime_ms": {
+        "p95": 208.69945312151677,
+        "p99": 237.59492821467578,
+        "maximum": 273.1706050108187
+      },
+      "variant": "early_transfer_diagnostic",
+      "trace_sha256": "3464b6a3affe5982287ee8dfed4bc7cd604882d7b3b89a30e2764dc86f98e40b"
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 37.000000000000476,
+      "travel_m": 4.615564677376485,
+      "frames": 186,
+      "final_xy_error_m": 0.10832328356921055,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004346804817252861,
+      "localization_yaw_p95_rad": 0.0013653656978636075,
+      "stop_choices": 18,
+      "only_stop_frames": 17,
+      "stop_reasons": {
+        "None": 184,
+        "laser_braking_footprint": 1,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 31,
+      "runtime_ms": {
+        "p95": 193.91732997610234,
+        "p99": 221.01908559852748,
+        "maximum": 225.21846200106665
+      },
+      "variant": "early_transfer_diagnostic",
+      "trace_sha256": "2257a81c794acb299bc1bb8c9ca013edbe5323c46390de573489efa88ad0ddd3"
+    },
+    {
+      "case_id": "motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 56.2000000000103,
+      "travel_m": 8.523292938705772,
+      "frames": 282,
+      "final_xy_error_m": 0.09695110034671721,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00397518813506744,
+      "localization_yaw_p95_rad": 0.0016281160780376106,
+      "stop_choices": 22,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 281,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 43,
+      "runtime_ms": {
+        "p95": 211.07059115020093,
+        "p99": 248.54468372301196,
+        "maximum": 267.6389000262134
+      },
+      "variant": "early_transfer_diagnostic",
+      "trace_sha256": "23f81fbb9c50cd7a78dc4d706ddb129e88aaf36e361a469a825e8d86b670e7c2"
+    },
+    {
+      "case_id": "motion_profile_000",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 32.599999999998225,
+      "travel_m": 3.449182180281833,
+      "frames": 164,
+      "final_xy_error_m": 0.09414767446015145,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005325988204207743,
+      "localization_yaw_p95_rad": 0.002110776688232362,
+      "stop_choices": 11,
+      "only_stop_frames": 10,
+      "stop_reasons": {
+        "None": 163,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 13,
+      "runtime_ms": {
+        "p95": 199.3279280461138,
+        "p99": 230.32692650565878,
+        "maximum": 240.06769200786948
+      },
+      "variant": "early_transfer_diagnostic",
+      "trace_sha256": "016b78bbef17f44e5d0a4df6be42183852577bcc3dc0cc89e70b3ef91b8f6fa8"
+    }
+  ],
+  "resource": {
+    "seconds": 1370.2874742770218,
+    "cpu_seconds": 205.669013367,
+    "average_cpu_cores": 0.15009187285719966,
+    "peak_rss_mib": 2066.7890625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

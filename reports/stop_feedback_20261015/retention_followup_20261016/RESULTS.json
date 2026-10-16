@@ -1,0 +1,4711 @@
+{
+  "completed": true,
+  "at": "2026-10-16T09:04:49.613319+08:00",
+  "summaries": {
+    "reference": {
+      "rows": 18,
+      "safe": 16,
+      "collisions": 1,
+      "timeouts": 1,
+      "failed_case_ids": [
+        "recovery_holdout_00",
+        "recovery_holdout_01"
+      ]
+    },
+    "control": {
+      "rows": 18,
+      "safe": 17,
+      "collisions": 0,
+      "timeouts": 1,
+      "failed_case_ids": [
+        "train_failure_w11_e7"
+      ]
+    },
+    "retained": {
+      "rows": 18,
+      "safe": 16,
+      "collisions": 1,
+      "timeouts": 1,
+      "failed_case_ids": [
+        "recovery_holdout_01",
+        "motion_profile_002"
+      ]
+    }
+  },
+  "gates": {
+    "control": {
+      "full": {
+        "schema": "paired_navigation_development_gate_v1",
+        "tasks": 18,
+        "common_successes": 15,
+        "lost_successes": [
+          "train_failure_w11_e7"
+        ],
+        "gained_successes": [
+          "recovery_holdout_00",
+          "recovery_holdout_01"
+        ],
+        "safety_nonregression": false,
+        "common_success_travel_m": [
+          52.36682428660287,
+          55.07218292513457
+        ],
+        "common_success_seconds": [
+          370.6000000000207,
+          386.60000000003146
+        ],
+        "total_travel_relative_change": 0.05166168992271358,
+        "total_time_relative_change": 0.04317323259581718,
+        "pairs": [
+          {
+            "case_id": "motion_profile_015",
+            "travel_relative_change": 0.22794157020936057,
+            "time_relative_change": 0.21544715447162543
+          },
+          {
+            "case_id": "recovery_holdout_02",
+            "travel_relative_change": -0.015143121207361276,
+            "time_relative_change": -0.12429378531077917
+          },
+          {
+            "case_id": "recovery_holdout_03",
+            "travel_relative_change": 0.08565897087547225,
+            "time_relative_change": 0.2435233160622925
+          },
+          {
+            "case_id": "motion_profile_002",
+            "travel_relative_change": 0.01534021951834541,
+            "time_relative_change": 0.042704626334533646
+          },
+          {
+            "case_id": "motion_profile_000",
+            "travel_relative_change": 0.24059177475448146,
+            "time_relative_change": -0.04907975460123293
+          },
+          {
+            "case_id": "independent_dynamic_000",
+            "travel_relative_change": 0.01788233742915568,
+            "time_relative_change": -0.003891050583659017
+          },
+          {
+            "case_id": "independent_dynamic_001",
+            "travel_relative_change": -0.03360543439865571,
+            "time_relative_change": -0.017391304347822878
+          },
+          {
+            "case_id": "localization_nav_00",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_05",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_12",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_17",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_24",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_31",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_0",
+            "travel_relative_change": -0.010701253579236347,
+            "time_relative_change": 0.04166666666668961
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_1",
+            "travel_relative_change": -0.009555521473652129,
+            "time_relative_change": -0.03797468354429867
+          }
+        ],
+        "limits": {
+          "total_travel_increase": 0.02,
+          "total_time_increase": 0.05,
+          "per_task_travel_increase": 0.2,
+          "per_task_time_increase": 0.2
+        },
+        "efficiency_nonregression": false,
+        "all_regression_checks_passed": false,
+        "larger_training_gate_passed": false,
+        "deployment_approved": false,
+        "scope": "Reused development tasks only; no automatic promotion"
+      },
+      "original14": {
+        "schema": "paired_navigation_development_gate_v1",
+        "tasks": 14,
+        "common_successes": 13,
+        "lost_successes": [
+          "train_failure_w11_e7"
+        ],
+        "gained_successes": [],
+        "safety_nonregression": false,
+        "common_success_travel_m": [
+          41.68190896480106,
+          43.99752534810469
+        ],
+        "common_success_seconds": [
+          296.6000000000198,
+          307.6000000000273
+        ],
+        "total_travel_relative_change": 0.05555447053202589,
+        "total_time_relative_change": 0.03708698583953729,
+        "pairs": [
+          {
+            "case_id": "motion_profile_015",
+            "travel_relative_change": 0.22794157020936057,
+            "time_relative_change": 0.21544715447162543
+          },
+          {
+            "case_id": "motion_profile_002",
+            "travel_relative_change": 0.01534021951834541,
+            "time_relative_change": 0.042704626334533646
+          },
+          {
+            "case_id": "motion_profile_000",
+            "travel_relative_change": 0.24059177475448146,
+            "time_relative_change": -0.04907975460123293
+          },
+          {
+            "case_id": "independent_dynamic_000",
+            "travel_relative_change": 0.01788233742915568,
+            "time_relative_change": -0.003891050583659017
+          },
+          {
+            "case_id": "independent_dynamic_001",
+            "travel_relative_change": -0.03360543439865571,
+            "time_relative_change": -0.017391304347822878
+          },
+          {
+            "case_id": "localization_nav_00",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_05",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_12",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_17",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_24",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_31",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_0",
+            "travel_relative_change": -0.010701253579236347,
+            "time_relative_change": 0.04166666666668961
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_1",
+            "travel_relative_change": -0.009555521473652129,
+            "time_relative_change": -0.03797468354429867
+          }
+        ],
+        "limits": {
+          "total_travel_increase": 0.02,
+          "total_time_increase": 0.05,
+          "per_task_travel_increase": 0.2,
+          "per_task_time_increase": 0.2
+        },
+        "efficiency_nonregression": false,
+        "all_regression_checks_passed": false,
+        "larger_training_gate_passed": false,
+        "deployment_approved": false,
+        "scope": "Reused development tasks only; no automatic promotion"
+      },
+      "directional6": {
+        "rows": 6,
+        "safe": 6,
+        "collisions": 0,
+        "timeouts": 0,
+        "failed_case_ids": []
+      }
+    },
+    "retained": {
+      "full": {
+        "schema": "paired_navigation_development_gate_v1",
+        "tasks": 18,
+        "common_successes": 15,
+        "lost_successes": [
+          "motion_profile_002"
+        ],
+        "gained_successes": [
+          "recovery_holdout_00"
+        ],
+        "safety_nonregression": false,
+        "common_success_travel_m": [
+          48.45909602527359,
+          49.632775675990715
+        ],
+        "common_success_seconds": [
+          351.4000000000109,
+          347.8000000000096
+        ],
+        "total_travel_relative_change": 0.024220007119096998,
+        "total_time_relative_change": -0.010244735344340228,
+        "pairs": [
+          {
+            "case_id": "motion_profile_015",
+            "travel_relative_change": -0.021791839162090598,
+            "time_relative_change": -0.11788617886183284
+          },
+          {
+            "case_id": "recovery_holdout_02",
+            "travel_relative_change": 0.05576872234661878,
+            "time_relative_change": -0.15254237288139527
+          },
+          {
+            "case_id": "recovery_holdout_03",
+            "travel_relative_change": -0.009497988385175571,
+            "time_relative_change": -0.06217616580313856
+          },
+          {
+            "case_id": "train_failure_w11_e7",
+            "travel_relative_change": 0.03006634414973086,
+            "time_relative_change": 0.18918918918928362
+          },
+          {
+            "case_id": "motion_profile_000",
+            "travel_relative_change": 0.08967548660910718,
+            "time_relative_change": -0.05521472392638549
+          },
+          {
+            "case_id": "independent_dynamic_000",
+            "travel_relative_change": 0.05286736062157238,
+            "time_relative_change": 0.03501945525293082
+          },
+          {
+            "case_id": "independent_dynamic_001",
+            "travel_relative_change": 0.053683089802421646,
+            "time_relative_change": 0.08695652173911417
+          },
+          {
+            "case_id": "localization_nav_00",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_05",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_12",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_17",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_24",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_31",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_0",
+            "travel_relative_change": -0.034575804454251124,
+            "time_relative_change": 0.017857142857152564
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_1",
+            "travel_relative_change": 0.038169374418666635,
+            "time_relative_change": 0.012658227848099557
+          }
+        ],
+        "limits": {
+          "total_travel_increase": 0.02,
+          "total_time_increase": 0.05,
+          "per_task_travel_increase": 0.2,
+          "per_task_time_increase": 0.2
+        },
+        "efficiency_nonregression": false,
+        "all_regression_checks_passed": false,
+        "larger_training_gate_passed": false,
+        "deployment_approved": false,
+        "scope": "Reused development tasks only; no automatic promotion"
+      },
+      "original14": {
+        "schema": "paired_navigation_development_gate_v1",
+        "tasks": 14,
+        "common_successes": 13,
+        "lost_successes": [
+          "motion_profile_002"
+        ],
+        "gained_successes": [],
+        "safety_nonregression": false,
+        "common_success_travel_m": [
+          37.77418070347177,
+          38.709087343999656
+        ],
+        "common_success_seconds": [
+          277.40000000001004,
+          281.60000000001133
+        ],
+        "total_travel_relative_change": 0.024749885321588394,
+        "total_time_relative_change": 0.015140591204041653,
+        "pairs": [
+          {
+            "case_id": "motion_profile_015",
+            "travel_relative_change": -0.021791839162090598,
+            "time_relative_change": -0.11788617886183284
+          },
+          {
+            "case_id": "train_failure_w11_e7",
+            "travel_relative_change": 0.03006634414973086,
+            "time_relative_change": 0.18918918918928362
+          },
+          {
+            "case_id": "motion_profile_000",
+            "travel_relative_change": 0.08967548660910718,
+            "time_relative_change": -0.05521472392638549
+          },
+          {
+            "case_id": "independent_dynamic_000",
+            "travel_relative_change": 0.05286736062157238,
+            "time_relative_change": 0.03501945525293082
+          },
+          {
+            "case_id": "independent_dynamic_001",
+            "travel_relative_change": 0.053683089802421646,
+            "time_relative_change": 0.08695652173911417
+          },
+          {
+            "case_id": "localization_nav_00",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_05",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_12",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_17",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_24",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "localization_nav_31",
+            "travel_relative_change": 0.0,
+            "time_relative_change": 0.0
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_0",
+            "travel_relative_change": -0.034575804454251124,
+            "time_relative_change": 0.017857142857152564
+          },
+          {
+            "case_id": "train_failure_stop_go_variation_1",
+            "travel_relative_change": 0.038169374418666635,
+            "time_relative_change": 0.012658227848099557
+          }
+        ],
+        "limits": {
+          "total_travel_increase": 0.02,
+          "total_time_increase": 0.05,
+          "per_task_travel_increase": 0.2,
+          "per_task_time_increase": 0.2
+        },
+        "efficiency_nonregression": false,
+        "all_regression_checks_passed": false,
+        "larger_training_gate_passed": false,
+        "deployment_approved": false,
+        "scope": "Reused development tasks only; no automatic promotion"
+      },
+      "directional6": {
+        "rows": 6,
+        "safe": 6,
+        "collisions": 0,
+        "timeouts": 0,
+        "failed_case_ids": []
+      }
+    }
+  },
+  "actual_waits": {
+    "reference": {
+      "motion_profile_015": {
+        "frames": 247,
+        "physical_seconds": 49.20000000000672,
+        "voluntary_wait_s": 0.6000000000000938,
+        "enroute_voluntary_wait_s": 0.6000000000000938,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.6000000000000938,
+        "only_stop_s": 6.199999999999726,
+        "executed_idle_with_motion_available_s": 0.6000000000000938,
+        "unfinished_task_executed_idle_with_motion_s": 0.6000000000000938,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 6.199999999999726,
+        "longest_unfinished_executed_wait_s": 0.6000000000000938,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.6000000000000938,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.800000000000601,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025054518731980817,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.39711561650687516
+          },
+          {
+            "forced_start_s": 9.800000000000132,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.27888101767303675
+          },
+          {
+            "forced_start_s": 15.000000000000945,
+            "release_s": 18.200000000000664,
+            "preceding_only_stop_s": 3.1999999999997186,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.21603351852114913
+          },
+          {
+            "forced_start_s": 28.199999999998674,
+            "release_s": 28.399999999998634,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 5.0,
+            "physical_displacement_m": 0.753709768923254
+          },
+          {
+            "forced_start_s": 28.599999999998595,
+            "release_s": 29.799999999998356,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000892,
+            "physical_displacement_m": 0.8293653968750236
+          },
+          {
+            "forced_start_s": 40.400000000002215,
+            "release_s": 40.80000000000242,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9394204478000779
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_00": {
+        "frames": 700,
+        "physical_seconds": 139.99999999994517,
+        "voluntary_wait_s": 34.59999999999294,
+        "enroute_voluntary_wait_s": 34.59999999999294,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 34.59999999999294,
+        "only_stop_s": 92.79999999995195,
+        "executed_idle_with_motion_available_s": 34.59999999999294,
+        "unfinished_task_executed_idle_with_motion_s": 34.59999999999294,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 92.79999999995195,
+        "longest_unfinished_executed_wait_s": 14.199999999998312,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.107020882761251e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.600000000000414,
+            "end_s": 11.800000000000445,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027376864563799907,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 19.400000000000425,
+            "end_s": 33.59999999999874,
+            "duration_s": 14.199999999998312,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000481684727991149,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 46.00000000000508,
+            "end_s": 55.000000000009685,
+            "duration_s": 9.000000000004604,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 77.00000000000246,
+            "end_s": 82.999999999997,
+            "duration_s": 5.999999999994543,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 93.79999999998718,
+            "end_s": 98.79999999998263,
+            "duration_s": 4.9999999999954525,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 14.199999999998312,
+        "long_unfinished_task_waits": [
+          {
+            "start_s": 19.400000000000425,
+            "end_s": 33.59999999999874,
+            "duration_s": 14.199999999998312,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000481684727991149,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 46.00000000000508,
+            "end_s": 55.000000000009685,
+            "duration_s": 9.000000000004604,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 77.00000000000246,
+            "end_s": 82.999999999997,
+            "duration_s": 5.999999999994543,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 93.79999999998718,
+            "end_s": 98.79999999998263,
+            "duration_s": 4.9999999999954525,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.107020882761251e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.600000000000414,
+            "end_s": 11.800000000000445,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027376864563799907,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 19.400000000000425,
+            "end_s": 33.59999999999874,
+            "duration_s": 14.199999999998312,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000481684727991149,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 46.00000000000508,
+            "end_s": 55.000000000009685,
+            "duration_s": 9.000000000004604,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 77.00000000000246,
+            "end_s": 82.999999999997,
+            "duration_s": 5.999999999994543,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 93.79999999998718,
+            "end_s": 98.79999999998263,
+            "duration_s": 4.9999999999954525,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.3599962699422145
+          },
+          {
+            "forced_start_s": 11.800000000000445,
+            "release_s": 12.000000000000476,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000466,
+            "physical_displacement_m": 0.04336050532980022
+          },
+          {
+            "forced_start_s": 12.60000000000057,
+            "release_s": 16.40000000000102,
+            "preceding_only_stop_s": 3.800000000000452,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.019911573508484062
+          },
+          {
+            "forced_start_s": 16.800000000000942,
+            "release_s": 18.600000000000584,
+            "preceding_only_stop_s": 1.7999999999996419,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.01599627542779486
+          },
+          {
+            "forced_start_s": 33.59999999999874,
+            "release_s": 46.00000000000508,
+            "preceding_only_stop_s": 12.400000000006344,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 55.000000000009685,
+            "release_s": 77.00000000000246,
+            "preceding_only_stop_s": 21.999999999992774,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 82.999999999997,
+            "release_s": 93.79999999998718,
+            "preceding_only_stop_s": 10.799999999990177,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          }
+        ],
+        "releases_without_further_motion": 3,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "recovery_holdout_02": {
+        "frames": 178,
+        "physical_seconds": 35.39999999999966,
+        "voluntary_wait_s": 1.8000000000002458,
+        "enroute_voluntary_wait_s": 1.8000000000002458,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 1.8000000000002458,
+        "only_stop_s": 3.3999999999999986,
+        "executed_idle_with_motion_available_s": 1.8000000000002458,
+        "unfinished_task_executed_idle_with_motion_s": 1.8000000000002458,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.3999999999999986,
+        "longest_unfinished_executed_wait_s": 1.0000000000001563,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.955949936884892e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.400000000000382,
+            "end_s": 12.000000000000476,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025660048295938296,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 13.400000000000695,
+            "end_s": 14.400000000000851,
+            "duration_s": 1.0000000000001563,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 1.0000000000001563,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.955949936884892e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.400000000000382,
+            "end_s": 12.000000000000476,
+            "duration_s": 0.6000000000000938,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0025660048295938296,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 13.400000000000695,
+            "end_s": 14.400000000000851,
+            "duration_s": 1.0000000000001563,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.3307601448436533
+          },
+          {
+            "forced_start_s": 10.600000000000257,
+            "release_s": 10.800000000000288,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.07936151532376726
+          },
+          {
+            "forced_start_s": 12.000000000000476,
+            "release_s": 13.400000000000695,
+            "preceding_only_stop_s": 1.4000000000002188,
+            "first_motion_delay_s": 1.0000000000001563,
+            "observation_window_s": 4.999999999999929,
+            "physical_displacement_m": 0.31642385193000727
+          },
+          {
+            "forced_start_s": 16.20000000000106,
+            "release_s": 17.400000000000823,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7983740208552971
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 1.0000000000001563,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_03": {
+        "frames": 194,
+        "physical_seconds": 38.600000000001295,
+        "voluntary_wait_s": 0.400000000000027,
+        "enroute_voluntary_wait_s": 0.400000000000027,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.400000000000027,
+        "only_stop_s": 1.8000000000001748,
+        "executed_idle_with_motion_available_s": 0.400000000000027,
+        "unfinished_task_executed_idle_with_motion_s": 0.400000000000027,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.8000000000001748,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.710436739875124e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.00000000000032,
+            "end_s": 11.200000000000351,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.563077141930911e-05,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.710436739875124e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 11.00000000000032,
+            "end_s": 11.200000000000351,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.563077141930911e-05,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.2961322165175529
+          },
+          {
+            "forced_start_s": 10.800000000000288,
+            "release_s": 11.00000000000032,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.20000000000003126,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.22237578271727979
+          },
+          {
+            "forced_start_s": 14.20000000000082,
+            "release_s": 15.200000000000976,
+            "preceding_only_stop_s": 1.0000000000001563,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999992895,
+            "physical_displacement_m": 0.4897292465461566
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.20000000000003126,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_01": {
+        "frames": 51,
+        "physical_seconds": 10.200000000000195,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 2.6000000000003,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 2.6000000000003,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.446461437764502e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.446461437764502e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.5402070080965233
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "train_failure_w11_e7": {
+        "frames": 186,
+        "physical_seconds": 37.000000000000476,
+        "voluntary_wait_s": 0.20000000000003126,
+        "enroute_voluntary_wait_s": 0.20000000000003126,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000003126,
+        "only_stop_s": 3.3999999999998565,
+        "executed_idle_with_motion_available_s": 0.20000000000003126,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.3999999999998565,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.600000000000882,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.015501033984923513,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 14.400000000000851,
+            "end_s": 14.600000000000882,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.015501033984923513,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 5.799999999999899,
+            "release_s": 6.399999999999886,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000465,
+            "physical_displacement_m": 0.44414001247136875
+          },
+          {
+            "forced_start_s": 9.40000000000007,
+            "release_s": 10.200000000000195,
+            "preceding_only_stop_s": 0.8000000000001251,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.29168580806050504
+          },
+          {
+            "forced_start_s": 14.600000000000882,
+            "release_s": 15.000000000000945,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999993605,
+            "physical_displacement_m": 0.0780177584312667
+          },
+          {
+            "forced_start_s": 25.19999999999927,
+            "release_s": 25.79999999999915,
+            "preceding_only_stop_s": 0.5999999999998806,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7284699611632619
+          },
+          {
+            "forced_start_s": 29.999999999998316,
+            "release_s": 30.199999999998276,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000001177,
+            "physical_displacement_m": 0.8147549627463901
+          },
+          {
+            "forced_start_s": 30.599999999998197,
+            "release_s": 31.399999999998037,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002029,
+            "physical_displacement_m": 0.9460897728149228
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "motion_profile_002": {
+        "frames": 282,
+        "physical_seconds": 56.2000000000103,
+        "voluntary_wait_s": 0.1999999999999602,
+        "enroute_voluntary_wait_s": 0.1999999999999602,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.1999999999999602,
+        "only_stop_s": 4.000000000000199,
+        "executed_idle_with_motion_available_s": 0.1999999999999602,
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.000000000000199,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 29.199999999998475,
+            "end_s": 29.399999999998435,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00034115233426165926,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.1999999999999602,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 29.199999999998475,
+            "end_s": 29.399999999998435,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00034115233426165926,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 22.399999999999828,
+            "release_s": 23.79999999999955,
+            "preceding_only_stop_s": 1.3999999999997215,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.8912790484485975
+          },
+          {
+            "forced_start_s": 28.599999999998595,
+            "release_s": 28.799999999998555,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000182,
+            "physical_displacement_m": 0.5784516594545734
+          },
+          {
+            "forced_start_s": 28.999999999998515,
+            "release_s": 29.199999999998475,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.3999999999999204,
+            "observation_window_s": 4.800000000000466,
+            "physical_displacement_m": 0.627712909554581
+          },
+          {
+            "forced_start_s": 29.399999999998435,
+            "release_s": 29.599999999998396,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.7053416272242605
+          },
+          {
+            "forced_start_s": 31.399999999998037,
+            "release_s": 31.999999999997918,
+            "preceding_only_stop_s": 0.5999999999998806,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.7960885104674602
+          },
+          {
+            "forced_start_s": 32.599999999998225,
+            "release_s": 32.99999999999843,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8599258279588735
+          },
+          {
+            "forced_start_s": 35.79999999999986,
+            "release_s": 35.999999999999964,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9217636372742579
+          },
+          {
+            "forced_start_s": 42.60000000000334,
+            "release_s": 43.40000000000375,
+            "preceding_only_stop_s": 0.8000000000004093,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9018053924071414
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.3999999999999204,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "motion_profile_000": {
+        "frames": 164,
+        "physical_seconds": 32.599999999998225,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 1.999999999999602,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.999999999999602,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 24.39999999999943,
+            "release_s": 25.59999999999919,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7418221447848219
+          },
+          {
+            "forced_start_s": 29.999999999998316,
+            "release_s": 30.799999999998157,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 1.8000000000000682,
+            "physical_displacement_m": 0.32716669841246265
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_000": {
+        "frames": 258,
+        "physical_seconds": 51.40000000000784,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 3.599999999999781,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.599999999999781,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 12.400000000000539,
+            "release_s": 12.60000000000057,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000253,
+            "physical_displacement_m": 0.2884704654025766
+          },
+          {
+            "forced_start_s": 13.400000000000695,
+            "release_s": 13.600000000000726,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999858,
+            "physical_displacement_m": 0.3470460233174804
+          },
+          {
+            "forced_start_s": 13.800000000000757,
+            "release_s": 14.800000000000914,
+            "preceding_only_stop_s": 1.0000000000001563,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999432,
+            "physical_displacement_m": 0.46294408226276695
+          },
+          {
+            "forced_start_s": 16.40000000000102,
+            "release_s": 16.600000000000982,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.48630943239305485
+          },
+          {
+            "forced_start_s": 19.000000000000504,
+            "release_s": 20.000000000000306,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.5016953273388335
+          },
+          {
+            "forced_start_s": 27.399999999998833,
+            "release_s": 28.399999999998634,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 5.0,
+            "physical_displacement_m": 0.9245897402543962
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_001": {
+        "frames": 116,
+        "physical_seconds": 22.99999999999971,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.6000000000000938,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.6000000000000938,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 11.600000000000414,
+            "release_s": 11.800000000000445,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000537,
+            "physical_displacement_m": 0.8297926975676679
+          },
+          {
+            "forced_start_s": 12.000000000000476,
+            "release_s": 12.400000000000539,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000324,
+            "physical_displacement_m": 0.9118108239387788
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_00": {
+        "frames": 3,
+        "physical_seconds": 0.40000000000000024,
+        "voluntary_wait_s": 0.40000000000000024,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.40000000000000024,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_05": {
+        "frames": 5,
+        "physical_seconds": 0.8000000000000006,
+        "voluntary_wait_s": 0.6000000000000005,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.6000000000000005,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_12": {
+        "frames": 11,
+        "physical_seconds": 1.9999999999999793,
+        "voluntary_wait_s": 0.9999999999999787,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.9999999999999787,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_17": {
+        "frames": 12,
+        "physical_seconds": 2.1999999999999753,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_24": {
+        "frames": 13,
+        "physical_seconds": 2.399999999999971,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_31": {
+        "frames": 57,
+        "physical_seconds": 11.200000000000351,
+        "voluntary_wait_s": 0.8000000000001251,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.8000000000001251,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 1.0000000000000007,
+            "release_s": 1.5999999999999879,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999893,
+            "physical_displacement_m": 0.37575362175391724
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_0": {
+        "frames": 169,
+        "physical_seconds": 33.59999999999874,
+        "voluntary_wait_s": 0.1999999999999602,
+        "enroute_voluntary_wait_s": 0.1999999999999602,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.1999999999999602,
+        "only_stop_s": 0.8000000000000185,
+        "executed_idle_with_motion_available_s": 0.1999999999999602,
+        "unfinished_task_executed_idle_with_motion_s": 0.1999999999999602,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.8000000000000185,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 24.99999999999931,
+            "end_s": 25.19999999999927,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030041205628035944,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.1999999999999602,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 24.99999999999931,
+            "end_s": 25.19999999999927,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030041205628035944,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.22179730534978445
+          },
+          {
+            "forced_start_s": 13.600000000000726,
+            "release_s": 13.800000000000757,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999787,
+            "physical_displacement_m": 0.6757979877741263
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_1": {
+        "frames": 159,
+        "physical_seconds": 31.599999999997998,
+        "voluntary_wait_s": 0.20000000000003126,
+        "enroute_voluntary_wait_s": 0.20000000000003126,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000003126,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.20000000000003126,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 8.399999999999913,
+            "end_s": 8.599999999999945,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027625875980192478,
+            "minimum_legal_motion_choices": 6
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 8.399999999999913,
+            "end_s": 8.599999999999945,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0027625875980192478,
+            "minimum_legal_motion_choices": 6
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.26666697589606236
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      }
+    },
+    "control": {
+      "motion_profile_015": {
+        "frames": 300,
+        "physical_seconds": 59.80000000001214,
+        "voluntary_wait_s": 1.799999999999855,
+        "enroute_voluntary_wait_s": 1.799999999999855,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 1.799999999999855,
+        "only_stop_s": 4.400000000000652,
+        "executed_idle_with_motion_available_s": 1.799999999999855,
+        "unfinished_task_executed_idle_with_motion_s": 1.799999999999855,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.400000000000652,
+        "longest_unfinished_executed_wait_s": 0.40000000000006253,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 10.200000000000195,
+            "end_s": 10.400000000000226,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.0731036829549705e-10,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 14.800000000000914,
+            "end_s": 15.200000000000976,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.5889796076988307e-05,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 21.599999999999987,
+            "end_s": 21.999999999999908,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.04078221011415783,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 23.19999999999967,
+            "end_s": 23.59999999999959,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.4921794731938e-05,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 25.39999999999923,
+            "end_s": 25.79999999999915,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 8.13189670632956e-09,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.40000000000006253,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 10.200000000000195,
+            "end_s": 10.400000000000226,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.0731036829549705e-10,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 14.800000000000914,
+            "end_s": 15.200000000000976,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.5889796076988307e-05,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 21.599999999999987,
+            "end_s": 21.999999999999908,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.04078221011415783,
+            "minimum_legal_motion_choices": 4
+          },
+          {
+            "start_s": 23.19999999999967,
+            "end_s": 23.59999999999959,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.4921794731938e-05,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 25.39999999999923,
+            "end_s": 25.79999999999915,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 8.13189670632956e-09,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.4676738266100602
+          },
+          {
+            "forced_start_s": 10.400000000000226,
+            "release_s": 10.800000000000288,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.23584066760017602
+          },
+          {
+            "forced_start_s": 15.200000000000976,
+            "release_s": 15.600000000001039,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999147,
+            "physical_displacement_m": 0.3623933201871199
+          },
+          {
+            "forced_start_s": 22.99999999999971,
+            "release_s": 23.19999999999967,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.7999999999998408,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.09814289882191117
+          },
+          {
+            "forced_start_s": 23.59999999999959,
+            "release_s": 23.99999999999951,
+            "preceding_only_stop_s": 0.3999999999999204,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.1298286292070504
+          },
+          {
+            "forced_start_s": 25.79999999999915,
+            "release_s": 26.599999999998992,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.36290413647609676
+          },
+          {
+            "forced_start_s": 37.800000000000885,
+            "release_s": 38.00000000000099,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.5676834588728363
+          },
+          {
+            "forced_start_s": 38.20000000000109,
+            "release_s": 38.40000000000119,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.5154302565488516
+          },
+          {
+            "forced_start_s": 38.8000000000014,
+            "release_s": 40.00000000000201,
+            "preceding_only_stop_s": 1.200000000000614,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.5936109029503771
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.7999999999998408,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_00": {
+        "frames": 181,
+        "physical_seconds": 35.999999999999964,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 1.8000000000001748,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.8000000000001748,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.7726602300706483e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.7726602300706483e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.23475445639963483
+          },
+          {
+            "forced_start_s": 13.000000000000632,
+            "release_s": 13.200000000000664,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 5.0,
+            "physical_displacement_m": 0.7002040198030898
+          },
+          {
+            "forced_start_s": 14.000000000000789,
+            "release_s": 14.600000000000882,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999503,
+            "physical_displacement_m": 0.6011134857566754
+          },
+          {
+            "forced_start_s": 14.800000000000914,
+            "release_s": 15.200000000000976,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.9999999999992895,
+            "physical_displacement_m": 0.6357159360847935
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_02": {
+        "frames": 156,
+        "physical_seconds": 30.999999999998117,
+        "voluntary_wait_s": 1.0000000000001208,
+        "enroute_voluntary_wait_s": 1.0000000000001208,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 1.0000000000001208,
+        "only_stop_s": 1.6000000000001435,
+        "executed_idle_with_motion_available_s": 1.0000000000001208,
+        "unfinished_task_executed_idle_with_motion_s": 1.0000000000001208,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.6000000000001435,
+        "longest_unfinished_executed_wait_s": 0.40000000000006253,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.841362354914229e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 9.000000000000007,
+            "end_s": 9.200000000000038,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000488765868516173,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 9.800000000000132,
+            "end_s": 10.200000000000195,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.540131211256419e-07,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 10.400000000000226,
+            "end_s": 10.600000000000257,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 1.7639935039314007e-12,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.40000000000006253,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.841362354914229e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 9.000000000000007,
+            "end_s": 9.200000000000038,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000488765868516173,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 9.800000000000132,
+            "end_s": 10.200000000000195,
+            "duration_s": 0.40000000000006253,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.540131211256419e-07,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 10.400000000000226,
+            "end_s": 10.600000000000257,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 1.7639935039314007e-12,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.27953046760240946
+          },
+          {
+            "forced_start_s": 9.40000000000007,
+            "release_s": 9.800000000000132,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 1.2000000000001876,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.6130049224705947
+          },
+          {
+            "forced_start_s": 10.200000000000195,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.6000000000000938,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.7361082273740858
+          },
+          {
+            "forced_start_s": 10.600000000000257,
+            "release_s": 11.00000000000032,
+            "preceding_only_stop_s": 0.40000000000006253,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.7863842616102747
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 1.2000000000001876,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_03": {
+        "frames": 241,
+        "physical_seconds": 48.000000000006104,
+        "voluntary_wait_s": 0.3999999999999915,
+        "enroute_voluntary_wait_s": 0.3999999999999915,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.3999999999999915,
+        "only_stop_s": 9.80000000000043,
+        "executed_idle_with_motion_available_s": 0.3999999999999915,
+        "unfinished_task_executed_idle_with_motion_s": 0.3999999999999915,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 9.80000000000043,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 13.200000000000664,
+            "end_s": 13.400000000000695,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.013320638310979356,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 17.600000000000783,
+            "end_s": 17.800000000000743,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 13.200000000000664,
+            "end_s": 13.400000000000695,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.013320638310979356,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 17.600000000000783,
+            "end_s": 17.800000000000743,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.40575932574904827
+          },
+          {
+            "forced_start_s": 9.000000000000007,
+            "release_s": 9.200000000000038,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.04731146246554989
+          },
+          {
+            "forced_start_s": 9.40000000000007,
+            "release_s": 13.000000000000632,
+            "preceding_only_stop_s": 3.6000000000005627,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000111,
+            "physical_displacement_m": 0.02823859779940667
+          },
+          {
+            "forced_start_s": 13.400000000000695,
+            "release_s": 17.600000000000783,
+            "preceding_only_stop_s": 4.200000000000088,
+            "first_motion_delay_s": 0.1999999999999602,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.23905074048486435
+          },
+          {
+            "forced_start_s": 20.600000000000186,
+            "release_s": 21.799999999999947,
+            "preceding_only_stop_s": 1.1999999999997613,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.27393274643813303
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.1999999999999602,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_01": {
+        "frames": 212,
+        "physical_seconds": 42.200000000003136,
+        "voluntary_wait_s": 0.7999999999999474,
+        "enroute_voluntary_wait_s": 0.7999999999999474,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.7999999999999474,
+        "only_stop_s": 7.200000000000877,
+        "executed_idle_with_motion_available_s": 0.7999999999999474,
+        "unfinished_task_executed_idle_with_motion_s": 0.7999999999999474,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 7.200000000000877,
+        "longest_unfinished_executed_wait_s": 0.3999999999999204,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.446461437764502e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 8.799999999999976,
+            "end_s": 9.000000000000007,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0026217772231666545,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 18.200000000000664,
+            "end_s": 18.600000000000584,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 6.174869235244617e-07,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.3999999999999204,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.446461437764502e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 8.799999999999976,
+            "end_s": 9.000000000000007,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0026217772231666545,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 18.200000000000664,
+            "end_s": 18.600000000000584,
+            "duration_s": 0.3999999999999204,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 6.174869235244617e-07,
+            "minimum_legal_motion_choices": 2
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.4396604723143331
+          },
+          {
+            "forced_start_s": 9.000000000000007,
+            "release_s": 14.000000000000789,
+            "preceding_only_stop_s": 5.000000000000782,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999716,
+            "physical_displacement_m": 0.08944673582776466
+          },
+          {
+            "forced_start_s": 14.20000000000082,
+            "release_s": 15.400000000001008,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999218,
+            "physical_displacement_m": 0.10812545339521483
+          },
+          {
+            "forced_start_s": 17.800000000000743,
+            "release_s": 18.200000000000664,
+            "preceding_only_stop_s": 0.3999999999999204,
+            "first_motion_delay_s": 0.3999999999999204,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.23240455832362902
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.3999999999999204,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_w11_e7": {
+        "frames": 700,
+        "physical_seconds": 139.99999999994517,
+        "voluntary_wait_s": 40.399999999982015,
+        "enroute_voluntary_wait_s": 40.399999999982015,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 40.399999999982015,
+        "only_stop_s": 76.19999999996338,
+        "executed_idle_with_motion_available_s": 40.399999999982015,
+        "unfinished_task_executed_idle_with_motion_s": 40.399999999982015,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 76.19999999996338,
+        "longest_unfinished_executed_wait_s": 13.399999999987813,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 22.59999999999979,
+            "end_s": 27.799999999998754,
+            "duration_s": 5.1999999999989654,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.002811400343348092,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 29.399999999998435,
+            "end_s": 29.599999999998396,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000457285560667029,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 29.799999999998356,
+            "end_s": 39.400000000001704,
+            "duration_s": 9.600000000003348,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0029571593397725985,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 41.60000000000283,
+            "end_s": 43.20000000000365,
+            "duration_s": 1.6000000000008185,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 43.60000000000385,
+            "end_s": 43.800000000003955,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00045724697982081337,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 44.600000000004364,
+            "end_s": 44.80000000000447,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 6.759966863172762e-06,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 68.00000000001064,
+            "end_s": 71.20000000000773,
+            "duration_s": 3.1999999999970896,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 77.00000000000246,
+            "end_s": 78.00000000000155,
+            "duration_s": 0.9999999999990905,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 79.00000000000064,
+            "end_s": 79.79999999999991,
+            "duration_s": 0.7999999999992724,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 85.99999999999427,
+            "end_s": 86.19999999999409,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 86.59999999999373,
+            "end_s": 91.39999999998936,
+            "duration_s": 4.799999999995634,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 95.39999999998572,
+            "end_s": 108.79999999997354,
+            "duration_s": 13.399999999987813,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 13.399999999987813,
+        "long_unfinished_task_waits": [
+          {
+            "start_s": 22.59999999999979,
+            "end_s": 27.799999999998754,
+            "duration_s": 5.1999999999989654,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.002811400343348092,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 29.799999999998356,
+            "end_s": 39.400000000001704,
+            "duration_s": 9.600000000003348,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0029571593397725985,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 68.00000000001064,
+            "end_s": 71.20000000000773,
+            "duration_s": 3.1999999999970896,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 86.59999999999373,
+            "end_s": 91.39999999998936,
+            "duration_s": 4.799999999995634,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 95.39999999998572,
+            "end_s": 108.79999999997354,
+            "duration_s": 13.399999999987813,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 22.59999999999979,
+            "end_s": 27.799999999998754,
+            "duration_s": 5.1999999999989654,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.002811400343348092,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 29.399999999998435,
+            "end_s": 29.599999999998396,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.000457285560667029,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 29.799999999998356,
+            "end_s": 39.400000000001704,
+            "duration_s": 9.600000000003348,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0029571593397725985,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 41.60000000000283,
+            "end_s": 43.20000000000365,
+            "duration_s": 1.6000000000008185,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 43.60000000000385,
+            "end_s": 43.800000000003955,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00045724697982081337,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 44.600000000004364,
+            "end_s": 44.80000000000447,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 6.759966863172762e-06,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 68.00000000001064,
+            "end_s": 71.20000000000773,
+            "duration_s": 3.1999999999970896,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 77.00000000000246,
+            "end_s": 78.00000000000155,
+            "duration_s": 0.9999999999990905,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 79.00000000000064,
+            "end_s": 79.79999999999991,
+            "duration_s": 0.7999999999992724,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 85.99999999999427,
+            "end_s": 86.19999999999409,
+            "duration_s": 0.1999999999998181,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 86.59999999999373,
+            "end_s": 91.39999999998936,
+            "duration_s": 4.799999999995634,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 95.39999999998572,
+            "end_s": 108.79999999997354,
+            "duration_s": 13.399999999987813,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 5.799999999999899,
+            "release_s": 6.5999999999998815,
+            "preceding_only_stop_s": 0.799999999999983,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000501,
+            "physical_displacement_m": 0.5901468636187321
+          },
+          {
+            "forced_start_s": 9.200000000000038,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.9513285218775615
+          },
+          {
+            "forced_start_s": 39.400000000001704,
+            "release_s": 41.60000000000283,
+            "preceding_only_stop_s": 2.2000000000011255,
+            "first_motion_delay_s": 1.6000000000008185,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.010298287231477224
+          },
+          {
+            "forced_start_s": 44.40000000000426,
+            "release_s": 44.600000000004364,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 6.86138417660479e-06
+          },
+          {
+            "forced_start_s": 44.80000000000447,
+            "release_s": 68.00000000001064,
+            "preceding_only_stop_s": 23.200000000006177,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 71.20000000000773,
+            "release_s": 77.00000000000246,
+            "preceding_only_stop_s": 5.799999999994725,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 78.00000000000155,
+            "release_s": 79.00000000000064,
+            "preceding_only_stop_s": 0.9999999999990905,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 79.79999999999991,
+            "release_s": 85.99999999999427,
+            "preceding_only_stop_s": 6.199999999994361,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 86.19999999999409,
+            "release_s": 86.59999999999373,
+            "preceding_only_stop_s": 0.3999999999996362,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 91.39999999998936,
+            "release_s": 95.39999999998572,
+            "preceding_only_stop_s": 3.999999999996362,
+            "first_motion_delay_s": null,
+            "observation_window_s": 4.9999999999954525,
+            "physical_displacement_m": 0.0
+          }
+        ],
+        "releases_without_further_motion": 7,
+        "longest_observed_release_delay_s": 1.6000000000008185,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "motion_profile_002": {
+        "frames": 294,
+        "physical_seconds": 58.600000000011526,
+        "voluntary_wait_s": 0.4000000000001336,
+        "enroute_voluntary_wait_s": 0.4000000000001336,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.4000000000001336,
+        "only_stop_s": 3.800000000000736,
+        "executed_idle_with_motion_available_s": 0.4000000000001336,
+        "unfinished_task_executed_idle_with_motion_s": 0.4000000000001336,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.800000000000736,
+        "longest_unfinished_executed_wait_s": 0.20000000000010232,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 13.000000000000632,
+            "end_s": 13.200000000000664,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028736158187915813,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 38.8000000000014,
+            "end_s": 39.0000000000015,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.027651215138163182,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000010232,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 13.000000000000632,
+            "end_s": 13.200000000000664,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028736158187915813,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 38.8000000000014,
+            "end_s": 39.0000000000015,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.027651215138163182,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 15.80000000000107,
+            "release_s": 16.600000000000982,
+            "preceding_only_stop_s": 0.7999999999999119,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.4399891211596423
+          },
+          {
+            "forced_start_s": 29.399999999998435,
+            "release_s": 29.599999999998396,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.6521563061753715
+          },
+          {
+            "forced_start_s": 30.799999999998157,
+            "release_s": 31.599999999997998,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002171,
+            "physical_displacement_m": 0.5854384922638973
+          },
+          {
+            "forced_start_s": 32.79999999999833,
+            "release_s": 33.399999999998634,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.696163272984734
+          },
+          {
+            "forced_start_s": 34.79999999999935,
+            "release_s": 35.79999999999986,
+            "preceding_only_stop_s": 1.0000000000005116,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8732321855112772
+          },
+          {
+            "forced_start_s": 42.80000000000344,
+            "release_s": 43.000000000003546,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8287698013639923
+          },
+          {
+            "forced_start_s": 43.40000000000375,
+            "release_s": 43.60000000000385,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8997039475580646
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "motion_profile_000": {
+        "frames": 156,
+        "physical_seconds": 30.999999999998117,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 1.3999999999999346,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.3999999999999346,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 12.400000000000539,
+            "release_s": 12.60000000000057,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000253,
+            "physical_displacement_m": 0.6251349840603856
+          },
+          {
+            "forced_start_s": 12.800000000000601,
+            "release_s": 13.000000000000632,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000111,
+            "physical_displacement_m": 0.6537740981093711
+          },
+          {
+            "forced_start_s": 13.400000000000695,
+            "release_s": 13.600000000000726,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999858,
+            "physical_displacement_m": 0.7245207292879011
+          },
+          {
+            "forced_start_s": 24.79999999999935,
+            "release_s": 25.59999999999919,
+            "preceding_only_stop_s": 0.7999999999998408,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.6003985463790456
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_000": {
+        "frames": 257,
+        "physical_seconds": 51.20000000000774,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 1.3999999999999346,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.3999999999999346,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 14.400000000000851,
+            "release_s": 14.600000000000882,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999503,
+            "physical_displacement_m": 0.5242480391923922
+          },
+          {
+            "forced_start_s": 17.000000000000902,
+            "release_s": 18.000000000000703,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.39811071981212287
+          },
+          {
+            "forced_start_s": 35.39999999999966,
+            "release_s": 35.59999999999976,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9224455254478011
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_001": {
+        "frames": 114,
+        "physical_seconds": 22.59999999999979,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 1.4000000000002188,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.4000000000002188,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 10.200000000000195,
+            "release_s": 11.600000000000414,
+            "preceding_only_stop_s": 1.4000000000002188,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000608,
+            "physical_displacement_m": 0.9167982283515681
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_00": {
+        "frames": 3,
+        "physical_seconds": 0.40000000000000024,
+        "voluntary_wait_s": 0.40000000000000024,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.40000000000000024,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_05": {
+        "frames": 5,
+        "physical_seconds": 0.8000000000000006,
+        "voluntary_wait_s": 0.6000000000000005,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.6000000000000005,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_12": {
+        "frames": 11,
+        "physical_seconds": 1.9999999999999793,
+        "voluntary_wait_s": 0.9999999999999787,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.9999999999999787,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_17": {
+        "frames": 12,
+        "physical_seconds": 2.1999999999999753,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_24": {
+        "frames": 13,
+        "physical_seconds": 2.399999999999971,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_31": {
+        "frames": 57,
+        "physical_seconds": 11.200000000000351,
+        "voluntary_wait_s": 0.8000000000001251,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.8000000000001251,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 1.0000000000000007,
+            "release_s": 1.5999999999999879,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999893,
+            "physical_displacement_m": 0.37575362175391724
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_0": {
+        "frames": 176,
+        "physical_seconds": 34.99999999999945,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 2.2000000000002373,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 2.2000000000002373,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.24231886346997442
+          },
+          {
+            "forced_start_s": 12.800000000000601,
+            "release_s": 13.000000000000632,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000111,
+            "physical_displacement_m": 0.4447713616239655
+          },
+          {
+            "forced_start_s": 13.200000000000664,
+            "release_s": 14.600000000000882,
+            "preceding_only_stop_s": 1.4000000000002188,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999503,
+            "physical_displacement_m": 0.604541129990094
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_1": {
+        "frames": 153,
+        "physical_seconds": 30.399999999998236,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.872149734020851e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.872149734020851e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.36624802804299994
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      }
+    },
+    "retained": {
+      "motion_profile_015": {
+        "frames": 218,
+        "physical_seconds": 43.40000000000375,
+        "voluntary_wait_s": 0.20000000000003126,
+        "enroute_voluntary_wait_s": 0.20000000000003126,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000003126,
+        "only_stop_s": 4.1999999999999815,
+        "executed_idle_with_motion_available_s": 0.20000000000003126,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000003126,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.1999999999999815,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 14.000000000000789,
+            "end_s": 14.20000000000082,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.02617867037611579,
+            "minimum_legal_motion_choices": 7
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 14.000000000000789,
+            "end_s": 14.20000000000082,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.02617867037611579,
+            "minimum_legal_motion_choices": 7
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.351766749626503
+          },
+          {
+            "forced_start_s": 8.799999999999976,
+            "release_s": 9.40000000000007,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.41066923412018114
+          },
+          {
+            "forced_start_s": 9.800000000000132,
+            "release_s": 11.00000000000032,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.5062763661399781
+          },
+          {
+            "forced_start_s": 15.80000000000107,
+            "release_s": 17.600000000000783,
+            "preceding_only_stop_s": 1.799999999999713,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.17089368566853258
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_00": {
+        "frames": 179,
+        "physical_seconds": 35.59999999999976,
+        "voluntary_wait_s": 0.6000000000000583,
+        "enroute_voluntary_wait_s": 0.6000000000000583,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.6000000000000583,
+        "only_stop_s": 2.6000000000003,
+        "executed_idle_with_motion_available_s": 0.6000000000000583,
+        "unfinished_task_executed_idle_with_motion_s": 0.6000000000000583,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 2.6000000000003,
+        "longest_unfinished_executed_wait_s": 0.20000000000003126,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.905605869207053e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.400000000000539,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.633439122253593e-05,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 13.000000000000632,
+            "end_s": 13.200000000000664,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00047191132861305364,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000003126,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.905605869207053e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 12.200000000000507,
+            "end_s": 12.400000000000539,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 3.633439122253593e-05,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 13.000000000000632,
+            "end_s": 13.200000000000664,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.00047191132861305364,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.2744247990538565
+          },
+          {
+            "forced_start_s": 12.000000000000476,
+            "release_s": 12.200000000000507,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.20000000000003126,
+            "observation_window_s": 4.800000000000395,
+            "physical_displacement_m": 0.3163963515775592
+          },
+          {
+            "forced_start_s": 13.200000000000664,
+            "release_s": 14.800000000000914,
+            "preceding_only_stop_s": 1.6000000000002501,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999432,
+            "physical_displacement_m": 0.7749282911475864
+          },
+          {
+            "forced_start_s": 15.200000000000976,
+            "release_s": 15.400000000001008,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999218,
+            "physical_displacement_m": 0.7744203259667436
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.20000000000003126,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_02": {
+        "frames": 151,
+        "physical_seconds": 29.999999999998316,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 0.9999999999999076,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.9999999999999076,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.841362354914229e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 5.841362354914229e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.40724338242825053
+          },
+          {
+            "forced_start_s": 21.999999999999908,
+            "release_s": 22.199999999999868,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.9425514679151819
+          },
+          {
+            "forced_start_s": 22.399999999999828,
+            "release_s": 22.59999999999979,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.9933599382670336
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_03": {
+        "frames": 182,
+        "physical_seconds": 36.20000000000007,
+        "voluntary_wait_s": 0.39999999999995595,
+        "enroute_voluntary_wait_s": 0.39999999999995595,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.39999999999995595,
+        "only_stop_s": 3.39999999999943,
+        "executed_idle_with_motion_available_s": 0.39999999999995595,
+        "unfinished_task_executed_idle_with_motion_s": 0.39999999999995595,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.39999999999943,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.469139154301335e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 24.79999999999935,
+            "end_s": 24.99999999999931,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.02871560307551274,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.469139154301335e-06,
+            "minimum_legal_motion_choices": 11
+          },
+          {
+            "start_s": 24.79999999999935,
+            "end_s": 24.99999999999931,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.02871560307551274,
+            "minimum_legal_motion_choices": 3
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.3114280983091187
+          },
+          {
+            "forced_start_s": 25.19999999999927,
+            "release_s": 27.999999999998714,
+            "preceding_only_stop_s": 2.799999999999443,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999716,
+            "physical_displacement_m": 0.9366829648554817
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "recovery_holdout_01": {
+        "frames": 61,
+        "physical_seconds": 12.200000000000507,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 4.000000000000519,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 4.000000000000519,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.7046149582892053
+          },
+          {
+            "forced_start_s": 8.399999999999913,
+            "release_s": 8.599999999999945,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 3.4000000000005315,
+            "physical_displacement_m": 0.03815829102789257
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "train_failure_w11_e7": {
+        "frames": 221,
+        "physical_seconds": 44.00000000000406,
+        "voluntary_wait_s": 0.20000000000010232,
+        "enroute_voluntary_wait_s": 0.20000000000010232,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.20000000000010232,
+        "only_stop_s": 9.800000000001958,
+        "executed_idle_with_motion_available_s": 0.20000000000010232,
+        "unfinished_task_executed_idle_with_motion_s": 0.20000000000010232,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 9.800000000001958,
+        "longest_unfinished_executed_wait_s": 0.20000000000010232,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 40.400000000002215,
+            "end_s": 40.60000000000232,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030605848205536332,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.20000000000010232,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 40.400000000002215,
+            "end_s": 40.60000000000232,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.030605848205536332,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 5.599999999999903,
+            "release_s": 6.5999999999998815,
+            "preceding_only_stop_s": 0.9999999999999787,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000501,
+            "physical_displacement_m": 0.5644817044239738
+          },
+          {
+            "forced_start_s": 6.999999999999873,
+            "release_s": 7.59999999999986,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000678,
+            "physical_displacement_m": 0.594591916702577
+          },
+          {
+            "forced_start_s": 10.600000000000257,
+            "release_s": 11.600000000000414,
+            "preceding_only_stop_s": 1.0000000000001563,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000608,
+            "physical_displacement_m": 0.2601257353354883
+          },
+          {
+            "forced_start_s": 16.40000000000102,
+            "release_s": 17.400000000000823,
+            "preceding_only_stop_s": 0.999999999999801,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.1774673602338097
+          },
+          {
+            "forced_start_s": 25.79999999999915,
+            "release_s": 25.999999999999112,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.3854447772880644
+          },
+          {
+            "forced_start_s": 30.399999999998236,
+            "release_s": 30.599999999998197,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000001461,
+            "physical_displacement_m": 0.016885542473179506
+          },
+          {
+            "forced_start_s": 30.799999999998157,
+            "release_s": 35.79999999999986,
+            "preceding_only_stop_s": 5.000000000001705,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.7794873744248051
+          },
+          {
+            "forced_start_s": 36.60000000000027,
+            "release_s": 36.800000000000374,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.8225966984200583
+          },
+          {
+            "forced_start_s": 37.000000000000476,
+            "release_s": 37.60000000000078,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.9202099758151677
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "motion_profile_002": {
+        "frames": 700,
+        "physical_seconds": 139.99999999994517,
+        "voluntary_wait_s": 8.400000000004226,
+        "enroute_voluntary_wait_s": 8.400000000004226,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 8.400000000004226,
+        "only_stop_s": 92.79999999993856,
+        "executed_idle_with_motion_available_s": 8.400000000004226,
+        "unfinished_task_executed_idle_with_motion_s": 8.400000000004226,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 92.79999999993856,
+        "longest_unfinished_executed_wait_s": 1.8000000000009209,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 13.200000000000664,
+            "end_s": 13.400000000000695,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028736158189449253,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 41.80000000000293,
+            "end_s": 42.000000000003034,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028669655974316095,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 43.40000000000375,
+            "end_s": 43.60000000000385,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009930528472915544,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 43.800000000003955,
+            "end_s": 44.20000000000416,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.012111953806290047,
+            "minimum_legal_motion_choices": 7
+          },
+          {
+            "start_s": 44.80000000000447,
+            "end_s": 45.00000000000457,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.667479190659746e-11,
+            "minimum_legal_motion_choices": 6
+          },
+          {
+            "start_s": 45.20000000000467,
+            "end_s": 47.00000000000559,
+            "duration_s": 1.8000000000009209,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.440892098500626e-15,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 48.200000000006206,
+            "end_s": 49.20000000000672,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 49.40000000000682,
+            "end_s": 50.600000000007434,
+            "duration_s": 1.200000000000614,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 50.800000000007536,
+            "end_s": 51.00000000000764,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 52.00000000000815,
+            "end_s": 53.00000000000866,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 53.200000000008764,
+            "end_s": 54.200000000009275,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 54.60000000000948,
+            "end_s": 55.000000000009685,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 55.60000000000999,
+            "end_s": 56.000000000010196,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 56.2000000000103,
+            "end_s": 56.4000000000104,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0004257297070411049,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 1.8000000000009209,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 13.200000000000664,
+            "end_s": 13.400000000000695,
+            "duration_s": 0.20000000000003126,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028736158189449253,
+            "minimum_legal_motion_choices": 3
+          },
+          {
+            "start_s": 41.80000000000293,
+            "end_s": 42.000000000003034,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.028669655974316095,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 43.40000000000375,
+            "end_s": 43.60000000000385,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009930528472915544,
+            "minimum_legal_motion_choices": 8
+          },
+          {
+            "start_s": 43.800000000003955,
+            "end_s": 44.20000000000416,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.012111953806290047,
+            "minimum_legal_motion_choices": 7
+          },
+          {
+            "start_s": 44.80000000000447,
+            "end_s": 45.00000000000457,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 2.667479190659746e-11,
+            "minimum_legal_motion_choices": 6
+          },
+          {
+            "start_s": 45.20000000000467,
+            "end_s": 47.00000000000559,
+            "duration_s": 1.8000000000009209,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.440892098500626e-15,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 48.200000000006206,
+            "end_s": 49.20000000000672,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 49.40000000000682,
+            "end_s": 50.600000000007434,
+            "duration_s": 1.200000000000614,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 50.800000000007536,
+            "end_s": 51.00000000000764,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 52.00000000000815,
+            "end_s": 53.00000000000866,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 53.200000000008764,
+            "end_s": 54.200000000009275,
+            "duration_s": 1.0000000000005116,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 54.60000000000948,
+            "end_s": 55.000000000009685,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 55.60000000000999,
+            "end_s": 56.000000000010196,
+            "duration_s": 0.40000000000020464,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0,
+            "minimum_legal_motion_choices": 1
+          },
+          {
+            "start_s": 56.2000000000103,
+            "end_s": 56.4000000000104,
+            "duration_s": 0.20000000000010232,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.0004257297070411049,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 15.80000000000107,
+            "release_s": 16.600000000000982,
+            "preceding_only_stop_s": 0.7999999999999119,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.39658695870946953
+          },
+          {
+            "forced_start_s": 23.19999999999967,
+            "release_s": 23.79999999999955,
+            "preceding_only_stop_s": 0.5999999999998806,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.41907763612942844
+          },
+          {
+            "forced_start_s": 32.39999999999812,
+            "release_s": 33.79999999999884,
+            "preceding_only_stop_s": 1.4000000000007162,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.7750768892060917
+          },
+          {
+            "forced_start_s": 36.800000000000374,
+            "release_s": 37.40000000000068,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.6467775980640454
+          },
+          {
+            "forced_start_s": 39.2000000000016,
+            "release_s": 39.400000000001704,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.3841902941982762
+          },
+          {
+            "forced_start_s": 40.20000000000211,
+            "release_s": 40.400000000002215,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.2969161651586854
+          },
+          {
+            "forced_start_s": 40.80000000000242,
+            "release_s": 41.200000000002625,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.2179341647816729
+          },
+          {
+            "forced_start_s": 42.200000000003136,
+            "release_s": 43.20000000000365,
+            "preceding_only_stop_s": 1.0000000000005116,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.044468290544083994
+          },
+          {
+            "forced_start_s": 45.00000000000457,
+            "release_s": 45.20000000000467,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 10.800000000005525,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 4.440892098500626e-15
+          },
+          {
+            "forced_start_s": 47.00000000000559,
+            "release_s": 48.200000000006206,
+            "preceding_only_stop_s": 1.200000000000614,
+            "first_motion_delay_s": 7.80000000000399,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 49.20000000000672,
+            "release_s": 49.40000000000682,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 6.6000000000033765,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 50.600000000007434,
+            "release_s": 50.800000000007536,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 5.20000000000266,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0
+          },
+          {
+            "forced_start_s": 51.00000000000764,
+            "release_s": 52.00000000000815,
+            "preceding_only_stop_s": 1.0000000000005116,
+            "first_motion_delay_s": 4.000000000002046,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0019493233619713903
+          },
+          {
+            "forced_start_s": 53.00000000000866,
+            "release_s": 53.200000000008764,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 2.8000000000014325,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0019493247573529183
+          },
+          {
+            "forced_start_s": 54.200000000009275,
+            "release_s": 54.60000000000948,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 1.4000000000007162,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0019493247573529183
+          },
+          {
+            "forced_start_s": 55.000000000009685,
+            "release_s": 55.60000000000999,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.40000000000020464,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.0019493247573529183
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 10.800000000005525,
+        "final_command_idle": true,
+        "final_only_stop": true
+      },
+      "motion_profile_000": {
+        "frames": 155,
+        "physical_seconds": 30.799999999998157,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.1999999999999602,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.1999999999999602,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 27.999999999998714,
+            "release_s": 28.199999999998674,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 2.5999999999994827,
+            "physical_displacement_m": 0.4891912139742076
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_000": {
+        "frames": 267,
+        "physical_seconds": 53.200000000008764,
+        "voluntary_wait_s": 0.3999999999999204,
+        "enroute_voluntary_wait_s": 0.3999999999999204,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.3999999999999204,
+        "only_stop_s": 3.4000000000008157,
+        "executed_idle_with_motion_available_s": 0.3999999999999204,
+        "unfinished_task_executed_idle_with_motion_s": 0.3999999999999204,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 3.4000000000008157,
+        "longest_unfinished_executed_wait_s": 0.1999999999999602,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 16.0000000000011,
+            "end_s": 16.20000000000106,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009560272096702816,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 17.200000000000863,
+            "end_s": 17.400000000000823,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009560272047817925,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.1999999999999602,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 16.0000000000011,
+            "end_s": 16.20000000000106,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009560272096702816,
+            "minimum_legal_motion_choices": 2
+          },
+          {
+            "start_s": 17.200000000000863,
+            "end_s": 17.400000000000823,
+            "duration_s": 0.1999999999999602,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 0.009560272047817925,
+            "minimum_legal_motion_choices": 1
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 12.200000000000507,
+            "release_s": 12.400000000000539,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000324,
+            "physical_displacement_m": 0.2851106928756718
+          },
+          {
+            "forced_start_s": 13.000000000000632,
+            "release_s": 14.600000000000882,
+            "preceding_only_stop_s": 1.6000000000002501,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999503,
+            "physical_displacement_m": 0.5882667966096723
+          },
+          {
+            "forced_start_s": 17.400000000000823,
+            "release_s": 17.600000000000783,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.7222205074699799
+          },
+          {
+            "forced_start_s": 28.599999999998595,
+            "release_s": 28.799999999998555,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000182,
+            "physical_displacement_m": 0.8492187660155237
+          },
+          {
+            "forced_start_s": 33.399999999998634,
+            "release_s": 33.99999999999894,
+            "preceding_only_stop_s": 0.600000000000307,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.5899284687128564
+          },
+          {
+            "forced_start_s": 34.59999999999925,
+            "release_s": 34.99999999999945,
+            "preceding_only_stop_s": 0.40000000000020464,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.6273485828484492
+          },
+          {
+            "forced_start_s": 36.800000000000374,
+            "release_s": 37.000000000000476,
+            "preceding_only_stop_s": 0.20000000000010232,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000002456,
+            "physical_displacement_m": 0.7035226289832597
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "independent_dynamic_001": {
+        "frames": 126,
+        "physical_seconds": 24.99999999999931,
+        "voluntary_wait_s": 0.0,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 2.0000000000000995,
+        "executed_idle_with_motion_available_s": 0.0,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 2.0000000000000995,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 10.200000000000195,
+            "release_s": 10.400000000000226,
+            "preceding_only_stop_s": 0.20000000000003126,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.6910091297059224
+          },
+          {
+            "forced_start_s": 10.600000000000257,
+            "release_s": 11.800000000000445,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.800000000000537,
+            "physical_displacement_m": 0.9483452006652575
+          },
+          {
+            "forced_start_s": 17.800000000000743,
+            "release_s": 18.000000000000703,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.8681003198240743
+          },
+          {
+            "forced_start_s": 19.400000000000425,
+            "release_s": 19.800000000000345,
+            "preceding_only_stop_s": 0.3999999999999204,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.98109526709187
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_00": {
+        "frames": 3,
+        "physical_seconds": 0.40000000000000024,
+        "voluntary_wait_s": 0.40000000000000024,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.40000000000000024,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_05": {
+        "frames": 5,
+        "physical_seconds": 0.8000000000000006,
+        "voluntary_wait_s": 0.6000000000000005,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.6000000000000005,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_12": {
+        "frames": 11,
+        "physical_seconds": 1.9999999999999793,
+        "voluntary_wait_s": 0.9999999999999787,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.9999999999999787,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_17": {
+        "frames": 12,
+        "physical_seconds": 2.1999999999999753,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_24": {
+        "frames": 13,
+        "physical_seconds": 2.399999999999971,
+        "voluntary_wait_s": 0.5999999999999874,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.0,
+        "executed_idle_with_motion_available_s": 0.5999999999999874,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.0,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "localization_nav_31": {
+        "frames": 57,
+        "physical_seconds": 11.200000000000351,
+        "voluntary_wait_s": 0.8000000000001251,
+        "enroute_voluntary_wait_s": 0.0,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.0,
+        "only_stop_s": 0.5999999999999872,
+        "executed_idle_with_motion_available_s": 0.8000000000001251,
+        "unfinished_task_executed_idle_with_motion_s": 0.0,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 0.5999999999999872,
+        "longest_unfinished_executed_wait_s": 0.0,
+        "unfinished_executed_wait_segments": [],
+        "longest_unfinished_task_wait_s": 0.0,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [],
+        "resumptions": [
+          {
+            "forced_start_s": 1.0000000000000007,
+            "release_s": 1.5999999999999879,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999893,
+            "physical_displacement_m": 0.37575362175391724
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.0,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_0": {
+        "frames": 172,
+        "physical_seconds": 34.199999999999044,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 2.200000000000095,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 2.200000000000095,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.353805471024223e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 5.199999999999911,
+            "end_s": 5.399999999999907,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.353805471024223e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.599999999999924,
+            "release_s": 5.199999999999911,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.800000000000252,
+            "physical_displacement_m": 0.15746123223540567
+          },
+          {
+            "forced_start_s": 13.600000000000726,
+            "release_s": 14.800000000000914,
+            "preceding_only_stop_s": 1.2000000000001876,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999432,
+            "physical_displacement_m": 0.8428508711950374
+          },
+          {
+            "forced_start_s": 27.799999999998754,
+            "release_s": 28.199999999998674,
+            "preceding_only_stop_s": 0.3999999999999204,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999858,
+            "physical_displacement_m": 0.9572400848116982
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      },
+      "train_failure_stop_go_variation_1": {
+        "frames": 161,
+        "physical_seconds": 31.999999999997918,
+        "voluntary_wait_s": 0.19999999999999574,
+        "enroute_voluntary_wait_s": 0.19999999999999574,
+        "heading_alignment_wait_s": 0.0,
+        "unfinished_task_wait_s": 0.19999999999999574,
+        "only_stop_s": 1.4000000000000412,
+        "executed_idle_with_motion_available_s": 0.19999999999999574,
+        "unfinished_task_executed_idle_with_motion_s": 0.19999999999999574,
+        "unfinished_task_unexecuted_motion_s": 0.0,
+        "only_stop_executed_idle_s": 1.4000000000000412,
+        "longest_unfinished_executed_wait_s": 0.19999999999999574,
+        "unfinished_executed_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.872149734020851e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "longest_unfinished_task_wait_s": 0.19999999999999574,
+        "long_unfinished_task_waits": [],
+        "unfinished_task_wait_segments": [
+          {
+            "start_s": 4.999999999999916,
+            "end_s": 5.199999999999911,
+            "duration_s": 0.19999999999999574,
+            "includes_heading_alignment": false,
+            "physical_displacement_m": 4.872149734020851e-06,
+            "minimum_legal_motion_choices": 11
+          }
+        ],
+        "resumptions": [
+          {
+            "forced_start_s": 4.399999999999928,
+            "release_s": 4.999999999999916,
+            "preceding_only_stop_s": 0.5999999999999872,
+            "first_motion_delay_s": 0.19999999999999574,
+            "observation_window_s": 4.8000000000002165,
+            "physical_displacement_m": 0.438270089313982
+          },
+          {
+            "forced_start_s": 9.600000000000101,
+            "release_s": 10.200000000000195,
+            "preceding_only_stop_s": 0.6000000000000938,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.80000000000075,
+            "physical_displacement_m": 0.8391589008768435
+          },
+          {
+            "forced_start_s": 23.39999999999963,
+            "release_s": 23.59999999999959,
+            "preceding_only_stop_s": 0.1999999999999602,
+            "first_motion_delay_s": 0.0,
+            "observation_window_s": 4.999999999999005,
+            "physical_displacement_m": 0.9722081355539676
+          }
+        ],
+        "releases_without_further_motion": 0,
+        "longest_observed_release_delay_s": 0.19999999999999574,
+        "final_command_idle": true,
+        "final_only_stop": false
+      }
+    }
+  },
+  "first_changed_decisions": {
+    "w11_control_to_retained": {
+      "first_changed_frame": 13,
+      "sensor_time_s": 2.599999999999967,
+      "left_choice": 1,
+      "right_choice": 10,
+      "legal_choices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "history_parity": {
+        "observations": true,
+        "masks": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "physical_pose": true
+      },
+      "left": "control",
+      "right": "retained",
+      "case_id": "train_failure_w11_e7"
+    },
+    "profile002_reference_to_retained": {
+      "first_changed_frame": 39,
+      "sensor_time_s": 7.799999999999856,
+      "left_choice": 10,
+      "right_choice": 1,
+      "legal_choices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "history_parity": {
+        "observations": true,
+        "masks": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "physical_pose": true
+      },
+      "left": "reference",
+      "right": "retained",
+      "case_id": "motion_profile_002"
+    }
+  },
+  "first_decision_model_replay": {
+    "reference": {
+      "w11_control_to_retained": {
+        "choice": 10,
+        "probabilities": [
+          4.652443385566585e-05,
+          0.007153520826250315,
+          3.3455275115557015e-05,
+          3.4104762107745046e-06,
+          4.433441972651053e-06,
+          1.4167393924680027e-09,
+          0.0010323729366064072,
+          2.226797739257602e-11,
+          2.35541992879007e-05,
+          1.301907957017344e-15,
+          0.9917020201683044,
+          7.051916668388003e-07
+        ]
+      },
+      "profile002_reference_to_retained": {
+        "choice": 10,
+        "probabilities": [
+          6.692626897120135e-08,
+          0.024704603478312492,
+          2.782198009754211e-07,
+          8.591314326622523e-10,
+          1.6660384877242862e-11,
+          1.140577736555867e-18,
+          0.0007062799413688481,
+          2.457003293177126e-16,
+          2.5921847779386553e-08,
+          2.189941646580052e-18,
+          0.9745887517929077,
+          6.639732600538517e-12
+        ]
+      }
+    },
+    "control": {
+      "w11_control_to_retained": {
+        "choice": 1,
+        "probabilities": [
+          0.00014051893958821893,
+          0.8030380010604858,
+          3.5508091968949884e-05,
+          7.54920392864733e-07,
+          2.3122018433241465e-07,
+          1.0179632692342011e-09,
+          0.0003973627754021436,
+          6.423379623338166e-12,
+          4.44066836280399e-06,
+          1.3302931692803585e-16,
+          0.19638197124004364,
+          1.2212933597766096e-06
+        ]
+      },
+      "profile002_reference_to_retained": {
+        "choice": 1,
+        "probabilities": [
+          4.844151249017159e-07,
+          0.5144033432006836,
+          6.872954827485955e-07,
+          1.1864141891138047e-09,
+          1.9474352686010832e-11,
+          2.3312166505785962e-17,
+          0.00047435195301659405,
+          5.705144888210425e-16,
+          3.046228513881033e-08,
+          1.1813754217403245e-18,
+          0.4851211607456207,
+          4.855472968134933e-11
+        ]
+      }
+    },
+    "retained": {
+      "w11_control_to_retained": {
+        "choice": 10,
+        "probabilities": [
+          0.00015558843733742833,
+          0.05946492776274681,
+          4.416300362208858e-05,
+          1.2250501413291204e-06,
+          4.144316676502058e-07,
+          1.795109616509194e-09,
+          0.000977609888650477,
+          2.793180096938297e-11,
+          1.1409781109250616e-05,
+          2.5080187641012724e-16,
+          0.9393405318260193,
+          4.228546004014788e-06
+        ]
+      },
+      "profile002_reference_to_retained": {
+        "choice": 1,
+        "probabilities": [
+          2.6519310267758556e-06,
+          0.5285679697990417,
+          1.1738438843167387e-06,
+          3.200531173419563e-09,
+          6.402475077882386e-11,
+          1.2764127947005816e-15,
+          0.0008768578409217298,
+          5.050602931076743e-15,
+          6.014331432879771e-08,
+          1.390884761263521e-18,
+          0.47055137157440186,
+          7.984245486980512e-10
+        ]
+      }
+    }
+  },
+  "diagnostic_six": {
+    "candidate": {
+      "rows": 6,
+      "safe": 6,
+      "collisions": 0,
+      "timeouts": 0,
+      "failed_case_ids": []
+    },
+    "reference": {
+      "rows": 6,
+      "safe": 4,
+      "collisions": 1,
+      "timeouts": 1,
+      "failed_case_ids": [
+        "recovery_holdout_00",
+        "recovery_holdout_01"
+      ]
+    },
+    "paired": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 6,
+      "common_successes": 4,
+      "lost_successes": [],
+      "gained_successes": [
+        "recovery_holdout_00",
+        "recovery_holdout_01"
+      ],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        22.4432429932079,
+        22.288529116435683
+      ],
+      "common_success_seconds": [
+        152.60000000000426,
+        150.20000000000303
+      ],
+      "total_travel_relative_change": -0.006893561541843063,
+      "total_time_relative_change": -0.01572739187418848,
+      "pairs": [
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": -0.019182085021813955,
+          "time_relative_change": -0.060975609756120486
+        },
+        {
+          "case_id": "train_failure_proactive_variation_02",
+          "travel_relative_change": 1.539390837024257e-11,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_proactive_variation_06",
+          "travel_relative_change": -0.006037585671438861,
+          "time_relative_change": 0.017045454545463468
+        },
+        {
+          "case_id": "train_failure_proactive_variation_07",
+          "travel_relative_change": 3.055571506926924e-08,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "original_quick_admission_remains_failed": true,
+    "not_the_original14_or_direction_acceptance": true
+  },
+  "inputs": {
+    "reports/stop_feedback_20261015/retention_followup_20261016/analyze.py": "5ecd672fe0de1f1b358caafbf2308783638cc821ccde1ef7f30ec959dd0ba3a6",
+    "training/experiments/audit_decision_waits.py": "1178e44af83083a5067612de594fc1418a52c8435e51bc38dd451511f7531573",
+    "training/experiments/paired_navigation_gate.py": "e079c71d70817f4cc37ce9f0c509db2a8e3abf77d4d00a72a63977d506892907",
+    "training/experiments/stop_recovery_policy.py": "5c260ec1c8aed6b54a3c18676970bd8a77e93ec090105e609be71f9338c62351",
+    "training/experiments/proactive_recovery.py": "af929ff83909eecc6faca8d8118b852858a10dc9915fb57bd0435047f7621827",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json": "d5ab8e5fe7ecd445c2de7d5f639539b60f357b0d3f6604ef8b323edf116043dc",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/cases.json": "f73b00907ec78067db472864d039fdbd9f9b6630486956db3f139dd07c15b6a0",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/RESULTS.json": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/cases.json": "f73b00907ec78067db472864d039fdbd9f9b6630486956db3f139dd07c15b6a0",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/RESULTS.json": "599f20bf2dad7bf4bbd58d64cfbb976d07ae4d4f84f0042317c2d1fb8296e561",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/cases.json": "f73b00907ec78067db472864d039fdbd9f9b6630486956db3f139dd07c15b6a0",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_015_w11_augmented_bc800.npz": "976b9d4d1738bd41cf6ab8f85d6789c6c0ffccf0ba169ec464f6c6966263443c",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_00_w11_augmented_bc800.npz": "ba2228d330e0009597b8c9d54b4a984f1e5c30a4f41d999d814a678a0042f6e0",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_02_w11_augmented_bc800.npz": "456ba8bc30fd7a20e0d3e46795988b4d21fa86ac85fbe3ac157e8f3b73da1ab0",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_03_w11_augmented_bc800.npz": "0a67ea4cb92d9ee178c988a7d634e0d0856f3596e02b1ef3119170008984b864",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/recovery_holdout_01_w11_augmented_bc800.npz": "caa04fb0ba3117ae431954da80a5d54a09806419876f3aaabe699065a5c7821b",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_w11_e7_w11_augmented_bc800.npz": "de1da96347e2aaaf59f346371ef479b53e6f6d279fce7bfaaace4382fecd16bb",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_002_w11_augmented_bc800.npz": "10fc0bdc5b10709046260beeb8783ffb48b5652758a6fd5fc7b88e563411c8e7",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_000_w11_augmented_bc800.npz": "499d7f6e2c54d63318e04a1d540be8e146e6b346fa800b5fa023315fb722f82f",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/independent_dynamic_000_w11_augmented_bc800.npz": "07627c97b424ef9ba5d8b527a237bfff20f7025bab0e37b432f3078918d9f1c8",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/independent_dynamic_001_w11_augmented_bc800.npz": "24542f5f237ca163aafc6efae013f646a6dce9df30ca38fcd84291fb1e129bda",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_00_w11_augmented_bc800.npz": "9ee3aeb5f92139fc77eb7aeadc0f8649871384a6d194f7525cddd8ec71f22eef",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_05_w11_augmented_bc800.npz": "13b04749f01a4e0433255bdba3664b04c500efd114120844c13e80d48285f895",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_12_w11_augmented_bc800.npz": "f367ab8a7047f049c8bf2b314396cc3cff8e1c652c0cc7a247a0c8a2c046d033",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_17_w11_augmented_bc800.npz": "84884e04762c9baefc8f77c7450d89481e740aef1332588a5624c4a18e073315",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_24_w11_augmented_bc800.npz": "eb166fc9a3a0a40e70cf81ed399166431ec27224ea1562dac84cc87dba5c70b5",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/localization_nav_31_w11_augmented_bc800.npz": "ba2105b62d78bd7a018fad617e43be35b579e34006b10131b460e26dca1c7368",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_stop_go_variation_0_w11_augmented_bc800.npz": "4e381bc6cab5b72238fbdd396ae931881896d02e7faa60ef0027c8f5e46d87b8",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_stop_go_variation_1_w11_augmented_bc800.npz": "be4a19f6394e05e9162566d40644554bfcf4e05b52ec9bc339d7106d5f071320",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_015_control2000.npz": "7848d48569a7cb13110a7df217987db49575e8d81fa9abfe1a3147edfd4950fb",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_00_control2000.npz": "26abc1fe57e3bc5bbada6d51af9eb8c6e89c488e4f9dfc2ff81fc9a211604fe2",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_02_control2000.npz": "b34f3d64621f103700cc086c181222b2e4a55389d461e703079cae07daf8699e",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_03_control2000.npz": "a7d3aa60cff7d41cd9490d6fa121b2a2e5beb4c48cd7ce8cfd9a5e50eacd1b52",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_01_control2000.npz": "77c922cf4792ca055a21ecc56512c65711e18035b6cc4ef4d24d08993453ced3",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_w11_e7_control2000.npz": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_002_control2000.npz": "dfb653278936e316417be199db647071935c0fe8f612abbebcdd084910aa4f33",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_000_control2000.npz": "1e34fd157f6e2502faf73f73bbbcb5526b53a2488ae40610d9af19210f799954",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_000_control2000.npz": "0a1072cef321cb8399e9ad5fbafdba23b2fa4a1eeb6e81adbcdbadf157afb06f",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_001_control2000.npz": "e06df246f1d283ff0f57d983acd6be5068993bedf2f1d81395c6c2908554ed1c",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_00_control2000.npz": "82c8a92d332d0f9e54fea977b8f1b2ca45a4b6e1f58382f83b4adf9960463170",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_05_control2000.npz": "3ffbd342d4d1c6cc715899463976a2e573de950cb141598b518cb0c42b48fb80",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_12_control2000.npz": "bf4ae1fb4ab2882552a466322fe728d9adfacbd989bf64e0ebeb6b516144ea3c",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_17_control2000.npz": "5a48a41b06b70672c16c7e0bb37c1abd56df12fcd80b911af980abcf81a04149",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_24_control2000.npz": "00b494450cf955562c6ab35aafd8344313f27f53d2a75f6db8df017292e25a6e",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_31_control2000.npz": "b07f9b62061939e6462a1e74e392ea09594020a2b17fc0fecfdc4c7081bbd645",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_0_control2000.npz": "cc0664702365d190a004e18739bbe9203b2a7abf55dc695b8e0125618ad6c181",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_1_control2000.npz": "8c67cf49c816620594d5cdf8b39cdc3235b222a12e734787e959bbda822514a9",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_015_retained2000.npz": "2a89b9440e41824ba690a51ab6db62c0c5542ce52f30c771c1faf5b2921524b1",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_00_retained2000.npz": "e340c58a112009a51aa0ca99322bc30a7494caf197baeb8d3cd06f03646943f3",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_02_retained2000.npz": "635d6a27a9ef43667163e3541243b9d57e9652e027e205cdf12b29b140df953e",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_03_retained2000.npz": "c2ec4d5f4f91c823e7acdb39819c131071b7d9100eabf211b2d53ef707dbf915",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/recovery_holdout_01_retained2000.npz": "0b2882cfc0fd5d5fc1d4b89e64ef4131ee13c5ef720a73d56cbd67a3c6b751c9",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_w11_e7_retained2000.npz": "656e023edc0ea0193b4516a80f153b5f619cb244a28670e74edd36ad76d54e0e",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_002_retained2000.npz": "94e2f76788be0965f831e007bfca62bbf5b151542efa667adf31360e387236d4",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/motion_profile_000_retained2000.npz": "5db027bcb8da8f2c55396ff2176c444ad831a18c7443c2afa9fb85e9ae938dd0",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/independent_dynamic_000_retained2000.npz": "75c3431b223b45de858458db7f827eb8c403737740c64cce08675fedfff05bdd",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/independent_dynamic_001_retained2000.npz": "cf75837f016de1c341269b1e4d38244ba9e2603587e7ff8d2436ddefa45c02fa",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_00_retained2000.npz": "7fbe8ae1f6a1f6365684efeb6b7a93464bb3fab9c79ce03ad5c100ab853d0fcc",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_05_retained2000.npz": "4c513b5adfd594cad8efe08c2f197556686bd5e06cbd9c993871f27bb3634ad7",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_12_retained2000.npz": "658ab04b66d30d8b49f6dafac99151ab0b862edc37502fb45feb07b8f9107b3f",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_17_retained2000.npz": "39b6088dca82ec8b33dcda311bfa3db634ac8a8998e8ed2d8509d8ad13c07fb1",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_24_retained2000.npz": "c22dd5a5d68ef8e45fab46bf84e72e565b3a23a03606cf4bd3e52b561596fea3",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/localization_nav_31_retained2000.npz": "e8c258fab5c567506be8d249c2a5ab991e1d18267b2d3620b59f31d73615297c",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_stop_go_variation_0_retained2000.npz": "377374d8532ba8c3b8c3bb6bf1941d219d673173f8906f4257221a2c56cdb929",
+    "reports/stop_feedback_20261015/w11_retained2000_navigation_20261016/train_failure_stop_go_variation_1_retained2000.npz": "ece23d2af454c45b110282aa40471acab8fe6715dc3ad9ee60ba59d43b5d6b48",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy.zip": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+    "reports/stop_feedback_20261015/post_aux_diagnostics_fixed_20261016/RESULTS.json": "82afbac40d9044d1e132abef726a6ea2a291aebc2b23a0abd89a3a0697d8769f",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/RESULTS.json": "5bc64d9c268f20b80102acb0ec90974812ba086b1938a5d922e67afd5465c558",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/cases.json": "00be239ef100e2bec9cd97151e8af16dd340295feae3ad4310419cd6dab2f772",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/motion_profile_015_early_transfer_diagnostic.npz": "2764d2de2fe330bb0e7831c65ed1d4b68df65bf89b71b18b5df5b89f14d1c5e9",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/recovery_holdout_00_early_transfer_diagnostic.npz": "6b07872a61593f2af6b73d5743aab51b73f64404712972bdaf218d4a03340132",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/recovery_holdout_01_early_transfer_diagnostic.npz": "d3b891e45f6e505d3eaca9a6bd0d526598fbe911bc2ebef8254be8b37ae74752",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_02_early_transfer_diagnostic.npz": "a903977474858b677b53cfc88f1f64119326dee2d4e1db66c331c85aca361b6d",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_06_early_transfer_diagnostic.npz": "e555319e208731f641fc5bab484df3ebad6f0553a23b1ae3403dea615a002185",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_navigation_20261016/train_failure_proactive_variation_07_early_transfer_diagnostic.npz": "0b900ecdb49fc08ba1a3edd1998b8f5db64e9f058f9e0c141e782adf00a0ae38",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/RESULTS.json": "973e911cbf078ba58c08b0bedf7b763d7a3bc570499cbb7d733abbc0115bdeee",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/cases.json": "675cd245099656f709703c6c95d472843d6e9e9e822eac4be7e4acfc6d40bf4f",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_02_w11_bc800_reference.npz": "d6be6d4ae4131ed179a6576e5943ee06100e07b8257d1c73a1e478e050438aa7",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_06_w11_bc800_reference.npz": "d2d1a51764424259511b9aef64056570f9ad67620ddcc366fabff7b636decad9",
+    "reports/stop_feedback_20261015/early_transfer_diagnostic_reference_20261016/train_failure_proactive_variation_07_w11_bc800_reference.npz": "635a1682558e39db8a51bf69ce9502dadbbe0705e100385e2f09d790c79b7a58"
+  },
+  "new_environment_steps": 0,
+  "new_ppo_steps": 0,
+  "full35_retained_comparison_complete": false,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "limitations": [
+    "Full-start outcome improvement is not proof of late-wait recovery.",
+    "First changed decisions share causal history, but all later actions may differ.",
+    "Six diagnostic cases are reused development/training cases, not unseen-map generalization.",
+    "Both PPO models lose an originally successful task; neither is admitted as a deployment upgrade."
+  ]
+}

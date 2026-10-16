@@ -1,0 +1,67 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "control_w11_wait_t32",
+      "category": "original_release_training_failure",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 3.84428834646017,
+      "frames": 700,
+      "final_xy_error_m": 3.5126885034696227,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004786780959973581,
+      "localization_yaw_p95_rad": 0.003022565600028293,
+      "stop_choices": 581,
+      "only_stop_frames": 525,
+      "stop_reasons": {
+        "None": 165,
+        "laser_braking_footprint": 535
+      },
+      "voluntary_wait_frames": 56,
+      "predictive_constraint_frames": 11,
+      "runtime_ms": {
+        "p95": 132.05187180428766,
+        "p99": 186.12588660325855,
+        "maximum": 219.12318002432585
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 160,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 32.0,
+      "post_release_seconds": 107.99999999994517,
+      "model_controlled_frames": 540,
+      "post_release_wait_with_choices_frames": 18,
+      "post_release_only_stop_frames": 515,
+      "longest_post_release_wait_with_choices_s": 3.200000000001637,
+      "prefix_trace_sha256": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+      "variant": "reference_bc_control_wait_t32",
+      "trace_sha256": "e6c845d2670c54aee7656755ea6ec0f16a819a760210502494c7946a16cbe6d4"
+    }
+  ],
+  "label": "reference_bc_control_wait_t32",
+  "specifications_sha256": "96428ec79c0e308898b7b07e16b29e62680bfb93557c47dcb00346e4be8f479d",
+  "bundle_manifest_sha256": "681cb1d7212333f1565bc47049671f9e375da9800fd27d725d620a1f8341d343",
+  "scope": "Learned continuation after a fixed, independently verified sensor/action prefix; reused development traces.",
+  "limitations": [
+    "Correlated recovery states from previously used trajectories, not independent missions.",
+    "Prefix is scripted initialization, not a claim that the model chose the earlier maneuver."
+  ],
+  "resource": {
+    "seconds": 660.6368597280234,
+    "cpu_seconds": 99.239970959,
+    "average_cpu_cores": 0.15021864054006306,
+    "peak_rss_mib": 1652.78125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}
