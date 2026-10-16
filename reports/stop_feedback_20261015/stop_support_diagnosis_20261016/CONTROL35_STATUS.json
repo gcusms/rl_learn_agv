@@ -1,0 +1,217 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:28:16.119513+08:00",
+  "separate_group_results": {
+    "full_reset": {
+      "rows": 18,
+      "safe_successes": 17,
+      "collisions": 0,
+      "timeouts": 1,
+      "false_arrivals": 0,
+      "incomplete_case_ids": [
+        "train_failure_w11_e7"
+      ],
+      "source": "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/RESULTS.json",
+      "source_sha256": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4"
+    },
+    "original_prefix": {
+      "rows": 2,
+      "safe_successes": 2,
+      "collisions": 0,
+      "timeouts": 0,
+      "false_arrivals": 0,
+      "incomplete_case_ids": [],
+      "source": "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/RESULTS.json",
+      "source_sha256": "3ae82ac230fb1a47955396eeadca27c770020d92cfce856b10097afbd7bc5ddb"
+    },
+    "related_w11_history": {
+      "rows": 3,
+      "safe_successes": 0,
+      "collisions": 0,
+      "timeouts": 3,
+      "false_arrivals": 0,
+      "incomplete_case_ids": [
+        "w11_training_stall_t90",
+        "w11_training_stall_t95",
+        "w11_training_stall_t106"
+      ],
+      "source": "reports/stop_feedback_20261015/w11_control2000_w11_20261016/RESULTS.json",
+      "source_sha256": "d1ec833f15f37de3b66db20feff27003644d0f7e4032a7c3f16a8c8f6924f99d"
+    },
+    "extra_condition": {
+      "rows": 12,
+      "safe_successes": 7,
+      "collisions": 4,
+      "timeouts": 1,
+      "false_arrivals": 0,
+      "incomplete_case_ids": [
+        "proactive_fresh_condition_00",
+        "proactive_fresh_condition_02",
+        "proactive_fresh_condition_04",
+        "proactive_fresh_condition_05",
+        "localization_nav_33"
+      ],
+      "source": "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/RESULTS.json",
+      "source_sha256": "cdc25448677647bff4e5f99e8b1413c20179fc1f2da5fbc0435dc457b64e2160"
+    }
+  },
+  "number_of_completed_rows": 35,
+  "original_success_preservation": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 14,
+    "common_successes": 13,
+    "lost_successes": [
+      "train_failure_w11_e7"
+    ],
+    "gained_successes": [],
+    "safety_nonregression": false,
+    "common_success_travel_m": [
+      41.68190896480106,
+      43.99752534810469
+    ],
+    "common_success_seconds": [
+      296.6000000000198,
+      307.6000000000273
+    ],
+    "total_travel_relative_change": 0.05555447053202589,
+    "total_time_relative_change": 0.03708698583953729,
+    "pairs": [
+      {
+        "case_id": "motion_profile_015",
+        "travel_relative_change": 0.22794157020936057,
+        "time_relative_change": 0.21544715447162543
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.01534021951834541,
+        "time_relative_change": 0.042704626334533646
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": 0.24059177475448146,
+        "time_relative_change": -0.04907975460123293
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": 0.01788233742915568,
+        "time_relative_change": -0.003891050583659017
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": -0.03360543439865571,
+        "time_relative_change": -0.017391304347822878
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_0",
+        "travel_relative_change": -0.010701253579236347,
+        "time_relative_change": 0.04166666666668961
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_1",
+        "travel_relative_change": -0.009555521473652129,
+        "time_relative_change": -0.03797468354429867
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": false,
+    "all_regression_checks_passed": false,
+    "larger_training_gate_passed": false,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "aggregated_independent_success_rate": null,
+  "limitations": [
+    "The35 rows mix full resets,correlated historical prefixes and same-map extra conditions.",
+    "Do not turn this mixed total into an independent navigation or unseen-map success rate.",
+    "Retained variant is still being physically evaluated; this is not a complete two-model comparison."
+  ],
+  "additional_environment_steps": 0,
+  "inputs_sha256": {
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_015_control2000.npz": "7848d48569a7cb13110a7df217987db49575e8d81fa9abfe1a3147edfd4950fb",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_00_control2000.npz": "26abc1fe57e3bc5bbada6d51af9eb8c6e89c488e4f9dfc2ff81fc9a211604fe2",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_02_control2000.npz": "b34f3d64621f103700cc086c181222b2e4a55389d461e703079cae07daf8699e",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_03_control2000.npz": "a7d3aa60cff7d41cd9490d6fa121b2a2e5beb4c48cd7ce8cfd9a5e50eacd1b52",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/recovery_holdout_01_control2000.npz": "77c922cf4792ca055a21ecc56512c65711e18035b6cc4ef4d24d08993453ced3",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_w11_e7_control2000.npz": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_002_control2000.npz": "dfb653278936e316417be199db647071935c0fe8f612abbebcdd084910aa4f33",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/motion_profile_000_control2000.npz": "1e34fd157f6e2502faf73f73bbbcb5526b53a2488ae40610d9af19210f799954",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_000_control2000.npz": "0a1072cef321cb8399e9ad5fbafdba23b2fa4a1eeb6e81adbcdbadf157afb06f",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/independent_dynamic_001_control2000.npz": "e06df246f1d283ff0f57d983acd6be5068993bedf2f1d81395c6c2908554ed1c",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_00_control2000.npz": "82c8a92d332d0f9e54fea977b8f1b2ca45a4b6e1f58382f83b4adf9960463170",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_05_control2000.npz": "3ffbd342d4d1c6cc715899463976a2e573de950cb141598b518cb0c42b48fb80",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_12_control2000.npz": "bf4ae1fb4ab2882552a466322fe728d9adfacbd989bf64e0ebeb6b516144ea3c",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_17_control2000.npz": "5a48a41b06b70672c16c7e0bb37c1abd56df12fcd80b911af980abcf81a04149",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_24_control2000.npz": "00b494450cf955562c6ab35aafd8344313f27f53d2a75f6db8df017292e25a6e",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/localization_nav_31_control2000.npz": "b07f9b62061939e6462a1e74e392ea09594020a2b17fc0fecfdc4c7081bbd645",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_0_control2000.npz": "cc0664702365d190a004e18739bbe9203b2a7abf55dc695b8e0125618ad6c181",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_stop_go_variation_1_control2000.npz": "8c67cf49c816620594d5cdf8b39cdc3235b222a12e734787e959bbda822514a9",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/RESULTS.json": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4",
+    "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/rotation_stall_t20.npz": "97b7c355e6a2de486bc757201782ed2eeedc5c6354fb75135c6b38790a4059a8",
+    "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/arc_stall_t20.npz": "c5634c110cba7bce74299fad6ea5f39a129d41766579f0caef049bde3ab09a96",
+    "reports/stop_feedback_20261015/w11_control2000_prefixes_20261016/RESULTS.json": "3ae82ac230fb1a47955396eeadca27c770020d92cfce856b10097afbd7bc5ddb",
+    "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t90.npz": "7b5859908c3de682b9365389dcba59872b746442c83bce4823ca140be3d81fc4",
+    "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t95.npz": "8c3c562494455296cdad0f946bb739cea974bfd43bfb366b2d0a93658b3bcf73",
+    "reports/stop_feedback_20261015/w11_control2000_w11_20261016/w11_training_stall_t106.npz": "bf67e6ad49f708c810218395202f268d4cfd9eb6926404dbb8a0899aae7d5931",
+    "reports/stop_feedback_20261015/w11_control2000_w11_20261016/RESULTS.json": "d1ec833f15f37de3b66db20feff27003644d0f7e4032a7c3f16a8c8f6924f99d",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_00_control2000.npz": "8ad5e6744c055e7981c32b58bdcd54ceeebfda3d6127ae1a853e53601202febb",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_01_control2000.npz": "3cf9a44797ad4012ca0ec5dfd90ce66e974b2530a48a7226a2d5e9a1ddf895f9",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_02_control2000.npz": "ceb22f4c0bacacdd48ca3d9d5582dda367a8122467a6d98e99add1cad78c1e7c",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_03_control2000.npz": "a8967d5d0859fa6471266d6c0c9c9c89e14ef98d27d4efceb8a37597f90a9c88",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_04_control2000.npz": "aa5ee1c050c9052786a045eb03938178194871919023cf79f0e0c9cc6c419595",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_05_control2000.npz": "8efc8f48f1ee31f5f1bf61e7374fdc783318d829811cf5896a13e1c64a277d6e",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_06_control2000.npz": "1cb737490d9f0df5700d64033e5df7f91c49b748fe200848c79fd80aa08acc63",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/proactive_fresh_condition_07_control2000.npz": "2247fe6e2d5b43342d9a089805d054ced75f0ae78cead8390977ab4918e1756b",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_32_control2000.npz": "896322fa6b89d8d44837ceec8d45d5d2614e2cc83d1d8e2c1a8e74d17eb9ba33",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_33_control2000.npz": "9836dda3dda99406eecb5f89dea2cce0a614524406127b47859b4eafa2392830",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_36_control2000.npz": "2d1bee8401a9c71e4494296d96e6de858dd2ca2369b1542e79edda6a6b605cd6",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/localization_nav_37_control2000.npz": "62d0b0b81d5dc0a325d5a8ffbadb00accbe8bfd42084d91edb708087ff3546d7",
+    "reports/stop_feedback_20261015/w11_control2000_fresh_20261016/RESULTS.json": "cdc25448677647bff4e5f99e8b1413c20179fc1f2da5fbc0435dc457b64e2160",
+    "reports/stop_feedback_20261015/control2000_gate_analysis_20261016/RESULTS.json": "6a01262473d1b4497e0030d73df9d22030c8e792d5da038b61b2df21461dfea7",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5"
+  },
+  "source_sha256": "aeddd0fd74731ba24ce54ac8f6199c710ee42ad830142a27493adedee3856b0b",
+  "resource": {
+    "seconds": 1.9877507689525373,
+    "cpu_seconds": 0.100008741,
+    "average_cpu_cores": 0.050312515312319804,
+    "peak_rss_mib": 17.48828125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,23 @@
+2026-10-16T07:49:40+0800 ubuntu systemd[1294]: Started /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python reports/stop_feedback_20261015/post_aux_diagnostics_20261016/after_quick.py.
+2026-10-16T08:12:13+0800 ubuntu python[1778624]: {"stage": "exact_recorded_collision_replay", "command": ["/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python", "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/replay_collision.py"]}
+2026-10-16T08:12:16+0800 ubuntu python[1786477]: Traceback (most recent call last):
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/replay_collision.py", line 145, in <module>
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:     main()
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/replay_collision.py", line 51, in main
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:     recorded_cases=[training_case(spec['case'])],recorded_episodes_per_cycle=1)
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/training/experiments/train_localization_recovery.py", line 38, in training_case
+2026-10-16T08:12:16+0800 ubuntu python[1786477]:     raise ValueError('Only an explicitly recorded training failure can be rehearsed')
+2026-10-16T08:12:16+0800 ubuntu python[1786477]: ValueError: Only an explicitly recorded training failure can be rehearsed
+2026-10-16T08:12:16+0800 ubuntu python[1778624]: Traceback (most recent call last):
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/after_quick.py", line 119, in <module>
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:     main()
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/after_quick.py", line 81, in main
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:     run('exact_recorded_collision_replay',[OUT/'replay_collision.py'])
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/after_quick.py", line 79, in run
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:     subprocess.run(command,check=True)
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:   File "/usr/lib/python3.10/subprocess.py", line 526, in run
+2026-10-16T08:12:16+0800 ubuntu python[1778624]:     raise CalledProcessError(retcode, process.args,
+2026-10-16T08:12:16+0800 ubuntu python[1778624]: subprocess.CalledProcessError: Command '['/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python', '/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/replay_collision.py']' returned non-zero exit status 1.
+2026-10-16T08:12:16+0800 ubuntu systemd[1294]: rl-post-aux-diagnostics-20261016.service: Main process exited, code=exited, status=1/FAILURE
+2026-10-16T08:12:16+0800 ubuntu systemd[1294]: rl-post-aux-diagnostics-20261016.service: Failed with result 'exit-code'.
+2026-10-16T08:12:16+0800 ubuntu systemd[1294]: rl-post-aux-diagnostics-20261016.service: Consumed 4.688s CPU time.

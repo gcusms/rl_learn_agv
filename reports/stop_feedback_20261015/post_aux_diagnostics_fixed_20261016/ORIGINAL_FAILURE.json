@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-16T08:15:34.017156+08:00",
+  "original_service": {
+    "MainPID": "0",
+    "Result": "exit-code",
+    "ExecMainStatus": "1",
+    "Id": "rl-post-aux-diagnostics-20261016.service",
+    "ActiveState": "failed",
+    "InvocationID": "dc8d17c030c14011aeb75353cfe1dd94"
+  },
+  "previous_auxiliary_states": {
+    "rl-rotation-escape-t106-20261016.service": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "Id": "rl-rotation-escape-t106-20261016.service",
+      "ActiveState": "inactive",
+      "InvocationID": ""
+    },
+    "rl-early-transfer-quick-20261016.service": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "Id": "rl-early-transfer-quick-20261016.service",
+      "ActiveState": "inactive",
+      "InvocationID": ""
+    }
+  },
+  "original_status": {
+    "status": "failed",
+    "at": "2026-10-16T08:12:16.700307+08:00",
+    "error": "CalledProcessError(1, ['/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python', '/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/post_aux_diagnostics_20261016/replay_collision.py'])",
+    "automatically_restarted": false,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "exception": "training_case rejected ordinary prefix-case id motion_profile_015",
+  "failed_before_curriculum_constructor": true,
+  "original_physical_steps": 0,
+  "original_files_preserved": true,
+  "original_plan_sha256": "30e2639e1c0e56ffe1a31bb30f46b4ca3b7098ba1cb9521aa227dbcef5dafe37",
+  "source_diff": "Initialize ScheduledRecoveryCurriculum with the same12 recorded training cases as the actual trainer; prefix reset and all25 sampled actions remain unchanged.",
+  "reused_earlier_result_as_new_result": false,
+  "no_observation_timeout_restart": true
+}

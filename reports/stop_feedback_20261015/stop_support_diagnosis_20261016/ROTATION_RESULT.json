@@ -1,0 +1,84 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:17:06.716305+08:00",
+  "same_sensor_and_physical_initialization_verified": true,
+  "summaries": {
+    "model_only": {
+      "post_initialization_frames": 170,
+      "post_initialization_choices": {
+        "0": 170
+      },
+      "post_initialization_only_stop_frames": 0,
+      "post_initialization_command_stop_frames": 170,
+      "net_yaw_change_rad": 6.445167617386005e-07,
+      "cumulative_absolute_yaw_change_rad": 6.445167617386005e-07,
+      "final_xy_error_m": 1.7975349225259525,
+      "total_travel_m": 8.319762386941637,
+      "safe_success": false,
+      "collisions": 0,
+      "timeout": true,
+      "physical_guards": 0,
+      "model_only": true
+    },
+    "timed_diagnostic": {
+      "post_initialization_frames": 170,
+      "post_initialization_choices": {
+        "5": 11,
+        "8": 6,
+        "4": 4,
+        "0": 149
+      },
+      "post_initialization_only_stop_frames": 108,
+      "post_initialization_command_stop_frames": 149,
+      "net_yaw_change_rad": -0.44237213241438056,
+      "cumulative_absolute_yaw_change_rad": 1.2535428418915977,
+      "final_xy_error_m": 1.7892112127484152,
+      "total_travel_m": 8.332142114029539,
+      "safe_success": false,
+      "collisions": 0,
+      "timeout": true,
+      "physical_guards": 0,
+      "model_only": false
+    }
+  },
+  "request_window": {
+    "frames": 16,
+    "original_action_choice": 5,
+    "command": [
+      0.0,
+      -0.5
+    ],
+    "legal_and_executed": 11,
+    "illegal_model_fallback": 5,
+    "full_physical_trial_is_not_model_only": true
+  },
+  "diagnostic_extra_total_travel_m": 0.012379727087902026,
+  "successful_recovery_demonstration_available": false,
+  "inputs_sha256": {
+    "reports/stop_feedback_20261015/rotation_escape_t106_protocol_20261016/RESULTS.json": "532e2a5e1ddb0041011e7626c97673f73a804af4dc0305698b262238eb8c53e7",
+    "reports/stop_feedback_20261015/rotation_escape_t106_model_20261016/RESULTS.json": "328673c47b49f0d859cfcc66304c2ba556e8fe40a24d8e2e4c87fc44a9211789",
+    "reports/stop_feedback_20261015/rotation_escape_t106_model_20261016/w11_training_stall_t106.npz": "e2e33fd2487b265c9bb03d48179c56bb006573c604a944707900ee2af91d1404",
+    "reports/stop_feedback_20261015/rotation_escape_t106_probe_20261016/RESULTS.json": "a386ed5de78a83344a49607835eae07abf11ba726ba1247d873e9acc7590b450",
+    "reports/stop_feedback_20261015/rotation_escape_t106_probe_20261016/right_rotation_3p2s.npz": "18a8f3228b5921130332dfa85088d149012b7f4b704601cc2c78e8f582388867"
+  },
+  "source_sha256": "ceb4da0f4e7154a0791706f821caf8f07d106d1cd5be8eb13f4b1fe915da9c23",
+  "additional_environment_steps": 0,
+  "physical_cases_rerun": 0,
+  "optimizer_updates": 0,
+  "limitations": [
+    "One reused development state; not an unseen mission.",
+    "The requested action is only executed when legal; fallback model decisions can change direction.",
+    "Failure of this finite window does not prove the state is unreachable or every legal motion is useless.",
+    "Reduced voluntary waiting here was accompanied by more forced stopping and no physical arrival.",
+    "This failed complete trial must not be labelled a successful recovery demonstration."
+  ],
+  "resource": {
+    "seconds": 1.8604590349714272,
+    "cpu_seconds": 0.101597303,
+    "average_cpu_cores": 0.0546087288622081,
+    "peak_rss_mib": 44.93359375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

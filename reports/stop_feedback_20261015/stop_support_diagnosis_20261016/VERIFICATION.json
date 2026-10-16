@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-16T08:29:39.880598+08:00",
+  "completed_evidence_checks": {
+    "RESULTS.json": {
+      "report_sha256": "879e3b22619c812fd0aa64a3aab16349aec3aa8dc9816882057a2bed251e9ea1",
+      "verified_input_count": 13,
+      "source_sha256": "1b2b1a9299b14cf34f8b20696714de00195eed7dd6b240746b3c390cf62c5d8e"
+    },
+    "initial_RESULTS.json": {
+      "report_sha256": "af9c41042c5334b08bb5b9547b17b60adb86183326aef762d20d2ad68746ee2b",
+      "verified_input_count": 13,
+      "source_sha256": "7002b1a5c60d6f659670c78952a1f404130cdd6529121da18a8a2aae21f47b2c"
+    },
+    "TRAINING_COVERAGE.json": {
+      "report_sha256": "6d022b616d861fb051a6483f40e6e2f49351ba079529914460040ff945e4018a",
+      "verified_input_count": 20,
+      "source_sha256": "f79c8ed88ddd0d3be3c6425e83dd60270c04baead56cfd03ee9afaa6e80f08d8"
+    },
+    "ROTATION_RESULT.json": {
+      "report_sha256": "4eec014cdc8dcdbed5600b8e97cc1b1f6e9dedebff889acc9996fcb6af1b9e72",
+      "verified_input_count": 5,
+      "source_sha256": "ceb4da0f4e7154a0791706f821caf8f07d106d1cd5be8eb13f4b1fe915da9c23"
+    },
+    "COLLISION_FORENSICS.json": {
+      "report_sha256": "85a4bb10a340fc3b61197e56fccd1319e5e8f5418646104b38d5b74918cf29ae",
+      "verified_input_count": 13,
+      "source_sha256": "9f3fb1728e890bf556cc5421a6a09c6adaa1a63ab4f8d7cfdd066a1161f3426b"
+    },
+    "CONTROL35_STATUS.json": {
+      "report_sha256": "df879f26ef2fc2174125d54e795358a6cc3e9dc67b19362e176f4aab6e444222",
+      "verified_input_count": 41,
+      "source_sha256": "aeddd0fd74731ba24ce54ac8f6199c710ee42ad830142a27493adedee3856b0b"
+    }
+  },
+  "frozen_new_plans": {
+    "post_aux_diagnostics_fixed_20261016": {
+      "plan_sha256": "0e5bcce29b25236f4a360719e861dd4053f168d31a3374196356f30d706f7e2d",
+      "verified_input_count": 145
+    },
+    "reference_wait_t32_protocol_20261016": {
+      "plan_sha256": "470c71eb778f691594ec47cd64d09282f4fbd5c39b61c024093628040d1f5220",
+      "verified_input_count": 154
+    }
+  },
+  "distinct_verified_input_files": 223,
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "live_handles_at_verification": {
+    "rl-w11-retention-pair-20261016.service": {
+      "MainPID": "1750546",
+      "Id": "rl-w11-retention-pair-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "ccf6796d00f34b44add304cf192a1dae"
+    },
+    "rl-post-aux-fixed-20261016.service": {
+      "MainPID": "1787520",
+      "Id": "rl-post-aux-fixed-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "c60bf2973f184188ac26018fd1539489"
+    },
+    "rl-reference-wait-t32-20261016.service": {
+      "MainPID": "1790276",
+      "Id": "rl-reference-wait-t32-20261016.service",
+      "ActiveState": "active",
+      "InvocationID": "5fff3c9bd509498f98fa49fe15800c46"
+    }
+  },
+  "implementation_or_navigation_tests_rerun": false,
+  "additional_physical_steps_by_this_verifier": 0,
+  "scope": "Read-only evidence/source/input verification; two physical jobs and one waiting driver remain active. Does not establish goal completion or deployment acceptance.",
+  "goal_achieved": false,
+  "deployment_approved": false
+}
