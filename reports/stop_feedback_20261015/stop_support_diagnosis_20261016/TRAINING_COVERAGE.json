@@ -1,0 +1,377 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:07:28.798120+08:00",
+  "demonstrations": {
+    "w11_recovery_bc800_s231015": {
+      "frames": 2089,
+      "maximum_prior_idle_with_motion_s": 1.1999999284744263,
+      "groups": {
+        "all": {
+          "frames": 2089,
+          "supported_with_motion": 2089,
+          "selected_stop": 37,
+          "selected_motion": 2052,
+          "action_counts": {
+            "1": 996,
+            "11": 304,
+            "2": 33,
+            "5": 59,
+            "10": 190,
+            "7": 65,
+            "9": 139,
+            "6": 222,
+            "3": 14,
+            "0": 37,
+            "8": 11,
+            "4": 19
+          }
+        },
+        "prior_legal_idle_ge1s": {
+          "frames": 3,
+          "supported_with_motion": 3,
+          "selected_stop": 2,
+          "selected_motion": 1,
+          "action_counts": {
+            "0": 2,
+            "6": 1
+          }
+        },
+        "prior_legal_idle_ge2s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        },
+        "prior_legal_idle_ge4s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        }
+      },
+      "labels_per_action": [
+        37,
+        996,
+        33,
+        14,
+        19,
+        59,
+        222,
+        65,
+        11,
+        139,
+        190,
+        304
+      ],
+      "permitted_per_action": [
+        2089,
+        1929,
+        2012,
+        2029,
+        1983,
+        1998,
+        1970,
+        1969,
+        1981,
+        1993,
+        1889,
+        1864
+      ]
+    },
+    "early_transfer_bc800_s231015": {
+      "frames": 2355,
+      "maximum_prior_idle_with_motion_s": 1.1999999284744263,
+      "groups": {
+        "all": {
+          "frames": 2355,
+          "supported_with_motion": 2355,
+          "selected_stop": 55,
+          "selected_motion": 2300,
+          "action_counts": {
+            "1": 1128,
+            "11": 305,
+            "2": 41,
+            "5": 62,
+            "10": 210,
+            "7": 102,
+            "9": 142,
+            "6": 252,
+            "3": 18,
+            "0": 55,
+            "8": 17,
+            "4": 23
+          }
+        },
+        "prior_legal_idle_ge1s": {
+          "frames": 3,
+          "supported_with_motion": 3,
+          "selected_stop": 2,
+          "selected_motion": 1,
+          "action_counts": {
+            "0": 2,
+            "6": 1
+          }
+        },
+        "prior_legal_idle_ge2s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        },
+        "prior_legal_idle_ge4s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        }
+      },
+      "labels_per_action": [
+        55,
+        1128,
+        41,
+        18,
+        23,
+        62,
+        252,
+        102,
+        17,
+        142,
+        210,
+        305
+      ],
+      "permitted_per_action": [
+        2355,
+        2148,
+        2241,
+        2264,
+        2233,
+        2241,
+        2198,
+        2201,
+        2218,
+        2234,
+        2107,
+        2080
+      ]
+    }
+  },
+  "actual_ppo_samples": {
+    "control": {
+      "frames": 2000,
+      "maximum_prior_idle_with_motion_s": 1.0,
+      "groups": {
+        "all": {
+          "frames": 2000,
+          "supported_with_motion": 889,
+          "selected_stop": 822,
+          "selected_motion": 1178,
+          "action_counts": {
+            "5": 29,
+            "10": 92,
+            "11": 165,
+            "7": 78,
+            "9": 84,
+            "0": 822,
+            "6": 56,
+            "3": 5,
+            "1": 638,
+            "2": 4,
+            "4": 24,
+            "8": 3
+          }
+        },
+        "prior_legal_idle_ge1s": {
+          "frames": 1,
+          "supported_with_motion": 1,
+          "selected_stop": 0,
+          "selected_motion": 1,
+          "action_counts": {
+            "1": 1
+          }
+        },
+        "prior_legal_idle_ge2s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        },
+        "prior_legal_idle_ge4s": {
+          "frames": 0,
+          "supported_with_motion": 0,
+          "selected_stop": 0,
+          "selected_motion": 0,
+          "action_counts": {}
+        }
+      },
+      "labels_per_action": [
+        822,
+        638,
+        4,
+        5,
+        24,
+        29,
+        56,
+        78,
+        3,
+        84,
+        92,
+        165
+      ],
+      "permitted_per_action": [
+        2000,
+        1153,
+        1170,
+        1167,
+        1139,
+        1157,
+        1144,
+        1144,
+        1143,
+        1157,
+        1130,
+        1121
+      ],
+      "initialization_frames_excluded": 1060,
+      "long_wait_training_loss_enabled": false,
+      "temporally_eligible_supported_frames_by_source": {},
+      "probability_threshold_not_evaluated_here": true
+    },
+    "retained": {
+      "frames": 2000,
+      "maximum_prior_idle_with_motion_s": 5.0,
+      "groups": {
+        "all": {
+          "frames": 2000,
+          "supported_with_motion": 1366,
+          "selected_stop": 246,
+          "selected_motion": 1754,
+          "action_counts": {
+            "5": 23,
+            "10": 159,
+            "11": 242,
+            "7": 78,
+            "9": 119,
+            "0": 246,
+            "6": 157,
+            "3": 4,
+            "1": 938,
+            "2": 6,
+            "4": 24,
+            "8": 4
+          }
+        },
+        "prior_legal_idle_ge1s": {
+          "frames": 77,
+          "supported_with_motion": 76,
+          "selected_stop": 77,
+          "selected_motion": 0,
+          "action_counts": {
+            "0": 77
+          }
+        },
+        "prior_legal_idle_ge2s": {
+          "frames": 67,
+          "supported_with_motion": 66,
+          "selected_stop": 67,
+          "selected_motion": 0,
+          "action_counts": {
+            "0": 67
+          }
+        },
+        "prior_legal_idle_ge4s": {
+          "frames": 47,
+          "supported_with_motion": 46,
+          "selected_stop": 47,
+          "selected_motion": 0,
+          "action_counts": {
+            "0": 47
+          }
+        }
+      },
+      "labels_per_action": [
+        246,
+        938,
+        6,
+        4,
+        24,
+        23,
+        157,
+        78,
+        4,
+        119,
+        159,
+        242
+      ],
+      "permitted_per_action": [
+        2000,
+        1679,
+        1731,
+        1739,
+        1709,
+        1715,
+        1706,
+        1718,
+        1712,
+        1797,
+        1639,
+        1651
+      ],
+      "initialization_frames_excluded": 1160,
+      "long_wait_training_loss_enabled": false,
+      "temporally_eligible_supported_frames_by_source": {
+        "physical_prefix_w11_training_stall_t90": {
+          "frames": 66,
+          "selected_stop": 66,
+          "selected_motion": 0
+        }
+      },
+      "probability_threshold_not_evaluated_here": true
+    }
+  },
+  "inputs_sha256": {
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/demonstrations.npz": "d5e94192da5bff7e36a90ab675e183bddc03af94e4870e8f49794aa52081575c",
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/demonstrations.npz": "47b133d057f0a251a0d517833ab69dc395145db35905e683a07ebe4a1d2f6ecc",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000250.npz": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000500.npz": "865386401afdcec5bcb7a1687b3eed0f7d148ad780c53b9749e0f5cb4ab14ab5",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_000750.npz": "67b2ef459bb3d99b82d1984db8c8ed298280fa1f51bc00e532923a658d9f8e5e",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001000.npz": "2b3d7f93d6f8de2fbc3b3f0f57b6bfc02014b5e4e7a22058b4d1dbff79cf1233",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001250.npz": "0773f0cb0d91cf2c5ab792a36239fc57b92293ceb2fb9251040f7ff84fb48de8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001500.npz": "ebfae1382bf0476ef7f21b535834b2aa6b7ece9e319fa5ebce2635f6397646cd",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001750.npz": "61cf1ef3c628bef9c286c54682000872ba5bcbcb3ab04e864ff08f3f9066acf6",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_002000.npz": "dbffe3cbcc16659d438d454fa1605a2326c8d29a8cd3e9a0157ddcdfcd24fa9c",
+    "models/stop_feedback_20261015/w11_control2000_s231015/status.json": "c1a04d37172802796d655d22b7c588217acefe244ce8e966de48950854096f42",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000250.npz": "c460f73d4c334d4d73cbac021c49e0e99f2ce723ea1cca33949d071dcbeeb83c",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000500.npz": "46b8e8912e396c3be8af643039921bc6981452e04024bffa09ff27f4072fcf2b",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_000750.npz": "5fb254bd50016d5bfdfc0bbdd3489dd6184005a808b57ed35c919122a52c978c",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001000.npz": "fdafbf10cfac339df75c36632c6cbfaf68632c927e30bcfb66d21035a3b2165f",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001250.npz": "35a4df302315a01b9170185410c735756bffd7cf348ddb7bbb54c63d8c039399",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001500.npz": "c84ff30980095878239cf4e49dff245b513baefcfa9f00b3101d3141759228b4",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001750.npz": "4c2ebce9a08b6e334eebb5cd45bd49f27a65a5ce8cbc05075ad39559a22bb080",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_002000.npz": "b74d0b18e7bc834ae7c09e7d636d81a89687105caace57c6e482c48ba40a3647",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/status.json": "aa2502dc75b3a9debdbc91767c96879b77c67071a2a956cb7ba3fb76e9629eb5"
+  },
+  "source_sha256": "f79c8ed88ddd0d3be3c6425e83dd60270c04baead56cfd03ee9afaa6e80f08d8",
+  "additional_environment_steps": 0,
+  "optimizer_updates": 0,
+  "physical_initialization_not_counted_as_training": true,
+  "limitations": [
+    "Demonstration labels and on-policy sampled actions are different kinds of evidence.",
+    "Supported waits of at least2s are only the temporal part of the optional exploration-loss gate; stop probability>=0.95 would further restrict it.",
+    "No assumption is made that any permitted movement would complete the task.",
+    "No actual late-prefix training or physical continuation is performed by this audit."
+  ],
+  "resource": {
+    "seconds": 6.863426390977111,
+    "cpu_seconds": 0.35012113599999994,
+    "average_cpu_cores": 0.0510125870163452,
+    "peak_rss_mib": 45.66015625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

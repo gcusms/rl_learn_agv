@@ -1,0 +1,67 @@
+{
+  "completed": true,
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "w11_training_stall_t106",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.319762386941637,
+      "frames": 700,
+      "final_xy_error_m": 1.7975349225259525,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005162948270223133,
+      "localization_yaw_p95_rad": 0.0014846890014716494,
+      "stop_choices": 226,
+      "only_stop_frames": 36,
+      "stop_reasons": {
+        "None": 525,
+        "laser_braking_footprint": 175
+      },
+      "voluntary_wait_frames": 190,
+      "predictive_constraint_frames": 63,
+      "runtime_ms": {
+        "p95": 186.41560546238907,
+        "p99": 207.34351327526383,
+        "maximum": 243.92235599225387
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 170,
+      "post_release_wait_with_choices_frames": 170,
+      "post_release_only_stop_frames": 0,
+      "longest_post_release_wait_with_choices_s": 33.99999999996909,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "variant": "frozen_bc_rotation_escape",
+      "trace_sha256": "e2e33fd2487b265c9bb03d48179c56bb006573c604a944707900ee2af91d1404"
+    }
+  ],
+  "label": "frozen_bc_rotation_escape",
+  "specifications_sha256": "b559a6b98f75e8d2f95de28192b1d38d4ccaeaf3c6bee9daf2cbcb8bed47c26e",
+  "bundle_manifest_sha256": "59200a6cb52e667d03bbaf62d8feee6db4ba2ebad8d1d5358a3f0682c236d426",
+  "scope": "Learned continuation after a fixed, independently verified sensor/action prefix; reused development traces.",
+  "limitations": [
+    "Correlated recovery states from previously used trajectories, not independent missions.",
+    "Prefix is scripted initialization, not a claim that the model chose the earlier maneuver."
+  ],
+  "resource": {
+    "seconds": 848.3233155880007,
+    "cpu_seconds": 127.397427344,
+    "average_cpu_cores": 0.15017555807209737,
+    "peak_rss_mib": 1655.203125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

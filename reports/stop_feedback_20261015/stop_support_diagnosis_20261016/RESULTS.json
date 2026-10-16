@@ -1,0 +1,881 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:09:37.654553+08:00",
+  "traces": {
+    "rotation_option_t106": {
+      "frames": 700,
+      "selected_frames": 170,
+      "selection": "model-controlled executed idle, motion permitted, estimated goal >0.3m",
+      "masks": {
+        "0,5,9": 170
+      },
+      "previous_reasons": {
+        "laser_braking_footprint": 168,
+        "policy_wait": 2
+      },
+      "prior_legal_idle_seconds": {
+        "minimum": 0.7999999523162842,
+        "p05": 2.489999878406525,
+        "median": 5.0,
+        "p95": 5.0,
+        "maximum": 5.0
+      },
+      "predictor_valid_frames": 170,
+      "scan_valid_frames": 170,
+      "reported_safe_success": false,
+      "reported_collisions": 0,
+      "reported_timeout": true
+    },
+    "control_full_w11": {
+      "frames": 700,
+      "selected_frames": 202,
+      "selection": "model-controlled executed idle, motion permitted, estimated goal >0.3m",
+      "masks": {
+        "0,4,5,7,8,9": 1,
+        "0,4,5,8,9": 3,
+        "0,4,5,8": 5,
+        "0,4": 26,
+        "0,4,8": 16,
+        "0,8": 149,
+        "0,4,5": 2
+      },
+      "previous_reasons": {
+        "none": 4,
+        "policy_wait": 47,
+        "laser_braking_footprint": 150,
+        "only_stop_available": 1
+      },
+      "prior_legal_idle_seconds": {
+        "minimum": 0.0,
+        "p05": 0.0,
+        "median": 3.0999999046325684,
+        "p95": 5.0,
+        "maximum": 5.0
+      },
+      "predictor_valid_frames": 202,
+      "scan_valid_frames": 202,
+      "reported_safe_success": false,
+      "reported_collisions": 0,
+      "reported_timeout": true
+    },
+    "reference_full_w11": {
+      "frames": 186,
+      "selected_frames": 1,
+      "selection": "model-controlled executed idle, motion permitted, estimated goal >0.3m",
+      "masks": {
+        "0,10": 1
+      },
+      "previous_reasons": {
+        "none": 1
+      },
+      "prior_legal_idle_seconds": {
+        "minimum": 0.0,
+        "p05": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "maximum": 0.0
+      },
+      "predictor_valid_frames": 1,
+      "scan_valid_frames": 1,
+      "reported_safe_success": true,
+      "reported_collisions": 0,
+      "reported_timeout": false
+    }
+  },
+  "predictions": {
+    "reference_bc": {
+      "rotation_option_t106": {
+        "selected_frames": 170,
+        "same_checkpoint_recorded_argmax_verified": true,
+        "learnable_support_frames": 170,
+        "usable_frames": 170,
+        "obstacle_context_frames": 170,
+        "frozen_base_choices": {
+          "0": 170
+        },
+        "predicted_choices": {
+          "0": 170
+        },
+        "stop_probability": {
+          "minimum": 0.9999988079071045,
+          "p05": 0.9999988079071045,
+          "median": 0.9999996423721313,
+          "p95": 0.9999998807907104,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 5.6795375513729596e-08,
+          "p05": 1.2035707506186102e-07,
+          "median": 3.5511448004399426e-07,
+          "p95": 1.1644534481547452e-06,
+          "maximum": 1.210846789945208e-06
+        },
+        "pure_right_turn_probability": {
+          "minimum": 1.8469931932728323e-16,
+          "p05": 1.3213517042006849e-15,
+          "median": 1.4462007077963837e-15,
+          "p95": 5.494964991414924e-15,
+          "maximum": 2.1556731009605978e-14
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 5.679536130287488e-08,
+          "p05": 1.2035707115387597e-07,
+          "median": 3.5511448004399426e-07,
+          "p95": 1.1644534481547452e-06,
+          "maximum": 1.210846789945208e-06
+        },
+        "entropy_nats": {
+          "minimum": 9.475635351918754e-07,
+          "p05": 2.036631894952734e-06,
+          "median": 5.631370868286467e-06,
+          "p95": 1.7102320271078497e-05,
+          "maximum": 1.768890069797635e-05
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 18.004283905029297,
+          "p05": 18.384346103668214,
+          "median": 18.43978500366211,
+          "p95": 18.457777976989746,
+          "maximum": 18.472103118896484
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 13.624191284179688,
+          "p05": 13.663258361816407,
+          "median": 14.850825786590576,
+          "p95": 15.934483480453489,
+          "maximum": 16.683809280395508
+        }
+      },
+      "control_full_w11": {
+        "selected_frames": 202,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 202,
+        "usable_frames": 202,
+        "obstacle_context_frames": 202,
+        "frozen_base_choices": {
+          "0": 202
+        },
+        "predicted_choices": {
+          "0": 61,
+          "8": 141
+        },
+        "stop_probability": {
+          "minimum": 0.07863709330558777,
+          "p05": 0.2105346664786339,
+          "median": 0.24774645268917084,
+          "p95": 0.9867598444223404,
+          "maximum": 0.9999991655349731
+        },
+        "move_probability": {
+          "minimum": 8.290527944154746e-07,
+          "p05": 0.013240098766982556,
+          "median": 0.7522535622119904,
+          "p95": 0.7894653081893921,
+          "maximum": 0.9213628172874451
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 1.2874390581396458e-10,
+          "maximum": 7.53761213445614e-08
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.19178511202335358
+        },
+        "entropy_nats": {
+          "minimum": 1.2443676496332046e-05,
+          "p05": 0.07044884189963341,
+          "median": 0.5390478074550629,
+          "p95": 0.6894507706165313,
+          "maximum": 0.8484622240066528
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 3.988574743270874,
+          "p05": 5.461428618431092,
+          "median": 6.022858381271362,
+          "p95": 6.104267168045044,
+          "maximum": 6.458531856536865
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": -2.437563896179199,
+          "p05": -1.321705961227417,
+          "median": -1.1106688976287842,
+          "p95": 4.311582541465759,
+          "maximum": 14.00298023223877
+        }
+      },
+      "reference_full_w11": {
+        "selected_frames": 1,
+        "same_checkpoint_recorded_argmax_verified": true,
+        "learnable_support_frames": 1,
+        "usable_frames": 1,
+        "obstacle_context_frames": 1,
+        "frozen_base_choices": {
+          "0": 1
+        },
+        "predicted_choices": {
+          "0": 1
+        },
+        "stop_probability": {
+          "minimum": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 4.3824468251400794e-16,
+          "p05": 4.3824468251400794e-16,
+          "median": 4.3824468251400794e-16,
+          "p95": 4.3824468251400794e-16,
+          "maximum": 4.3824468251400794e-16
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "entropy_nats": {
+          "minimum": 1.5497977182729432e-14,
+          "p05": 1.5497977182729432e-14,
+          "median": 1.5497977182729432e-14,
+          "p95": 1.5497977182729432e-14,
+          "maximum": 1.5497977182729432e-14
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 21.357879638671875,
+          "p05": 21.357879638671875,
+          "median": 21.357879638671875,
+          "p95": 21.357879638671875,
+          "maximum": 21.357879638671875
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 35.36375427246094,
+          "p05": 35.36375427246094,
+          "median": 35.36375427246094,
+          "p95": 35.36375427246094,
+          "maximum": 35.36375427246094
+        }
+      }
+    },
+    "control2k": {
+      "rotation_option_t106": {
+        "selected_frames": 170,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 170,
+        "usable_frames": 170,
+        "obstacle_context_frames": 170,
+        "frozen_base_choices": {
+          "0": 170
+        },
+        "predicted_choices": {
+          "0": 170
+        },
+        "stop_probability": {
+          "minimum": 0.9999997615814209,
+          "p05": 0.9999997615814209,
+          "median": 0.9999998807907104,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 1.1969209623430288e-08,
+          "p05": 2.083920449535981e-08,
+          "median": 7.717489935998856e-08,
+          "p95": 1.8285181226929124e-07,
+          "maximum": 1.9290584418740764e-07
+        },
+        "pure_right_turn_probability": {
+          "minimum": 6.416316927098688e-16,
+          "p05": 2.295396617208969e-15,
+          "median": 2.5030666389147093e-15,
+          "p95": 9.852795323866062e-15,
+          "maximum": 4.119547449476721e-14
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 1.1969182978077697e-08,
+          "p05": 2.0839177228282327e-08,
+          "median": 7.717489935998856e-08,
+          "p95": 1.8285181226929124e-07,
+          "maximum": 1.9290584418740764e-07
+        },
+        "entropy_nats": {
+          "minimum": 2.183298732916228e-07,
+          "p05": 3.685182505819285e-07,
+          "median": 1.3831175351697311e-06,
+          "p95": 3.0752882253182175e-06,
+          "maximum": 3.220948201487772e-06
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 18.004283905029297,
+          "p05": 18.384346103668214,
+          "median": 18.43978500366211,
+          "p95": 18.457777976989746,
+          "maximum": 18.472103118896484
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 15.461064338684082,
+          "p05": 15.514595890045166,
+          "median": 16.3771915435791,
+          "p95": 17.688980293273925,
+          "maximum": 18.240928649902344
+        }
+      },
+      "control_full_w11": {
+        "selected_frames": 202,
+        "same_checkpoint_recorded_argmax_verified": true,
+        "learnable_support_frames": 202,
+        "usable_frames": 202,
+        "obstacle_context_frames": 202,
+        "frozen_base_choices": {
+          "0": 202
+        },
+        "predicted_choices": {
+          "0": 202
+        },
+        "stop_probability": {
+          "minimum": 0.5323243737220764,
+          "p05": 0.5937104165554047,
+          "median": 0.6599481999874115,
+          "p95": 0.9964992821216583,
+          "maximum": 0.9999997615814209
+        },
+        "move_probability": {
+          "minimum": 2.49435487376104e-07,
+          "p05": 0.0035007073427550496,
+          "median": 0.3400517851114273,
+          "p95": 0.4062895834445953,
+          "maximum": 0.46767568588256836
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 3.074748525233558e-10,
+          "maximum": 1.966656810736822e-07
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.03522593528032303
+        },
+        "entropy_nats": {
+          "minimum": 4.030851869174512e-06,
+          "p05": 0.023301125224679708,
+          "median": 0.641069769859314,
+          "p95": 0.6754795491695404,
+          "maximum": 0.7294914722442627
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 3.988574743270874,
+          "p05": 5.461428618431092,
+          "median": 6.022858381271362,
+          "p95": 6.104267168045044,
+          "maximum": 6.458531856536865
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 0.1456441879272461,
+          "p05": 0.37932510375976564,
+          "median": 0.6630635261535645,
+          "p95": 5.651671099662781,
+          "maximum": 15.204065322875977
+        }
+      },
+      "reference_full_w11": {
+        "selected_frames": 1,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 1,
+        "usable_frames": 1,
+        "obstacle_context_frames": 1,
+        "frozen_base_choices": {
+          "0": 1
+        },
+        "predicted_choices": {
+          "0": 1
+        },
+        "stop_probability": {
+          "minimum": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 1.6737707203945916e-16,
+          "p05": 1.6737707203945916e-16,
+          "median": 1.6737707203945916e-16,
+          "p95": 1.6737707203945916e-16,
+          "maximum": 1.6737707203945916e-16
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "entropy_nats": {
+          "minimum": 6.080186725057396e-15,
+          "p05": 6.080186725057396e-15,
+          "median": 6.080186725057396e-15,
+          "p95": 6.080186725057396e-15,
+          "maximum": 6.080186725057396e-15
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 21.357879638671875,
+          "p05": 21.357879638671875,
+          "median": 21.357879638671875,
+          "p95": 21.357879638671875,
+          "maximum": 21.357879638671875
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 36.32628631591797,
+          "p05": 36.32628631591797,
+          "median": 36.32628631591797,
+          "p95": 36.32628631591797,
+          "maximum": 36.32628631591797
+        }
+      }
+    },
+    "retained2k": {
+      "rotation_option_t106": {
+        "selected_frames": 170,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 170,
+        "usable_frames": 170,
+        "obstacle_context_frames": 170,
+        "frozen_base_choices": {
+          "0": 170
+        },
+        "predicted_choices": {
+          "0": 170
+        },
+        "stop_probability": {
+          "minimum": 0.9999997615814209,
+          "p05": 0.9999997615814209,
+          "median": 0.9999998807907104,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 1.651517500533828e-08,
+          "p05": 3.508746839742116e-08,
+          "median": 9.589478011662322e-08,
+          "p95": 2.2954260856522523e-07,
+          "maximum": 2.5089318000937055e-07
+        },
+        "pure_right_turn_probability": {
+          "minimum": 4.1032872650377235e-16,
+          "p05": 1.5833281104130677e-15,
+          "median": 1.7213482963440697e-15,
+          "p95": 6.467429923278782e-15,
+          "maximum": 2.3323951751637144e-14
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 1.6515157241769884e-08,
+          "p05": 3.50874612919938e-08,
+          "median": 9.589478011662322e-08,
+          "p95": 2.2954260856522523e-07,
+          "maximum": 2.5089318000937055e-07
+        },
+        "entropy_nats": {
+          "minimum": 2.9593545036732394e-07,
+          "p05": 6.022822049089882e-07,
+          "median": 1.6688703681211337e-06,
+          "p95": 3.7474769897016812e-06,
+          "maximum": 4.051552878081566e-06
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 18.004283905029297,
+          "p05": 18.384346103668214,
+          "median": 18.43978500366211,
+          "p95": 18.457777976989746,
+          "maximum": 18.472103118896484
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 15.19823932647705,
+          "p05": 15.287176036834717,
+          "median": 16.160014152526855,
+          "p95": 17.165678882598876,
+          "maximum": 17.918987274169922
+        }
+      },
+      "control_full_w11": {
+        "selected_frames": 202,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 202,
+        "usable_frames": 202,
+        "obstacle_context_frames": 202,
+        "frozen_base_choices": {
+          "0": 202
+        },
+        "predicted_choices": {
+          "0": 139,
+          "8": 63
+        },
+        "stop_probability": {
+          "minimum": 0.3316156566143036,
+          "p05": 0.44681469798088075,
+          "median": 0.5166676044464111,
+          "p95": 0.9958889693021774,
+          "maximum": 0.9999996423721313
+        },
+        "move_probability": {
+          "minimum": 3.5504098150340724e-07,
+          "p05": 0.004110974189825356,
+          "median": 0.4833323806524277,
+          "p95": 0.5531852751970291,
+          "maximum": 0.668384313583374
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 1.4217882565725588e-10,
+          "maximum": 1.0970746444627366e-07
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.06285828351974487
+        },
+        "entropy_nats": {
+          "minimum": 5.630352916341508e-06,
+          "p05": 0.02670177100226283,
+          "median": 0.6906526982784271,
+          "p95": 0.6931355595588684,
+          "maximum": 0.6988698244094849
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 3.988574743270874,
+          "p05": 5.461428618431092,
+          "median": 6.022858381271362,
+          "p95": 6.104267168045044,
+          "maximum": 6.458531856536865
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": -0.6814548969268799,
+          "p05": -0.2135494828224182,
+          "median": 0.0666952133178711,
+          "p95": 5.490394759178161,
+          "maximum": 14.851032257080078
+        }
+      },
+      "reference_full_w11": {
+        "selected_frames": 1,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 1,
+        "usable_frames": 1,
+        "obstacle_context_frames": 1,
+        "frozen_base_choices": {
+          "0": 1
+        },
+        "predicted_choices": {
+          "0": 1
+        },
+        "stop_probability": {
+          "minimum": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 4.00985582518643e-16,
+          "p05": 4.00985582518643e-16,
+          "median": 4.00985582518643e-16,
+          "p95": 4.00985582518643e-16,
+          "maximum": 4.00985582518643e-16
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "entropy_nats": {
+          "minimum": 1.4215984346730576e-14,
+          "p05": 1.4215984346730576e-14,
+          "median": 1.4215984346730576e-14,
+          "p95": 1.4215984346730576e-14,
+          "maximum": 1.4215984346730576e-14
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 21.357879638671875,
+          "p05": 21.357879638671875,
+          "median": 21.357879638671875,
+          "p95": 21.357879638671875,
+          "maximum": 21.357879638671875
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 35.452606201171875,
+          "p05": 35.452606201171875,
+          "median": 35.452606201171875,
+          "p95": 35.452606201171875,
+          "maximum": 35.452606201171875
+        }
+      }
+    },
+    "additional_bc": {
+      "rotation_option_t106": {
+        "selected_frames": 170,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 170,
+        "usable_frames": 170,
+        "obstacle_context_frames": 170,
+        "frozen_base_choices": {
+          "0": 170
+        },
+        "predicted_choices": {
+          "0": 170
+        },
+        "stop_probability": {
+          "minimum": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 2.0967585445674786e-09,
+          "p05": 3.0814657603350783e-09,
+          "median": 7.748512942384878e-09,
+          "p95": 8.599560530342388e-09,
+          "maximum": 3.018001848431595e-08
+        },
+        "pure_right_turn_probability": {
+          "minimum": 2.599516851250458e-16,
+          "p05": 4.825471341045223e-16,
+          "median": 5.182318830775832e-16,
+          "p95": 2.0346416430944307e-15,
+          "maximum": 8.636573240968816e-15
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 2.0967532154969604e-09,
+          "p05": 3.081463673115792e-09,
+          "median": 7.748512054206458e-09,
+          "p95": 8.599559642163968e-09,
+          "maximum": 3.018001848431595e-08
+        },
+        "entropy_nats": {
+          "minimum": 4.189933733300677e-08,
+          "p05": 6.038983428879874e-08,
+          "median": 1.447094035711416e-07,
+          "p95": 1.597072021297663e-07,
+          "maximum": 5.225998052083014e-07
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 18.004283905029297,
+          "p05": 18.384346103668214,
+          "median": 18.43978500366211,
+          "p95": 18.457777976989746,
+          "maximum": 18.472103118896484
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 17.316083908081055,
+          "p05": 18.571554088592528,
+          "median": 18.675765991210938,
+          "p95": 19.59797077178955,
+          "maximum": 19.98287582397461
+        }
+      },
+      "control_full_w11": {
+        "selected_frames": 202,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 202,
+        "usable_frames": 202,
+        "obstacle_context_frames": 202,
+        "frozen_base_choices": {
+          "0": 202
+        },
+        "predicted_choices": {
+          "8": 1,
+          "0": 201
+        },
+        "stop_probability": {
+          "minimum": 0.45471999049186707,
+          "p05": 0.6881201803684235,
+          "median": 0.7209604680538177,
+          "p95": 0.9999454557895661,
+          "maximum": 0.9999963045120239
+        },
+        "move_probability": {
+          "minimum": 3.669912985060364e-06,
+          "p05": 5.45721251910436e-05,
+          "median": 0.27903957664966583,
+          "p95": 0.31187979280948636,
+          "maximum": 0.5452799797058105
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 1.9831421053939408e-11,
+          "maximum": 0.00400710990652442
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0337177999317646
+        },
+        "entropy_nats": {
+          "minimum": 4.962569801136851e-05,
+          "p05": 0.0005902065779082478,
+          "median": 0.5920439064502716,
+          "p95": 0.620595508813858,
+          "maximum": 0.8466000556945801
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 3.988574743270874,
+          "p05": 5.461428618431092,
+          "median": 6.022858381271362,
+          "p95": 6.104267168045044,
+          "maximum": 6.458531856536865
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": -0.10681343078613281,
+          "p05": 0.7913473427295685,
+          "median": 0.9492307901382446,
+          "p95": 9.822416496276855,
+          "maximum": 12.515338897705078
+        }
+      },
+      "reference_full_w11": {
+        "selected_frames": 1,
+        "same_checkpoint_recorded_argmax_verified": false,
+        "learnable_support_frames": 1,
+        "usable_frames": 1,
+        "obstacle_context_frames": 1,
+        "frozen_base_choices": {
+          "0": 1
+        },
+        "predicted_choices": {
+          "0": 1
+        },
+        "stop_probability": {
+          "minimum": 1.0,
+          "p05": 1.0,
+          "median": 1.0,
+          "p95": 1.0,
+          "maximum": 1.0
+        },
+        "move_probability": {
+          "minimum": 3.0753389418380905e-11,
+          "p05": 3.0753389418380905e-11,
+          "median": 3.0753389418380905e-11,
+          "p95": 3.0753389418380905e-11,
+          "maximum": 3.0753389418380905e-11
+        },
+        "pure_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "creeping_right_turn_probability": {
+          "minimum": 0.0,
+          "p05": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "maximum": 0.0
+        },
+        "entropy_nats": {
+          "minimum": 7.443864413758661e-10,
+          "p05": 7.443864413758661e-10,
+          "median": 7.443864413758661e-10,
+          "p95": 7.443864413758661e-10,
+          "maximum": 7.443864413758661e-10
+        },
+        "frozen_base_stop_minus_best_motion_logit": {
+          "minimum": 21.357879638671875,
+          "p05": 21.357879638671875,
+          "median": 21.357879638671875,
+          "p95": 21.357879638671875,
+          "maximum": 21.357879638671875
+        },
+        "learned_stop_minus_best_motion_logit": {
+          "minimum": 24.20502281188965,
+          "p05": 24.20502281188965,
+          "median": 24.20502281188965,
+          "p95": 24.20502281188965,
+          "maximum": 24.20502281188965
+        }
+      }
+    }
+  },
+  "inputs_sha256": {
+    "reports/stop_feedback_20261015/rotation_escape_t106_model_20261016/RESULTS.json": "328673c47b49f0d859cfcc66304c2ba556e8fe40a24d8e2e4c87fc44a9211789",
+    "reports/stop_feedback_20261015/rotation_escape_t106_model_20261016/w11_training_stall_t106.npz": "e2e33fd2487b265c9bb03d48179c56bb006573c604a944707900ee2af91d1404",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/RESULTS.json": "e6392addec86f9ca03def2081852892a34adcc633edc088d3e00828df7cad2a4",
+    "reports/stop_feedback_20261015/w11_control2000_navigation_20261016/train_failure_w11_e7_control2000.npz": "df4a5e6f1e0f616ca3c06c2cdd744b02388e2a1a03d075d0230a38e01450e68d",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/RESULTS.json": "d5ab8e5fe7ecd445c2de7d5f639539b60f357b0d3f6604ef8b323edf116043dc",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_w11_e7_w11_augmented_bc800.npz": "de1da96347e2aaaf59f346371ef479b53e6f6d279fce7bfaaace4382fecd16bb",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy.zip": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/policy_bc.zip": "8b597401b2dc9a089c5921036639a78e9ca6fa430559b0a144127f9220a8f0bd",
+    "training/experiments/stop_recovery_policy.py": "5c260ec1c8aed6b54a3c18676970bd8a77e93ec090105e609be71f9338c62351",
+    "training/experiments/proactive_recovery.py": "af929ff83909eecc6faca8d8118b852858a10dc9915fb57bd0435047f7621827",
+    "training/neural_navigation/decision_feedback.py": "ab9fa6ef47fc863d793afdf9fb43bb4a6dbd6090959a0c8c97f52af31e61cc0f"
+  },
+  "source_sha256": "1b2b1a9299b14cf34f8b20696714de00195eed7dd6b240746b3c390cf62c5d8e",
+  "prediction_sha256": "90a9a6f82b89ec8aa5f064ab2180c43945f8eb1962bc93a9d24433870f9f288c",
+  "frozen_base_unchanged": true,
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "additional_environment_steps": 0,
+  "optimizer_updates": 0,
+  "current_runtime_or_checkpoint_changed": false,
+  "resource": {
+    "seconds": 37.027122170024086,
+    "cpu_seconds": 1.8524251129999998,
+    "average_cpu_cores": 0.050028870850234775,
+    "peak_rss_mib": 668.7734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "limitations": [
+    "All inputs are reused development traces.",
+    "Only explicitly marked same-checkpoint rows verify actual recorded decisions.",
+    "Other checkpoints see another policy trajectory and possibly an altered mask; these are offline predictions, not independent navigation scores.",
+    "A permitted motion need not be useful or safe for the complete mission.",
+    "Probability saturation establishes an exploration obstacle, not a successful alternative maneuver.",
+    "Motion mass is summed directly; float32(1-p_stop) can erase tiny positive probabilities. The initial audit and source are preserved separately."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}
