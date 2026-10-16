@@ -47,16 +47,22 @@ def main():
         if digest(path) != item['report_sha256']:
             raise ValueError('Report changed: ' + name)
         report = json.loads(path.read_text())
-        rows = report['rows']
+        rows = report
+        for part in item.get('row_path', ['rows']):
+            rows = rows[part]
         if len(rows) != item['finished_rows'] or report['completed'] != item['completed']:
             raise ValueError('Evaluation completion mismatch: ' + name)
         if report['completed'] and len(rows) != item['expected_rows']:
             raise ValueError('Incomplete evaluation marked complete: ' + name)
-        for filename, expected in item['trace_files'].items():
+        for filename, expected in item.get('trace_files', {}).items():
             if Path(filename).name != filename or digest(path.parent / filename) != expected:
                 raise ValueError('Trace checksum mismatch: ' + name)
             trace_count += 1
-        hashes = set(item['trace_files'].values())
+        for filename, expected in item.get('trace_paths', {}).items():
+            if digest(checked_path(filename)) != expected:
+                raise ValueError('Trace checksum mismatch: ' + name)
+            trace_count += 1
+        hashes = set(item.get('trace_files', {}).values()) | set(item.get('trace_paths', {}).values())
         if any(row['trace_sha256'] not in hashes for row in rows):
             raise ValueError('Missing finished trace: ' + name)
     for name, item in snapshot['models'].items():

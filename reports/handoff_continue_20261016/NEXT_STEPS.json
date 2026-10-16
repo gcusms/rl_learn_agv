@@ -1,0 +1,62 @@
+{
+  "status": "Research goal still incomplete; no automatic deployment or training",
+  "latest_model": {
+    "folder": "models/stop_feedback_20261015/actual95_transfer_bc400_s231016",
+    "checkpoint": "policy_bc.zip",
+    "sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+    "additional_supervised_updates": 400,
+    "additional_ppo_steps": 0,
+    "approved_as_new_deployment": false
+  },
+  "ordered_evaluation": [
+    {
+      "group": "remaining_full_navigation",
+      "count": 14,
+      "mode": "experiments.evaluate_docking_navigation",
+      "cases": "reports/handoff_continue_20261016/pending_navigation_cases.json",
+      "merge_with": "reports/handoff_continue_20261016/finished_navigation_rows.json",
+      "parent_report": "reports/stop_feedback_20261015/early_transfer_regression_20261016/RESULTS.json",
+      "parent_row_path": [
+        "candidate_rows"
+      ]
+    },
+    {
+      "group": "additional_conditions",
+      "count": 12,
+      "mode": "experiments.evaluate_docking_navigation",
+      "cases": "reports/stop_feedback_20261015/proactive_augmented_protocol_20261016/fresh_cases.json",
+      "includes_directional_goal_cases": 4
+    },
+    {
+      "group": "original_recovery_prefixes",
+      "count": 2,
+      "mode": "experiments.evaluate_feedback_recovery",
+      "specifications": "reports/stop_feedback_20261015/w11_recovery_bc800_prefixes_20261016/specifications.json"
+    },
+    {
+      "group": "additional_directional_docking",
+      "count": 2,
+      "mode": "experiments.evaluate_docking_navigation",
+      "cases": "reports/stop_feedback_20261015/heading_probe_cases.json",
+      "with_four_directional_additional_conditions_total": 6
+    }
+  ],
+  "unresolved": [
+    "actual106 complete safe escape",
+    "latest candidate broader safety and efficiency regressions",
+    "unseen-map generalization",
+    "real independent localization truth",
+    "target-board end-to-end latency"
+  ],
+  "constraints": [
+    "same body, lidar blind region, action commands and guards",
+    "fresh output directory for every run",
+    "one physical evaluation at a time;soft0.35core,hard50%,single-thread,Nice19",
+    "no failed probes as positive demonstrations",
+    "no unchanged recovery PPO claim of training frozen localizer/router"
+  ],
+  "training_entry": "python -m experiments.train_prefix_recovery --help",
+  "new_ppo_admitted": false,
+  "checkpoint_resume_limit": "Network/Adam/RNG are saved; CLI does not resume arbitrary final PPO checkpoint and complete half-episode physics/history directly.",
+  "deployment_approved": false
+}

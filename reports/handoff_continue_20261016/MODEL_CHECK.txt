@@ -1,0 +1,37 @@
+{
+  "completed": true,
+  "models": [
+    {
+      "folder": "actual95_transfer_bc400_s231016",
+      "checkpoint_sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+      "examples": 2421,
+      "correct": 2421,
+      "old_necessary_stops_retained": 55,
+      "all_stop_labels_retained": 57,
+      "exported_decisions_checked": 128,
+      "optimizer_loaded": true,
+      "new_ppo_steps": 0,
+      "native_libraries_to_rebuild": [
+        "localization_kernel.so"
+      ]
+    },
+    {
+      "folder": "actual95_control_bc400_s231016",
+      "checkpoint_sha256": "fef34d6d3ec0170c83935319fae7080227f10a9e06396b71f334a663a4d922cc",
+      "examples": 2355,
+      "correct": 2354,
+      "old_necessary_stops_retained": 55,
+      "all_stop_labels_retained": 55,
+      "exported_decisions_checked": 64,
+      "optimizer_loaded": true,
+      "new_ppo_steps": 0,
+      "native_libraries_to_rebuild": [
+        "localization_kernel.so"
+      ]
+    }
+  ],
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "deployment_approved": false,
+  "scope": "Checkpoint, data, mask, frozen-base and export parity only."
+}

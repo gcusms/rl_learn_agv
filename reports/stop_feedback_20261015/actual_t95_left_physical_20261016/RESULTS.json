@@ -1,0 +1,1647 @@
+{
+  "completed": true,
+  "new_ppo_steps": 0,
+  "not_a_trained_policy": true,
+  "not_a_later106s_escape": true,
+  "no_automatic_training_admission": true,
+  "deployment_approved": false,
+  "rows": [
+    {
+      "case_id": "actual95_left_then_pass_1_6s",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 114.79999999996808,
+      "travel_m": 10.277240608290278,
+      "frames": 575,
+      "final_xy_error_m": 0.11399579776586649,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0046301695065347915,
+      "localization_yaw_p95_rad": 0.0013750217022925335,
+      "stop_choices": 68,
+      "only_stop_frames": 55,
+      "stop_reasons": {
+        "None": 572,
+        "laser_braking_footprint": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 13,
+      "predictive_constraint_frames": 83,
+      "runtime_ms": {
+        "p95": 145.10302962735292,
+        "p99": 170.09066869039086,
+        "maximum": 204.54839896410704
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.0,
+      "post_release_seconds": 19.79999999996808,
+      "model_controlled_frames": 62,
+      "post_release_wait_with_choices_frames": 2,
+      "post_release_only_stop_frames": 20,
+      "longest_post_release_wait_with_choices_s": 0.1999999999998181,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "actual95_left_then_pass_1_6s",
+        "windows": [
+          {
+            "start_s": 95.0,
+            "end_s": 96.6,
+            "choice": 4
+          },
+          {
+            "start_s": 96.6,
+            "end_s": 102.6,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 94.99999999998609,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.1999999999859,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.39999999998572,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.59999999998554,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.79999999998536,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.99999999998518,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.199999999985,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.39999999998481,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.59999999998463,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.79999999998445,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.99999999998427,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.19999999998409,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.3999999999839,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.59999999998372,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.79999999998354,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.99999999998336,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.19999999998318,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.399999999983,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.59999999998281,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.5,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.79999999998263,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.99999999998245,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.19999999998227,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.39999999998209,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.5999999999819,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.79999999998172,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.99999999998154,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.19999999998136,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.39999999998118,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.599999999981,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.79999999998081,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.99999999998063,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.19999999998045,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.39999999998027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.59999999998008,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            0.0
+          ],
+          "proposed_action": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.7999999999799,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.99999999997972,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.19999999997954,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.39999999997936,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "not_a_trained_policy": true,
+      "expert_controlled_frames": 38,
+      "trace_sha256": "03b4adb02f0b81a6692dd324082748421853718d046bf3b6bbd9e2651797b4fe",
+      "no_automatic_training_admission": true
+    },
+    {
+      "case_id": "actual95_left_then_pass_3_4s",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 12.847714600305272,
+      "frames": 700,
+      "final_xy_error_m": 2.326537276101118,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004542653184864596,
+      "localization_yaw_p95_rad": 0.0013799430515547325,
+      "stop_choices": 57,
+      "only_stop_frames": 46,
+      "stop_reasons": {
+        "None": 700
+      },
+      "voluntary_wait_frames": 11,
+      "predictive_constraint_frames": 81,
+      "runtime_ms": {
+        "p95": 143.6684592947131,
+        "p99": 164.88658762420528,
+        "maximum": 200.8763260091655
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.0,
+      "post_release_seconds": 44.999999999945175,
+      "model_controlled_frames": 163,
+      "post_release_wait_with_choices_frames": 0,
+      "post_release_only_stop_frames": 11,
+      "longest_post_release_wait_with_choices_s": 0.0,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "actual95_left_then_pass_3_4s",
+        "windows": [
+          {
+            "start_s": 95.0,
+            "end_s": 98.4,
+            "choice": 4
+          },
+          {
+            "start_s": 98.4,
+            "end_s": 107.4,
+            "choice": 1
+          }
+        ]
+      },
+      "intervention": [
+        {
+          "sensor_timestamp": 94.99999999998609,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.1999999999859,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.39999999998572,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.59999999998554,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.79999999998536,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 95.99999999998518,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.199999999985,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.39999999998481,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.59999999998463,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.79999999998445,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 96.99999999998427,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.19999999998409,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.3999999999839,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.59999999998372,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.79999999998354,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 97.99999999998336,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.19999999998318,
+          "requested_choice": 4,
+          "window_index": 0,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.05000000074505806,
+            -1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.399999999983,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.59999999998281,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.79999999998263,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 98.99999999998245,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.19999999998227,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.39999999998209,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.5999999999819,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.79999999998172,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.0,
+            1.0
+          ],
+          "proposed_action": [
+            0.0,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 99.99999999998154,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.19999999998136,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.39999999998118,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": false,
+          "replaced_reference": false,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            0.25,
+            1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.599999999981,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.79999999998081,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 100.99999999998063,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.19999999998045,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.39999999998027,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.59999999998008,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.5,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.7999999999799,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.5,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 101.99999999997972,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.5,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.19999999997954,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            1.0,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.39999999997936,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.5,
+            0.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.59999999997918,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.799999999979,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 102.99999999997881,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 103.19999999997863,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 103.39999999997845,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 103.59999999997827,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 103.79999999997808,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 103.9999999999779,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 104.19999999997772,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 104.39999999997754,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 104.59999999997736,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 104.79999999997717,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 104.99999999997699,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 105.19999999997681,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 105.39999999997663,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 105.59999999997645,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 105.79999999997627,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 105.99999999997608,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.1999999999759,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.39999999997572,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.59999999997554,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.79999999997536,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.99999999997517,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.19999999997499,
+          "requested_choice": 1,
+          "window_index": 1,
+          "requested_choice_legal": true,
+          "replaced_reference": true,
+          "reference_action": [
+            0.25,
+            1.0
+          ],
+          "proposed_action": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "not_a_trained_policy": true,
+      "expert_controlled_frames": 62,
+      "trace_sha256": "563326342d1aa6c976576f3a12b53ad793d45b065bc46d1eed3803536d8daa37",
+      "no_automatic_training_admission": true
+    }
+  ],
+  "resource": {
+    "seconds": 540.217625653022,
+    "cpu_seconds": 189.163178513,
+    "average_cpu_cores": 0.35016106385706525,
+    "peak_rss_mib": 2076.6484375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

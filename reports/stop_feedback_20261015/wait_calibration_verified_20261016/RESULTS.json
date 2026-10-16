@@ -1,0 +1,68 @@
+{
+  "completed": true,
+  "at": "2026-10-16T10:39:49.298410+08:00",
+  "schema": "stop_feedback_legal_wait_calibration_v1",
+  "inputs": {
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/policy_bc.zip": "8b597401b2dc9a089c5921036639a78e9ca6fa430559b0a144127f9220a8f0bd",
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/demonstrations.npz": "47b133d057f0a251a0d517833ab69dc395145db35905e683a07ebe4a1d2f6ecc",
+    "reports/stop_feedback_20261015/wait_calibration_verified_20261016/audit.py": "8880639ab2f73db23205080eb2f930ca9af11f38d1cf5f51c1f05e131217bf39",
+    "training/experiments/wait_calibrated_recovery.py": "80489a73e8908930b570405add8d66875d1abca3e24bee48a02b997fa03206e0",
+    "training/experiments/proactive_recovery.py": "af929ff83909eecc6faca8d8118b852858a10dc9915fb57bd0435047f7621827",
+    "training/experiments/stop_recovery_policy.py": "5c260ec1c8aed6b54a3c18676970bd8a77e93ec090105e609be71f9338c62351",
+    "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/w11_training_stall_t106.npz": "b35084cc8de1f8bdc8aa644a9d17494cf042d7085bedfea839d643e1eed2b283",
+    "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/actual_t106_action9_4frames.npz": "d260610db906565318578242cf1e102be41a344a8634d7a3166a5612b2c98a06"
+  },
+  "original_actual_frame_sources": [
+    {
+      "path": "reports/stop_feedback_20261015/early_transfer_verified_w11_20261016/w11_training_stall_t106.npz",
+      "actual_frames": 170
+    },
+    {
+      "path": "reports/stop_feedback_20261015/actual_t106_action9_probe_20261016/actual_t106_action9_4frames.npz",
+      "actual_frames": 170
+    }
+  ],
+  "checked_input_frames": 2695,
+  "calibrated_frames": 209,
+  "greedy_choices_unchanged": true,
+  "recovery_support_unchanged": true,
+  "unchanged_temperature_frames": 2486,
+  "necessary_stop_labels_preserved": 55,
+  "only_stop_and_illegal_probability_checks_passed": true,
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "all_weights_and_adam_states_identical": true,
+  "actual_stall_motion_probability_before": 5.0604498369466455e-09,
+  "actual_stall_motion_probability_after": 0.08411342650651932,
+  "actual_stall_observed_legal_wait_s": 2.0,
+  "sampling_counts_1024": [
+    929,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    95,
+    0,
+    0
+  ],
+  "sampled_and_reevaluated_log_probability_parity": true,
+  "portable_greedy_parity_frames": 2695,
+  "saved_checkpoint_round_trip_passed": true,
+  "candidate_initialization_checkpoint": "reports/stop_feedback_20261015/wait_calibration_verified_20261016/policy_calibrated_initialization.zip",
+  "candidate_initialization_sha256": "e69b96c4e243343f89f50af5864f1c6b10d75b1cffacad5acda5b78429c61029",
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "admitted_for_physical_experiment": false,
+  "admitted_for_ppo": false,
+  "unproven_requirements": [
+    "A complete safe escape from the actual stalled state.",
+    "Learned deterministic recovery after training.",
+    "Full normal-navigation, necessary-wait, avoidance and docking regression."
+  ],
+  "deployment_approved": false,
+  "goal_achieved": false
+}

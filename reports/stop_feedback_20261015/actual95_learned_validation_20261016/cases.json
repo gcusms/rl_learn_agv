@@ -1,0 +1,110 @@
+[
+  {
+    "id": "train_failure_w11_e7",
+    "category": "training_failure",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 1962350169,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09295138997376881,
+    "hold_s": 3.4079953972433437,
+    "pilot_category": "original_release_training_failure",
+    "max_steps": 700
+  },
+  {
+    "id": "motion_profile_002",
+    "category": "reversal",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100002,
+    "start": [
+      7.875,
+      6.525,
+      0.5829383550326908
+    ],
+    "goal": [
+      1.175,
+      6.075
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.15477787921727554,
+    "odom_scale": 1.0,
+    "reverse_after_event_s": 3.499490583194487,
+    "pilot_category": "original_release_reversal",
+    "max_steps": 700
+  },
+  {
+    "id": "recovery_holdout_00",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 9510151,
+    "start": [
+      8.365,
+      1.155,
+      1.6833780945997563
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.085,
+    "odom_scale": 1.0,
+    "actor_pause_after_event_s": [
+      [
+        2.0,
+        4.0
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "untrained_recovery_conditions",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.0
+  },
+  {
+    "id": "recovery_holdout_01",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 9510152,
+    "start": [
+      8.285000000000002,
+      1.195,
+      1.5633780945997562
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.105,
+    "odom_scale": 1.0,
+    "actor_pause_after_event_s": [
+      [
+        2.0,
+        4.0
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "untrained_recovery_conditions",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.02
+  }
+]

@@ -1,0 +1,1636 @@
+{
+  "completed": true,
+  "at": "2026-10-16T11:17:28.174120+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/actual106_memory_replay_20261016/audit.py": "5430613dcd5dd05bff2b2d78646939cdb90e3c8d3178cc2abff81850d71486ba",
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/bc_portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/w11_training_stall_t106.npz": "c6731f661a030b92adb8a3e4566b18704d9689ad9ceac126dc5a2390d1b33879",
+    "training/assets/room_navigation_scripted/decision_map.yaml": "2122a0a3e4439f843b1d846120f47b7c37d7e0b06f3a054b21a87e50da6304a2",
+    "training/assets/room_navigation_scripted/decision_map.pgm": "bf430807e27e72ec76c0408739a191b81e5a06f6baa5e9b57f735aa18487f281",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/neural_navigation/static_footprint.py": "abea595434b336141ec1dbd37c9b847f836c3fad0d6398ed74d55d8a6110ce28"
+  },
+  "configurations": {
+    "original": {
+      "resolution_m": 0.04,
+      "near_range_m": 1.5,
+      "forget_radius_m": 2.5,
+      "max_points": 4096,
+      "uncertainty_m_s": 0.002,
+      "max_uncertainty_m": 0.04,
+      "static_footprint_schema": "oriented_rectangle_v1",
+      "static_footprint_margin_m": 0.04,
+      "static_footprint_pose_sigma_scale": 0.0,
+      "predictive_action_constraint": {
+        "schema": "odometry_frame_predictive_mask_v2",
+        "horizon_s": 1.2,
+        "period_s": 0.1,
+        "reaction_s": 0.2,
+        "minimum_check_s": 0.6,
+        "margin_m": 0.04,
+        "velocity_floor_m_s": 0.025,
+        "minimum_speed_m_s": 0.04,
+        "track_max_age_s": 0.8,
+        "minimum_track_hits": 3,
+        "response_gain": 20.0,
+        "response_acceleration": [
+          0.5,
+          1.0
+        ],
+        "contour_hold_s": 0.6,
+        "contour_recovery_measurements": 2,
+        "wait_always_allowed": true,
+        "simulator_truth_used": false,
+        "calibrated": false,
+        "cumulative_contour_reference": true,
+        "contour_count_ratio": 0.8,
+        "contour_diameter_ratio": 0.75,
+        "retained_hypothesis_s": 1.2,
+        "unknown_velocity_reachable_envelope": true,
+        "retained_measurement_age_preserved": true
+      }
+    },
+    "confirmed_free_0.03": {
+      "resolution_m": 0.04,
+      "near_range_m": 1.5,
+      "forget_radius_m": 2.5,
+      "max_points": 4096,
+      "uncertainty_m_s": 0.002,
+      "max_uncertainty_m": 0.04,
+      "static_footprint_schema": "oriented_rectangle_v1",
+      "static_footprint_margin_m": 0.04,
+      "static_footprint_pose_sigma_scale": 0.0,
+      "predictive_action_constraint": {
+        "schema": "odometry_frame_predictive_mask_v2",
+        "horizon_s": 1.2,
+        "period_s": 0.1,
+        "reaction_s": 0.2,
+        "minimum_check_s": 0.6,
+        "margin_m": 0.04,
+        "velocity_floor_m_s": 0.025,
+        "minimum_speed_m_s": 0.04,
+        "track_max_age_s": 0.8,
+        "minimum_track_hits": 3,
+        "response_gain": 20.0,
+        "response_acceleration": [
+          0.5,
+          1.0
+        ],
+        "contour_hold_s": 0.6,
+        "contour_recovery_measurements": 2,
+        "wait_always_allowed": true,
+        "simulator_truth_used": false,
+        "calibrated": false,
+        "cumulative_contour_reference": true,
+        "contour_count_ratio": 0.8,
+        "contour_diameter_ratio": 0.75,
+        "retained_hypothesis_s": 1.2,
+        "unknown_velocity_reachable_envelope": true,
+        "retained_measurement_age_preserved": true
+      },
+      "free_evidence_margin_m": 0.03,
+      "free_evidence_frames": 3,
+      "free_evidence_max_gap_s": 0.4
+    },
+    "confirmed_free_0.04": {
+      "resolution_m": 0.04,
+      "near_range_m": 1.5,
+      "forget_radius_m": 2.5,
+      "max_points": 4096,
+      "uncertainty_m_s": 0.002,
+      "max_uncertainty_m": 0.04,
+      "static_footprint_schema": "oriented_rectangle_v1",
+      "static_footprint_margin_m": 0.04,
+      "static_footprint_pose_sigma_scale": 0.0,
+      "predictive_action_constraint": {
+        "schema": "odometry_frame_predictive_mask_v2",
+        "horizon_s": 1.2,
+        "period_s": 0.1,
+        "reaction_s": 0.2,
+        "minimum_check_s": 0.6,
+        "margin_m": 0.04,
+        "velocity_floor_m_s": 0.025,
+        "minimum_speed_m_s": 0.04,
+        "track_max_age_s": 0.8,
+        "minimum_track_hits": 3,
+        "response_gain": 20.0,
+        "response_acceleration": [
+          0.5,
+          1.0
+        ],
+        "contour_hold_s": 0.6,
+        "contour_recovery_measurements": 2,
+        "wait_always_allowed": true,
+        "simulator_truth_used": false,
+        "calibrated": false,
+        "cumulative_contour_reference": true,
+        "contour_count_ratio": 0.8,
+        "contour_diameter_ratio": 0.75,
+        "retained_hypothesis_s": 1.2,
+        "unknown_velocity_reachable_envelope": true,
+        "retained_measurement_age_preserved": true
+      },
+      "free_evidence_margin_m": 0.04,
+      "free_evidence_frames": 3,
+      "free_evidence_max_gap_s": 0.4
+    }
+  },
+  "rows": [
+    {
+      "time_s": 105.99999999997608,
+      "original_legal_choices": [
+        0,
+        9
+      ],
+      "current_ray_only_geometry_clear_choices": [
+        5,
+        7,
+        9
+      ],
+      "current_ray_only_geometry_reasons": [
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint"
+      ],
+      "original_geometry_acceptance_and_laser_veto_parity_passed": true,
+      "variants": {
+        "original": {
+          "memory_points": 204,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23786222844100494,
+                -0.08909901193960705
+              ],
+              "gap_m": 0.040899776441004926,
+              "required_margin_m": 0.04559999999999491,
+              "current_three_neighbor_free_slack_m": 0.026424005074385526,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.23998911273281834,
+                -0.11629321402790624
+              ],
+              "gap_m": 0.04302666073281833,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.0350776414099431,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24102849195334097,
+                -0.1790797921716313
+              ],
+              "gap_m": 0.046343630596265825,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.018308026620314943,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26633954073388977,
+                -0.06652395612038248
+              ],
+              "gap_m": 0.06937708873388976,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27330865710443497,
+                -0.05817125383671455
+              ],
+              "gap_m": 0.07634620510443496,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": 0.015599656274047968,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2753751665106285,
+                -0.11931758687656221
+              ],
+              "gap_m": 0.07841271451062848,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.01955093105770292,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.03": {
+          "memory_points": 210,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23786222844100494,
+                -0.08909901193960705
+              ],
+              "gap_m": 0.040899776441004926,
+              "required_margin_m": 0.04559999999999491,
+              "current_three_neighbor_free_slack_m": 0.026424005074385526,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24102849195334097,
+                -0.1790797921716313
+              ],
+              "gap_m": 0.046343630596265825,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.018308026620314943,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26633954073388977,
+                -0.06652395612038248
+              ],
+              "gap_m": 0.06937708873388976,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27330865710443497,
+                -0.05817125383671455
+              ],
+              "gap_m": 0.07634620510443496,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": 0.015599656274047968,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2753751665106285,
+                -0.11931758687656221
+              ],
+              "gap_m": 0.07841271451062848,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.01955093105770292,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2565934883425446,
+                -0.21951996810991972
+              ],
+              "gap_m": 0.08098024385856537,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": -0.009847377248663275,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.04": {
+          "memory_points": 212,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23786222844100494,
+                -0.08909901193960705
+              ],
+              "gap_m": 0.040899776441004926,
+              "required_margin_m": 0.04559999999999491,
+              "current_three_neighbor_free_slack_m": 0.026424005074385526,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.23998911273281834,
+                -0.11629321402790624
+              ],
+              "gap_m": 0.04302666073281833,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.0350776414099431,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24102849195334097,
+                -0.1790797921716313
+              ],
+              "gap_m": 0.046343630596265825,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.018308026620314943,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26633954073388977,
+                -0.06652395612038248
+              ],
+              "gap_m": 0.06937708873388976,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27330865710443497,
+                -0.05817125383671455
+              ],
+              "gap_m": 0.07634620510443496,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": 0.015599656274047968,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2753751665106285,
+                -0.11931758687656221
+              ],
+              "gap_m": 0.07841271451062848,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.01955093105770292,
+              "visible_in_current_scan": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time_s": 109.99999999997245,
+      "original_legal_choices": [
+        0,
+        9
+      ],
+      "current_ray_only_geometry_clear_choices": [
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "current_ray_only_geometry_reasons": [
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        null,
+        null,
+        "laser_braking_footprint",
+        null,
+        null,
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint"
+      ],
+      "original_geometry_acceptance_and_laser_veto_parity_passed": true,
+      "variants": {
+        "original": {
+          "memory_points": 204,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.2377202957826057,
+                -0.08928823558981824
+              ],
+              "gap_m": 0.04075784378260569,
+              "required_margin_m": 0.05359999999998763,
+              "current_three_neighbor_free_slack_m": 0.02137830288111517,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2452027981728552,
+                -0.1421142346781928
+              ],
+              "gap_m": 0.04824034617285519,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.020415042765637742,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24957454700194145,
+                -0.06176603432589662
+              ],
+              "gap_m": 0.052612095001941445,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24765107726770597,
+                -0.17969576801821646
+              ],
+              "gap_m": 0.052851779673519166,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2642045783181631,
+                -0.15234705613395985
+              ],
+              "gap_m": 0.06724212631816306,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.014939876091979415,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2536580978397354,
+                -0.20258957096324334
+              ],
+              "gap_m": 0.06817435395949949,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": -0.022240819161212844,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.03": {
+          "memory_points": 209,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.2452027981728552,
+                -0.1421142346781928
+              ],
+              "gap_m": 0.04824034617285519,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.020415042765637742,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24957454700194145,
+                -0.06176603432589662
+              ],
+              "gap_m": 0.052612095001941445,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24765107726770597,
+                -0.17969576801821646
+              ],
+              "gap_m": 0.052851779673519166,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2642045783181631,
+                -0.15234705613395985
+              ],
+              "gap_m": 0.06724212631816306,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.014939876091979415,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2536580978397354,
+                -0.20258957096324334
+              ],
+              "gap_m": 0.06817435395949949,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": -0.022240819161212844,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2707532925988713,
+                -0.0750203123856914
+              ],
+              "gap_m": 0.07379084059887131,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.024833115605445044,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.04": {
+          "memory_points": 211,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.2377202957826057,
+                -0.08928823558981824
+              ],
+              "gap_m": 0.04075784378260569,
+              "required_margin_m": 0.05359999999998763,
+              "current_three_neighbor_free_slack_m": 0.02137830288111517,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2452027981728552,
+                -0.1421142346781928
+              ],
+              "gap_m": 0.04824034617285519,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.020415042765637742,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24957454700194145,
+                -0.06176603432589662
+              ],
+              "gap_m": 0.052612095001941445,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24765107726770597,
+                -0.17969576801821646
+              ],
+              "gap_m": 0.052851779673519166,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -5.551115123125783e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2642045783181631,
+                -0.15234705613395985
+              ],
+              "gap_m": 0.06724212631816306,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.014939876091979415,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2536580978397354,
+                -0.20258957096324334
+              ],
+              "gap_m": 0.06817435395949949,
+              "required_margin_m": 0.04119999999999891,
+              "current_three_neighbor_free_slack_m": -0.022240819161212844,
+              "visible_in_current_scan": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time_s": 119.99999999996335,
+      "original_legal_choices": [
+        0,
+        9
+      ],
+      "current_ray_only_geometry_clear_choices": [
+        5,
+        7,
+        9
+      ],
+      "current_ray_only_geometry_reasons": [
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint"
+      ],
+      "original_geometry_acceptance_and_laser_veto_parity_passed": true,
+      "variants": {
+        "original": {
+          "memory_points": 206,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23780444495957434,
+                -0.10472717450331298
+              ],
+              "gap_m": 0.04084199295957433,
+              "required_margin_m": 0.051199999999989816,
+              "current_three_neighbor_free_slack_m": 0.025630949271522402,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24141549025371958,
+                -0.12854691969017293
+              ],
+              "gap_m": 0.04445303825371957,
+              "required_margin_m": 0.042399999999997814,
+              "current_three_neighbor_free_slack_m": 0.029940712854363005,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2463809898803027,
+                -0.1485995564592619
+              ],
+              "gap_m": 0.049418537880302676,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2539030555643353,
+                -0.20298494671107137
+              ],
+              "gap_m": 0.06859790405346941,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.009430300960268673,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26967581158158793,
+                -0.04393640172323424
+              ],
+              "gap_m": 0.07271335958158792,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27414630406803986,
+                -0.0835811281259926
+              ],
+              "gap_m": 0.07718385206803985,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.3877787807814457e-16,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.03": {
+          "memory_points": 212,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.24141549025371958,
+                -0.12854691969017293
+              ],
+              "gap_m": 0.04445303825371957,
+              "required_margin_m": 0.042399999999997814,
+              "current_three_neighbor_free_slack_m": 0.029940712854363005,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2463809898803027,
+                -0.1485995564592619
+              ],
+              "gap_m": 0.049418537880302676,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2539030555643353,
+                -0.20298494671107137
+              ],
+              "gap_m": 0.06859790405346941,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.009430300960268673,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26967581158158793,
+                -0.04393640172323424
+              ],
+              "gap_m": 0.07271335958158792,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27414630406803986,
+                -0.0835811281259926
+              ],
+              "gap_m": 0.07718385206803985,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.3877787807814457e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27753663840238835,
+                -0.10828108986785244
+              ],
+              "gap_m": 0.08057418640238834,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 2.7755575615628914e-17,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.04": {
+          "memory_points": 212,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.24141549025371958,
+                -0.12854691969017293
+              ],
+              "gap_m": 0.04445303825371957,
+              "required_margin_m": 0.042399999999997814,
+              "current_three_neighbor_free_slack_m": 0.029940712854363005,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2463809898803027,
+                -0.1485995564592619
+              ],
+              "gap_m": 0.049418537880302676,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2539030555643353,
+                -0.20298494671107137
+              ],
+              "gap_m": 0.06859790405346941,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.009430300960268673,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26967581158158793,
+                -0.04393640172323424
+              ],
+              "gap_m": 0.07271335958158792,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.1102230246251565e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27414630406803986,
+                -0.0835811281259926
+              ],
+              "gap_m": 0.07718385206803985,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 1.3877787807814457e-16,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27753663840238835,
+                -0.10828108986785244
+              ],
+              "gap_m": 0.08057418640238834,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 2.7755575615628914e-17,
+              "visible_in_current_scan": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time_s": 129.99999999995427,
+      "original_legal_choices": [
+        0,
+        9
+      ],
+      "current_ray_only_geometry_clear_choices": [
+        5,
+        7,
+        9
+      ],
+      "current_ray_only_geometry_reasons": [
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint"
+      ],
+      "original_geometry_acceptance_and_laser_veto_parity_passed": true,
+      "variants": {
+        "original": {
+          "memory_points": 206,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 1,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23706513725781786,
+                -0.10501373811965424
+              ],
+              "gap_m": 0.04010268525781785,
+              "required_margin_m": 0.07119999999997165,
+              "current_three_neighbor_free_slack_m": 0.034456975112103244,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24103017473716054,
+                -0.1428683883224474
+              ],
+              "gap_m": 0.04406772273716053,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.007481759842763447,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24544688664783093,
+                -0.18390614792965146
+              ],
+              "gap_m": 0.05213889748224956,
+              "required_margin_m": 0.043599999999996725,
+              "current_three_neighbor_free_slack_m": 0.02810037790629863,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24715239573445696,
+                -0.19352352958761504
+              ],
+              "gap_m": 0.05786274418590331,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.019182811878774325,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2581855145195485,
+                -0.10625256439456741
+              ],
+              "gap_m": 0.06122306251954851,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.005684105185198685,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26318656797489826,
+                -0.06817497627014918
+              ],
+              "gap_m": 0.06622411597489825,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 0.0,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.03": {
+          "memory_points": 210,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.24103017473716054,
+                -0.1428683883224474
+              ],
+              "gap_m": 0.04406772273716053,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.007481759842763447,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24544688664783093,
+                -0.18390614792965146
+              ],
+              "gap_m": 0.05213889748224956,
+              "required_margin_m": 0.043599999999996725,
+              "current_three_neighbor_free_slack_m": 0.02810037790629863,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24715239573445696,
+                -0.19352352958761504
+              ],
+              "gap_m": 0.05786274418590331,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.019182811878774325,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2581855145195485,
+                -0.10625256439456741
+              ],
+              "gap_m": 0.06122306251954851,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.005684105185198685,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26318656797489826,
+                -0.06817497627014918
+              ],
+              "gap_m": 0.06622411597489825,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 0.0,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26406953009029305,
+                -0.1882646448053519
+              ],
+              "gap_m": 0.07111426662891701,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.026289908185734484,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.04": {
+          "memory_points": 212,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.24103017473716054,
+                -0.1428683883224474
+              ],
+              "gap_m": 0.04406772273716053,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.007481759842763447,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24544688664783093,
+                -0.18390614792965146
+              ],
+              "gap_m": 0.05213889748224956,
+              "required_margin_m": 0.043599999999996725,
+              "current_three_neighbor_free_slack_m": 0.02810037790629863,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.24715239573445696,
+                -0.19352352958761504
+              ],
+              "gap_m": 0.05786274418590331,
+              "required_margin_m": 0.04279999999999745,
+              "current_three_neighbor_free_slack_m": 0.019182811878774325,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2581855145195485,
+                -0.10625256439456741
+              ],
+              "gap_m": 0.06122306251954851,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.005684105185198685,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26318656797489826,
+                -0.06817497627014918
+              ],
+              "gap_m": 0.06622411597489825,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 0.0,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.26406953009029305,
+                -0.1882646448053519
+              ],
+              "gap_m": 0.07111426662891701,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.026289908185734484,
+              "visible_in_current_scan": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "time_s": 139.79999999994536,
+      "original_legal_choices": [
+        0,
+        9
+      ],
+      "current_ray_only_geometry_clear_choices": [
+        3,
+        4,
+        5,
+        7,
+        9
+      ],
+      "current_ray_only_geometry_reasons": [
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint",
+        null,
+        null,
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        null,
+        "laser_braking_footprint",
+        "laser_braking_footprint"
+      ],
+      "original_geometry_acceptance_and_laser_veto_parity_passed": true,
+      "variants": {
+        "original": {
+          "memory_points": 206,
+          "critical_memory_points": 2,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 1,
+          "critical_visible_points_with_slack_gt4cm": 1,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.23725099043119088,
+                -0.10496801734738685
+              ],
+              "gap_m": 0.04028853843119087,
+              "required_margin_m": 0.08,
+              "current_three_neighbor_free_slack_m": 0.04518681335060379,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2374773754544856,
+                -0.11203820123603461
+              ],
+              "gap_m": 0.040514923454485596,
+              "required_margin_m": 0.044399999999996,
+              "current_three_neighbor_free_slack_m": 0.025983793722354098,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2512412570625547,
+                -0.18469174958892295
+              ],
+              "gap_m": 0.057833032831689765,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.013044633456858468,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.25174336714251305,
+                -0.19244195883826443
+              ],
+              "gap_m": 0.06139137330962635,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.006423620307018846,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2666297916372596,
+                -0.057532449568599105
+              ],
+              "gap_m": 0.06966733963725957,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.024006730837594276,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2720855387356337,
+                -0.08597038466891037
+              ],
+              "gap_m": 0.07512308673563367,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.03": {
+          "memory_points": 209,
+          "critical_memory_points": 0,
+          "geometry_reasons": [
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            null,
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            3,
+            4,
+            5,
+            7,
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [
+            3,
+            4,
+            5,
+            7
+          ],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.2512412570625547,
+                -0.18469174958892295
+              ],
+              "gap_m": 0.057833032831689765,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.013044633456858468,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.25174336714251305,
+                -0.19244195883826443
+              ],
+              "gap_m": 0.06139137330962635,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.006423620307018846,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2666297916372596,
+                -0.057532449568599105
+              ],
+              "gap_m": 0.06966733963725957,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.024006730837594276,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2720855387356337,
+                -0.08597038466891037
+              ],
+              "gap_m": 0.07512308673563367,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2746922149456157,
+                -0.11454203384357696
+              ],
+              "gap_m": 0.07772976294561568,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.01735948698068837,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.27838087910208786,
+                -0.14531017693801015
+              ],
+              "gap_m": 0.08141842710208785,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.012367470138646308,
+              "visible_in_current_scan": true
+            }
+          ]
+        },
+        "confirmed_free_0.04": {
+          "memory_points": 212,
+          "critical_memory_points": 1,
+          "geometry_reasons": [
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            "laser_braking_footprint",
+            null,
+            "laser_braking_footprint",
+            "laser_braking_footprint"
+          ],
+          "geometry_clear_choices": [
+            9
+          ],
+          "new_geometry_permissions_preserving_recorded_non_geometry_vetoes": [],
+          "critical_visible_points_with_slack_gt3cm": 0,
+          "critical_visible_points_with_slack_gt4cm": 0,
+          "nearest_remembered_points": [
+            {
+              "body_point": [
+                0.2374773754544856,
+                -0.11203820123603461
+              ],
+              "gap_m": 0.040514923454485596,
+              "required_margin_m": 0.044399999999996,
+              "current_three_neighbor_free_slack_m": 0.025983793722354098,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2512412570625547,
+                -0.18469174958892295
+              ],
+              "gap_m": 0.057833032831689765,
+              "required_margin_m": 0.040799999999999274,
+              "current_three_neighbor_free_slack_m": 0.013044633456858468,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.25174336714251305,
+                -0.19244195883826443
+              ],
+              "gap_m": 0.06139137330962635,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.006423620307018846,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2666297916372596,
+                -0.057532449568599105
+              ],
+              "gap_m": 0.06966733963725957,
+              "required_margin_m": 0.04039999999999964,
+              "current_three_neighbor_free_slack_m": 0.024006730837594276,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2720855387356337,
+                -0.08597038466891037
+              ],
+              "gap_m": 0.07512308673563367,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": 8.326672684688674e-17,
+              "visible_in_current_scan": true
+            },
+            {
+              "body_point": [
+                0.2746922149456157,
+                -0.11454203384357696
+              ],
+              "gap_m": 0.07772976294561568,
+              "required_margin_m": 0.04,
+              "current_three_neighbor_free_slack_m": -0.01735948698068837,
+              "visible_in_current_scan": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "resource": {
+    "seconds": 99.0287737249746,
+    "cpu_seconds": 4.958978891000001,
+    "average_cpu_cores": 0.050076141554294226,
+    "peak_rss_mib": 466.55859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "current_runtime_or_running_job_changed": false,
+  "masks_or_guard_relaxed": false,
+  "shadow_hypotheses_not_admitted_for_execution": true,
+  "limitations": [
+    "Only recorded sensor/odometry/map-pose streams are used.",
+    "Memory-clearing variants are geometry-only shadows; accepted geometry is not a safe full escape.",
+    "Recorded dynamic/perception/localization/projection vetoes are not assumed removed.",
+    "Multi-frame free evidence must be separately checked against true hazards and complete physical tasks before any runtime experiment.",
+    "Current-ray-only geometry is attribution, never a permission to drop rear memory."
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false
+}

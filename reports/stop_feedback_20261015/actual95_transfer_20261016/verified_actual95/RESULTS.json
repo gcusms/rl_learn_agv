@@ -1,0 +1,33 @@
+{
+  "completed": true,
+  "at": "2026-10-16T10:59:18.158401+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/actual95_transfer_20261016/verified_actual95/check.py": "ba8880f7e600c865eddf2f1589a92cb98e5f5f532494c1fcde1ea25e3d7c2422",
+    "reports/stop_feedback_20261015/actual95_transfer_20261016/verified_actual95/candidate_row.json": "0ebba526e9657cff46727c9247a41fc11366b0cc8d1c2afd3d63b5e20d2fd8d0",
+    "reports/stop_feedback_20261015/actual95_transfer_20261016/verified_actual95/parent_row.json": "18f1ffeae57c729efb5fe482ba039e7b7c342632a30539eb8f466e87d68aba28",
+    "reports/stop_feedback_20261015/actual95_learned_validation_20261016/physical/w11_training_stall_t95.npz": "e27c75b9a199a78d4ae94298b885443b1272adf8da37d16636f09aae36852381",
+    "reports/stop_feedback_20261015/training_stall_source_20261016/train_failure_w11_e7.npz": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/policy_bc.zip": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/actor.pt": "dade1343a371562496bdffb95c1bd920b82416e97d57a50b5ee47bec5a1b6798",
+    "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/manifest.json": "21a845af56e95d831ce0a2a185423d3d250ed865da8df54164d22d279498c1b5"
+  },
+  "actual_failure_prefix_physical_and_sensor_parity_verified": true,
+  "physical_prefix_frames": 475,
+  "learned_control_frames": 100,
+  "portable_actor_exactly_reproduces_all_post_release_actions": true,
+  "no_post_release_timed_or_expert_action_substitution": true,
+  "all_post_release_chosen_actions_legal": true,
+  "parent_timeout": true,
+  "candidate_safe_success": true,
+  "candidate_post_release_seconds": 19.79999999996808,
+  "parent_legal_wait_frames": 109,
+  "candidate_legal_wait_frames": 2,
+  "physical_arrival_xy_error_m": 0.11399579776586649,
+  "no_new_physical_or_ppo_steps": true,
+  "current_original18_and_fresh12_acceptance_completed": false,
+  "actual106_escape_not_proven": true,
+  "matched_training_control_not_yet_finished": true,
+  "scope": "One reused actual95 development recovery. Not unseen-map, complete-mission or real-robot acceptance.",
+  "deployment_approved": false,
+  "goal_achieved": false
+}

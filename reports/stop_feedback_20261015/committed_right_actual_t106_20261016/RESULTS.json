@@ -1,0 +1,717 @@
+{
+  "completed": true,
+  "not_a_trained_policy": true,
+  "rows": [
+    {
+      "case_id": "right_direction_3s",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.33420422336366,
+      "frames": 700,
+      "final_xy_error_m": 1.7854732830937736,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0052266477447810555,
+      "localization_yaw_p95_rad": 0.001522038515926204,
+      "stop_choices": 215,
+      "only_stop_frames": 189,
+      "stop_reasons": {
+        "None": 541,
+        "laser_braking_footprint": 159
+      },
+      "voluntary_wait_frames": 26,
+      "predictive_constraint_frames": 64,
+      "runtime_ms": {
+        "p95": 139.5220135775162,
+        "p99": 149.5037850679364,
+        "maximum": 175.56061403593048
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 155,
+      "post_release_wait_with_choices_frames": 6,
+      "post_release_only_stop_frames": 153,
+      "longest_post_release_wait_with_choices_s": 0.7999999999992724,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "right_direction_3s",
+        "start_s": 106.0,
+        "end_s": 109.0,
+        "ordered_legal_actions": [
+          5,
+          9
+        ],
+        "fallback_choice": 0
+      },
+      "not_a_trained_policy": true,
+      "expert_entries": [
+        {
+          "sensor_timestamp": 105.99999999997608,
+          "selected_choice": 9,
+          "legal_actions": [
+            0,
+            9
+          ],
+          "expert_command": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.1999999999759,
+          "selected_choice": 9,
+          "legal_actions": [
+            0,
+            9
+          ],
+          "expert_command": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.39999999997572,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.59999999997554,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.79999999997536,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.99999999997517,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.19999999997499,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.39999999997481,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.59999999997463,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.79999999997445,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.99999999997426,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.19999999997408,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.3999999999739,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.59999999997372,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.79999999997354,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expert_controlled_frames": 15,
+      "runtime_rule_added": false,
+      "commands_masks_body_and_sensors_unchanged": true,
+      "no_training_or_label_admission": true,
+      "trace_sha256": "6111de025a9b4ad5a6ea87721cc9b9070a58746416c29a539a345f3ee276d200",
+      "variant": "offline_direction_consistent_expert"
+    },
+    {
+      "case_id": "right_direction_6s",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.330078477348644,
+      "frames": 700,
+      "final_xy_error_m": 1.7889829614485022,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005206110504568755,
+      "localization_yaw_p95_rad": 0.0014001962512783619,
+      "stop_choices": 214,
+      "only_stop_frames": 114,
+      "stop_reasons": {
+        "None": 558,
+        "laser_braking_footprint": 142
+      },
+      "voluntary_wait_frames": 100,
+      "predictive_constraint_frames": 64,
+      "runtime_ms": {
+        "p95": 138.93520747951692,
+        "p99": 158.5886187030701,
+        "maximum": 208.6802640114911
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 140,
+      "post_release_wait_with_choices_frames": 80,
+      "post_release_only_stop_frames": 78,
+      "longest_post_release_wait_with_choices_s": 11.799999999989268,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "specification": {
+        "id": "right_direction_6s",
+        "start_s": 106.0,
+        "end_s": 112.0,
+        "ordered_legal_actions": [
+          5,
+          9
+        ],
+        "fallback_choice": 0
+      },
+      "not_a_trained_policy": true,
+      "expert_entries": [
+        {
+          "sensor_timestamp": 105.99999999997608,
+          "selected_choice": 9,
+          "legal_actions": [
+            0,
+            9
+          ],
+          "expert_command": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.1999999999759,
+          "selected_choice": 9,
+          "legal_actions": [
+            0,
+            9
+          ],
+          "expert_command": [
+            0.05000000074505806,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.39999999997572,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.59999999997554,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.79999999997536,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 106.99999999997517,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.19999999997499,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.39999999997481,
+          "selected_choice": 5,
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            -1.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.59999999997463,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.79999999997445,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 107.99999999997426,
+          "selected_choice": 0,
+          "legal_actions": [
+            0
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.19999999997408,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.3999999999739,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.59999999997372,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.79999999997354,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 108.99999999997335,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 109.19999999997317,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 109.39999999997299,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 109.59999999997281,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 109.79999999997263,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 109.99999999997245,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 110.19999999997226,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 110.39999999997208,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 110.5999999999719,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 110.79999999997172,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 110.99999999997154,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 111.19999999997135,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 111.39999999997117,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 111.59999999997099,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "sensor_timestamp": 111.79999999997081,
+          "selected_choice": 0,
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "expert_command": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "expert_controlled_frames": 30,
+      "runtime_rule_added": false,
+      "commands_masks_body_and_sensors_unchanged": true,
+      "no_training_or_label_admission": true,
+      "trace_sha256": "4aa8545f2d4bca66652dc9b5c8cacf0538324757e6fe59daf7325514104c81c1",
+      "variant": "offline_direction_consistent_expert"
+    }
+  ],
+  "deployment_approved": false,
+  "new_ppo_steps": 0,
+  "priority_selector_not_installed_in_runtime": true,
+  "resource": {
+    "seconds": 552.7416241770261,
+    "cpu_seconds": 193.54725956800002,
+    "average_cpu_cores": 0.3501586475528624,
+    "peak_rss_mib": 2077.84765625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

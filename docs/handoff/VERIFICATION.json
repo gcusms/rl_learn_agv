@@ -1,32 +1,82 @@
 {
   "completed": true,
-  "branch": "backup",
-  "validation_pending": "Run tools/check_transfer.py against this isolated export",
-  "runtime_model_and_data_files_unchanged_from_save": 8094,
-  "changed_runtime_model_and_data_files": [],
-  "prior_clean_export_check": "docs/handoff/SAVE_VERIFICATION.json",
-  "new_implementation_tests_run": 0,
-  "original_implementation_test_count": 127,
-  "original_implementation_tests_skipped": 0,
-  "scope": "This handoff adds fixed research evidence and documentation; runtime and model files are unchanged.",
-  "deployment_approved": false,
-  "verified_at": "2026-10-16T01:42:45.692068+00:00",
-  "integrity_check": {
+  "branch": "continue",
+  "snapshot": "reports/handoff_continue_20261016/SNAPSHOT.json",
+  "files_manifest_sha256": "9988adc8bcff750c41078727e84e65b1c5f20f60b93c0f0f73ee10b3794ca3eb",
+  "transfer": {
     "completed": true,
-    "at": "2026-10-16T01:41:58.182584+00:00",
-    "branch": "backup",
-    "snapshot": "reports/handoff_backup_20261016/SNAPSHOT.json",
-    "pinned_files_checked": 29636,
-    "finished_traces_checked": 87,
-    "model_hashes_checked": 5,
+    "at": "2026-10-16T03:30:04.915291+00:00",
+    "branch": "continue",
+    "snapshot": "reports/handoff_continue_20261016/SNAPSHOT.json",
+    "pinned_files_checked": 32150,
+    "finished_traces_checked": 149,
+    "model_hashes_checked": 7,
     "new_physical_steps": 0,
     "new_training_steps": 0,
     "deployment_approved": false,
     "scope": "Byte integrity and frozen completion metadata; no navigation/real-world acceptance."
   },
-  "files_manifest_sha256": "e254ca1d046c56fa72df19ecd88fd0dc4a557205acc0d0e6245cc0b5655b5036",
-  "source_export": "Git-only tracked files plus frozen additional research files; no copied platform binaries or virtual environment",
-  "verification_record": "docs/handoff/BACKUP_TRANSFER_CHECK.json",
-  "new_physical_steps": 0,
-  "new_training_steps": 0
+  "new_model_checks": {
+    "completed": true,
+    "models": [
+      {
+        "folder": "actual95_transfer_bc400_s231016",
+        "checkpoint_sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+        "examples": 2421,
+        "correct": 2421,
+        "old_necessary_stops_retained": 55,
+        "all_stop_labels_retained": 57,
+        "exported_decisions_checked": 128,
+        "optimizer_loaded": true,
+        "new_ppo_steps": 0,
+        "native_libraries_to_rebuild": [
+          "localization_kernel.so"
+        ]
+      },
+      {
+        "folder": "actual95_control_bc400_s231016",
+        "checkpoint_sha256": "fef34d6d3ec0170c83935319fae7080227f10a9e06396b71f334a663a4d922cc",
+        "examples": 2355,
+        "correct": 2354,
+        "old_necessary_stops_retained": 55,
+        "all_stop_labels_retained": 55,
+        "exported_decisions_checked": 64,
+        "optimizer_loaded": true,
+        "new_ppo_steps": 0,
+        "native_libraries_to_rebuild": [
+          "localization_kernel.so"
+        ]
+      }
+    ],
+    "new_physical_steps": 0,
+    "new_optimizer_updates": 0,
+    "deployment_approved": false,
+    "scope": "Checkpoint, data, mask, frozen-base and export parity only."
+  },
+  "native_rebuild_and_one_frame": {
+    "completed": true,
+    "native_rebuilt_from_archived_source": true,
+    "native_source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "runtime": "neural_navigation.decision_feedback_runtime.StopFeedbackRuntime",
+    "policy_observation_dimensions": 439,
+    "command": [
+      0.05,
+      0.5
+    ],
+    "new_physical_steps": 0,
+    "new_training_steps": 0,
+    "source_platform_binary_used": false,
+    "deployment_approved": false,
+    "scope": "Rebuild on this x86_64 host and one recorded sensor frame; no closed-loop acceptance or Jetson claim."
+  },
+  "full_implementation_suite_rerun_for_this_documentation_archive": false,
+  "historical_implementation_tests": {
+    "passed": 127,
+    "skipped": 0,
+    "record": "docs/handoff/SAVE_VERIFICATION.json"
+  },
+  "scope": "Integrity, checkpoints, masks, original dataset, optimizer loading, export parity and native rebuild/one-frame interface. No new closed-loop, real-world, AMCL or Jetson acceptance.",
+  "new_ppo_steps": 0,
+  "original_deployment_replaced": false,
+  "deployment_approved": false
 }

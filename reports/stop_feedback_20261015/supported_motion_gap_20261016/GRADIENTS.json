@@ -1,0 +1,211 @@
+{
+  "completed": true,
+  "at": "2026-10-16T10:10:11.459384+08:00",
+  "whole_rollout_diagnostic_gradients": [
+    {
+      "model": "w11_control2000_s231015",
+      "pre_update_checkpoint_step": 1000,
+      "source_rollout": "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001000.npz",
+      "diagnostic_full_rollout_frames": 250,
+      "actual_minibatch_order_replayed": false,
+      "old_log_probability_max_abs_error": 4.0531158447265625e-06,
+      "recovery_actor_frames": 177,
+      "previous_legal_wait_ge2s_frames": 0,
+      "sampled_stop_on_late_frames": 0,
+      "policy_gradient_loss": -3.805268278256335e-08,
+      "entropy_loss": -0.1416492909193039,
+      "value_loss": 0.15001681447029114,
+      "retention_loss": 0.0,
+      "retention_samples": 0,
+      "gradient_norms": {
+        "actor": 0.9884539988591479,
+        "critic": 1.006499045062796
+      },
+      "joint_gradient_clip_factor": 0.3544330813911732,
+      "actor_norm_after_joint_clip": 0.35034079662907497,
+      "actor_policy_gradient_norms": {
+        "actor": 0.990631897149646,
+        "critic": 0.0
+      },
+      "actor_entropy_gradient_norms": {
+        "actor": 0.0049399612323844004,
+        "critic": 0.0
+      }
+    },
+    {
+      "model": "w11_control2000_s231015",
+      "pre_update_checkpoint_step": 2000,
+      "source_rollout": "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_002000.npz",
+      "diagnostic_full_rollout_frames": 250,
+      "actual_minibatch_order_replayed": false,
+      "old_log_probability_max_abs_error": 5.125999450683594e-06,
+      "recovery_actor_frames": 128,
+      "previous_legal_wait_ge2s_frames": 0,
+      "sampled_stop_on_late_frames": 0,
+      "policy_gradient_loss": 4.6566128730773926e-09,
+      "entropy_loss": -0.14721164107322693,
+      "value_loss": 0.37614548206329346,
+      "retention_loss": 0.0,
+      "retention_samples": 0,
+      "gradient_norms": {
+        "actor": 0.27248834870255456,
+        "critic": 2.407983764768143
+      },
+      "joint_gradient_clip_factor": 0.2063256843424962,
+      "actor_norm_after_joint_clip": 0.05622134502141131,
+      "actor_policy_gradient_norms": {
+        "actor": 0.2742203688378743,
+        "critic": 0.0
+      },
+      "actor_entropy_gradient_norms": {
+        "actor": 0.010898677552637587,
+        "critic": 0.0
+      }
+    },
+    {
+      "model": "w11_retained2000_s231015",
+      "pre_update_checkpoint_step": 1000,
+      "source_rollout": "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001000.npz",
+      "diagnostic_full_rollout_frames": 250,
+      "actual_minibatch_order_replayed": false,
+      "old_log_probability_max_abs_error": 4.76837158203125e-06,
+      "recovery_actor_frames": 180,
+      "previous_legal_wait_ge2s_frames": 0,
+      "sampled_stop_on_late_frames": 0,
+      "policy_gradient_loss": -3.973643192267673e-09,
+      "entropy_loss": -0.107760950922966,
+      "value_loss": 0.1278264969587326,
+      "retention_loss": 0.06778211146593094,
+      "retention_samples": 128,
+      "gradient_norms": {
+        "actor": 0.6870146728092053,
+        "critic": 0.5035696873363117
+      },
+      "joint_gradient_clip_factor": 0.5869881847120509,
+      "actor_norm_after_joint_clip": 0.403269495662819,
+      "actor_policy_gradient_norms": {
+        "actor": 0.6990697390534215,
+        "critic": 0.0
+      },
+      "actor_entropy_gradient_norms": {
+        "actor": 0.00410339569028232,
+        "critic": 0.0
+      }
+    },
+    {
+      "model": "w11_retained2000_s231015",
+      "pre_update_checkpoint_step": 2000,
+      "source_rollout": "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_002000.npz",
+      "diagnostic_full_rollout_frames": 250,
+      "actual_minibatch_order_replayed": false,
+      "old_log_probability_max_abs_error": 9.059906005859375e-06,
+      "recovery_actor_frames": 173,
+      "previous_legal_wait_ge2s_frames": 0,
+      "sampled_stop_on_late_frames": 0,
+      "policy_gradient_loss": 7.304152660481122e-08,
+      "entropy_loss": -0.1902838498353958,
+      "value_loss": 0.06400816142559052,
+      "retention_loss": 0.0718660056591034,
+      "retention_samples": 128,
+      "gradient_norms": {
+        "actor": 0.733039811298532,
+        "critic": 1.2368908436665407
+      },
+      "joint_gradient_clip_factor": 0.34775516425790837,
+      "actor_norm_after_joint_clip": 0.25491837998570716,
+      "actor_policy_gradient_norms": {
+        "actor": 0.7906033844204635,
+        "critic": 0.0
+      },
+      "actor_entropy_gradient_norms": {
+        "actor": 0.012125904228357067,
+        "critic": 0.0
+      }
+    }
+  ],
+  "actual_t106_same_input_saturation": [
+    {
+      "model": "reference",
+      "legal_actions": [
+        0,
+        9
+      ],
+      "recovery_support": true,
+      "frozen_base_stop_minus_motion": 17.989877700805664,
+      "learned_stop_minus_motion": 18.219674661755562,
+      "motion_probability_float64": 1.2226321931421245e-08,
+      "expected_motion_draws_per_million_same_state": 0.012226321931421244,
+      "any_motion_chance_per250_same_state": 3.056575830203258e-06,
+      "hypothetical_temperature8_motion_probability": 0.09300705402855387,
+      "hypothetical_temperature_not_applied": true
+    },
+    {
+      "model": "control",
+      "legal_actions": [
+        0,
+        9
+      ],
+      "recovery_support": true,
+      "frozen_base_stop_minus_motion": 17.989877700805664,
+      "learned_stop_minus_motion": 19.86173540353775,
+      "motion_probability_float64": 2.3667801171209152e-09,
+      "expected_motion_draws_per_million_same_state": 0.002366780117120915,
+      "any_motion_chance_per250_same_state": 5.916948549289651e-07,
+      "hypothetical_temperature8_motion_probability": 0.07707870442310616,
+      "hypothetical_temperature_not_applied": true
+    },
+    {
+      "model": "retained",
+      "legal_actions": [
+        0,
+        9
+      ],
+      "recovery_support": true,
+      "frozen_base_stop_minus_motion": 17.989877700805664,
+      "learned_stop_minus_motion": 19.88787752389908,
+      "motion_probability_float64": 2.3057092061278653e-09,
+      "expected_motion_draws_per_million_same_state": 0.002305709206127865,
+      "any_motion_chance_per250_same_state": 5.764271360623178e-07,
+      "hypothetical_temperature8_motion_probability": 0.0768465645587328,
+      "hypothetical_temperature_not_applied": true
+    },
+    {
+      "model": "diagnostic_bc",
+      "legal_actions": [
+        0,
+        9
+      ],
+      "recovery_support": true,
+      "frozen_base_stop_minus_motion": 17.989877700805664,
+      "learned_stop_minus_motion": 18.779930725693703,
+      "motion_probability_float64": 6.981997874594798e-09,
+      "expected_motion_draws_per_million_same_state": 0.006981997874594798,
+      "any_motion_chance_per250_same_state": 1.7454979513589147e-06,
+      "hypothetical_temperature8_motion_probability": 0.08726538070765076,
+      "hypothetical_temperature_not_applied": true
+    }
+  ],
+  "inputs": {
+    "reports/stop_feedback_20261015/supported_motion_gap_20261016/gradient_audit.py": "3e310004950c9bf406a3e6f556f3eb74f1207328d8f3fef0fa0a310c1b2fcf93",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy_step_1000.zip": "ebf21a72cd017805719f651979809949751543eb5cd658f047842cdc8a9066c4",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_001000.npz": "2b3d7f93d6f8de2fbc3b3f0f57b6bfc02014b5e4e7a22058b4d1dbff79cf1233",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy_step_2000.zip": "e854a37786276995a2617f73615d644c2abd5800ece61e966fdc6306999d7f10",
+    "models/stop_feedback_20261015/w11_control2000_s231015/rollouts/rollout_002000.npz": "dbffe3cbcc16659d438d454fa1605a2326c8d29a8cd3e9a0157ddcdfcd24fa9c",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy_step_1000.zip": "372a328050577bdf590e878fe67fa020de89abc1fc7d8286f1ef37ff77a7d710",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_001000.npz": "fdafbf10cfac339df75c36632c6cbfaf68632c927e30bcfb66d21035a3b2165f",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy_step_2000.zip": "1f854eb3c292b208fbf2ec91e225e8ba433cff4feadfd69a0b7d844ad46ec6a9",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/rollouts/rollout_002000.npz": "b74d0b18e7bc834ae7c09e7d636d81a89687105caace57c6e482c48ba40a3647",
+    "reports/stop_feedback_20261015/w11_retained2000_w11_20261016/w11_training_stall_t106.npz": "37e0617c0b22e87f0348b1a370e4e7912a6e3ce9dc6d0fa641ff42e6306fb816",
+    "models/stop_feedback_20261015/w11_recovery_bc800_s231015/policy_bc.zip": "76bd054747c59d5cb1c625e61c9411cce10744346ea97e4b1308433d236fdbc8",
+    "models/stop_feedback_20261015/w11_control2000_s231015/policy.zip": "7a8b576c1a29e357508cac3f473c2524bc2688c46f6f6f09be5a38d50fe88cb5",
+    "models/stop_feedback_20261015/w11_retained2000_s231015/policy.zip": "9012d24c36f7ec2a54455dbb4010a8755a74a348a0881e58e0222e21733bf220",
+    "models/stop_feedback_20261015/early_transfer_bc800_s231015/policy_bc.zip": "8b597401b2dc9a089c5921036639a78e9ca6fa430559b0a144127f9220a8f0bd"
+  },
+  "no_optimizer_step": true,
+  "no_saved_model_or_rng_modified": true,
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0,
+  "scope": "Stored likelihood parity and whole-rollout gradient diagnostic, not exact minibatch/optimizer replay. Temperature8 is an unapplied illustration.",
+  "goal_achieved": false,
+  "deployment_approved": false
+}
