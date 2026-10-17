@@ -1,0 +1,218 @@
+[
+  {
+    "id": "pre_ppo_holdout_dynamic_00",
+    "category": "training_failure",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018100,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.085,
+    "hold_s": 3.2,
+    "pilot_category": "frozen_before_ppo_new_seed_timing_same_known_map",
+    "max_steps": 700
+  },
+  {
+    "id": "pre_ppo_holdout_dynamic_01",
+    "category": "training_failure",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018101,
+    "start": [
+      6.2250000000000005,
+      2.725,
+      0.017376951571745902
+    ],
+    "goal": [
+      7.125,
+      5.7250000000000005
+    ],
+    "odom_scale": 1.0,
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.105,
+    "hold_s": 3.6,
+    "pilot_category": "frozen_before_ppo_new_seed_timing_same_known_map",
+    "max_steps": 700
+  },
+  {
+    "id": "pre_ppo_holdout_dynamic_02",
+    "category": "dynamic_independent",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018102,
+    "start": [
+      6.675000000000001,
+      0.875,
+      -1.7310662652092546
+    ],
+    "goal": [
+      8.475,
+      6.875
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.12,
+    "hold_s": 3.0,
+    "odom_scale": 1.0,
+    "pilot_category": "frozen_before_ppo_new_seed_timing_same_known_map",
+    "max_steps": 700
+  },
+  {
+    "id": "pre_ppo_holdout_dynamic_03",
+    "category": "dynamic_independent",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018103,
+    "start": [
+      6.675000000000001,
+      0.875,
+      -1.7310662652092546
+    ],
+    "goal": [
+      8.475,
+      6.875
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.14,
+    "hold_s": 3.4,
+    "odom_scale": 1.0,
+    "pilot_category": "frozen_before_ppo_new_seed_timing_same_known_map",
+    "max_steps": 700
+  },
+  {
+    "id": "pre_ppo_holdout_sensor_00",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018104,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "frozen_before_ppo_new_noise_same_known_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.04
+  },
+  {
+    "id": "pre_ppo_holdout_sensor_01",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018105,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "frozen_before_ppo_new_noise_same_known_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.06
+  },
+  {
+    "id": "pre_ppo_holdout_sensor_02",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018106,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "frozen_before_ppo_new_noise_same_known_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.08
+  },
+  {
+    "id": "pre_ppo_holdout_sensor_03",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 231018107,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "frozen_before_ppo_new_noise_same_known_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.12
+  }
+]

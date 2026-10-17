@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-17T06:48:08.877981+08:00",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "actual_new_evidence": [
+    "Known collision83/83 full625 observations reproduced exactly; raw four-direction routing input isolates origin at14.4/14.8s. Existing bounded decoder has no feasible full candidate in these recorded states.",
+    "Independent guard-factor replay18x12 confirmed route projection suppresses some locally admissible motion before all-motion predictive rejection; no bypass executed or adopted.",
+    "Memory-only matched physical pair rejected: control safe36.4s after release, changed configuration timeout44s; initialization and480-frame sensor/physical prefix parity verified.",
+    "Original-guard complete terminal-handoff teacher safe37.0s/5.5804m;186frames,52changed labels,16 outside old recovery support. Teacher is not learned navigation or independent generalization.",
+    "Broader trainable navigation head initialized parent-exact on10719frames;4468labels admitted with no exact-input conflicts, all52 changed labels inside new support.",
+    "Exact optimizer/RNG continuation1300accepted supervised updates,2500cumulative on margin lineage; all4468 labels now match, all658 old STOP labels retained. Portable export parity and strict runtime admission passed.",
+    "Actual candidate closed-loop validation launched serially; full known-safety, original28,97.6/106 and conditional fresh gates remain required."
+  ],
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/ADMISSION_TERMINAL.json": "9aa80600a60b53ad90344196bb58139bebcd5f79896d58a7ac1ff901af6e56a6",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/MARGIN_FIT_RESULTS.json": "b0ac285134089d87737c887052c8358abd63fa8781a66852b527682b3ca9c320",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/MARGIN_RESUME_FIT_RESULTS.json": "f7f02c56174926228218773799d12377cd685b89d979c0cb6ef070e039116380",
+    "reports/stop_feedback_20261015/sensor01_route_diagnosis_20261017/RESULTS.json": "2df37fd839a2eb6105e32e62ca89455e6c083a7aefda2e0c8683a336ce0abffd",
+    "reports/stop_feedback_20261015/sensor01_route_projection_probe_20261017/RESULTS.json": "039a909e0312ea4bc02c0917f0f49c877c1b98255b816adc0cc00ae26df9ea64",
+    "reports/stop_feedback_20261015/sensor01_reference_terminal_demonstration_20261017/RESULTS.json": "26a04363bfffd31d71989f3ae43b271537e25c615f54a3d3be95cfa468026935",
+    "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/MATCHED_PAIR_REJECTION.json": "955671dd8bf5ba4e5dea1cfe6786e1d1eccdc2d3ec4eb5f9b1bf883a14bacda4",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/RESULTS.json": "2dbb7d2fba6b696ea251a1d1fa066bc3fd918526b5fd011b282726bd5dc54966"
+  },
+  "latest_fully_tested_candidate": {
+    "model": "models/stop_feedback_20261015/v2_behavior_retention_s231017",
+    "completed": true,
+    "physical_episodes": 34,
+    "safe_arrivals": 33,
+    "collisions": 1,
+    "fixed28_passed": true,
+    "overall_upgrade_accepted": false,
+    "hard3_and_fresh8_not_executed": true
+  },
+  "latest_unverified_candidate": {
+    "model": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+    "checkpoint_sha256": "6a36c250f910c958cec99ae8981427b4d3b094d607759ae77fd913b131a7da44",
+    "supervised_updates_this_resume": 1300,
+    "cumulative_margin_supervised_updates": 2500,
+    "new_ppo_steps": 0,
+    "all4468_labels_retained": true,
+    "all658_old_stop_labels_retained": true,
+    "export_parity_and_strict_runtime_admission_passed": true,
+    "physical_validation_passed": false,
+    "fit_resource": {
+      "seconds": 64.28742331400281,
+      "cpu_seconds": 22.517915755999997,
+      "average_cpu_cores": 0.35026937766683275,
+      "peak_rss_mib": 646.796875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2205571",
+      "MemoryCurrent": "1482481664",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520",
+      "unit": "rl-full-navigation-margin-resume-cycle-20261017.service",
+      "start_ticks": "49851050"
+    }
+  ],
+  "cycle_status": {
+    "status": "running",
+    "stage": "validate_margin_resume",
+    "child_pid": 2205903,
+    "child_start_ticks": "49857721",
+    "one_model_or_physics_child_at_a_time": true,
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "at": "2026-10-17T06:47:00.791028+08:00"
+  },
+  "validation_status": {
+    "status": "physical_case",
+    "group": "observed6",
+    "case_id": "pre_ppo_holdout_sensor_01",
+    "variant": "candidate",
+    "completed_episodes": 0,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/observed6_pre_ppo_holdout_sensor_01_candidate.json"
+  },
+  "memory_configuration_adopted": false,
+  "no_localization_router_docking_target_board_or_unseen_map_improvement_claim": true,
+  "next_action": "Finish exact candidate sensor01 full closed loop; only if safe continue original fixed28, remaining known cases, all original hard3 including97.6/106, then conditional pre-frozen8 paired seeds. No gate waiver or automatic promotion."
+}

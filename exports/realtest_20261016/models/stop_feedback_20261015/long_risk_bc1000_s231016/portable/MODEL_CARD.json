@@ -1,0 +1,16 @@
+{
+  "deployment_approved": false,
+  "method": "supervised risk head on a frozen RL navigation actor",
+  "new_ppo_steps": 0,
+  "frozen_components": [
+    "parent_navigation_actor",
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "manifest_sha256": "7c3dcd3e3312d96a9f6b79c174d17563214023f811d15104010de76e7ab690d8",
+  "limitations": [
+    "Development-source fitting and export parity do not establish navigation safety.",
+    "Constant track velocity is an approximation; independent closed-loop gates are required."
+  ]
+}

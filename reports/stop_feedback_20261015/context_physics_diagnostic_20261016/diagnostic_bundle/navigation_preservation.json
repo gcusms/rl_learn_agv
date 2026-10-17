@@ -1,0 +1,38 @@
+{
+  "schema": "measured_release_with_sensor_context_support_v1",
+  "unchanged_runtime_prefix_dimensions": 481,
+  "dimensions": 625,
+  "head_dimensions": [
+    312,
+    32,
+    32,
+    12
+  ],
+  "head_features": [
+    "old_88_risk_mask_stop_feedback_parent_choice",
+    "current_72_minimum_ranges",
+    "current_72_hit_and_72_no_return_fractions",
+    "robot_relative_waypoint_and_goal",
+    "measured_velocity_and_previous_execution"
+  ],
+  "initialization": "old risk weights; decisions may differ in newly trainable sensor contexts",
+  "parent_actor_sha256": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+  "previous_risk_actor_sha256": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+  "outside_support_parent_exact": true,
+  "near_goal_directional_parent_exact": true,
+  "stop_always_selectable": true,
+  "no_forced_motion": true,
+  "no_runtime_teacher": true,
+  "actions_masks_body_margin_blind_memory_and_deadlines_unchanged": true,
+  "new_ppo_steps": 0,
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  }
+}

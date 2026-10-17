@@ -1,0 +1,64 @@
+{
+  "completed": true,
+  "at": "2026-10-17T09:01:01.450388+08:00",
+  "three_trials_share_one_recorded_trajectory": true,
+  "comparisons": [
+    {
+      "probe": 1,
+      "all_recorded_fields_exact": true,
+      "fields": {
+        "labels": true,
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "human_positions": true,
+        "current_action_reason_strings": true,
+        "executed_stop_reason": true,
+        "initialization_prefix": true,
+        "expert_continuation": true,
+        "model_controlled": true
+      }
+    },
+    {
+      "probe": 2,
+      "all_recorded_fields_exact": true,
+      "fields": {
+        "labels": true,
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "human_positions": true,
+        "current_action_reason_strings": true,
+        "executed_stop_reason": true,
+        "initialization_prefix": true,
+        "expert_continuation": true,
+        "model_controlled": true
+      }
+    }
+  ],
+  "input_hashes": {
+    "reports/stop_feedback_20261015/late106_creep_teacher_20261017/probe_0/trace.npz": "d9fde51c6d841d996f89e14d0d7c8a399c39304a5fbd1123a54f49674db2bb02",
+    "reports/stop_feedback_20261015/late106_creep_teacher_20261017/probe_1/trace.npz": "d9fde51c6d841d996f89e14d0d7c8a399c39304a5fbd1123a54f49674db2bb02",
+    "reports/stop_feedback_20261015/late106_creep_teacher_20261017/probe_2/trace.npz": "d9fde51c6d841d996f89e14d0d7c8a399c39304a5fbd1123a54f49674db2bb02"
+  },
+  "resource": {
+    "seconds": 1.2721983429510146,
+    "cpu_seconds": 0.155672713,
+    "average_cpu_cores": 0.12236512793979805,
+    "peak_rss_mib": 45.28515625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "not_three_independent_failures": true,
+  "no_infeasibility_or_model_success_claim": true,
+  "new_ppo_steps": 0,
+  "new_training_updates": 0,
+  "new_physical_steps": 0
+}

@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-17T08:14:44.496037+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "Actual latest candidate23 complete learned episodes3274frames passed measured current cause/mask, previous execution/reason/velocity and physical-time history consistency checks. All30input hashes verified; not a neural understanding claim.",
+    "Latest sensor5all safe and first original95s recovery safe19.8s after release,2voluntary-wait frames,20only-stop frames. Original remaining gates not waived.",
+    "Conditional offline106diagnostic actual timer fired and correctly exited after verifying exact live validator. No additional model/physics loaded; only a real current106failure plus completed neural/fixed28 checks can launch it."
+  ],
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "new_ppo_steps": 0,
+  "new_training_updates_this_turn": 0,
+  "source_supervised_updates": 2500,
+  "new_constrained_last_layer_updates_in_current_model": 1,
+  "physical_validation": {
+    "completed": false,
+    "completed_episodes": 26,
+    "safe_arrivals": 26,
+    "collisions": 0,
+    "timeouts": 0,
+    "groups": {
+      "observed6": 2,
+      "normal18": 18,
+      "sensor5": 5,
+      "source_recovery3": 1
+    },
+    "latest_candidate_fixed28_still_pending": true
+  },
+  "recorded_feedback_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json",
+  "recorded_feedback_scope": {
+    "cases": 23,
+    "frames": 3274,
+    "learned_frames": 3274,
+    "source_snapshot_not_full_current_validation": true,
+    "neural_use_and_useful_recovery_not_proved_by_consistency": true
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1498435584",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd",
+      "start_ticks": "50175760",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run.py ",
+      "unit": "rl-full-navigation-joint-linear-20261017.service"
+    },
+    {
+      "MainPID": "2231288",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "7475200",
+      "MemoryMax": "629145600",
+      "ActiveState": "active",
+      "InvocationID": "4da29fb265534d2a8589a637f6f7a723",
+      "start_ticks": "50305503",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run_recorded_audits.py ",
+      "unit": "rl-full-navigation-joint-linear-recorded-audits-20261017.service"
+    },
+    {
+      "MainPID": "2225010",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "7565312",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "InvocationID": "12f8bee1621e4efda6da7f4a2bcbc002",
+      "start_ticks": "50187980",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_neural_mechanism_after_validation.py ",
+      "unit": "rl-full-navigation-joint-linear-mechanism-20261017.service"
+    }
+  ],
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "source_recovery3",
+    "case_id": "w11_training_stall_t90",
+    "variant": "candidate",
+    "completed_episodes": 26,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/source_recovery3_w11_training_stall_t90_candidate.json"
+  },
+  "conditional_late106_offline_teacher": {
+    "timer": {
+      "NextElapseUSecMonotonic": "5d 19h 57min 46.599713s",
+      "LastTriggerUSec": "Sat 2026-10-17 08:14:10 CST",
+      "Id": "rl-late106-joint-beam-20261017.timer",
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "InvocationID": "c8619e0d75ad40b8894338b5463750ce"
+    },
+    "status_snapshot": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/TRIGGER_CHECK_SNAPSHOT_20261017_081444.json",
+    "protocol": "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017",
+    "service": "rl-late106-joint-beam-20261017.service",
+    "physics_not_yet_launched": true,
+    "maximum_physical_steps": 4300,
+    "not_model_success_or_infeasibility_proof": true,
+    "no_automatic_training": true
+  },
+  "all_known6_now_training_development": true,
+  "frozen_prospective8_not_in_training": true,
+  "remaining_requirements": [
+    "Finish original fixed28 and independent audit with original safety/efficiency limits.",
+    "Fix every known full-mission safety failure and retain prior successes.",
+    "Resolve original97.6/106waits and retain96success; infeasibility needs independent proof and verified earlier prevention.",
+    "Only after original gates evaluate frozen8pairs without training leakage.",
+    "Complete actual new-weight neural cause-use/likelihood/export audit; useful understanding needs physical recovery evidence.",
+    "Preserve original body,4cm,blind/unknown,12actions,dynamics,deadlines,memory,original deployment and bounded resources; no new localization or target-board claims."
+  ],
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_081444.json": "36a6a716d6da49ec1f139232ff9c9f9e69d162abc68dceb50049426e3137e56a",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json": "a38fccfc70954ab055b49a87c1b5b555cfc78790be0bcfa97879f2058e9f1677",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_VALIDATION_SNAPSHOT.json": "4c8ff45578d09bdcd16adad9396ef3ebd568fdca87e344a3c3c790bb98db811a",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_recorded_feedback.py": "b6b1a1ea1f2649e55f1364ab1468575c3a9c6059034ebec4d483682c49aa139c",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json": "c26758d5b3da5ac078e2adff9453460248b2d1c2eed2b5b17d1bd6a847a221a9",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json": "279657371c5cef95ce11872e5f32307e6efe9554e7e817d61b818823e8e7912f",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/TRIGGER_CHECK_SNAPSHOT_20261017_081444.json": "00289698f5121394ad438711597464d971eb6ee96b566c751e7f9a925322301a",
+    "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017/run.py": "987b601ad0ca37c10a15652f418ea94830812c2bd3eddabf332e083a3e831cce",
+    "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017/launch_when_ready.py": "a17677840583dc0b1cdffa6174b3a55ea6de6124da42b5769e217aab78b28f9c"
+  }
+}

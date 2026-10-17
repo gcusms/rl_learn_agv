@@ -1,0 +1,413 @@
+{
+  "at": "2026-10-17T10:12:59.840518+08:00",
+  "source_additional_ppo_steps": 1993,
+  "new_ppo_steps": 0,
+  "new_supervised_updates": 119,
+  "fit_passed": true,
+  "total_reference_rows": 4282,
+  "original_reference_rows": 3799,
+  "original_stop_labels_retained": 557,
+  "total_stop_labels_correct": 658,
+  "model": "models/stop_feedback_20261015/v2_behavior_retention_s231017",
+  "checkpoint_sha256": "89b7f07ada0edccb4c8ca667d06285dfab11781382f0abdde05380108e5cd0f4",
+  "new_model_deployment_approved": false,
+  "dynamic01_full_mission_before": {
+    "safe_success": true,
+    "collisions": 0,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 53.400000000008866,
+    "travel_m": 4.628456294733507,
+    "voluntary_wait_frames": 27,
+    "only_stop_frames": 82
+  },
+  "dynamic01_full_mission_after": {
+    "safe_success": true,
+    "collisions": 0,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 34.59999999999925,
+    "travel_m": 4.3882475749918815,
+    "voluntary_wait_frames": 1,
+    "only_stop_frames": 18
+  },
+  "dynamic01_original_baseline_time_and_path_restored": true,
+  "first33_decisions_plus_current625_input_and_masks_physically_identical_until_divergence": true,
+  "exact_first_divergence_s": 6.6,
+  "early_action6_to_action11": true,
+  "known_dynamic00_and_dynamic01_now_training_cases": true,
+  "not_unseen_generalization": true,
+  "guard_hardware_memory_actions_observation_and_frozen_components_unchanged": true,
+  "validation_status": "complete_failed_safety",
+  "validation_completed": true,
+  "completed_physical_episodes": 34,
+  "validation_reason": "Known complete-mission case still unsafe; no fresh expansion",
+  "live_handles": [],
+  "active_worker": null,
+  "original_full_safety_efficiency_and_late106_scope_preserved": true,
+  "report": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/README.md",
+  "gain_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC01_GAIN_AUDIT.json",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "updated_at": "2026-10-17T10:12:59.840518+08:00",
+  "goal_status": "paused",
+  "previous_goal_turn_classification": "verified_wait",
+  "current_goal_turn_classification": "progress",
+  "current_goal_turn_evidence": [
+    "Specific original-guard physics search and replay waiter stopped at user request; exact PIDs absent and no active RL units/timers.",
+    "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json",
+    "reports/stop_feedback_20261015/user_pause_20261017/CANDIDATE_FILES.json"
+  ],
+  "current_hybrid_memory_subset_admission": {
+    "completed": true,
+    "frames": 2665,
+    "retained_point_timestamp_checks": 556213,
+    "maximum_original_points": 296,
+    "no_capacity_eviction": true,
+    "all_retained_points_original": true,
+    "does_not_prove_extra_clearing_safe": true,
+    "resource": {
+      "seconds": 975.1487684100284,
+      "cpu_seconds": 97.51535518200001,
+      "average_cpu_cores": 0.1000004905313042,
+      "peak_rss_mib": 42.2578125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "exact_audit_process_terminal": true,
+    "result": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/SUBSET_REPLAY.json",
+    "admission": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/SUBSET_ADMISSION.json"
+  },
+  "next_action": "Bounded assessment complete. Training and optimization remain paused; no automatic further trials or model replacement.",
+  "current_candidate_feedback_audit": {
+    "path": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/CURRENT_FEEDBACK_AUDIT.json",
+    "recorded_cases": 25,
+    "recorded_frames": 3931,
+    "learned_frames": 3456,
+    "previous_reason_frames_checked": 3906,
+    "history_frames_checked": 3881,
+    "learned_stop_with_motion_frames": 256,
+    "learned_only_stop_frames": 184,
+    "independent_full_guard_geometry_not_recomputed": true,
+    "does_not_prove_neural_use_or_navigation_success": true,
+    "resource": {
+      "seconds": 16.78636703500524,
+      "cpu_seconds": 1.679629175,
+      "average_cpu_cores": 0.10005912366251771,
+      "peak_rss_mib": 38.9296875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "input_hashes_verified": 30,
+    "neural_and_physics_not_loaded": true
+  },
+  "current_fixed28_and_joint_dynamic_gains": {
+    "at": "2026-10-17T06:05:07.280283+08:00",
+    "previous_goal_turn_classification": "progress",
+    "current_goal_turn_classification": "progress",
+    "actual_new_evidence": [
+      "Current auxiliary119 completed original fixed28 with every safety and efficiency gate independently recomputed.",
+      "Current dynamic00 safe61.6s, retains prior PPO gain over BC4500 timeout140s; all309 recorded observations/actions/physical/sensor frames exact to prior PPO.",
+      "Current same model also repaired dynamic01 to34.6s vs prior53.4s; combined gains verified, but both are known training-development cases."
+    ],
+    "fixed28_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/FIXED28_AUDIT.json",
+    "dynamic00_retention_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC00_RETENTION_AUDIT.json",
+    "current_total_physical_episodes": 30,
+    "current_validation_completed": false,
+    "groups": {
+      "observed6": {
+        "completed": 2,
+        "safe": 2
+      },
+      "normal18": {
+        "completed": 18,
+        "safe": 18
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe": 5
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2
+      }
+    },
+    "verified_live_handles": [
+      {
+        "MainPID": "2180324",
+        "MemoryCurrent": "1483898880",
+        "MemoryMax": "3221225472",
+        "ActiveState": "active",
+        "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3",
+        "start_ticks": "49348108",
+        "unit": "rl-v2-behavior-retention-validate-20261017.service"
+      },
+      {
+        "MainPID": "2184732",
+        "MemoryCurrent": "9695232",
+        "MemoryMax": "3221225472",
+        "ActiveState": "active",
+        "InvocationID": "575d6912c71543359234fa06b34e291b",
+        "start_ticks": "49435628",
+        "unit": "rl-hybrid-memory-pair-preflight-20261017.service"
+      }
+    ],
+    "new_physical_episodes_in_these_readonly_audits": 0,
+    "new_ppo_steps": 0,
+    "new_optimizer_updates": 0,
+    "known_safety_failures_and_late97_6_106_and_conditional_fresh_tests_not_waived": true,
+    "no_current_localization_router_or_target_board_improvement_claim": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_terminal_validation": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json",
+  "current_training_comparison_report": "reports/stop_feedback_20261015/training_comparison_20261016/COMPARISON_20261017_JOINT_LINEAR_TERMINAL.md",
+  "current_separate_memory_pair_status": {
+    "completed": true,
+    "adopted": false,
+    "reason": "Prior original success or efficiency lost; stop expansion",
+    "report": "reports/stop_feedback_20261015/hybrid_memory_pair_preflight_20261017/RESULTS.json"
+  },
+  "background_work_running": true,
+  "current_progress_report": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+  "latest_unverified_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "current_candidate_validation": {
+    "original_formal_episodes": 35,
+    "new_supplement_episodes": 2,
+    "combined_saved_checks": {
+      "physical_checks": 37,
+      "safe_arrivals": 35,
+      "timeouts": 2,
+      "collisions": 0,
+      "scope": "Mixed known/development/recovery checks with correlated prefixes, not independent missions or generalization success rate."
+    },
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "hard106_failed": true,
+    "hard97_6_failed": true,
+    "hard96_success_retained": true,
+    "frozen_fresh8_not_executed": true,
+    "not_generalization_or_deployment_approval": true
+  },
+  "queued_neural_mechanism_status": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NEURAL_MECHANISM_STATUS.json",
+  "latest_candidate_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "current_fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+  "current_priority_cases_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/PRIORITY_PHYSICAL_AUDIT.json",
+  "current_joint_retention_fit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json",
+  "current_joint_data_hard_coverage": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/HARD_COVERAGE.json",
+  "current_deployment_contract_repair": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/DEPLOYMENT_CONTRACT_REPAIR.json",
+  "verified_live_handles": [],
+  "current_normal18_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json",
+  "current_recorded_auditor_status": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_AUDITS_STATUS.json",
+  "current_fixed28_independent_audit_pending": false,
+  "source_margin_fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_residual_20261017/FIXED28_AUDIT.json",
+  "current_recorded_feedback_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json",
+  "current_conditional_late106_diagnostic": {
+    "timer": {
+      "NextElapseUSecMonotonic": "5d 19h 57min 46.599713s",
+      "LastTriggerUSec": "Sat 2026-10-17 08:14:10 CST",
+      "Id": "rl-late106-joint-beam-20261017.timer",
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "InvocationID": "c8619e0d75ad40b8894338b5463750ce"
+    },
+    "status_snapshot": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/TRIGGER_CHECK_SNAPSHOT_20261017_081444.json",
+    "protocol": "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017",
+    "service": "rl-late106-joint-beam-20261017.service",
+    "physics_not_yet_launched": true,
+    "maximum_physical_steps": 4300,
+    "not_model_success_or_infeasibility_proof": true,
+    "no_automatic_training": true
+  },
+  "current_known6_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/KNOWN6_PHYSICAL_AUDIT.json",
+  "current_low_memory_teacher_diagnostic": {
+    "unit": "rl-late106-creep-teacher-20261017.service",
+    "status_snapshot": {
+      "stage": "probe_1",
+      "child_pid": 2246419,
+      "child_start_ticks": "50595287",
+      "completed_jobs": 1,
+      "one_model_or_physics_worker": true,
+      "at": "2026-10-17T08:49:56.451151+08:00",
+      "new_ppo_steps": 0,
+      "new_training_updates": 0,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "not_model_success": true,
+    "no_automatic_training": true
+  },
+  "current_neural_mechanism_completed": true,
+  "current_completed_creep_trials": {
+    "completed": true,
+    "safe_teachers": 0,
+    "distinct_recorded_trajectories": 1,
+    "report": "reports/stop_feedback_20261015/late106_creep_teacher_20261017/RESULTS.json"
+  },
+  "current_compact_teacher_search": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/late106_compact_beam_20261017/RESULTS.json",
+    "safe_teacher_candidate_found": false,
+    "new_physical_steps": 1512,
+    "no_infeasibility_claim": true
+  },
+  "current_positive_free_shadow": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_shadow_v2_20261017/RESULTS.json",
+    "recorded_frames": 2060,
+    "retained_point_timestamp_checks": 429336,
+    "hard106_extra_sampled_geometry": 8,
+    "creep_extra_sampled_geometry": 29,
+    "original96_extra_sampled_geometry": 0,
+    "no_model_success_or_safety_permission_claim": true
+  },
+  "current_positive_free_physics": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_physics_20261017/RESULTS.json",
+    "safe_teacher_candidate_found": false,
+    "new_physical_steps": 878,
+    "changed_memory_not_adopted": true
+  },
+  "current_positive_free_replay": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_replay_admission_20261017/RESULTS.json",
+    "replay_launched": false,
+    "no_safe_teacher": true
+  },
+  "current_positive_free_failure_audit": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_failure_audit_20261017/RESULTS.json",
+    "geometry_checks": 258,
+    "matched": 258,
+    "raw_bottleneck": "reports/stop_feedback_20261015/positive_free_failure_audit_20261017/RAW_GEOMETRY_BOTTLENECK.json"
+  },
+  "current_framewise_teacher_search": {
+    "unit": "rl-late106-framewise-20261017.service",
+    "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+    "pid": 2260374,
+    "outcome": "interrupted_by_user_not_completed_evaluation",
+    "last_persisted_depth": 118,
+    "last_persisted_physical_steps": 2222,
+    "last_persisted_status_at": "2026-10-17T09:54:56.925978+08:00",
+    "complete_safe_teacher_found": false,
+    "no_infeasibility_claim": true,
+    "last_snapshot": "reports/stop_feedback_20261015/user_pause_20261017/LAST_RECORDED_SEARCH_STATUS.json",
+    "running": false
+  },
+  "current_framewise_fresh_replay": {
+    "running": false,
+    "launched": false,
+    "status": "paused_by_user",
+    "report": "reports/stop_feedback_20261015/user_pause_20261017/PROGRESS.json"
+  },
+  "work_state": "paused_after_bounded_acceptance_followup",
+  "current_user_pause": {
+    "at": "2026-10-17T09:55:55.264544+08:00",
+    "status": "paused_by_user",
+    "goal_status_requested": "paused",
+    "authorizing_user_request": "如果设计的差不多了，就可以停止了",
+    "previous_goal_turn_classification": "verified_wait",
+    "current_goal_turn_classification": "progress",
+    "current_goal_turn_evidence": [
+      "Specific original-guard physics search and replay waiter stopped at user request; exact PIDs absent and no active RL units/timers.",
+      "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json",
+      "reports/stop_feedback_20261015/user_pause_20261017/CANDIDATE_FILES.json"
+    ],
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "active_worker": null,
+    "live_handles": [],
+    "verified_live_handles": [],
+    "current_candidate_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+    "original_deployment_replaced": false,
+    "formal_validation": {
+      "episodes": 35,
+      "safe_arrivals": 34,
+      "timeouts": 1,
+      "collisions": 0,
+      "fixed28_passed": true,
+      "known6_passed": true,
+      "scope": "Includes known training/development and initialized recovery tasks; not an independent generalization rate.",
+      "report": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json"
+    },
+    "matched_improvement": {
+      "dynamic02_prior_seconds": 140.0,
+      "prior_timeout": true,
+      "current_seconds": 49.2,
+      "current_safe_arrival": true,
+      "prior_voluntary_wait_frames": 569,
+      "current_voluntary_wait_frames": 1,
+      "normal18_seconds_before_after": [
+        459.4,
+        459.4
+      ],
+      "normal18_travel_m_before_after": [
+        67.13577183988691,
+        67.13577183988691
+      ]
+    },
+    "paused_search": {
+      "unit": "rl-late106-framewise-20261017.service",
+      "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+      "pid": 2260374,
+      "outcome": "interrupted_by_user_not_completed_evaluation",
+      "last_persisted_depth": 118,
+      "last_persisted_physical_steps": 2222,
+      "last_persisted_status_at": "2026-10-17T09:54:56.925978+08:00",
+      "complete_safe_teacher_found": false,
+      "no_infeasibility_claim": true,
+      "last_snapshot": "reports/stop_feedback_20261015/user_pause_20261017/LAST_RECORDED_SEARCH_STATUS.json"
+    },
+    "new_training_updates_after_latest_candidate": 0,
+    "new_ppo_steps_after_latest_candidate": 0,
+    "localizer_router_terminal_changed_this_stage": false,
+    "remaining_requirements": [
+      "Original106s late recovery remains unresolved; nominally legal motion does not prove a complete safe recovery.",
+      "Current candidate original97.6s and96s full recovery retention checks remain unexecuted.",
+      "Conditional frozen fresh8 paired evaluation remains unexecuted; no generalization or deployment approval.",
+      "Measured-speed motion-prediction shadow is diagnostic only; no runtime safety-rule change adopted."
+    ],
+    "diagnostic_motion_report": "reports/stop_feedback_20261015/measured_motion_geometry_audit_20261017/RESULTS.json",
+    "next_action": "No further training, simulation, automatic replay or model replacement; resume only on a new user request.",
+    "stop_evidence": "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json"
+  },
+  "current_measured_motion_geometry_audit": {
+    "completed": true,
+    "geometry_checks": 505,
+    "matched": 505,
+    "report": "reports/stop_feedback_20261015/measured_motion_geometry_audit_20261017/RESULTS.json",
+    "not_adopted": true,
+    "not_localization_improvement": true
+  },
+  "bounded_deployment_acceptance_followup": {
+    "at": "2026-10-17T10:12:59.840518+08:00",
+    "optimization_goal_status": "paused",
+    "work_state": "paused_after_bounded_acceptance_followup",
+    "completed": true,
+    "active_worker": null,
+    "verified_live_handles": [],
+    "final_review": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+    "supplement": {
+      "episodes": 2,
+      "safe_arrivals": 1,
+      "timeouts": 1,
+      "collisions": 0
+    },
+    "combined_saved_checks": {
+      "physical_checks": 37,
+      "safe_arrivals": 35,
+      "timeouts": 2,
+      "collisions": 0,
+      "scope": "Mixed known/development/recovery checks with correlated prefixes, not independent missions or generalization success rate."
+    },
+    "new_training_updates": 0,
+    "new_ppo_steps": 0,
+    "model_replacement": false,
+    "deployment_approved": false,
+    "next_action": "Bounded assessment complete. Training and optimization remain paused; no automatic further trials or model replacement."
+  },
+  "last_user_request": "直接进行部署验收需要多长时间，看看是否可以改善？",
+  "optimization_remains_paused": true
+}

@@ -22,6 +22,35 @@ def inspect_bundle(config_path):
         'learned-terminal-goal-pose': 'experiments.docking_navigation.DockingRuntime',
     }
     runtime = runtimes.get(sensor_core)
+    release_runtime = manifest.get('required_runtime')
+    release_core = release_runtime in (
+        'neural_navigation.release_runtime.ReleaseRuntime',
+        'neural_navigation.aligned_release_runtime.AlignedReleaseRuntime',
+    )
+    if release_core:
+        if sensor_core != 'learned-terminal-goal-pose':
+            raise ValueError('Release actor requires the frozen directional sensor core')
+        runtime = manifest['required_runtime']
+        from neural_navigation.release_observation import contract as original_release_contract
+        if release_runtime == 'neural_navigation.aligned_release_runtime.AlignedReleaseRuntime':
+            from neural_navigation.aligned_risk_observation import contract as risk_contract
+            # Validate the lightweight metadata without loading a second
+            # runtime, Torch model or ROS context in this parent process.
+            expected_release = dict(original_release_contract(),
+                schema='risk_and_measured_release_context_v2_guard_aligned',
+                parent_contract=risk_contract(), requires_retraining_after_v1=True)
+        else:
+            from neural_navigation.long_risk_observation import contract as risk_contract
+            expected_release = original_release_contract()
+        from neural_navigation.decision_feedback import contract as feedback_contract, WAIT_SCHEMA
+        components = {'release_observation.json': expected_release,
+            'long_risk_observation.json': risk_contract(),
+            'decision_feedback.json': feedback_contract(WAIT_SCHEMA)}
+        if manifest['observation_contract'] != expected_release:
+            raise ValueError('Release feature contract mismatch')
+        for name, expected in components.items():
+            if name not in manifest['files'] or json.loads((bundle/name).read_text()) != expected:
+                raise ValueError('Release feature component mismatch: ' + name)
     if runtime is None or config['required_runtime'] != runtime:
         raise ValueError('Model runtime contract mismatch')
     if manifest.get('required_runtime', runtime) != runtime:
@@ -54,7 +83,7 @@ def inspect_bundle(config_path):
         raise ValueError('Quality feature contract mismatch')
     if directional_core:
         goal_contract=json.loads((bundle/'goal_pose_observation.json').read_text())
-        if (manifest['observation_contract']!=goal_contract
+        if ((not release_core and manifest['observation_contract']!=goal_contract)
             or goal_contract.get('schema')!='quality_goal_pose_v1' or goal_contract.get('dimensions')!=303):
             raise ValueError('Goal-pose feature contract mismatch')
         if 'goal_pose_observation.json' not in manifest['files']:

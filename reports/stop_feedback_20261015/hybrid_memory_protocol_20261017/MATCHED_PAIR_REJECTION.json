@@ -1,0 +1,114 @@
+{
+  "completed": true,
+  "at": "2026-10-17T06:21:19.337460+08:00",
+  "same_frozen_v2migration_policy_weights": true,
+  "same_original_body_4cm_margin_actions_dynamics_deadline": true,
+  "control": {
+    "safe_success": true,
+    "collisions": 0,
+    "timeout": false,
+    "seconds": 132.3999999999521,
+    "post_release_seconds": 36.39999999996691,
+    "post_release_wait_with_choices_frames": 3,
+    "post_release_only_stop_frames": 90,
+    "travel_m": 10.394158845448528,
+    "stop_reasons": {
+      "None": 576,
+      "laser_braking_footprint": 86,
+      "estimated_goal_reached": 1
+    }
+  },
+  "hybrid": {
+    "safe_success": false,
+    "collisions": 0,
+    "timeout": true,
+    "seconds": 139.99999999994517,
+    "post_release_seconds": 43.999999999959996,
+    "post_release_wait_with_choices_frames": 17,
+    "post_release_only_stop_frames": 133,
+    "travel_m": 8.469160710758954,
+    "stop_reasons": {
+      "None": 568,
+      "laser_braking_footprint": 132
+    }
+  },
+  "frozen_prefix_frames": 480,
+  "prefix_sensor_and_physical_parity_rechecked": true,
+  "first_post_release_policy_divergence": {
+    "frame": 500,
+    "time_s": 99.99999999998154,
+    "control_action": 4,
+    "hybrid_action": 6,
+    "control_command": [
+      0.0,
+      0.5
+    ],
+    "hybrid_command": [
+      0.05,
+      0.5
+    ],
+    "observation_changed_columns": [
+      268,
+      391,
+      397,
+      431
+    ],
+    "control_legal": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "hybrid_legal": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "sensor_and_physical_equal_at_first_action_divergence": {
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "labels": true,
+      "human_positions": true
+    },
+    "memory_points": [
+      210,
+      199
+    ]
+  },
+  "hybrid_adopted": false,
+  "further_preflight_cases_not_run": true,
+  "new_physical_episodes_in_this_audit": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "inputs": {
+    "reports/stop_feedback_20261015/hybrid_memory_pair_preflight_20261017/RESULTS.json": "c45ea7da14b38d76da9c2287d91668c7176d8c5310e18240e754a48fe99474c9",
+    "reports/stop_feedback_20261015/hybrid_memory_pair_preflight_20261017/physical/legal_wait_parent_t90_control.npz": "fd6d8f93423e176b5f471e0e3589b38690da5dbd9df0241bf52fe299beb6c7ca",
+    "reports/stop_feedback_20261015/hybrid_memory_pair_preflight_20261017/physical/legal_wait_parent_t90_hybrid.npz": "98a482dca6db56591cb5d683f0affd0928a719bff4b7ec5a12807ba40bdcbe43"
+  },
+  "resource": {
+    "seconds": 0.8354121849988587,
+    "cpu_seconds": 0.083574852,
+    "average_cpu_cores": 0.10004025976723595,
+    "peak_rss_mib": 40.4296875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

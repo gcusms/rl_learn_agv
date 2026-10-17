@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-16T10:51:43.258432+08:00",
+  "dependency_unit": "rl-actual95-transfer-fit-20261016.service",
+  "dependency_invocation": "",
+  "dependency_at_prepare": {
+    "MainPID": "0",
+    "Result": "success",
+    "ActiveState": "inactive",
+    "InvocationID": ""
+  },
+  "inputs": {
+    "reports/stop_feedback_20261015/actual95_learned_validation_20261016/run.py": "6a5e36076112864a872af4563633d42ed0b818735766d52f5b12f5fc77148199",
+    "reports/stop_feedback_20261015/actual95_learned_validation_20261016/prefixes.json": "524e5e56ac586b8bc09fc6edd9f4623f22a0e7c8fb8d7f3cee16b3b9acc014b2",
+    "reports/stop_feedback_20261015/actual95_learned_validation_20261016/cases.json": "90c7ce92a7003c89e8a28ff9d64619e71534aa4cf1038c30f4f2d4451c4db52d",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/cases.json": "f73b00907ec78067db472864d039fdbd9f9b6630486956db3f139dd07c15b6a0",
+    "reports/stop_feedback_20261015/actual_stop_validation_20261016/RESULTS_main.json": "584ac5de289ed1d718722f66cadbd125a906bff333c4a3a19c7234dd847abfad",
+    "reports/stop_feedback_20261015/early_transfer_regression_20261016/RESULTS.json": "d68e14ef2fccfcc80a629a387adb7e60963874d3a8753143dacf6045bc4217f0",
+    "reports/stop_feedback_20261015/actual95_transfer_20261016/run.py": "ba44efdb1cea6c3f492e9e0d3c205d6d1d18e59e8a1532b49fd96aa2e9a02e5d",
+    "training/experiments/evaluate_feedback_recovery.py": "ec2b665b634abc39d38c11ead5b5b5c92107804dbb4c4c00707502b08d945a91",
+    "training/experiments/evaluate_docking_navigation.py": "2d4de1aaacf253fc0e4f4c84cbf93ac7dd1fc84030573dd09924b48980021f9c"
+  },
+  "candidate": "models/stop_feedback_20261015/actual95_transfer_bc400_s231016",
+  "recovery_cases": 2,
+  "normal_regression_cases": [
+    "train_failure_w11_e7",
+    "motion_profile_002",
+    "recovery_holdout_00",
+    "recovery_holdout_01"
+  ],
+  "normal_regression_runs_only_after_one_complete_actual_recovery": true,
+  "no_expert_after_physical_prefix_release": true,
+  "no_new_ppo": true,
+  "preserves_original_physical_footprint_guard_lidar_actions_and_timeout": true,
+  "resource": {
+    "soft_cpu_cores": 0.35,
+    "hard_cpu_percent": 50,
+    "memory_high_mib": 3072,
+    "memory_max_mib": 4096
+  },
+  "larger_training_admitted": false,
+  "deployment_approved": false,
+  "goal_achieved": false
+}

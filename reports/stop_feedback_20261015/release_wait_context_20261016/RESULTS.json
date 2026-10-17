@@ -1,0 +1,845 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:11:10.641082+00:00",
+  "case_id": "long_risk_sensor_05_1",
+  "matched_eager_portable_recorded_frames": 700,
+  "matched_training_source_labels": 1790,
+  "policy_choices_equal_executed_commands": true,
+  "voluntary_wait_frames": 636,
+  "longest_voluntary_wait_frames": 597,
+  "only_stop_frames": 3,
+  "active_wait_frames": 636,
+  "wait_legal_motion_count_histogram": {
+    "11": 636
+  },
+  "frozen_parent_choices_on_wait": {
+    "0": 332,
+    "1": 2,
+    "6": 8,
+    "11": 294
+  },
+  "previous_reason_on_wait": {
+    "none": 2,
+    "policy_wait": 633,
+    "scan_unavailable": 1
+  },
+  "pstop_on_wait": {
+    "min": 0.7968118190765381,
+    "p50": 0.9998247921466827,
+    "p95": 0.999985933303833,
+    "max": 0.9999866485595703
+  },
+  "wait_without_supported_risk_history": 181,
+  "training_coverage": {
+    "source_frames": 1790,
+    "active_frames": 1447,
+    "action_counts": {
+      "0": 468,
+      "1": 937,
+      "2": 1,
+      "4": 3,
+      "6": 90,
+      "7": 10,
+      "10": 98,
+      "11": 183
+    },
+    "active_stop_labels": 418,
+    "active_motion_labels": 1029,
+    "source_groups": [
+      {
+        "source_id": 0,
+        "frames": 184,
+        "longest_voluntary_wait_frames": 27,
+        "active_stop_labels": 46,
+        "active_motion_labels": 101
+      },
+      {
+        "source_id": 1,
+        "frames": 187,
+        "longest_voluntary_wait_frames": 24,
+        "active_stop_labels": 54,
+        "active_motion_labels": 107
+      },
+      {
+        "source_id": 2,
+        "frames": 179,
+        "longest_voluntary_wait_frames": 30,
+        "active_stop_labels": 48,
+        "active_motion_labels": 95
+      },
+      {
+        "source_id": 3,
+        "frames": 184,
+        "longest_voluntary_wait_frames": 27,
+        "active_stop_labels": 46,
+        "active_motion_labels": 101
+      },
+      {
+        "source_id": 4,
+        "frames": 187,
+        "longest_voluntary_wait_frames": 24,
+        "active_stop_labels": 54,
+        "active_motion_labels": 107
+      },
+      {
+        "source_id": 5,
+        "frames": 176,
+        "longest_voluntary_wait_frames": 21,
+        "active_stop_labels": 22,
+        "active_motion_labels": 110
+      },
+      {
+        "source_id": 6,
+        "frames": 179,
+        "longest_voluntary_wait_frames": 30,
+        "active_stop_labels": 48,
+        "active_motion_labels": 95
+      },
+      {
+        "source_id": 7,
+        "frames": 168,
+        "longest_voluntary_wait_frames": 33,
+        "active_stop_labels": 38,
+        "active_motion_labels": 106
+      },
+      {
+        "source_id": 8,
+        "frames": 175,
+        "longest_voluntary_wait_frames": 27,
+        "active_stop_labels": 31,
+        "active_motion_labels": 102
+      },
+      {
+        "source_id": 9,
+        "frames": 171,
+        "longest_voluntary_wait_frames": 28,
+        "active_stop_labels": 31,
+        "active_motion_labels": 105
+      }
+    ],
+    "unique_full_observations": 1240,
+    "unique_head_inputs": 1240,
+    "context_ablations": {
+      "without_all_new_context": {
+        "correct_labels": 1790,
+        "total_labels": 1790
+      },
+      "without_ranges": {
+        "correct_labels": 1790,
+        "total_labels": 1790
+      },
+      "without_scan_quality": {
+        "correct_labels": 1790,
+        "total_labels": 1790
+      },
+      "without_waypoint_goal": {
+        "correct_labels": 1790,
+        "total_labels": 1790
+      },
+      "without_measured_motion_and_execution": {
+        "correct_labels": 1790,
+        "total_labels": 1790
+      }
+    },
+    "delayed_recovery": [
+      {
+        "minimum_prior_legal_wait_s": 1.0,
+        "stop_labels": 289,
+        "motion_labels": 16,
+        "unique_motion_observations": 10,
+        "source_ids_with_motion": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "motion_action_counts": {
+          "1": 3,
+          "6": 9,
+          "11": 4
+        }
+      },
+      {
+        "minimum_prior_legal_wait_s": 2.0,
+        "stop_labels": 209,
+        "motion_labels": 16,
+        "unique_motion_observations": 10,
+        "source_ids_with_motion": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "motion_action_counts": {
+          "1": 3,
+          "6": 9,
+          "11": 4
+        }
+      },
+      {
+        "minimum_prior_legal_wait_s": 5.0,
+        "stop_labels": 27,
+        "motion_labels": 7,
+        "unique_motion_observations": 5,
+        "source_ids_with_motion": [
+          0,
+          2,
+          3,
+          6,
+          7,
+          8,
+          9
+        ],
+        "motion_action_counts": {
+          "1": 1,
+          "6": 6
+        }
+      }
+    ],
+    "active_stop_wait_timer_seconds": {
+      "min": 0.0,
+      "p50": 1.9000000357627869,
+      "p95": 5.0,
+      "max": 5.0
+    },
+    "active_move_wait_timer_seconds": {
+      "min": 0.0,
+      "p50": 0.0,
+      "p95": 0.0,
+      "max": 5.0
+    },
+    "wait_timer_at_cap_stop_labels": 27,
+    "wait_timer_at_cap_move_labels": 7
+  },
+  "diagnostic_ablations": {
+    "without_parent_bonus": {
+      "changed_choices": 1,
+      "recorded_wait_frames_changing_to_motion": 0,
+      "pstop_on_original_wait": {
+        "min": 0.9633504152297974,
+        "p50": 0.9998403787612915,
+        "p95": 0.9998962879180908,
+        "max": 0.9999005794525146
+      }
+    },
+    "without_wait_timers": {
+      "changed_choices": 3,
+      "recorded_wait_frames_changing_to_motion": 3,
+      "pstop_on_original_wait": {
+        "min": 0.03579026460647583,
+        "p50": 0.9998538196086884,
+        "p95": 0.999985933303833,
+        "max": 0.9999862909317017
+      }
+    },
+    "without_previous_stop_reason": {
+      "changed_choices": 45,
+      "recorded_wait_frames_changing_to_motion": 43,
+      "pstop_on_original_wait": {
+        "min": 0.0025138575583696365,
+        "p50": 0.999422013759613,
+        "p95": 0.9999847412109375,
+        "max": 0.9999858140945435
+      }
+    },
+    "without_ranges": {
+      "changed_choices": 0,
+      "recorded_wait_frames_changing_to_motion": 0,
+      "pstop_on_original_wait": {
+        "min": 0.7989553213119507,
+        "p50": 0.9998240768909454,
+        "p95": 0.999985933303833,
+        "max": 0.9999866485595703
+      }
+    },
+    "without_scan_quality": {
+      "changed_choices": 0,
+      "recorded_wait_frames_changing_to_motion": 0,
+      "pstop_on_original_wait": {
+        "min": 0.7155600786209106,
+        "p50": 0.9998161196708679,
+        "p95": 0.999985933303833,
+        "max": 0.9999866485595703
+      }
+    },
+    "without_waypoint_goal": {
+      "changed_choices": 0,
+      "recorded_wait_frames_changing_to_motion": 0,
+      "pstop_on_original_wait": {
+        "min": 0.792981743812561,
+        "p50": 0.999823659658432,
+        "p95": 0.999985933303833,
+        "max": 0.9999866485595703
+      }
+    },
+    "without_measured_motion_and_execution": {
+      "changed_choices": 0,
+      "recorded_wait_frames_changing_to_motion": 0,
+      "pstop_on_original_wait": {
+        "min": 0.7968953847885132,
+        "p50": 0.9998247921466827,
+        "p95": 0.999985933303833,
+        "max": 0.9999866485595703
+      }
+    }
+  },
+  "selected_frame_neighbors": [
+    {
+      "frame": 0,
+      "sensor_time_s": 0.0,
+      "choice": 10,
+      "parent_choice": 10,
+      "pstop": 3.96281141235022e-09,
+      "active": false,
+      "legal_motion_actions": 11,
+      "previous_reason": "none",
+      "idle_seconds_clipped": [
+        0.0,
+        0.0
+      ],
+      "risk_history_valid": false,
+      "goal_robot_m": [
+        4.3961310386657715,
+        1.293769121170044
+      ],
+      "waypoint_robot_m": [
+        0.38227227330207825,
+        0.11250166594982147
+      ],
+      "nearest_active_source_indices": [
+        373,
+        1099,
+        701
+      ],
+      "nearest_active_source_ids": [
+        2,
+        6,
+        3
+      ],
+      "nearest_active_source_choices": [
+        10,
+        10,
+        10
+      ],
+      "nearest_feature_rms_distances": [
+        0.1479349583387375,
+        0.1479349583387375,
+        0.15136601030826569
+      ]
+    },
+    {
+      "frame": 19,
+      "sensor_time_s": 3.799999999999941,
+      "choice": 0,
+      "parent_choice": 1,
+      "pstop": 0.9805989265441895,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "none",
+      "idle_seconds_clipped": [
+        0.0,
+        0.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        3.8584532737731934,
+        0.18266761302947998
+      ],
+      "waypoint_robot_m": [
+        0.4757539927959442,
+        0.009953728877007961
+      ],
+      "nearest_active_source_indices": [
+        8,
+        558,
+        388
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        2
+      ],
+      "nearest_active_source_choices": [
+        1,
+        1,
+        1
+      ],
+      "nearest_feature_rms_distances": [
+        0.12199176102876663,
+        0.12199176102876663,
+        0.12882062792778015
+      ]
+    },
+    {
+      "frame": 75,
+      "sensor_time_s": 15.000000000000945,
+      "choice": 1,
+      "parent_choice": 1,
+      "pstop": 0.000814382394310087,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "none",
+      "idle_seconds_clipped": [
+        0.0,
+        0.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.293917655944824,
+        -2.796935796737671
+      ],
+      "waypoint_robot_m": [
+        0.33368149399757385,
+        -0.07295959442853928
+      ],
+      "nearest_active_source_indices": [
+        1077,
+        727,
+        177
+      ],
+      "nearest_active_source_ids": [
+        5,
+        3,
+        0
+      ],
+      "nearest_active_source_choices": [
+        1,
+        1,
+        1
+      ],
+      "nearest_feature_rms_distances": [
+        0.09623292088508606,
+        0.09928623586893082,
+        0.09928623586893082
+      ]
+    },
+    {
+      "frame": 150,
+      "sensor_time_s": 29.999999999998316,
+      "choice": 0,
+      "parent_choice": 0,
+      "pstop": 0.9970122575759888,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.639577627182007,
+        -0.2734067142009735
+      ],
+      "waypoint_robot_m": [
+        0.30987784266471863,
+        -0.056542348116636276
+      ],
+      "nearest_active_source_indices": [
+        48,
+        598,
+        592
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        3
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.13576942682266235,
+        0.13576942682266235,
+        0.13920842111110687
+      ]
+    },
+    {
+      "frame": 225,
+      "sensor_time_s": 45.00000000000457,
+      "choice": 0,
+      "parent_choice": 11,
+      "pstop": 0.9997462630271912,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": false,
+      "goal_robot_m": [
+        2.6423797607421875,
+        -0.27498188614845276
+      ],
+      "waypoint_robot_m": [
+        0.3127885162830353,
+        -0.05695418640971184
+      ],
+      "nearest_active_source_indices": [
+        583,
+        33,
+        34
+      ],
+      "nearest_active_source_ids": [
+        3,
+        0,
+        0
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.11442342400550842,
+        0.11442342400550842,
+        0.12560009956359863
+      ]
+    },
+    {
+      "frame": 300,
+      "sensor_time_s": 60.00000000001224,
+      "choice": 0,
+      "parent_choice": 0,
+      "pstop": 0.9999855756759644,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.643022060394287,
+        -0.2729378044605255
+      ],
+      "waypoint_robot_m": [
+        0.3132118284702301,
+        -0.0572626069188118
+      ],
+      "nearest_active_source_indices": [
+        46,
+        596,
+        772
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        4
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.13806331157684326,
+        0.13806331157684326,
+        0.13848163187503815
+      ]
+    },
+    {
+      "frame": 375,
+      "sensor_time_s": 75.00000000000428,
+      "choice": 0,
+      "parent_choice": 0,
+      "pstop": 0.9999849796295166,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.6409671306610107,
+        -0.27491986751556396
+      ],
+      "waypoint_robot_m": [
+        0.311275839805603,
+        -0.0579645000398159
+      ],
+      "nearest_active_source_indices": [
+        46,
+        596,
+        1658
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        9
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.14820820093154907,
+        0.14820820093154907,
+        0.15054373443126678
+      ]
+    },
+    {
+      "frame": 450,
+      "sensor_time_s": 89.99999999999064,
+      "choice": 0,
+      "parent_choice": 11,
+      "pstop": 0.9997784495353699,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": false,
+      "goal_robot_m": [
+        2.6423025131225586,
+        -0.273358017206192
+      ],
+      "waypoint_robot_m": [
+        0.31263864040374756,
+        -0.05610828846693039
+      ],
+      "nearest_active_source_indices": [
+        33,
+        583,
+        34
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        0
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.11115575581789017,
+        0.11115575581789017,
+        0.11668258160352707
+      ]
+    },
+    {
+      "frame": 525,
+      "sensor_time_s": 104.99999999997699,
+      "choice": 0,
+      "parent_choice": 0,
+      "pstop": 0.9999622106552124,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.6406946182250977,
+        -0.27325624227523804
+      ],
+      "waypoint_robot_m": [
+        0.3109775483608246,
+        -0.05657877400517464
+      ],
+      "nearest_active_source_indices": [
+        42,
+        592,
+        41
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        0
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.1365576982498169,
+        0.1365576982498169,
+        0.139242485165596
+      ]
+    },
+    {
+      "frame": 600,
+      "sensor_time_s": 119.99999999996335,
+      "choice": 0,
+      "parent_choice": 11,
+      "pstop": 0.9985778331756592,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": true,
+      "goal_robot_m": [
+        2.6402387619018555,
+        -0.27540087699890137
+      ],
+      "waypoint_robot_m": [
+        0.3105107545852661,
+        -0.0588393434882164
+      ],
+      "nearest_active_source_indices": [
+        839,
+        289,
+        290
+      ],
+      "nearest_active_source_ids": [
+        4,
+        1,
+        1
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.15307649970054626,
+        0.15307649970054626,
+        0.15810422599315643
+      ]
+    },
+    {
+      "frame": 675,
+      "sensor_time_s": 134.99999999994972,
+      "choice": 0,
+      "parent_choice": 11,
+      "pstop": 0.9997468590736389,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": false,
+      "goal_robot_m": [
+        2.639206886291504,
+        -0.27436503767967224
+      ],
+      "waypoint_robot_m": [
+        0.30976787209510803,
+        -0.05471618101000786
+      ],
+      "nearest_active_source_indices": [
+        34,
+        584,
+        33
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        0
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.12559868395328522,
+        0.12559868395328522,
+        0.1262686401605606
+      ]
+    },
+    {
+      "frame": 699,
+      "sensor_time_s": 139.79999999994536,
+      "choice": 0,
+      "parent_choice": 11,
+      "pstop": 0.9997531771659851,
+      "active": true,
+      "legal_motion_actions": 11,
+      "previous_reason": "policy_wait",
+      "idle_seconds_clipped": [
+        5.0,
+        5.0
+      ],
+      "risk_history_valid": false,
+      "goal_robot_m": [
+        2.642413854598999,
+        -0.2733718752861023
+      ],
+      "waypoint_robot_m": [
+        0.3126513957977295,
+        -0.05718085169792175
+      ],
+      "nearest_active_source_indices": [
+        33,
+        583,
+        584
+      ],
+      "nearest_active_source_ids": [
+        0,
+        3,
+        3
+      ],
+      "nearest_active_source_choices": [
+        0,
+        0,
+        0
+      ],
+      "nearest_feature_rms_distances": [
+        0.11566223204135895,
+        0.11566223204135895,
+        0.12097444385290146
+      ]
+    }
+  ],
+  "physical_episode": {
+    "safe_success": false,
+    "timeout": true,
+    "collisions": 0,
+    "seconds": 139.99999999994517,
+    "remaining_distance_m": 2.6553569166887243,
+    "localization_xy_p95_m": 0.00405831698548034
+  },
+  "new_training_steps": 0,
+  "new_physical_steps": 0,
+  "vehicle_started": false,
+  "failed_trace_admitted_as_positive": false,
+  "model_or_guard_changed": false,
+  "limitations": [
+    "A legal motion action is not proof of useful, complete or safe recovery.",
+    "Ablated inputs are diagnostic and may be off-manifold; no counterfactual command was executed.",
+    "Nearest feature distance is diagnostic, not a calibrated confidence or a safe action label.",
+    "This formerly frozen sensor case becomes diagnostic development data after examination.",
+    "No new full-loop or target-board validation occurred."
+  ],
+  "resource": {
+    "seconds": 5.286413147987332,
+    "cpu_seconds": 0.8064660360000002,
+    "average_cpu_cores": 0.1525544851346024,
+    "peak_rss_mib": 495.80078125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

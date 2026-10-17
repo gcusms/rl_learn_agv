@@ -1,0 +1,34 @@
+{
+  "completed": true,
+  "at": "2026-10-17T02:03:02.877047+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/audit_stop_scope.py": "5d9801a18009f6fa8ad9f43b395594bf69c185fb29d891cd7173f16fee52fba8",
+    "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/demonstrations.npz": "ea1ead9cbe7731ea80a76ce74cb906989157779f62158de1f6dc325ad9a9b6ae",
+    "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/hard3_w11_training_stall_t106.npz": "9d307c7e9a83a3c1f75c4a3158eb67c97cc9f98222e174e101ebe128ab127767",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/RESULTS.json": "6b33c790e779a23bd010a8c327f8ea90f29522d4315cc2be5f2ed7cc23bac669",
+    "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/SOURCE_ADMISSION.json": "627161cfb41c61c531b4a195593fb43d4061de11c106bc9de9c717eae1512bdb"
+  },
+  "reference_decisions": 7378,
+  "reference_stop_labels": 1201,
+  "reference_stops_with_nonzero_legal_choices": 839,
+  "failed106_suffix_frames": 170,
+  "exact_failed_observation_stop_anchor_overlaps": 0,
+  "proposed_updates": 108,
+  "attempted_actor_updates": 107,
+  "accepted_actor_updates": 107,
+  "full_parameter_steps": 105,
+  "shortened_parameter_steps": 2,
+  "mean_accepted_fraction_over_all_updates": 0.9736689814814815,
+  "interpretation": "The observed updates do not support a wholesale hard-STOP-lock explanation; retain safety anchors.",
+  "limitations": [
+    "Byte-exact overlap is not a learned-feature or generalization independence proof.",
+    "Successful trajectories can require deliberate waiting despite legal moving choices.",
+    "Update counts and accepted fractions are not a physical outcome or sufficient learning proof."
+  ],
+  "no_anchor_or_reward_or_training_change": true,
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0,
+  "no_optimizer_updates": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

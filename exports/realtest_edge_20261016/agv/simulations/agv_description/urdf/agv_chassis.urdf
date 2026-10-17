@@ -1,0 +1,491 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="agv_chassis">
+  <material name="chassis_gray">
+    <color rgba="0.35 0.37 0.40 1.0" />
+  </material>
+  <material name="wheel_gray">
+    <color rgba="0.16 0.17 0.19 1.0" />
+  </material>
+  <material name="sensor_gray">
+    <color rgba="0.18 0.19 0.21 1.0" />
+  </material>
+  <material name="camera_silver">
+    <color rgba="0.85 0.87 0.90 1.0" />
+  </material>
+  <link name="base_footprint" />
+  <!-- Retain the existing IMU mount until measured on this chassis.
+       (暂沿用现有 IMU 安装参数，实车测量后可在此调整。) -->
+  <link name="imu_link" />
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0.04 -0.015 -0.110" rpy="0 0 1.57" />
+  </joint>
+  <!-- Keep scan consumers on lidar_frame (保持雷达消费者的坐标系名称). -->
+  <link name="lidar_frame" />
+  <joint name="lidar_frame_joint" type="fixed">
+    <parent link="lidar_link" />
+    <child link="lidar_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <!-- Camera optical convention: right, down, forward (光学坐标：右、下、前). -->
+  <link name="camera_link0" />
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link" />
+    <child link="camera_link0" />
+    <origin xyz="0 0 0" rpy="-1.5707963267948966 0 -1.5707963267948966" />
+  </joint>
+  <link name="depth_cam_frame" />
+  <joint name="depth_cam_frame_joint" type="fixed">
+    <parent link="camera_link0" />
+    <child link="depth_cam_frame" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/chassis.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/wheel_fixed.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="wheel_gray" />
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.393924904 0.329460022 0.313185074" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+    <origin xyz="0 0 0.156592537" rpy="0 0 0" />
+  </joint>
+  <link name="lidar_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/lidar.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="sensor_gray" />
+    </visual>
+  </link>
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="lidar_link" />
+    <origin xyz="0.118389 0 -0.039910" rpy="0 0 0" />
+  </joint>
+  <link name="mic_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/mic.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="sensor_gray" />
+    </visual>
+  </link>
+  <joint name="mic_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="mic_link" />
+    <origin xyz="-0.066735 0 0.029340" rpy="0 0 0" />
+  </joint>
+  <link name="screen_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/screen.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+  </link>
+  <joint name="screen_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="screen_link" />
+    <origin xyz="-0.127226 0 0.086858" rpy="3.141592654 -0.780400000 3.141592654" />
+  </joint>
+  <link name="wheel_rf">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/wheel_rf.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="wheel_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0 0.022611481 0" rpy="1.570796327 0 0" />
+      <geometry>
+        <cylinder radius="0.0500" length="0.045222961" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_rf_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_rf" />
+    <origin xyz="0.099428135 -0.125955841 -0.104872855" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.01" friction="0.01" />
+  </joint>
+  <link name="wheel_lf">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/wheel_lf.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="wheel_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0 -0.022610352 0" rpy="1.570796327 0 0" />
+      <geometry>
+        <cylinder radius="0.0498" length="0.045220703" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_lf_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_lf" />
+    <origin xyz="0.099426834 0.125937958 -0.105074888" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.01" friction="0.01" />
+  </joint>
+  <link name="wheel_rb">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/wheel_rb.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="wheel_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0 0.022611511 0" rpy="1.570796327 0 0" />
+      <geometry>
+        <cylinder radius="0.0499" length="0.045223022" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_rb_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_rb" />
+    <origin xyz="-0.094948105 -0.125955841 -0.105218003" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.01" friction="0.01" />
+  </joint>
+  <link name="wheel_lb">
+    <visual>
+      <geometry>
+        <mesh filename="package://agv_description/meshes/wheel_lb.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="wheel_gray" />
+    </visual>
+    <collision>
+      <origin xyz="0 -0.022610260 0" rpy="1.570796327 0 0" />
+      <geometry>
+        <cylinder radius="0.0498" length="0.045220520" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_lb_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_lb" />
+    <origin xyz="-0.094955299 0.125938507 -0.105071213" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="10" velocity="20" />
+    <dynamics damping="0.01" friction="0.01" />
+  </joint>
+  <joint name="arm_mount_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="arm_base_link" />
+    <origin xyz="0.093769 0 0.017843" rpy="0 0 0" />
+  </joint>
+  <link name="arm_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0038665 2.0154E-06 0.026241" />
+      <mass value="0.184970476929002" />
+      <inertia ixx="0.00011436" ixy="-2.127E-09" ixz="2.2436E-06" iyy="9.1966E-05" iyz="3.0965E-09" izz="0.00017896" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_base_link.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="5.6716152818298E-05 -1.86344172289354E-05 0.00418728087306319" />
+      <mass value="0.0920484315594834" />
+      <inertia ixx="4.05599543416967E-05" ixy="1.65185188703231E-09" ixz="2.44704004347051E-08" iyy="3.90268860828527E-05" iyz="1.63055586039366E-08" izz="6.80315119700401E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link1.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.00042383 0 0.071003" />
+    <parent link="arm_base_link" />
+    <child link="link1" />
+    <axis xyz="0 0 -1" />
+    <limit effort="1000" lower="-2.09" upper="2.09" velocity="3.14" />
+  </joint>
+  <link name="link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0010467043709268 -0.0373060906216532 0.117940336564004" />
+      <mass value="0.0590642381074413" />
+      <inertia ixx="0.000126365190348819" ixy="-2.04852919617321E-11" ixz="6.46183559143708E-07" iyy="0.000122570999972299" iyz="-2.23011604572762E-12" izz="1.13949066313735E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link2.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link2.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint2" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.00041844 0.03728 0.039446" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-2.09" upper="2.09" velocity="3.14" />
+  </joint>
+  <link name="link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0137516433678302 -0.0196288133010798 -0.0711816402502082" />
+      <mass value="0.062815962862313" />
+      <inertia ixx="1.41867477534541E-05" ixy="5.59159372224557E-09" ixz="1.6737868665363E-06" iyy="1.59862374357988E-05" iyz="1.07176241107346E-09" izz="5.78320845698204E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link3.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0348 -0.01893 0.22535" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-3.14" upper="0.3" velocity="3.14" />
+  </joint>
+  <link name="link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.024201 -0.018501 -0.004772" />
+      <mass value="0.014717" />
+      <inertia ixx="4.033E-06" ixy="-4.9295E-09" ixz="1.8768E-07" iyy="3.1677E-06" iyz="-6.8295E-09" izz="4.2652E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link4.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link4.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.027316 0 -0.14239" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0 1 0" />
+    <limit effort="1000" lower="-0.8" upper="3.14" velocity="3.14" />
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.012569 0.00066394 -0.00080194" />
+      <mass value="0.011861" />
+      <inertia ixx="6.7349E-06" ixy="6.6894E-09" ixz="-5.2096E-09" iyy="8.4701E-07" iyz="3.4214E-10" izz="6.2448E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_camera_link.stl" />
+      </geometry>
+      <material name="camera_silver" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_camera_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.064555 -0.019407 0.036497" />
+    <parent link="link4" />
+    <child link="camera_link" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <link name="link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00198440314474035 -1.03724012712192E-08 1.19814488730163E-05" />
+      <mass value="0.00101780721058781" />
+      <inertia ixx="4.40367355590698E-08" ixy="-6.22255583580631E-14" ixz="-1.23825869712916E-10" iyy="2.35859027398144E-08" iyz="6.53467724851782E-13" izz="2.35874457790837E-08" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link5.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_link5.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <origin rpy="0 0 0" xyz="0.049832 -0.018351 -0.00031098" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="0.99998 0 -0.0060546" />
+    <limit effort="10.0" lower="-2.09" upper="2.09" velocity="3.14" />
+  </joint>
+  <link name="gripper_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0093418045032847 -3.34240037377365E-05 -0.00222341566035766" />
+      <mass value="0.0200924941074607" />
+      <inertia ixx="1.44654482810758E-05" ixy="-4.85748537654977E-09" ixz="3.08608213029111E-09" iyy="2.40766161157147E-06" iyz="-6.9176574076478E-09" izz="1.33196687098113E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_gripper_link.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_gripper_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.035032 0 -0.00022027" />
+    <parent link="link5" />
+    <child link="gripper_link" />
+    <axis xyz="0 0 0" />
+    <limit effort="0" lower="0" upper="0" velocity="3.14" />
+  </joint>
+  <link name="gripper_base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0019703 9.9566E-10 1.3103E-05" />
+      <mass value="0.0010359" />
+      <inertia ixx="4.7289E-08" ixy="3.4822E-15" ixz="-1.4599E-10" iyy="2.5339E-08" iyz="2.281E-15" izz="2.534E-08" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_gripper_base_link.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_gripper_base_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gripper_base_joint" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0023084 0 -1.4336E-05" />
+    <parent link="gripper_link" />
+    <child link="gripper_base_link" />
+    <axis xyz="0.99998 0 -0.0066507" />
+    <limit effort="0" lower="0" upper="0.5" velocity="3.14" />
+  </joint>
+  <link name="right_jaw_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.011947 0.0031957 0.012657" />
+      <mass value="0.014194" />
+      <inertia ixx="1.4275E-06" ixy="-8.4648E-08" ixz="-1.4624E-08" iyy="1.5892E-06" iyz="1.6325E-09" izz="1.3101E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_right_jaw_link.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_right_jaw_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="right_jaw_joint" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.0081154 -0.038561 -0.013453" />
+    <parent link="gripper_link" />
+    <child link="right_jaw_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" lower="0" upper="0" velocity="3.14" />
+    <mimic joint="gripper_base_joint" multiplier="0.05" offset="0" />
+  </joint>
+  <link name="left_jaw_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.010954 -0.0031957 0.013987" />
+      <mass value="0.014194" />
+      <inertia ixx="1.4279E-06" ixy="8.4662E-08" ixz="1.3039E-08" iyy="1.5892E-06" iyz="5.0959E-10" izz="1.3098E-06" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_left_jaw_link.stl" />
+      </geometry>
+      <material name="chassis_gray" />
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://agv_description/meshes/arm_left_jaw_link.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_jaw_joint" type="prismatic">
+    <origin rpy="0 0 0" xyz="0.0091166 0.038561 -0.01346" />
+    <parent link="gripper_link" />
+    <child link="left_jaw_link" />
+    <axis xyz="0 1 0" />
+    <limit effort="0" lower="0" upper="0" velocity="3.14" />
+    <mimic joint="gripper_base_joint" multiplier="-0.05" offset="0" />
+  </joint>
+</robot>

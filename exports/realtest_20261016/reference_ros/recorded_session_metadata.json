@@ -1,0 +1,45 @@
+{
+  "schema": "rl_navigation_session_v1",
+  "run_id": "5113962c8a9f49c6a665a14ea96902a6",
+  "mission_id": 0,
+  "ros_time_ns": 1791977807195889626,
+  "model": {
+    "branch": "models/best-2026-10-14",
+    "branch_commit": "57a59253dcb586f2b2e98c7b31a501c1d17418e4",
+    "sensor_core": "native",
+    "actor_sha256": "587733a1d949eccd38efe7cb7a78b623ac8948846314f1e1c5ffa256fb594cde",
+    "required_runtime": "experiments.quality_sensor_runtime.QualitySensorNavigationRuntime",
+    "bundle": "/home/ubuntu/rl_learn_sms/rl_learn_agv/models/quality_recovery_20261014/portable"
+  },
+  "options": {
+    "model_config": "/home/ubuntu/ros2_ws/install/rl_navigation/share/rl_navigation/config/model.json",
+    "model_source": "/home/ubuntu/rl_learn_sms/rl_learn_agv",
+    "map": "map_01",
+    "mode": "execute",
+    "auto_initial_pose": true,
+    "initial_x": 0.0,
+    "initial_y": 0.0,
+    "initial_yaw": 0.0,
+    "max_rps": 1.0,
+    "max_missing_scan_fraction": 0.3,
+    "wheel_diameter": 0.1,
+    "wheelbase": 0.2,
+    "track_width": 0.22
+  },
+  "initial": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "goal": null,
+  "time_origin": 1791977807.1589484,
+  "prepared_map": "/tmp/rl_navigation_map_3yfhrdpv/model_map.yaml",
+  "loaded_files": {
+    "/home/ubuntu/ros2_ws/src/slam/maps/map_01.yaml": "0389fd668059c7782919051751c5fa4e855db897b052a9de216eb347bc0632cb",
+    "/tmp/rl_navigation_map_3yfhrdpv/model_map.yaml": "b4c4f52352ece6332c43d6302b0cb0ef5281049eece8f7aeb1810e3728f1fba1",
+    "/home/ubuntu/ros2_ws/install/rl_navigation/share/rl_navigation/config/model.json": "8c1f8506d6d7a727625042e47ca6960aacc4e692144a8acd9086f1d66ea46528",
+    "/home/ubuntu/rl_learn_sms/rl_learn_agv/models/quality_recovery_20261014/portable/manifest.json": "077073ea10783c35130396b17618bd3d1159bd316ce78b26aab066c16a706996",
+    "/home/ubuntu/ros2_ws/src/slam/maps/map_01.pgm": "d63cf5228b64f5bed4df85edb71612e68f2039a3e88084292d053b02ac58518f",
+    "/tmp/rl_navigation_map_3yfhrdpv/model_map.pgm": "205c622e7d63578b8603c624648f29664a0049ea4b642dd3180a2aca2f981d04"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "docking_dev_02",
+  "category": "new_alignment",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 1.1999999999999964,
+  "travel_m": 0.0,
+  "frames": 7,
+  "final_xy_error_m": 0.019070192067748026,
+  "final_yaw_error_rad": 0.005869730378288196,
+  "localization_xy_p95_m": 0.00958855456959355,
+  "localization_yaw_p95_rad": 0.0009660107541405782,
+  "stop_choices": 5,
+  "only_stop_frames": 0,
+  "stop_reasons": {
+    "None": 6,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 5,
+  "predictive_constraint_frames": 0,
+  "runtime_ms": {
+    "p95": 148.90544340014455,
+    "p99": 159.243393484503,
+    "maximum": 161.82788100559264
+  },
+  "trace_path": "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/heading2_docking_dev_02_candidate.npz",
+  "trace_sha256": "cb7296eae097c26ea8c9e2095abdd450c5ebd4f496b87b721a95419f923483ba",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 9.41064070299035,
+    "cpu_seconds": 3.352852457,
+    "average_cpu_cores": 0.3562831227776648,
+    "peak_rss_mib": 1678.18359375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

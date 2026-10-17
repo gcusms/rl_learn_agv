@@ -1,0 +1,29 @@
+{
+  "method": "full_navigation_residual_supervised_initialization",
+  "training_contract": {
+    "schema": "native625_full_navigation_residual_v1",
+    "observation_dimensions": 625,
+    "feature_dimensions": 408,
+    "head_dimensions": [
+      408,
+      32,
+      32,
+      12
+    ],
+    "parent": "complete_prior625_actor_not_a_439dim_ancestor",
+    "initial_behavior": "zero_output_residual_plus_2times_actual_parent_choice",
+    "support": "valid_current_prediction_and_scan_motion_available_goal_distance_over_0.3m",
+    "ordinary_navigation_is_trainable": true,
+    "original_current_action_mask_unchanged": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_docking_parent_exact": true,
+    "no_map_coordinates_case_clock_or_teacher_in_features": true,
+    "observations_and_execution_contract_unchanged": true,
+    "compatible_onpolicy": "experiments.native625_onpolicy.Native625OnPolicy",
+    "no_runtime_reference_sequence": true
+  },
+  "new_ppo_steps": 0,
+  "new_supervised_updates": 1300,
+  "deployment_approved": false,
+  "physical_validation_not_yet_passed": true
+}

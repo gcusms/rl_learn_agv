@@ -1,0 +1,14 @@
+rl_chassis:
+  ros__parameters:
+    device: /dev/rrc
+    baudrate: 1000000
+    wheel_diameter: 0.1
+    wheelbase: 0.2
+    track_width: 0.22
+    max_rps: 1.0
+    cmd_timeout: 0.2
+    enable_control: false
+    odom_source: command
+    gyro_variance: 0.01
+    wheel_linear_variance: 0.0025
+    wheel_angular_variance: 0.04

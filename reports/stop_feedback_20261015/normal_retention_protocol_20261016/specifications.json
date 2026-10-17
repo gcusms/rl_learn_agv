@@ -1,0 +1,144 @@
+[
+  {
+    "id": "normal_retention_recovery_holdout_03",
+    "case": {
+      "id": "recovery_holdout_03",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 9510154,
+      "start": [
+        8.295000000000002,
+        1.145,
+        1.5833780945997562
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          2.0,
+          4.0
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "untrained_recovery_conditions",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.02
+    },
+    "trace": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_03.npz",
+    "reference_actor": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/bc_portable/actor.pt",
+    "physical_source_report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+    "physical_source_rows_key": "full18_rows",
+    "physical_source_row": {
+      "case_id": "recovery_holdout_03",
+      "category": "untrained_recovery_conditions",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 39.0000000000015,
+      "travel_m": 5.502842613069329,
+      "frames": 196,
+      "final_xy_error_m": 0.08678977415130167,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004926901157953968,
+      "localization_yaw_p95_rad": 0.00121346911022302,
+      "stop_choices": 14,
+      "only_stop_frames": 11,
+      "stop_reasons": {
+        "None": 192,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 3,
+      "predictive_constraint_frames": 20,
+      "runtime_ms": {
+        "p95": 142.5725210137898,
+        "p99": 182.8920192463557,
+        "maximum": 195.00878697726876
+      },
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "2dd0dd3840ac3fb8af55fa581cbaf7018eb627b120e7a81d2d6091940a91998a",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_03.npz",
+      "model_only_after_initialization": true
+    }
+  },
+  {
+    "id": "normal_retention_motion_profile_002",
+    "case": {
+      "id": "motion_profile_002",
+      "category": "reversal",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 100002,
+      "start": [
+        7.875,
+        6.525,
+        0.5829383550326908
+      ],
+      "goal": [
+        1.175,
+        6.075
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.15477787921727554,
+      "odom_scale": 1.0,
+      "reverse_after_event_s": 3.499490583194487,
+      "pilot_category": "original_release_reversal",
+      "max_steps": 700
+    },
+    "trace": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz",
+    "reference_actor": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/bc_portable/actor.pt",
+    "physical_source_report": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/RESULTS.json",
+    "physical_source_rows_key": "full18_rows",
+    "physical_source_row": {
+      "case_id": "motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 56.2000000000103,
+      "travel_m": 8.523292938705772,
+      "frames": 282,
+      "final_xy_error_m": 0.09695110034671721,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00397518813506744,
+      "localization_yaw_p95_rad": 0.0016281160780376106,
+      "stop_choices": 22,
+      "only_stop_frames": 20,
+      "stop_reasons": {
+        "None": 281,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 2,
+      "predictive_constraint_frames": 43,
+      "runtime_ms": {
+        "p95": 180.26113505475223,
+        "p99": 209.91944783774667,
+        "maximum": 232.62181697646156
+      },
+      "group": "normal4",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz",
+      "model_only_after_initialization": true
+    }
+  }
+]

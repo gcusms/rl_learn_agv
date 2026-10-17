@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-17T07:27:54.193776+08:00",
+  "previous_goal_turn_classification": "verified_wait",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "Independent fixed28 audit passed every original safety,per-case20%,normal total time5% and path2% gate against original fixed,declared BC4500 and directaux119.",
+    "5028recorded frames,3616model-controlled frames. All28complete non-timing traces exactly retain directaux119; all3recovery rawsensor,physical and executed-command prefixes independently rechecked.",
+    "Recovery suffixes95s/90s/97.4s arrived after19.8/20.4/40.6s; voluntary waits with legal motion2/0/1frames. Heading2physical position,yaw,stopped-velocity and0.4ssettling verified.",
+    "Bounded original-mask beam teacher diagnostic code prepared for an actual late106failure only. Not launched; no search result,positive label or model gain is claimed."
+  ],
+  "fixed28_audit": "reports/stop_feedback_20261015/full_navigation_residual_20261017/FIXED28_AUDIT.json",
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/FIXED28_AUDIT.json": "1caba1509bdfb3080e494b528d3aae188fac677ccd61146acc0564e8a9714d74",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/VALIDATION_SNAPSHOT_20261017_072754.json": "4daedb8c9c573ecec61bb27238c0292faf7486e4e7fafd71b0a0524c9e9473be",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/SENSOR01_LEARNED_GAIN_AUDIT.json": "dcfd7e9f8c995566869a1fd681edbb92e0bd39b87bd1be7e4052bd3bda4b0be9",
+    "reports/stop_feedback_20261015/late106_beam_protocol_20261017/run.py": "dd981b4ee02c6dc81d38fb4055301e41d0ec6e1446b2631bb9ee7a2bc1e79146"
+  },
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+  "physical_validation": {
+    "completed": false,
+    "completed_episodes": 29,
+    "safe_arrivals": 29,
+    "collisions": 0,
+    "groups": {
+      "observed6": 1,
+      "normal18": 18,
+      "sensor5": 5,
+      "source_recovery3": 3,
+      "heading2": 2
+    },
+    "fixed28_independently_passed": true
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2205571",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1498906624",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520",
+      "unit": "rl-full-navigation-margin-resume-cycle-20261017.service",
+      "start_ticks": "49851050",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_residual_20261017/run_margin_resume.py "
+    },
+    {
+      "MainPID": "2211434",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "7839744",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "InvocationID": "a4e3d1b2f3db4520ac7289f9bc3b5938",
+      "unit": "rl-full-navigation-mechanism-post-20261017.service",
+      "start_ticks": "49966957",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_residual_20261017/audit_neural_mechanism_after_validation.py "
+    }
+  ],
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "observed6",
+    "case_id": "pre_ppo_holdout_dynamic_00",
+    "variant": "candidate",
+    "completed_episodes": 29,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/observed6_pre_ppo_holdout_dynamic_00_candidate.json"
+  },
+  "active_worker": {
+    "pid": 2217894,
+    "job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/observed6_pre_ppo_holdout_dynamic_00_candidate.json",
+    "log": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/observed6_pre_ppo_holdout_dynamic_00_candidate.log"
+  },
+  "neural_audit_status_at_snapshot": {
+    "stage": "waiting_for_exact_physical_validation",
+    "dependency": {
+      "MainPID": "2205571",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520"
+    },
+    "model_and_physics_not_loaded": true,
+    "no_parallel_model_or_physics": true,
+    "at": "2026-10-17T07:27:52.112516+08:00",
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "next_action": "Continue original remaining known complete missions,hard97.6/106 and conditional frozen8pairs. Await exact serialized neural audit. Only if actual106stillfails and both exact services terminate normally,consider bounded original-legal-action beam teacher search; no automatic source admission or training. Original full requirements unchanged."
+}

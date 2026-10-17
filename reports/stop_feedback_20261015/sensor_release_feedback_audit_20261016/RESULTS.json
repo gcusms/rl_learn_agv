@@ -1,0 +1,3218 @@
+{
+  "completed": true,
+  "at": "2026-10-16T09:40:08.302789+00:00",
+  "replayed_current_model_controlled_frames": 1369,
+  "reports": [
+    {
+      "group": "pilot",
+      "case_id": "long_risk_sensor_05_1",
+      "trace_sha256": "b369498a227bf9871d760fd86d80c83808adc4783e229850c48e3916208119be",
+      "current_model_trace": true,
+      "frames": 175,
+      "controlled_frames": 175,
+      "active_controlled_frames": 127,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 34.79999999999935,
+        "travel_m": 5.2439070092055005,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 25,
+      "only_stop_controlled_frames": 5,
+      "previous_executed_reason_during_wait": {
+        "none": 3,
+        "policy_wait": 21,
+        "scan_unavailable": 1
+      },
+      "changed_vs_parent_controlled": 10,
+      "parent_motion_but_head_stop": 4,
+      "parent_stop_but_head_motion": 2,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 6,
+          "mean_active_absolute_pstop_change": 0.045692083154604254,
+          "maximum_active_absolute_pstop_change": 0.9968967491295189,
+          "voluntary_wait_choices_on_same_recorded_context": 20
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 5.6255382383022255e-05,
+          "maximum_active_absolute_pstop_change": 0.004060804843902588,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 7,
+          "mean_active_absolute_pstop_change": 0.05820259329608242,
+          "maximum_active_absolute_pstop_change": 0.9962674109265208,
+          "voluntary_wait_choices_on_same_recorded_context": 29
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 14,
+          "mean_active_absolute_pstop_change": 0.05249270877738729,
+          "maximum_active_absolute_pstop_change": 0.9879907418508083,
+          "voluntary_wait_choices_on_same_recorded_context": 18
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.006693568077025331,
+          "maximum_active_absolute_pstop_change": 0.2359860222786665,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 5,
+          "mean_active_absolute_pstop_change": 0.03231856259643141,
+          "maximum_active_absolute_pstop_change": 0.9916589674539864,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0005262727535918218,
+          "maximum_active_absolute_pstop_change": 0.02143377624452114,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0006665329190596283,
+          "maximum_active_absolute_pstop_change": 0.05922054313123226,
+          "voluntary_wait_choices_on_same_recorded_context": 25
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 2.7421351300738195e-10,
+            "previous_stop_reason_none": 2.7421351300738195e-10,
+            "without_idle_timers": 2.7421351300738195e-10,
+            "without_long_risk_history": 2.7421351300738195e-10,
+            "without_mask_features_hard_mask_retained": 1.4653504798456396e-10,
+            "without_current_ranges": 2.5593349661789944e-10,
+            "without_current_scan_quality": 2.5507540524216665e-10,
+            "without_waypoint_and_goal": 2.804133036882206e-10,
+            "without_measured_velocity_and_execution": 2.7421351300738195e-10
+          }
+        },
+        {
+          "sensor_time_s": 3.799999999999941,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9974834322929382,
+            "previous_stop_reason_none": 0.9974834322929382,
+            "without_idle_timers": 0.9974834322929382,
+            "without_long_risk_history": 0.001216021366417408,
+            "without_mask_features_hard_mask_retained": 0.0828448086977005,
+            "without_current_ranges": 0.9960039258003235,
+            "without_current_scan_quality": 0.9841857552528381,
+            "without_waypoint_and_goal": 0.9973190426826477,
+            "without_measured_velocity_and_execution": 0.9980741739273071
+          }
+        },
+        {
+          "sensor_time_s": 3.999999999999937,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999852180480957,
+            "previous_stop_reason_none": 0.9999382495880127,
+            "without_idle_timers": 0.9999852180480957,
+            "without_long_risk_history": 0.9999849796295166,
+            "without_mask_features_hard_mask_retained": 0.9999802112579346,
+            "without_current_ranges": 0.999985933303833,
+            "without_current_scan_quality": 0.9999847412109375,
+            "without_waypoint_and_goal": 0.9999852180480957,
+            "without_measured_velocity_and_execution": 0.9999850988388062
+          }
+        },
+        {
+          "sensor_time_s": 4.199999999999933,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.994993269443512,
+            "previous_stop_reason_none": 0.00018647582328412682,
+            "without_idle_timers": 0.9948745369911194,
+            "without_long_risk_history": 0.9994121789932251,
+            "without_mask_features_hard_mask_retained": 0.021147072315216064,
+            "without_current_ranges": 0.988455057144165,
+            "without_current_scan_quality": 0.9774259924888611,
+            "without_waypoint_and_goal": 0.9944702386856079,
+            "without_measured_velocity_and_execution": 0.9950122237205505
+          }
+        },
+        {
+          "sensor_time_s": 4.399999999999928,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999853372573853,
+            "previous_stop_reason_none": 0.9999661445617676,
+            "without_idle_timers": 0.9999853372573853,
+            "without_long_risk_history": 0.9999853372573853,
+            "without_mask_features_hard_mask_retained": 0.9999816417694092,
+            "without_current_ranges": 0.9999861717224121,
+            "without_current_scan_quality": 0.9999839067459106,
+            "without_waypoint_and_goal": 0.9999854564666748,
+            "without_measured_velocity_and_execution": 0.9999853372573853
+          }
+        },
+        {
+          "sensor_time_s": 7.199999999999869,
+          "selected_choice": 11,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.0000000298023224,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 6,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 11,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.022769024595618248,
+            "previous_stop_reason_none": 0.004314277786761522,
+            "without_idle_timers": 0.02297160215675831,
+            "without_long_risk_history": 0.9999344348907471,
+            "without_mask_features_hard_mask_retained": 0.014971037395298481,
+            "without_current_ranges": 0.10161833465099335,
+            "without_current_scan_quality": 0.933022677898407,
+            "without_waypoint_and_goal": 0.02438494749367237,
+            "without_measured_velocity_and_execution": 0.02276577800512314
+          }
+        },
+        {
+          "sensor_time_s": 12.000000000000476,
+          "selected_choice": 0,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9681439399719238,
+            "previous_stop_reason_none": 0.9681439399719238,
+            "without_idle_timers": 0.9681439399719238,
+            "without_long_risk_history": 0.6435002088546753,
+            "without_mask_features_hard_mask_retained": 0.03902832046151161,
+            "without_current_ranges": 0.9774643778800964,
+            "without_current_scan_quality": 0.01756892539560795,
+            "without_waypoint_and_goal": 0.9715830087661743,
+            "without_measured_velocity_and_execution": 0.9654228091239929
+          }
+        },
+        {
+          "sensor_time_s": 17.800000000000743,
+          "selected_choice": 11,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.0000000298023224,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 11,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.005211371462792158,
+            "previous_stop_reason_none": 0.00044333687401376665,
+            "without_idle_timers": 0.004955572541803122,
+            "without_long_risk_history": 0.9999661445617676,
+            "without_mask_features_hard_mask_retained": 0.00014944632130209357,
+            "without_current_ranges": 0.18661877512931824,
+            "without_current_scan_quality": 0.9968703389167786,
+            "without_waypoint_and_goal": 0.008919214829802513,
+            "without_measured_velocity_and_execution": 0.005290165077894926
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "trace_sha256": "cb7b22fef5f470b19bdf11e8da5afc5c1b9dd93ac16b059bb67c1a63dfd71f1d",
+      "current_model_trace": true,
+      "frames": 185,
+      "controlled_frames": 185,
+      "active_controlled_frames": 139,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 36.800000000000374,
+        "travel_m": 4.947668176632665,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 40,
+      "only_stop_controlled_frames": 7,
+      "previous_executed_reason_during_wait": {
+        "scan_unavailable": 1,
+        "policy_wait": 38,
+        "none": 1
+      },
+      "changed_vs_parent_controlled": 28,
+      "parent_motion_but_head_stop": 28,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 18,
+          "mean_active_absolute_pstop_change": 0.12564459566783626,
+          "maximum_active_absolute_pstop_change": 0.9992527921567671,
+          "voluntary_wait_choices_on_same_recorded_context": 22
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0006637727923811875,
+          "maximum_active_absolute_pstop_change": 0.03522813320159912,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 7,
+          "mean_active_absolute_pstop_change": 0.04705010530842672,
+          "maximum_active_absolute_pstop_change": 0.9952434441074729,
+          "voluntary_wait_choices_on_same_recorded_context": 45
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 11,
+          "mean_active_absolute_pstop_change": 0.07309609388739201,
+          "maximum_active_absolute_pstop_change": 0.9821034045889974,
+          "voluntary_wait_choices_on_same_recorded_context": 30
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.001835908076465753,
+          "maximum_active_absolute_pstop_change": 0.12942452263087034,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.003309027444545795,
+          "maximum_active_absolute_pstop_change": 0.22411572933197021,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00011119337831059032,
+          "maximum_active_absolute_pstop_change": 0.0035038599744439125,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0002083994123642299,
+          "maximum_active_absolute_pstop_change": 0.011337151750922203,
+          "voluntary_wait_choices_on_same_recorded_context": 40
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 3.5576835921702354e-10,
+            "previous_stop_reason_none": 3.5576835921702354e-10,
+            "without_idle_timers": 3.5576835921702354e-10,
+            "without_long_risk_history": 3.5576835921702354e-10,
+            "without_mask_features_hard_mask_retained": 1.538225657959913e-10,
+            "without_current_ranges": 3.1208252648795565e-10,
+            "without_current_scan_quality": 2.634382156863069e-10,
+            "without_waypoint_and_goal": 3.663900016714905e-10,
+            "without_measured_velocity_and_execution": 3.5576835921702354e-10
+          }
+        },
+        {
+          "sensor_time_s": 5.199999999999911,
+          "selected_choice": 0,
+          "frozen_parent_choice": 2,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "scan_unavailable",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9997838139533997,
+            "previous_stop_reason_none": 0.05954865738749504,
+            "without_idle_timers": 0.9997672438621521,
+            "without_long_risk_history": 0.9998853206634521,
+            "without_mask_features_hard_mask_retained": 0.9108831286430359,
+            "without_current_ranges": 0.9998382329940796,
+            "without_current_scan_quality": 0.9996070265769958,
+            "without_waypoint_and_goal": 0.9997900128364563,
+            "without_measured_velocity_and_execution": 0.9997838139533997
+          }
+        },
+        {
+          "sensor_time_s": 5.399999999999907,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9990328550338745,
+            "previous_stop_reason_none": 0.0005255458527244627,
+            "without_idle_timers": 0.998908281326294,
+            "without_long_risk_history": 0.9995638728141785,
+            "without_mask_features_hard_mask_retained": 0.4359790086746216,
+            "without_current_ranges": 0.9984081387519836,
+            "without_current_scan_quality": 0.9966161847114563,
+            "without_waypoint_and_goal": 0.9989948868751526,
+            "without_measured_velocity_and_execution": 0.9990326166152954
+          }
+        },
+        {
+          "sensor_time_s": 5.599999999999903,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.999976396560669,
+            "previous_stop_reason_none": 0.15889480710029602,
+            "without_idle_timers": 0.9999746084213257,
+            "without_long_risk_history": 0.9999855756759644,
+            "without_mask_features_hard_mask_retained": 0.9995267391204834,
+            "without_current_ranges": 0.9999746084213257,
+            "without_current_scan_quality": 0.9999681711196899,
+            "without_waypoint_and_goal": 0.9999761581420898,
+            "without_measured_velocity_and_execution": 0.999976396560669
+          }
+        },
+        {
+          "sensor_time_s": 5.799999999999899,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999852180480957,
+            "previous_stop_reason_none": 0.9999600648880005,
+            "without_idle_timers": 0.9999850988388062,
+            "without_long_risk_history": 0.9999852180480957,
+            "without_mask_features_hard_mask_retained": 0.999981164932251,
+            "without_current_ranges": 0.9999854564666748,
+            "without_current_scan_quality": 0.999984860420227,
+            "without_waypoint_and_goal": 0.9999852180480957,
+            "without_measured_velocity_and_execution": 0.9999852180480957
+          }
+        },
+        {
+          "sensor_time_s": 7.999999999999852,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.800000011920929,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0024016359820961952,
+            "previous_stop_reason_none": 0.00017683769692666829,
+            "without_idle_timers": 0.001766397268511355,
+            "without_long_risk_history": 0.9976450800895691,
+            "without_mask_features_hard_mask_retained": 0.0004022966604679823,
+            "without_current_ranges": 0.0017797754844650626,
+            "without_current_scan_quality": 0.007024415768682957,
+            "without_waypoint_and_goal": 0.0022105732932686806,
+            "without_measured_velocity_and_execution": 0.002401778008788824
+          }
+        },
+        {
+          "sensor_time_s": 8.799999999999976,
+          "selected_choice": 0,
+          "frozen_parent_choice": 6,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 6,
+            "without_mask_features_hard_mask_retained": 6,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9922276139259338,
+            "previous_stop_reason_none": 0.9922276139259338,
+            "without_idle_timers": 0.9922276139259338,
+            "without_long_risk_history": 0.00012086115748388693,
+            "without_mask_features_hard_mask_retained": 0.010124209336936474,
+            "without_current_ranges": 0.9969336986541748,
+            "without_current_scan_quality": 0.7681118845939636,
+            "without_waypoint_and_goal": 0.991091787815094,
+            "without_measured_velocity_and_execution": 0.9948450326919556
+          }
+        },
+        {
+          "sensor_time_s": 9.000000000000007,
+          "selected_choice": 0,
+          "frozen_parent_choice": 6,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9998549222946167,
+            "previous_stop_reason_none": 0.9929720759391785,
+            "without_idle_timers": 0.9998548030853271,
+            "without_long_risk_history": 0.9997909665107727,
+            "without_mask_features_hard_mask_retained": 0.9997422099113464,
+            "without_current_ranges": 0.9998557567596436,
+            "without_current_scan_quality": 0.9998458623886108,
+            "without_waypoint_and_goal": 0.9998546838760376,
+            "without_measured_velocity_and_execution": 0.9998548030853271
+          }
+        },
+        {
+          "sensor_time_s": 14.000000000000789,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0015431136125698686,
+            "previous_stop_reason_none": 0.00013199742534197867,
+            "without_idle_timers": 0.002380972495302558,
+            "without_long_risk_history": 0.9846662282943726,
+            "without_mask_features_hard_mask_retained": 0.0002994871174450964,
+            "without_current_ranges": 0.0017387194093316793,
+            "without_current_scan_quality": 0.003407134208828211,
+            "without_waypoint_and_goal": 0.001463686698116362,
+            "without_measured_velocity_and_execution": 0.001539271674118936
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "release_phase_frozen_noise_05_2",
+      "trace_sha256": "c702d4cdf2e0944b2a74871ee53ef81733b81e55be9a94149bfeebbf1606f3ef",
+      "current_model_trace": true,
+      "frames": 166,
+      "controlled_frames": 166,
+      "active_controlled_frames": 148,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 32.99999999999843,
+        "travel_m": 4.879666585883422,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 38,
+      "only_stop_controlled_frames": 3,
+      "previous_executed_reason_during_wait": {
+        "scan_unavailable": 1,
+        "policy_wait": 35,
+        "none": 2
+      },
+      "changed_vs_parent_controlled": 28,
+      "parent_motion_but_head_stop": 28,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 38
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 18,
+          "mean_active_absolute_pstop_change": 0.12565412150910857,
+          "maximum_active_absolute_pstop_change": 0.9986995391664095,
+          "voluntary_wait_choices_on_same_recorded_context": 20
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0004967523996743399,
+          "maximum_active_absolute_pstop_change": 0.039580004289746284,
+          "voluntary_wait_choices_on_same_recorded_context": 38
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 9,
+          "mean_active_absolute_pstop_change": 0.0605386142358219,
+          "maximum_active_absolute_pstop_change": 0.9922024491097545,
+          "voluntary_wait_choices_on_same_recorded_context": 45
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 11,
+          "mean_active_absolute_pstop_change": 0.058133745047608265,
+          "maximum_active_absolute_pstop_change": 0.9811629476025701,
+          "voluntary_wait_choices_on_same_recorded_context": 29
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0021212184497686826,
+          "maximum_active_absolute_pstop_change": 0.26599080860614777,
+          "voluntary_wait_choices_on_same_recorded_context": 38
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 1,
+          "mean_active_absolute_pstop_change": 0.012084806682933878,
+          "maximum_active_absolute_pstop_change": 0.8446015939116478,
+          "voluntary_wait_choices_on_same_recorded_context": 37
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0003947128797926315,
+          "maximum_active_absolute_pstop_change": 0.03780330717563629,
+          "voluntary_wait_choices_on_same_recorded_context": 38
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 6.988628286765211e-05,
+          "maximum_active_absolute_pstop_change": 0.002647995948791504,
+          "voluntary_wait_choices_on_same_recorded_context": 38
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 2.6827537413787184e-10,
+            "previous_stop_reason_none": 2.6827537413787184e-10,
+            "without_idle_timers": 2.6827537413787184e-10,
+            "without_long_risk_history": 2.6827537413787184e-10,
+            "without_mask_features_hard_mask_retained": 1.4541348680729982e-10,
+            "without_current_ranges": 2.398223564181734e-10,
+            "without_current_scan_quality": 2.661829645589364e-10,
+            "without_waypoint_and_goal": 2.736762205746146e-10,
+            "without_measured_velocity_and_execution": 2.6827537413787184e-10
+          }
+        },
+        {
+          "sensor_time_s": 4.999999999999916,
+          "selected_choice": 0,
+          "frozen_parent_choice": 2,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "scan_unavailable",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9998531341552734,
+            "previous_stop_reason_none": 0.4305563271045685,
+            "without_idle_timers": 0.9998481273651123,
+            "without_long_risk_history": 0.9998891353607178,
+            "without_mask_features_hard_mask_retained": 0.9956411123275757,
+            "without_current_ranges": 0.999868631362915,
+            "without_current_scan_quality": 0.9997302889823914,
+            "without_waypoint_and_goal": 0.9998559951782227,
+            "without_measured_velocity_and_execution": 0.9998530149459839
+          }
+        },
+        {
+          "sensor_time_s": 5.199999999999911,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9996628761291504,
+            "previous_stop_reason_none": 0.9380505681037903,
+            "without_idle_timers": 0.999657392501831,
+            "without_long_risk_history": 0.9986916184425354,
+            "without_mask_features_hard_mask_retained": 0.9994527697563171,
+            "without_current_ranges": 0.9996577501296997,
+            "without_current_scan_quality": 0.9996863603591919,
+            "without_waypoint_and_goal": 0.9996631145477295,
+            "without_measured_velocity_and_execution": 0.9996627569198608
+          }
+        },
+        {
+          "sensor_time_s": 5.399999999999907,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.999980092048645,
+            "previous_stop_reason_none": 0.6166636943817139,
+            "without_idle_timers": 0.99997878074646,
+            "without_long_risk_history": 0.9999854564666748,
+            "without_mask_features_hard_mask_retained": 0.9998483657836914,
+            "without_current_ranges": 0.9999792575836182,
+            "without_current_scan_quality": 0.9999756813049316,
+            "without_waypoint_and_goal": 0.999980092048645,
+            "without_measured_velocity_and_execution": 0.999980092048645
+          }
+        },
+        {
+          "sensor_time_s": 5.599999999999903,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999841451644897,
+            "previous_stop_reason_none": 0.745912492275238,
+            "without_idle_timers": 0.9999837875366211,
+            "without_long_risk_history": 0.9999858140945435,
+            "without_mask_features_hard_mask_retained": 0.9999632835388184,
+            "without_current_ranges": 0.9999836683273315,
+            "without_current_scan_quality": 0.9999819993972778,
+            "without_waypoint_and_goal": 0.9999841451644897,
+            "without_measured_velocity_and_execution": 0.9999841451644897
+          }
+        },
+        {
+          "sensor_time_s": 7.3999999999998645,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.3999999463558197,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9995869994163513,
+            "previous_stop_reason_none": 0.006697547156363726,
+            "without_idle_timers": 0.999517560005188,
+            "without_long_risk_history": 0.9994497895240784,
+            "without_mask_features_hard_mask_retained": 0.9933457374572754,
+            "without_current_ranges": 0.9995763897895813,
+            "without_current_scan_quality": 0.9992808699607849,
+            "without_waypoint_and_goal": 0.9995787739753723,
+            "without_measured_velocity_and_execution": 0.9995867609977722
+          }
+        },
+        {
+          "sensor_time_s": 7.59999999999986,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.5999999046325684,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9995337724685669,
+            "previous_stop_reason_none": 0.02819645404815674,
+            "without_idle_timers": 0.9994251728057861,
+            "without_long_risk_history": 0.999419093132019,
+            "without_mask_features_hard_mask_retained": 0.9947023987770081,
+            "without_current_ranges": 0.9995378255844116,
+            "without_current_scan_quality": 0.9992380142211914,
+            "without_waypoint_and_goal": 0.9995191097259521,
+            "without_measured_velocity_and_execution": 0.9995338916778564
+          }
+        },
+        {
+          "sensor_time_s": 10.000000000000163,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.003445071866735816,
+            "previous_stop_reason_none": 0.00026813489967025816,
+            "without_idle_timers": 0.0030940857250243425,
+            "without_long_risk_history": 0.9745254516601562,
+            "without_mask_features_hard_mask_retained": 0.0006729105371050537,
+            "without_current_ranges": 0.0033260355703532696,
+            "without_current_scan_quality": 0.01804548129439354,
+            "without_waypoint_and_goal": 0.003243120387196541,
+            "without_measured_velocity_and_execution": 0.0034460555762052536
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "sensor_release_frozen_noise_05_0",
+      "trace_sha256": "1f0369ace91c9463c9d3bcadba1c823b0b5c166308d509fa3d676c1cd93932a4",
+      "current_model_trace": true,
+      "frames": 170,
+      "controlled_frames": 170,
+      "active_controlled_frames": 135,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 33.79999999999884,
+        "travel_m": 5.126837758653149,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 31,
+      "only_stop_controlled_frames": 5,
+      "previous_executed_reason_during_wait": {
+        "none": 3,
+        "policy_wait": 27,
+        "scan_unavailable": 1
+      },
+      "changed_vs_parent_controlled": 20,
+      "parent_motion_but_head_stop": 20,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 31
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 14,
+          "mean_active_absolute_pstop_change": 0.10057394200786668,
+          "maximum_active_absolute_pstop_change": 0.9995884565869346,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0007801739389025089,
+          "maximum_active_absolute_pstop_change": 0.06056845001876354,
+          "voluntary_wait_choices_on_same_recorded_context": 31
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 9,
+          "mean_active_absolute_pstop_change": 0.0773334555214806,
+          "maximum_active_absolute_pstop_change": 0.993866762786638,
+          "voluntary_wait_choices_on_same_recorded_context": 34
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 11,
+          "mean_active_absolute_pstop_change": 0.07253610442520232,
+          "maximum_active_absolute_pstop_change": 0.9982742432039231,
+          "voluntary_wait_choices_on_same_recorded_context": 21
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 1,
+          "mean_active_absolute_pstop_change": 0.011824732981940709,
+          "maximum_active_absolute_pstop_change": 0.730656124651432,
+          "voluntary_wait_choices_on_same_recorded_context": 32
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 3,
+          "mean_active_absolute_pstop_change": 0.017100976358956025,
+          "maximum_active_absolute_pstop_change": 0.9055857360363007,
+          "voluntary_wait_choices_on_same_recorded_context": 29
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0014288983451870205,
+          "maximum_active_absolute_pstop_change": 0.057468414306640625,
+          "voluntary_wait_choices_on_same_recorded_context": 31
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.003407079386272168,
+          "maximum_active_absolute_pstop_change": 0.09792015701532364,
+          "voluntary_wait_choices_on_same_recorded_context": 31
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 7.984908845237726e-10,
+            "previous_stop_reason_none": 7.984908845237726e-10,
+            "without_idle_timers": 7.984908845237726e-10,
+            "without_long_risk_history": 7.984908845237726e-10,
+            "without_mask_features_hard_mask_retained": 1.7278423136701804e-10,
+            "without_current_ranges": 6.230365112713798e-10,
+            "without_current_scan_quality": 2.653594566304207e-10,
+            "without_waypoint_and_goal": 8.406023099816196e-10,
+            "without_measured_velocity_and_execution": 7.984908845237726e-10
+          }
+        },
+        {
+          "sensor_time_s": 3.5999999999999455,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9943880438804626,
+            "previous_stop_reason_none": 0.9943880438804626,
+            "without_idle_timers": 0.9943880438804626,
+            "without_long_risk_history": 0.0005212810938246548,
+            "without_mask_features_hard_mask_retained": 0.02220522053539753,
+            "without_current_ranges": 0.985773503780365,
+            "without_current_scan_quality": 0.995337963104248,
+            "without_waypoint_and_goal": 0.9940656423568726,
+            "without_measured_velocity_and_execution": 0.9961329698562622
+          }
+        },
+        {
+          "sensor_time_s": 3.799999999999941,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999839067459106,
+            "previous_stop_reason_none": 0.9998241066932678,
+            "without_idle_timers": 0.9999837875366211,
+            "without_long_risk_history": 0.9999852180480957,
+            "without_mask_features_hard_mask_retained": 0.9999523162841797,
+            "without_current_ranges": 0.9999850988388062,
+            "without_current_scan_quality": 0.9999802112579346,
+            "without_waypoint_and_goal": 0.9999840259552002,
+            "without_measured_velocity_and_execution": 0.999983549118042
+          }
+        },
+        {
+          "sensor_time_s": 3.999999999999937,
+          "selected_choice": 0,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9681748747825623,
+            "previous_stop_reason_none": 0.00018861579883378,
+            "without_idle_timers": 0.9603371024131775,
+            "without_long_risk_history": 0.998974084854126,
+            "without_mask_features_hard_mask_retained": 0.003869140986353159,
+            "without_current_ranges": 0.9961166381835938,
+            "without_current_scan_quality": 0.0625891387462616,
+            "without_waypoint_and_goal": 0.9743548631668091,
+            "without_measured_velocity_and_execution": 0.9671776294708252
+          }
+        },
+        {
+          "sensor_time_s": 4.199999999999933,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999817609786987,
+            "previous_stop_reason_none": 0.9900177121162415,
+            "without_idle_timers": 0.9999812841415405,
+            "without_long_risk_history": 0.9999843835830688,
+            "without_mask_features_hard_mask_retained": 0.9999313354492188,
+            "without_current_ranges": 0.9999837875366211,
+            "without_current_scan_quality": 0.9999809265136719,
+            "without_waypoint_and_goal": 0.9999819993972778,
+            "without_measured_velocity_and_execution": 0.9999817609786987
+          }
+        },
+        {
+          "sensor_time_s": 5.599999999999903,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9969782829284668,
+            "previous_stop_reason_none": 0.0002662055485416204,
+            "without_idle_timers": 0.9947210550308228,
+            "without_long_risk_history": 0.9993740916252136,
+            "without_mask_features_hard_mask_retained": 0.12207072973251343,
+            "without_current_ranges": 0.9892820119857788,
+            "without_current_scan_quality": 0.9972993731498718,
+            "without_waypoint_and_goal": 0.9967645406723022,
+            "without_measured_velocity_and_execution": 0.9969741106033325
+          }
+        },
+        {
+          "sensor_time_s": 9.000000000000007,
+          "selected_choice": 0,
+          "frozen_parent_choice": 6,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 6,
+            "without_mask_features_hard_mask_retained": 6,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.6482299566268921,
+            "previous_stop_reason_none": 0.6482299566268921,
+            "without_idle_timers": 0.6482299566268921,
+            "without_long_risk_history": 5.8940076996805146e-05,
+            "without_mask_features_hard_mask_retained": 0.0003197055193595588,
+            "without_current_ranges": 0.5090124011039734,
+            "without_current_scan_quality": 0.6809533834457397,
+            "without_waypoint_and_goal": 0.5907615423202515,
+            "without_measured_velocity_and_execution": 0.6145484447479248
+          }
+        },
+        {
+          "sensor_time_s": 11.800000000000445,
+          "selected_choice": 6,
+          "frozen_parent_choice": 6,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.800000011920929,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 6,
+            "previous_stop_reason_none": 6,
+            "without_idle_timers": 6,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 6,
+            "without_current_ranges": 6,
+            "without_current_scan_quality": 6,
+            "without_waypoint_and_goal": 6,
+            "without_measured_velocity_and_execution": 6
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.07480674237012863,
+            "previous_stop_reason_none": 5.535674426937476e-05,
+            "without_idle_timers": 0.01423829235136509,
+            "without_long_risk_history": 0.999782145023346,
+            "without_mask_features_hard_mask_retained": 0.00014855140761937946,
+            "without_current_ranges": 0.058408405631780624,
+            "without_current_scan_quality": 0.014705277048051357,
+            "without_waypoint_and_goal": 0.05889305844902992,
+            "without_measured_velocity_and_execution": 0.07378263771533966
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "sensor_release_frozen_noise_05_1",
+      "trace_sha256": "cf5ac804b84ff32630c3320448907730c5b7f2cb18216c0c01a5304496c8f759",
+      "current_model_trace": true,
+      "frames": 171,
+      "controlled_frames": 171,
+      "active_controlled_frames": 138,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 33.99999999999894,
+        "travel_m": 5.1519065943286755,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 17,
+      "only_stop_controlled_frames": 6,
+      "previous_executed_reason_during_wait": {
+        "none": 2,
+        "policy_wait": 14,
+        "scan_unavailable": 1
+      },
+      "changed_vs_parent_controlled": 3,
+      "parent_motion_but_head_stop": 3,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 0.019808501975616757,
+          "maximum_active_absolute_pstop_change": 0.9905708562582731,
+          "voluntary_wait_choices_on_same_recorded_context": 15
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 6.223090947943105e-05,
+          "maximum_active_absolute_pstop_change": 0.004610180854797363,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 5,
+          "mean_active_absolute_pstop_change": 0.04333096387284424,
+          "maximum_active_absolute_pstop_change": 0.9973736741230823,
+          "voluntary_wait_choices_on_same_recorded_context": 20
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 6,
+          "mean_active_absolute_pstop_change": 0.01748117127715889,
+          "maximum_active_absolute_pstop_change": 0.9720185622572899,
+          "voluntary_wait_choices_on_same_recorded_context": 15
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0021916296735096236,
+          "maximum_active_absolute_pstop_change": 0.1151497969403863,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 1,
+          "mean_active_absolute_pstop_change": 0.004975248538158869,
+          "maximum_active_absolute_pstop_change": 0.545791894197464,
+          "voluntary_wait_choices_on_same_recorded_context": 16
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00026071633549669924,
+          "maximum_active_absolute_pstop_change": 0.020720258355140686,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00032561268298235836,
+          "maximum_active_absolute_pstop_change": 0.02899763733148575,
+          "voluntary_wait_choices_on_same_recorded_context": 17
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 3.4443162211239553e-10,
+            "previous_stop_reason_none": 3.4443162211239553e-10,
+            "without_idle_timers": 3.4443162211239553e-10,
+            "without_long_risk_history": 3.4443162211239553e-10,
+            "without_mask_features_hard_mask_retained": 1.5167633815593717e-10,
+            "without_current_ranges": 3.025911188281327e-10,
+            "without_current_scan_quality": 2.633166462651104e-10,
+            "without_waypoint_and_goal": 3.541841542276103e-10,
+            "without_measured_velocity_and_execution": 3.4443162211239553e-10
+          }
+        },
+        {
+          "sensor_time_s": 3.799999999999941,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9979575872421265,
+            "previous_stop_reason_none": 0.9979575872421265,
+            "without_idle_timers": 0.9979575872421265,
+            "without_long_risk_history": 0.0005839131190441549,
+            "without_mask_features_hard_mask_retained": 0.16633106768131256,
+            "without_current_ranges": 0.9947305917739868,
+            "without_current_scan_quality": 0.9978017210960388,
+            "without_waypoint_and_goal": 0.997873067855835,
+            "without_measured_velocity_and_execution": 0.9985015392303467
+          }
+        },
+        {
+          "sensor_time_s": 3.999999999999937,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999759197235107,
+            "previous_stop_reason_none": 0.9582353830337524,
+            "without_idle_timers": 0.9999755620956421,
+            "without_long_risk_history": 0.9999850988388062,
+            "without_mask_features_hard_mask_retained": 0.9958176016807556,
+            "without_current_ranges": 0.9999817609786987,
+            "without_current_scan_quality": 0.9999582767486572,
+            "without_waypoint_and_goal": 0.9999769926071167,
+            "without_measured_velocity_and_execution": 0.9999741315841675
+          }
+        },
+        {
+          "sensor_time_s": 4.199999999999933,
+          "selected_choice": 0,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.980872392654419,
+            "previous_stop_reason_none": 0.00043845752952620387,
+            "without_idle_timers": 0.9762622117996216,
+            "without_long_risk_history": 0.9989089965820312,
+            "without_mask_features_hard_mask_retained": 0.008853830397129059,
+            "without_current_ranges": 0.9966976642608643,
+            "without_current_scan_quality": 0.43508049845695496,
+            "without_waypoint_and_goal": 0.9846391677856445,
+            "without_measured_velocity_and_execution": 0.9805648922920227
+          }
+        },
+        {
+          "sensor_time_s": 4.399999999999928,
+          "selected_choice": 0,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9985724687576294,
+            "previous_stop_reason_none": 0.00800161249935627,
+            "without_idle_timers": 0.9983896017074585,
+            "without_long_risk_history": 0.9989230036735535,
+            "without_mask_features_hard_mask_retained": 0.8096539974212646,
+            "without_current_ranges": 0.9991530179977417,
+            "without_current_scan_quality": 0.9932791590690613,
+            "without_waypoint_and_goal": 0.9986572265625,
+            "without_measured_velocity_and_execution": 0.9985673427581787
+          }
+        },
+        {
+          "sensor_time_s": 7.59999999999986,
+          "selected_choice": 11,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.3999999463558197,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 11,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.006083220709115267,
+            "previous_stop_reason_none": 0.0007557966746389866,
+            "without_idle_timers": 0.0023662869352847338,
+            "without_long_risk_history": 0.9989233613014221,
+            "without_mask_features_hard_mask_retained": 0.0007980377413332462,
+            "without_current_ranges": 0.05997946858406067,
+            "without_current_scan_quality": 0.002774124266579747,
+            "without_waypoint_and_goal": 0.007447258103638887,
+            "without_measured_velocity_and_execution": 0.006097486242651939
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "docking_dev_02",
+      "trace_sha256": "f0fd0f77ee0751a665bca2a9065babe317f47419bcd79c6d7b9bcbf9a3d3f521",
+      "current_model_trace": true,
+      "frames": 7,
+      "controlled_frames": 7,
+      "active_controlled_frames": 0,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 1.1999999999999964,
+        "travel_m": 0.0,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 5,
+      "only_stop_controlled_frames": 0,
+      "previous_executed_reason_during_wait": {
+        "none": 1,
+        "policy_wait": 4
+      },
+      "changed_vs_parent_controlled": 0,
+      "parent_motion_but_head_stop": 0,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": null,
+          "maximum_active_absolute_pstop_change": null,
+          "voluntary_wait_choices_on_same_recorded_context": 5
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 5,
+          "frozen_parent_choice": 5,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 5,
+            "previous_stop_reason_none": 5,
+            "without_idle_timers": 5,
+            "without_long_risk_history": 5,
+            "without_mask_features_hard_mask_retained": 5,
+            "without_current_ranges": 5,
+            "without_current_scan_quality": 5,
+            "without_waypoint_and_goal": 5,
+            "without_measured_velocity_and_execution": 5
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9833605289459229,
+            "previous_stop_reason_none": 0.9833605289459229,
+            "without_idle_timers": 0.9833605289459229,
+            "without_long_risk_history": 0.9833605289459229,
+            "without_mask_features_hard_mask_retained": 0.00016174546908587217,
+            "without_current_ranges": 0.9612624049186707,
+            "without_current_scan_quality": 0.957263171672821,
+            "without_waypoint_and_goal": 0.9832714200019836,
+            "without_measured_velocity_and_execution": 0.9833605289459229
+          }
+        },
+        {
+          "sensor_time_s": 0.40000000000000024,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999481439590454,
+            "previous_stop_reason_none": 0.9999481439590454,
+            "without_idle_timers": 0.9999481439590454,
+            "without_long_risk_history": 0.9999481439590454,
+            "without_mask_features_hard_mask_retained": 0.9948374629020691,
+            "without_current_ranges": 0.9999496936798096,
+            "without_current_scan_quality": 0.9998842477798462,
+            "without_waypoint_and_goal": 0.9999479055404663,
+            "without_measured_velocity_and_execution": 0.9999600648880005
+          }
+        },
+        {
+          "sensor_time_s": 0.6000000000000004,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999855756759644,
+            "previous_stop_reason_none": 0.9999618530273438,
+            "without_idle_timers": 0.9999855756759644,
+            "without_long_risk_history": 0.9999855756759644,
+            "without_mask_features_hard_mask_retained": 0.9999828338623047,
+            "without_current_ranges": 0.9999855756759644,
+            "without_current_scan_quality": 0.9999850988388062,
+            "without_waypoint_and_goal": 0.9999855756759644,
+            "without_measured_velocity_and_execution": 0.9999855756759644
+          }
+        },
+        {
+          "sensor_time_s": 0.8000000000000006,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999855756759644,
+            "previous_stop_reason_none": 0.9999687671661377,
+            "without_idle_timers": 0.9999855756759644,
+            "without_long_risk_history": 0.9999855756759644,
+            "without_mask_features_hard_mask_retained": 0.9999828338623047,
+            "without_current_ranges": 0.9999855756759644,
+            "without_current_scan_quality": 0.9999850988388062,
+            "without_waypoint_and_goal": 0.9999855756759644,
+            "without_measured_velocity_and_execution": 0.9999855756759644
+          }
+        },
+        {
+          "sensor_time_s": 1.0000000000000007,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999850988388062,
+            "previous_stop_reason_none": 0.999953031539917,
+            "without_idle_timers": 0.9999850988388062,
+            "without_long_risk_history": 0.9999855756759644,
+            "without_mask_features_hard_mask_retained": 0.9999797344207764,
+            "without_current_ranges": 0.9999852180480957,
+            "without_current_scan_quality": 0.9999842643737793,
+            "without_waypoint_and_goal": 0.9999850988388062,
+            "without_measured_velocity_and_execution": 0.9999850988388062
+          }
+        }
+      ]
+    },
+    {
+      "group": "pilot",
+      "case_id": "docking_dev_11",
+      "trace_sha256": "ecbcebad93a9d480ff813c42e424410927597a2ea5372195358168a64d2d45ee",
+      "current_model_trace": true,
+      "frames": 20,
+      "controlled_frames": 20,
+      "active_controlled_frames": 1,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 3.799999999999941,
+        "travel_m": 0.42206824637530393,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 6,
+      "only_stop_controlled_frames": 0,
+      "previous_executed_reason_during_wait": {
+        "none": 1,
+        "policy_wait": 5
+      },
+      "changed_vs_parent_controlled": 0,
+      "parent_motion_but_head_stop": 0,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 8.462491678074002e-05,
+          "maximum_active_absolute_pstop_change": 8.462491678074002e-05,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00029443389939842746,
+          "maximum_active_absolute_pstop_change": 0.00029443389939842746,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 3.023876342922449e-05,
+          "maximum_active_absolute_pstop_change": 3.023876342922449e-05,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 3.160626511089504e-05,
+          "maximum_active_absolute_pstop_change": 3.160626511089504e-05,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 6.372341886162758e-06,
+          "maximum_active_absolute_pstop_change": 6.372341886162758e-06,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 6.196889444254339e-05,
+          "maximum_active_absolute_pstop_change": 6.196889444254339e-05,
+          "voluntary_wait_choices_on_same_recorded_context": 6
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0005188835202716291,
+            "previous_stop_reason_none": 0.0005188835202716291,
+            "without_idle_timers": 0.0005188835202716291,
+            "without_long_risk_history": 0.0005188835202716291,
+            "without_mask_features_hard_mask_retained": 0.00013147138815838844,
+            "without_current_ranges": 0.0005663248593918979,
+            "without_current_scan_quality": 0.0004587133589666337,
+            "without_waypoint_and_goal": 0.0005134113016538322,
+            "without_measured_velocity_and_execution": 0.0005188835202716291
+          }
+        },
+        {
+          "sensor_time_s": 2.7999999999999625,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999723434448242,
+            "previous_stop_reason_none": 0.9999723434448242,
+            "without_idle_timers": 0.9999723434448242,
+            "without_long_risk_history": 0.9999723434448242,
+            "without_mask_features_hard_mask_retained": 0.9949589967727661,
+            "without_current_ranges": 0.9999587535858154,
+            "without_current_scan_quality": 0.9999717473983765,
+            "without_waypoint_and_goal": 0.9999722242355347,
+            "without_measured_velocity_and_execution": 0.9999697208404541
+          }
+        },
+        {
+          "sensor_time_s": 2.9999999999999583,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999861717224121,
+            "previous_stop_reason_none": 0.9999744892120361,
+            "without_idle_timers": 0.9999861717224121,
+            "without_long_risk_history": 0.9999861717224121,
+            "without_mask_features_hard_mask_retained": 0.9999847412109375,
+            "without_current_ranges": 0.9999856948852539,
+            "without_current_scan_quality": 0.9999856948852539,
+            "without_waypoint_and_goal": 0.9999861717224121,
+            "without_measured_velocity_and_execution": 0.9999861717224121
+          }
+        },
+        {
+          "sensor_time_s": 3.199999999999954,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999861717224121,
+            "previous_stop_reason_none": 0.9999725818634033,
+            "without_idle_timers": 0.999985933303833,
+            "without_long_risk_history": 0.9999861717224121,
+            "without_mask_features_hard_mask_retained": 0.9999843835830688,
+            "without_current_ranges": 0.9999856948852539,
+            "without_current_scan_quality": 0.9999855756759644,
+            "without_waypoint_and_goal": 0.9999861717224121,
+            "without_measured_velocity_and_execution": 0.9999861717224121
+          }
+        },
+        {
+          "sensor_time_s": 3.3999999999999497,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999860525131226,
+            "previous_stop_reason_none": 0.9999731779098511,
+            "without_idle_timers": 0.9999860525131226,
+            "without_long_risk_history": 0.9999862909317017,
+            "without_mask_features_hard_mask_retained": 0.9999839067459106,
+            "without_current_ranges": 0.9999855756759644,
+            "without_current_scan_quality": 0.9999849796295166,
+            "without_waypoint_and_goal": 0.9999860525131226,
+            "without_measured_velocity_and_execution": 0.9999860525131226
+          }
+        }
+      ]
+    },
+    {
+      "group": "actual95_actual90",
+      "case_id": "w11_training_stall_t95",
+      "trace_sha256": "ac1247c8f469b2110eeb9d152964a82a5687eeefa24d43deae163cd0b8a15af0",
+      "current_model_trace": true,
+      "frames": 700,
+      "controlled_frames": 225,
+      "active_controlled_frames": 172,
+      "observed_physical_result": {
+        "safe_success": false,
+        "seconds": 139.99999999994517,
+        "travel_m": 10.448862889685957,
+        "collisions": 0,
+        "timeout": true
+      },
+      "new_model_voluntary_wait_on_recorded_context": 129,
+      "only_stop_controlled_frames": 10,
+      "previous_executed_reason_during_wait": {
+        "none": 4,
+        "policy_wait": 84,
+        "laser_braking_footprint": 41
+      },
+      "changed_vs_parent_controlled": 129,
+      "parent_motion_but_head_stop": 125,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 129
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 60,
+          "mean_active_absolute_pstop_change": 0.33476900796206976,
+          "maximum_active_absolute_pstop_change": 0.9982447671936825,
+          "voluntary_wait_choices_on_same_recorded_context": 69
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 0.008266245073277875,
+          "maximum_active_absolute_pstop_change": 0.3680603504180908,
+          "voluntary_wait_choices_on_same_recorded_context": 127
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 6,
+          "mean_active_absolute_pstop_change": 0.042747048783596905,
+          "maximum_active_absolute_pstop_change": 0.9875112501904368,
+          "voluntary_wait_choices_on_same_recorded_context": 132
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 23,
+          "mean_active_absolute_pstop_change": 0.09884296124552515,
+          "maximum_active_absolute_pstop_change": 0.9682948058471084,
+          "voluntary_wait_choices_on_same_recorded_context": 114
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.005208398926855685,
+          "maximum_active_absolute_pstop_change": 0.32466185092926025,
+          "voluntary_wait_choices_on_same_recorded_context": 129
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 0.007292474501637047,
+          "maximum_active_absolute_pstop_change": 0.4231114685535431,
+          "voluntary_wait_choices_on_same_recorded_context": 128
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0007064038100621456,
+          "maximum_active_absolute_pstop_change": 0.027047932147979736,
+          "voluntary_wait_choices_on_same_recorded_context": 129
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 1,
+          "mean_active_absolute_pstop_change": 0.001225057954199116,
+          "maximum_active_absolute_pstop_change": 0.10165607929229736,
+          "voluntary_wait_choices_on_same_recorded_context": 129
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 94.99999999998609,
+          "selected_choice": 1,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0013285204768180847,
+            "previous_stop_reason_none": 0.0013285204768180847,
+            "without_idle_timers": 0.0013285204768180847,
+            "without_long_risk_history": 0.948205292224884,
+            "without_mask_features_hard_mask_retained": 0.00018574197019916028,
+            "without_current_ranges": 0.0011547263711690903,
+            "without_current_scan_quality": 0.0011614011600613594,
+            "without_waypoint_and_goal": 0.001359582762233913,
+            "without_measured_velocity_and_execution": 0.0011624430771917105
+          }
+        },
+        {
+          "sensor_time_s": 95.59999999998554,
+          "selected_choice": 0,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9213639497756958,
+            "previous_stop_reason_none": 0.9213639497756958,
+            "without_idle_timers": 0.9213639497756958,
+            "without_long_risk_history": 0.73286372423172,
+            "without_mask_features_hard_mask_retained": 6.870175639051013e-06,
+            "without_current_ranges": 0.822867214679718,
+            "without_current_scan_quality": 0.8582323789596558,
+            "without_waypoint_and_goal": 0.9334554076194763,
+            "without_measured_velocity_and_execution": 0.9551945924758911
+          }
+        },
+        {
+          "sensor_time_s": 95.79999999998536,
+          "selected_choice": 0,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999144077301025,
+            "previous_stop_reason_none": 0.01070540864020586,
+            "without_idle_timers": 0.9999141693115234,
+            "without_long_risk_history": 0.9999374151229858,
+            "without_mask_features_hard_mask_retained": 0.998746395111084,
+            "without_current_ranges": 0.9999063014984131,
+            "without_current_scan_quality": 0.9998948574066162,
+            "without_waypoint_and_goal": 0.9999172687530518,
+            "without_measured_velocity_and_execution": 0.9999144077301025
+          }
+        },
+        {
+          "sensor_time_s": 95.99999999998518,
+          "selected_choice": 0,
+          "frozen_parent_choice": 9,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9996587038040161,
+            "previous_stop_reason_none": 0.025717278942465782,
+            "without_idle_timers": 0.9996830224990845,
+            "without_long_risk_history": 0.9999333620071411,
+            "without_mask_features_hard_mask_retained": 0.9442707896232605,
+            "without_current_ranges": 0.9994982481002808,
+            "without_current_scan_quality": 0.9967767596244812,
+            "without_waypoint_and_goal": 0.999695897102356,
+            "without_measured_velocity_and_execution": 0.9996582269668579
+          }
+        },
+        {
+          "sensor_time_s": 96.199999999985,
+          "selected_choice": 0,
+          "frozen_parent_choice": 9,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9990625977516174,
+            "previous_stop_reason_none": 0.012792888097465038,
+            "without_idle_timers": 0.9991426467895508,
+            "without_long_risk_history": 0.999910831451416,
+            "without_mask_features_hard_mask_retained": 0.7997556328773499,
+            "without_current_ranges": 0.9984799027442932,
+            "without_current_scan_quality": 0.9986976385116577,
+            "without_waypoint_and_goal": 0.9992157220840454,
+            "without_measured_velocity_and_execution": 0.9990598559379578
+          }
+        },
+        {
+          "sensor_time_s": 106.99999999997517,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 9,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 1.9061542388953967e-07,
+            "previous_stop_reason_none": 3.571339612928881e-10,
+            "without_idle_timers": 2.092818585097689e-09,
+            "without_long_risk_history": 9.725482959765941e-05,
+            "without_mask_features_hard_mask_retained": 3.900647305155047e-10,
+            "without_current_ranges": 2.2292914536592434e-07,
+            "without_current_scan_quality": 1.3036438417657337e-07,
+            "without_waypoint_and_goal": 1.9052657762586023e-07,
+            "without_measured_velocity_and_execution": 1.921429202411673e-07
+          }
+        },
+        {
+          "sensor_time_s": 111.19999999997135,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 10,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 3.799999952316284,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0005082217394374311,
+            "previous_stop_reason_none": 5.112258949502291e-10,
+            "without_idle_timers": 5.380220500228461e-06,
+            "without_long_risk_history": 0.0005082217394374311,
+            "without_mask_features_hard_mask_retained": 7.912571153845249e-10,
+            "without_current_ranges": 9.901790326694027e-05,
+            "without_current_scan_quality": 0.00029056440689601004,
+            "without_waypoint_and_goal": 0.000503484858199954,
+            "without_measured_velocity_and_execution": 0.0005012396140955389
+          }
+        },
+        {
+          "sensor_time_s": 126.59999999995735,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 6,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.13988372683525085,
+            "previous_stop_reason_none": 0.00022656397777609527,
+            "without_idle_timers": 0.4799977242946625,
+            "without_long_risk_history": 0.9260381460189819,
+            "without_mask_features_hard_mask_retained": 0.00388169102370739,
+            "without_current_ranges": 0.18695662915706635,
+            "without_current_scan_quality": 0.13236941397190094,
+            "without_waypoint_and_goal": 0.151225283741951,
+            "without_measured_velocity_and_execution": 0.13986007869243622
+          }
+        }
+      ]
+    },
+    {
+      "group": "actual95_actual90",
+      "case_id": "w11_training_stall_t90",
+      "trace_sha256": "d40e7319d6046e87f74103d971f4d7b111ae28a4135260664d8ea782cbc0bb43",
+      "current_model_trace": true,
+      "frames": 700,
+      "controlled_frames": 250,
+      "active_controlled_frames": 247,
+      "observed_physical_result": {
+        "safe_success": false,
+        "seconds": 139.99999999994517,
+        "travel_m": 8.1476612238386,
+        "collisions": 0,
+        "timeout": true
+      },
+      "new_model_voluntary_wait_on_recorded_context": 225,
+      "only_stop_controlled_frames": 0,
+      "previous_executed_reason_during_wait": {
+        "none": 2,
+        "policy_wait": 223
+      },
+      "changed_vs_parent_controlled": 229,
+      "parent_motion_but_head_stop": 225,
+      "parent_stop_but_head_motion": 0,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 225
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 190,
+          "mean_active_absolute_pstop_change": 0.5808582879271338,
+          "maximum_active_absolute_pstop_change": 0.9985076017328538,
+          "voluntary_wait_choices_on_same_recorded_context": 35
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00028182965654291605,
+          "maximum_active_absolute_pstop_change": 0.03820997476577759,
+          "voluntary_wait_choices_on_same_recorded_context": 225
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 4,
+          "mean_active_absolute_pstop_change": 0.016116661736604813,
+          "maximum_active_absolute_pstop_change": 0.9984081560978666,
+          "voluntary_wait_choices_on_same_recorded_context": 226
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 26,
+          "mean_active_absolute_pstop_change": 0.05207905605268585,
+          "maximum_active_absolute_pstop_change": 0.9747878164052963,
+          "voluntary_wait_choices_on_same_recorded_context": 212
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 0.004137514028903533,
+          "maximum_active_absolute_pstop_change": 0.3188282251358032,
+          "voluntary_wait_choices_on_same_recorded_context": 224
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 0.001384317473170718,
+          "maximum_active_absolute_pstop_change": 0.10482579469680786,
+          "voluntary_wait_choices_on_same_recorded_context": 225
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.00019759536313527782,
+          "maximum_active_absolute_pstop_change": 0.022023439407348633,
+          "voluntary_wait_choices_on_same_recorded_context": 225
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 2,
+          "mean_active_absolute_pstop_change": 2.7411270961484033e-05,
+          "maximum_active_absolute_pstop_change": 0.004758932627737522,
+          "voluntary_wait_choices_on_same_recorded_context": 225
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 89.99999999999064,
+          "selected_choice": 1,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0002032199699897319,
+            "previous_stop_reason_none": 0.0002032199699897319,
+            "without_idle_timers": 0.0002032199699897319,
+            "without_long_risk_history": 0.4543911814689636,
+            "without_mask_features_hard_mask_retained": 1.2997925580293668e-07,
+            "without_current_ranges": 0.00027594840503297746,
+            "without_current_scan_quality": 0.00010475274757482111,
+            "without_waypoint_and_goal": 0.00019799942674580961,
+            "without_measured_velocity_and_execution": 0.0001433584839105606
+          }
+        },
+        {
+          "sensor_time_s": 90.39999999999027,
+          "selected_choice": 1,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0010216854279860854,
+            "previous_stop_reason_none": 0.0010216854279860854,
+            "without_idle_timers": 0.0010216854279860854,
+            "without_long_risk_history": 0.8251084685325623,
+            "without_mask_features_hard_mask_retained": 2.4839549951138906e-05,
+            "without_current_ranges": 0.0009586566011421382,
+            "without_current_scan_quality": 0.000642113562207669,
+            "without_waypoint_and_goal": 0.0009512948454357684,
+            "without_measured_velocity_and_execution": 0.0014036804204806685
+          }
+        },
+        {
+          "sensor_time_s": 91.799999999989,
+          "selected_choice": 1,
+          "frozen_parent_choice": 4,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.012345786206424236,
+            "previous_stop_reason_none": 0.012345786206424236,
+            "without_idle_timers": 0.012345786206424236,
+            "without_long_risk_history": 0.34525811672210693,
+            "without_mask_features_hard_mask_retained": 1.1666568866530724e-07,
+            "without_current_ranges": 0.03265374153852463,
+            "without_current_scan_quality": 0.0014702749904245138,
+            "without_waypoint_and_goal": 0.009080725722014904,
+            "without_measured_velocity_and_execution": 0.01710471883416176
+          }
+        },
+        {
+          "sensor_time_s": 93.79999999998718,
+          "selected_choice": 6,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 6,
+            "previous_stop_reason_none": 6,
+            "without_idle_timers": 6,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 7,
+            "without_waypoint_and_goal": 6,
+            "without_measured_velocity_and_execution": 7
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 6.12655931035988e-05,
+            "previous_stop_reason_none": 6.12655931035988e-05,
+            "without_idle_timers": 6.12655931035988e-05,
+            "without_long_risk_history": 2.90560492333114e-10,
+            "without_mask_features_hard_mask_retained": 5.321391682855392e-08,
+            "without_current_ranges": 4.432179048308171e-05,
+            "without_current_scan_quality": 3.611844658735208e-05,
+            "without_waypoint_and_goal": 5.779113416792825e-05,
+            "without_measured_velocity_and_execution": 6.959056918276474e-05
+          }
+        },
+        {
+          "sensor_time_s": 93.999999999987,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9996532201766968,
+            "previous_stop_reason_none": 0.9996532201766968,
+            "without_idle_timers": 0.9996532201766968,
+            "without_long_risk_history": 0.0012450640788301826,
+            "without_mask_features_hard_mask_retained": 0.9967623949050903,
+            "without_current_ranges": 0.9996496438980103,
+            "without_current_scan_quality": 0.9996664524078369,
+            "without_waypoint_and_goal": 0.9996532201766968,
+            "without_measured_velocity_and_execution": 0.9996734857559204
+          }
+        },
+        {
+          "sensor_time_s": 94.19999999998682,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9995294809341431,
+            "previous_stop_reason_none": 0.056111957877874374,
+            "without_idle_timers": 0.9995336532592773,
+            "without_long_risk_history": 0.9992944002151489,
+            "without_mask_features_hard_mask_retained": 0.9733826518058777,
+            "without_current_ranges": 0.9993815422058105,
+            "without_current_scan_quality": 0.9995893836021423,
+            "without_waypoint_and_goal": 0.9995254278182983,
+            "without_measured_velocity_and_execution": 0.999549925327301
+          }
+        },
+        {
+          "sensor_time_s": 94.39999999998663,
+          "selected_choice": 0,
+          "frozen_parent_choice": 9,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9998871088027954,
+            "previous_stop_reason_none": 0.9984318614006042,
+            "without_idle_timers": 0.9998867511749268,
+            "without_long_risk_history": 0.9998472929000854,
+            "without_mask_features_hard_mask_retained": 0.9998620748519897,
+            "without_current_ranges": 0.9998855590820312,
+            "without_current_scan_quality": 0.9998836517333984,
+            "without_waypoint_and_goal": 0.9998874664306641,
+            "without_measured_velocity_and_execution": 0.9998869895935059
+          }
+        },
+        {
+          "sensor_time_s": 94.59999999998645,
+          "selected_choice": 0,
+          "frozen_parent_choice": 9,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9983433485031128,
+            "previous_stop_reason_none": 0.008530916646122932,
+            "without_idle_timers": 0.9983463287353516,
+            "without_long_risk_history": 0.9998399019241333,
+            "without_mask_features_hard_mask_retained": 0.1532667726278305,
+            "without_current_ranges": 0.9962068796157837,
+            "without_current_scan_quality": 0.9731007218360901,
+            "without_waypoint_and_goal": 0.9987117052078247,
+            "without_measured_velocity_and_execution": 0.9983416795730591
+          }
+        },
+        {
+          "sensor_time_s": 96.99999999998427,
+          "selected_choice": 1,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 3.0000001192092896,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 1,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 1,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 1,
+            "without_current_scan_quality": 1,
+            "without_waypoint_and_goal": 1,
+            "without_measured_velocity_and_execution": 1
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.006979332305490971,
+            "previous_stop_reason_none": 0.00012873500236310065,
+            "without_idle_timers": 0.005897370632737875,
+            "without_long_risk_history": 0.9990710020065308,
+            "without_mask_features_hard_mask_retained": 0.0004586164723150432,
+            "without_current_ranges": 0.002189593156799674,
+            "without_current_scan_quality": 0.004210140090435743,
+            "without_waypoint_and_goal": 0.006563370581716299,
+            "without_measured_velocity_and_execution": 0.006966291926801205
+          }
+        }
+      ]
+    },
+    {
+      "group": "older_recorded_context",
+      "case_id": "long_risk_sensor_05_1",
+      "trace_sha256": "1cfbce50892127112bdf0c09a8c647e8038085e3a01eda35c0893d95adc1c53a",
+      "current_model_trace": false,
+      "frames": 454,
+      "controlled_frames": 454,
+      "active_controlled_frames": 419,
+      "observed_physical_result": {
+        "safe_success": true,
+        "seconds": 90.59999999999009,
+        "travel_m": 4.84979343773604,
+        "collisions": 0,
+        "timeout": false
+      },
+      "new_model_voluntary_wait_on_recorded_context": 318,
+      "only_stop_controlled_frames": 3,
+      "previous_executed_reason_during_wait": {
+        "none": 1,
+        "policy_wait": 316,
+        "scan_unavailable": 1
+      },
+      "changed_vs_parent_controlled": 128,
+      "parent_motion_but_head_stop": 127,
+      "parent_stop_but_head_motion": 1,
+      "sensitivity": {
+        "full_context": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0,
+          "maximum_active_absolute_pstop_change": 0.0,
+          "voluntary_wait_choices_on_same_recorded_context": 318
+        },
+        "previous_stop_reason_none": {
+          "head_active_action_changes": 115,
+          "mean_active_absolute_pstop_change": 0.27445483446563296,
+          "maximum_active_absolute_pstop_change": 0.9987286340328865,
+          "voluntary_wait_choices_on_same_recorded_context": 204
+        },
+        "without_idle_timers": {
+          "head_active_action_changes": 4,
+          "mean_active_absolute_pstop_change": 0.011732555696974688,
+          "maximum_active_absolute_pstop_change": 0.5958225876092911,
+          "voluntary_wait_choices_on_same_recorded_context": 314
+        },
+        "without_long_risk_history": {
+          "head_active_action_changes": 15,
+          "mean_active_absolute_pstop_change": 0.03446361881090933,
+          "maximum_active_absolute_pstop_change": 0.9970671031624079,
+          "voluntary_wait_choices_on_same_recorded_context": 331
+        },
+        "without_mask_features_hard_mask_retained": {
+          "head_active_action_changes": 39,
+          "mean_active_absolute_pstop_change": 0.10646942890424892,
+          "maximum_active_absolute_pstop_change": 0.9841442455071956,
+          "voluntary_wait_choices_on_same_recorded_context": 279
+        },
+        "without_current_ranges": {
+          "head_active_action_changes": 3,
+          "mean_active_absolute_pstop_change": 0.009782618607290686,
+          "maximum_active_absolute_pstop_change": 0.5213416069746017,
+          "voluntary_wait_choices_on_same_recorded_context": 321
+        },
+        "without_current_scan_quality": {
+          "head_active_action_changes": 5,
+          "mean_active_absolute_pstop_change": 0.032228180683201914,
+          "maximum_active_absolute_pstop_change": 0.9438003487884998,
+          "voluntary_wait_choices_on_same_recorded_context": 315
+        },
+        "without_waypoint_and_goal": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0012035192518238334,
+          "maximum_active_absolute_pstop_change": 0.05965512990951538,
+          "voluntary_wait_choices_on_same_recorded_context": 318
+        },
+        "without_measured_velocity_and_execution": {
+          "head_active_action_changes": 0,
+          "mean_active_absolute_pstop_change": 0.0017901902781880432,
+          "maximum_active_absolute_pstop_change": 0.25874163210392,
+          "voluntary_wait_choices_on_same_recorded_context": 318
+        }
+      },
+      "examples": [
+        {
+          "sensor_time_s": 0.0,
+          "selected_choice": 10,
+          "frozen_parent_choice": 10,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 10,
+            "previous_stop_reason_none": 10,
+            "without_idle_timers": 10,
+            "without_long_risk_history": 10,
+            "without_mask_features_hard_mask_retained": 10,
+            "without_current_ranges": 10,
+            "without_current_scan_quality": 10,
+            "without_waypoint_and_goal": 10,
+            "without_measured_velocity_and_execution": 10
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 2.7421351300738195e-10,
+            "previous_stop_reason_none": 2.7421351300738195e-10,
+            "without_idle_timers": 2.7421351300738195e-10,
+            "without_long_risk_history": 2.7421351300738195e-10,
+            "without_mask_features_hard_mask_retained": 1.4653504798456396e-10,
+            "without_current_ranges": 2.5593349661789944e-10,
+            "without_current_scan_quality": 2.5507540524216665e-10,
+            "without_waypoint_and_goal": 2.804133036882206e-10,
+            "without_measured_velocity_and_execution": 2.7421351300738195e-10
+          }
+        },
+        {
+          "sensor_time_s": 3.799999999999941,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "none",
+          "previous_idle_with_choices_s": 0.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 1,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9974834322929382,
+            "previous_stop_reason_none": 0.9974834322929382,
+            "without_idle_timers": 0.9974834322929382,
+            "without_long_risk_history": 0.001216021366417408,
+            "without_mask_features_hard_mask_retained": 0.0828448086977005,
+            "without_current_ranges": 0.9960039258003235,
+            "without_current_scan_quality": 0.9841857552528381,
+            "without_waypoint_and_goal": 0.9973190426826477,
+            "without_measured_velocity_and_execution": 0.9980741739273071
+          }
+        },
+        {
+          "sensor_time_s": 3.999999999999937,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999852180480957,
+            "previous_stop_reason_none": 0.9999382495880127,
+            "without_idle_timers": 0.9999852180480957,
+            "without_long_risk_history": 0.9999849796295166,
+            "without_mask_features_hard_mask_retained": 0.9999802112579346,
+            "without_current_ranges": 0.999985933303833,
+            "without_current_scan_quality": 0.9999847412109375,
+            "without_waypoint_and_goal": 0.9999852180480957,
+            "without_measured_velocity_and_execution": 0.9999850988388062
+          }
+        },
+        {
+          "sensor_time_s": 4.199999999999933,
+          "selected_choice": 0,
+          "frozen_parent_choice": 1,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.3999999910593033,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 1,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 1,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.994993269443512,
+            "previous_stop_reason_none": 0.00018647582328412682,
+            "without_idle_timers": 0.9948745369911194,
+            "without_long_risk_history": 0.9994121789932251,
+            "without_mask_features_hard_mask_retained": 0.021147072315216064,
+            "without_current_ranges": 0.988455057144165,
+            "without_current_scan_quality": 0.9774259924888611,
+            "without_waypoint_and_goal": 0.9944702386856079,
+            "without_measured_velocity_and_execution": 0.9950122237205505
+          }
+        },
+        {
+          "sensor_time_s": 4.399999999999928,
+          "selected_choice": 0,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.5999999865889549,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 0,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 0,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.9999853372573853,
+            "previous_stop_reason_none": 0.9999661445617676,
+            "without_idle_timers": 0.9999853372573853,
+            "without_long_risk_history": 0.9999853372573853,
+            "without_mask_features_hard_mask_retained": 0.9999816417694092,
+            "without_current_ranges": 0.9999861717224121,
+            "without_current_scan_quality": 0.9999839067459106,
+            "without_waypoint_and_goal": 0.9999854564666748,
+            "without_measured_velocity_and_execution": 0.9999853372573853
+          }
+        },
+        {
+          "sensor_time_s": 7.199999999999869,
+          "selected_choice": 11,
+          "frozen_parent_choice": 0,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 2.0000000298023224,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 6,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 11,
+            "without_current_scan_quality": 0,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.022769024595618248,
+            "previous_stop_reason_none": 0.004314277786761522,
+            "without_idle_timers": 0.02297160215675831,
+            "without_long_risk_history": 0.9999344348907471,
+            "without_mask_features_hard_mask_retained": 0.014971037395298481,
+            "without_current_ranges": 0.10161833465099335,
+            "without_current_scan_quality": 0.933022677898407,
+            "without_waypoint_and_goal": 0.02438494749367237,
+            "without_measured_velocity_and_execution": 0.02276577800512314
+          }
+        },
+        {
+          "sensor_time_s": 10.400000000000226,
+          "selected_choice": 6,
+          "frozen_parent_choice": 6,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 6,
+            "previous_stop_reason_none": 6,
+            "without_idle_timers": 6,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 6,
+            "without_current_ranges": 6,
+            "without_current_scan_quality": 6,
+            "without_waypoint_and_goal": 6,
+            "without_measured_velocity_and_execution": 6
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.002584567293524742,
+            "previous_stop_reason_none": 1.4250897947931662e-05,
+            "without_idle_timers": 0.00015809267642907798,
+            "without_long_risk_history": 0.9996516704559326,
+            "without_mask_features_hard_mask_retained": 2.3367676476482302e-05,
+            "without_current_ranges": 0.003464804496616125,
+            "without_current_scan_quality": 0.06638475507497787,
+            "without_waypoint_and_goal": 0.0023445384576916695,
+            "without_measured_velocity_and_execution": 0.002567569026723504
+          }
+        },
+        {
+          "sensor_time_s": 20.000000000000306,
+          "selected_choice": 0,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 0.19999999552965164,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 0,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 0,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 0,
+            "without_measured_velocity_and_execution": 0
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.8584480285644531,
+            "previous_stop_reason_none": 2.3291571778827347e-05,
+            "without_idle_timers": 0.8494945168495178,
+            "without_long_risk_history": 0.9990854263305664,
+            "without_mask_features_hard_mask_retained": 0.00024674535961821675,
+            "without_current_ranges": 0.977156937122345,
+            "without_current_scan_quality": 0.015572039410471916,
+            "without_waypoint_and_goal": 0.8847999572753906,
+            "without_measured_velocity_and_execution": 0.789235532283783
+          }
+        },
+        {
+          "sensor_time_s": 23.79999999999955,
+          "selected_choice": 11,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 4.000000059604645,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.0765402540564537,
+            "previous_stop_reason_none": 3.4224769933643984e-06,
+            "without_idle_timers": 0.011654336005449295,
+            "without_long_risk_history": 0.9988522529602051,
+            "without_mask_features_hard_mask_retained": 1.4447429748543072e-05,
+            "without_current_ranges": 0.5324086546897888,
+            "without_current_scan_quality": 0.010540561750531197,
+            "without_waypoint_and_goal": 0.09984368830919266,
+            "without_measured_velocity_and_execution": 0.0761355310678482
+          }
+        },
+        {
+          "sensor_time_s": 33.19999999999853,
+          "selected_choice": 11,
+          "frozen_parent_choice": 11,
+          "legal_motion_choices": 11,
+          "previous_executed_reason": "policy_wait",
+          "previous_idle_with_choices_s": 5.0,
+          "current_prediction_valid": true,
+          "choices_under_head_ablations": {
+            "full_context": 11,
+            "previous_stop_reason_none": 11,
+            "without_idle_timers": 11,
+            "without_long_risk_history": 0,
+            "without_mask_features_hard_mask_retained": 11,
+            "without_current_ranges": 0,
+            "without_current_scan_quality": 11,
+            "without_waypoint_and_goal": 11,
+            "without_measured_velocity_and_execution": 11
+          },
+          "pstop_under_head_ablations": {
+            "full_context": 0.14811034500598907,
+            "previous_stop_reason_none": 3.989400283899158e-06,
+            "without_idle_timers": 0.012247959151864052,
+            "without_long_risk_history": 0.9988595247268677,
+            "without_mask_features_hard_mask_retained": 1.8631408238434233e-05,
+            "without_current_ranges": 0.6694519519805908,
+            "without_current_scan_quality": 0.018438084051012993,
+            "without_waypoint_and_goal": 0.18937677145004272,
+            "without_measured_velocity_and_execution": 0.1457156091928482
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Ablations may be outside the physical data distribution.",
+    "Original support and hard masks were fixed, so this tests the head channels only.",
+    "Changed outputs establish sensitivity, not correct explanation or safe counterfactual execution.",
+    "Older contexts are off-policy observations; their counterfactual choices are not physical results."
+  ],
+  "new_optimizer_updates": 0,
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0,
+  "resource": {
+    "seconds": 40.002281329012476,
+    "cpu_seconds": 6.00038737,
+    "average_cpu_cores": 0.1500011292018012,
+    "peak_rss_mib": 475.6171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

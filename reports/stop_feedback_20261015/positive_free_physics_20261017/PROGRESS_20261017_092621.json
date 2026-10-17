@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-17T09:26:21.907150+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal": "解决模型不知道自己为什么被停车和有可行动作却不尝试",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "model_weights_changed_this_followup": false,
+  "new_ppo_steps": 0,
+  "new_training_updates": 0,
+  "terminal_learned_validation": {
+    "report": "full_navigation_joint_linear_validation_20261017/RESULTS.json",
+    "physical_episodes": 35,
+    "safe_arrivals": 34,
+    "timeouts": 1,
+    "collisions": 0,
+    "false_arrivals": 0,
+    "physical_guards": 0,
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "known_tasks_are_training_development_not_generalization": true
+  },
+  "original_hard106": {
+    "post_release_frames": 170,
+    "legal_motion_but_stop_frames": 170,
+    "only_stop_frames": 0,
+    "original_deadline_s": 140,
+    "solved": false
+  },
+  "original_contract_teacher_search": {
+    "completed": true,
+    "report": "late106_compact_beam_20261017/RESULTS.json",
+    "new_physical_steps": 1512,
+    "expanded_nodes": 270,
+    "safe_teacher_candidate_found": false,
+    "not_infeasibility_proof": true
+  },
+  "positive_free_shadow": {
+    "completed": true,
+    "report": "positive_free_shadow_v2_20261017/RESULTS.json",
+    "recorded_frames": 2060,
+    "retained_point_timestamp_checks": 429336,
+    "summaries": [
+      {
+        "trace": "current106",
+        "compared_frames": 699,
+        "retained_original_point_timestamp_checks": 142487,
+        "maximum_original_points": 296,
+        "maximum_shadow_points": 289,
+        "no_capacity_eviction": true,
+        "all_retained_points_original": true,
+        "sampled_extra_geometry_allowances": 8
+      },
+      {
+        "trace": "creep04_failed",
+        "compared_frames": 699,
+        "retained_original_point_timestamp_checks": 142373,
+        "maximum_original_points": 296,
+        "maximum_shadow_points": 289,
+        "no_capacity_eviction": true,
+        "all_retained_points_original": true,
+        "sampled_extra_geometry_allowances": 29
+      },
+      {
+        "trace": "original96_success",
+        "compared_frames": 662,
+        "retained_original_point_timestamp_checks": 144476,
+        "maximum_original_points": 296,
+        "maximum_shadow_points": 289,
+        "no_capacity_eviction": true,
+        "all_retained_points_original": true,
+        "sampled_extra_geometry_allowances": 0
+      }
+    ],
+    "resource": {
+      "seconds": 224.6117634769762,
+      "cpu_seconds": 22.461569010999998,
+      "average_cpu_cores": 0.10000174818672139,
+      "peak_rss_mib": 49.91796875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "no_model_or_physics_or_runtime_permission_change": true
+  },
+  "preserved_failure_records": [
+    "positive_free_shadow_20261017/FAILURE.json"
+  ],
+  "actual_experimental_physics_status": {
+    "stage": "new_memory_from_init_admissible_physical_prefix",
+    "frame": 481,
+    "at": "2026-10-17T09:26:03.064104+08:00",
+    "new_ppo_steps": 0,
+    "new_training_updates": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "active_worker": {
+    "pid": 2256859,
+    "unit": "rl-positive-free-physics-20261017.service",
+    "start_ticks": "50791945",
+    "invocation_id": "c82fb27feb3a4256afa74ef44c61e528",
+    "kind": "experimental_memory_physical_diagnostic_not_training"
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2256859",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1428013056",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "c82fb27feb3a4256afa74ef44c61e528",
+      "unit": "rl-positive-free-physics-20261017.service",
+      "checked_at": "2026-10-17T09:26:21.907150+08:00",
+      "start_ticks": "50791945"
+    },
+    {
+      "MainPID": "2257384",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "6729728",
+      "MemoryMax": "104857600",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "f9dacb32b50847a28cda4d4f22747453",
+      "unit": "rl-positive-free-replay-admission-20261017.service",
+      "checked_at": "2026-10-17T09:26:21.907150+08:00",
+      "start_ticks": "50802876"
+    }
+  ],
+  "experimental_memory_not_adopted": true,
+  "experimental_memory_explicitly_installed_before_first_scan": true,
+  "separate_fresh_process_replay": {
+    "coordinator": "positive_free_physics_protocol_20261017/replay_when_ready.py",
+    "worker": "positive_free_physics_protocol_20261017/replay_worker.py",
+    "only_after_complete_safe_teacher": true,
+    "no_automatic_training_admission": true
+  },
+  "preserved_requirements": [
+    "original fixed28:normal18/sensor5/source3/heading2;per-case20%,normal total5%time/2%path",
+    "known successful complete missions and known safety failures",
+    "original97.6/106 late recovery plus original96success",
+    "independent infeasibility plus verified earlier prevention if claiming impossible",
+    "memory from initialization,admissible prefixes,full matched retention",
+    "conditional frozen fresh8 pairs after original gates,no training leakage",
+    "originalbody .393924904x.329460022m,4cm,12actions,unknown/blind,dynamics/deadlines,original deployment"
+  ],
+  "no_localization_generalization_real_car_or_board_improvement_claim": true
+}

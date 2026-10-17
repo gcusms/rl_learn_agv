@@ -1,0 +1,113 @@
+{
+  "completed": true,
+  "trace_sha256": "9d307c7e9a83a3c1f75c4a3158eb67c97cc9f98222e174e101ebe128ab127767",
+  "time_s": 105.99999999997608,
+  "truth_pose": [
+    7.193281098926438,
+    3.9287624073342355,
+    13.99875965724405
+  ],
+  "humans": [
+    [
+      7.448495565191744,
+      4.412942363882951
+    ],
+    [
+      22.0,
+      20.0
+    ]
+  ],
+  "robot_half_size_m": [
+    0.196962452,
+    0.164730011
+  ],
+  "robot_circumradius_m": 0.2567687364573663,
+  "physical_circle_radii_m": [
+    0.25,
+    0.25
+  ],
+  "nominal_margin_m": 0.04,
+  "currently_legal_choices": [
+    0,
+    9
+  ],
+  "current_heading_physical_circle_gap_m": 0.0685073903870741,
+  "rows": [
+    {
+      "hypothetical_straight_retreat_m": 0.0,
+      "center": [
+        7.193281098926438,
+        3.9287624073342355
+      ],
+      "exact_circle_min_gap_over_all_yaws_m": 0.04055626216283248,
+      "conservative_wall_min_gap_over_all_yaws_m": 0.33651236246907246,
+      "min_gap_minus_nominal4cm_m": 0.0005562621628324785,
+      "min_gap_minus4cm_plus5mm_sensitivity_m": -0.004443737837167519,
+      "straight_retreat_static_geometry_min_gap_m": 0.0685073903870741,
+      "dense_rotation_formula_difference_m": 1.6943030312077667e-10
+    },
+    {
+      "hypothetical_straight_retreat_m": 0.02,
+      "center": [
+        7.190521782819064,
+        3.908953667479828
+      ],
+      "exact_circle_min_gap_over_all_yaws_m": 0.059407100623116715,
+      "conservative_wall_min_gap_over_all_yaws_m": 0.3337530463616982,
+      "min_gap_minus_nominal4cm_m": 0.019407100623116715,
+      "min_gap_minus4cm_plus5mm_sensitivity_m": 0.014407100623116717,
+      "straight_retreat_static_geometry_min_gap_m": 0.0685073903870741,
+      "dense_rotation_formula_difference_m": 1.0690115459510707e-10
+    },
+    {
+      "hypothetical_straight_retreat_m": 0.04,
+      "center": [
+        7.187762466711689,
+        3.889144927625421
+      ],
+      "exact_circle_min_gap_over_all_yaws_m": 0.07833424838630298,
+      "conservative_wall_min_gap_over_all_yaws_m": 0.33109395998736235,
+      "min_gap_minus_nominal4cm_m": 0.038334248386302984,
+      "min_gap_minus4cm_plus5mm_sensitivity_m": 0.033334248386302986,
+      "straight_retreat_static_geometry_min_gap_m": 0.0685073903870741,
+      "dense_rotation_formula_difference_m": 1.4980461315872162e-11
+    },
+    {
+      "hypothetical_straight_retreat_m": 0.08,
+      "center": [
+        7.18224383449694,
+        3.8495274479166066
+      ],
+      "exact_circle_min_gap_over_all_yaws_m": 0.11638963156102211,
+      "conservative_wall_min_gap_over_all_yaws_m": 0.32765864254152266,
+      "min_gap_minus_nominal4cm_m": 0.0763896315610221,
+      "min_gap_minus4cm_plus5mm_sensitivity_m": 0.07138963156102211,
+      "straight_retreat_static_geometry_min_gap_m": 0.0685073903870741,
+      "dense_rotation_formula_difference_m": 1.3284157107662509e-10
+    },
+    {
+      "hypothetical_straight_retreat_m": 0.1,
+      "center": [
+        7.1794845183895655,
+        3.8297187080621993
+      ],
+      "exact_circle_min_gap_over_all_yaws_m": 0.13550595244958907,
+      "conservative_wall_min_gap_over_all_yaws_m": 0.32696216648476284,
+      "min_gap_minus_nominal4cm_m": 0.09550595244958907,
+      "min_gap_minus4cm_plus5mm_sensitivity_m": 0.09050595244958907,
+      "straight_retreat_static_geometry_min_gap_m": 0.0685073903870741,
+      "dense_rotation_formula_difference_m": 7.204736807153722e-11
+    }
+  ],
+  "simulator_truth_is_diagnostic_only": true,
+  "new_physical_steps": 0,
+  "new_training_or_positive_labels": false,
+  "no_action_or_guard_or_runtime_change": true,
+  "limitations": [
+    "This is static geometry, not a dynamics/guard/observability reachability proof.",
+    "A5mm perturbation is a sensitivity scenario, not measured uncertainty calibration.",
+    "Hypothetical retreat has no rear-visibility certificate and is not authorized by this audit.",
+    "The current12action policy cannot command reverse; any added action needs a new contract and training.",
+    "A currently legal creep can still lead to a constrained continuation."
+  ]
+}

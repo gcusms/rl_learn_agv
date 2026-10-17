@@ -1,0 +1,47 @@
+{
+  "original3252_arrays_byte_exact": true,
+  "total_frames": 3728,
+  "added_frames": 476,
+  "active_frames": 2972,
+  "inactive_target_disagreements": [],
+  "excluded_terminal_frames": [
+    {
+      "case_id": "normal_retention_recovery_holdout_03",
+      "frame": 195
+    },
+    {
+      "case_id": "normal_retention_motion_profile_002",
+      "frame": 281
+    }
+  ],
+  "no_nonterminal_frames_discarded": true,
+  "fit_weighting": {
+    "mode": "recovery_phase",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 632,
+        "unique_head_inputs": 484,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 2313,
+        "unique_head_inputs": 2002,
+        "allocated_loss_weight": 0.25
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 27,
+        "unique_head_inputs": 21,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  }
+}

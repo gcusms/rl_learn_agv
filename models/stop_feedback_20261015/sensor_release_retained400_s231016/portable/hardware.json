@@ -1,0 +1,345 @@
+{
+  "lidar": {
+    "angle_min": -1.8915926535897931,
+    "angle_max": 1.938407346410207,
+    "beams": 220,
+    "range_min": 0.1,
+    "range_max": 12.0,
+    "mount": [
+      0.118389,
+      0.0,
+      0.116682537,
+      0.0
+    ],
+    "source": "agv/peripherals/config/lidar_filters_config_sclidar.yaml"
+  },
+  "robot_footprint_m": [
+    0.393924904,
+    0.329460022
+  ],
+  "control_period_s": 0.2,
+  "forward_limit_m_s": 0.2,
+  "reverse_limit_m_s": 0.08,
+  "yaw_limit_rad_s": 0.5,
+  "real_robot_calibrated": false,
+  "near_field_memory": {
+    "resolution_m": 0.04,
+    "near_range_m": 1.5,
+    "forget_radius_m": 2.5,
+    "max_points": 4096,
+    "uncertainty_m_s": 0.002,
+    "max_uncertainty_m": 0.04,
+    "static_footprint_schema": "oriented_rectangle_v1",
+    "static_footprint_margin_m": 0.04,
+    "static_footprint_pose_sigma_scale": 0.0,
+    "predictive_action_constraint": {
+      "schema": "odometry_frame_predictive_mask_v2",
+      "horizon_s": 1.2,
+      "period_s": 0.1,
+      "reaction_s": 0.2,
+      "minimum_check_s": 0.6,
+      "margin_m": 0.04,
+      "velocity_floor_m_s": 0.025,
+      "minimum_speed_m_s": 0.04,
+      "track_max_age_s": 0.8,
+      "minimum_track_hits": 3,
+      "response_gain": 20.0,
+      "response_acceleration": [
+        0.5,
+        1.0
+      ],
+      "contour_hold_s": 0.6,
+      "contour_recovery_measurements": 2,
+      "wait_always_allowed": true,
+      "simulator_truth_used": false,
+      "calibrated": false,
+      "cumulative_contour_reference": true,
+      "contour_count_ratio": 0.8,
+      "contour_diameter_ratio": 0.75,
+      "retained_hypothesis_s": 1.2,
+      "unknown_velocity_reachable_envelope": true,
+      "retained_measurement_age_preserved": true
+    }
+  },
+  "policy_observation": {
+    "schema": "safety_context_v4",
+    "dimensions": 282,
+    "base_dimensions": 235,
+    "probes_m_s_rad_s": [
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ]
+    ],
+    "reasons": [
+      "none",
+      "nonfinite_input",
+      "stale_or_future_scan",
+      "scan_unavailable",
+      "odometry_jump",
+      "localization_uncertain",
+      "learned_route_incomplete",
+      "reverse_without_rear_visibility",
+      "reverse_duration_limit",
+      "static_braking_footprint",
+      "laser_braking_footprint",
+      "escape_not_increasing_clearance",
+      "unsafe_turn_blocked",
+      "unsafe_translation_blocked",
+      "estimated_goal_reached",
+      "other"
+    ],
+    "wait_normalization_s": 5.0,
+    "idle_wait": {
+      "translation_below_m_s": 0.01,
+      "rotation_below_rad_s": 0.05,
+      "include_voluntary_idle": true,
+      "exclude_reached_goal": true
+    },
+    "predictive_features": {
+      "prefix_dimensions": 267,
+      "fast_probe_acceptance_commands": [
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "risk": {
+        "schema": "predicted_body_risk_features_v1",
+        "dimensions": 13,
+        "commands_m_s_rad_s": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2,
+            0.0
+          ],
+          [
+            0.1,
+            0.0
+          ],
+          [
+            0.05,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ],
+          [
+            0.05,
+            0.5
+          ],
+          [
+            0.05,
+            -0.5
+          ],
+          [
+            0.01,
+            0.5
+          ],
+          [
+            0.01,
+            -0.5
+          ],
+          [
+            0.2,
+            0.5
+          ],
+          [
+            0.2,
+            -0.5
+          ]
+        ],
+        "horizon_s": 2.4,
+        "period_s": 0.2,
+        "margin_m": 0.04,
+        "uncertainty_m_s": 0.025,
+        "score": "zero_if_no_predicted_contact_else_one_minus_time_over_horizon_plus_period",
+        "final_feature": "at_least_one_supported_moving_track",
+        "absence_of_support_means": "unknown",
+        "instantaneous_command_following": true,
+        "simulator_truth_used": false,
+        "commands_issued": false
+      }
+    }
+  },
+  "policy_action": {
+    "schema": "masked_velocity_choices_predictive_v2",
+    "choices": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "normalized_actions": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.25,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        -1.0
+      ],
+      [
+        0.25,
+        1.0
+      ],
+      [
+        0.25,
+        -1.0
+      ],
+      [
+        0.05000000074505806,
+        1.0
+      ],
+      [
+        0.05000000074505806,
+        -1.0
+      ],
+      [
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        -1.0
+      ]
+    ],
+    "stop_index": 0,
+    "mask_source": "current_guard_and_odometry_frame_predictive_probe_acceptance",
+    "wait_always_allowed": true,
+    "future_safety_certified": false,
+    "simulator_truth_used": false,
+    "predictive_constraint": {
+      "schema": "odometry_frame_predictive_mask_v2",
+      "horizon_s": 1.2,
+      "period_s": 0.1,
+      "reaction_s": 0.2,
+      "minimum_check_s": 0.6,
+      "margin_m": 0.04,
+      "velocity_floor_m_s": 0.025,
+      "minimum_speed_m_s": 0.04,
+      "track_max_age_s": 0.8,
+      "minimum_track_hits": 3,
+      "response_gain": 20.0,
+      "response_acceleration": [
+        0.5,
+        1.0
+      ],
+      "contour_hold_s": 0.6,
+      "contour_recovery_measurements": 2,
+      "wait_always_allowed": true,
+      "simulator_truth_used": false,
+      "calibrated": false,
+      "cumulative_contour_reference": true,
+      "contour_count_ratio": 0.8,
+      "contour_diameter_ratio": 0.75,
+      "retained_hypothesis_s": 1.2,
+      "unknown_velocity_reachable_envelope": true,
+      "retained_measurement_age_preserved": true
+    }
+  }
+}

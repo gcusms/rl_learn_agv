@@ -1,0 +1,57 @@
+{
+  "schema": "github_progress_snapshot_v1",
+  "branch": "recovery-work",
+  "captured_at": "2026-10-17T11:02:35.128317+08:00",
+  "parent_commit": "4734789b35c0057e82f73c9ce183022983d702e3",
+  "training_status": "paused",
+  "original_deployment_replaced": false,
+  "deployment_approved": false,
+  "candidate": {
+    "path": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+    "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+    "observations": 625,
+    "actions": 12,
+    "required_runtime": "neural_navigation.aligned_release_runtime.AlignedReleaseRuntime"
+  },
+  "original_real_car_model": {
+    "path": "models/quality_recovery_20261014",
+    "policy_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+    "observations": 300,
+    "actions": 12
+  },
+  "comparison": "reports/model_comparison_20261017/COMPARISON.json",
+  "saved_checks": {
+    "checks": 37,
+    "safe_arrivals": 35,
+    "collision_cases": 0,
+    "timeouts": 2
+  },
+  "fixed28": {
+    "checks": 28,
+    "safe_arrivals": 28,
+    "collision_cases": 0,
+    "timeouts": 0
+  },
+  "normal18": {
+    "seconds": 459.40000000001334,
+    "travel_m": 67.13577183988691
+  },
+  "remaining_failures": [
+    "97.6-second late recovery timeout",
+    "106-second late recovery timeout"
+  ],
+  "fresh8_executed": false,
+  "orin_tested": false,
+  "raspberry_pi_tested": false,
+  "latest_update_new_ppo_steps": 0,
+  "latest_update_constrained_final_layer_updates": 1,
+  "current_stage_source_ppo_samples": 1993,
+  "localizer_router_and_docking_frozen": true,
+  "formal_evaluation": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json",
+  "bounded_followup": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+  "verification": "docs/releases/20261017/VERIFICATION.json",
+  "integrity_manifest": "docs/releases/20261017/FILES.json",
+  "history": "docs/handoff/README_history_20261017.md",
+  "portability": "Native .so files, virtual environments and caches are excluded. Rebuild the localization kernel on the destination from source; preserve model/feature contracts.",
+  "scope": "Project handoff and saved simulation evidence; not complete deployment acceptance or proof of shortest paths."
+}

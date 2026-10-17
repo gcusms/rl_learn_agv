@@ -1,0 +1,44 @@
+{
+  "case_id": "release_phase_frozen_noise_05_2",
+  "category": "new_noise_seed_same_development_map_frozen_after_fit",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 32.99999999999843,
+  "travel_m": 4.879666585883422,
+  "frames": 166,
+  "final_xy_error_m": 0.10439217027272484,
+  "final_yaw_error_rad": null,
+  "localization_xy_p95_m": 0.005225989016644102,
+  "localization_yaw_p95_rad": 0.0014188018159663196,
+  "stop_choices": 41,
+  "only_stop_frames": 3,
+  "stop_reasons": {
+    "None": 162,
+    "scan_unavailable": 3,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 38,
+  "predictive_constraint_frames": 0,
+  "runtime_ms": {
+    "p95": 129.16090300132055,
+    "p99": 138.8624820159748,
+    "maximum": 177.28278203867376
+  },
+  "trace_path": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/sensor5_release_phase_frozen_noise_05_2_candidate.npz",
+  "trace_sha256": "5a61b7434703f0c908546d61a26d845847bab53b467b542357adfebf569439ac",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 74.69545552600175,
+    "cpu_seconds": 26.234210199000003,
+    "average_cpu_cores": 0.3512156129748453,
+    "peak_rss_mib": 1684.0859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

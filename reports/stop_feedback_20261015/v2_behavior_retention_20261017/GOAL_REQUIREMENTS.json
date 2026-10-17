@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-17T10:12:59.840518+08:00",
+  "goal": "解决模型不知道自己为什么被停车和有可行动作却不尝试",
+  "previous_goal_turn_classification": "verified_wait",
+  "current_goal_turn_classification": "progress",
+  "requirements": [
+    {
+      "requirement": "Policy receives measured current per-action stop causes and actual execution history; cause inputs affect learned choices.",
+      "status": "Current measured cause/execution history input checks retained; actual current neural audit completed35cases,315cause probability changes and3greedy changes with other features/masks fixed. This proves causal network influence,not safe understanding; hard106greedy choice remainsSTOP.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json",
+        "full_navigation_joint_linear_20261017/NEURAL_MECHANISM.json",
+        "full_navigation_joint_linear_20261017/DEPLOYMENT_CONTRACT_REPAIR.json"
+      ]
+    },
+    {
+      "requirement": "When safe motion exists, learn useful recovery without forcing motion or punishing necessary waits.",
+      "status": "Latest joint-linear learned model actual dynamic02full mission restored49.2s and569to1voluntary waits, while sensor01 remains safe37s. Both complete433frame traces independently verified. Known training/development only; late recovery and full retention remain required.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/PRIORITY_PHYSICAL_AUDIT.json",
+        "full_navigation_joint_retention_20261017/REGRESSION_AUDIT.json"
+      ]
+    },
+    {
+      "requirement": "Retain normal18,sensor5,source3,heading2 and original per-case/aggregate safety and efficiency gates.",
+      "status": "Completed by actual latest joint-linear weights:original28all safety/efficiency gates independently passed against original fixed,declared parent and actual auxiliary119.5028recorded frames/3616learned-controlled,all non-timing trajectories exact to auxiliary119;all3original initialization prefixes and2physical heading stop/settle conditions checked. This is retained ability,not new efficiency or generalization.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+        "full_navigation_joint_linear_20261017/RECORDED_AUDITS.json",
+        "full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json"
+      ]
+    },
+    {
+      "requirement": "Resolve97.6 and106 late waits while keeping prior successes; independent infeasibility would additionally require preventing earlier entry.",
+      "status": "Limited post-pause assessment completed: original97.6 recovery stilltimeout140 with187legal-motionSTOPframes; prior96success retained at132.4s/post36.4s and10.394158845m,original efficiency gate passed. Original106stillfails. Versioned audit confirms exact raw sensors/motion/permissions and583shared feature dimensions,independently reconstructs declared42D v2 risk with2.98e-8maxerror. Original scope unmet,not waived;no further optimization authorized in this bounded assessment.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/CURRENT106_FAILURE_AUDIT.json",
+        "positive_free_failure_audit_20261017/RESULTS.json",
+        "positive_free_failure_audit_20261017/RAW_GEOMETRY_BOTTLENECK.json",
+        "late106_framewise_protocol_20261017/OPPORTUNITY_WINDOWS.json",
+        "late106_framewise_20261017/PROGRESS_20261017_093824.json",
+        "late106_framewise_20261017/COMPACT_STATE_ADMISSION.json",
+        "user_pause_20261017/PROGRESS.json",
+        "deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+        "deployment_acceptance_supplement_20261017/VERSIONED_TRACE_AUDIT.json"
+      ]
+    },
+    {
+      "requirement": "Fix known full-mission safety failures, and pass conditional previously unexecuted8-seed pairing without training leakage.",
+      "status": "Fixed28 and known6 retained in unchanged weights; originalformal35 plus bounded2recovery checks total37mixed/correlated checks,35safe2timeouts0collisions. Original106and97.6stillfailed; prior96success retained. Conditional prospective8 remains unexecuted under unchanged all-hard-safe prerequisite; no deployment or generalization approval.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/KNOWN6_PHYSICAL_AUDIT.json",
+        "full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+        "full_navigation_joint_linear_validation_20261017/PLAN.json",
+        "deployment_acceptance_supplement_20261017/FINAL_REVIEW.json"
+      ]
+    },
+    {
+      "requirement": "Changed memory, if adopted, must work from initialization with admissible prefixes and full matched retention.",
+      "status": "Earlier replacement hybrid rejected for lost96success. New strong-OR-stable-finite experiment passed from-init admissibility but both teachers stilltimeout,not adopted and no full retention claimed. Full memory semantics/label regeneration and every original gate remain required before adoption.",
+      "evidence": [
+        "hybrid_memory_protocol_20261017/MATCHED_PAIR_REJECTION.json",
+        "positive_free_shadow_v2_20261017/RESULTS.json",
+        "positive_free_physics_20261017/FROM_INIT_ADMISSION.json",
+        "positive_free_physics_20261017/RESULTS.json",
+        "positive_free_replay_admission_20261017/RESULTS.json"
+      ]
+    },
+    {
+      "requirement": "Preserve original footprint,4cm margin,unknown/blind rules,12actions,dynamics,deadlines and original real-car deployment.",
+      "status": "Same625features and12action choices,4cmguard/body,blind/unknown rules,memory,dynamics,deadline,localizer/router/terminal. All5608labels/692priorSTOPand658subset retained; portable protected file hashes and physical critical missions verified. Original deployment not replaced; full safety remains required.",
+      "evidence": [
+        "full_navigation_joint_linear_20261017/FIT_RESULTS.json",
+        "full_navigation_joint_linear_20261017/PRIORITY_PHYSICAL_AUDIT.json"
+      ]
+    },
+    {
+      "requirement": "Bound local resources and avoid unsupported localization,unseen-map,real-car or Orin/Pi claims.",
+      "status": "Bounded2-case validation completed under single-worker0.35core software/3GiBhard/Nice19; peaks1689.93MiB. Actual workers terminal, exact PIDs absent and no active RL units/timers. Original502input hashes unchanged; candidatecheckpoint unchanged. Optimization remains paused, no localization/real-car/board-performance improvement claim.",
+      "evidence": [
+        "positive_free_physics_20261017/RESULTS.json",
+        "positive_free_failure_audit_20261017/RESULTS.json",
+        "late106_framewise_20261017/PROGRESS_20261017_093824.json",
+        "user_pause_20261017/POST_STOP_SNAPSHOT.json",
+        "deployment_acceptance_supplement_20261017/FINISH_VERIFICATION.json"
+      ]
+    }
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "current_progress_report": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+  "work_state": "paused_after_bounded_acceptance_followup",
+  "goal_status": "paused",
+  "pause_reason": "如果设计的差不多了，就可以停止了"
+}

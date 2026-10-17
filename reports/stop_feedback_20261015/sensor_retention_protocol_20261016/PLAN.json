@@ -1,0 +1,120 @@
+{
+  "at": "2026-10-16T12:51:07.186187+00:00",
+  "inputs": {
+    "training/experiments/fit_sensor_retention_pair.py": "6d4c28c9885220b73b5e17a5d2f8546b003436ae9210d97977ea61d4d09e36a1",
+    "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500/checkpoint.pt": "3fe10bba41684b57f414f8386c3ea859a257204abca0b7a7c75288ebe531f0ea",
+    "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500/RESULTS.json": "df20e6166f1824fe8c437ec73c188f64c92dd6ba00c900114d701fc914f41524",
+    "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "reports/stop_feedback_20261015/normal_retention_sources_20261016/RESULTS.json": "66c43edc90407d6045194f5388f4b4a9be0f9aff8438beb0914691c7c0d75e4e",
+    "reports/stop_feedback_20261015/normal_retention_sources_20261016/demonstrations.npz": "a36a80a5f7c40882a360358542102e47fc5bdf3ca4cd3408d7a3181847f8e5fd",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/RESULTS.json": "f7fdf3ef907d5cfd4af8dbf9cc200d61aa078d232cd58045551cdbe2a85c297b",
+    "reports/stop_feedback_20261015/context_feedback_longfit_protocol_20261016/tasks.json": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/actor.pt": "8e5366f7d0a640fe85add441fc7d559cc627f20f7725fb09396761db0440da06",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_0.npz": "1f0369ace91c9463c9d3bcadba1c823b0b5c166308d509fa3d676c1cd93932a4",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_1.npz": "cf5ac804b84ff32630c3320448907730c5b7f2cb18216c0c01a5304496c8f759",
+    "training/experiments/replay_normal_retention_sources.py": "7962a522366b77022940421ce56071d9fd2f099af69e9077d9b9bd74b91a1428",
+    "training/experiments/guard_reason_release_actor.py": "2e2914ef82b68945a758a22dc14a9a2704ea37f7410f0eb0cc0f3cef76ffcd5f",
+    "training/experiments/context_release_actor.py": "26712fd60909cec0c8c46099c0674970f11b45440a31d02a69c2ece3d6b9e811",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a",
+    "training/experiments/refit_phase_tail_pair.py": "2972513f3f035717f03085f308bb61763677182ecbadc007ea60d61965915c96",
+    "training/experiments/phase_tail_loss.py": "3c36c1daaec39c830efecf068dc71ee27d4029f1c6dd47ff8f12b5ece225de5b",
+    "training/experiments/release_fit_weights.py": "f7014aaa4b76ecf7932f40354168ab1dd66066304882615c73a56a081723b007",
+    "training/experiments/build_release_recovery_sources.py": "629584ab69baaf660fb72846087f7cf84ab02b44326e52450d620871b6123259"
+  },
+  "parent_labels": 3728,
+  "maximum_added_labels": 339,
+  "selected_complete_sources": [
+    "sensor_release_frozen_noise_05_0",
+    "sensor_release_frozen_noise_05_1"
+  ],
+  "maximum_new_updates_per_fit": 500,
+  "prior_supervised_updates": 2500,
+  "fits": [
+    "control500",
+    "retained500"
+  ],
+  "seed": 231016,
+  "only_changed_factor": "add339complete_safe_native625_noise_labels",
+  "same_initial_actor_adam_rng_loss_architecture_and_learning_rate": true,
+  "phase_gradient_budgets": {
+    "stop": 0.5,
+    "ordinary": 0.25,
+    "resumed": 0.25
+  },
+  "ordinary_tail_focus_share": 0.5,
+  "duplicate_weight_features": 312,
+  "all_original_labels_and_safe_stop_labels_required": true,
+  "no_partial_or_failed_physics_trace_labels": true,
+  "fresh_noise_cases": [
+    {
+      "id": "sensor_retention_fresh_0",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017121,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "noise_frozen_before_sensor_retention_fit_same_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    },
+    {
+      "id": "sensor_retention_fresh_1",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017122,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "noise_frozen_before_sensor_retention_fit_same_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    }
+  ],
+  "new_ppo_steps": 0,
+  "deployment_approved": false
+}

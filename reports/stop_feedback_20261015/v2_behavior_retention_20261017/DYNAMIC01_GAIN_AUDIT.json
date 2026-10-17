@@ -1,0 +1,87 @@
+{
+  "completed": true,
+  "at": "2026-10-17T05:24:59.320283+08:00",
+  "case_id": "pre_ppo_holdout_dynamic_01",
+  "same_known_case_now_training_development_reference": true,
+  "not_independent_generalization_test": true,
+  "before": {
+    "safe_success": true,
+    "collisions": 0,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 53.400000000008866,
+    "travel_m": 4.628456294733507,
+    "voluntary_wait_frames": 27,
+    "only_stop_frames": 82
+  },
+  "after": {
+    "safe_success": true,
+    "collisions": 0,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 34.59999999999925,
+    "travel_m": 4.3882475749918815,
+    "voluntary_wait_frames": 1,
+    "only_stop_frames": 18
+  },
+  "time_relative_change": -0.3520599250937546,
+  "travel_relative_change": -0.051898236570786516,
+  "first_divergence": {
+    "frame": 33,
+    "sensor_time_s": 6.5999999999998815,
+    "before_action": 6,
+    "after_action": 11,
+    "before_executed_command": [
+      0.05,
+      0.5
+    ],
+    "after_executed_command": [
+      0.2,
+      -0.5
+    ],
+    "exact_same625_sensor_odometry_mask_physical_route_inputs": {
+      "observations": true,
+      "masks": true,
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "labels": true,
+      "human_positions": true,
+      "route_diagnostics": true
+    },
+    "all12_actions_legal": true,
+    "previous_executed_commands_exact": true
+  },
+  "model_files_identical_except_actor_and_training_metadata": {
+    "quality_observation.json": true,
+    "hardware.json": true,
+    "localization_contract.json": true,
+    "docking_contract.json": true,
+    "goal_pose_observation.json": true,
+    "localizer.pt": true,
+    "router.pt": true,
+    "localization_kernel.so": true,
+    "uncertainty_contract.json": true,
+    "decision_feedback.json": true,
+    "parent_actor.pt": true,
+    "long_risk_observation.json": true,
+    "previous_risk_actor.pt": true,
+    "release_observation.json": true
+  },
+  "matching_v2_observation_contract": true,
+  "original_bc4500_time_and_travel_restored": true,
+  "all_original_safety_efficiency_and_remaining_hard_gates_still_required": true,
+  "source_new_supervised_updates": 119,
+  "new_ppo_steps": 0,
+  "new_physical_episodes_in_this_audit": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "inputs": {
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "reports/stop_feedback_20261015/v2_behavior_retention_20261017/PRIORITY_VALIDATION_SNAPSHOT.json": "60351619de696c5d4e59ac921540c101490ff77cf31a74423caa09ad43d2dc91",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_01_candidate.npz": "a29de634b3a5cc67f2a9c2d5c3a3ad69645f746f34dc4a79e1db5f5a15c955c0",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_01_candidate.npz": "79abd27e1e7315efb24ce186617fbac2612698f70fbd53e8f683e332fb3638e8",
+    "models/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_s231017/portable/manifest.json": "128386532e017ec135af17182fcb5229ce79245363b965fc6f1cc0c32fc88202",
+    "models/stop_feedback_20261015/v2_behavior_retention_s231017/portable/manifest.json": "f4b571eaf6de8da42bdfe34049e529c2634e06fcd8f80e6761e343a48d329549"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:29:00.558028+00:00",
+  "correct_source_labels": 2509,
+  "total_source_labels": 2509,
+  "updates": 50,
+  "fit_weighting": {
+    "mode": "stop_move",
+    "duplicate_weighting": "legacy unchanged",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 563,
+        "unique_head_inputs": 415,
+        "allocated_loss_weight": 0.4999999999999999
+      },
+      {
+        "phase": "move",
+        "labels": 1462,
+        "unique_head_inputs": 1159,
+        "allocated_loss_weight": 0.5
+      }
+    ],
+    "stop_loss_weight": 0.4999999999999999,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "fit_records": [
+    {
+      "update": 50,
+      "active_correct": 2025,
+      "active_examples": 2025,
+      "loss": 0.0023311092518270016,
+      "minimum_stop_target_probability": 0.9364309906959534,
+      "minimum_motion_target_probability": 0.8625437617301941
+    }
+  ],
+  "frozen_parent_tensor_sha256": "475eca57e4004dff43e3c0d9b479d420f16e886d79cf3e5a699e5a9a9805d882",
+  "checkpoint_sha256": "d04f6f15a2dc652b0d09ae989fe2b2c3c97592d3e061a2d012b6f9ef26c8270e",
+  "optimizer_and_rng_saved": true,
+  "exported_for_physical_validation": true,
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "resource": {
+    "seconds": 10.012252092012204,
+    "cpu_seconds": 3.5090278699999997,
+    "average_cpu_cores": 0.3504733837854032,
+    "peak_rss_mib": 717.02734375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

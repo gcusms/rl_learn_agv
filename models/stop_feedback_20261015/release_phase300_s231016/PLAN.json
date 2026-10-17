@@ -1,0 +1,260 @@
+{
+  "inputs": {
+    "training/experiments/train_release_actor.py": "22c71b7a5beb68437bf241e0174dacb93bdb950c2f442275916714574e7ef8f8",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/demonstrations.npz": "eb8123e14c5edf472939b9a746240fcd60e97e9ca36697e12fe2b316bf8b4b2b",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/RESULTS.json": "de08a2af625ca88aa20770ba883855d2bda134995dccbb2c8fc84d6ff0206a41",
+    "models/stop_feedback_20261015/long_risk_bc1000_s231016/checkpoint.pt": "8c3a7c9ffab979e8ff55e97f22244fc3e775e26121a12079511db343b6c6819d",
+    "models/stop_feedback_20261015/long_risk_bc1000_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/long_risk_bc1000_s231016/portable/manifest.json": "7c3dcd3e3312d96a9f6b79c174d17563214023f811d15104010de76e7ab690d8",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515",
+    "training/experiments/release_fit_weights.py": "f7014aaa4b76ecf7932f40354168ab1dd66066304882615c73a56a081723b007",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a",
+    "training/neural_navigation/release_observation.py": "6730b9d7107b0cc7d765915aeb5be3bad410a0cd351597a06c6670ee729198fc",
+    "training/neural_navigation/release_runtime.py": "cee233acad4808bfeb97dea99b1377bd21a3c8fb4e1412e8210405bd6bab4c52",
+    "reports/stop_feedback_20261015/long_risk_protocol_20261016/PLAN.json": "a46478aa661bc987066a9ad7b340d0e059882298230ee0d421c935f92ec04e8a",
+    "reports/stop_feedback_20261015/long_risk_protocol_20261016/new_sensor_cases.json": "ca32d1d4f1635204a7fe4a37737be7f1b571ec133cc92a475cac02742ae51e3d"
+  },
+  "contract": {
+    "schema": "risk_and_measured_release_context_v1",
+    "dimensions": 625,
+    "training_dimensions": 622,
+    "unchanged_runtime_prefix_dimensions": 481,
+    "parent_contract": {
+      "schema": "long_action_risk_history_v1",
+      "dimensions": 481,
+      "training_dimensions": 478,
+      "parent_contract": {
+        "schema": "stop_decision_feedback_v2",
+        "prefix_dimensions": 300,
+        "training_dimensions": 436,
+        "heading_prefix_dimensions": 303,
+        "dimensions": 439,
+        "append_dimensions": 136,
+        "action_commands": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2,
+            0.0
+          ],
+          [
+            0.1,
+            0.0
+          ],
+          [
+            0.05,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ],
+          [
+            0.05,
+            0.5
+          ],
+          [
+            0.05,
+            -0.5
+          ],
+          [
+            0.01,
+            0.5
+          ],
+          [
+            0.01,
+            -0.5
+          ],
+          [
+            0.2,
+            0.5
+          ],
+          [
+            0.2,
+            -0.5
+          ]
+        ],
+        "fields": [
+          "12_current_guard_rejection_groups_one_hot",
+          "previous_executed_stop_reason_one_hot",
+          "12_guard_forecast_contact_scores",
+          "nonzero_choices_over_11",
+          "scan_age_over_guard_limit",
+          "previous_idle_seconds_over_5",
+          "previous_idle_with_choices_seconds_over_5",
+          "prediction_input_valid",
+          "moving_tracks_over_4",
+          "oldest_track_age_over_0.8",
+          "scan_valid"
+        ],
+        "rejection_groups": [
+          "accepted",
+          "perception_or_odometry",
+          "localization_or_route",
+          "static_geometry",
+          "laser_geometry",
+          "dynamic_prediction",
+          "projection",
+          "other"
+        ],
+        "previous_reasons": [
+          "none",
+          "nonfinite_input",
+          "stale_or_future_scan",
+          "scan_unavailable",
+          "odometry_jump",
+          "localization_uncertain",
+          "learned_route_incomplete",
+          "reverse_without_rear_visibility",
+          "reverse_duration_limit",
+          "static_braking_footprint",
+          "laser_braking_footprint",
+          "escape_not_increasing_clearance",
+          "unsafe_turn_blocked",
+          "unsafe_translation_blocked",
+          "estimated_goal_reached",
+          "other",
+          "predicted_dynamic_contact",
+          "predictive_command_contract",
+          "policy_wait",
+          "only_stop_available"
+        ],
+        "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+        "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+        "unknown_forecast_is_not_clear": true,
+        "legacy_prefix_unchanged": true,
+        "stop_always_selectable": true,
+        "simulator_truth_used": false,
+        "commands_issued": false,
+        "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+        "executed_reason_retained_during_idle": true
+      },
+      "unchanged_runtime_prefix_dimensions": 439,
+      "unchanged_training_prefix_dimensions": 436,
+      "append_dimensions": 42,
+      "history_ages_s": [
+        0.4,
+        0.2,
+        0.0
+      ],
+      "maximum_historical_sample_age_s": 0.05,
+      "fields_per_frame": [
+        "12_forecast_contact_scores",
+        "supported_prediction_valid",
+        "supported_tracks_over_4"
+      ],
+      "horizon_s": 5.0,
+      "forecast_period_s": 0.2,
+      "contact_score": "0 if no predicted contact, else 1-contact_s/5.2; consult validity",
+      "unsupported_or_missing_history": "zero_values_and_zero_validity_not_certified_clear",
+      "margin_m": 0.04,
+      "velocity_uncertainty_floor_m_s": 0.025,
+      "adaptive_track_uncertainty": true,
+      "finite_measured_motion_response": true,
+      "response_gain": 20.0,
+      "response_acceleration": [
+        0.5,
+        1.0
+      ],
+      "action_commands": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.05,
+          0.5
+        ],
+        [
+          0.05,
+          -0.5
+        ],
+        [
+          0.01,
+          0.5
+        ],
+        [
+          0.01,
+          -0.5
+        ],
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "frame": "guard tracks and robot pose in continuous odometry coordinates",
+      "simulator_truth_used": false,
+      "future_sensor_frames_used": false,
+      "absolute_episode_time_input": false,
+      "commands_issued": false,
+      "actions_masks_body_guard_and_blind_memory_unchanged": true
+    },
+    "append_dimensions": 144,
+    "sectors": 72,
+    "pooling": "numpy.array_split_in_scan_order",
+    "fields": [
+      "72_finite_hit_fractions",
+      "72_no_return_fractions"
+    ],
+    "finite_hit": "finite and range_min <= range < range_max",
+    "no_return": "positive infinity or finite range == range_max",
+    "unknown": "NaN, negative infinity, below range_min or finite above range_max",
+    "unknown_fraction": "1 - finite_hit_fraction - no_return_fraction",
+    "no_return_is_not_a_measured_surface": true,
+    "unknown_is_not_clear": true,
+    "source": "same current raw scan consumed by localization, routing and guard",
+    "simulator_truth_used": false,
+    "future_sensor_frames_used": false,
+    "action_masks_body_margin_blind_memory_and_deadlines_unchanged": true,
+    "commands_issued": false
+  },
+  "seed": 231016,
+  "maximum_supervised_updates": 300,
+  "new_ppo_steps": 0,
+  "fit_loss_mode": "recovery_phase",
+  "recovery_motion_share": 0.5,
+  "recovery_wait_s": 2.0,
+  "only_complete_safe_positive_sources": true,
+  "head_dimensions": [
+    312,
+    32,
+    32,
+    12
+  ],
+  "initialize_exact_old_risk_decisions": true,
+  "failed_latest_trace_excluded": true,
+  "old_noise_cases_used_as_development": true,
+  "fresh_four_cases_not_used": false,
+  "localizer_router_parent_actor_docking_and_guard_frozen": true,
+  "physical_navigation_must_be_independently_verified": true
+}

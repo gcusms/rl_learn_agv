@@ -1,0 +1,117 @@
+{
+  "completed": false,
+  "model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "groups": {
+    "observed6": {
+      "rows": [
+        {
+          "case_id": "pre_ppo_holdout_sensor_01",
+          "category": "frozen_before_ppo_new_noise_same_known_map",
+          "safe_success": true,
+          "physical_arrival": true,
+          "false_arrival": false,
+          "protocol_valid": true,
+          "collisions": 0,
+          "input_odometry": "noisy_motion_feedback",
+          "physical_guards": 0,
+          "timeout": false,
+          "seconds": 37.000000000000476,
+          "travel_m": 5.580400764273147,
+          "frames": 186,
+          "final_xy_error_m": 0.12499809722606739,
+          "final_yaw_error_rad": null,
+          "localization_xy_p95_m": 0.004768438265878831,
+          "localization_yaw_p95_rad": 0.0014002740023857374,
+          "stop_choices": 34,
+          "only_stop_frames": 4,
+          "stop_reasons": {
+            "None": 181,
+            "scan_unavailable": 3,
+            "learned_route_incomplete": 1,
+            "estimated_goal_reached": 1
+          },
+          "voluntary_wait_frames": 30,
+          "predictive_constraint_frames": 1,
+          "runtime_ms": {
+            "p95": 125.4513435123954,
+            "p99": 139.97766216052696,
+            "maximum": 185.49737898865715
+          },
+          "trace_path": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/physical/observed6_pre_ppo_holdout_sensor_01_candidate.npz",
+          "trace_sha256": "b2fbc3904e71f404cb37f026873455149c9d29c12696df57a36a426cc5ff09ad",
+          "variant": "candidate",
+          "fresh_process_per_case": true,
+          "resource": {
+            "seconds": 81.07230393000646,
+            "cpu_seconds": 28.454154658,
+            "average_cpu_cores": 0.350972567432718,
+            "peak_rss_mib": 1686.92578125,
+            "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+          }
+        },
+        {
+          "case_id": "pre_ppo_holdout_dynamic_02",
+          "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+          "safe_success": true,
+          "physical_arrival": true,
+          "false_arrival": false,
+          "protocol_valid": true,
+          "collisions": 0,
+          "input_odometry": "noisy_motion_feedback",
+          "physical_guards": 0,
+          "timeout": false,
+          "seconds": 49.20000000000672,
+          "travel_m": 7.597490031365833,
+          "frames": 247,
+          "final_xy_error_m": 0.11801390175014093,
+          "final_yaw_error_rad": null,
+          "localization_xy_p95_m": 0.004229125946277602,
+          "localization_yaw_p95_rad": 0.0014615190852758971,
+          "stop_choices": 22,
+          "only_stop_frames": 21,
+          "stop_reasons": {
+            "None": 246,
+            "estimated_goal_reached": 1
+          },
+          "voluntary_wait_frames": 1,
+          "predictive_constraint_frames": 38,
+          "runtime_ms": {
+            "p95": 124.05761738191356,
+            "p99": 140.53004846791734,
+            "maximum": 177.9152940143831
+          },
+          "trace_path": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_02_candidate.npz",
+          "trace_sha256": "a8de3442c1c0cb4043d69245d8c18cc5a644cce9c0727849f5953332cbc967d5",
+          "variant": "candidate",
+          "fresh_process_per_case": true,
+          "resource": {
+            "seconds": 105.49410192802316,
+            "cpu_seconds": 36.996281359,
+            "average_cpu_cores": 0.35069525862442946,
+            "peak_rss_mib": 1686.0546875,
+            "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+          }
+        }
+      ]
+    }
+  },
+  "gates": {
+    "pre_ppo_holdout_sensor_01": {
+      "passed": true,
+      "reference_was_unsafe": true
+    }
+  },
+  "fresh_rows": [],
+  "new_physical_episodes": 2,
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "source_prior_additional_ppo_steps": 1993,
+  "source_parent_auxiliary_updates": 119,
+  "evaluated_supervised_updates": 1,
+  "known_dynamic00_dynamic01_and_sensor01_are_training_references": true,
+  "all_known6_now_training_development": true,
+  "source_supervised_updates": 2500,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "at": "2026-10-17T07:43:47.571841+08:00"
+}

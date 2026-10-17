@@ -1,0 +1,2218 @@
+{
+  "completed": true,
+  "at": "2026-10-17T07:48:42.407213+08:00",
+  "training_labels": 5608,
+  "supervised_data_unchanged": true,
+  "recorded_prior_v2_training_rollouts": [
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_01.npz",
+      "release_frame": 450,
+      "safe_success": false,
+      "recorded_decisions": 250,
+      "only_stop_frames": 23,
+      "new_head_trainable_frames": 227,
+      "trainable_stop_choices": 70,
+      "trainable_motion_choices": 157,
+      "eligible_exact625_source_rows": 1,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 142,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            2,
+            3
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 4
+        },
+        {
+          "legal_actions": [
+            0,
+            8
+          ],
+          "recorded_frames": 26,
+          "recorded_stop_choices": 26,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 34,
+          "recorded_stop_choices": 31,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 11,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 4,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            7,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 6,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 6,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 8,
+          "supervised_old_motion": 5,
+          "supervised_new_stop": 3,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 17,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 12,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 6
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 4,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 4,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 9,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 10,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            4,
+            6,
+            8,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            8,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            10
+          ],
+          "recorded_frames": 8,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 25,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 8
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 3,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 8,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 6,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 13,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 15,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 34,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            7,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            7,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            7,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 3,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            11
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 21,
+          "supervised_new_stop": 1,
+          "supervised_new_motion": 14
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 6,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 6,
+          "supervised_new_stop": 1,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 19,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 57,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 14
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 49,
+          "recorded_stop_choices": 3,
+          "supervised_old_stop": 276,
+          "supervised_old_motion": 3382,
+          "supervised_new_stop": 30,
+          "supervised_new_motion": 875
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 142,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_02.npz",
+      "release_frame": 480,
+      "safe_success": false,
+      "recorded_decisions": 220,
+      "only_stop_frames": 125,
+      "new_head_trainable_frames": 95,
+      "trainable_stop_choices": 60,
+      "trainable_motion_choices": 35,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 23,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            4
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            8
+          ],
+          "recorded_frames": 21,
+          "recorded_stop_choices": 21,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "recorded_frames": 28,
+          "recorded_stop_choices": 26,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8
+          ],
+          "recorded_frames": 4,
+          "recorded_stop_choices": 3,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 3,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8
+          ],
+          "recorded_frames": 7,
+          "recorded_stop_choices": 6,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 4,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 19,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 8,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 3
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 23,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_03.npz",
+      "release_frame": 488,
+      "safe_success": false,
+      "recorded_decisions": 212,
+      "only_stop_frames": 26,
+      "new_head_trainable_frames": 186,
+      "trainable_stop_choices": 165,
+      "trainable_motion_choices": 21,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 11,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            8
+          ],
+          "recorded_frames": 96,
+          "recorded_stop_choices": 91,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "recorded_frames": 23,
+          "recorded_stop_choices": 23,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            6,
+            8
+          ],
+          "recorded_frames": 33,
+          "recorded_stop_choices": 33,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 15,
+          "recorded_stop_choices": 15,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 3,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 7,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 8,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 3
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 11,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_04.npz",
+      "release_frame": 530,
+      "safe_success": false,
+      "recorded_decisions": 170,
+      "only_stop_frames": 144,
+      "new_head_trainable_frames": 26,
+      "trainable_stop_choices": 13,
+      "trainable_motion_choices": 13,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 0,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            5
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            9
+          ],
+          "recorded_frames": 14,
+          "recorded_stop_choices": 10,
+          "supervised_old_stop": 7,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 7,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "recorded_frames": 6,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "recorded_frames": 4,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 0,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_06.npz",
+      "release_frame": 450,
+      "safe_success": true,
+      "recorded_decisions": 146,
+      "only_stop_frames": 8,
+      "new_head_trainable_frames": 132,
+      "trainable_stop_choices": 8,
+      "trainable_motion_choices": 124,
+      "eligible_exact625_source_rows": 1,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 110,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            2,
+            3
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 4
+        },
+        {
+          "legal_actions": [
+            0,
+            5
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 8,
+          "supervised_old_motion": 5,
+          "supervised_new_stop": 3,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 12,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 6
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 4,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 10,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 13,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "recorded_frames": 4,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 34,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 21,
+          "supervised_new_stop": 1,
+          "supervised_new_motion": 14
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 6,
+          "supervised_new_stop": 1,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 57,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 14
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 82,
+          "recorded_stop_choices": 4,
+          "supervised_old_stop": 276,
+          "supervised_old_motion": 3382,
+          "supervised_new_stop": 30,
+          "supervised_new_motion": 875
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 110,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_07.npz",
+      "release_frame": 480,
+      "safe_success": false,
+      "recorded_decisions": 220,
+      "only_stop_frames": 110,
+      "new_head_trainable_frames": 110,
+      "trainable_stop_choices": 82,
+      "trainable_motion_choices": 28,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 20,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            8
+          ],
+          "recorded_frames": 82,
+          "recorded_stop_choices": 80,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            6,
+            8
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            6,
+            8
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "recorded_frames": 5,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 7,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 4,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 11,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 8,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 3
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 20,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_08.npz",
+      "release_frame": 488,
+      "safe_success": false,
+      "recorded_decisions": 212,
+      "only_stop_frames": 13,
+      "new_head_trainable_frames": 199,
+      "trainable_stop_choices": 12,
+      "trainable_motion_choices": 187,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 188,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            2,
+            3
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 4
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            5,
+            7,
+            9
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 17,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "recorded_frames": 10,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 27,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 5
+        },
+        {
+          "legal_actions": [
+            0,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 2,
+          "supervised_old_motion": 3,
+          "supervised_new_stop": 1,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 2,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 8,
+          "recorded_stop_choices": 6,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 18,
+          "recorded_stop_choices": 4,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 8,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 3
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            11
+          ],
+          "recorded_frames": 16,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 57,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 14
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 7,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 2
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            7,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 14,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 6
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 1,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 1
+        },
+        {
+          "legal_actions": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "recorded_frames": 137,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 276,
+          "supervised_old_motion": 3382,
+          "supervised_new_stop": 30,
+          "supervised_new_motion": 875
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 188,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    },
+    {
+      "rollout": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_09.npz",
+      "release_frame": 530,
+      "safe_success": false,
+      "recorded_decisions": 170,
+      "only_stop_frames": 151,
+      "new_head_trainable_frames": 19,
+      "trainable_stop_choices": 9,
+      "trainable_motion_choices": 10,
+      "eligible_exact625_source_rows": 0,
+      "eligible_frames_with_positive_labels_for_same_mask_and_current_cause_signature": 0,
+      "same_mask_patterns": [
+        {
+          "legal_actions": [
+            0,
+            8
+          ],
+          "recorded_frames": 3,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            8
+          ],
+          "recorded_frames": 1,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            9
+          ],
+          "recorded_frames": 7,
+          "recorded_stop_choices": 5,
+          "supervised_old_stop": 7,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 7,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            5,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 2,
+          "supervised_old_stop": 1,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            9
+          ],
+          "recorded_frames": 4,
+          "recorded_stop_choices": 1,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        },
+        {
+          "legal_actions": [
+            0,
+            4,
+            5,
+            8,
+            9
+          ],
+          "recorded_frames": 2,
+          "recorded_stop_choices": 0,
+          "supervised_old_stop": 0,
+          "supervised_old_motion": 0,
+          "supervised_new_stop": 0,
+          "supervised_new_motion": 0
+        }
+      ],
+      "previous4468_labels_positive_signature_frames": 0,
+      "additional_positive_signature_frames_from_new1140_labels": 0
+    }
+  ],
+  "source_labels_not_automatically_correct_for_other_states": true,
+  "same_mask_and_cause_not_same_full_observation": true,
+  "does_not_evaluate_current_candidate_or_prove_infeasibility": true,
+  "no_pseudo_positive_labels_or_failed_trace_imitation": true,
+  "current_head_support_formula_matches_actor_source": true,
+  "model_and_physics_not_loaded": true,
+  "new_training_updates": 0,
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "resource": {
+    "seconds": 3.469521472987253,
+    "cpu_seconds": 0.38535564699999997,
+    "average_cpu_cores": 0.11106881741481464,
+    "peak_rss_mib": 65.6171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "input_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_hard_coverage.py": "cd76fb5ad699c48af7178f13c59c7bd37dafb01ea5fecf951531c2693c17445a",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/training_data.npz": "982625634b5e3e12fca537a74ec1198c0dac61c919d89a9120a6107641bda8cd",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/ADMISSION.json": "965db2b7a17fe935887dd4d9fb83351d125183b02ca88637362e35bc3f8edc63",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/actor.py": "41f84ab198b8867bfdeebe43b12e2da8d2e76c6dd11dcff87c93e3cc344c3816",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/RESULTS.json": "a6ee82af5f2be44f7649f094f8192db4291fb479b61d0a59b13496cfe0ab2bd1",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_01.npz": "0604334478576215da0af7e940922929a75f2ff19071de0ccd2eddabf06077d7",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_02.npz": "545f826cfdaa72a8131d73c36d144be2578936a4339e3b1ce9e9d399c3ba553b",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_03.npz": "6e81df27cbd375cab5864a284297dac0cc10c07b9cc24417826c9d4072f579fc",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_04.npz": "f72664534e148f7b5cd95dc880c9aac08945b658f88f751d836a868883f3a26d",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/RESULTS.json": "1dc13428ac95eb7476096eebc18f8066be865123f37f8e2c067091caaf8bdaf8",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_06.npz": "9b17abd078406a099b73316a30124f3d8a3fb03c9fad55bb77c9b587fac768d2",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_07.npz": "ef44623c164e51fb3a06fccb7ee4a0f3385fc89ec7f4c53f9911aa6b6b341b82",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_08.npz": "aa80887d15d011cd9bfd1e7d481cb8431f6f2630a2d77c2ca1bc1d90055ce57d",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_09.npz": "1b4a7fc767a363af7fc7ccaf31463c59b9fd6dc715687317c856365ed25f4f7d",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/HARD_COVERAGE.json": "f941f2432e78b82b00225f51449c65d52aa4411fd04a888283e7708989af63a3"
+  },
+  "original_full_known_safety_regression_hard97_6_106_and_conditional_fresh_gates_preserved": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

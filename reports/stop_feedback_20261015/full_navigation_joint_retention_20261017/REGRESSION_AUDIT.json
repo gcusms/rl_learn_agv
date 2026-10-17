@@ -1,0 +1,61 @@
+{
+  "completed": true,
+  "at": "2026-10-17T07:35:07.214126+08:00",
+  "case_id": "pre_ppo_holdout_dynamic_02",
+  "previous_safe_seconds": 49.20000000000672,
+  "current_timeout_seconds": 139.99999999994517,
+  "first_divergence_frame": 131,
+  "first_divergence_sensor_time_s": 26.199999999999072,
+  "first_old_choice": 11,
+  "first_new_choice": 10,
+  "first_old_command": [
+    0.2,
+    -0.5
+  ],
+  "first_new_command": [
+    0.2,
+    0.5
+  ],
+  "first_both_actions_originally_legal": true,
+  "all_prior_inputs_and_physics_exact": {
+    "observations": true,
+    "masks": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true,
+    "labels": true,
+    "human_positions": true,
+    "route_diagnostics": true,
+    "route_reasons": true,
+    "prior_choices": true,
+    "prior_commands": true
+  },
+  "first_new_head_trainable": true,
+  "voluntary_wait_frames": 569,
+  "voluntary_wait_seconds": 113.7999999999461,
+  "longest_voluntary_wait_seconds": 113.59999999994615,
+  "trainable_voluntary_wait_frames": 569,
+  "only_stop_frames": 21,
+  "final_xy_error_m": 4.334477159530346,
+  "conclusion": "The learned full-navigation head caused an actual ordinary-navigation regression; current mask allowed the prior useful action. Fixed28 retention alone did not cover this complete-mission state distribution.",
+  "next_experiment": "Jointly preserve all4468existing references and all5previously safe complete known missions; leave frozen prospective seeds excluded and all original gates intact.",
+  "model_and_physics_not_loaded": true,
+  "new_training_updates": 0,
+  "new_physical_episodes": 0,
+  "inputs": {
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/RESULTS.json": "2dbb7d2fba6b696ea251a1d1fa066bc3fd918526b5fd011b282726bd5dc54966",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/RESULTS.json": "a0f44bfa0e06eb3280dbeca5d6caf0621f758d34328e2df139703ca8954e3723",
+    "reports/stop_feedback_20261015/full_navigation_joint_retention_20261017/audit_regression.py": "4c1dfb2c47f5afe98d07155232795ad9065b50a1c4e6943faead630e542202e0",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_02_candidate.npz": "06563a28230c6f4a2c46a148af8e935888ceb84214335c61d93b590cb4c0623a",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_02_candidate.npz": "d7248dcccb527fb605d0a01165b57b7c3dc4c0b90875f1da1bf727fc052add16"
+  },
+  "resource": {
+    "seconds": 0.490129889047239,
+    "cpu_seconds": 0.056059896000000026,
+    "average_cpu_cores": 0.11437763183341987,
+    "peak_rss_mib": 36.76171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

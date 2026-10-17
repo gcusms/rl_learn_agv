@@ -1,0 +1,207 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "pre_ppo_holdout_dynamic_00",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 7.063989019274224,
+      "frames": 700,
+      "final_xy_error_m": 1.6831998159689996,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004947671329578755,
+      "localization_yaw_p95_rad": 0.001532852437643095,
+      "stop_choices": 314,
+      "only_stop_frames": 270,
+      "stop_reasons": {
+        "None": 532,
+        "laser_braking_footprint": 168
+      },
+      "voluntary_wait_frames": 44,
+      "predictive_constraint_frames": 175,
+      "runtime_ms": {
+        "p95": 110.21590485179331,
+        "p99": 123.46828241948968,
+        "maximum": 177.13645403273404
+      },
+      "variant": "bc4500",
+      "memory_verified_from_initialization": true,
+      "minimum_dynamic_gap_m": 0.04916333753674412,
+      "trace_path": "reports/stop_feedback_20261015/paired_memory_tradeoff_20261017/physical/pre_ppo_holdout_dynamic_00_bc4500.npz",
+      "trace_sha256": "93aa2983af53e52d28997394bb34034b41468562b6823c4a469ac9c946aa586a",
+      "bundle": "models/stop_feedback_20261015/memory_evidence_s231017/bc4500/portable",
+      "original_configuration_reference": {
+        "safe_success": false,
+        "seconds": 139.99999999994517,
+        "travel_m": 2.9903580895023905,
+        "only_stop_frames": 438,
+        "voluntary_wait_frames": 83
+      }
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_00",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 53.200000000008764,
+      "travel_m": 6.050953916930766,
+      "frames": 267,
+      "final_xy_error_m": 0.11645866954107748,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004916077846526581,
+      "localization_yaw_p95_rad": 0.001410177057084949,
+      "stop_choices": 33,
+      "only_stop_frames": 29,
+      "stop_reasons": {
+        "None": 266,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 4,
+      "predictive_constraint_frames": 51,
+      "runtime_ms": {
+        "p95": 126.50621258071622,
+        "p99": 142.44351755361993,
+        "maximum": 147.32007903512567
+      },
+      "variant": "ppo1665",
+      "memory_verified_from_initialization": true,
+      "minimum_dynamic_gap_m": 0.17661229412038765,
+      "trace_path": "reports/stop_feedback_20261015/paired_memory_tradeoff_20261017/physical/pre_ppo_holdout_dynamic_00_ppo1665.npz",
+      "trace_sha256": "7ab7ecb3e014fb46f8a6a5ea07e18cdb03dea08a788ca6235b78169e3feb13be",
+      "bundle": "models/stop_feedback_20261015/memory_evidence_s231017/ppo1665/portable",
+      "original_configuration_reference": {
+        "safe_success": true,
+        "seconds": 53.200000000008764,
+        "travel_m": 6.050953916930766,
+        "only_stop_frames": 29,
+        "voluntary_wait_frames": 4
+      }
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 34.59999999999925,
+      "travel_m": 4.3882475749918815,
+      "frames": 174,
+      "final_xy_error_m": 0.1166269959283642,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004422492126439605,
+      "localization_yaw_p95_rad": 0.0015253766031078525,
+      "stop_choices": 19,
+      "only_stop_frames": 18,
+      "stop_reasons": {
+        "None": 173,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 32,
+      "runtime_ms": {
+        "p95": 140.63855119165964,
+        "p99": 157.26591856975583,
+        "maximum": 164.26646400941536
+      },
+      "variant": "bc4500",
+      "memory_verified_from_initialization": true,
+      "minimum_dynamic_gap_m": 0.24472760165295232,
+      "trace_path": "reports/stop_feedback_20261015/paired_memory_tradeoff_20261017/physical/pre_ppo_holdout_dynamic_01_bc4500.npz",
+      "trace_sha256": "c5c3f2c7c5aa8d09b3468570b9e488ff87291aef1643ec2adeb0495ef76a5bbb",
+      "bundle": "models/stop_feedback_20261015/memory_evidence_s231017/bc4500/portable",
+      "original_configuration_reference": {
+        "safe_success": true,
+        "seconds": 34.59999999999925,
+        "travel_m": 4.3882475749918815,
+        "only_stop_frames": 18,
+        "voluntary_wait_frames": 1
+      }
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 3.1272428440692335,
+      "frames": 700,
+      "final_xy_error_m": 1.8637617801441997,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003859577844037101,
+      "localization_yaw_p95_rad": 0.0012154536830097928,
+      "stop_choices": 554,
+      "only_stop_frames": 479,
+      "stop_reasons": {
+        "None": 240,
+        "laser_braking_footprint": 460
+      },
+      "voluntary_wait_frames": 75,
+      "predictive_constraint_frames": 25,
+      "runtime_ms": {
+        "p95": 106.15066249156366,
+        "p99": 138.74619916197844,
+        "maximum": 149.1276430315338
+      },
+      "variant": "ppo1665",
+      "memory_verified_from_initialization": true,
+      "minimum_dynamic_gap_m": 0.26331090462430917,
+      "trace_path": "reports/stop_feedback_20261015/paired_memory_tradeoff_20261017/physical/pre_ppo_holdout_dynamic_01_ppo1665.npz",
+      "trace_sha256": "f5beed3d4e7c6a17563947495bae6360c4468fbf3cc67d80b724c965ccaa97bf",
+      "bundle": "models/stop_feedback_20261015/memory_evidence_s231017/ppo1665/portable",
+      "original_configuration_reference": {
+        "safe_success": false,
+        "seconds": 139.99999999994517,
+        "travel_m": 3.0868624453091464,
+        "only_stop_frames": 554,
+        "voluntary_wait_frames": 13
+      }
+    }
+  ],
+  "new_physical_episodes": 4,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "same_known_map": true,
+  "post_hoc_development_cases": true,
+  "no_fresh_generalization_or_deployment_claim": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "at": "2026-10-16T18:48:17.883335+00:00",
+  "resource": {
+    "seconds": 687.3336476769764,
+    "cpu_seconds": 240.566530443,
+    "average_cpu_cores": 0.3499996417403068,
+    "peak_rss_mib": 2109.4140625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "both_cases_safe_by_variant": {
+    "bc4500": false,
+    "ppo1665": false
+  },
+  "reason": "Four diagnostic runs complete; full retention, late106s and real-car verification still required",
+  "inputs_verified": 510
+}

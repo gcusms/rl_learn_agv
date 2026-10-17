@@ -1,0 +1,118 @@
+{
+  "completed": true,
+  "frames": 3252,
+  "original_frames": 2848,
+  "new_frames": 404,
+  "old_active": 2521,
+  "new_active": 2656,
+  "newly_trainable": 135,
+  "old_inactive_mismatches": [
+    {
+      "index": 3055,
+      "target": 9,
+      "parent": 7,
+      "minimum_scan_m": 0.31671983003616333,
+      "legal_motion": 8,
+      "near": true,
+      "restricted": true,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3081,
+      "target": 11,
+      "parent": 3,
+      "minimum_scan_m": 0.5494006872177124,
+      "legal_motion": 8,
+      "near": true,
+      "restricted": true,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3103,
+      "target": 9,
+      "parent": 7,
+      "minimum_scan_m": 0.5404152274131775,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3106,
+      "target": 7,
+      "parent": 5,
+      "minimum_scan_m": 0.5103653073310852,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3127,
+      "target": 1,
+      "parent": 6,
+      "minimum_scan_m": 0.4616028964519501,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3159,
+      "target": 6,
+      "parent": 4,
+      "minimum_scan_m": 0.6869407892227173,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3222,
+      "target": 1,
+      "parent": 11,
+      "minimum_scan_m": 0.6005686521530151,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    },
+    {
+      "index": 3223,
+      "target": 1,
+      "parent": 11,
+      "minimum_scan_m": 0.6155432462692261,
+      "legal_motion": 11,
+      "near": true,
+      "restricted": false,
+      "forecast": false,
+      "new_support": true
+    }
+  ],
+  "new_inactive_mismatches": [],
+  "context_rule": "old_support OR (valid_and_goal_far_and_motion_available AND (minimum_current_scan_under_0.8m OR restricted_motion_mask OR positive_guard_forecast))",
+  "safety_actions_and_masks_unchanged": true,
+  "no_time_position_case_gates": true,
+  "source_hashes": {
+    "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_t95.npz": "18b99943be7601604d067fba8e45332193424a9cbf076c1b40a6e2975c8d1678",
+    "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_t90.npz": "60af6a6f12377cd39bf45471d37882aa7d5a06b5fada6903d2b506e638a06f3f",
+    "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_wait2_4.npz": "9c0d8b587856dac19d25081989bda8e8fc3b5ebeaa53361f679d33ef94b76425"
+  },
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "resource": {
+    "seconds": 2.779413102020044,
+    "cpu_seconds": 0.4168556550000002,
+    "average_cpu_cores": 0.14997974021819016,
+    "peak_rss_mib": 503.140625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "audit_inputs_sha256": "a1bd5c73628e92e695216c8799b1244e5f8262805de4f0e882c85457a8bc330d"
+}

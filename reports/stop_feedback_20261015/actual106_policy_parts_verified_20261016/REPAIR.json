@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-16T12:06:33.041179+08:00",
+  "original_failure": {
+    "error": "RuntimeError('mat1 and mat2 shapes cannot be multiplied (1x65 and 64x12)')",
+    "automatically_restarted": false,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "source_sha256": "f1e6ed3cc64ba5504d550faee37f15eeaab0cb530f7e25af537a6f52037f0871",
+  "change": "Use the actual loaded ProactiveRecovery head and its residual subnetwork, rather than assuming the older 13-value feature tail. Verify the complete actual head distribution.",
+  "original_failure_preserved": true,
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0
+}

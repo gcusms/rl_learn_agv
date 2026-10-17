@@ -1,0 +1,186 @@
+{
+  "completed": true,
+  "model": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+  "temperature": 4.0,
+  "late_actual_recorded_states": {
+    "recorded_frames": 170,
+    "eligible_actor_frames": 170,
+    "only_stop_frames": 0,
+    "greedy_stop_frames": 170,
+    "move_probability_quantiles": {
+      "minimum": 0.022945702075958252,
+      "p25": 0.04261621832847595,
+      "median": 0.04584541916847229,
+      "p75": 0.07101254165172577,
+      "maximum": 0.3111945390701294
+    },
+    "sum_move_probability_over_fixed_recorded_states": 10.327815055847168,
+    "probability_sum_is_not_a_prediction_of_actual_new_rollout": true,
+    "legal_action_sets": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    ]
+  },
+  "curriculum_initial_states": [
+    {
+      "prefix_frames": 450,
+      "release_s": 90.0,
+      "eligible_actor": true,
+      "legal_actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "sampling_probabilities": [
+        0.0077208224684000015,
+        0.11432265490293503,
+        0.0902647003531456,
+        0.05525306984782219,
+        0.451546311378479,
+        0.03966391086578369,
+        0.06459990888834,
+        0.026742512360215187,
+        0.023667169734835625,
+        0.019808800891041756,
+        0.10217693448066711,
+        0.004233214538544416
+      ]
+    },
+    {
+      "prefix_frames": 480,
+      "release_s": 96.0,
+      "eligible_actor": true,
+      "legal_actions": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sampling_probabilities": [
+        0.05840621143579483,
+        0.0,
+        0.0411311574280262,
+        0.0558987520635128,
+        0.027924036607146263,
+        0.11566602438688278,
+        0.010804411955177784,
+        0.05663431063294411,
+        0.020106513053178787,
+        0.6134285926818848,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prefix_frames": 530,
+      "release_s": 106.0,
+      "eligible_actor": true,
+      "legal_actions": [
+        0,
+        9
+      ],
+      "sampling_probabilities": [
+        0.7546752095222473,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.24532483518123627,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "prefix_frames": 572,
+      "release_s": 114.4,
+      "eligible_actor": true,
+      "legal_actions": [
+        0,
+        9
+      ],
+      "sampling_probabilities": [
+        0.9545629024505615,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.04543713852763176,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "inputs": {
+    "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/profile_exploration.py": "2e72c78cf05de9860bdb79653cb2c7ee3aa2d09d597b47da2998f8c52494f8ea",
+    "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_w11_training_stall_t106.npz": "9462ab03c7f0e7c7d502a93404860b15efdc97f6a4d73870cd4895d457e2036f",
+    "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/hard3_w11_training_stall_t106.npz": "9d307c7e9a83a3c1f75c4a3158eb67c97cc9f98222e174e101ebe128ab127767",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/checkpoint.pt": "b935b5b512268eb1e47ef3a007aa757d376ccc0d32f847738de89b237d1fb1f5",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/RESULTS.json": "2a9ca0c1886be7c98f1c5aa7fb59f67d082a464f40622d67900368a96f2d0505",
+    "training/experiments/native625_onpolicy.py": "83506487e7c606439ad4fe343589590870808e9512b8e789a3e4d1ad5d4b3e36",
+    "training/experiments/guard_reason_release_actor.py": "2e2914ef82b68945a758a22dc14a9a2704ea37f7410f0eb0cc0f3cef76ffcd5f"
+  },
+  "resource": {
+    "seconds": 10.999833169975318,
+    "cpu_seconds": 1.150022565,
+    "average_cpu_cores": 0.10454909153886563,
+    "peak_rss_mib": 560.37890625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "no_new_physics": true,
+  "no_optimizer_updates": true,
+  "reference_head_created_for_inspection_only": true,
+  "greedy_export_rule_unchanged": true,
+  "new_ppo_steps": 0,
+  "sampling_opportunity_not_proof_of_recovery": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

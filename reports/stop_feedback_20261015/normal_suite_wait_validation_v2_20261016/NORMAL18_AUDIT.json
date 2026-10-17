@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-16T23:49:03.709685+08:00",
+  "completed": true,
+  "model": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+  "normal18": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 18,
+    "common_successes": 18,
+    "lost_successes": [],
+    "gained_successes": [],
+    "safety_nonregression": true,
+    "common_success_travel_m": [
+      67.47422176966873,
+      67.13577183988691
+    ],
+    "common_success_seconds": [
+      489.40000000002607,
+      459.40000000001334
+    ],
+    "total_travel_relative_change": -0.005015988638404134,
+    "total_time_relative_change": -0.06129955046998592,
+    "pairs": [
+      {
+        "case_id": "recovery_holdout_00",
+        "travel_relative_change": 0.10204250066178133,
+        "time_relative_change": -0.1846846846847614
+      },
+      {
+        "case_id": "recovery_holdout_01",
+        "travel_relative_change": 0.05749177391253424,
+        "time_relative_change": -0.01562500000000755
+      },
+      {
+        "case_id": "train_failure_w11_e7",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_015",
+        "travel_relative_change": -0.1767943429456439,
+        "time_relative_change": -0.3214285714286891
+      },
+      {
+        "case_id": "recovery_holdout_02",
+        "travel_relative_change": -0.00035406382408587067,
+        "time_relative_change": -0.048780487804888195
+      },
+      {
+        "case_id": "recovery_holdout_03",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": -0.004534597967484566,
+        "time_relative_change": -0.10429447852760532
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_0",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_1",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": true,
+    "all_regression_checks_passed": true,
+    "larger_training_gate_passed": true,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "physical_successes": 18,
+  "collisions": 0,
+  "false_arrivals": 0,
+  "physical_guards": 0,
+  "source_snapshot_sha256": "3208b4cbd6c2b37a8c489868d0dddcc4ddc0807ab019189a2e63058e8ade9958",
+  "reference_tasks_sha256": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+  "comparison_code_sha256": "e079c71d70817f4cc37ce9f0c509db2a8e3abf77d4d00a72a63977d506892907",
+  "parent_physical_validation_still_running": true,
+  "all_normal_sources_are_development_training_retention": true,
+  "new_physics_or_training": false,
+  "new_ppo_steps": 0,
+  "late_recovery_still_unresolved": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

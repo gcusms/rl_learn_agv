@@ -1,0 +1,10 @@
+{
+  "documented_at": "2026-10-16T08:43:27.096198+00:00",
+  "completed": false,
+  "dataset_created": false,
+  "initial_builder_rejected_sources": true,
+  "reason": "Initial source gate treated the inactive final goal-arrival command as equal to the proposed policy action. Three final frames legitimately proposed motion while arrival execution stopped.",
+  "resolution": "v2 excludes each inactive terminal-arrival training row after verifying full physical success and all nonterminal execution parity; no policy label is replaced by the executed stop.",
+  "replacement": "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016",
+  "automatically_restarted": false
+}

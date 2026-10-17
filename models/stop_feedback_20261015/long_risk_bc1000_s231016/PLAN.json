@@ -1,0 +1,224 @@
+{
+  "inputs": {
+    "training/experiments/train_long_risk_actor.py": "689c34b37bc9c057e936d309f72a02caa19af101c3f273eb747a0edd46cf0399",
+    "reports/stop_feedback_20261015/long_risk_sources_20261016/demonstrations.npz": "44771798b147c90252b399dcf5fd6b51743d9b5030a413ae14c4efba3f2174df",
+    "reports/stop_feedback_20261015/long_risk_sources_20261016/RESULTS.json": "1e7d9fb1247a0b51356e6e8db13a39e9816ca68e0906fd7fd6c78f638ebcceee",
+    "models/stop_feedback_20261015/early_yield_bc400_s231016/bc_portable/actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/early_yield_bc400_s231016/bc_portable/manifest.json": "fd61326252034b08eed64bbfa3df38a026173e2046cdb1abf8cc03021cb163b8",
+    "reports/stop_feedback_20261015/long_risk_protocol_20261016/PLAN.json": "a46478aa661bc987066a9ad7b340d0e059882298230ee0d421c935f92ec04e8a",
+    "reports/stop_feedback_20261015/long_risk_protocol_20261016/new_sensor_cases.json": "ca32d1d4f1635204a7fe4a37737be7f1b571ec133cc92a475cac02742ae51e3d",
+    "training/neural_navigation/long_risk_observation.py": "0eb8098fe51c11ee6a40e9cb16a9e4879704779b27f229731d521061a90f5c53",
+    "training/neural_navigation/long_risk_runtime.py": "43f278e25460bd70083566bdd80801235a76f10d107003f13dc53a5d9ea98691",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a"
+  },
+  "seed": 231016,
+  "contract": {
+    "schema": "long_action_risk_history_v1",
+    "dimensions": 481,
+    "training_dimensions": 478,
+    "parent_contract": {
+      "schema": "stop_decision_feedback_v2",
+      "prefix_dimensions": 300,
+      "training_dimensions": 436,
+      "heading_prefix_dimensions": 303,
+      "dimensions": 439,
+      "append_dimensions": 136,
+      "action_commands": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.05,
+          0.5
+        ],
+        [
+          0.05,
+          -0.5
+        ],
+        [
+          0.01,
+          0.5
+        ],
+        [
+          0.01,
+          -0.5
+        ],
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "fields": [
+        "12_current_guard_rejection_groups_one_hot",
+        "previous_executed_stop_reason_one_hot",
+        "12_guard_forecast_contact_scores",
+        "nonzero_choices_over_11",
+        "scan_age_over_guard_limit",
+        "previous_idle_seconds_over_5",
+        "previous_idle_with_choices_seconds_over_5",
+        "prediction_input_valid",
+        "moving_tracks_over_4",
+        "oldest_track_age_over_0.8",
+        "scan_valid"
+      ],
+      "rejection_groups": [
+        "accepted",
+        "perception_or_odometry",
+        "localization_or_route",
+        "static_geometry",
+        "laser_geometry",
+        "dynamic_prediction",
+        "projection",
+        "other"
+      ],
+      "previous_reasons": [
+        "none",
+        "nonfinite_input",
+        "stale_or_future_scan",
+        "scan_unavailable",
+        "odometry_jump",
+        "localization_uncertain",
+        "learned_route_incomplete",
+        "reverse_without_rear_visibility",
+        "reverse_duration_limit",
+        "static_braking_footprint",
+        "laser_braking_footprint",
+        "escape_not_increasing_clearance",
+        "unsafe_turn_blocked",
+        "unsafe_translation_blocked",
+        "estimated_goal_reached",
+        "other",
+        "predicted_dynamic_contact",
+        "predictive_command_contract",
+        "policy_wait",
+        "only_stop_available"
+      ],
+      "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+      "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+      "unknown_forecast_is_not_clear": true,
+      "legacy_prefix_unchanged": true,
+      "stop_always_selectable": true,
+      "simulator_truth_used": false,
+      "commands_issued": false,
+      "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+      "executed_reason_retained_during_idle": true
+    },
+    "unchanged_runtime_prefix_dimensions": 439,
+    "unchanged_training_prefix_dimensions": 436,
+    "append_dimensions": 42,
+    "history_ages_s": [
+      0.4,
+      0.2,
+      0.0
+    ],
+    "maximum_historical_sample_age_s": 0.05,
+    "fields_per_frame": [
+      "12_forecast_contact_scores",
+      "supported_prediction_valid",
+      "supported_tracks_over_4"
+    ],
+    "horizon_s": 5.0,
+    "forecast_period_s": 0.2,
+    "contact_score": "0 if no predicted contact, else 1-contact_s/5.2; consult validity",
+    "unsupported_or_missing_history": "zero_values_and_zero_validity_not_certified_clear",
+    "margin_m": 0.04,
+    "velocity_uncertainty_floor_m_s": 0.025,
+    "adaptive_track_uncertainty": true,
+    "finite_measured_motion_response": true,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "action_commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "frame": "guard tracks and robot pose in continuous odometry coordinates",
+    "simulator_truth_used": false,
+    "future_sensor_frames_used": false,
+    "absolute_episode_time_input": false,
+    "commands_issued": false,
+    "actions_masks_body_guard_and_blind_memory_unchanged": true
+  },
+  "maximum_supervised_updates": 1000,
+  "new_ppo_steps": 0,
+  "parent_actor_frozen": true,
+  "failed_or_partial_sources_excluded": true,
+  "no_runtime_teacher": true,
+  "active_features": 88,
+  "head_width": 32,
+  "unknown_risk_requires_learned_wait_context": true,
+  "physical_validation_required_after_fit": true
+}

@@ -1,0 +1,30 @@
+{
+  "inputs": {
+    "training/experiments/fit_release_phase_pilot.py": "f88a868662296da044fc4c54aa63fa03ddd81a4192954edd6c616a72f472f018",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/demonstrations.npz": "eb8123e14c5edf472939b9a746240fcd60e97e9ca36697e12fe2b316bf8b4b2b",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/RESULTS.json": "de08a2af625ca88aa20770ba883855d2bda134995dccbb2c8fc84d6ff0206a41",
+    "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json": "2d79c0ebf464482eab038504075087b1b60418902a246aeb026b98beff9765d8",
+    "reports/stop_feedback_20261015/release_validation_20261016/physical/frozen_new_noise_long_risk_sensor_05_1.npz": "1d555275a7d2f81e83cf4c44d17d305061a16648aa8cbde45d5ea7ab8e019f97",
+    "models/stop_feedback_20261015/release_context_bc2000_s231016/checkpoint.pt": "a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3",
+    "models/stop_feedback_20261015/long_risk_bc1000_s231016/checkpoint.pt": "8c3a7c9ffab979e8ff55e97f22244fc3e775e26121a12079511db343b6c6819d",
+    "models/stop_feedback_20261015/long_risk_bc1000_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "training/experiments/train_release_actor.py": "22c71b7a5beb68437bf241e0174dacb93bdb950c2f442275916714574e7ef8f8",
+    "training/experiments/release_fit_weights.py": "f7014aaa4b76ecf7932f40354168ab1dd66066304882615c73a56a081723b007",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515"
+  },
+  "seed": 231016,
+  "maximum_updates_per_model": 300,
+  "models": {
+    "stop_move": "release_data_control300_s231016",
+    "recovery_phase": "release_phase300_s231016"
+  },
+  "common_data_frames": 2509,
+  "common_risk_initialization": true,
+  "changed_factor_between_new_models": "loss allocation and duplicate weighting only",
+  "old_candidate_retained": true,
+  "original_frozen_four_are_development": true,
+  "offline_probes_cannot_prove_safe_counterfactual_execution": true,
+  "new_ppo_steps": 0,
+  "new_physics_episodes": 0,
+  "deployment_approved": false
+}

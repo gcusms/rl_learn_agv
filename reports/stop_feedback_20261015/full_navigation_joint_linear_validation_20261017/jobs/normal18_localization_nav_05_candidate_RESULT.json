@@ -1,0 +1,43 @@
+{
+  "case_id": "localization_nav_05",
+  "category": "boundary_alignment",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 0.8000000000000006,
+  "travel_m": 0.0,
+  "frames": 5,
+  "final_xy_error_m": 0.014665322984974399,
+  "final_yaw_error_rad": 0.09550020458163644,
+  "localization_xy_p95_m": 0.0035844256907089263,
+  "localization_yaw_p95_rad": 0.0006561903266279145,
+  "stop_choices": 4,
+  "only_stop_frames": 0,
+  "stop_reasons": {
+    "None": 4,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 4,
+  "predictive_constraint_frames": 0,
+  "runtime_ms": {
+    "p95": 171.56680203042924,
+    "p99": 177.4660132266581,
+    "maximum": 178.94081602571532
+  },
+  "trace_path": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/physical/normal18_localization_nav_05_candidate.npz",
+  "trace_sha256": "090757a3f1b52bcf91c3f67cd383a146dd5b453b3886b667312c7cc42b84b8a7",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 8.894578567007557,
+    "cpu_seconds": 3.16443294,
+    "average_cpu_cores": 0.35577098073401187,
+    "peak_rss_mib": 1682.0625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

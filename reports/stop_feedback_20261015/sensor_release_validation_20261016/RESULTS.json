@@ -1,0 +1,149 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "category": "frozen_new_sensor_seed_same_development_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 34.79999999999935,
+      "travel_m": 5.2439070092055005,
+      "frames": 175,
+      "final_xy_error_m": 0.08243781954543586,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005250781990700857,
+      "localization_yaw_p95_rad": 0.0013252841583384798,
+      "stop_choices": 30,
+      "only_stop_frames": 5,
+      "stop_reasons": {
+        "None": 171,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 25,
+      "predictive_constraint_frames": 6,
+      "runtime_ms": {
+        "p95": 114.93760361336172,
+        "p99": 123.51803647354245,
+        "maximum": 124.93173399707302
+      },
+      "variant": "candidate",
+      "group": "known_earlier_release",
+      "trace_path": "reports/stop_feedback_20261015/sensor_release_validation_20261016/physical/candidate_long_risk_sensor_05_1.npz",
+      "trace_sha256": "933b037d579e0f5535b8101bf56e89b59a319db8496282c98db832b02ef1ccf6",
+      "learned_model_only": true,
+      "no_teacher": true
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "category": "unfitted_sensor_seed_same_development_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 36.800000000000374,
+      "travel_m": 4.947668176632665,
+      "frames": 185,
+      "final_xy_error_m": 0.11434970526776302,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004610098101510648,
+      "localization_yaw_p95_rad": 0.0011949570046438924,
+      "stop_choices": 47,
+      "only_stop_frames": 7,
+      "stop_reasons": {
+        "None": 181,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 40,
+      "predictive_constraint_frames": 5,
+      "runtime_ms": {
+        "p95": 117.49178562313315,
+        "p99": 130.92825141735375,
+        "maximum": 137.46795599581674
+      },
+      "variant": "candidate",
+      "group": "retention",
+      "trace_path": "reports/stop_feedback_20261015/sensor_release_validation_20261016/physical/candidate_early_yield_sensor_holdout_05_0.npz",
+      "trace_sha256": "07980eb3e18c655e29af4e74feebc664c8e89e393357567ee923845dde2ef391",
+      "learned_model_only": true,
+      "no_teacher": true
+    },
+    {
+      "case_id": "release_phase_frozen_noise_05_2",
+      "category": "new_noise_seed_same_development_map_frozen_after_fit",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 2.7083637862243934,
+      "frames": 700,
+      "final_xy_error_m": 2.189115097487185,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003953374699849292,
+      "localization_yaw_p95_rad": 0.0009415709699676308,
+      "stop_choices": 627,
+      "only_stop_frames": 3,
+      "stop_reasons": {
+        "None": 697,
+        "scan_unavailable": 3
+      },
+      "voluntary_wait_frames": 624,
+      "predictive_constraint_frames": 0,
+      "runtime_ms": {
+        "p95": 104.143603213015,
+        "p99": 124.86620234965811,
+        "maximum": 142.8168540005572
+      },
+      "variant": "candidate",
+      "group": "retention",
+      "trace_path": "reports/stop_feedback_20261015/sensor_release_validation_20261016/physical/candidate_release_phase_frozen_noise_05_2.npz",
+      "trace_sha256": "2e687285fb031d11caf1c006477c1c15a95b5d0f37f32df4c31b0960ca8c8d06",
+      "learned_model_only": true,
+      "no_teacher": true
+    }
+  ],
+  "gates": {
+    "known_earlier_release": {
+      "passed": true,
+      "maximum_seconds": 72.47999999999207,
+      "maximum_wait_frames": 161
+    },
+    "retention_early_yield_sensor_holdout_05_0": {
+      "passed": true
+    },
+    "retention_release_phase_frozen_noise_05_2": {
+      "passed": false
+    }
+  },
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "actual106_not_claimed_fixed": true,
+  "full_regression_still_required": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "at": "2026-10-16T09:11:18.398040+00:00",
+  "resource": {
+    "seconds": 399.06831797998166,
+    "cpu_seconds": 139.673762726,
+    "average_cpu_cores": 0.3499996277153889,
+    "peak_rss_mib": 2199.19921875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "reason": "Retained safety or efficiency gate failed; no expansion"
+}

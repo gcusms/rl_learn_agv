@@ -1,0 +1,35 @@
+{
+  "parent": "early_yield_physical_20261016/run.py",
+  "changes": [
+    [
+      "actual95_transfer_bc400_s231016/bc_portable",
+      "early_yield_bc400_s231016/bc_portable"
+    ],
+    [
+      "DEPENDENCY='rl-recovery-followup-broad-20261016.service'",
+      "DEPENDENCY='rl-early-yield-remaining-audit-20261016.service'"
+    ],
+    [
+      "audit_path=BASE/'early_yield_replay_20261016/RESULTS.json'",
+      "audit_path=BASE/'early_yield_remaining_audit_20261016/RESULTS.json'"
+    ],
+    [
+      "reproduced_observation_actor_command_and_pose_frames']==237",
+      "reproduced_observation_actor_command_and_pose_frames']==98"
+    ],
+    [
+      "assert signal is not None and signal['short_contact_s'] is None",
+      "assert signal is not None"
+    ],
+    [
+      "source_actor='actual95_transfer_bc400',source_actor_is_not_the_new_followup_model=True",
+      "source_actor='early_yield_bc400_s231016',source_actor_is_saved_prior_learned_candidate=True"
+    ],
+    [
+      "variant='offline_early_yield_teacher_with_actual95_actor'",
+      "variant='offline_early_yield_teacher_with_1b55_actor'"
+    ]
+  ],
+  "case_suffix": "02",
+  "same_sensor_forecast_and_release_rule": true
+}

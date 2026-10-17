@@ -1,0 +1,163 @@
+{
+  "at": "2026-10-17T08:31:18.239713+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "Original fixed28 independently passed all current physical safety/efficiency and prefix/docking gates;5028frames checked.",
+    "Actual known6 full missions all safe;1326additional complete non-timing observations/actions/sensors/execution/physics frames match respective successful sources. Sensor01uses margin-safe source,the other5actualaux119.",
+    "Both read-only audit coordinators finished successfully. Original106physical gate is actually running;97.6,96retention and conditional fresh8 remain required."
+  ],
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "new_ppo_steps": 0,
+  "new_training_updates_this_turn": 0,
+  "source_supervised_updates": 2500,
+  "new_constrained_last_layer_updates_in_current_model": 1,
+  "physical_validation": {
+    "completed": false,
+    "completed_episodes": 34,
+    "safe_arrivals": 34,
+    "collisions": 0,
+    "timeouts": 0,
+    "groups": {
+      "observed6": 6,
+      "normal18": 18,
+      "sensor5": 5,
+      "source_recovery3": 3,
+      "heading2": 2
+    },
+    "latest_candidate_fixed28_still_pending": false,
+    "fixed28_original_gates_independently_passed": true,
+    "known6_safety_and_prior_success_efficiency_independently_passed": true
+  },
+  "fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+  "known6_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/KNOWN6_PHYSICAL_AUDIT.json",
+  "recorded_frames_independently_compared": 6354,
+  "model_controlled_frames_independently_compared": 4942,
+  "known6_original_input_hashes_verified": 18,
+  "known_cases": [
+    {
+      "case_id": "pre_ppo_holdout_sensor_01",
+      "seconds": 37.000000000000476,
+      "travel_m": 5.580400764273147,
+      "voluntary_wait_frames": 30,
+      "frames": 186,
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_02",
+      "seconds": 49.20000000000672,
+      "travel_m": 7.597490031365833,
+      "voluntary_wait_frames": 1,
+      "frames": 247,
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_00",
+      "seconds": 61.60000000001306,
+      "travel_m": 5.8898308211850745,
+      "voluntary_wait_frames": 18,
+      "frames": 309,
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "seconds": 34.59999999999925,
+      "travel_m": 4.3882475749918815,
+      "voluntary_wait_frames": 1,
+      "frames": 174,
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_03",
+      "seconds": 46.60000000000539,
+      "travel_m": 7.473542036364837,
+      "voluntary_wait_frames": 0,
+      "frames": 234,
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "pre_ppo_holdout_sensor_00",
+      "seconds": 34.99999999999945,
+      "travel_m": 5.29375000737802,
+      "voluntary_wait_frames": 31,
+      "frames": 176,
+      "all_non_timing_trace_fields_exact": true
+    }
+  ],
+  "verified_live_handles": [
+    {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1508614144",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd",
+      "start_ticks": "50175760",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run.py ",
+      "unit": "rl-full-navigation-joint-linear-20261017.service"
+    },
+    {
+      "MainPID": "2225010",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "8101888",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "InvocationID": "12f8bee1621e4efda6da7f4a2bcbc002",
+      "start_ticks": "50187980",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_neural_mechanism_after_validation.py ",
+      "unit": "rl-full-navigation-joint-linear-mechanism-20261017.service"
+    },
+    {
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "[not set]",
+      "MemoryMax": "infinity",
+      "ActiveState": "inactive",
+      "InvocationID": "",
+      "unit": "rl-full-navigation-joint-linear-recorded-audits-20261017.service"
+    },
+    {
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "[not set]",
+      "MemoryMax": "infinity",
+      "ActiveState": "inactive",
+      "InvocationID": "",
+      "unit": "rl-full-navigation-joint-linear-known6-audit-20261017.service"
+    }
+  ],
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "hard3",
+    "case_id": "w11_training_stall_t106",
+    "variant": "candidate",
+    "completed_episodes": 34,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/hard3_w11_training_stall_t106_candidate.json"
+  },
+  "all_known6_now_training_development": true,
+  "frozen8_not_in_training": true,
+  "conditional_late106_protocol": "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017/README.md",
+  "conditional_offline_teacher_physics_started": false,
+  "remaining_requirements": [
+    "Complete actual original106and97.6hard recovery and retain96success. Independent infeasibility additionally requires verified earlier prevention; failed search never suffices.",
+    "Finish serialized current-weight neural cause-use,likelihood and export checks; input consistency alone is not useful understanding.",
+    "Only after original gates evaluate frozen8prospective paired tasks without training leakage.",
+    "Preserve original footprint,4cm,blind/unknown,12actions,dynamics,deadlines,memory,original real-car deployment and resource bounds. No added localization,unseen-map,vehicle or target-board claim."
+  ],
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_083118.json": "7d3738a9e10de29e66e08b8765b02f9427cd918863b3b20736f008665c457efe",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json": "36a332ab5878a56403bb3e4ff057ca0dad2a3ac034a795eb394b99bfd5f92295",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/KNOWN6_PHYSICAL_AUDIT.json": "848e5c7350650e903bac0472307ab9c9caf698f5599c6b96efde6258fdf40521",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/KNOWN6_VALIDATION_SNAPSHOT.json": "7d3738a9e10de29e66e08b8765b02f9427cd918863b3b20736f008665c457efe",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_known6.py": "badc03c5417e52f5d4c7453edf2d9f7c8fe77716ee743029711405ef630efe39",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run_known6_audit.py": "f4f4798fa85bfbceed6694d07c88b84d109a16009cfee8b25982d667696af1a7",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_AUDITS.json": "967338a12cc22e84fb44506910f5514046300125b90f125e6252bdaa164a3ff0",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json": "c26758d5b3da5ac078e2adff9453460248b2d1c2eed2b5b17d1bd6a847a221a9",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json": "a38fccfc70954ab055b49a87c1b5b555cfc78790be0bcfa97879f2058e9f1677",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json": "279657371c5cef95ce11872e5f32307e6efe9554e7e817d61b818823e8e7912f"
+  }
+}

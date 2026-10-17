@@ -1,0 +1,222 @@
+{
+  "at": "2026-10-17T09:38:24.845137+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "source_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "learned_weights_unchanged": true,
+  "new_ppo_steps": 0,
+  "new_training_updates": 0,
+  "completed_failed_memory_experiment": "positive_free_physics_20261017/RESULTS.json",
+  "experimental_memory_not_adopted": true,
+  "actual_new_geometry_audit": {
+    "completed": true,
+    "report": "positive_free_failure_audit_20261017/RESULTS.json",
+    "checks_tested": 258,
+    "checks_matched": 258,
+    "summaries": [
+      {
+        "trace": "positive_free_waypoint_teacher",
+        "controlled_frames": 170,
+        "only_stop_frames": 131,
+        "stop_with_motion_frames": 0,
+        "nonzero_selected_frames": 39,
+        "sampled_geometry_checks": 143,
+        "sampled_raw_clear_but_memory_geometry_blocks": 18
+      },
+      {
+        "trace": "positive_free_goal_teacher",
+        "controlled_frames": 170,
+        "only_stop_frames": 145,
+        "stop_with_motion_frames": 0,
+        "nonzero_selected_frames": 25,
+        "sampled_geometry_checks": 143,
+        "sampled_raw_clear_but_memory_geometry_blocks": 23
+      }
+    ],
+    "resource": {
+      "seconds": 79.94485485600308,
+      "cpu_seconds": 7.994885882000001,
+      "average_cpu_cores": 0.10000500840736298,
+      "peak_rss_mib": 49.72265625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
+  },
+  "current_scan_bottleneck": {
+    "report": "positive_free_failure_audit_20261017/RAW_GEOMETRY_BOTTLENECK.json",
+    "sampled_only_stop_states": 16,
+    "sampled_no_raw_geometric_motion": 10,
+    "not_a_complete_infeasibility_proof": true
+  },
+  "current_new_search": {
+    "protocol": "late106_framewise_protocol_20261017/README.md",
+    "status": {
+      "stage": "bounded_original_mask_search",
+      "depth": 5,
+      "decision_frames": 5,
+      "new_physical_steps": 588,
+      "frontier": [
+        {
+          "score": -1.8121620229250084,
+          "history_frames": 5,
+          "tail": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "waiting": true,
+          "cumulative_turn_rad": 6.445167617386005e-07,
+          "pre_execution_legal_motion_actions": 1
+        },
+        {
+          "score": -1.8122644222449082,
+          "history_frames": 5,
+          "tail": [
+            9,
+            9,
+            0,
+            9,
+            9
+          ],
+          "waiting": false,
+          "cumulative_turn_rad": -0.29065233279036917,
+          "pre_execution_legal_motion_actions": 2
+        },
+        {
+          "score": -1.810285473568142,
+          "history_frames": 5,
+          "tail": [
+            9,
+            9,
+            0,
+            0,
+            9
+          ],
+          "waiting": false,
+          "cumulative_turn_rad": -0.18431509738108076,
+          "pre_execution_legal_motion_actions": 2
+        },
+        {
+          "score": -1.810882618077813,
+          "history_frames": 5,
+          "tail": [
+            9,
+            9,
+            0,
+            0,
+            0
+          ],
+          "waiting": false,
+          "cumulative_turn_rad": -0.16110202086467673,
+          "pre_execution_legal_motion_actions": 2
+        },
+        {
+          "score": -1.8109306238598724,
+          "history_frames": 5,
+          "tail": [
+            0,
+            0,
+            0,
+            9,
+            9
+          ],
+          "waiting": false,
+          "cumulative_turn_rad": -0.0809993554668118,
+          "pre_execution_legal_motion_actions": 1
+        }
+      ],
+      "resource": {
+        "seconds": 243.58379535697168,
+        "cpu_seconds": 85.25522896599999,
+        "average_cpu_cores": 0.350003697253582,
+        "peak_rss_mib": 1688.25,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "at": "2026-10-17T09:38:23.844595+08:00",
+      "new_ppo_steps": 0,
+      "new_training_updates": 0,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "original_guard_memory_body_actions_625semantics_dynamics_deadline": true,
+    "maximum_frontier": 5,
+    "maximum_macro_frames": 1,
+    "no_coarse_pose_bucket_merging": true,
+    "maximum_search_physical_steps": 6500,
+    "maximum_fresh_replay_steps": 700,
+    "admission": {
+      "completed": true,
+      "original_prefix_frames": 530,
+      "exact_original625_sensor_physics_frames_per_restore": 4,
+      "exact_repeats": 2,
+      "native_model_nbuffer_bytes": 197074856,
+      "native_data_nbuffer_bytes": 2121056,
+      "native_integration_state_values": 185,
+      "native_model_unchanged": true,
+      "resource": {
+        "seconds": 215.12890137097565,
+        "cpu_seconds": 75.34161105,
+        "average_cpu_cores": 0.35021612888766784,
+        "peak_rss_mib": 1633.6328125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "no_runtime_or_safety_changes": true,
+      "at": "2026-10-17T09:37:55.389663+08:00",
+      "new_ppo_steps": 0,
+      "new_training_updates": 0,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "complete_safe_teacher_not_yet_proven": true
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2260374",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1480212480",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "2ba7ac0461fa47fb946b4123247ac41c",
+      "unit": "rl-late106-framewise-20261017.service",
+      "checked_at": "2026-10-17T09:38:24.845137+08:00",
+      "start_ticks": "50861474"
+    },
+    {
+      "MainPID": "2260451",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "6742016",
+      "MemoryMax": "104857600",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "bbfeefd3dd174b35acfd05e9d05df5c1",
+      "unit": "rl-late106-framewise-replay-waiter-20261017.service",
+      "checked_at": "2026-10-17T09:38:24.845137+08:00",
+      "start_ticks": "50862861"
+    }
+  ],
+  "active_worker": {
+    "pid": 2260374,
+    "unit": "rl-late106-framewise-20261017.service",
+    "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+    "start_ticks": "50861474",
+    "kind": "original_guard_single_frame_teacher_search_not_training"
+  },
+  "standard_library_replay_waiter_does_not_load_neural_or_physics": true,
+  "original_goal_scope_retained": [
+    "measured stop reasons/execution history must usefully influence learned behavior",
+    "fixed28 normal18/sensor5/source3/heading2,original per-case20%,normal total time5%/path2%",
+    "known full safe missions and known safety failures",
+    "original97.6/106 late recovery plus prior96success",
+    "conditional frozen fresh8 pairs after original gates,no leakage",
+    "changed memory only from-init admissibility/full matched retention",
+    "independent infeasibility and verified earlier prevention if claiming impossible",
+    "originalbody .393924904x.329460022m,4cm,12actions,unknown/blind,dynamics/deadlines,original real-car deployment"
+  ],
+  "no_localization_real_car_unseen_generalization_or_board_improvement_claim": true,
+  "next_action": "Complete original-guard fine-control teacher search. Only a complete physically safe winner can trigger independent fresh full replay. No failed teacher positive labels or automatic training; all original learning and retention gates remain."
+}

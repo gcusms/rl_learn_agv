@@ -1,0 +1,113 @@
+{
+  "completed": true,
+  "at": "2026-10-17T06:50:28.564619+08:00",
+  "case_id": "pre_ppo_holdout_sensor_01",
+  "known_case_used_for_training_development": true,
+  "not_independent_generalization": true,
+  "old": {
+    "safe_success": false,
+    "collisions": 1,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 16.600000000000982,
+    "travel_m": 2.1389397139557134,
+    "voluntary_wait_frames": 4,
+    "only_stop_frames": 12,
+    "final_xy_error_m": 3.089881712876649
+  },
+  "new": {
+    "safe_success": true,
+    "collisions": 0,
+    "false_arrival": false,
+    "physical_guards": 0,
+    "seconds": 37.000000000000476,
+    "travel_m": 5.580400764273147,
+    "voluntary_wait_frames": 30,
+    "only_stop_frames": 4,
+    "final_xy_error_m": 0.12499809722606739
+  },
+  "first_divergence": {
+    "frame": 15,
+    "sensor_time_s": 2.9999999999999583,
+    "old_choice": 11,
+    "new_choice": 1,
+    "old_command": [
+      0.2,
+      -0.5
+    ],
+    "new_command": [
+      0.2,
+      0.0
+    ],
+    "all625_sensor_physical_mask_route_prefix_parity": {
+      "observations": true,
+      "masks": true,
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "labels": true,
+      "human_positions": true,
+      "route_diagnostics": true,
+      "route_reasons": true
+    },
+    "previous_commands_exact": true,
+    "old_and_new_choices_both_legal": true
+  },
+  "whole186_frame_teacher_reproduction": {
+    "observations": true,
+    "masks": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true,
+    "labels": true,
+    "human_positions": true,
+    "route_diagnostics": true,
+    "route_reasons": true,
+    "choices": true,
+    "commands": true
+  },
+  "all_teacher_predictive_contacts_and_masks_exact_excluding_compute_ms": true,
+  "original_mask_body4cm_memory_dynamics_map_localizer_router_and_docking_files_exact": {
+    "quality_observation.json": true,
+    "hardware.json": true,
+    "localization_contract.json": true,
+    "docking_contract.json": true,
+    "goal_pose_observation.json": true,
+    "localizer.pt": true,
+    "router.pt": true,
+    "localization_kernel.so": true,
+    "uncertainty_contract.json": true,
+    "decision_feedback.json": true,
+    "parent_actor.pt": true,
+    "long_risk_observation.json": true,
+    "previous_risk_actor.pt": true,
+    "release_observation.json": true
+  },
+  "no_runtime_teacher_sequence": true,
+  "cumulative_margin_supervised_updates": 2500,
+  "source_prior_additional_ppo_steps": 1993,
+  "source_auxiliary_updates": 119,
+  "new_ppo_steps": 0,
+  "original_fixed28_known_remaining_hard97_6_106_and_conditional_fresh_gates_still_required": true,
+  "resource": {
+    "seconds": 0.4659035179647617,
+    "cpu_seconds": 0.04863638000000001,
+    "average_cpu_cores": 0.10439152769754056,
+    "peak_rss_mib": 34.91015625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_episodes_in_this_readonly_audit": 0,
+  "source_hashes": {
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/observed6_pre_ppo_holdout_sensor_01_candidate.npz": "d68e0d9db6b9f308f79d80d04a8036b834e11741c3b19645cd253a0313ef22eb",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/observed6_pre_ppo_holdout_sensor_01_candidate.npz": "99eedc3d23adc6a863f41b830e4d7272ff120939802a924a070413e9007a88bc",
+    "reports/stop_feedback_20261015/sensor01_reference_terminal_demonstration_20261017/demonstration.npz": "7f4092124288b1bd4f5e81028337047fc869b8c8a89c4ee1ffe9566b5e905373",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/RESULTS.json": "2dbb7d2fba6b696ea251a1d1fa066bc3fd918526b5fd011b282726bd5dc54966",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/observed6_pre_ppo_holdout_sensor_01_candidate_RESULT.json": "8aa136ff7d6dda308aa1d7eadc84bdd4a3691ed9db47eddd4362bf6341c8f8ab",
+    "reports/stop_feedback_20261015/sensor01_reference_terminal_demonstration_20261017/RESULTS.json": "26a04363bfffd31d71989f3ae43b271537e25c615f54a3d3be95cfa468026935",
+    "models/stop_feedback_20261015/v2_behavior_retention_s231017/portable/manifest.json": "f4b571eaf6de8da42bdfe34049e529c2634e06fcd8f80e6761e343a48d329549",
+    "models/stop_feedback_20261015/full_navigation_margin_resume_s231017/portable/manifest.json": "788692c164cfb12e99821ab0aae25d4b474eee8ab4537430e6796d7534e4a9f4",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/MARGIN_RESUME_FIT_RESULTS.json": "f7f02c56174926228218773799d12377cd685b89d979c0cb6ef070e039116380"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

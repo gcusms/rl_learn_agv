@@ -1,0 +1,101 @@
+{
+  "completed": true,
+  "at": "2026-10-16T09:02:47.421722+00:00",
+  "correct_source_labels": 2683,
+  "total_source_labels": 2683,
+  "updates": 300,
+  "fit_weighting": {
+    "mode": "recovery_phase",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 588,
+        "unique_head_inputs": 440,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 1539,
+        "unique_head_inputs": 1242,
+        "allocated_loss_weight": 0.25
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 25,
+        "unique_head_inputs": 19,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "fit_records": [
+    {
+      "update": 50,
+      "active_correct": 2144,
+      "active_examples": 2152,
+      "loss": 0.04031137004494667,
+      "minimum_stop_target_probability": 0.6041998267173767,
+      "minimum_motion_target_probability": 0.21169231832027435
+    },
+    {
+      "update": 100,
+      "active_correct": 2149,
+      "active_examples": 2152,
+      "loss": 0.013342504389584064,
+      "minimum_stop_target_probability": 0.6950052976608276,
+      "minimum_motion_target_probability": 0.44143539667129517
+    },
+    {
+      "update": 150,
+      "active_correct": 2150,
+      "active_examples": 2152,
+      "loss": 0.007194897625595331,
+      "minimum_stop_target_probability": 0.8637663125991821,
+      "minimum_motion_target_probability": 0.41231995820999146
+    },
+    {
+      "update": 200,
+      "active_correct": 2152,
+      "active_examples": 2152,
+      "loss": 0.004434886854141951,
+      "minimum_stop_target_probability": 0.9233763217926025,
+      "minimum_motion_target_probability": 0.5225844383239746
+    },
+    {
+      "update": 250,
+      "active_correct": 2152,
+      "active_examples": 2152,
+      "loss": 0.003018933581188321,
+      "minimum_stop_target_probability": 0.94671630859375,
+      "minimum_motion_target_probability": 0.6919069290161133
+    },
+    {
+      "update": 300,
+      "active_correct": 2152,
+      "active_examples": 2152,
+      "loss": 0.00221003289334476,
+      "minimum_stop_target_probability": 0.9622018933296204,
+      "minimum_motion_target_probability": 0.8033694624900818
+    }
+  ],
+  "frozen_parent_tensor_sha256": "475eca57e4004dff43e3c0d9b479d420f16e886d79cf3e5a699e5a9a9805d882",
+  "checkpoint_sha256": "43911267cf1fee80e9aaa7d0a1db3c9f45f79024bbac3131692b004dd3de6e1f",
+  "optimizer_and_rng_saved": true,
+  "exported_for_physical_validation": true,
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "resource": {
+    "seconds": 13.830852672981564,
+    "cpu_seconds": 4.845293176,
+    "average_cpu_cores": 0.3503249792737098,
+    "peak_rss_mib": 725.15234375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

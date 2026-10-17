@@ -1,0 +1,66 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "trial": "turn_when_legal_0_1",
+      "learned_suffix_frames": 124,
+      "learned_suffix_choices_wait_with_alternatives": 2,
+      "baseline_nonzero_during_these_waits": 0,
+      "baseline_nonzero_action_counts": {},
+      "after_teacher_mask_histogram": {
+        "0": 110,
+        "0,5": 4,
+        "0,5,9": 2,
+        "0,4,5": 2,
+        "0,4,5,9": 2,
+        "0,4,5,8,9": 2,
+        "0,4,5,7,8,9": 2
+      },
+      "first_baseline_motion_on_model_wait": null
+    },
+    {
+      "trial": "turn_when_legal_0_3",
+      "learned_suffix_frames": 122,
+      "learned_suffix_choices_wait_with_alternatives": 0,
+      "baseline_nonzero_during_these_waits": 0,
+      "baseline_nonzero_action_counts": {},
+      "after_teacher_mask_histogram": {
+        "0": 115,
+        "0,5,9": 1,
+        "0,4,5,8,9": 4,
+        "0,3,4,5,8,9": 1,
+        "0,3,4,5,7,8,9": 1
+      },
+      "first_baseline_motion_on_model_wait": null
+    },
+    {
+      "trial": "turn_when_legal_0_6",
+      "learned_suffix_frames": 119,
+      "learned_suffix_choices_wait_with_alternatives": 5,
+      "baseline_nonzero_during_these_waits": 0,
+      "baseline_nonzero_action_counts": {},
+      "after_teacher_mask_histogram": {
+        "0": 103,
+        "0,8": 6,
+        "0,4": 1,
+        "0,4,8": 3,
+        "0,4,5,8": 2,
+        "0,4,5,8,9": 4
+      },
+      "first_baseline_motion_on_model_wait": null
+    }
+  ],
+  "base_actor_sha256": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+  "recorded_counterfactual_action_audit_only": true,
+  "no_counterfactual_executed": true,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "resource": {
+    "seconds": 2.3376947100041434,
+    "cpu_seconds": 0.239840445,
+    "average_cpu_cores": 0.1025969918029095,
+    "peak_rss_mib": 461.09375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

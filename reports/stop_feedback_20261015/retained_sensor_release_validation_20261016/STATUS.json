@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "reason": "All nine bounded checks passed; full normal/dynamic/prefix regression still required",
+  "completed_episodes": 9,
+  "gates": {
+    "known_earlier_release": {
+      "passed": true,
+      "maximum_seconds": 72.47999999999207,
+      "maximum_wait_frames": 161
+    },
+    "retention_early_yield_sensor_holdout_05_0": {
+      "passed": true
+    },
+    "retention_release_phase_frozen_noise_05_2": {
+      "passed": true
+    },
+    "paired_sensor_release_frozen_noise_05_0": {
+      "passed": true,
+      "baseline_safe": true,
+      "candidate_safe": true
+    },
+    "paired_sensor_release_frozen_noise_05_1": {
+      "passed": true,
+      "baseline_safe": true,
+      "candidate_safe": true
+    },
+    "heading_docking_dev_02": {
+      "passed": true
+    },
+    "heading_docking_dev_11": {
+      "passed": true
+    }
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "sensor_release_frozen_noise_05_0",
+    "trace": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_0.npz",
+    "case": {
+      "id": "sensor_release_frozen_noise_05_0",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017041,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    },
+    "physical_source_report": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/RESULTS.json",
+    "physical_source_rows_key": "rows",
+    "physical_source_row": {
+      "case_id": "sensor_release_frozen_noise_05_0",
+      "category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 33.79999999999884,
+      "travel_m": 5.126837758653149,
+      "frames": 170,
+      "final_xy_error_m": 0.11223042805629553,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004384981187725545,
+      "localization_yaw_p95_rad": 0.0012749151182940945,
+      "stop_choices": 36,
+      "only_stop_frames": 5,
+      "stop_reasons": {
+        "None": 166,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 31,
+      "predictive_constraint_frames": 11,
+      "runtime_ms": {
+        "p95": 121.07707209943327,
+        "p99": 138.3517813641811,
+        "maximum": 156.3462649937719
+      },
+      "variant": "candidate",
+      "group": "paired_new_noise",
+      "trace_path": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_0.npz",
+      "trace_sha256": "1f0369ace91c9463c9d3bcadba1c823b0b5c166308d509fa3d676c1cd93932a4",
+      "learned_model_only": true,
+      "no_teacher": true
+    },
+    "reference_actor": "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/actor.pt",
+    "reference_observation_dimensions": 625
+  },
+  {
+    "id": "sensor_release_frozen_noise_05_1",
+    "trace": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_1.npz",
+    "case": {
+      "id": "sensor_release_frozen_noise_05_1",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017042,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    },
+    "physical_source_report": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/RESULTS.json",
+    "physical_source_rows_key": "rows",
+    "physical_source_row": {
+      "case_id": "sensor_release_frozen_noise_05_1",
+      "category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 33.99999999999894,
+      "travel_m": 5.1519065943286755,
+      "frames": 171,
+      "final_xy_error_m": 0.083534183347797,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005466171424443845,
+      "localization_yaw_p95_rad": 0.0014778404624220531,
+      "stop_choices": 23,
+      "only_stop_frames": 6,
+      "stop_reasons": {
+        "None": 167,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 17,
+      "predictive_constraint_frames": 3,
+      "runtime_ms": {
+        "p95": 130.71682353620417,
+        "p99": 161.3671779865399,
+        "maximum": 174.5161170256324
+      },
+      "variant": "candidate",
+      "group": "paired_new_noise",
+      "trace_path": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_1.npz",
+      "trace_sha256": "cf5ac804b84ff32630c3320448907730c5b7f2cb18216c0c01a5304496c8f759",
+      "learned_model_only": true,
+      "no_teacher": true
+    },
+    "reference_actor": "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/actor.pt",
+    "reference_observation_dimensions": 625
+  }
+]

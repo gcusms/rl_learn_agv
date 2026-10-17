@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-17T06:16:18.163493+08:00",
+  "validation_completed": true,
+  "candidate": "v2_behavior_retention_s231017",
+  "direct_previous": "guard_aligned_mixed_ppo_resume_s231017",
+  "additional_supervised_updates": 119,
+  "additional_ppo_samples_this_fit": 0,
+  "source_previous_additional_ppo_samples": 1993,
+  "normal18": {
+    "direct_previous": {
+      "seconds": 460.00000000001364,
+      "travel_m": 67.11121422287155
+    },
+    "current": {
+      "seconds": 459.40000000001334,
+      "travel_m": 67.13577183988691
+    }
+  },
+  "fixed28_current": {
+    "cases": 28,
+    "safe_arrivals": 28,
+    "all_original_safety_and_efficiency_gates_passed": true
+  },
+  "matched_known_dynamic": {
+    "pre_ppo_holdout_dynamic_00": {
+      "direct_previous": {
+        "safe_success": true,
+        "seconds": 61.60000000001306,
+        "travel_m": 5.8898308211850745,
+        "collisions": 0,
+        "voluntary_wait_frames": 18,
+        "only_stop_frames": 64
+      },
+      "current": {
+        "safe_success": true,
+        "seconds": 61.60000000001306,
+        "travel_m": 5.8898308211850745,
+        "collisions": 0,
+        "voluntary_wait_frames": 18,
+        "only_stop_frames": 64
+      }
+    },
+    "pre_ppo_holdout_dynamic_01": {
+      "direct_previous": {
+        "safe_success": true,
+        "seconds": 53.400000000008866,
+        "travel_m": 4.628456294733507,
+        "collisions": 0,
+        "voluntary_wait_frames": 27,
+        "only_stop_frames": 82
+      },
+      "current": {
+        "safe_success": true,
+        "seconds": 34.59999999999925,
+        "travel_m": 4.3882475749918815,
+        "collisions": 0,
+        "voluntary_wait_frames": 1,
+        "only_stop_frames": 18
+      }
+    }
+  },
+  "current_full_validation": {
+    "physical_episodes": 34,
+    "safe_arrivals": 33,
+    "collisions": 1,
+    "reason": "Known complete-mission case still unsafe; no fresh expansion",
+    "failed_case": "pre_ppo_holdout_sensor_01"
+  },
+  "remaining_hard3_and_fresh8_not_executed": true,
+  "known_dynamic00_dynamic01_are_training_development_cases": true,
+  "localizer_router_and_directional_docking_frozen": true,
+  "new_localization_precision_or_target_board_performance_evidence": false,
+  "old_deployed_2k_46_of48_not_same_evaluation_set": true,
+  "overall_upgrade_accepted": false,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "source_hashes": {
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/RESULTS.json": "2dbb7d2fba6b696ea251a1d1fa066bc3fd918526b5fd011b282726bd5dc54966",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/RESULTS.json": "80dce686101690a2176a1c2b2ee22b0648c937e58994ed2c9cc437e1de121d7c"
+  },
+  "separate_memory_pair_status": {
+    "status": "physical_case",
+    "at": "2026-10-17T06:13:42.743186+08:00",
+    "case_id": "legal_wait_parent_t90",
+    "variant": "hybrid",
+    "completed_episodes": 1
+  },
+  "this_comparison_added_physical_episodes": 0,
+  "this_comparison_added_training_updates": 0
+}

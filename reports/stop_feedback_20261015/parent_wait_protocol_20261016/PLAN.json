@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-16T09:46:20.655353+00:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/RESULTS.json": "6bde80f0aeeaa827e943784e0fbbf8808ea2a9683d13f39987b6c255b50f9f9a",
+    "reports/stop_feedback_20261015/w11_recovery_bc800_w11_20261016/specifications.json": "7c8790a148efbbc9baac2554939574bb6a767f0d2a09f7b279adbb24dcdb8b10",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/checkpoint.pt": "20f48a8c377dab17137c9d940b1f67ea54f8da8b2193ffff3f94a9a334b441c0",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "training/experiments/collect_parent_wait_sources.py": "e91e9e156498d0348804c6e0dff9ff1ff06f46f1673db68a59e412f12daf5673",
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/physical/actual95_actual90_w11_training_stall_t95.npz": "ac1247c8f469b2110eeb9d152964a82a5687eeefa24d43deae163cd0b8a15af0",
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/physical/actual95_actual90_w11_training_stall_t90.npz": "d40e7319d6046e87f74103d971f4d7b111ae28a4135260664d8ea782cbc0bb43",
+    "reports/stop_feedback_20261015/parent_wait_protocol_20261016/specifications.json": "a2c495cbebe40a02edb796dc4f81ad348286f86ab7bfc796d87b9390f7a37a63"
+  },
+  "maximum_new_physical_episodes": 2,
+  "selection": "First post-release frame with at least 2s observed legal idle, valid sensing, trainable support, candidate stop and a legal nonzero frozen-parent proposal. No future outcome selection.",
+  "selected_states": [
+    {
+      "original_case_id": "w11_training_stall_t95",
+      "id": "legal_wait_parent_t95",
+      "release_s": 97.59999999998372,
+      "prefix_frames": 488,
+      "previous_legal_idle_s": 2.0000000298023224,
+      "parent_choice": 9,
+      "new_candidate_choice": 0,
+      "legal_motion_choices": 10
+    },
+    {
+      "original_case_id": "w11_training_stall_t90",
+      "id": "legal_wait_parent_t90",
+      "release_s": 95.99999999998518,
+      "prefix_frames": 480,
+      "previous_legal_idle_s": 2.0000000298023224,
+      "parent_choice": 1,
+      "new_candidate_choice": 0,
+      "legal_motion_choices": 11
+    }
+  ],
+  "reference_parent_only_after_prefix": true,
+  "failed_prefix_initialization_not_positive_labels": true,
+  "complete_safe_continuation_required": true,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "resource": {
+    "seconds": 1.7085355469607748,
+    "cpu_seconds": 0.2802575759999999,
+    "average_cpu_cores": 0.16403379871055979,
+    "peak_rss_mib": 468.73828125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "preflight_revision": "Collector now verifies protocol input hashes; selected states and all physical conditions unchanged. Updated before any source collection."
+}

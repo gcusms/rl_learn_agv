@@ -1,0 +1,288 @@
+{
+  "schema": "guard_aligned_release_head_v2",
+  "unchanged_runtime_prefix_dimensions": 439,
+  "dimensions": 625,
+  "head_dimensions": [
+    408,
+    32,
+    32,
+    12
+  ],
+  "head_features": [
+    "old_88_risk_mask_stop_feedback_parent_choice",
+    "current_72_minimum_ranges",
+    "current_72_hit_and_72_no_return_fractions",
+    "robot_relative_waypoint_and_goal",
+    "measured_velocity_and_previous_execution",
+    "current_12_by_8_guard_rejection_groups"
+  ],
+  "initialization": "old risk weights; decisions may differ in newly trainable sensor contexts",
+  "parent_actor_sha256": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+  "previous_risk_actor_sha256": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+  "outside_support_parent_exact": true,
+  "near_goal_directional_parent_exact": true,
+  "stop_always_selectable": true,
+  "no_forced_motion": true,
+  "no_runtime_teacher": true,
+  "actions_masks_body_margin_blind_memory_and_deadlines_unchanged": true,
+  "new_ppo_steps": 1993,
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  },
+  "guard_reason_features": {
+    "schema": "current_guard_reason_release_head_v1",
+    "observation_dimensions": 625,
+    "old_head_dimensions": 312,
+    "head_dimensions": [
+      408,
+      32,
+      32,
+      12
+    ],
+    "additional_features": "current_12_by_8_guard_rejection_groups",
+    "source_slice": [
+      303,
+      399
+    ],
+    "rejection_groups": [
+      "accepted",
+      "perception_or_odometry",
+      "localization_or_route",
+      "static_geometry",
+      "laser_geometry",
+      "dynamic_prediction",
+      "projection",
+      "other"
+    ],
+    "first_projection": "unchanged_312_projection_plus_zero_initialized_96_projection",
+    "same_current_scan_as_action_mask": true,
+    "simulator_truth_used": false,
+    "previous_executed_reason_retained": true,
+    "runtime_teacher": false,
+    "action_permissions_and_learning_support_unchanged": true,
+    "no_forced_motion": true,
+    "stop_always_selectable": true
+  },
+  "long_risk_semantics": {
+    "schema": "long_action_risk_history_v2_guard_lower_bound",
+    "dimensions": 481,
+    "training_dimensions": 478,
+    "parent_contract": {
+      "schema": "stop_decision_feedback_v2",
+      "prefix_dimensions": 300,
+      "training_dimensions": 436,
+      "heading_prefix_dimensions": 303,
+      "dimensions": 439,
+      "append_dimensions": 136,
+      "action_commands": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.05,
+          0.5
+        ],
+        [
+          0.05,
+          -0.5
+        ],
+        [
+          0.01,
+          0.5
+        ],
+        [
+          0.01,
+          -0.5
+        ],
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "fields": [
+        "12_current_guard_rejection_groups_one_hot",
+        "previous_executed_stop_reason_one_hot",
+        "12_guard_forecast_contact_scores",
+        "nonzero_choices_over_11",
+        "scan_age_over_guard_limit",
+        "previous_idle_seconds_over_5",
+        "previous_idle_with_choices_seconds_over_5",
+        "prediction_input_valid",
+        "moving_tracks_over_4",
+        "oldest_track_age_over_0.8",
+        "scan_valid"
+      ],
+      "rejection_groups": [
+        "accepted",
+        "perception_or_odometry",
+        "localization_or_route",
+        "static_geometry",
+        "laser_geometry",
+        "dynamic_prediction",
+        "projection",
+        "other"
+      ],
+      "previous_reasons": [
+        "none",
+        "nonfinite_input",
+        "stale_or_future_scan",
+        "scan_unavailable",
+        "odometry_jump",
+        "localization_uncertain",
+        "learned_route_incomplete",
+        "reverse_without_rear_visibility",
+        "reverse_duration_limit",
+        "static_braking_footprint",
+        "laser_braking_footprint",
+        "escape_not_increasing_clearance",
+        "unsafe_turn_blocked",
+        "unsafe_translation_blocked",
+        "estimated_goal_reached",
+        "other",
+        "predicted_dynamic_contact",
+        "predictive_command_contract",
+        "policy_wait",
+        "only_stop_available"
+      ],
+      "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+      "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+      "unknown_forecast_is_not_clear": true,
+      "legacy_prefix_unchanged": true,
+      "stop_always_selectable": true,
+      "simulator_truth_used": false,
+      "commands_issued": false,
+      "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+      "executed_reason_retained_during_idle": true
+    },
+    "unchanged_runtime_prefix_dimensions": 439,
+    "unchanged_training_prefix_dimensions": 436,
+    "append_dimensions": 42,
+    "history_ages_s": [
+      0.4,
+      0.2,
+      0.0
+    ],
+    "maximum_historical_sample_age_s": 0.05,
+    "fields_per_frame": [
+      "12_forecast_contact_scores",
+      "supported_prediction_valid",
+      "supported_tracks_over_4"
+    ],
+    "horizon_s": 5.0,
+    "forecast_period_s": 0.2,
+    "contact_score": "earliest existing long forecast or same-frame guard TTC, normalized as1-contact_s/5.2",
+    "unsupported_or_missing_history": "zero_values_and_zero_validity_not_certified_clear",
+    "margin_m": 0.04,
+    "velocity_uncertainty_floor_m_s": 0.025,
+    "adaptive_track_uncertainty": true,
+    "finite_measured_motion_response": true,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "action_commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "frame": "guard tracks and robot pose in continuous odometry coordinates",
+    "simulator_truth_used": false,
+    "future_sensor_frames_used": false,
+    "absolute_episode_time_input": false,
+    "commands_issued": false,
+    "actions_masks_body_guard_and_blind_memory_unchanged": true,
+    "short_guard_contact_is_risk_lower_bound": true,
+    "short_guard_horizon_s": 1.2,
+    "short_and_long_supported_track_counts_combined": true,
+    "supported_prediction_valid": "some sensor-supported forecast exists; zero risk does not certify clearance",
+    "requires_retraining_after_v1": true,
+    "changes_action_permission": false,
+    "additional_neural_inference": false
+  },
+  "input_semantics_changed_requires_matching_v2": true,
+  "unchanged_native_suffix": [
+    481,
+    625
+  ],
+  "source_model": "models/stop_feedback_20261015/guard_aligned_migration_s231017",
+  "training_method": "matched_v2_mixed_state_complete_batch_masked_ppo",
+  "original_hardware_memory_config": true
+}

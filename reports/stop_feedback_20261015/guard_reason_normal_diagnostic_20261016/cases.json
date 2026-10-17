@@ -1,0 +1,56 @@
+[
+  {
+    "id": "recovery_holdout_03",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 9510154,
+    "start": [
+      8.295000000000002,
+      1.145,
+      1.5833780945997562
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        2.0,
+        4.0
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "untrained_recovery_conditions",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.02
+  },
+  {
+    "id": "motion_profile_002",
+    "category": "reversal",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 100002,
+    "start": [
+      7.875,
+      6.525,
+      0.5829383550326908
+    ],
+    "goal": [
+      1.175,
+      6.075
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.15477787921727554,
+    "odom_scale": 1.0,
+    "reverse_after_event_s": 3.499490583194487,
+    "pilot_category": "original_release_reversal",
+    "max_steps": 700
+  }
+]

@@ -1,0 +1,461 @@
+{
+  "completed": true,
+  "at": "2026-10-16T10:31:09.606340+00:00",
+  "correct_source_labels": 3245,
+  "total_source_labels": 3252,
+  "updates": 2000,
+  "fit_weighting": {
+    "mode": "recovery_phase_action_balanced",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 629,
+        "unique_head_inputs": 481,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 2000,
+        "unique_head_inputs": 1689,
+        "allocated_loss_weight": 0.24999999999999992
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 27,
+        "unique_head_inputs": 21,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true,
+    "balanced_movement_classes": true,
+    "stop_budget_and_duplicate_weighting_unchanged": true,
+    "class_budgets": [
+      {
+        "phase": "ordinary_motion",
+        "action": 1,
+        "labels": 1293,
+        "allocated_loss_weight": 0.024999999999999994
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 2,
+        "labels": 13,
+        "allocated_loss_weight": 0.024999999999999998
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 3,
+        "labels": 3,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 4,
+        "labels": 35,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 5,
+        "labels": 7,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 6,
+        "labels": 167,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 7,
+        "labels": 28,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 9,
+        "labels": 36,
+        "allocated_loss_weight": 0.024999999999999998
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 10,
+        "labels": 122,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 11,
+        "labels": 296,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 1,
+        "labels": 7,
+        "allocated_loss_weight": 0.06249999999999999
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 6,
+        "labels": 12,
+        "allocated_loss_weight": 0.06250000000000001
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 9,
+        "labels": 1,
+        "allocated_loss_weight": 0.0625
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 11,
+        "labels": 7,
+        "allocated_loss_weight": 0.0625
+      }
+    ]
+  },
+  "fit_records": [
+    {
+      "update": 50,
+      "active_correct": 2582,
+      "active_examples": 2656,
+      "loss": 0.22821053862571716,
+      "minimum_stop_target_probability": 0.0004948932910338044,
+      "minimum_motion_target_probability": 3.1125498935580254e-05
+    },
+    {
+      "update": 100,
+      "active_correct": 2598,
+      "active_examples": 2656,
+      "loss": 0.14827358722686768,
+      "minimum_stop_target_probability": 0.0007054138113744557,
+      "minimum_motion_target_probability": 4.4921358494320884e-05
+    },
+    {
+      "update": 150,
+      "active_correct": 2605,
+      "active_examples": 2656,
+      "loss": 0.10983685404062271,
+      "minimum_stop_target_probability": 0.0006867548800073564,
+      "minimum_motion_target_probability": 7.041494973236695e-05
+    },
+    {
+      "update": 200,
+      "active_correct": 2611,
+      "active_examples": 2656,
+      "loss": 0.08671404421329498,
+      "minimum_stop_target_probability": 0.001406550407409668,
+      "minimum_motion_target_probability": 6.1032224039081484e-05
+    },
+    {
+      "update": 250,
+      "active_correct": 2617,
+      "active_examples": 2656,
+      "loss": 0.06949220597743988,
+      "minimum_stop_target_probability": 0.015127187594771385,
+      "minimum_motion_target_probability": 4.222639472573064e-05
+    },
+    {
+      "update": 300,
+      "active_correct": 2618,
+      "active_examples": 2656,
+      "loss": 0.05610053241252899,
+      "minimum_stop_target_probability": 0.09146442264318466,
+      "minimum_motion_target_probability": 2.375250551267527e-05
+    },
+    {
+      "update": 350,
+      "active_correct": 2618,
+      "active_examples": 2656,
+      "loss": 0.046378184109926224,
+      "minimum_stop_target_probability": 0.19560490548610687,
+      "minimum_motion_target_probability": 1.3601168575405609e-05
+    },
+    {
+      "update": 400,
+      "active_correct": 2624,
+      "active_examples": 2656,
+      "loss": 0.03834167495369911,
+      "minimum_stop_target_probability": 0.42067012190818787,
+      "minimum_motion_target_probability": 9.828458132687956e-06
+    },
+    {
+      "update": 450,
+      "active_correct": 2628,
+      "active_examples": 2656,
+      "loss": 0.031234297901391983,
+      "minimum_stop_target_probability": 0.6805554628372192,
+      "minimum_motion_target_probability": 1.0421586011943873e-05
+    },
+    {
+      "update": 500,
+      "active_correct": 2633,
+      "active_examples": 2656,
+      "loss": 0.02579503320157528,
+      "minimum_stop_target_probability": 0.7581984996795654,
+      "minimum_motion_target_probability": 1.2598388821061235e-05
+    },
+    {
+      "update": 550,
+      "active_correct": 2635,
+      "active_examples": 2656,
+      "loss": 0.02191936783492565,
+      "minimum_stop_target_probability": 0.8007495403289795,
+      "minimum_motion_target_probability": 1.1742124115698971e-05
+    },
+    {
+      "update": 600,
+      "active_correct": 2636,
+      "active_examples": 2656,
+      "loss": 0.019027631729841232,
+      "minimum_stop_target_probability": 0.8335134983062744,
+      "minimum_motion_target_probability": 1.1349512533342931e-05
+    },
+    {
+      "update": 650,
+      "active_correct": 2638,
+      "active_examples": 2656,
+      "loss": 0.016741745173931122,
+      "minimum_stop_target_probability": 0.863556444644928,
+      "minimum_motion_target_probability": 1.1543542314029764e-05
+    },
+    {
+      "update": 700,
+      "active_correct": 2639,
+      "active_examples": 2656,
+      "loss": 0.014858342707157135,
+      "minimum_stop_target_probability": 0.8908581137657166,
+      "minimum_motion_target_probability": 1.2172400602139533e-05
+    },
+    {
+      "update": 750,
+      "active_correct": 2640,
+      "active_examples": 2656,
+      "loss": 0.013266541995108128,
+      "minimum_stop_target_probability": 0.9132711887359619,
+      "minimum_motion_target_probability": 1.3173123988963198e-05
+    },
+    {
+      "update": 800,
+      "active_correct": 2640,
+      "active_examples": 2656,
+      "loss": 0.011902961879968643,
+      "minimum_stop_target_probability": 0.9305272102355957,
+      "minimum_motion_target_probability": 1.4476440810540225e-05
+    },
+    {
+      "update": 850,
+      "active_correct": 2641,
+      "active_examples": 2656,
+      "loss": 0.010717283003032207,
+      "minimum_stop_target_probability": 0.9436169862747192,
+      "minimum_motion_target_probability": 1.5983678167685866e-05
+    },
+    {
+      "update": 900,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.009660613723099232,
+      "minimum_stop_target_probability": 0.953562319278717,
+      "minimum_motion_target_probability": 1.7536222003400326e-05
+    },
+    {
+      "update": 950,
+      "active_correct": 2644,
+      "active_examples": 2656,
+      "loss": 0.008698506280779839,
+      "minimum_stop_target_probability": 0.9611049890518188,
+      "minimum_motion_target_probability": 1.8961436580866575e-05
+    },
+    {
+      "update": 1000,
+      "active_correct": 2645,
+      "active_examples": 2656,
+      "loss": 0.00783961545675993,
+      "minimum_stop_target_probability": 0.9669765830039978,
+      "minimum_motion_target_probability": 2.038478123722598e-05
+    },
+    {
+      "update": 1050,
+      "active_correct": 2645,
+      "active_examples": 2656,
+      "loss": 0.0071137142367661,
+      "minimum_stop_target_probability": 0.9718571305274963,
+      "minimum_motion_target_probability": 2.24557334149722e-05
+    },
+    {
+      "update": 1100,
+      "active_correct": 2645,
+      "active_examples": 2656,
+      "loss": 0.006511108484119177,
+      "minimum_stop_target_probability": 0.9758983850479126,
+      "minimum_motion_target_probability": 2.5606659619370475e-05
+    },
+    {
+      "update": 1150,
+      "active_correct": 2646,
+      "active_examples": 2656,
+      "loss": 0.006000261288136244,
+      "minimum_stop_target_probability": 0.9791857600212097,
+      "minimum_motion_target_probability": 3.0105591577012092e-05
+    },
+    {
+      "update": 1200,
+      "active_correct": 2646,
+      "active_examples": 2656,
+      "loss": 0.005553580354899168,
+      "minimum_stop_target_probability": 0.9818763136863708,
+      "minimum_motion_target_probability": 3.6702600482385606e-05
+    },
+    {
+      "update": 1250,
+      "active_correct": 2646,
+      "active_examples": 2656,
+      "loss": 0.005151689052581787,
+      "minimum_stop_target_probability": 0.984078049659729,
+      "minimum_motion_target_probability": 4.6416811528615654e-05
+    },
+    {
+      "update": 1300,
+      "active_correct": 2647,
+      "active_examples": 2656,
+      "loss": 0.00478709302842617,
+      "minimum_stop_target_probability": 0.9858620166778564,
+      "minimum_motion_target_probability": 5.9255144151393324e-05
+    },
+    {
+      "update": 1350,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.00446281349286437,
+      "minimum_stop_target_probability": 0.9873080849647522,
+      "minimum_motion_target_probability": 7.378289592452347e-05
+    },
+    {
+      "update": 1400,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.004182035569101572,
+      "minimum_stop_target_probability": 0.9885104894638062,
+      "minimum_motion_target_probability": 8.974305092124268e-05
+    },
+    {
+      "update": 1450,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.003941124305129051,
+      "minimum_stop_target_probability": 0.9895456433296204,
+      "minimum_motion_target_probability": 0.00010908689728239551
+    },
+    {
+      "update": 1500,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.0037326558958739042,
+      "minimum_stop_target_probability": 0.9904504418373108,
+      "minimum_motion_target_probability": 0.0001347326469840482
+    },
+    {
+      "update": 1550,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.0035493767354637384,
+      "minimum_stop_target_probability": 0.9912343621253967,
+      "minimum_motion_target_probability": 0.0001701079891063273
+    },
+    {
+      "update": 1600,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.003385344985872507,
+      "minimum_stop_target_probability": 0.9918991327285767,
+      "minimum_motion_target_probability": 0.000219463647226803
+    },
+    {
+      "update": 1650,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.003235847922042012,
+      "minimum_stop_target_probability": 0.9924486875534058,
+      "minimum_motion_target_probability": 0.0002881828404497355
+    },
+    {
+      "update": 1700,
+      "active_correct": 2648,
+      "active_examples": 2656,
+      "loss": 0.003097119275480509,
+      "minimum_stop_target_probability": 0.992893397808075,
+      "minimum_motion_target_probability": 0.0003828017506748438
+    },
+    {
+      "update": 1750,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.00296626309864223,
+      "minimum_stop_target_probability": 0.9932565689086914,
+      "minimum_motion_target_probability": 0.000510850572027266
+    },
+    {
+      "update": 1800,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.0028412980027496815,
+      "minimum_stop_target_probability": 0.9935746788978577,
+      "minimum_motion_target_probability": 0.0006813704967498779
+    },
+    {
+      "update": 1850,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.0027208460960537195,
+      "minimum_stop_target_probability": 0.993877112865448,
+      "minimum_motion_target_probability": 0.0009067518985830247
+    },
+    {
+      "update": 1900,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.002603692002594471,
+      "minimum_stop_target_probability": 0.9941717982292175,
+      "minimum_motion_target_probability": 0.0010921244975179434
+    },
+    {
+      "update": 1950,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.0024888054467737675,
+      "minimum_stop_target_probability": 0.9944519400596619,
+      "minimum_motion_target_probability": 0.0012610836420208216
+    },
+    {
+      "update": 2000,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.002374451607465744,
+      "minimum_stop_target_probability": 0.9947022795677185,
+      "minimum_motion_target_probability": 0.001563078141771257
+    }
+  ],
+  "frozen_parent_tensor_sha256": "475eca57e4004dff43e3c0d9b479d420f16e886d79cf3e5a699e5a9a9805d882",
+  "checkpoint_sha256": "d69b26c7b948b2dff6280ff84e97eed8f0ec8314bc470506bd7547279f2dddb5",
+  "optimizer_and_rng_saved": true,
+  "exported_for_physical_validation": false,
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "resource": {
+    "seconds": 38.459150172013324,
+    "cpu_seconds": 13.463505311,
+    "average_cpu_cores": 0.3500728760459553,
+    "peak_rss_mib": 608.6328125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

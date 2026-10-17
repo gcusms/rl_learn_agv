@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "tests_run": 12,
+  "failures": 0,
+  "errors": 0,
+  "execution_tool_chunk_id": "6b580d",
+  "recorded_at": "2026-10-17T04:59:24.832422+08:00",
+  "command": "PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -m unittest discover -s reports/stop_feedback_20261015/hybrid_memory_protocol_20261017 -p test_evidence.py -v",
+  "executed_output_summary": "Ran 12 tests in 0.057s; OK",
+  "inputs": {
+    "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/hybrid_memory.py": "6148c8ead2c1b8e2175b4e3654b9bec4f34704ff6a9074b67d307c658d661caa",
+    "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/test_evidence.py": "a0c8717ba47149bf29c71c5c9b32abee0e327af64bacab29783951752ea0b23e",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0"
+  },
+  "scope": "sensor evidence semantics only, not physical navigation or deployment",
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "goal_achieved": false
+}

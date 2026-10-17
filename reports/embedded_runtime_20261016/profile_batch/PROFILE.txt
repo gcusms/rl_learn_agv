@@ -1,0 +1,43 @@
+         2740646 function calls (2664849 primitive calls) in 7.153 seconds
+
+   Ordered by: cumulative time
+   List reduced from 551 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       64    0.001    0.000    6.862    0.107 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/release_runtime.py:58(step)
+       64    0.003    0.000    6.856    0.107 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:190(step)
+       64    0.004    0.000    4.423    0.069 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/safety_context.py:136(augment)
+       64    0.015    0.000    4.416    0.069 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/safety_context.py:76(observation)
+      832    0.081    0.000    3.077    0.004 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:91(check)
+      793    0.349    0.000    2.546    0.003 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:79(_trajectory_check)
+     7137    0.144    0.000    1.448    0.000 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:65(_static_pose_clear)
+     7137    0.471    0.000    1.195    0.000 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/static_footprint.py:9(static_footprint_clear)
+       64    0.002    0.000    1.056    0.017 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/release_runtime.py:22(predict)
+       64    0.005    0.000    0.971    0.015 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/core.py:378(update)
+     1625    0.012    0.000    0.833    0.001 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/predictive_constraint.py:65(prepare)
+     1657    0.122    0.000    0.823    0.000 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/motion_response.py:5(force_response_trajectory)
+       64    0.006    0.000    0.801    0.013 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/core.py:239(_observation)
+   118/82    0.001    0.000    0.770    0.009 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1769(_wrapped_call_impl)
+       64    0.009    0.000    0.769    0.012 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/core.py:91(_observation)
+   118/82    0.265    0.002    0.769    0.009 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py:1777(_call_impl)
+      135    0.070    0.001    0.750    0.006 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/directional_risk_batch.py:6(batched_directional_body_risk)
+       64    0.005    0.000    0.697    0.011 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/predictive_constraint.py:106(_cumulative_risk)
+       26    0.002    0.000    0.692    0.027 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/core.py:203(_neural_route)
+    16607    0.478    0.000    0.633    0.000 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/numpy/lib/index_tricks.py:326(__getitem__)
+       26    0.006    0.000    0.589    0.023 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/core.py:52(_neural_route)
+       18    0.042    0.002    0.504    0.028 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/models.py:156(forward)
+       98    0.005    0.000    0.502    0.005 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/directional_risk_batch.py:54(<listcomp>)
+    87270    0.474    0.000    0.474    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+    28773    0.224    0.000    0.470    0.000 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/numpy/linalg/linalg.py:2383(norm)
+       64    0.002    0.000    0.413    0.006 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/predictive_risk.py:35(features)
+       62    0.165    0.003    0.412    0.007 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/motion_risk.py:10(predicted_body_risk)
+    49469    0.063    0.000    0.399    0.000 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:53(_wrapfunc)
+       64    0.001    0.000    0.395    0.006 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:146(execute_policy_action)
+       64    0.004    0.000    0.359    0.006 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/long_risk_observation.py:45(augment)
+     4971    0.343    0.000    0.350    0.000 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/motion_response.py:14(state_and_integral)
+       61    0.032    0.001    0.350    0.006 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/long_motion_risk.py:13(batch_predicted_body_risk)
+     1764    0.331    0.000    0.331    0.000 {built-in method torch.conv2d}
+    39018    0.109    0.000    0.329    0.000 /home/ubuntu/rl_learn/rl_learn_agv/.venv/lib/python3.10/site-packages/numpy/core/fromnumeric.py:71(_wrapreduction)
+     7930    0.079    0.000    0.299    0.000 /home/ubuntu/rl_learn/.publish-handoff-20261015/training/neural_navigation/runtime.py:49(_trajectory)
+
+

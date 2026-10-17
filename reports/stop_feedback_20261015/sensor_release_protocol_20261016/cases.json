@@ -1,0 +1,209 @@
+{
+  "known": {
+    "id": "long_risk_sensor_05_1",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 261016931,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "frozen_new_sensor_seed_same_development_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.04
+  },
+  "retention": {
+    "id": "early_yield_sensor_holdout_05_0",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 261016910,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "unfitted_sensor_seed_same_development_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.04
+  },
+  "previous_noise": {
+    "id": "release_phase_frozen_noise_05_2",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 261016983,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "new_noise_seed_same_development_map_frozen_after_fit",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.04
+  },
+  "new_noise": [
+    {
+      "id": "sensor_release_frozen_noise_05_0",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017041,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    },
+    {
+      "id": "sensor_release_frozen_noise_05_1",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 261017042,
+      "start": [
+        8.284539228652575,
+        1.1532254508185673,
+        1.553687577806636
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          1.2000000000000002,
+          2.9
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "new_noise_seed_frozen_before_sensor_release_fit_same_development_map",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.04
+    }
+  ],
+  "heading": [
+    {
+      "id": "docking_dev_02",
+      "category": "static",
+      "pilot_category": "new_alignment",
+      "seed": 114982,
+      "scene": "assets/navigation_stage2_dataset/train_03",
+      "start": [
+        8.425,
+        5.425000000000001,
+        3.0317837825121092
+      ],
+      "goal": [
+        8.425,
+        5.425000000000001,
+        2.911783782512109
+      ],
+      "odom_scale": 1.0,
+      "max_steps": 150
+    },
+    {
+      "id": "docking_dev_11",
+      "category": "static",
+      "pilot_category": "new_approach",
+      "seed": 114991,
+      "scene": "assets/navigation_stage2_dataset/train_02",
+      "start": [
+        1.7750000000000001,
+        6.075,
+        -2.4756806786308934
+      ],
+      "goal": [
+        1.4459404850019102,
+        5.816483712099427,
+        -1.9756806786308934
+      ],
+      "odom_scale": 1.0,
+      "max_steps": 150
+    }
+  ]
+}

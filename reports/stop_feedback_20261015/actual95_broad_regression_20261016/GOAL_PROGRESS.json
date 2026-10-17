@@ -1,0 +1,4255 @@
+{
+  "at": "2026-10-17T10:12:59.840518+08:00",
+  "objective": "解决模型不知道自己为什么被停车和有可行动作却不尝试",
+  "previous_goal_turn_classification": "verified_wait",
+  "previous_progress": "Verified BC4500 full31case development results and actual PPO collection, corrected comparison records.",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "paused",
+  "goal_achieved": false,
+  "new_ppo_steps": 5898,
+  "fixed_github_snapshot": {
+    "branch": "handoff3",
+    "commit": "6d443f31bb3b20d2a5d31539a6490be3c2bddf05",
+    "captured_at": "2026-10-16T14:06:06.818631+08:00",
+    "post_cutoff_research_not_automatically_pushed": true
+  },
+  "latest_checkpoint": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+  "latest_sha256": "b935b5b512268eb1e47ef3a007aa757d376ccc0d32f847738de89b237d1fb1f5",
+  "matched_control_and_hold_evidence": {
+    "old_data_control_actual95_safe": false,
+    "new_data_actual95_safe": true,
+    "old_data_control_wait2_4_safe": false,
+    "new_data_wait2_4_safe": true,
+    "matched_control_actual106_safe": false,
+    "new_data_actual106_safe": false
+  },
+  "live_handles": [],
+  "soft_cpu_total_cores": 0.35,
+  "physical_main_cores": 0.35,
+  "nonphysical_replay_cores": 0.0,
+  "remaining_requirements": [
+    "Preserve full objective: causal stop feedback plus safe useful learned recovery; one trained development task is not completion.",
+    "Finish exact119-update candidate normal18,sensor5,source3,heading2 with original per-case and aggregate safety/efficiency gates.",
+    "Retain dynamic00 gained success and resolve remaining known complete-mission safety/efficiency failures; known00/01 are now training development cases.",
+    "Resolve original97.6/106 waits while preserving earlier successes, or independently establish infeasibility plus verified earlier prevention; no waiver by source fitting or shadow clearance.",
+    "No changed memory adoption without from-initialization admissible prefixes and full matched normal,radar,recovery,docking and new-seed retention.",
+    "Only consume the pre-frozen8 new seed pairs under declared gates; do not train on their outcomes or claim unseen maps.",
+    "Keep original real-car2k and sealed archives; preserve footprint,4cm,blind/unknown,12actions,dynamics and deadlines; no new localization or target-board claim."
+  ],
+  "deployment_approved": false,
+  "offline_audit": "reports/stop_feedback_20261015/actual106_policy_parts_verified_20261016/RESULTS.json",
+  "offline_audit_completed": true,
+  "completed_broad_regression": {
+    "report": "reports/stop_feedback_20261015/actual95_broad_regression_20261016/RESULTS.json",
+    "full18_safe": 18,
+    "full18_efficiency_nonregression": true,
+    "fresh12_safe": 8,
+    "fresh12_collisions": 4,
+    "fresh12_original_failures_unchanged": true,
+    "fresh12_time_relative_increase": 0.060455192034166716,
+    "fresh12_efficiency_nonregression": false,
+    "original_prefixes_safe": 2,
+    "heading_safe": 2,
+    "w11_t90_safe": true,
+    "larger_training_or_deployment_approved": false
+  },
+  "actual106_component_model_only": {
+    "completed": true,
+    "timeout": true,
+    "collisions": 0,
+    "post_release_frames": 170,
+    "wait_with_legal_choices_frames": 169,
+    "experimental_memory_does_not_solve_learned_recovery": true
+  },
+  "current_local_readme": "reports/stop_feedback_20261015/goal_followup_20261016/README.md",
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "original_deployment_replaced": false,
+  "current_early_yield_replay": "reports/stop_feedback_20261015/early_yield_replay_20261016/RESULTS.json",
+  "latest_adequately_broad_evaluated_checkpoint": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/policy_bc.zip",
+  "latest_bounded_validation": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/RESULTS.json",
+  "latest_wait_audit": "reports/stop_feedback_20261015/long_risk_wait_audit_20261016/RESULTS.json",
+  "user_requested_closeout": true,
+  "background_work_running": true,
+  "next_action": "Bounded assessment complete. Training and optimization remain paused; no automatic further trials or model replacement.",
+  "embedded_runtime_optimization": {
+    "completed": true,
+    "target_hardware_assumption": [
+      "Jetson Orin Nano 8GB",
+      "Raspberry Pi 5; RAM unspecified"
+    ],
+    "target_boards_measured": false,
+    "implementation": "Chunked NumPy directional risk forecast with scalar boundary fallback",
+    "cpu_p50_before_ms": 77.74211350000027,
+    "cpu_p50_after_ms": 54.48526049999991,
+    "cpu_p95_before_ms": 171.9958739999991,
+    "cpu_p95_after_ms": 102.22269689999938,
+    "matched_sensor_frames": 144,
+    "unit_tests_passed": 25,
+    "portable_package_causal_frames": 48,
+    "report": "reports/embedded_runtime_20261016/README.md",
+    "archive": "/home/ubuntu/rl_learn/realtest_edge_20261016.tar.gz",
+    "archive_sha256": "71daa6369745b82a3f22616912993b1590d9561dd717aefdcffd784cf8874854",
+    "archived_files_verified": 535,
+    "unchanged_model_files_verified": 55,
+    "new_training_steps": 0,
+    "new_closed_loop_episodes": 0,
+    "full_behavior_regression_completed": false,
+    "pure_inference_profile_peak_rss_mib": 498.06640625,
+    "whole_robot_memory_measured": false,
+    "power_measured": false
+  },
+  "latest_wait_context_diagnostic": {
+    "report": "reports/stop_feedback_20261015/release_wait_context_20261016/README.md",
+    "matched_recorded_frames": 700,
+    "voluntary_wait_frames": 636,
+    "all_waits_have_eleven_legal_motion_actions": true,
+    "active_wait_frames": 636,
+    "distinct_source_inputs": 1240,
+    "distinct_after_five_second_recovery_inputs": 5,
+    "source_labels_correct_without_extra_head_context": 1790,
+    "legacy_recovery_label_loss_weight": 0.007774538386783284,
+    "optional_recovery_label_loss_weight": 0.25,
+    "stop_loss_budget_preserved": 0.5,
+    "fit_weight_tests_passed": 5,
+    "new_training_steps": 0,
+    "new_model_created": false,
+    "new_physics_episodes": 0,
+    "default_fit_mode_unchanged": true,
+    "delivered_archives_unchanged": true
+  },
+  "latest_paired_fit": {
+    "report": "reports/stop_feedback_20261015/release_phase_fit_20261016/RESULTS.json",
+    "source_frames": 2509,
+    "added_frames": 719,
+    "previous_1790_source_arrays_preserved": true,
+    "failed_trace_excluded": true,
+    "new_ppo_steps": 0,
+    "models": [
+      {
+        "mode": "stop_move",
+        "model": "models/stop_feedback_20261015/release_data_control300_s231016",
+        "actual_updates": 50,
+        "source_labels_correct": 2509,
+        "checkpoint_sha256": "d04f6f15a2dc652b0d09ae989fe2b2c3c97592d3e061a2d012b6f9ef26c8270e",
+        "offline_changed_choices": 0
+      },
+      {
+        "mode": "recovery_phase",
+        "model": "models/stop_feedback_20261015/release_phase300_s231016",
+        "actual_updates": 100,
+        "source_labels_correct": 2509,
+        "checkpoint_sha256": "66c3bd6b1875e4d038eeb8ac4726b7a4bf058846922cbbf84c7331f4381981f6",
+        "offline_changed_choices": 3
+      }
+    ],
+    "navigation_improvement_not_yet_proven": false,
+    "subsequent_phase_pilot_proved_known_condition_improvement": true
+  },
+  "current_bounded_evaluation": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/RESULTS.json",
+  "previous_release_625_candidate_progress": {
+    "checkpoint": "models/stop_feedback_20261015/release_context_bc2000_s231016/checkpoint.pt",
+    "sha256": "a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3",
+    "progress": {
+      "runtime_dimensions": 625,
+      "training_dimensions": 622,
+      "source_decisions": 1790,
+      "actual_supervised_updates": 50,
+      "new_ppo_steps": 0,
+      "bounded_validation_completed": true,
+      "safe_success": 11,
+      "total": 12,
+      "collisions": 0,
+      "timeouts": 1,
+      "old_eight_safe": 8,
+      "old_eight_total": 8,
+      "fresh_four_safe": 3,
+      "fresh_four_total": 4,
+      "new_noise_gate_passed": false,
+      "repaired_wait_condition_seconds": 36.8,
+      "new_failed_condition_voluntary_wait_frames": 636,
+      "ros_adapter_unit_tests_passed": 4,
+      "queued_broad_cancelled_before_start": true,
+      "queued_audit_cancelled_before_start": true
+    }
+  },
+  "latest_checkpoint_role": "Joint-linear candidate physically passes2critical learned full missions; complete original fixed28,known6,hard97.6/106and conditional8pair retention still pending. No deployment promotion.",
+  "latest_phase_pilot": {
+    "report": "reports/stop_feedback_20261015/release_phase_validation_20261016/README.md",
+    "audit": "reports/stop_feedback_20261015/release_phase_audit_20261016/RESULTS.json",
+    "source_frames": 2509,
+    "added_source_frames": 719,
+    "actual_updates_control": 50,
+    "actual_updates_phase": 100,
+    "all_422_inputs_stable": true,
+    "all_1505_actions_and_execution_reproduced": true,
+    "old_control_full_trace_equal": true,
+    "remaining_long_wait_seconds": 58.6,
+    "resource": {
+      "seconds": 556.4030541900429,
+      "cpu_seconds": 194.740868916,
+      "average_cpu_cores": 0.3499996404575541,
+      "peak_rss_mib": 2200.5078125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "cgroup_cpu_cores": 0.4,
+    "cgroup_memory_max_gib": 3,
+    "original_models_and_archives_preserved": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "latest_earlier_release_experiment": {
+    "teacher_report": "reports/stop_feedback_20261015/sensor_release_source_20261016/RESULTS.json",
+    "teacher_safe_success": true,
+    "teacher_seconds": 34.79999999999935,
+    "teacher_overrides": 2,
+    "teacher_success_not_model_success": true,
+    "teacher_sources_only_current_625d_sensor_observation": true,
+    "teacher_unit_tests_passed": 7,
+    "source_frames": 2683,
+    "previous_2509_source_arrays_preserved": true,
+    "added_frames": 174,
+    "actual_supervised_updates": 300,
+    "checkpoint": "models/stop_feedback_20261015/sensor_release_phase300_s231016/checkpoint.pt",
+    "checkpoint_sha256": "43911267cf1fee80e9aaa7d0a1db3c9f45f79024bbac3131692b004dd3de6e1f",
+    "new_ppo_steps": 0,
+    "portable_exported": true,
+    "new_model_closed_loop_not_yet_verified": false,
+    "validation_report": "reports/stop_feedback_20261015/sensor_release_validation_20261016/RESULTS.json",
+    "maximum_validation_episodes": 9,
+    "closed_loop_completed": true,
+    "planned_episodes": 9,
+    "completed_episodes": 3,
+    "safe_arrivals": 2,
+    "timeouts": 1,
+    "known_seconds": 34.8,
+    "known_wait_frames": 25,
+    "retained_condition_seconds": 36.8,
+    "previous_noise_regressed_from_seconds": 33.0,
+    "previous_noise_timeout_seconds": 140.0,
+    "stopped_on_declared_retention_failure": true,
+    "replacement_rejected": true
+  },
+  "latest_retention_correction": {
+    "source_report": "reports/stop_feedback_20261015/retained_sensor_release_sources_20261016/RESULTS.json",
+    "frames": 2848,
+    "added_complete_safe_retention_frames": 165,
+    "previous_source_rows_byte_exact": true,
+    "protocol": "reports/stop_feedback_20261015/retained_sensor_release_protocol_20261016/PLAN.json",
+    "fit_started": true,
+    "deployment_approved": false,
+    "goal_achieved": false,
+    "fit_completed": true,
+    "actual_supervised_updates": 350,
+    "checkpoint": "models/stop_feedback_20261015/sensor_release_retained400_s231016/checkpoint.pt",
+    "checkpoint_sha256": "20f48a8c377dab17137c9d940b1f67ea54f8da8b2193ffff3f94a9a334b441c0",
+    "exported_for_physical_validation": true,
+    "validation_completed": true,
+    "validation_report": "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/RESULTS.json",
+    "planned_episodes": 9,
+    "completed_episodes": 9,
+    "candidate_episodes": 7,
+    "baseline_episodes": 2,
+    "candidate_safe": 7,
+    "candidate_collisions": 0,
+    "candidate_timeouts": 0,
+    "all_declared_gates_passed": true,
+    "previous_noise_regression_repaired": true,
+    "full_regression_completed": false,
+    "broad_report": "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/RESULTS.json",
+    "full_regression_stopped_on_failure": true,
+    "regression_new_physical_episodes": 2,
+    "regression_timeouts": 2
+  },
+  "previous_phase_progress": {
+    "model": "models/stop_feedback_20261015/release_phase300_s231016",
+    "runtime_dimensions": 625,
+    "source_decisions": 2509,
+    "actual_supervised_updates": 100,
+    "new_ppo_steps": 0,
+    "bounded_validation_completed": true,
+    "selected_candidate_safe": 3,
+    "selected_candidate_total": 3,
+    "selected_candidate_collisions": 0,
+    "selected_candidate_timeouts": 0,
+    "all_new_physical_episodes": 4,
+    "control_failed_known_condition": true,
+    "known_failure_improved_from_timeout_to_success": true,
+    "known_failure_seconds": 90.6,
+    "known_failure_wait_frames_before": 636,
+    "known_failure_wait_frames_after": 323,
+    "longest_known_failure_wait_seconds_before": 119.4,
+    "longest_known_failure_wait_seconds_after": 58.6,
+    "retention_seconds": 36.8,
+    "retention_time_and_travel_exact": true,
+    "new_noise_seconds": 33.0,
+    "all_cases_same_development_map": true,
+    "full_regression_completed": false,
+    "localizer_router_and_directional_actor_frozen": true
+  },
+  "latest_feedback_audit": {
+    "report": "reports/stop_feedback_20261015/sensor_release_feedback_audit_20261016/RESULTS.json",
+    "completed": true,
+    "replayed_current_model_controlled_frames": 1369,
+    "actual95_parent_motion_head_stop_frames": 125,
+    "actual90_parent_motion_head_stop_frames": 225,
+    "actual95_reason_ablation_action_changes": 60,
+    "actual90_reason_ablation_action_changes": 190,
+    "counterfactuals_not_executed_or_admitted_as_labels": true,
+    "new_ppo_steps": 0
+  },
+  "latest_parent_wait_source_experiment": {
+    "protocol": "reports/stop_feedback_20261015/parent_wait_protocol_20261016/PLAN.json",
+    "report": "reports/stop_feedback_20261015/parent_wait_source_20261016/RESULTS.json",
+    "maximum_episodes": 2,
+    "release_s": [
+      97.59999999998372,
+      95.99999999998518
+    ],
+    "source_is_reference_not_current_candidate": true,
+    "failed_prefix_not_training_labels": true,
+    "full_safe_source_required": true,
+    "new_ppo_steps": 0,
+    "completed": true,
+    "actual_episodes": 1,
+    "second_episode_not_run": true,
+    "safe_sources": 0,
+    "timeouts": 1,
+    "collisions": 0,
+    "post_release_only_stop_frames": 169,
+    "source_admission_skipped": true,
+    "new_optimizer_updates": 0
+  },
+  "latest_safe_feedback_replay": {
+    "completed": true,
+    "source_trajectories": 3,
+    "frames": 1819,
+    "exact_439_prefix": true,
+    "new_physics": 0,
+    "report": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/RESULTS.json"
+  },
+  "latest_context_source_admission": {
+    "completed": true,
+    "frames": 3252,
+    "added_safe_suffix_frames": 404,
+    "original2848_byte_exact": true,
+    "active_frames": 2656,
+    "old_support_unsupported_targets": 8,
+    "new_support_unsupported_targets": 0,
+    "no_failing_traces_positive": true,
+    "near_obstacle_context_m": 0.8,
+    "action_permissions_unchanged": true,
+    "report": "reports/stop_feedback_20261015/context_feedback_sources_20261016/RESULTS.json"
+  },
+  "latest_context_fit800": {
+    "completed": true,
+    "updates": 800,
+    "correct_labels": 3242,
+    "total_labels": 3252,
+    "original_labels_all_retained": true,
+    "exported": false,
+    "new_ppo_steps": 0,
+    "checkpoint_sha256": "6782650160506e01d7cf6066e3549e975f3c33415fd257f468b5e1e1add02690"
+  },
+  "current_comparison_report": "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/README.md",
+  "latest_physically_evaluated_candidate": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+  "latest_physically_evaluated_candidate_rejected_broad": true,
+  "latest_context_fit2000": {
+    "completed": true,
+    "updates": 2000,
+    "correct_labels": 3251,
+    "total_labels": 3252,
+    "original_labels_all_retained": true,
+    "exported": false,
+    "new_ppo_steps": 0,
+    "new_physical_episodes": 0,
+    "first800_records_identical": true,
+    "checkpoint_sha256": "92754ca0f25d52cefc064fba9e84854fa512bd1a35abe8603ec54bddb673c937",
+    "remaining_wrong_sample": {
+      "index": 3182,
+      "source": 18,
+      "sensor_time": 123.99999999995971,
+      "target": 11,
+      "predicted": 1,
+      "target_probability": 0.17785251140594482,
+      "predicted_probability": 0.8211348056793213,
+      "goal_distance_m": 1.9934157133102417
+    }
+  },
+  "latest_comparison_report": "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/README.md",
+  "current_support_contract_tests_passed": 6,
+  "current_work": "V2 migration540 generated; full28 physics active; all-direction teacher, matched-v2 mixed PPO and post-validation queued serially. Latest completed PPO1665 overall upgrade still rejected.",
+  "current_support_and_weight_tests_passed": 17,
+  "latest_balanced_fit": {
+    "completed": true,
+    "labels": 3252,
+    "correct": 3245,
+    "updates": 2000,
+    "exported": false,
+    "checkpoint_sha256": "d69b26c7b948b2dff6280ff84e97eed8f0ec8314bc470506bd7547279f2dddb5",
+    "no_improvement": true,
+    "new_ppo_steps": 0
+  },
+  "diagnostic_export_only": true,
+  "source_fit_gate_waived_for_deployment": false,
+  "diagnostic_physics_report": "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/RESULTS.json",
+  "latest_context_physical_diagnostic": {
+    "completed": true,
+    "safe": 3,
+    "total": 3,
+    "source_regressions_not_independent_generalization": true,
+    "post_release_seconds": [
+      19.79999999996808,
+      20.39999999997208,
+      41.39999999994626
+    ],
+    "post_release_legal_wait_frames": [
+      2,
+      0,
+      0
+    ],
+    "post_release_only_stop_frames": [
+      20,
+      20,
+      9
+    ],
+    "frozen_inputs_verified": 420,
+    "resource": {
+      "seconds": 678.6310485400027,
+      "cpu_seconds": 237.520740852,
+      "average_cpu_cores": 0.3499998141302241,
+      "peak_rss_mib": 2150.875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "source_fit_gate_still_failed": true,
+    "deployment_approved": false,
+    "report": "reports/stop_feedback_20261015/context_physics_diagnostic_20261016/RESULTS.json"
+  },
+  "latest_physically_evaluated_candidate_scope": "Full fixed development retention completed; hard recovery 1/3. Native PPO candidate not independently validated.",
+  "previous_350_candidate_rejected_broad": true,
+  "latest_physically_evaluated_candidate_broad_status": "Validation finished after19developmentepisodes; all safe, normal efficiency gate failed, complete normal18 and late3 not executed.",
+  "previous_350_candidate_progress": {
+    "model": "models/stop_feedback_20261015/sensor_release_retained400_s231016",
+    "runtime_dimensions": 625,
+    "source_decisions": 2848,
+    "actual_supervised_updates": 350,
+    "new_ppo_steps": 0,
+    "bounded_validation_completed": true,
+    "selected_candidate_safe": 7,
+    "selected_candidate_total": 7,
+    "selected_candidate_collisions": 0,
+    "selected_candidate_timeouts": 0,
+    "all_new_physical_episodes": 9,
+    "paired_baseline_episodes": 2,
+    "known_failure_seconds": 34.8,
+    "known_failure_previous_phase_seconds": 90.6,
+    "known_failure_wait_frames_before": 323,
+    "known_failure_wait_frames_after": 25,
+    "known_failure_travel_m_before": 4.84979343773604,
+    "known_failure_travel_m_after": 5.2439070092055005,
+    "retention_seconds": 36.8,
+    "retained_previous_noise_seconds": 33.0,
+    "new_noise_baseline_seconds": [
+      35.0,
+      37.6
+    ],
+    "new_noise_candidate_seconds": [
+      33.8,
+      34.0
+    ],
+    "heading_safe": 2,
+    "all_cases_development_maps": true,
+    "new_noise_seeds_not_used_for_training": true,
+    "full_regression_completed": false,
+    "localizer_router_and_directional_actor_frozen": true,
+    "full_regression_stopped_on_failure": true,
+    "regression_new_physical_episodes": 2,
+    "regression_safe_recoveries": 0,
+    "regression_timeouts": 2,
+    "normal18_run": false,
+    "extra12_run": false
+  },
+  "latest_late_wait_coverage_audit": {
+    "report": "reports/stop_feedback_20261015/late_wait_coverage_20261016/RESULTS.json",
+    "completed": true,
+    "actual106_frames": 170,
+    "legal0_9_frames": 168,
+    "training_labels_under_exact0_9_mask": 0,
+    "not_proof_of_safe_motion": true,
+    "no_counterfactual_training_or_new_physics": true
+  },
+  "previous_context2000_progress": {
+    "model": "models/stop_feedback_20261015/context_release2000_s231016",
+    "actual_supervised_updates": 2000,
+    "new_ppo_steps": 0,
+    "source_labels": 3252,
+    "correct_source_labels": 3251,
+    "source_fit_gate_failed": true,
+    "physically_safe_source_recoveries": 3,
+    "independent_generalization_not_established": true,
+    "broader_diagnostics_running": true,
+    "maximum_new_broader_episodes": 42,
+    "currently_running_case": "sensor_release_frozen_noise_05_0",
+    "broader_completed_episodes": 8,
+    "localizer_router_and_directional_actor_frozen": true,
+    "deployment_approved": false,
+    "broader_groups": {
+      "hard3": {
+        "completed": 3,
+        "safe": 1,
+        "collisions": 0,
+        "timeouts": 2
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "sensor5": {
+        "completed": 3,
+        "safe": 3,
+        "collisions": 0,
+        "timeouts": 0
+      }
+    },
+    "hard_states_all_solved": false
+  },
+  "completed_context2000_broad_diagnostic": {
+    "report": "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/RESULTS.json",
+    "completed": true,
+    "new_physical_episodes": 28,
+    "groups": {
+      "hard3": {
+        "safe": 1,
+        "total": 3,
+        "timeouts": 2,
+        "collisions": 0
+      },
+      "heading2": {
+        "safe": 2,
+        "total": 2,
+        "timeouts": 0,
+        "collisions": 0
+      },
+      "sensor5": {
+        "safe": 5,
+        "total": 5,
+        "timeouts": 0,
+        "collisions": 0
+      },
+      "normal18": {
+        "safe": 16,
+        "total": 18,
+        "timeouts": 2,
+        "collisions": 0
+      }
+    },
+    "normal_reference_safe": 18,
+    "normal_efficiency_nonregression": false,
+    "extra12_and_prefix2_skipped_by_gate": true,
+    "mixed_cohorts_not_combined": true,
+    "gate_passed": false
+  },
+  "normal_first_divergence_audit": {
+    "report": "reports/stop_feedback_20261015/normal_wait_diagnosis_20261016/RESULTS.json",
+    "exact_shared439_inputs_and_sensor_execution_prefix": true,
+    "normal03": {
+      "frame": 13,
+      "time_s": 2.6,
+      "old_context_choice": 0,
+      "safe_reference_choice": 11,
+      "legal_actions": 12,
+      "minimum_scan_m": 1.69664,
+      "risk_zero": true,
+      "current_reason_choice_offline": 11
+    },
+    "motion002": {
+      "frame": 63,
+      "time_s": 12.6,
+      "old_context_choice": 4,
+      "safe_reference_choice": 1,
+      "legal_actions": 12,
+      "current_reason_choice_offline": 4
+    },
+    "not_candidate_navigation_success": true
+  },
+  "late_state_source_and_geometry_audits": {
+    "source_report": "reports/stop_feedback_20261015/rare_motion_source_audit_20261016/RESULTS.json",
+    "geometry_report": "reports/stop_feedback_20261015/late_state_geometry_20261016/RESULTS.json",
+    "complete_safe_references_audited": 37,
+    "motion9_labels_with_exact_legal_0_9": 0,
+    "all_yaw_truth_circle_clearance_m": 0.04055626,
+    "required_margin_m": 0.04,
+    "reachability_or_reverse_certificate": false,
+    "truth_not_policy_input": true,
+    "new_labels": 0
+  },
+  "current_turn_normal_retention": {
+    "complete_safe_sensor_replay_frames": 478,
+    "new_physical_replay_episodes": 0,
+    "maximum439_prefix_difference": 0.0,
+    "original_source_arrays3252_byte_exact": true,
+    "added_labels": 476,
+    "total_labels": 3728,
+    "source_dataset_sha256": "a36a80a5f7c40882a360358542102e47fc5bdf3ca4cd3408d7a3181847f8e5fd",
+    "fit_model": "models/stop_feedback_20261015/normal_retention2000_s231016",
+    "fit_maximum_updates": 2000,
+    "new_ppo_steps": 0,
+    "only_changed_factor": "added476verifiednormalretentionlabels",
+    "deployment_approved": false,
+    "initial_data_fit_updates": 2000,
+    "initial_correct_labels": 3725,
+    "paired_new_updates_per_model": 500,
+    "selected_cumulative_bc_updates": 2500,
+    "selected_correct_labels": 3728,
+    "source_fit_gate_passed": true,
+    "selected_model": "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500",
+    "initial_model_and_optimizer_hashes_paired_exact": true,
+    "phase_tail_and_resume_tests_passed": 5,
+    "invalidated_first_pair_excluded": true,
+    "physics_started": true,
+    "maximum_new_physical_episodes": 31,
+    "physical_validation_completed": true,
+    "physical_validation_report": "reports/stop_feedback_20261015/normal_retention_validation_20261016/RESULTS.json"
+  },
+  "prior_guard_reason2000_progress": {
+    "guard_reason_head_features": 408,
+    "added_current_per_action_reason_features": 96,
+    "runtime_observation_dimension_unchanged": 625,
+    "additional_parameters": 3072,
+    "supervised_updates": 2000,
+    "new_ppo_steps": 0,
+    "correct_source_labels": 3250,
+    "total_source_labels": 3252,
+    "original2848_labels_retained": true,
+    "stop_labels_retained": true,
+    "source_fit_gate_failed": true,
+    "production_exported": false,
+    "diagnostic_bundle_only": true,
+    "current_input_ablation_changed_actual106_choices": 163,
+    "actual106_physical": {
+      "report": "reports/stop_feedback_20261015/guard_reason_physics_20261016/RESULTS.json",
+      "post_release_frames": 170,
+      "previous_voluntary_wait_frames": 170,
+      "new_voluntary_wait_frames": 3,
+      "motion_frames": 15,
+      "only_stop_frames": 152,
+      "timeout": true,
+      "collisions": 0,
+      "physical_guards": 0,
+      "final_xy_error_m": 1.781523
+    },
+    "normal_two_case_diagnostic": {
+      "report": "reports/stop_feedback_20261015/guard_reason_normal_diagnostic_20261016/RESULTS.json",
+      "maximum_episodes": 2,
+      "completed_episodes": 2,
+      "safe_successes": 1,
+      "case1_seconds": 34.0,
+      "second_case": "motion_profile_002",
+      "no_training_or_support_gate_changes": true,
+      "completed": true,
+      "timeouts": 1,
+      "collisions": 0,
+      "second_case_voluntary_wait_frames": 600,
+      "second_case_only_stop_frames": 4,
+      "service_exit_status": 0,
+      "service_finished_at": "2026-10-16T19:53:32+08:00"
+    },
+    "risk_relevant_support_alternative": {
+      "applied": false,
+      "reason": "Changed four old source labels; rejected before physics",
+      "source_correct_before": 3250,
+      "source_correct_after": 3246,
+      "unit_tests_passed": 5
+    },
+    "guard_reason_unit_tests_passed": 5,
+    "hard_states_all_solved": false,
+    "localizer_router_and_directional_actor_frozen": true,
+    "deployment_approved": false
+  },
+  "current_progress": "Actual-hardware geometry corrected; fixed28 retained; first pre-frozen full mission improved from parent140s timeout to PPO53.2s success with byte-exact common sensor/physical prefix. Full pairs, from-start config, and remaining106s recovery still pending.",
+  "runtime_resource_verification": {
+    "at": "2026-10-16T20:22:41.443346+08:00",
+    "requested_systemd_cpu_quota_cores": 0.4,
+    "actual_cpu_max_file_present": false,
+    "root_subtree_control": "memory pids",
+    "cpu_hard_quota_verified": false,
+    "software_average_cpu_budget_cores": 0.35,
+    "single_thread_and_nice19": true,
+    "memory_hard_limit_bytes": 3221225472,
+    "memory_hard_limit_verified": true,
+    "cpu_quota_properties_alone_are_not_proof_of_enforcement": true,
+    "global_cpu_controller_configuration_not_modified": true
+  },
+  "immutable_deliveries_verified_at": "2026-10-16T21:56:42.334521+08:00",
+  "immutable_deliveries_preserved": true,
+  "completed_handles": [
+    {
+      "unit": "rl-normal-retention-validate-20261016.service",
+      "main_pid": 2006946,
+      "invocation_id": "1238bb7d42924edb8d4fc152c254575e",
+      "verified_active_at": "2026-10-16T20:29:52+08:00",
+      "cpu_soft_cores": 0.35,
+      "memory_max_gib": 3,
+      "requested_systemd_cpu_quota_cores": 0.4,
+      "cpu_hard_quota_verified": false,
+      "memory_hard_limit_verified": true,
+      "finished_at": "2026-10-16T20:36:41+08:00",
+      "exit_status": 0,
+      "active": false
+    },
+    {
+      "unit": "rl-full-mission-retention-validate-20261016.service",
+      "main_pid": 2034684,
+      "invocation_id": "155e8a0192d74a169b6ee7ed8e9b13c3",
+      "verified_active_at": "2026-10-16T21:56:42.334521+08:00",
+      "cpu_soft_cores": 0.35,
+      "memory_max_gib": 3,
+      "memory_hard_limit_verified": true,
+      "cpu_hard_quota_verified": false,
+      "active": false,
+      "finished_at": "2026-10-16T22:20:31+08:00",
+      "exit_status": 0,
+      "completion_report_sha256": "83faf4433d7a9ce483e37fb7bda0f0c5fd288bfca0ea186a2f35c7ef7ea46e7f"
+    },
+    {
+      "unit": "rl-normal-suite-wait-pair-v2-20261016.service",
+      "main_pid": 2055444,
+      "invocation_id": "cad346536498416db330795989fcb088",
+      "active": false,
+      "exit_status": 0,
+      "finished_at": "2026-10-16T23:13:44+08:00",
+      "resource": {
+        "seconds": 503.6858442860539,
+        "cpu_seconds": 50.368614197,
+        "average_cpu_cores": 0.1000000591011142,
+        "peak_rss_mib": 976.92578125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      }
+    },
+    {
+      "unit": "rl-normal-suite-wait-validate-v2-20261016.service",
+      "main_pid": 0,
+      "previous_main_pid": 2055874,
+      "invocation_id": "5f92dc79872d4e5d8939731fb1432425",
+      "completed": true,
+      "result": "success",
+      "report": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/RESULTS.json",
+      "new_physical_episodes": 31,
+      "verified_at": "2026-10-17T00:12:19+08:00"
+    },
+    {
+      "unit": "rl-native625-suite-ppo-20261016.service",
+      "main_pid": 0,
+      "invocation_id": "",
+      "active": false,
+      "verified_at": "2026-10-17T00:48:11+08:00",
+      "exit_status": 0
+    },
+    {
+      "unit": "rl-native625-suite-post-validate-20261016.service",
+      "main_pid": 0,
+      "invocation_id": "",
+      "active": false,
+      "verified_at": "2026-10-17T00:48:11+08:00",
+      "exit_status": 0
+    },
+    {
+      "unit": "rl-native625-holdout-pair-20261016.service",
+      "main_pid": 0,
+      "invocation_id": "",
+      "active": false,
+      "verified_at": "2026-10-17T00:48:11+08:00",
+      "exit_status": 0
+    },
+    {
+      "unit": "rl-native625-batch-credit-20261017.service",
+      "main_pid": 0,
+      "previous_main_pid": 2087533,
+      "invocation_id": "dcad1b530ad94e64b7a9c7ad39e71611",
+      "active": false,
+      "verified_at": "2026-10-17T01:09:22+08:00",
+      "exit_status": 0
+    },
+    {
+      "unit": "rl-native625-batch-credit-check-20261017.service",
+      "main_pid": 0,
+      "previous_main_pid": 2088587,
+      "invocation_id": "040e38b20f3e48848ebe4f4e36840fd3",
+      "active": false,
+      "exit_status": 0,
+      "verified_at": "2026-10-17T01:28:53+08:00"
+    },
+    {
+      "unit": "rl-native625-batch-credit-pair-20261017.service",
+      "main_pid": 0,
+      "previous_main_pid": 2089176,
+      "invocation_id": "11169c90e4064b13a3a64de2ca8e17e1",
+      "active": false,
+      "exit_status": 0,
+      "verified_at": "2026-10-17T01:28:53+08:00"
+    },
+    {
+      "unit": "rl-earlier-memory-evidence-20261017.service",
+      "main_pid": 0,
+      "previous_main_pid": 2099896,
+      "invocation_id": "ebb63ba4a5a246ba8dd53aaecd904392",
+      "active": false,
+      "exit_status": 0,
+      "verified_at": "2026-10-17T01:39:31+08:00"
+    }
+  ],
+  "prior_normal_retention2500_progress": {
+    "model": "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500",
+    "cumulative_supervised_updates": 2500,
+    "new_ppo_steps": 0,
+    "source_labels_correct": 3728,
+    "total_source_labels": 3728,
+    "all_old3252_retained": true,
+    "all_safe_stop_labels_retained": true,
+    "production_deployment_approved": false,
+    "physical_validation_report": "reports/stop_feedback_20261015/normal_retention_validation_20261016/RESULTS.json",
+    "first_two_complete_missions_running": false,
+    "hard_states_all_solved": false,
+    "localizer_router_docking_frozen": true,
+    "known_normal_missions_completed": 2,
+    "known_normal_missions_safe": 2,
+    "known_normal_collisions": 0,
+    "normal002_voluntary_wait_previous": 600,
+    "normal002_voluntary_wait_new": 2,
+    "normal002_arrival_seconds": 56.2,
+    "normal03_arrival_seconds": 39.0,
+    "full_normal18_not_yet_completed": true,
+    "old_actual106_offline_legal_wait_frames": 168,
+    "old_actual106_offline_frames": 170,
+    "late_recovery_still_unresolved": true,
+    "completed_new_physical_episodes": 11,
+    "completed_group_counts": {
+      "normal_repaired2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3,
+        "collisions": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "sensor5": {
+        "completed": 4,
+        "safe": 4,
+        "collisions": 0
+      }
+    },
+    "current_validation_group": null,
+    "current_validation_case": null,
+    "actual95_post_release_seconds": 19.8,
+    "actual90_post_release_seconds": 20.4,
+    "old_actual106_offline_motion_choices": {
+      "9": 2
+    },
+    "old_actual106_offline_inplace_turn_opportunities_selected": false,
+    "physical_validation_completed": true,
+    "physical_validation_finished_at": "2026-10-16T12:36:40.331691+00:00",
+    "physical_validation_reason": "sensor5 safety or efficiency regression; no wider expansion",
+    "sensor_efficiency_regression": {
+      "case_id": "sensor_release_frozen_noise_05_0",
+      "reference_seconds": 33.79999999999884,
+      "candidate_seconds": 41.80000000000293,
+      "time_relative_increase": 0.23668639053267349,
+      "reference_voluntary_wait_frames": 31,
+      "candidate_voluntary_wait_frames": 77,
+      "safe_success": true
+    },
+    "not_run": {
+      "sensor": 1,
+      "normal": 16,
+      "late_recovery": 3
+    },
+    "input_hashes_verified": 456
+  },
+  "current_turn_sensor_retention": {
+    "first_identical_input_divergence_seconds": 3.6,
+    "reference_temporarily_stops_candidate_continues": true,
+    "causal_replay_frames": 341,
+    "maximum625_input_difference": 0,
+    "added_labels": 339,
+    "original3728_arrays_byte_exact": true,
+    "dataset_sha256": "79ff03f4518847c16a566d19072381872ec3d117d0859b9cbd112c19318c8834",
+    "paired500_same_initial_actor_optimizer_and_rng": true,
+    "control_correct_all_reference_labels": 4061,
+    "treatment_correct_all_reference_labels": 4067,
+    "total_reference_labels": 4067,
+    "fitting_resource": {
+      "seconds": 194.9522604289814,
+      "cpu_seconds": 19.532109779,
+      "average_cpu_cores": 0.10018919368270314,
+      "peak_rss_mib": 829.48046875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "source_admission_and_loss_resume_reason_tests_passed": 14,
+    "selected_model": "models/stop_feedback_20261015/sensor_retention_pair_s231016/retained500",
+    "maximum_new_validation_episodes": 35,
+    "noise_tasks_are_now_training_regressions": true,
+    "fresh_noise_seeds_frozen_before_fit": [
+      261017121,
+      261017122
+    ],
+    "original_body4cm_actions_and_guards_unchanged": true,
+    "localizer_router_docking_frozen": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_turn_snapshot_verification": {
+    "report": "reports/stop_feedback_20261015/recovery_snapshot_replay_20261016/RESULTS.json",
+    "completed": true,
+    "prefix_frames": 530,
+    "two_restores_each_15_frames_bit_exact": true,
+    "physical_environment_restoration_verified": true,
+    "no_physical_steps": true,
+    "new_optimizer_updates": 0,
+    "new_ppo_steps": 0,
+    "resource": {
+      "seconds": 561.4250835920102,
+      "cpu_seconds": 56.180584817,
+      "average_cpu_cores": 0.10006782108408012,
+      "peak_rss_mib": 493.9375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "unit_tests": {
+      "snapshot": 4,
+      "sensor_gated_turn_teacher": 3
+    },
+    "teacher_probe_unit": "rl-observed-turn-release-probe-20261016.service",
+    "teacher_probe_waits_for_current_physical_validation": false,
+    "teacher_success_is_not_model_success": true,
+    "physical_parity_repeats": [
+      {
+        "repeat": 0,
+        "exact_complete_physical_sensor_and_runtime_frames": 10
+      },
+      {
+        "repeat": 1,
+        "exact_complete_physical_sensor_and_runtime_frames": 10
+      }
+    ],
+    "physical_report": "reports/stop_feedback_20261015/observed_turn_release_probe_20261016/RESULTS.json",
+    "teacher_trials_safe_success": 0,
+    "teacher_trials": 3,
+    "teacher_probe_completed": true,
+    "report_scope_note": "Recorded runtime replay itself had zero physical steps; subsequent separate physical experiment verified simulation parity."
+  },
+  "completed_sensor_retention3000_validation": {
+    "report": "reports/stop_feedback_20261015/sensor_retention_validation_20261016/RESULTS.json",
+    "completed": true,
+    "new_physical_episodes": 21,
+    "candidate_physical_episodes": 19,
+    "groups": {
+      "sensor5": {
+        "completed": 5,
+        "safe": 5,
+        "collisions": 0
+      },
+      "normal_repaired2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3,
+        "collisions": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "fresh_noise_reference2": {
+        "completed": 2,
+        "safe": 1,
+        "collisions": 0
+      },
+      "fresh_noise_candidate2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "normal_other16": {
+        "completed": 5,
+        "safe": 5,
+        "collisions": 0
+      }
+    },
+    "normal18_completed": false,
+    "normal18_cases_completed": 7,
+    "reason": "Normal mission safety or efficiency regression; no wider expansion",
+    "deployment_approved": false,
+    "resources": {
+      "seconds": 2108.8455264149816,
+      "cpu_seconds": 738.0957634370001,
+      "average_cpu_cores": 0.3499999190039093,
+      "peak_rss_mib": 2429.421875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
+  },
+  "latest_full_wait_regression_replay": {
+    "report": "reports/stop_feedback_20261015/full_wait_regression_replay_20261016/RESULTS.json",
+    "frames": 186,
+    "first_identical_input_fork": {
+      "frame": 34,
+      "seconds": 6.799999999999877,
+      "full625_observation_identical": true,
+      "all_raw_sensor_inputs_and_prior_execution_identical": true,
+      "reference_choice": 11,
+      "candidate_choice": 0,
+      "legal_actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "current_forecast": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "legal_idle_seconds": 0.0,
+      "source_label_probability": 0.002652642084285617,
+      "candidate_stop_probability": 0.8909680843353271,
+      "current_reason_ablation_choice": 0,
+      "full_choice": 0,
+      "reason_projection_l2": 0.6537968516349792,
+      "nearest_training_inputs": [
+        {
+          "index": 3229,
+          "distance": 1.743329405784607,
+          "choice": 1,
+          "source_id": 18
+        },
+        {
+          "index": 3710,
+          "distance": 1.9436591863632202,
+          "choice": 11,
+          "source_id": 20
+        },
+        {
+          "index": 729,
+          "distance": 1.9446216821670532,
+          "choice": 11,
+          "source_id": 3
+        },
+        {
+          "index": 179,
+          "distance": 1.9446216821670532,
+          "choice": 11,
+          "source_id": 0
+        },
+        {
+          "index": 3636,
+          "distance": 1.962719440460205,
+          "choice": 1,
+          "source_id": 20
+        },
+        {
+          "index": 1606,
+          "distance": 1.9766043424606323,
+          "choice": 11,
+          "source_id": 8
+        },
+        {
+          "index": 3885,
+          "distance": 1.9773539304733276,
+          "choice": 11,
+          "source_id": 21
+        },
+        {
+          "index": 1065,
+          "distance": 2.0009801387786865,
+          "choice": 11,
+          "source_id": 5
+        }
+      ]
+    },
+    "new_ppo_steps": 0
+  },
+  "current_full_mission_retention_fit": {
+    "model_folder": "models/stop_feedback_20261015/full_mission_retention_pair_s231016",
+    "protocol": "reports/stop_feedback_20261015/full_mission_retention_protocol_20261016",
+    "parent_labels": 4067,
+    "added_labels": 882,
+    "total_labels": 4949,
+    "maximum_new_supervised_updates_per_fit": 500,
+    "parent_supervised_updates": 3000,
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "new_ppo_steps": 0,
+    "completed": true,
+    "all_labels_correct": 4949,
+    "control_correct_labels": 4926,
+    "selected_checkpoint_sha256": "701cf2b6dba4ad48421320973bb3531068d071553723fd5a651992096abffb36",
+    "resource": {
+      "seconds": 225.4162783579668,
+      "cpu_seconds": 22.597805624,
+      "average_cpu_cores": 0.1002492179740192,
+      "peak_rss_mib": 852.8125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "physical_validation_report": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/RESULTS.json"
+  },
+  "prior_sensor_retention3000_progress": {
+    "model": "models/stop_feedback_20261015/sensor_retention_pair_s231016/retained500",
+    "cumulative_supervised_updates": 3000,
+    "new_supervised_updates_this_experiment": 500,
+    "new_ppo_steps": 0,
+    "source_labels_correct": 4067,
+    "total_source_labels": 4067,
+    "all_old3728_retained": true,
+    "all_safe_stop_labels_retained": true,
+    "production_deployment_approved": false,
+    "physical_validation_report": "reports/stop_feedback_20261015/sensor_retention_validation_20261016/RESULTS.json",
+    "completed_new_physical_episodes": 21,
+    "completed_group_counts": {
+      "sensor5": {
+        "completed": 5,
+        "safe": 5,
+        "collisions": 0
+      },
+      "normal_repaired2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3,
+        "collisions": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "fresh_noise_reference2": {
+        "completed": 2,
+        "safe": 1,
+        "collisions": 0
+      },
+      "fresh_noise_candidate2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "normal_other16": {
+        "completed": 5,
+        "safe": 5,
+        "collisions": 0
+      }
+    },
+    "current_validation_group": null,
+    "current_validation_case": null,
+    "physical_validation_completed": true,
+    "full_normal18_not_yet_completed": true,
+    "late_recovery_still_unresolved": true,
+    "old_actual106_offline_legal_wait_frames": 168,
+    "old_actual106_offline_frames": 170,
+    "source_and_heldout_noise_same_development_map_not_unseen_maps": true
+  },
+  "latest_full_mission_retention_audit": {
+    "report": "reports/stop_feedback_20261015/full_mission_retention_fit_audit_20261016/RESULTS.json",
+    "old_actual106_input_audit": {
+      "recorded_frames": 170,
+      "control_legal_wait": 168,
+      "candidate_legal_wait": 169,
+      "changed_decisions": 1,
+      "no_counterfactual_executed": true
+    },
+    "new_ppo_steps": 0
+  },
+  "early_full_mission_fix_audit": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/EARLY_FIX_AUDIT.json",
+  "prior_full_mission3500_progress": {
+    "model": "models/stop_feedback_20261015/full_mission_retention_pair_s231016/retained500",
+    "cumulative_supervised_updates": 3500,
+    "new_supervised_updates_this_experiment": 500,
+    "new_ppo_steps": 0,
+    "source_labels_correct": 4949,
+    "total_source_labels": 4949,
+    "all_old4067_retained": true,
+    "all_safe_stop_labels_retained": true,
+    "production_deployment_approved": false,
+    "physical_validation_report": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/RESULTS.json",
+    "completed_new_physical_episodes": 19,
+    "completed_group_counts": {
+      "normal_other16": {
+        "completed": 7,
+        "safe": 7,
+        "collisions": 0
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe": 5,
+        "collisions": 0
+      },
+      "normal_repaired2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3,
+        "collisions": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2,
+        "collisions": 0
+      }
+    },
+    "current_validation_group": null,
+    "current_validation_case": null,
+    "physical_validation_completed": true,
+    "full_normal18_not_yet_completed": true,
+    "late_recovery_still_unresolved": true,
+    "old_actual106_offline_legal_wait_frames": 169,
+    "old_actual106_offline_frames": 170,
+    "old_actual106_offline_not_new_physical_result": true,
+    "all_current_cases_training_regressions_or_development_not_unseen_maps": true,
+    "physical_validation_rejected_efficiency": true,
+    "normal18_completed": 9,
+    "late_recovery_executed": false,
+    "normal_efficiency_failure": {
+      "reference": {
+        "case_id": "independent_dynamic_000",
+        "category": "original_release_dynamic_independent",
+        "safe_success": true,
+        "physical_arrival": true,
+        "false_arrival": false,
+        "protocol_valid": true,
+        "collisions": 0,
+        "input_odometry": "noisy_motion_feedback",
+        "physical_guards": 0,
+        "timeout": false,
+        "seconds": 51.40000000000784,
+        "travel_m": 7.549215922010951,
+        "frames": 258,
+        "final_xy_error_m": 0.10029347525940592,
+        "final_yaw_error_rad": null,
+        "localization_xy_p95_m": 0.004620155890687159,
+        "localization_yaw_p95_rad": 0.001631101529690858,
+        "stop_choices": 18,
+        "only_stop_frames": 18,
+        "stop_reasons": {
+          "None": 257,
+          "estimated_goal_reached": 1
+        },
+        "voluntary_wait_frames": 0,
+        "predictive_constraint_frames": 44,
+        "runtime_ms": {
+          "p95": 164.67861651035489,
+          "p99": 194.25491816597062,
+          "maximum": 210.50504298182204
+        },
+        "variant": "recovery_followup_bc400",
+        "trace_sha256": "2f196d29395bf8e33da3ee1c827a9af335b96e1a84e64f7b7415168a54a261c1",
+        "trace_path": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_independent_dynamic_000.npz",
+        "model_only_after_initialization": true
+      },
+      "candidate": {
+        "case_id": "independent_dynamic_000",
+        "category": "original_release_dynamic_independent",
+        "safe_success": true,
+        "physical_arrival": true,
+        "false_arrival": false,
+        "protocol_valid": true,
+        "collisions": 0,
+        "input_odometry": "noisy_motion_feedback",
+        "physical_guards": 0,
+        "timeout": false,
+        "seconds": 79.20000000000046,
+        "travel_m": 6.745683013876562,
+        "frames": 397,
+        "final_xy_error_m": 0.11088686680538848,
+        "final_yaw_error_rad": null,
+        "localization_xy_p95_m": 0.0038366727275444277,
+        "localization_yaw_p95_rad": 0.0013617791944700026,
+        "stop_choices": 199,
+        "only_stop_frames": 5,
+        "stop_reasons": {
+          "None": 396,
+          "estimated_goal_reached": 1
+        },
+        "voluntary_wait_frames": 194,
+        "predictive_constraint_frames": 9,
+        "runtime_ms": {
+          "p95": 121.55282417079434,
+          "p99": 135.77751554548743,
+          "maximum": 140.02379204612225
+        },
+        "trace_path": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/physical/normal_other16_independent_dynamic_000.npz",
+        "trace_sha256": "9990c0c4853ed30fb0c79b0259e174d04fa14917e64149cd7c86f0cc27aa78fd",
+        "variant": "models/stop_feedback_20261015/full_mission_retention_pair_s231016/retained500",
+        "pure_learned_model": true,
+        "training_regression_or_development": true
+      },
+      "time_change_fraction": 0.5408560311281785,
+      "path_change_fraction": -0.10643925361726114,
+      "first_identical_input_action_difference": {
+        "frame": 43,
+        "seconds": 8.599999999999945,
+        "reference_action": 1,
+        "candidate_action": 0,
+        "legal_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "parity": {
+          "scans": true,
+          "odometry": true,
+          "measured_velocity": true,
+          "masks": true,
+          "prior_commands": true,
+          "common439_observation": true
+        },
+        "full_reference625_reconstruction_done": false,
+        "no_counterfactual_navigation_claim": true
+      }
+    }
+  },
+  "completed_full_mission3500_validation": {
+    "report": "reports/stop_feedback_20261015/full_mission_retention_validation_20261016/RESULTS.json",
+    "reason": "Normal mission safety or efficiency regression; no wider expansion",
+    "new_physical_episodes": 19,
+    "inputs_verified": 465,
+    "resource": {
+      "seconds": 1809.2740352909896,
+      "cpu_seconds": 633.2457386589999,
+      "average_cpu_cores": 0.34999990399859665,
+      "peak_rss_mib": 2442.953125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "late_recovery_executed": false
+  },
+  "current_turn_native625_onpolicy_preparation": {
+    "at": "2026-10-16T22:29:14.809665+08:00",
+    "kernel_checks_passed": 8,
+    "collector_boundary_checks_passed": 4,
+    "collector_uses_stand_ins_not_physical_validation": true,
+    "code_files": {
+      "training/experiments/native625_onpolicy.py": "83506487e7c606439ad4fe343589590870808e9512b8e789a3e4d1ad5d4b3e36",
+      "training/experiments/test_native625_onpolicy.py": "07ecc8b0302501931d5127f4a71cbb04f0eb186e1e7fd4d913bcd3bd93aff63a",
+      "training/experiments/train_native625_recovery.py": "b998232ed2c7eabab54e47d63f9dc6959ba9d80962f6d7125c2cfc2e99c15176",
+      "training/experiments/test_native625_collector.py": "cc774ca84c3418a9c62465984d8544a82abc4d513bdde7871ed6637733f5ec98"
+    },
+    "test_logs": {
+      "reports/stop_feedback_20261015/native625_onpolicy_preflight_20261016/TESTS.log": "239e6e8e3e438fcca4839f92c1dca19bcbd3b3a273a8c4d4232f4dbc491bd21f",
+      "reports/stop_feedback_20261015/native625_onpolicy_preflight_20261016/COLLECTOR_TESTS.log": "d22cafb79e0cf495d9d85a1ff9aa4b4fe031234a93d533a49a13daa7737a9b14"
+    },
+    "new_candidate_ppo_steps": 0,
+    "training_service_started": false,
+    "parent_normal18_retention_passed": false,
+    "reason": "Known normal-task time regression; no queued PPO service",
+    "deployment_approved": false,
+    "goal_achieved": false,
+    "superseded_by_conditionally_queued_pipeline_at": "2026-10-16T23:10:20.746000+08:00",
+    "training_service_queued": true,
+    "ppo_training_started": false
+  },
+  "current_turn_dynamic_wait_fork": {
+    "frame": 43,
+    "seconds": 8.599999999999945,
+    "reference_action": 1,
+    "candidate_action": 0,
+    "legal_actions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "parity": {
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "masks": true,
+      "prior_commands": true,
+      "common439_observation": true
+    },
+    "full_reference625_reconstruction_done": true,
+    "no_counterfactual_navigation_claim": true,
+    "reconstruction_report": "reports/stop_feedback_20261015/normal_suite_reference625_replay_v3_20261016/RESULTS.json"
+  },
+  "current_turn_wait_continuation_experiment": {
+    "at": "2026-10-16T23:53:36.340900+08:00",
+    "phase": "fixed_physical_validation",
+    "goal_status": "active",
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "new_ppo_steps_this_experiment": 0,
+    "fit_status": {
+      "status": "complete",
+      "selected": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation"
+    },
+    "paired_model_folder": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016",
+    "maximum_new_supervised_updates_per_fit": 1000,
+    "parent_supervised_updates": 3500,
+    "source_admission": {
+      "admitted": true,
+      "original_labels": 4949,
+      "normal_suite_labels": 7246,
+      "total_labels": 7378,
+      "normal18_cases": 18,
+      "actual_wait_continuation_admitted": true,
+      "original_prefix_byte_exact": true,
+      "dataset_sha256": "ea1ead9cbe7731ea80a76ce74cb906989157779f62158de1f6dc325ad9a9b6ae"
+    },
+    "reference_reconstruction": {
+      "completed": true,
+      "cases": 10,
+      "frames": 803,
+      "input_hashes_verified": 123,
+      "new_physics": false,
+      "new_ppo_steps": 0
+    },
+    "actual_wait_continuation": {
+      "completed": true,
+      "new_physical_steps": 307,
+      "new_ppo_steps": 0,
+      "goal_achieved": false,
+      "deployment_approved": false,
+      "at": "2026-10-16T14:43:16.029086+00:00",
+      "safe_success": true,
+      "source_admitted": true,
+      "reference_prefix_exact": true,
+      "prefix_frames": 175,
+      "complete_continuation_frames": 133,
+      "released_at_s": 34.99999999999945,
+      "continuation_seconds": 26.400000000013506,
+      "collisions": 0,
+      "physical_guards": 0,
+      "false_arrival": false,
+      "minimum_post_release_dynamic_gap_m": 0.27864385990011464,
+      "final_xy_error_m": 0.11225315372411399,
+      "actual_wait_state_not_original_teacher_only_distribution": true,
+      "teacher_success_not_new_candidate_success": true,
+      "trace_path": "reports/stop_feedback_20261015/learner_wait_continuation_20261016/continuation625.npz",
+      "trace_sha256": "ca809a5b455afad86a81c80536db2bc382f2662761512cf4f421316bc018b670",
+      "inputs_verified": 105,
+      "resource": {
+        "seconds": 253.17104087001644,
+        "cpu_seconds": 50.635536949,
+        "average_cpu_cores": 0.2000052485268147,
+        "peak_rss_mib": 1630.17578125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      }
+    },
+    "live_handles": [
+      {
+        "unit": "rl-normal-suite-wait-validate-v2-20261016.service",
+        "main_pid": 2055874,
+        "invocation_id": "5f92dc79872d4e5d8939731fb1432425",
+        "active": true,
+        "verified_active_at": "2026-10-16T23:46:19.451479+08:00",
+        "cpu_soft_cores": 0.35,
+        "memory_hard_limit_bytes": 3221225472,
+        "memory_hard_limit_verified": true,
+        "cpu_hard_quota_verified": false
+      },
+      {
+        "unit": "rl-native625-suite-ppo-20261016.service",
+        "main_pid": 2055978,
+        "invocation_id": "d74b80d255c343d599183aa14c78fe84",
+        "active": true,
+        "verified_active_at": "2026-10-16T23:46:19.451479+08:00",
+        "cpu_soft_cores": 0.35,
+        "memory_hard_limit_bytes": 3221225472,
+        "memory_hard_limit_verified": true,
+        "cpu_hard_quota_verified": false
+      },
+      {
+        "unit": "rl-native625-suite-post-validate-20261016.service",
+        "main_pid": 2063633,
+        "invocation_id": "c53b2d88cbb343e7b4dd997a44d83643",
+        "active": true,
+        "verified_active_at": "2026-10-16T23:46:19.451479+08:00",
+        "cpu_soft_cores": 0.35,
+        "memory_hard_limit_bytes": 3221225472,
+        "memory_hard_limit_verified": true,
+        "cpu_hard_quota_verified": false,
+        "status": "waiting_for_exact_ppo_predecessor"
+      },
+      {
+        "unit": "rl-native625-holdout-pair-20261016.service",
+        "main_pid": 2067707,
+        "invocation_id": "fcf4b6663c2b44deb5591fe73641c07e",
+        "active": true,
+        "memory_hard_limit_bytes": 3221225472,
+        "memory_hard_limit_verified": true,
+        "cpu_hard_quota_verified": false,
+        "cpu_soft_cores": 0.35,
+        "verified_active_at": "2026-10-16T23:46:19.451479+08:00"
+      }
+    ],
+    "physical_validation_started": true,
+    "ppo_started": false,
+    "original_deployment_replaced": false,
+    "next_action": "Finish the exact BC4500 regression; native625 PPO, post-PPO recovery/retention and frozen8case paired evaluation are serially queued with safety/retention gates. Diagnose any failed gate rather than promoting a partial pass.",
+    "preparation_rejections": [
+      {
+        "report": "normal18_reference625_replay_20261016",
+        "reason": "Wrong historical reference actor; action parity rejected; not admitted"
+      },
+      {
+        "report": "normal_suite_reference625_replay_v2_20261016",
+        "reason": "Initial prior offset omitted for localization_nav_12; rejected incomplete run. Four completed traces independently verified before reuse in corrected v3"
+      },
+      {
+        "report": "normal_suite_wait_pair_s231016",
+        "reason": "Failed dependency; no optimizer updates; superseded by separate v2"
+      }
+    ],
+    "fit_completed": true,
+    "fit_results": {
+      "completed": true,
+      "new_ppo_steps": 0,
+      "new_physical_episodes": 0,
+      "goal_achieved": false,
+      "deployment_approved": false,
+      "resource": {
+        "seconds": 503.6858442860539,
+        "cpu_seconds": 50.368614197,
+        "average_cpu_cores": 0.1000000591011142,
+        "peak_rss_mib": 976.92578125,
+        "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+      },
+      "at": "2026-10-16T15:13:44.068667+00:00",
+      "selected_for_bounded_physical_validation": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+      "input_hashes_verified": 117
+    },
+    "fit_rows": [
+      {
+        "model": "normal_control",
+        "model_path": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/normal_control",
+        "updates": 4500,
+        "new_supervised_updates": 1000,
+        "cumulative_supervised_updates": 4500,
+        "initial_actor_tensor_sha256": "b3f7a06a2f019cd349febbf8c7b72fa9ec0e6511c732499b56e4fd29dfb36da4",
+        "initial_optimizer_sha256": "c97baf5e66297b86c110efe03e7c9056a3aa954199aa8df45135c8784a575124",
+        "own_training_labels": 7246,
+        "own_training_fit_passed": true,
+        "correct_source_labels": 7377,
+        "total_source_labels": 7378,
+        "original3252_all_retained": true,
+        "original3728_all_retained": true,
+        "original4949_all_retained": true,
+        "safe_stop_labels_all_retained": true,
+        "wrong_source_indices": [
+          7246
+        ],
+        "source_sha256": "ea1ead9cbe7731ea80a76ce74cb906989157779f62158de1f6dc325ad9a9b6ae",
+        "checkpoint_sha256": "1f371f798832ebceac36cce78af0b4c651b3e03d410656b0ed9f53fc60de0a10",
+        "optimizer_and_rng_saved": true,
+        "exported_for_physical_validation": false,
+        "new_ppo_steps": 0,
+        "deployment_approved": false
+      },
+      {
+        "model": "wait_continuation",
+        "model_path": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+        "updates": 4500,
+        "new_supervised_updates": 1000,
+        "cumulative_supervised_updates": 4500,
+        "initial_actor_tensor_sha256": "b3f7a06a2f019cd349febbf8c7b72fa9ec0e6511c732499b56e4fd29dfb36da4",
+        "initial_optimizer_sha256": "c97baf5e66297b86c110efe03e7c9056a3aa954199aa8df45135c8784a575124",
+        "own_training_labels": 7378,
+        "own_training_fit_passed": true,
+        "correct_source_labels": 7378,
+        "total_source_labels": 7378,
+        "original3252_all_retained": true,
+        "original3728_all_retained": true,
+        "original4949_all_retained": true,
+        "safe_stop_labels_all_retained": true,
+        "wrong_source_indices": [],
+        "source_sha256": "ea1ead9cbe7731ea80a76ce74cb906989157779f62158de1f6dc325ad9a9b6ae",
+        "checkpoint_sha256": "b935b5b512268eb1e47ef3a007aa757d376ccc0d32f847738de89b237d1fb1f5",
+        "optimizer_and_rng_saved": true,
+        "exported_for_physical_validation": true,
+        "new_ppo_steps": 0,
+        "deployment_approved": false
+      }
+    ],
+    "selected_model": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+    "cumulative_supervised_updates_per_fit": 4500,
+    "new_supervised_updates_per_fit": 1000,
+    "physical_validation_status": {
+      "status": "bounded_physical_validation",
+      "group": "hard3",
+      "case_id": "legal_wait_parent_t95",
+      "completed_episodes": 29
+    },
+    "offline_pair_audit": "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/PAIR_OFFLINE_AUDIT.json",
+    "physical_validation_completed": false,
+    "completed_new_physical_episodes": 29,
+    "completed_groups": {
+      "normal_other16": {
+        "completed": 16,
+        "safe_success": 16,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe_success": 5,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "normal_repaired2": {
+        "completed": 2,
+        "safe_success": 2,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe_success": 3,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe_success": 2,
+        "collisions": 0,
+        "timeouts": 0
+      },
+      "hard3": {
+        "completed": 1,
+        "safe_success": 0,
+        "collisions": 0,
+        "timeouts": 1
+      }
+    },
+    "physical_wait_comparison": {
+      "case_id": "independent_dynamic_000",
+      "previous_bc3500": {
+        "seconds": 79.20000000000046,
+        "travel_m": 6.745683013876562,
+        "voluntary_wait_frames": 194,
+        "safe_success": true
+      },
+      "candidate_bc4500": {
+        "seconds": 51.40000000000784,
+        "travel_m": 7.549215922010951,
+        "voluntary_wait_frames": 0,
+        "safe_success": true,
+        "collisions": 0,
+        "false_arrival": false,
+        "physical_guards": 0
+      },
+      "time_change_fraction": -0.35101010101000574,
+      "path_change_fraction": 0.11911809471056367,
+      "recovered_earlier_success_not_a_new_global_best": true
+    },
+    "physical_validation_result": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/RESULTS.json",
+    "normal18_completed": true,
+    "normal18_passed": true,
+    "post_ppo_validation": {
+      "at": "2026-10-16T23:32:51.701520+08:00",
+      "driver": "reports/stop_feedback_20261015/native625_post_validation_plan_20261016/validate_candidate.py",
+      "driver_sha256": "fac7c65684ce39aa468a9bdaf5ce0cd292d675dad7aad21b4e664c4942e2889c",
+      "ast_parse_passed": true,
+      "cli_help_passed": true,
+      "syntax_checks_not_physical_evidence": true,
+      "service": {
+        "unit": "rl-native625-suite-post-validate-20261016.service",
+        "main_pid": 2063633,
+        "invocation_id": "c53b2d88cbb343e7b4dd997a44d83643",
+        "active": true,
+        "verified_active_at": "2026-10-16T23:32:51.701520+08:00",
+        "cpu_soft_cores": 0.35,
+        "memory_hard_limit_bytes": 3221225472,
+        "memory_hard_limit_verified": true,
+        "cpu_hard_quota_verified": false,
+        "status": "waiting_for_exact_ppo_predecessor"
+      },
+      "physical_validation_started": false,
+      "new_physical_episodes": 0,
+      "new_ppo_steps": 0,
+      "maximum_physical_episodes": 33,
+      "post_release_time_used_for_recovery_efficiency": true,
+      "all_reference_safe_STOPs_required": true,
+      "source_motion_changes_evaluated_in_closed_loop": true,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "frozen_pre_ppo_holdout": "reports/stop_feedback_20261015/native625_frozen_holdout_20261016/PLAN.json",
+    "frozen_holdout_pair_preparation": {
+      "at": "2026-10-16T23:38:44.969947+08:00",
+      "driver_sha256": "315716327a81a9942ada2bf9f6ce44e9762e7b1f491a5160ee01f7a21cb00fd1",
+      "ast_parse_passed": true,
+      "cli_help_passed": true,
+      "immutable_parent_files_checked": 7,
+      "syntax_and_contract_checks_not_physical_evidence": true,
+      "unit": "rl-native625-holdout-pair-20261016.service",
+      "main_pid": 2067707,
+      "invocation_id": "fcf4b6663c2b44deb5591fe73641c07e",
+      "active": true,
+      "memory_hard_limit_bytes": 3221225472,
+      "memory_hard_limit_verified": true,
+      "cpu_hard_quota_verified": false,
+      "cpu_soft_cores": 0.35,
+      "maximum_paired_physical_episodes": 16,
+      "physical_validation_started": false,
+      "new_ppo_steps": 0,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "feedback_consistency_audit": {
+      "report": "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/FEEDBACK_PHYSICAL_AUDIT.json",
+      "audited_frames": 4483,
+      "audited_episodes": 19,
+      "all_reason_mask_and_timer_checks_passed": true,
+      "includes_scripted_recovery_initialization": true,
+      "not_independent_guard_accuracy_or_recovery_proof": true
+    },
+    "normal18_row_derived_audit": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/NORMAL18_AUDIT.json",
+    "normal18_metrics": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 18,
+      "common_successes": 18,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        67.47422176966873,
+        67.13577183988691
+      ],
+      "common_success_seconds": [
+        489.40000000002607,
+        459.40000000001334
+      ],
+      "total_travel_relative_change": -0.005015988638404134,
+      "total_time_relative_change": -0.06129955046998592,
+      "pairs": [
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.10204250066178133,
+          "time_relative_change": -0.1846846846847614
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.05749177391253424,
+          "time_relative_change": -0.01562500000000755
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": -0.1767943429456439,
+          "time_relative_change": -0.3214285714286891
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "travel_relative_change": -0.00035406382408587067,
+          "time_relative_change": -0.048780487804888195
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": -0.004534597967484566,
+          "time_relative_change": -0.10429447852760532
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "late_recovery_still_unresolved": true,
+    "late_recovery_rows": [
+      {
+        "case_id": "w11_training_stall_t106",
+        "category": "recorded_training_stall",
+        "safe_success": false,
+        "physical_arrival": false,
+        "false_arrival": false,
+        "protocol_valid": true,
+        "collisions": 0,
+        "input_odometry": "noisy_motion_feedback",
+        "physical_guards": 0,
+        "timeout": true,
+        "seconds": 139.99999999994517,
+        "travel_m": 8.319762386941637,
+        "frames": 700,
+        "final_xy_error_m": 1.7975349225259525,
+        "final_yaw_error_rad": null,
+        "localization_xy_p95_m": 0.005162948270223133,
+        "localization_yaw_p95_rad": 0.0014846890014716494,
+        "stop_choices": 226,
+        "only_stop_frames": 36,
+        "stop_reasons": {
+          "None": 525,
+          "laser_braking_footprint": 175
+        },
+        "voluntary_wait_frames": 190,
+        "predictive_constraint_frames": 63,
+        "runtime_ms": {
+          "p95": 112.950371124316,
+          "p99": 125.64849857997613,
+          "maximum": 137.0498479809612
+        },
+        "original_case_id": "train_failure_w11_e7",
+        "recovery_test": true,
+        "not_a_full_mission_score": true,
+        "frozen_prefix_frames": 530,
+        "prefix_sensor_and_physical_parity_verified": true,
+        "release_sensor_timestamp_s": 106.0,
+        "post_release_seconds": 33.999999999945175,
+        "model_controlled_frames": 170,
+        "post_release_wait_with_choices_frames": 170,
+        "post_release_only_stop_frames": 0,
+        "longest_post_release_wait_with_choices_s": 33.99999999996909,
+        "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+        "prefix_is_initialization_only": true,
+        "no_teacher_after_release": true,
+        "trace_path": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_w11_training_stall_t106.npz",
+        "trace_sha256": "9462ab03c7f0e7c7d502a93404860b15efdc97f6a4d73870cd4895d457e2036f",
+        "variant": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+        "pure_learned_model": true,
+        "training_regression_or_development": true
+      }
+    ]
+  },
+  "current_turn_post_ppo_validation_preparation": {
+    "at": "2026-10-16T23:32:51.701520+08:00",
+    "driver": "reports/stop_feedback_20261015/native625_post_validation_plan_20261016/validate_candidate.py",
+    "driver_sha256": "fac7c65684ce39aa468a9bdaf5ce0cd292d675dad7aad21b4e664c4942e2889c",
+    "ast_parse_passed": true,
+    "cli_help_passed": true,
+    "syntax_checks_not_physical_evidence": true,
+    "service": {
+      "unit": "rl-native625-suite-post-validate-20261016.service",
+      "main_pid": 2063633,
+      "invocation_id": "c53b2d88cbb343e7b4dd997a44d83643",
+      "active": true,
+      "verified_active_at": "2026-10-16T23:32:51.701520+08:00",
+      "cpu_soft_cores": 0.35,
+      "memory_hard_limit_bytes": 3221225472,
+      "memory_hard_limit_verified": true,
+      "cpu_hard_quota_verified": false,
+      "status": "waiting_for_exact_ppo_predecessor"
+    },
+    "physical_validation_started": false,
+    "new_physical_episodes": 0,
+    "new_ppo_steps": 0,
+    "maximum_physical_episodes": 33,
+    "post_release_time_used_for_recovery_efficiency": true,
+    "all_reference_safe_STOPs_required": true,
+    "source_motion_changes_evaluated_in_closed_loop": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_turn_frozen_holdout": {
+    "at": "2026-10-16T23:31:08.849264+08:00",
+    "cases": 8,
+    "maximum_paired_physical_episodes": 16,
+    "cases_sha256": "00831a06b130e0106cc4ef4f46dffc7fa8fa82a220320feb068bb47a547edb98",
+    "source_tasks_sha256": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+    "frozen_before_ppo": true,
+    "exact_ppo_service_at_freeze": {
+      "MainPID": "2055978",
+      "ActiveState": "active",
+      "InvocationID": "d74b80d255c343d599183aa14c78fe84"
+    },
+    "ppo_stage_at_freeze": {
+      "status": "waiting_for_exact_predecessor",
+      "dependency": {
+        "MainPID": "2055874",
+        "ExecMainStatus": "0",
+        "ActiveState": "active",
+        "InvocationID": "5f92dc79872d4e5d8939731fb1432425"
+      },
+      "physical_simulation_started": false,
+      "optimizer_started": false,
+      "new_ppo_steps": 0
+    },
+    "new_ppo_steps_at_freeze": 0,
+    "not_used_in_current_bc_or_ppo_training": true,
+    "same_known_development_map": true,
+    "no_unseen_map_generalization_claim": true,
+    "all_actions_body4cm_masks_and_hardware_unchanged": true,
+    "only_existing_supported_stress_parameters": true,
+    "physical_feasibility_of_new_dynamic_variants_not_yet_measured": true,
+    "no_results_yet": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_turn_frozen_pair_preparation": {
+    "at": "2026-10-16T23:38:44.969947+08:00",
+    "driver_sha256": "315716327a81a9942ada2bf9f6ce44e9762e7b1f491a5160ee01f7a21cb00fd1",
+    "ast_parse_passed": true,
+    "cli_help_passed": true,
+    "immutable_parent_files_checked": 7,
+    "syntax_and_contract_checks_not_physical_evidence": true,
+    "unit": "rl-native625-holdout-pair-20261016.service",
+    "main_pid": 2067707,
+    "invocation_id": "fcf4b6663c2b44deb5591fe73641c07e",
+    "active": true,
+    "memory_hard_limit_bytes": 3221225472,
+    "memory_hard_limit_verified": true,
+    "cpu_hard_quota_verified": false,
+    "cpu_soft_cores": 0.35,
+    "maximum_paired_physical_episodes": 16,
+    "physical_validation_started": false,
+    "new_ppo_steps": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_turn_physical_feedback_audit": {
+    "report": "reports/stop_feedback_20261015/normal_suite_wait_protocol_v2_20261016/FEEDBACK_PHYSICAL_AUDIT.json",
+    "audited_frames": 4483,
+    "audited_episodes": 19,
+    "all_reason_mask_and_timer_checks_passed": true,
+    "includes_scripted_recovery_initialization": true,
+    "not_independent_guard_accuracy_or_recovery_proof": true
+  },
+  "current_turn_complete_normal18_audit": {
+    "at": "2026-10-16T23:49:03.709685+08:00",
+    "completed": true,
+    "model": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+    "normal18": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 18,
+      "common_successes": 18,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        67.47422176966873,
+        67.13577183988691
+      ],
+      "common_success_seconds": [
+        489.40000000002607,
+        459.40000000001334
+      ],
+      "total_travel_relative_change": -0.005015988638404134,
+      "total_time_relative_change": -0.06129955046998592,
+      "pairs": [
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.10204250066178133,
+          "time_relative_change": -0.1846846846847614
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.05749177391253424,
+          "time_relative_change": -0.01562500000000755
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": -0.1767943429456439,
+          "time_relative_change": -0.3214285714286891
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "travel_relative_change": -0.00035406382408587067,
+          "time_relative_change": -0.048780487804888195
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": -0.004534597967484566,
+          "time_relative_change": -0.10429447852760532
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "physical_successes": 18,
+    "collisions": 0,
+    "false_arrivals": 0,
+    "physical_guards": 0,
+    "source_snapshot_sha256": "3208b4cbd6c2b37a8c489868d0dddcc4ddc0807ab019189a2e63058e8ade9958",
+    "reference_tasks_sha256": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+    "comparison_code_sha256": "e079c71d70817f4cc37ce9f0c509db2a8e3abf77d4d00a72a63977d506892907",
+    "parent_physical_validation_still_running": true,
+    "all_normal_sources_are_development_training_retention": true,
+    "new_physics_or_training": false,
+    "new_ppo_steps": 0,
+    "late_recovery_still_unresolved": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_turn_bc4500_late_recovery": [
+    {
+      "case_id": "w11_training_stall_t106",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.319762386941637,
+      "frames": 700,
+      "final_xy_error_m": 1.7975349225259525,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005162948270223133,
+      "localization_yaw_p95_rad": 0.0014846890014716494,
+      "stop_choices": 226,
+      "only_stop_frames": 36,
+      "stop_reasons": {
+        "None": 525,
+        "laser_braking_footprint": 175
+      },
+      "voluntary_wait_frames": 190,
+      "predictive_constraint_frames": 63,
+      "runtime_ms": {
+        "p95": 112.950371124316,
+        "p99": 125.64849857997613,
+        "maximum": 137.0498479809612
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 530,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 106.0,
+      "post_release_seconds": 33.999999999945175,
+      "model_controlled_frames": 170,
+      "post_release_wait_with_choices_frames": 170,
+      "post_release_only_stop_frames": 0,
+      "longest_post_release_wait_with_choices_s": 33.99999999996909,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "prefix_is_initialization_only": true,
+      "no_teacher_after_release": true,
+      "trace_path": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_w11_training_stall_t106.npz",
+      "trace_sha256": "9462ab03c7f0e7c7d502a93404860b15efdc97f6a4d73870cd4895d457e2036f",
+      "variant": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+      "pure_learned_model": true,
+      "training_regression_or_development": true
+    },
+    {
+      "case_id": "legal_wait_parent_t95",
+      "category": "recorded_training_stall",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 8.333036057222753,
+      "frames": 700,
+      "final_xy_error_m": 1.7921266991289337,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.005271129929543444,
+      "localization_yaw_p95_rad": 0.0014414280051138649,
+      "stop_choices": 222,
+      "only_stop_frames": 130,
+      "stop_reasons": {
+        "None": 562,
+        "laser_braking_footprint": 138
+      },
+      "voluntary_wait_frames": 92,
+      "predictive_constraint_frames": 61,
+      "runtime_ms": {
+        "p95": 114.14808722911403,
+        "p99": 125.42766878206746,
+        "maximum": 143.52522703120485
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 488,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 97.59999999998372,
+      "post_release_seconds": 42.39999999996145,
+      "model_controlled_frames": 212,
+      "post_release_wait_with_choices_frames": 71,
+      "post_release_only_stop_frames": 95,
+      "longest_post_release_wait_with_choices_s": 7.999999999992724,
+      "prefix_trace_sha256": "ac1247c8f469b2110eeb9d152964a82a5687eeefa24d43deae163cd0b8a15af0",
+      "prefix_is_initialization_only": true,
+      "no_teacher_after_release": true,
+      "trace_path": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_legal_wait_parent_t95.npz",
+      "trace_sha256": "d0dd711808a5901132d52e24264168e7ab4956084d0f259e3f85ed9d8eed9833",
+      "variant": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+      "pure_learned_model": true,
+      "training_regression_or_development": true
+    },
+    {
+      "case_id": "legal_wait_parent_t90",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 132.3999999999521,
+      "travel_m": 10.394158845448528,
+      "frames": 663,
+      "final_xy_error_m": 0.08887153358384908,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004573483179267262,
+      "localization_yaw_p95_rad": 0.001442903883017088,
+      "stop_choices": 149,
+      "only_stop_frames": 125,
+      "stop_reasons": {
+        "None": 576,
+        "laser_braking_footprint": 86,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 24,
+      "predictive_constraint_frames": 65,
+      "runtime_ms": {
+        "p95": 114.21925458707847,
+        "p99": 132.00962261646055,
+        "maximum": 155.14680097112432
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 480,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.99999999998518,
+      "post_release_seconds": 36.39999999996691,
+      "model_controlled_frames": 183,
+      "post_release_wait_with_choices_frames": 3,
+      "post_release_only_stop_frames": 90,
+      "longest_post_release_wait_with_choices_s": 0.1999999999998181,
+      "prefix_trace_sha256": "d40e7319d6046e87f74103d971f4d7b111ae28a4135260664d8ea782cbc0bb43",
+      "prefix_is_initialization_only": true,
+      "no_teacher_after_release": true,
+      "trace_path": "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_legal_wait_parent_t90.npz",
+      "trace_sha256": "f3597b91388e718377c9e55261235b11285972e1b623f4bb45cad9eae2d3f40b",
+      "variant": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation",
+      "pure_learned_model": true,
+      "training_regression_or_development": true
+    }
+  ],
+  "current_turn_native625_ppo": {
+    "report": "reports/stop_feedback_20261015/native625_suite_ppo_20261016/RESULTS.json",
+    "report_sha256": "b7c94a0ba558e0873fce2d4f11a792ff48ced451145bae4016bc0d78b6bfbd47",
+    "completed": true,
+    "new_ppo_steps": 5898,
+    "completed_episodes": 32,
+    "safe_training_arrivals": 2,
+    "training_not_independent_evaluation": true,
+    "stages": [
+      {
+        "release_frames": 450,
+        "episodes": 8,
+        "safe_arrivals": 2,
+        "collisions": 0,
+        "physical_guards": 0
+      },
+      {
+        "release_frames": 480,
+        "episodes": 8,
+        "safe_arrivals": 0,
+        "collisions": 0,
+        "physical_guards": 0
+      },
+      {
+        "release_frames": 530,
+        "episodes": 8,
+        "safe_arrivals": 0,
+        "collisions": 0,
+        "physical_guards": 0
+      },
+      {
+        "release_frames": 572,
+        "episodes": 8,
+        "safe_arrivals": 0,
+        "collisions": 0,
+        "physical_guards": 0
+      }
+    ],
+    "correct_source_labels": 6957,
+    "total_source_labels": 7378,
+    "all_reference_stop_labels_retained": false,
+    "diagnostic_portable_exported": false,
+    "physical_post_validation_skipped": true,
+    "new_actor_optimizer_updates": 401,
+    "new_critic_optimizer_updates": 404,
+    "resource": {
+      "seconds": 2777.01462342398,
+      "cpu_seconds": 972.171452779,
+      "average_cpu_cores": 0.35007790185142784,
+      "peak_rss_mib": 2715.73046875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
+  },
+  "current_turn_credit_diagnostic": {
+    "report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/CREDIT_SIGNAL_AUDIT.json",
+    "exact_minibatch_rng_reproduced": true,
+    "single_minibatch_normalization_can_reverse_success_failure_contrast": true,
+    "lambda_change_alone_not_sufficient_in_logged_examples": true,
+    "causal_closed_loop_improvement_unverified": true
+  },
+  "current_turn_stop_guard": {
+    "report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/STOP_GUARD_REAL_UPDATE_REPLAY.json",
+    "control_parameter_error": 0.0,
+    "control_stop_mismatches": 3,
+    "guarded_stop_mismatches": 0,
+    "test_report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/CONSTRAINT_AND_CREDIT_TESTS.json",
+    "tests_passed": 12,
+    "physical_recovery_unverified": true
+  },
+  "current_turn_batch_credit_followup": {
+    "report_folder": "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017",
+    "models_folder": "models/stop_feedback_20261015/native625_batch_credit_s231017",
+    "status": {
+      "status": "bounded_physical_validation_complete_original_gain_gate_failed",
+      "hard_safe_successes": 1,
+      "hard_total": 3,
+      "local_speedup_proven": true
+    },
+    "maximum_new_ppo_steps": 2000,
+    "completed_tests": 12,
+    "tests_passed": true,
+    "real_update_replay_control_exact": true,
+    "real_update_replay_control_stop_mismatches": 3,
+    "real_update_replay_guarded_stop_mismatches": 0,
+    "collector_one_frozen_policy_and_critic": true,
+    "complete_return_and_batch_advantage_normalization": true,
+    "full_raw_sensor_logging_added": true,
+    "not_yet_physically_validated": false,
+    "readme": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/README.md",
+    "new_ppo_steps": 1665,
+    "completed_training_episodes": 8,
+    "new_actor_optimizer_updates": 107,
+    "new_critic_optimizer_updates": 108,
+    "training_resource": {
+      "seconds": 821.9756821710034,
+      "cpu_seconds": 289.52807935,
+      "average_cpu_cores": 0.3522343612225826,
+      "peak_rss_mib": 2336.81640625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "correct_source_labels": 7378,
+    "total_source_labels": 7378,
+    "all_reference_stop_labels_retained": true,
+    "diagnostic_portable_exported": true,
+    "physical_validation_report": "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/RESULTS.json",
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "full_retention_not_yet_validated": true,
+    "physical_validation_summary": {
+      "completed": true,
+      "new_physical_episodes": 5,
+      "original_gate_passed": false,
+      "original_gate_reason": "No early/hard recovery gain or a lost hard success; full regression expansion not justified",
+      "hard_successes": 1,
+      "hard_total": 3,
+      "remaining_timeouts": 2,
+      "all_safety_events_zero": true,
+      "local_recovery_speedup": {
+        "parent": {
+          "post_release_seconds": 36.39999999996691,
+          "total_travel_including_common_prefix_m": 10.394158845448528,
+          "post_release_only_stop_frames": 90,
+          "post_release_wait_with_choices_frames": 3,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0
+        },
+        "candidate": {
+          "post_release_seconds": 20.199999999981628,
+          "total_travel_including_common_prefix_m": 10.304575452521048,
+          "post_release_only_stop_frames": 5,
+          "post_release_wait_with_choices_frames": 2,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0
+        }
+      },
+      "first_policy_difference": {
+        "frame": 525,
+        "sensor_time_s": 104.99999999997699,
+        "parent_choice": 7,
+        "candidate_choice": 5,
+        "parent_command_m_s_rad_s": [
+          0.05,
+          -0.5
+        ],
+        "candidate_command_m_s_rad_s": [
+          0.0,
+          -0.5
+        ],
+        "legal_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "observation_and_physical_state_identical": true
+      },
+      "local_recovery_time_relative_change": -0.44505494505494525,
+      "original_frozen_pair_skipped": true,
+      "full_goal_unresolved": true,
+      "report": "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/RESULTS.json"
+    }
+  },
+  "current_batch_validation": {
+    "completed": true,
+    "new_physical_episodes": 5,
+    "original_gate_passed": false,
+    "original_gate_reason": "No early/hard recovery gain or a lost hard success; full regression expansion not justified",
+    "hard_successes": 1,
+    "hard_total": 3,
+    "remaining_timeouts": 2,
+    "all_safety_events_zero": true,
+    "local_recovery_speedup": {
+      "parent": {
+        "post_release_seconds": 36.39999999996691,
+        "total_travel_including_common_prefix_m": 10.394158845448528,
+        "post_release_only_stop_frames": 90,
+        "post_release_wait_with_choices_frames": 3,
+        "collisions": 0,
+        "false_arrival": false,
+        "physical_guards": 0
+      },
+      "candidate": {
+        "post_release_seconds": 20.199999999981628,
+        "total_travel_including_common_prefix_m": 10.304575452521048,
+        "post_release_only_stop_frames": 5,
+        "post_release_wait_with_choices_frames": 2,
+        "collisions": 0,
+        "false_arrival": false,
+        "physical_guards": 0
+      }
+    },
+    "first_policy_difference": {
+      "frame": 525,
+      "sensor_time_s": 104.99999999997699,
+      "parent_choice": 7,
+      "candidate_choice": 5,
+      "parent_command_m_s_rad_s": [
+        0.05,
+        -0.5
+      ],
+      "candidate_command_m_s_rad_s": [
+        0.0,
+        -0.5
+      ],
+      "legal_actions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "observation_and_physical_state_identical": true
+    },
+    "local_recovery_time_relative_change": -0.44505494505494525,
+    "original_frozen_pair_skipped": true,
+    "full_goal_unresolved": true,
+    "report": "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/RESULTS.json"
+  },
+  "current_memory_geometry_diagnostic": {
+    "report": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/MEMORY_GEOMETRY_CORRECTION.json",
+    "superseded_approximation_report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/MEMORY_GEOMETRY_AUDIT.json",
+    "actual_rejected_turn_candidates": 474,
+    "original_reconstruction_misses": 0,
+    "current_scan_alone_clear": 445,
+    "fixed_pose_alternative_rejections": 197,
+    "fixed_pose_alternative_fewer_rejections": 277,
+    "trajectory_model_corrected_to_actual_hardware": true,
+    "guard_geometry": "nominal_constant_command",
+    "dynamic_prediction_finite_response_unchanged": true,
+    "alternative_free_evidence_margin_m": 0.03,
+    "alternative_free_evidence_frames": 3,
+    "geometry_only_not_execution_acceptance": true,
+    "component_handover_closed_loop_completed": true,
+    "from_start_full_validation_pending": true,
+    "no_new_physics": true,
+    "no_safety_or_navigation_improvement_claim_from_geometry": true
+  },
+  "current_earlier_memory_experiment": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/earlier_memory_evidence_20261017/RESULTS.json",
+    "completed_physical_episodes": 3,
+    "complete_safe_gains": [
+      "legal_wait_parent_t95"
+    ],
+    "rows": [
+      {
+        "case_id": "memory_evidence_actual90",
+        "safe_success": true,
+        "timeout": false,
+        "post_release_seconds": 20.39999999997208,
+        "minimum_post_release_dynamic_gap_m": 0.15210121242797453,
+        "post_release_wait_with_choices_frames": 0,
+        "post_release_only_stop_frames": 20
+      },
+      {
+        "case_id": "legal_wait_parent_t95",
+        "safe_success": true,
+        "timeout": false,
+        "post_release_seconds": 22.599999999979445,
+        "minimum_post_release_dynamic_gap_m": 0.07976777975690702,
+        "post_release_wait_with_choices_frames": 9,
+        "post_release_only_stop_frames": 5
+      },
+      {
+        "case_id": "w11_training_stall_t106",
+        "safe_success": false,
+        "timeout": true,
+        "post_release_seconds": 33.999999999945175,
+        "minimum_post_release_dynamic_gap_m": 0.060532567293718476,
+        "post_release_wait_with_choices_frames": 169,
+        "post_release_only_stop_frames": 0
+      }
+    ],
+    "scope": "Measured component handover after exact prefixes; not a deployed from-start rule",
+    "new_ppo_steps": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_local_speedup_retention_study": {
+    "at": "2026-10-17T02:31:17.051191+08:00",
+    "report": "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/RESULTS.json",
+    "report_sha256": "80dce686101690a2176a1c2b2ee22b0648c937e58994ed2c9cc437e1de121d7c",
+    "status": {
+      "status": "complete",
+      "reason": "Candidate safety failure in pre-frozen pair; evaluation stopped",
+      "completed_episodes": 40
+    },
+    "completed": true,
+    "completed_physical_episodes": 40,
+    "groups": {
+      "normal18": {
+        "completed": 18,
+        "safe_successes": 18,
+        "collisions": 0
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe_successes": 5,
+        "collisions": 0
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe_successes": 3,
+        "collisions": 0
+      },
+      "heading2": {
+        "completed": 2,
+        "safe_successes": 2,
+        "collisions": 0
+      }
+    },
+    "fixed_retention_passed": true,
+    "service_persisted_fixed_gate": true,
+    "frozen_pairs_passed": false,
+    "frozen_physical_rows": 12,
+    "completed_frozen_pairs": 6,
+    "planned_frozen_pairs": 8,
+    "frozen_variant_totals": {
+      "parent": {
+        "completed": 6,
+        "safe_successes": 4,
+        "collisions": 1,
+        "timeouts": 1
+      },
+      "candidate": {
+        "completed": 6,
+        "safe_successes": 4,
+        "collisions": 1,
+        "timeouts": 1
+      }
+    },
+    "gained_frozen_successes": [
+      "pre_ppo_holdout_dynamic_00"
+    ],
+    "lost_frozen_successes": [
+      "pre_ppo_holdout_dynamic_01"
+    ],
+    "paired_rows": [
+      {
+        "case_id": "pre_ppo_holdout_dynamic_00",
+        "parent": {
+          "safe_success": false,
+          "seconds": 139.99999999994517,
+          "travel_m": 2.9903580895023905,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": true
+        },
+        "candidate": {
+          "safe_success": true,
+          "seconds": 53.200000000008764,
+          "travel_m": 6.050953916930766,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_dynamic_01",
+        "parent": {
+          "safe_success": true,
+          "seconds": 34.59999999999925,
+          "travel_m": 4.3882475749918815,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        },
+        "candidate": {
+          "safe_success": false,
+          "seconds": 139.99999999994517,
+          "travel_m": 3.0868624453091464,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": true
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_dynamic_02",
+        "parent": {
+          "safe_success": true,
+          "seconds": 49.000000000006615,
+          "travel_m": 7.588115636378715,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        },
+        "candidate": {
+          "safe_success": true,
+          "seconds": 49.000000000006615,
+          "travel_m": 7.588115636378715,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_dynamic_03",
+        "parent": {
+          "safe_success": true,
+          "seconds": 52.00000000000815,
+          "travel_m": 7.141850175611313,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        },
+        "candidate": {
+          "safe_success": true,
+          "seconds": 52.00000000000815,
+          "travel_m": 7.141850175611313,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_sensor_00",
+        "parent": {
+          "safe_success": true,
+          "seconds": 36.800000000000374,
+          "travel_m": 5.272406977183604,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        },
+        "candidate": {
+          "safe_success": true,
+          "seconds": 34.99999999999945,
+          "travel_m": 5.29375000737802,
+          "collisions": 0,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_sensor_01",
+        "parent": {
+          "safe_success": false,
+          "seconds": 13.000000000000632,
+          "travel_m": 1.780006795795414,
+          "collisions": 1,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        },
+        "candidate": {
+          "safe_success": false,
+          "seconds": 11.600000000000414,
+          "travel_m": 1.5320821098724957,
+          "collisions": 1,
+          "false_arrival": false,
+          "physical_guards": 0,
+          "timeout": false
+        }
+      }
+    ],
+    "normal18_against_bc4500": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 18,
+      "common_successes": 18,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        67.13577183988691,
+        67.13577183988691
+      ],
+      "common_success_seconds": [
+        459.40000000001334,
+        459.40000000001334
+      ],
+      "total_travel_relative_change": 0.0,
+      "total_time_relative_change": 0.0,
+      "pairs": [
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "normal18_against_fixed": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 18,
+      "common_successes": 18,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        67.47422176966873,
+        67.13577183988691
+      ],
+      "common_success_seconds": [
+        489.40000000002607,
+        459.40000000001334
+      ],
+      "total_travel_relative_change": -0.005015988638404134,
+      "total_time_relative_change": -0.06129955046998592,
+      "pairs": [
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": 0.10204250066178133,
+          "time_relative_change": -0.1846846846847614
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.05749177391253424,
+          "time_relative_change": -0.01562500000000755
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": -0.1767943429456439,
+          "time_relative_change": -0.3214285714286891
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "travel_relative_change": -0.00035406382408587067,
+          "time_relative_change": -0.048780487804888195
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": -0.004534597967484566,
+          "time_relative_change": -0.10429447852760532
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "reason": "Candidate safety failure in pre-frozen pair; evaluation stopped",
+    "resource": {
+      "seconds": 3301.3737414969946,
+      "cpu_seconds": 1155.4806815030001,
+      "average_cpu_cores": 0.34999996122191607,
+      "peak_rss_mib": 2480.8984375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "inputs_verified": 492,
+    "original_late_recovery_requirements_not_waived": true,
+    "overall_upgrade_accepted": false,
+    "deployment_approved": false
+  },
+  "current_turn_batch_policy_effect_audit": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/BATCH_POLICY_EFFECT_AUDIT.json",
+  "current_turn_recovery_speedup_audit": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/RECOVERY_SPEEDUP_CAUSAL_AUDIT.json",
+  "current_memory_from_start": {
+    "report_folder": "reports/stop_feedback_20261015/memory_from_start_20261017",
+    "completed": true,
+    "completed_physical_episodes": 2,
+    "maximum_physical_episodes": 5,
+    "selected_actor": "bc4500",
+    "passed": false,
+    "reason": "Existing successful continuation or efficiency lost; no expansion",
+    "outcomes": [
+      {
+        "release_s": 97.6,
+        "old_safe": false,
+        "new_safe": true,
+        "new_post_release_s": 22.6
+      },
+      {
+        "release_s": 96.0,
+        "old_safe": true,
+        "new_safe": false,
+        "new_timeout_s": 140.0
+      }
+    ],
+    "new_ppo_steps": 0,
+    "verified_at": "2026-10-17T03:02:10.873294+08:00"
+  },
+  "current_results_readme": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/CURRENT_RESULTS.md",
+  "latest_ppo_candidate_additional_steps": 1993,
+  "separate_ppo_runs": {
+    "rejected_native_pilot": 5898,
+    "batch_credit_candidate": 1665
+  },
+  "step_counts_are_not_one_combined_model": true,
+  "memory_geometry_diagnostic": {
+    "report": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/MEMORY_GEOMETRY_CORRECTION.json",
+    "superseded_approximation_report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/MEMORY_GEOMETRY_AUDIT.json",
+    "actual_rejected_turn_candidates": 474,
+    "original_reconstruction_misses": 0,
+    "current_scan_alone_clear": 445,
+    "fixed_pose_alternative_rejections": 197,
+    "fixed_pose_alternative_fewer_rejections": 277,
+    "trajectory_model_corrected_to_actual_hardware": true,
+    "guard_geometry": "nominal_constant_command",
+    "dynamic_prediction_finite_response_unchanged": true,
+    "alternative_free_evidence_margin_m": 0.03,
+    "alternative_free_evidence_frames": 3,
+    "geometry_only_not_execution_acceptance": true,
+    "component_handover_closed_loop_completed": true,
+    "from_start_full_validation_pending": true,
+    "no_new_physics": true,
+    "no_safety_or_navigation_improvement_claim_from_geometry": true
+  },
+  "current_late_action_resolution_audit": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/RESULTS.json",
+  "current_stop_retention_scope_audit": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/STOP_RETENTION_SCOPE_AUDIT.json",
+  "current_joint_configuration_retention": {
+    "completed": true,
+    "skipped": true,
+    "new_physical_episodes": 0,
+    "reason": "From-start gain or retention prerequisite failed; no expansion",
+    "new_ppo_steps": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_evidence_inputs_verified": [
+    {
+      "report": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/RESULTS.json",
+      "inputs_verified": 14,
+      "sha256": "4db787b1438843bc47d8cb8e53493a0c0a210ed0b11b18529f03740e056c59be"
+    },
+    {
+      "report": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/MEMORY_GEOMETRY_CORRECTION.json",
+      "inputs_verified": 13,
+      "sha256": "3d8af8fb08c375bb7d7e7639e9050c6482d310ec185cb40f2fcccb8c40a31eb0"
+    },
+    {
+      "report": "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/STOP_RETENTION_SCOPE_AUDIT.json",
+      "inputs_verified": 5,
+      "sha256": "524fed628dc365d51ddce4a22122c6170b37f3c564288449906d8f44c7ebfa53"
+    },
+    {
+      "report": "reports/stop_feedback_20261015/memory_joint_retention_20261017/PLAN.json",
+      "inputs_verified": 522,
+      "sha256": "8d28cf5459770c9315c536308115960f0beae8d2a5e34552e164be898ab3bd98"
+    }
+  ],
+  "current_frozen_whole_mission_gain": {
+    "report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/WHOLE_MISSION_FROZEN_GAIN_AUDIT.json",
+    "sha256": "f7d9c17177bb1f915a8c430c778195bbc07bfebc35924563fd1984443865c1a0",
+    "case_id": "pre_ppo_holdout_dynamic_00",
+    "parent_timeout_seconds": 139.99999999994517,
+    "candidate_safe_success_seconds": 53.200000000008764,
+    "first_choice_difference": {
+      "frame": 37,
+      "sensor_time_s": 7.3999999999998645,
+      "parent_choice": 6,
+      "candidate_choice": 1,
+      "parent_executed_command": [
+        0.05,
+        0.5
+      ],
+      "candidate_executed_command": [
+        0.2,
+        0.0
+      ],
+      "legal_choices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "exact_common_inputs": {
+        "observations": true,
+        "masks": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "previous_choices": true,
+        "previous_commands": true
+      }
+    },
+    "all_frames_model_controlled_from_initialization": true,
+    "frozen_before_ppo": true,
+    "same_known_map_new_seed": true,
+    "no_unseen_or_real_car_claim": true,
+    "one_audited_pair_not_overall_acceptance": true,
+    "new_ppo_steps_for_this_audit": 0
+  },
+  "current_frozen_whole_mission_regression": {
+    "report": "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/WHOLE_MISSION_FROZEN_REGRESSION_AUDIT.json",
+    "sha256": "72aa962ebf004baa63add2d2efd72a44972861704972410057741bd854091781",
+    "case_id": "pre_ppo_holdout_dynamic_01",
+    "parent_safe_success_seconds": 34.59999999999925,
+    "candidate_timeout_seconds": 139.99999999994517,
+    "first_choice_difference": {
+      "frame": 67,
+      "sensor_time_s": 13.400000000000695,
+      "parent_choice": 9,
+      "candidate_choice": 1,
+      "parent_command": [
+        0.010000000149011612,
+        -0.5
+      ],
+      "candidate_command": [
+        0.2,
+        0.0
+      ],
+      "legal_choices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "exact_common_inputs": {
+        "observations": true,
+        "masks": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "previous_choices": true,
+        "previous_commands": true
+      }
+    },
+    "final_only_stop_suffix": {
+      "start_frame": 491,
+      "start_time_s": 98.19999999998318,
+      "frames": 209,
+      "every_nonstop_action_vetoed": true,
+      "rejection_groups": {
+        "accepted": 0,
+        "perception_or_odometry": 0,
+        "localization_or_route": 0,
+        "static_geometry": 0,
+        "laser_geometry": 2297,
+        "dynamic_prediction": 0,
+        "projection": 2,
+        "other": 0
+      },
+      "predicted_moving_tracks_max": 1.0,
+      "predicted_veto_count_max": 0.0,
+      "physical_xy_displacement_m": 0.0,
+      "maximum_localization_error_m": 0.004600596430837025,
+      "maximum_route_endpoint_error_m": 8.881784197001252e-16
+    },
+    "geometry_checks": 36,
+    "geometry_matches": 36,
+    "original_clear_turn_geometry": 3,
+    "three_frame_shadow_clear_turn_geometry": 35,
+    "total_turn_geometry": 36,
+    "geometry_only_not_full_mask_or_success": true,
+    "source_localizer_router_frozen": true,
+    "not_an_overall_upgrade": true
+  },
+  "current_memory_tradeoff_diagnostic": {
+    "completed": true,
+    "new_physical_episodes": 4,
+    "reason": "Four diagnostic runs complete; full retention, late106s and real-car verification still required",
+    "outcomes_unchanged_by_configuration": true,
+    "bc4500_case00_timeout_case01_arrival": true,
+    "ppo1665_case00_arrival_case01_timeout": true,
+    "new_ppo_steps": 0,
+    "post_hoc_development_only": true,
+    "report": "reports/stop_feedback_20261015/paired_memory_tradeoff_20261017/RESULTS.json"
+  },
+  "latest_terminal_handles": [
+    {
+      "unit": "rl-guard-aligned-ppo-resume-validate-20261017.service",
+      "checked_at": "2026-10-17T05:07:53.063167+08:00",
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    },
+    {
+      "unit": "rl-guard-aligned-mechanism-audit-20261017.service",
+      "checked_at": "2026-10-17T05:07:53.063167+08:00",
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    }
+  ],
+  "current_forecast_alignment": {
+    "protocol": "reports/stop_feedback_20261015/guard_forecast_alignment_protocol_20261017/README.md",
+    "new_v2_model_exists": true,
+    "model": "models/stop_feedback_20261015/guard_aligned_migration_s231017",
+    "new_supervised_updates": 540,
+    "new_ppo_steps": 0,
+    "source_rows": 3799,
+    "correct_source_rows": 3799,
+    "retained_stop_rows": 557,
+    "trainable_rows": 2680,
+    "checkpoint_sha256": "92036dbb6ed03bac00ce2ee2c13fbdb4c66f46e979e2b2af07d20acf835d9917",
+    "runtime_real_bundle_constructor_passed": true,
+    "source_fit_not_navigation_improvement": true,
+    "component_and_integration_tests_passed": 16,
+    "no_new_localization_accuracy_claim": true
+  },
+  "current_late106_probe": {
+    "completed": true,
+    "teacher_trials": 3,
+    "unique_physical_suffixes": 1,
+    "new_physical_steps": 1052,
+    "safe_successes": 0,
+    "collisions": 0,
+    "resource_retry_succeeded": true,
+    "report": "reports/stop_feedback_20261015/late106_adaptive_lowmem_20261017/RESULTS.json",
+    "teacher_only_no_learning_or_infeasibility_claim": true
+  },
+  "current_v2_migration_validation": {
+    "completed": true,
+    "completed_episodes": 28,
+    "safe_successes": 28,
+    "collisions": 0,
+    "false_arrivals": 0,
+    "physical_guards": 0,
+    "all_fixed_retention_passed": true,
+    "normal18_time_and_distance_unchanged": true,
+    "report": "reports/stop_feedback_20261015/guard_forecast_migration_validation_20261017/RESULTS.json",
+    "input_hashes_verified": 471,
+    "resource": {
+      "seconds": 2076.156048395962,
+      "cpu_seconds": 726.654468949,
+      "average_cpu_cores": 0.3499999287194299,
+      "peak_rss_mib": 2479.87109375,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    }
+  },
+  "current_teacher_coverage_correction": {
+    "audit": "reports/stop_feedback_20261015/late106_all_action_protocol_20261017/CLOCKWISE_TEACHER_AUDIT.json",
+    "teacher_stop_with_other_legal_direction_frames": 151,
+    "all_action_teacher_tests_passed": 5,
+    "protocol": "reports/stop_feedback_20261015/late106_all_action_protocol_20261017/README.md",
+    "new_physical_steps": 0,
+    "live_handle": {
+      "unit": "rl-late106-all-action-20261017.service",
+      "main_pid": 2141363,
+      "invocation_id": "c0703109bceb409d9a3e616a2f0611c1",
+      "active": true,
+      "sub_state": "running",
+      "exit_status": 0,
+      "verified_at": "2026-10-17T03:36:08.504979+08:00",
+      "cpu_soft_cores": 0.35,
+      "cpu_hard_quota_verified": false,
+      "memory_hard_limit_verified": true,
+      "memory_hard_limit_bytes": "3221225472",
+      "memory_current": "9191424",
+      "loads_heavy_libraries_now": false
+    }
+  },
+  "current_matched_v2_ppo_queue": {
+    "started": true,
+    "first_batch_complete_decisions": 1065,
+    "first_batch_actor_updates": 62,
+    "first_batch_critic_updates": 68,
+    "original_attempt_failed_after_batch1": "conservative RSS budget exceeded",
+    "incomplete_second_batch_fragment_excluded": true,
+    "at_least_one_unpersisted_decision_not_counted_in_complete_total": true,
+    "resume_checks_actual_passed": true,
+    "current_resume_status": {
+      "status": "complete",
+      "new_ppo_steps": 1993,
+      "deployment_approved": false
+    },
+    "new_report": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017",
+    "soft_cpu_cores": 0.35,
+    "memory_hard_max_mib": 3072,
+    "complete_admitted_decisions": 1993,
+    "actor_updates": 106,
+    "critic_updates": 128,
+    "additional_complete_decisions_this_process": 928,
+    "current_process_resource": {
+      "seconds": 621.3856339739868,
+      "cpu_seconds": 218.85715438300002,
+      "average_cpu_cores": 0.3522082623367538,
+      "peak_rss_mib": 2754.9140625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "closed_complete_training_episodes": 10,
+    "no_independent_validation_yet": false,
+    "completed": true,
+    "independent_validation_started": true,
+    "independent_validation_complete": false,
+    "model_path": "models/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_s231017",
+    "correct_source_labels": 3798,
+    "total_source_labels": 3799,
+    "all557_reference_stops_retained": true
+  },
+  "current_matched_v2_post_validation_queue": {
+    "status": "complete_not_passed",
+    "report": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json",
+    "physical_episodes": 30,
+    "reason": "Known complete-mission success or efficiency lost",
+    "remaining_protocol_not_executed": {
+      "known_complete_missions": 4,
+      "hard_recoveries": 3,
+      "fresh_seed_pairs": 8
+    }
+  },
+  "current_goal_turn_evidence": [
+    "Specific original-guard physics search and replay waiter stopped at user request; exact PIDs absent and no active RL units/timers.",
+    "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json",
+    "reports/stop_feedback_20261015/user_pause_20261017/CANDIDATE_FILES.json"
+  ],
+  "updated_at": "2026-10-17T10:12:59.840518+08:00",
+  "current_emitted_feedback_audit": {
+    "completed": true,
+    "actual_closed_episodes": 28,
+    "trace_frames": 5028,
+    "initialization_frames": 1412,
+    "controlled_frames": 3616,
+    "only_stop_frames": 197,
+    "stop_with_motion_and_goal_far_frames": 224,
+    "risk_lower_bound_and_history_and_reasons_passed": true,
+    "whole28_physics_and_actions_exact_source": true,
+    "risk_history_changed_frames": 917,
+    "proves_migration_preservation_not_new_navigation_gain": true,
+    "report": "reports/stop_feedback_20261015/guard_forecast_full_audit_20261017/RESULTS.json",
+    "physical_parity": "reports/stop_feedback_20261015/guard_forecast_full_audit_20261017/MIGRATION_PARITY.json"
+  },
+  "current_all_action_teacher": {
+    "completed": true,
+    "trials": 4,
+    "safe_arrivals": 0,
+    "collisions": 0,
+    "guards": 0,
+    "physical_steps": 1764,
+    "inputs_verified": 473,
+    "no_infeasibility_claim": true,
+    "no_teacher_labels_admitted": true,
+    "report": "reports/stop_feedback_20261015/late106_all_action_20261017/RESULTS.json"
+  },
+  "current_teacher_data_curation": {
+    "actual_executed": true,
+    "unit_checks_passed": 4,
+    "dataset_created": false,
+    "teacher_labels_admitted": 0,
+    "reason": "No complete safe original-hardware demonstration",
+    "report": "reports/stop_feedback_20261015/late106_all_action_protocol_20261017/CURATION_OUTCOME.json"
+  },
+  "current_matched_v2_credit_audit": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/RESULTS.json",
+    "actual_decisions": 1993,
+    "complete_episodes": 10,
+    "current_reason_and_executed_history_verified": true,
+    "normalization_reproduced": true,
+    "actor_eligible_stop_with_motion": 445,
+    "negative_advantage_wait_samples": 408,
+    "positive_advantage_wait_samples": 37,
+    "only_stop_samples_excluded_from_actor_credit": 634,
+    "outside_support_wait_samples": 0,
+    "physical_history_checked_frames": 1973,
+    "valid_short_contact_frames": 189,
+    "no_new_neural_or_physics_job": true,
+    "goal_achieved": false
+  },
+  "current_known_collision_audit": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/KNOWN_COLLISION_AUDIT.json",
+    "old_physical_frames": 123,
+    "old_short_contact_omission_frames": [
+      13,
+      15
+    ],
+    "old_stop_contact_omissions": [
+      6,
+      10
+    ],
+    "old_candidate_final_only_stop_suffix_frames": 5,
+    "no_claim_new_v2_prevents_this_collision": true,
+    "original_safety_gates_retained": true
+  },
+  "current_matched_v2_ppo_model": "models/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_s231017",
+  "current_matched_v2_normal18_pair": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/NORMAL18_COMPARISON.json",
+    "safe_successes": 18,
+    "time_s": [
+      459.40000000001334,
+      460.00000000001364
+    ],
+    "travel_m": [
+      67.13577183988691,
+      67.11121422287155
+    ],
+    "original_pair_gate_passed": true,
+    "whole_goal_incomplete": true
+  },
+  "current_serial_model_mechanism_audit": {
+    "status": "complete",
+    "report": "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/MODEL_MECHANISM.json",
+    "replayed_actual_decisions": 1993,
+    "export_parity_rows": 1993,
+    "current_reason_block_changes": 77,
+    "risk_history_block_changes": 71,
+    "supported_states": 1246,
+    "sensitivity_does_not_prove_correct_navigation": true
+  },
+  "current_latest_ppo_comparison": {
+    "report": "reports/stop_feedback_20261015/training_comparison_20261016/CURRENT_PPO_COMPARISON.json",
+    "at": "2026-10-17T05:07:53.063167+08:00",
+    "validation_source_at": "2026-10-17T05:06:13.853102+08:00",
+    "evaluated_candidate_additional_ppo_steps": 1993,
+    "model": "models/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_s231017",
+    "validation_completed": true,
+    "validation_reason": "Known complete-mission success or efficiency lost",
+    "new_independent_physical_episodes": 30,
+    "fixed28_completed": 28,
+    "fixed28_safe_successes": 28,
+    "per_group": {
+      "normal18": {
+        "completed": 18,
+        "safe_successes": 18
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe_successes": 5
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe_successes": 3
+      },
+      "heading2": {
+        "completed": 2,
+        "safe_successes": 2
+      }
+    },
+    "normal18_comparison": {
+      "schema": "paired_navigation_development_gate_v1",
+      "tasks": 18,
+      "common_successes": 18,
+      "lost_successes": [],
+      "gained_successes": [],
+      "safety_nonregression": true,
+      "common_success_travel_m": [
+        67.13577183988691,
+        67.11121422287155
+      ],
+      "common_success_seconds": [
+        459.40000000001334,
+        460.00000000001364
+      ],
+      "total_travel_relative_change": -0.0003657903430964726,
+      "total_time_relative_change": 0.001306051371354533,
+      "pairs": [
+        {
+          "case_id": "motion_profile_015",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "travel_relative_change": -0.004321987722505138,
+          "time_relative_change": 0.016574585635367622
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_002",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "motion_profile_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_00",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_05",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_12",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_17",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_24",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "localization_nav_31",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "travel_relative_change": 0.0,
+          "time_relative_change": 0.0
+        }
+      ],
+      "limits": {
+        "total_travel_increase": 0.02,
+        "total_time_increase": 0.05,
+        "per_task_travel_increase": 0.2,
+        "per_task_time_increase": 0.2
+      },
+      "efficiency_nonregression": true,
+      "all_regression_checks_passed": true,
+      "larger_training_gate_passed": true,
+      "deployment_approved": false,
+      "scope": "Reused development tasks only; no automatic promotion"
+    },
+    "known_complete_mission_comparisons": [
+      {
+        "case_id": "pre_ppo_holdout_dynamic_00",
+        "reference": {
+          "safe_success": false,
+          "collisions": 0,
+          "timeout": true,
+          "seconds": 139.99999999994517,
+          "travel_m": 2.9903580895023905
+        },
+        "candidate": {
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "seconds": 61.60000000001306,
+          "travel_m": 5.8898308211850745
+        }
+      },
+      {
+        "case_id": "pre_ppo_holdout_dynamic_01",
+        "reference": {
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "seconds": 34.59999999999925,
+          "travel_m": 4.3882475749918815
+        },
+        "candidate": {
+          "safe_success": true,
+          "collisions": 0,
+          "timeout": false,
+          "seconds": 53.400000000008866,
+          "travel_m": 4.628456294733507
+        }
+      }
+    ],
+    "localizer_router_docking_frozen": true,
+    "no_new_localization_improvement_claim": true,
+    "old_real_car_46_of_48_uses_different_set": true,
+    "no_unseen_map_or_target_board_claim": true,
+    "original_deployment_replaced": false,
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "original_gates_preserved": true,
+    "late106_not_waived": true,
+    "live_handles": [],
+    "validation_sha256": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "snapshot": "reports/stop_feedback_20261015/training_comparison_20261016/snapshot_20261017_050650",
+    "terminal_handles": [
+      {
+        "unit": "rl-guard-aligned-ppo-resume-validate-20261017.service",
+        "checked_at": "2026-10-17T05:07:53.063167+08:00",
+        "MainPID": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "InvocationID": ""
+      },
+      {
+        "unit": "rl-guard-aligned-mechanism-audit-20261017.service",
+        "checked_at": "2026-10-17T05:07:53.063167+08:00",
+        "MainPID": "0",
+        "ExecMainStatus": "0",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead",
+        "InvocationID": ""
+      }
+    ],
+    "overall_upgrade_gate_passed": false,
+    "dynamic01_time_relative_increase": 0.5433526011563254,
+    "remaining_fixed_protocol_not_executed_after_failure": {
+      "known_complete_missions": 4,
+      "hard_recoveries": 3,
+      "fresh_seed_pairs": 8
+    },
+    "model_mechanism_actual_replay_completed": {
+      "decisions": 1993,
+      "export_parity_rows": 1993,
+      "reason_block_action_changes": 77,
+      "risk_block_action_changes": 71,
+      "supported_states": 1246,
+      "not_a_navigation_success_claim": true
+    },
+    "terminal_snapshot": "reports/stop_feedback_20261015/training_comparison_20261016/terminal_20261017_050753"
+  },
+  "current_hybrid_memory_replay": {
+    "completed": true,
+    "new_physical_episodes": 0,
+    "not_installed": true,
+    "source_trajectory_geometry_mismatches": 0,
+    "replay_frames": 2665,
+    "pure_turn_geometry_only": true,
+    "no_proof_of_96_recovery_restoration": true,
+    "evidence_tests_passed": 12,
+    "report": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/REPLAY.json"
+  },
+  "current_imminent_risk_training_coverage": {
+    "sampled_decisions": 1993,
+    "valid_short_contact_frames": 189,
+    "stop_contact_frames": 124,
+    "stop_contact_with_motion": 49,
+    "imminent_stop_contact_frames": 86,
+    "imminent_stop_contact_only_stop": 73,
+    "imminent_stop_contact_with_motion": 13,
+    "imminent_stop_contact_with_trainable_choices": 13,
+    "at_least_one_legal_later_or_no_contact_forecast": 12,
+    "sampled_later_or_no_contact_motion": 7,
+    "sampled_stop_with_imminent_contact_and_choices": 5,
+    "negative_advantage_for_those_stops": 3,
+    "positive_advantage_for_those_stops": 2,
+    "report": "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/TRAINING_RISK_COVERAGE.json",
+    "correlated_training_frames_only": true
+  },
+  "current_auxiliary_behavior_retention": {
+    "at": "2026-10-17T05:26:19.494646+08:00",
+    "source_additional_ppo_steps": 1993,
+    "new_ppo_steps": 0,
+    "new_supervised_updates": 119,
+    "fit_passed": true,
+    "total_reference_rows": 4282,
+    "original_reference_rows": 3799,
+    "original_stop_labels_retained": 557,
+    "total_stop_labels_correct": 658,
+    "model": "models/stop_feedback_20261015/v2_behavior_retention_s231017",
+    "checkpoint_sha256": "89b7f07ada0edccb4c8ca667d06285dfab11781382f0abdde05380108e5cd0f4",
+    "new_model_deployment_approved": false,
+    "dynamic01_full_mission_before": {
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "physical_guards": 0,
+      "seconds": 53.400000000008866,
+      "travel_m": 4.628456294733507,
+      "voluntary_wait_frames": 27,
+      "only_stop_frames": 82
+    },
+    "dynamic01_full_mission_after": {
+      "safe_success": true,
+      "collisions": 0,
+      "false_arrival": false,
+      "physical_guards": 0,
+      "seconds": 34.59999999999925,
+      "travel_m": 4.3882475749918815,
+      "voluntary_wait_frames": 1,
+      "only_stop_frames": 18
+    },
+    "dynamic01_original_baseline_time_and_path_restored": true,
+    "first33_decisions_plus_current625_input_and_masks_physically_identical_until_divergence": true,
+    "exact_first_divergence_s": 6.6,
+    "early_action6_to_action11": true,
+    "known_dynamic00_and_dynamic01_now_training_cases": true,
+    "not_unseen_generalization": true,
+    "guard_hardware_memory_actions_observation_and_frozen_components_unchanged": true,
+    "validation_status": {
+      "status": "physical_case",
+      "group": "normal18",
+      "case_id": "recovery_holdout_02",
+      "variant": "candidate",
+      "completed_episodes": 3,
+      "worker_job": "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/jobs/normal18_recovery_holdout_02_candidate.json"
+    },
+    "validation_completed": false,
+    "completed_physical_episodes": 3,
+    "validation_reason": null,
+    "live_handles": [
+      {
+        "unit": "rl-v2-behavior-retention-validate-20261017.service",
+        "checked_at": "2026-10-17T05:26:19.494646+08:00",
+        "MainPID": "2180324",
+        "MemoryCurrent": "1465937920",
+        "MemoryMax": "3221225472",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3"
+      }
+    ],
+    "active_worker": {
+      "pid": 2181484,
+      "job": "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/jobs/normal18_recovery_holdout_02_candidate.json",
+      "log": "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/jobs/normal18_recovery_holdout_02_candidate.log",
+      "live_now": true,
+      "proc_start_ticks": 49372498,
+      "checked_at": "2026-10-17T05:26:19.494646+08:00"
+    },
+    "original_full_safety_efficiency_and_late106_scope_preserved": true,
+    "report": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/README.md",
+    "gain_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC01_GAIN_AUDIT.json",
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_efficiency_cause_audit": {
+    "completed": true,
+    "extra_only_stop_s": 12.8,
+    "extra_voluntary_stop_s": 5.2,
+    "extra_nonzero_choice_s": 0.8,
+    "first_divergence_present_already_in_v2_migration": true,
+    "original_predictor_contact_replay_error": 0.0,
+    "replayed_sensor_frames": 565,
+    "alternative_registration_not_adopted_due_historical_collision": true,
+    "circle_diagnostic_frame_error_corrected": true,
+    "report": "reports/stop_feedback_20261015/v2_efficiency_diagnosis_20261017/README.md"
+  },
+  "current_hybrid_memory_pair_preflight": {
+    "service": {
+      "MainPID": "2184732",
+      "MemoryCurrent": "9674752",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "InvocationID": "575d6912c71543359234fa06b34e291b",
+      "start_ticks": "49435628",
+      "command": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/physical_pair.py "
+    },
+    "status": {
+      "status": "waiting_for_exact_predecessors",
+      "at": "2026-10-17T05:38:40.442716+08:00",
+      "validator_live": true,
+      "subset_audit_live": true,
+      "unit_state": {
+        "MainPID": "2180324",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3"
+      }
+    },
+    "maximum_physical_episodes": 10,
+    "matching_v2_migration_weights": true,
+    "memory_installed_from_initialization": true,
+    "no_teacher_after_release": true,
+    "initial_96_success_retention_then97_6_106_and_two_full_missions": true,
+    "not_current_auxiliary119_model": true,
+    "not_a_deployment_bundle": true,
+    "original_full_scope_still_required": true
+  },
+  "current_completed_case_comparison": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/COMPLETED_CASE_COMPARISON.json",
+  "current_hybrid_memory_subset_admission": {
+    "completed": true,
+    "frames": 2665,
+    "retained_point_timestamp_checks": 556213,
+    "maximum_original_points": 296,
+    "no_capacity_eviction": true,
+    "all_retained_points_original": true,
+    "does_not_prove_extra_clearing_safe": true,
+    "resource": {
+      "seconds": 975.1487684100284,
+      "cpu_seconds": 97.51535518200001,
+      "average_cpu_cores": 0.1000004905313042,
+      "peak_rss_mib": 42.2578125,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "exact_audit_process_terminal": true,
+    "result": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/SUBSET_REPLAY.json",
+    "admission": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/SUBSET_ADMISSION.json"
+  },
+  "current_candidate_feedback_audit": {
+    "path": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/CURRENT_FEEDBACK_AUDIT.json",
+    "recorded_cases": 25,
+    "recorded_frames": 3931,
+    "learned_frames": 3456,
+    "previous_reason_frames_checked": 3906,
+    "history_frames_checked": 3881,
+    "learned_stop_with_motion_frames": 256,
+    "learned_only_stop_frames": 184,
+    "independent_full_guard_geometry_not_recomputed": true,
+    "does_not_prove_neural_use_or_navigation_success": true,
+    "resource": {
+      "seconds": 16.78636703500524,
+      "cpu_seconds": 1.679629175,
+      "average_cpu_cores": 0.10005912366251771,
+      "peak_rss_mib": 38.9296875,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "input_hashes_verified": 30,
+    "neural_and_physics_not_loaded": true
+  },
+  "current_fixed28_and_joint_dynamic_gains": {
+    "at": "2026-10-17T06:05:07.280283+08:00",
+    "previous_goal_turn_classification": "progress",
+    "current_goal_turn_classification": "progress",
+    "actual_new_evidence": [
+      "Current auxiliary119 completed original fixed28 with every safety and efficiency gate independently recomputed.",
+      "Current dynamic00 safe61.6s, retains prior PPO gain over BC4500 timeout140s; all309 recorded observations/actions/physical/sensor frames exact to prior PPO.",
+      "Current same model also repaired dynamic01 to34.6s vs prior53.4s; combined gains verified, but both are known training-development cases."
+    ],
+    "fixed28_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/FIXED28_AUDIT.json",
+    "dynamic00_retention_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC00_RETENTION_AUDIT.json",
+    "current_total_physical_episodes": 30,
+    "current_validation_completed": false,
+    "groups": {
+      "observed6": {
+        "completed": 2,
+        "safe": 2
+      },
+      "normal18": {
+        "completed": 18,
+        "safe": 18
+      },
+      "sensor5": {
+        "completed": 5,
+        "safe": 5
+      },
+      "source_recovery3": {
+        "completed": 3,
+        "safe": 3
+      },
+      "heading2": {
+        "completed": 2,
+        "safe": 2
+      }
+    },
+    "verified_live_handles": [
+      {
+        "MainPID": "2180324",
+        "MemoryCurrent": "1483898880",
+        "MemoryMax": "3221225472",
+        "ActiveState": "active",
+        "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3",
+        "start_ticks": "49348108",
+        "unit": "rl-v2-behavior-retention-validate-20261017.service"
+      },
+      {
+        "MainPID": "2184732",
+        "MemoryCurrent": "9695232",
+        "MemoryMax": "3221225472",
+        "ActiveState": "active",
+        "InvocationID": "575d6912c71543359234fa06b34e291b",
+        "start_ticks": "49435628",
+        "unit": "rl-hybrid-memory-pair-preflight-20261017.service"
+      }
+    ],
+    "new_physical_episodes_in_these_readonly_audits": 0,
+    "new_ppo_steps": 0,
+    "new_optimizer_updates": 0,
+    "known_safety_failures_and_late97_6_106_and_conditional_fresh_tests_not_waived": true,
+    "no_current_localization_router_or_target_board_improvement_claim": true,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_terminal_validation": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json",
+  "current_training_comparison_report": "reports/stop_feedback_20261015/training_comparison_20261016/COMPARISON_20261017_JOINT_LINEAR_TERMINAL.md",
+  "current_separate_memory_pair_status": {
+    "completed": true,
+    "adopted": false,
+    "reason": "Prior original success or efficiency lost; stop expansion",
+    "report": "reports/stop_feedback_20261015/hybrid_memory_pair_preflight_20261017/RESULTS.json"
+  },
+  "active_worker": null,
+  "current_progress_report": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+  "latest_unverified_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "current_candidate_validation": {
+    "original_formal_episodes": 35,
+    "new_supplement_episodes": 2,
+    "combined_saved_checks": {
+      "physical_checks": 37,
+      "safe_arrivals": 35,
+      "timeouts": 2,
+      "collisions": 0,
+      "scope": "Mixed known/development/recovery checks with correlated prefixes, not independent missions or generalization success rate."
+    },
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "hard106_failed": true,
+    "hard97_6_failed": true,
+    "hard96_success_retained": true,
+    "frozen_fresh8_not_executed": true,
+    "not_generalization_or_deployment_approval": true
+  },
+  "queued_neural_mechanism_status": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NEURAL_MECHANISM_STATUS.json",
+  "latest_candidate_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "current_fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+  "current_priority_cases_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/PRIORITY_PHYSICAL_AUDIT.json",
+  "current_joint_retention_fit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json",
+  "current_joint_data_hard_coverage": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/HARD_COVERAGE.json",
+  "current_deployment_contract_repair": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/DEPLOYMENT_CONTRACT_REPAIR.json",
+  "verified_live_handles": [],
+  "current_normal18_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json",
+  "current_recorded_auditor_status": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_AUDITS_STATUS.json",
+  "current_fixed28_independent_audit_pending": false,
+  "source_margin_fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_residual_20261017/FIXED28_AUDIT.json",
+  "current_recorded_feedback_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json",
+  "current_conditional_late106_diagnostic": {
+    "timer": {
+      "NextElapseUSecMonotonic": "5d 19h 57min 46.599713s",
+      "LastTriggerUSec": "Sat 2026-10-17 08:14:10 CST",
+      "Id": "rl-late106-joint-beam-20261017.timer",
+      "ActiveState": "active",
+      "SubState": "waiting",
+      "InvocationID": "c8619e0d75ad40b8894338b5463750ce"
+    },
+    "status_snapshot": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/TRIGGER_CHECK_SNAPSHOT_20261017_081444.json",
+    "protocol": "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017",
+    "service": "rl-late106-joint-beam-20261017.service",
+    "physics_not_yet_launched": true,
+    "maximum_physical_steps": 4300,
+    "not_model_success_or_infeasibility_proof": true,
+    "no_automatic_training": true
+  },
+  "current_known6_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/KNOWN6_PHYSICAL_AUDIT.json",
+  "current_low_memory_teacher_diagnostic": {
+    "unit": "rl-late106-creep-teacher-20261017.service",
+    "status_snapshot": {
+      "stage": "probe_1",
+      "child_pid": 2246419,
+      "child_start_ticks": "50595287",
+      "completed_jobs": 1,
+      "one_model_or_physics_worker": true,
+      "at": "2026-10-17T08:49:56.451151+08:00",
+      "new_ppo_steps": 0,
+      "new_training_updates": 0,
+      "goal_achieved": false,
+      "deployment_approved": false
+    },
+    "not_model_success": true,
+    "no_automatic_training": true
+  },
+  "current_neural_mechanism_completed": true,
+  "current_completed_creep_trials": {
+    "completed": true,
+    "safe_teachers": 0,
+    "distinct_recorded_trajectories": 1,
+    "report": "reports/stop_feedback_20261015/late106_creep_teacher_20261017/RESULTS.json"
+  },
+  "current_compact_teacher_search": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/late106_compact_beam_20261017/RESULTS.json",
+    "safe_teacher_candidate_found": false,
+    "new_physical_steps": 1512,
+    "no_infeasibility_claim": true
+  },
+  "current_positive_free_shadow": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_shadow_v2_20261017/RESULTS.json",
+    "recorded_frames": 2060,
+    "retained_point_timestamp_checks": 429336,
+    "hard106_extra_sampled_geometry": 8,
+    "creep_extra_sampled_geometry": 29,
+    "original96_extra_sampled_geometry": 0,
+    "no_model_success_or_safety_permission_claim": true
+  },
+  "current_positive_free_physics": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_physics_20261017/RESULTS.json",
+    "safe_teacher_candidate_found": false,
+    "new_physical_steps": 878,
+    "changed_memory_not_adopted": true
+  },
+  "current_positive_free_replay": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_replay_admission_20261017/RESULTS.json",
+    "replay_launched": false,
+    "no_safe_teacher": true
+  },
+  "current_positive_free_failure_audit": {
+    "completed": true,
+    "report": "reports/stop_feedback_20261015/positive_free_failure_audit_20261017/RESULTS.json",
+    "geometry_checks": 258,
+    "matched": 258,
+    "raw_bottleneck": "reports/stop_feedback_20261015/positive_free_failure_audit_20261017/RAW_GEOMETRY_BOTTLENECK.json"
+  },
+  "current_framewise_teacher_search": {
+    "unit": "rl-late106-framewise-20261017.service",
+    "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+    "pid": 2260374,
+    "outcome": "interrupted_by_user_not_completed_evaluation",
+    "last_persisted_depth": 118,
+    "last_persisted_physical_steps": 2222,
+    "last_persisted_status_at": "2026-10-17T09:54:56.925978+08:00",
+    "complete_safe_teacher_found": false,
+    "no_infeasibility_claim": true,
+    "last_snapshot": "reports/stop_feedback_20261015/user_pause_20261017/LAST_RECORDED_SEARCH_STATUS.json",
+    "running": false
+  },
+  "current_framewise_fresh_replay": {
+    "running": false,
+    "launched": false,
+    "status": "paused_by_user",
+    "report": "reports/stop_feedback_20261015/user_pause_20261017/PROGRESS.json"
+  },
+  "work_state": "paused_after_bounded_acceptance_followup",
+  "current_user_pause": {
+    "at": "2026-10-17T09:55:55.264544+08:00",
+    "status": "paused_by_user",
+    "goal_status_requested": "paused",
+    "authorizing_user_request": "如果设计的差不多了，就可以停止了",
+    "previous_goal_turn_classification": "verified_wait",
+    "current_goal_turn_classification": "progress",
+    "current_goal_turn_evidence": [
+      "Specific original-guard physics search and replay waiter stopped at user request; exact PIDs absent and no active RL units/timers.",
+      "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json",
+      "reports/stop_feedback_20261015/user_pause_20261017/CANDIDATE_FILES.json"
+    ],
+    "goal_achieved": false,
+    "deployment_approved": false,
+    "active_worker": null,
+    "live_handles": [],
+    "verified_live_handles": [],
+    "current_candidate_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+    "original_deployment_replaced": false,
+    "formal_validation": {
+      "episodes": 35,
+      "safe_arrivals": 34,
+      "timeouts": 1,
+      "collisions": 0,
+      "fixed28_passed": true,
+      "known6_passed": true,
+      "scope": "Includes known training/development and initialized recovery tasks; not an independent generalization rate.",
+      "report": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json"
+    },
+    "matched_improvement": {
+      "dynamic02_prior_seconds": 140.0,
+      "prior_timeout": true,
+      "current_seconds": 49.2,
+      "current_safe_arrival": true,
+      "prior_voluntary_wait_frames": 569,
+      "current_voluntary_wait_frames": 1,
+      "normal18_seconds_before_after": [
+        459.4,
+        459.4
+      ],
+      "normal18_travel_m_before_after": [
+        67.13577183988691,
+        67.13577183988691
+      ]
+    },
+    "paused_search": {
+      "unit": "rl-late106-framewise-20261017.service",
+      "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+      "pid": 2260374,
+      "outcome": "interrupted_by_user_not_completed_evaluation",
+      "last_persisted_depth": 118,
+      "last_persisted_physical_steps": 2222,
+      "last_persisted_status_at": "2026-10-17T09:54:56.925978+08:00",
+      "complete_safe_teacher_found": false,
+      "no_infeasibility_claim": true,
+      "last_snapshot": "reports/stop_feedback_20261015/user_pause_20261017/LAST_RECORDED_SEARCH_STATUS.json"
+    },
+    "new_training_updates_after_latest_candidate": 0,
+    "new_ppo_steps_after_latest_candidate": 0,
+    "localizer_router_terminal_changed_this_stage": false,
+    "remaining_requirements": [
+      "Original106s late recovery remains unresolved; nominally legal motion does not prove a complete safe recovery.",
+      "Current candidate original97.6s and96s full recovery retention checks remain unexecuted.",
+      "Conditional frozen fresh8 paired evaluation remains unexecuted; no generalization or deployment approval.",
+      "Measured-speed motion-prediction shadow is diagnostic only; no runtime safety-rule change adopted."
+    ],
+    "diagnostic_motion_report": "reports/stop_feedback_20261015/measured_motion_geometry_audit_20261017/RESULTS.json",
+    "next_action": "No further training, simulation, automatic replay or model replacement; resume only on a new user request.",
+    "stop_evidence": "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json"
+  },
+  "current_measured_motion_geometry_audit": {
+    "completed": true,
+    "geometry_checks": 505,
+    "matched": 505,
+    "report": "reports/stop_feedback_20261015/measured_motion_geometry_audit_20261017/RESULTS.json",
+    "not_adopted": true,
+    "not_localization_improvement": true
+  },
+  "bounded_deployment_acceptance_followup": {
+    "at": "2026-10-17T10:12:59.840518+08:00",
+    "optimization_goal_status": "paused",
+    "work_state": "paused_after_bounded_acceptance_followup",
+    "completed": true,
+    "active_worker": null,
+    "verified_live_handles": [],
+    "final_review": "reports/stop_feedback_20261015/deployment_acceptance_supplement_20261017/FINAL_REVIEW.json",
+    "supplement": {
+      "episodes": 2,
+      "safe_arrivals": 1,
+      "timeouts": 1,
+      "collisions": 0
+    },
+    "combined_saved_checks": {
+      "physical_checks": 37,
+      "safe_arrivals": 35,
+      "timeouts": 2,
+      "collisions": 0,
+      "scope": "Mixed known/development/recovery checks with correlated prefixes, not independent missions or generalization success rate."
+    },
+    "new_training_updates": 0,
+    "new_ppo_steps": 0,
+    "model_replacement": false,
+    "deployment_approved": false,
+    "next_action": "Bounded assessment complete. Training and optimization remain paused; no automatic further trials or model replacement."
+  },
+  "last_user_request": "直接进行部署验收需要多长时间，看看是否可以改善？",
+  "optimization_remains_paused": true
+}

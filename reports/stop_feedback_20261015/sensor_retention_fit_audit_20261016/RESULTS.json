@@ -1,0 +1,60 @@
+{
+  "completed": true,
+  "at": "2026-10-16T12:58:35.762220+00:00",
+  "inputs": {
+    "training/experiments/audit_normal_retention_fit.py": "efb53005808cca8b6ad660792d32d08cbccca511b8e10f1441e0eb6a7c91e998",
+    "models/stop_feedback_20261015/sensor_retention_pair_s231016/retained500/checkpoint.pt": "c5b3378a113ad1604a9c620ed368b4aba62757e88eabb8057742bf681429f897",
+    "models/stop_feedback_20261015/sensor_retention_pair_s231016/retained500/RESULTS.json": "9d792b443e80790f2a362421b312fad305b7daace75b3ced0ab4184897351038",
+    "models/stop_feedback_20261015/normal_retention_refit2_s231016/tail500/checkpoint.pt": "3fe10bba41684b57f414f8386c3ea859a257204abca0b7a7c75288ebe531f0ea",
+    "reports/stop_feedback_20261015/sensor_retention_protocol_20261016/demonstrations.npz": "79ff03f4518847c16a566d19072381872ec3d117d0859b9cbd112c19318c8834",
+    "reports/stop_feedback_20261015/normal_wait_diagnosis_20261016/RESULTS.json": "f35a61b9a06181db67ff8429e1955b4fa95863be60eaedf40ce86e07e2d8c7e5",
+    "reports/stop_feedback_20261015/normal_retention_replay_20261016/RESULTS.json": "f919dac20e972195391000c3818f4b1e313a6d6890ea7d8c80eddc0f84084154",
+    "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/hard3_w11_training_stall_t106.npz": "9d307c7e9a83a3c1f75c4a3158eb67c97cc9f98222e174e101ebe128ab127767",
+    "reports/stop_feedback_20261015/normal_retention_replay_20261016/normal_retention_recovery_holdout_03.npz": "31019f14b38f054951ef4fb19b9a70f8d3827bcd341b4984f14d7df43ca87873",
+    "reports/stop_feedback_20261015/normal_retention_replay_20261016/normal_retention_motion_profile_002.npz": "a4339695b606bb701f687bc5a53962018ec493b05394f2460a25bb4b3522027c"
+  },
+  "correct_source_labels": 4067,
+  "residual_errors": [],
+  "first_divergences": [
+    {
+      "case_id": "recovery_holdout_03",
+      "frame": 13,
+      "reference_choice": 11,
+      "control_choice": 11,
+      "candidate_choice": 11,
+      "reference_frames": 196,
+      "candidate_wrong_reference_frames": [],
+      "control_wrong_reference_frame_count": 0,
+      "no_navigation_success_inferred": true
+    },
+    {
+      "case_id": "motion_profile_002",
+      "frame": 63,
+      "reference_choice": 1,
+      "control_choice": 1,
+      "candidate_choice": 1,
+      "reference_frames": 282,
+      "candidate_wrong_reference_frames": [],
+      "control_wrong_reference_frame_count": 0,
+      "no_navigation_success_inferred": true
+    }
+  ],
+  "old_actual106_input_audit": {
+    "recorded_frames": 170,
+    "control_legal_wait": 168,
+    "candidate_legal_wait": 168,
+    "changed_decisions": 0,
+    "no_counterfactual_executed": true
+  },
+  "no_new_physics_labels_or_training": true,
+  "new_ppo_steps": 0,
+  "source_fit_gate_remains_failed": false,
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 6.924468588025775,
+    "cpu_seconds": 0.6926446700000002,
+    "average_cpu_cores": 0.10002856698603049,
+    "peak_rss_mib": 510.16796875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

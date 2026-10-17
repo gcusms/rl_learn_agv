@@ -1,0 +1,271 @@
+{
+  "completed": true,
+  "at": "2026-10-17T05:18:01.941156+08:00",
+  "admitted_rows": 4282,
+  "original_reference_rows": 3799,
+  "original_reference_stop_labels": 557,
+  "total_stop_labels": 658,
+  "source_rows": [
+    {
+      "group": 1,
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "source": "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_parent.npz",
+      "source_sha256": "93cf99fb368e8135c7b98aa7b9786845f28016e84e77d8d85c6d897773a2faee",
+      "full_mission_success_reference": true,
+      "old_v1_history_causally_converted": true,
+      "admitted_frames": 174,
+      "stop_labels": 19,
+      "changed_history_frames": 54,
+      "now_training_development_case_not_independent_evaluation": true
+    },
+    {
+      "group": 2,
+      "case_id": "pre_ppo_holdout_dynamic_00",
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_00_candidate.npz",
+      "source_sha256": "4bc1e8e05997d1e25c0f555c1921f35e9e8fd323e44a6516c9e8dcfbd9f8b2a6",
+      "full_mission_success_reference": true,
+      "old_v1_history_causally_converted": false,
+      "admitted_frames": 309,
+      "stop_labels": 82,
+      "changed_history_frames": 0,
+      "now_training_development_case_not_independent_evaluation": true
+    }
+  ],
+  "exact_input_conflicts": [],
+  "illegal_labels": 0,
+  "old_original_rows_byte_identical": true,
+  "input_risk_semantics": {
+    "schema": "long_action_risk_history_v2_guard_lower_bound",
+    "dimensions": 481,
+    "training_dimensions": 478,
+    "parent_contract": {
+      "schema": "stop_decision_feedback_v2",
+      "prefix_dimensions": 300,
+      "training_dimensions": 436,
+      "heading_prefix_dimensions": 303,
+      "dimensions": 439,
+      "append_dimensions": 136,
+      "action_commands": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.05,
+          0.5
+        ],
+        [
+          0.05,
+          -0.5
+        ],
+        [
+          0.01,
+          0.5
+        ],
+        [
+          0.01,
+          -0.5
+        ],
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "fields": [
+        "12_current_guard_rejection_groups_one_hot",
+        "previous_executed_stop_reason_one_hot",
+        "12_guard_forecast_contact_scores",
+        "nonzero_choices_over_11",
+        "scan_age_over_guard_limit",
+        "previous_idle_seconds_over_5",
+        "previous_idle_with_choices_seconds_over_5",
+        "prediction_input_valid",
+        "moving_tracks_over_4",
+        "oldest_track_age_over_0.8",
+        "scan_valid"
+      ],
+      "rejection_groups": [
+        "accepted",
+        "perception_or_odometry",
+        "localization_or_route",
+        "static_geometry",
+        "laser_geometry",
+        "dynamic_prediction",
+        "projection",
+        "other"
+      ],
+      "previous_reasons": [
+        "none",
+        "nonfinite_input",
+        "stale_or_future_scan",
+        "scan_unavailable",
+        "odometry_jump",
+        "localization_uncertain",
+        "learned_route_incomplete",
+        "reverse_without_rear_visibility",
+        "reverse_duration_limit",
+        "static_braking_footprint",
+        "laser_braking_footprint",
+        "escape_not_increasing_clearance",
+        "unsafe_turn_blocked",
+        "unsafe_translation_blocked",
+        "estimated_goal_reached",
+        "other",
+        "predicted_dynamic_contact",
+        "predictive_command_contract",
+        "policy_wait",
+        "only_stop_available"
+      ],
+      "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+      "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+      "unknown_forecast_is_not_clear": true,
+      "legacy_prefix_unchanged": true,
+      "stop_always_selectable": true,
+      "simulator_truth_used": false,
+      "commands_issued": false,
+      "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+      "executed_reason_retained_during_idle": true
+    },
+    "unchanged_runtime_prefix_dimensions": 439,
+    "unchanged_training_prefix_dimensions": 436,
+    "append_dimensions": 42,
+    "history_ages_s": [
+      0.4,
+      0.2,
+      0.0
+    ],
+    "maximum_historical_sample_age_s": 0.05,
+    "fields_per_frame": [
+      "12_forecast_contact_scores",
+      "supported_prediction_valid",
+      "supported_tracks_over_4"
+    ],
+    "horizon_s": 5.0,
+    "forecast_period_s": 0.2,
+    "contact_score": "earliest existing long forecast or same-frame guard TTC, normalized as1-contact_s/5.2",
+    "unsupported_or_missing_history": "zero_values_and_zero_validity_not_certified_clear",
+    "margin_m": 0.04,
+    "velocity_uncertainty_floor_m_s": 0.025,
+    "adaptive_track_uncertainty": true,
+    "finite_measured_motion_response": true,
+    "response_gain": 20.0,
+    "response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "action_commands": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.2,
+        0.0
+      ],
+      [
+        0.1,
+        0.0
+      ],
+      [
+        0.05,
+        0.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        -0.5
+      ],
+      [
+        0.05,
+        0.5
+      ],
+      [
+        0.05,
+        -0.5
+      ],
+      [
+        0.01,
+        0.5
+      ],
+      [
+        0.01,
+        -0.5
+      ],
+      [
+        0.2,
+        0.5
+      ],
+      [
+        0.2,
+        -0.5
+      ]
+    ],
+    "frame": "guard tracks and robot pose in continuous odometry coordinates",
+    "simulator_truth_used": false,
+    "future_sensor_frames_used": false,
+    "absolute_episode_time_input": false,
+    "commands_issued": false,
+    "actions_masks_body_guard_and_blind_memory_unchanged": true,
+    "short_guard_contact_is_risk_lower_bound": true,
+    "short_guard_horizon_s": 1.2,
+    "short_and_long_supported_track_counts_combined": true,
+    "supported_prediction_valid": "some sensor-supported forecast exists; zero risk does not certify clearance",
+    "requires_retraining_after_v1": true,
+    "changes_action_permission": false,
+    "additional_neural_inference": false
+  },
+  "same_current_scan_for_all_components": true,
+  "initialization_and_failed_episodes_excluded": true,
+  "fresh_seed_set_excluded": true,
+  "archive_sha256": "c93dbdc87c0b9cf2c625a37fd69667fbb2ec8c9c7eea5defcc77a0f7965bb9b0",
+  "inputs": {
+    "reports/stop_feedback_20261015/v2_behavior_retention_20261017/prepare.py": "307c1d2f7837da611d1bc6ee04c82296de00fa69819d1e302b9db05e98372d75",
+    "reports/stop_feedback_20261015/guard_forecast_alignment_protocol_20261017/aligned_demonstrations.npz": "613bfba91a9629734ba3f84dd2196ee20a9be843a7add1bd93604e0a339589c1",
+    "reports/stop_feedback_20261015/guard_forecast_alignment_protocol_20261017/ALIGNED_DEMONSTRATIONS.json": "a4d2d1eec512c7342c661db189d63f88a4ed05935791b6c924323d32672048cc",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/RESULTS.json": "80dce686101690a2176a1c2b2ee22b0648c937e58994ed2c9cc437e1de121d7c",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "reports/stop_feedback_20261015/guard_forecast_alignment_protocol_20261017/causal_history.py": "546b97974b35df9e5bd65fd6de8fd5cb443b501045333dfc7bcf47da5928a9af",
+    "training/neural_navigation/aligned_risk_observation.py": "775c3d118402903092e2ac7f6704c47ae96905ff0b5ae0c7121abc3f37cde8bc",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_parent.npz": "93cf99fb368e8135c7b98aa7b9786845f28016e84e77d8d85c6d897773a2faee",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_00_candidate.npz": "4bc1e8e05997d1e25c0f555c1921f35e9e8fd323e44a6516c9e8dcfbd9f8b2a6"
+  },
+  "resource": {
+    "seconds": 1.609212220995687,
+    "cpu_seconds": 0.5769935,
+    "average_cpu_cores": 0.3585564989327449,
+    "peak_rss_mib": 90.6484375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_physical_episodes": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,373 @@
+{
+  "completed": true,
+  "at": "2026-10-16T10:23:42.801784+00:00",
+  "correct_source_labels": 3251,
+  "total_source_labels": 3252,
+  "updates": 2000,
+  "fit_weighting": {
+    "mode": "recovery_phase",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 629,
+        "unique_head_inputs": 481,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 2000,
+        "unique_head_inputs": 1689,
+        "allocated_loss_weight": 0.24999999999999992
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 27,
+        "unique_head_inputs": 21,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "fit_records": [
+    {
+      "update": 50,
+      "active_correct": 2591,
+      "active_examples": 2656,
+      "loss": 0.10074499994516373,
+      "minimum_stop_target_probability": 0.0015678657218813896,
+      "minimum_motion_target_probability": 0.00010583512630546466
+    },
+    {
+      "update": 100,
+      "active_correct": 2611,
+      "active_examples": 2656,
+      "loss": 0.06024077534675598,
+      "minimum_stop_target_probability": 0.004349138587713242,
+      "minimum_motion_target_probability": 0.00012634322047233582
+    },
+    {
+      "update": 150,
+      "active_correct": 2620,
+      "active_examples": 2656,
+      "loss": 0.04478197544813156,
+      "minimum_stop_target_probability": 0.02932104840874672,
+      "minimum_motion_target_probability": 0.00011779153282986954
+    },
+    {
+      "update": 200,
+      "active_correct": 2625,
+      "active_examples": 2656,
+      "loss": 0.033156752586364746,
+      "minimum_stop_target_probability": 0.4839937090873718,
+      "minimum_motion_target_probability": 0.00011620978330029175
+    },
+    {
+      "update": 250,
+      "active_correct": 2627,
+      "active_examples": 2656,
+      "loss": 0.026610877364873886,
+      "minimum_stop_target_probability": 0.7823666334152222,
+      "minimum_motion_target_probability": 0.00011656756396405399
+    },
+    {
+      "update": 300,
+      "active_correct": 2630,
+      "active_examples": 2656,
+      "loss": 0.022394565865397453,
+      "minimum_stop_target_probability": 0.902805745601654,
+      "minimum_motion_target_probability": 0.00011725356307579204
+    },
+    {
+      "update": 350,
+      "active_correct": 2637,
+      "active_examples": 2656,
+      "loss": 0.019349515438079834,
+      "minimum_stop_target_probability": 0.9262949824333191,
+      "minimum_motion_target_probability": 0.00012508871441241354
+    },
+    {
+      "update": 400,
+      "active_correct": 2638,
+      "active_examples": 2656,
+      "loss": 0.016711987555027008,
+      "minimum_stop_target_probability": 0.938835859298706,
+      "minimum_motion_target_probability": 0.00014379034109879285
+    },
+    {
+      "update": 450,
+      "active_correct": 2642,
+      "active_examples": 2656,
+      "loss": 0.01468786783516407,
+      "minimum_stop_target_probability": 0.9489161968231201,
+      "minimum_motion_target_probability": 0.0001639189140405506
+    },
+    {
+      "update": 500,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.013074638321995735,
+      "minimum_stop_target_probability": 0.958878755569458,
+      "minimum_motion_target_probability": 0.00018613219435792416
+    },
+    {
+      "update": 550,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.01174227800220251,
+      "minimum_stop_target_probability": 0.9664260149002075,
+      "minimum_motion_target_probability": 0.0002134527312591672
+    },
+    {
+      "update": 600,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.01062416285276413,
+      "minimum_stop_target_probability": 0.9721043109893799,
+      "minimum_motion_target_probability": 0.00024642012431286275
+    },
+    {
+      "update": 650,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.009651392698287964,
+      "minimum_stop_target_probability": 0.9764834642410278,
+      "minimum_motion_target_probability": 0.00028621984529308975
+    },
+    {
+      "update": 700,
+      "active_correct": 2643,
+      "active_examples": 2656,
+      "loss": 0.008768160827457905,
+      "minimum_stop_target_probability": 0.9798332452774048,
+      "minimum_motion_target_probability": 0.0003348293248564005
+    },
+    {
+      "update": 750,
+      "active_correct": 2646,
+      "active_examples": 2656,
+      "loss": 0.007950732484459877,
+      "minimum_stop_target_probability": 0.981968343257904,
+      "minimum_motion_target_probability": 0.000393883790820837
+    },
+    {
+      "update": 800,
+      "active_correct": 2646,
+      "active_examples": 2656,
+      "loss": 0.007211386226117611,
+      "minimum_stop_target_probability": 0.9831543564796448,
+      "minimum_motion_target_probability": 0.00046367154573090374
+    },
+    {
+      "update": 850,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.006562802940607071,
+      "minimum_stop_target_probability": 0.9842625856399536,
+      "minimum_motion_target_probability": 0.0005443427944555879
+    },
+    {
+      "update": 900,
+      "active_correct": 2649,
+      "active_examples": 2656,
+      "loss": 0.005999762564897537,
+      "minimum_stop_target_probability": 0.9853904247283936,
+      "minimum_motion_target_probability": 0.0006363965221680701
+    },
+    {
+      "update": 950,
+      "active_correct": 2650,
+      "active_examples": 2656,
+      "loss": 0.005507820285856724,
+      "minimum_stop_target_probability": 0.9865341186523438,
+      "minimum_motion_target_probability": 0.0007400248432531953
+    },
+    {
+      "update": 1000,
+      "active_correct": 2651,
+      "active_examples": 2656,
+      "loss": 0.0050722756423056126,
+      "minimum_stop_target_probability": 0.9876288175582886,
+      "minimum_motion_target_probability": 0.0008562975563108921
+    },
+    {
+      "update": 1050,
+      "active_correct": 2652,
+      "active_examples": 2656,
+      "loss": 0.00468342425301671,
+      "minimum_stop_target_probability": 0.9886559247970581,
+      "minimum_motion_target_probability": 0.000988619402050972
+    },
+    {
+      "update": 1100,
+      "active_correct": 2652,
+      "active_examples": 2656,
+      "loss": 0.004335884004831314,
+      "minimum_stop_target_probability": 0.9896332025527954,
+      "minimum_motion_target_probability": 0.001145590329542756
+    },
+    {
+      "update": 1150,
+      "active_correct": 2653,
+      "active_examples": 2656,
+      "loss": 0.004023091401904821,
+      "minimum_stop_target_probability": 0.9905621409416199,
+      "minimum_motion_target_probability": 0.0013460213085636497
+    },
+    {
+      "update": 1200,
+      "active_correct": 2653,
+      "active_examples": 2656,
+      "loss": 0.003735817037522793,
+      "minimum_stop_target_probability": 0.9914373755455017,
+      "minimum_motion_target_probability": 0.0016183140687644482
+    },
+    {
+      "update": 1250,
+      "active_correct": 2653,
+      "active_examples": 2656,
+      "loss": 0.003469508606940508,
+      "minimum_stop_target_probability": 0.9922385811805725,
+      "minimum_motion_target_probability": 0.00198277342133224
+    },
+    {
+      "update": 1300,
+      "active_correct": 2653,
+      "active_examples": 2656,
+      "loss": 0.003228378016501665,
+      "minimum_stop_target_probability": 0.9929272532463074,
+      "minimum_motion_target_probability": 0.00245110085234046
+    },
+    {
+      "update": 1350,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.003012024099007249,
+      "minimum_stop_target_probability": 0.9935134053230286,
+      "minimum_motion_target_probability": 0.0030894496012479067
+    },
+    {
+      "update": 1400,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0028131199069321156,
+      "minimum_stop_target_probability": 0.9939923882484436,
+      "minimum_motion_target_probability": 0.004129630047827959
+    },
+    {
+      "update": 1450,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0026196979451924562,
+      "minimum_stop_target_probability": 0.994407057762146,
+      "minimum_motion_target_probability": 0.006156272254884243
+    },
+    {
+      "update": 1500,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0024281577207148075,
+      "minimum_stop_target_probability": 0.9947828650474548,
+      "minimum_motion_target_probability": 0.010081193409860134
+    },
+    {
+      "update": 1550,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0022447542287409306,
+      "minimum_stop_target_probability": 0.9951580166816711,
+      "minimum_motion_target_probability": 0.01661936566233635
+    },
+    {
+      "update": 1600,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0020747799426317215,
+      "minimum_stop_target_probability": 0.9955770969390869,
+      "minimum_motion_target_probability": 0.025903407484292984
+    },
+    {
+      "update": 1650,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0019208112498745322,
+      "minimum_stop_target_probability": 0.9956889748573303,
+      "minimum_motion_target_probability": 0.037069931626319885
+    },
+    {
+      "update": 1700,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0017776418244466186,
+      "minimum_stop_target_probability": 0.9957144856452942,
+      "minimum_motion_target_probability": 0.05000224709510803
+    },
+    {
+      "update": 1750,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0016345289768651128,
+      "minimum_stop_target_probability": 0.9956690073013306,
+      "minimum_motion_target_probability": 0.06481484323740005
+    },
+    {
+      "update": 1800,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0014737766468897462,
+      "minimum_stop_target_probability": 0.9954877495765686,
+      "minimum_motion_target_probability": 0.08051520586013794
+    },
+    {
+      "update": 1850,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0013111196458339691,
+      "minimum_stop_target_probability": 0.9955008625984192,
+      "minimum_motion_target_probability": 0.09666234999895096
+    },
+    {
+      "update": 1900,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.0011710913386195898,
+      "minimum_stop_target_probability": 0.9958608746528625,
+      "minimum_motion_target_probability": 0.1165396049618721
+    },
+    {
+      "update": 1950,
+      "active_correct": 2654,
+      "active_examples": 2656,
+      "loss": 0.001042460324242711,
+      "minimum_stop_target_probability": 0.9962601661682129,
+      "minimum_motion_target_probability": 0.14171260595321655
+    },
+    {
+      "update": 2000,
+      "active_correct": 2655,
+      "active_examples": 2656,
+      "loss": 0.0009184469236060977,
+      "minimum_stop_target_probability": 0.9967120885848999,
+      "minimum_motion_target_probability": 0.17785251140594482
+    }
+  ],
+  "frozen_parent_tensor_sha256": "475eca57e4004dff43e3c0d9b479d420f16e886d79cf3e5a699e5a9a9805d882",
+  "checkpoint_sha256": "92754ca0f25d52cefc064fba9e84854fa512bd1a35abe8603ec54bddb673c937",
+  "optimizer_and_rng_saved": true,
+  "exported_for_physical_validation": false,
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "resource": {
+    "seconds": 37.80504320701584,
+    "cpu_seconds": 13.233737977,
+    "average_cpu_cores": 0.3500521849567438,
+    "peak_rss_mib": 599.1484375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,16 @@
+{
+  "completed": true,
+  "at": "2026-10-16T15:31:04.168039+08:00",
+  "unit_tests": 4,
+  "passed": 4,
+  "failed": 0,
+  "command": "PYTHONPATH=training:. python -B -m unittest deployment.ros2_recording_adapter.test_release_handoff -v",
+  "checks": [
+    "625D candidate and 300D rollback bundle hashes/contracts",
+    "wrong dimension/runtime/hash rejected",
+    "actual external stop replaces unpublished motion and keeps next record slot",
+    "published motion resets idle timers; stop-only distinguished; invalid commands rejected"
+  ],
+  "ros_node_executed": false,
+  "vehicle_started": false
+}

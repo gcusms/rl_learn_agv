@@ -1,0 +1,203 @@
+{
+  "completed": true,
+  "attribution": {
+    "first_divergence_frame": 33,
+    "sensor_time_s": 6.5999999999998815,
+    "baseline_action": 11,
+    "candidate_action": 6,
+    "common_sensor_physical_mask_and_route_inputs": {
+      "masks": true,
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "labels": true,
+      "human_positions": true,
+      "route_diagnostics": true
+    },
+    "unchanged_observation_prefix_and_quality_suffix": true,
+    "risk_history_versions_differ_not_identical_model_inputs": true,
+    "baseline": {
+      "seconds": 34.59999999999925,
+      "travel_m": 4.3882475749918815,
+      "components": {
+        "only_stop_s": 3.5999999999999233,
+        "voluntary_stop_s": 0.1999999999999602,
+        "nonzero_choice_s": 30.799999999999365
+      },
+      "only_stop_intervals": [
+        {
+          "first_frame": 29,
+          "last_frame": 32,
+          "start_s": 5.799999999999899,
+          "seconds": 0.799999999999983,
+          "frames": 4
+        },
+        {
+          "first_frame": 50,
+          "last_frame": 54,
+          "start_s": 10.000000000000163,
+          "seconds": 1.0000000000001563,
+          "frames": 5
+        },
+        {
+          "first_frame": 76,
+          "last_frame": 77,
+          "start_s": 15.200000000000976,
+          "seconds": 0.40000000000006253,
+          "frames": 2
+        },
+        {
+          "first_frame": 117,
+          "last_frame": 117,
+          "start_s": 23.39999999999963,
+          "seconds": 0.1999999999999602,
+          "frames": 1
+        },
+        {
+          "first_frame": 140,
+          "last_frame": 140,
+          "start_s": 27.999999999998714,
+          "seconds": 0.1999999999999602,
+          "frames": 1
+        },
+        {
+          "first_frame": 142,
+          "last_frame": 146,
+          "start_s": 28.399999999998634,
+          "seconds": 0.999999999999801,
+          "frames": 5
+        }
+      ],
+      "voluntary_stop_intervals": [
+        {
+          "first_frame": 116,
+          "last_frame": 116,
+          "start_s": 23.19999999999967,
+          "seconds": 0.1999999999999602,
+          "frames": 1
+        }
+      ],
+      "only_stop_nonzero_rejection_groups": {
+        "5": 198
+      },
+      "maximum_localization_xy_error_m": 0.006318552691043339,
+      "maximum_route_endpoint_error_m": 8.881784197001252e-16,
+      "route_reasons": {
+        "confirmed_obstacle_or_route_invalid": 27,
+        "confirming_shorter_route": 10,
+        "new_goal_or_initial_route": 2,
+        "observed_clear_shorter_route": 5,
+        "retain_valid_route_no_material_improvement": 130
+      }
+    },
+    "candidate": {
+      "seconds": 53.400000000008866,
+      "travel_m": 4.628456294733507,
+      "components": {
+        "only_stop_s": 16.39999999999837,
+        "voluntary_stop_s": 5.400000000002763,
+        "nonzero_choice_s": 31.600000000007732
+      },
+      "only_stop_intervals": [
+        {
+          "first_frame": 29,
+          "last_frame": 32,
+          "start_s": 5.799999999999899,
+          "seconds": 0.799999999999983,
+          "frames": 4
+        },
+        {
+          "first_frame": 57,
+          "last_frame": 57,
+          "start_s": 11.400000000000382,
+          "seconds": 0.20000000000003126,
+          "frames": 1
+        },
+        {
+          "first_frame": 63,
+          "last_frame": 64,
+          "start_s": 12.60000000000057,
+          "seconds": 0.40000000000006253,
+          "frames": 2
+        },
+        {
+          "first_frame": 66,
+          "last_frame": 133,
+          "start_s": 13.200000000000664,
+          "seconds": 13.599999999998289,
+          "frames": 68
+        },
+        {
+          "first_frame": 143,
+          "last_frame": 147,
+          "start_s": 28.599999999998595,
+          "seconds": 0.999999999999801,
+          "frames": 5
+        },
+        {
+          "first_frame": 187,
+          "last_frame": 188,
+          "start_s": 37.40000000000068,
+          "seconds": 0.40000000000020464,
+          "frames": 2
+        }
+      ],
+      "voluntary_stop_intervals": [
+        {
+          "first_frame": 206,
+          "last_frame": 210,
+          "start_s": 41.200000000002625,
+          "seconds": 1.0000000000005116,
+          "frames": 5
+        },
+        {
+          "first_frame": 230,
+          "last_frame": 251,
+          "start_s": 46.00000000000508,
+          "seconds": 4.400000000002251,
+          "frames": 22
+        }
+      ],
+      "only_stop_nonzero_rejection_groups": {
+        "5": 902
+      },
+      "maximum_localization_xy_error_m": 0.006703577583732894,
+      "maximum_route_endpoint_error_m": 8.881784197001252e-16,
+      "route_reasons": {
+        "confirmed_obstacle_or_route_invalid": 94,
+        "confirming_shorter_route": 11,
+        "new_goal_or_initial_route": 2,
+        "observed_clear_shorter_route": 6,
+        "retain_valid_route_no_material_improvement": 155
+      }
+    },
+    "extra_seconds_by_category": {
+      "only_stop_s": 12.799999999998448,
+      "voluntary_stop_s": 5.200000000002802,
+      "nonzero_choice_s": 0.8000000000083674
+    }
+  },
+  "inputs": {
+    "reports/stop_feedback_20261015/v2_efficiency_diagnosis_20261017/audit.py": "b861d3e9fc4166412b3eaa8129df49c78dfe7c0ba73e71c71785f456778f7c5a",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/RESULTS.json": "80dce686101690a2176a1c2b2ee22b0648c937e58994ed2c9cc437e1de121d7c",
+    "models/stop_feedback_20261015/guard_aligned_migration_s231017/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_parent.npz": "93cf99fb368e8135c7b98aa7b9786845f28016e84e77d8d85c6d897773a2faee",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_01_candidate.npz": "a29de634b3a5cc67f2a9c2d5c3a3ad69645f746f34dc4a79e1db5f5a15c955c0",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_sensor_01_parent.npz": "a4f3088a005892bc814725dee01d1a7dc4e8a43248868b37c762b094586b2807",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_sensor_01_candidate.npz": "0248df41de05ef8435cfb9246f2101d48cf4cc882adff011e6b2762c297654bc",
+    "training/neural_navigation/motion_prediction.py": "11d8d1c991bebf555b71f280520d9955fa70c07ee2524eb292a7888b2d03018e",
+    "training/neural_navigation/predictive_constraint.py": "da2d8d31eef994f3c0e8d2270d541d22c69fa919262a58b04b501a52882a2b2d",
+    "training/neural_navigation/contour_history.py": "b8995bdf26f465fc8bc3542cc867c0e47db989fe33054f6d7bb32aca617ba75a",
+    "training/neural_navigation/contour_translation.py": "a71051a64d03c0cea9699d5e29a885af4eed411605fe2f767923fadfe877c764",
+    "training/neural_navigation/contour_velocity.py": "f1410d673eaa32a0c163076a4ba0d63c22b1b721e1e225057119d9b847ba55d8",
+    "training/neural_navigation/track_uncertainty.py": "13464ce0cbe710fa8fdfc32c9d279de60b1e8d317f244d2e3e5e1104df688c7a",
+    "training/neural_navigation/directional_risk.py": "77ea9866c0d41eacb526c37048429455daa9a9a5ef47e242956f49d7696f7f88",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/neural_navigation/masked_actions.py": "4b68ca19102f8a6a8d4f8c59141100102ba33838c8c7cd9410ca9374f9a53d9d",
+    "training/neural_navigation/experiment_budget.py": "e1292cd3a1f493fbd1aec9ada5d51e011d5cd7bbc38ddaebb164813f226e2ba5"
+  },
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "goal_achieved": false
+}

@@ -1,0 +1,131 @@
+{
+  "completed": true,
+  "scope": "fixed development tasks; independent physical labels; not real deployment acceptance",
+  "deployment_approved": false,
+  "cases_sha256": "675cd245099656f709703c6c95d472843d6e9e9e822eac4be7e4acfc6d40bf4f",
+  "rows": [
+    {
+      "case_id": "train_failure_proactive_variation_02",
+      "category": "diagnostic_original_training_rehearsal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 34.399999999999146,
+      "travel_m": 5.388314999717294,
+      "frames": 173,
+      "final_xy_error_m": 0.11523730257924011,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0045684211429991035,
+      "localization_yaw_p95_rad": 0.00138727670229919,
+      "stop_choices": 6,
+      "only_stop_frames": 5,
+      "stop_reasons": {
+        "None": 169,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 11,
+      "runtime_ms": {
+        "p95": 199.5858367998153,
+        "p99": 219.06413684133443,
+        "maximum": 238.119887013454
+      },
+      "variant": "w11_bc800_reference",
+      "trace_sha256": "d6be6d4ae4131ed179a6576e5943ee06100e07b8257d1c73a1e478e050438aa7"
+    },
+    {
+      "case_id": "train_failure_proactive_variation_06",
+      "category": "diagnostic_original_training_rehearsal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 35.199999999999555,
+      "travel_m": 5.321562768715411,
+      "frames": 177,
+      "final_xy_error_m": 0.09690289125168547,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0045064937456122355,
+      "localization_yaw_p95_rad": 0.001419480201462875,
+      "stop_choices": 9,
+      "only_stop_frames": 9,
+      "stop_reasons": {
+        "None": 173,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 0,
+      "predictive_constraint_frames": 18,
+      "runtime_ms": {
+        "p95": 216.98998180218038,
+        "p99": 241.39611784834432,
+        "maximum": 279.18125700671226
+      },
+      "variant": "w11_bc800_reference",
+      "trace_sha256": "d2d1a51764424259511b9aef64056570f9ad67620ddcc366fabff7b636decad9"
+    },
+    {
+      "case_id": "train_failure_proactive_variation_07",
+      "category": "diagnostic_original_training_rehearsal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 33.79999999999884,
+      "travel_m": 5.342785220238546,
+      "frames": 170,
+      "final_xy_error_m": 0.11086230436846983,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004220971301754342,
+      "localization_yaw_p95_rad": 0.001320510770809724,
+      "stop_choices": 5,
+      "only_stop_frames": 4,
+      "stop_reasons": {
+        "None": 166,
+        "scan_unavailable": 3,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 12,
+      "runtime_ms": {
+        "p95": 242.08626033214372,
+        "p99": 282.27311394701246,
+        "maximum": 311.40203098766506
+      },
+      "variant": "w11_bc800_reference",
+      "trace_sha256": "635a1682558e39db8a51bf69ce9502dadbbe0705e100385e2f09d790c79b7a58"
+    }
+  ],
+  "resource": {
+    "seconds": 741.4644947249908,
+    "cpu_seconds": 111.39804500199999,
+    "average_cpu_cores": 0.15024056552204504,
+    "peak_rss_mib": 2066.3515625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "groups": {
+    "diagnostic_original_training_rehearsal": {
+      "w11_bc800_reference": {
+        "tasks": 3,
+        "success": 3,
+        "collisions": 0,
+        "timeouts": 0,
+        "false_arrivals": 0
+      }
+    }
+  }
+}

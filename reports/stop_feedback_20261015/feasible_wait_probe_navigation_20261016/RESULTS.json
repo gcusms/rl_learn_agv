@@ -1,0 +1,174 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "legal_pause_train_failure_w11_e7",
+      "category": "original_release_training_failure",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 40.00000000000201,
+      "travel_m": 5.073170291877653,
+      "frames": 201,
+      "final_xy_error_m": 0.11785685022952166,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004251507134061372,
+      "localization_yaw_p95_rad": 0.0012582902719397993,
+      "stop_choices": 31,
+      "only_stop_frames": 19,
+      "stop_reasons": {
+        "None": 200,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 12,
+      "predictive_constraint_frames": 33,
+      "runtime_ms": {
+        "p95": 169.46518601616845,
+        "p99": 196.8247939948924,
+        "maximum": 201.7704889876768
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "specification": {
+        "id": "legal_pause_train_failure_w11_e7",
+        "case": {
+          "id": "train_failure_w11_e7",
+          "category": "training_failure",
+          "scene": "assets/room_navigation_scripted",
+          "seed": 1962350169,
+          "start": [
+            6.2250000000000005,
+            2.725,
+            0.017376951571745902
+          ],
+          "goal": [
+            7.125,
+            5.7250000000000005
+          ],
+          "odom_scale": 1.0,
+          "obstacle": "crossing",
+          "obstacle_speed_m_s": 0.09295138997376881,
+          "hold_s": 3.4079953972433437,
+          "pilot_category": "original_release_training_failure",
+          "max_steps": 700
+        },
+        "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/train_failure_w11_e7_w11_augmented_bc800.npz",
+        "source_trace_sha256": "de1da96347e2aaaf59f346371ef479b53e6f6d279fce7bfaaace4382fecd16bb",
+        "pause_s": 2.6,
+        "hold_s": 2.4,
+        "release_s": 5.0
+      },
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "source_prefix_frames": 13,
+      "actual_scripted_hold_frames": 12,
+      "source_sensor_and_physical_prefix_parity_verified": true,
+      "release_sensor_timestamp_s": 5.0,
+      "first_model_prior_legal_wait_s": 2.3999999463558197,
+      "model_controlled_frames": 176,
+      "post_release_valid_late_wait_frames": 1,
+      "post_release_valid_late_motion_frames": 1,
+      "guaranteed_proactive_context_late_motion_frames": 1,
+      "initialization_reached_release": true,
+      "may_supply_verified_late_motion": true,
+      "not_admitted_to_training_yet": true,
+      "variant": "reference_bc_after_actual_hold",
+      "trace_sha256": "90d6db8b243eace2789c9d89aee4fb4b219a97c78adfa10f4fb1df03ecf92a30"
+    },
+    {
+      "case_id": "legal_pause_motion_profile_002",
+      "category": "original_release_reversal",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 61.60000000001306,
+      "travel_m": 8.59064295948981,
+      "frames": 309,
+      "final_xy_error_m": 0.08983560999977822,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003970632175992152,
+      "localization_yaw_p95_rad": 0.001306742603851417,
+      "stop_choices": 44,
+      "only_stop_frames": 28,
+      "stop_reasons": {
+        "None": 308,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 16,
+      "predictive_constraint_frames": 66,
+      "runtime_ms": {
+        "p95": 160.8066758024506,
+        "p99": 208.17876510322117,
+        "maximum": 220.43456602841616
+      },
+      "original_case_id": "motion_profile_002",
+      "specification": {
+        "id": "legal_pause_motion_profile_002",
+        "case": {
+          "id": "motion_profile_002",
+          "category": "reversal",
+          "scene": "assets/room_navigation_scripted",
+          "seed": 100002,
+          "start": [
+            7.875,
+            6.525,
+            0.5829383550326908
+          ],
+          "goal": [
+            1.175,
+            6.075
+          ],
+          "obstacle": "crossing",
+          "obstacle_speed_m_s": 0.15477787921727554,
+          "odom_scale": 1.0,
+          "reverse_after_event_s": 3.499490583194487,
+          "pilot_category": "original_release_reversal",
+          "max_steps": 700
+        },
+        "trace": "reports/stop_feedback_20261015/w11_recovery_bc800_navigation_20261016/motion_profile_002_w11_augmented_bc800.npz",
+        "source_trace_sha256": "10fc0bdc5b10709046260beeb8783ffb48b5652758a6fd5fc7b88e563411c8e7",
+        "pause_s": 7.8,
+        "hold_s": 2.4,
+        "release_s": 10.2
+      },
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "source_prefix_frames": 39,
+      "actual_scripted_hold_frames": 12,
+      "source_sensor_and_physical_prefix_parity_verified": true,
+      "release_sensor_timestamp_s": 10.2,
+      "first_model_prior_legal_wait_s": 2.3999999463558197,
+      "model_controlled_frames": 258,
+      "post_release_valid_late_wait_frames": 1,
+      "post_release_valid_late_motion_frames": 1,
+      "guaranteed_proactive_context_late_motion_frames": 0,
+      "initialization_reached_release": true,
+      "may_supply_verified_late_motion": false,
+      "not_admitted_to_training_yet": true,
+      "variant": "reference_bc_after_actual_hold",
+      "trace_sha256": "2643c8c5ef25f492ac943d1bdb826c63f1676eec15c55dc50289037556f235a6"
+    }
+  ],
+  "scope": "Create physically real long-legal-wait observations missing from124safe traces; admit no labels before complete safety verification.",
+  "scripted_initialization_only": true,
+  "model_only_after_release": true,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 242.15662135201273,
+    "cpu_seconds": 84.834566286,
+    "average_cpu_cores": 0.35032932740946865,
+    "peak_rss_mib": 2071.62890625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

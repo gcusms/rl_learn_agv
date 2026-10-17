@@ -1,0 +1,96 @@
+{
+  "schema": "release_head_with_current_guard_reasons_v1",
+  "unchanged_runtime_prefix_dimensions": 481,
+  "dimensions": 625,
+  "head_dimensions": [
+    408,
+    32,
+    32,
+    12
+  ],
+  "head_features": [
+    "old_88_risk_mask_stop_feedback_parent_choice",
+    "current_72_minimum_ranges",
+    "current_72_hit_and_72_no_return_fractions",
+    "robot_relative_waypoint_and_goal",
+    "measured_velocity_and_previous_execution",
+    "current_12_by_8_guard_rejection_groups"
+  ],
+  "initialization": "old risk weights; decisions may differ in newly trainable sensor contexts",
+  "parent_actor_sha256": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+  "previous_risk_actor_sha256": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+  "outside_support_parent_exact": true,
+  "near_goal_directional_parent_exact": true,
+  "stop_always_selectable": true,
+  "no_forced_motion": true,
+  "no_runtime_teacher": true,
+  "new_ppo_steps": 1665,
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  },
+  "guard_reason_features": {
+    "schema": "current_guard_reason_release_head_v1",
+    "observation_dimensions": 625,
+    "old_head_dimensions": 312,
+    "head_dimensions": [
+      408,
+      32,
+      32,
+      12
+    ],
+    "additional_features": "current_12_by_8_guard_rejection_groups",
+    "source_slice": [
+      303,
+      399
+    ],
+    "rejection_groups": [
+      "accepted",
+      "perception_or_odometry",
+      "localization_or_route",
+      "static_geometry",
+      "laser_geometry",
+      "dynamic_prediction",
+      "projection",
+      "other"
+    ],
+    "first_projection": "unchanged_312_projection_plus_zero_initialized_96_projection",
+    "same_current_scan_as_action_mask": true,
+    "simulator_truth_used": false,
+    "previous_executed_reason_retained": true,
+    "runtime_teacher": false,
+    "action_permissions_and_learning_support_unchanged": true,
+    "no_forced_motion": true,
+    "stop_always_selectable": true
+  },
+  "training_method": "frozen_complete_batch_mc_advantage_and_reference_stop_guard",
+  "gamma": 0.99,
+  "gae_lambda": 1.0,
+  "normalization_scope": "all_actor_eligible_samples_in_one_frozen_policy_collection_batch",
+  "reference_stop_retention_is_not_physical_safety_acceptance": true,
+  "memory_evidence_variant": {
+    "schema": "finite_multiframe_free_evidence_v1",
+    "parameters": {
+      "free_evidence_margin_m": 0.03,
+      "free_evidence_frames": 3,
+      "free_evidence_max_gap_s": 0.4
+    },
+    "applied_from_initialization": true,
+    "no_episode_time_or_map_coordinate_trigger": true,
+    "finite_three_neighbor_ray_evidence_only": true,
+    "unknown_and_blind_points_retained": true,
+    "same_body_4cm_safety_margin_action_set_and_dynamics": true,
+    "action_mask_results_may_differ": true,
+    "frozen_actor_weights": true,
+    "new_ppo_steps_this_variant": 0,
+    "original_actor_training_steps": 1665,
+    "calibrated_against_real_lidar": false,
+    "closed_loop_validation_required": true
+  }
+}

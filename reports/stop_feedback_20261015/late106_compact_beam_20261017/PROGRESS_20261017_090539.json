@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-17T09:05:39.984208+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "objective": "解决模型不知道自己为什么被停车和有可行动作却不尝试",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_progress": [
+    "Three bounded turn probes actually completed2100physicssteps; zero complete safe teachers; one distinct full recorded trajectory verified.",
+    "Unchanged measured memory/laser geometry277of277independent checks match; current model170voluntarySTOPvs teacher158STOPonly states; separates policy choice from continuation deadlock.",
+    "New compact native-state search passed two real4frame complete625sensor/action/physics restorations after exact530frame initialization; native model/dynamics/memory/actions unchanged.",
+    "The actual search is live and has passed the prior RSS failure point with original350mCPU/3GiBbudget; fresh-process winner replay conditionally waits for exact dependency terminal."
+  ],
+  "current_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "current_model_validation": {
+    "completed": true,
+    "physical_episodes": 35,
+    "safe_arrivals": 34,
+    "timeouts": 1,
+    "collisions": 0,
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "hard106_unresolved": true
+  },
+  "completed_creep_probes": {
+    "physical_steps": 2100,
+    "complete_safe_teachers": 0,
+    "distinct_recorded_trajectories": 1,
+    "not_infeasibility_evidence": true
+  },
+  "geometry_checks_matched": 277,
+  "compact_real_physical_state_admitted": true,
+  "compact_status_snapshot": "reports/stop_feedback_20261015/late106_compact_beam_20261017/STATUS_SNAPSHOT_20261017_090539.json",
+  "verified_live_handles": [
+    {
+      "MainPID": "2249550",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1461342208",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "aaf1528f6aaf4017a374919569122bd8",
+      "unit": "rl-late106-compact-beam-20261017.service",
+      "start_ticks": "50657080",
+      "checked_at": "2026-10-17T09:05:39.984208+08:00"
+    },
+    {
+      "MainPID": "2250281",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "6742016",
+      "MemoryMax": "104857600",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "4baab29ad848406b879a3c5208cd1465",
+      "unit": "rl-late106-compact-replay-waiter-20261017.service",
+      "start_ticks": "50672269",
+      "checked_at": "2026-10-17T09:05:39.984208+08:00"
+    }
+  ],
+  "new_training_updates_this_turn": 0,
+  "new_ppo_steps": 0,
+  "no_new_model_or_deployment_claim": true,
+  "original_scope_preserved": {
+    "fixed28_original_safety_efficiency": true,
+    "known_full_mission_safety_and_efficiency": true,
+    "original97_6_and106_with96success_retention": true,
+    "conditional_frozen_fresh8_no_training_leakage": true,
+    "memory_from_init_and_full_retention_if_changed": true,
+    "body_393924904x329460022mm_4cm_margin_original12actions_unknown_blind_dynamics_deadlines": true,
+    "original_real_car_model": true
+  },
+  "remaining_work": [
+    "Find and independently replay complete safe recovery; alternatively independent infeasibility plus verified earlier learned prevention, never infer infeasibility from bounded failures.",
+    "Only admit complete original-contract data, then train a separately saved actor and verify useful cause-conditioned recovery.",
+    "Pass original fixed28,known6,97.6/106/96hard requirements and conditional frozen fresh8; no narrowing or data leakage.",
+    "No unsupported localization,unseen-map,real-car or target-board improvements."
+  ],
+  "evidence_hashes": {
+    "reports/stop_feedback_20261015/late106_creep_teacher_20261017/RESULTS.json": "1c21c61af274df59f9ff92d2251a6ed7ae80261a5c7e16ba2f2d49334e5ee1ac",
+    "reports/stop_feedback_20261015/late106_creep_analysis_20261017/RESULTS.json": "f6fe8ee094a38f3244f05a76f7a8610f942b2279d989d611e8aa08a8b2c43d65",
+    "reports/stop_feedback_20261015/late106_creep_analysis_20261017/TEACHER_EQUIVALENCE.json": "9a8267c4c69d785f30b4cdb81d5658f91d03c0b65899c247193ef281b9312a76",
+    "reports/stop_feedback_20261015/late106_compact_beam_20261017/COMPACT_STATE_ADMISSION.json": "2d6c54830ccca4c092e2713bab655bd13bfc3a7bda4f770563cf6f34c85bca4d",
+    "reports/stop_feedback_20261015/late106_compact_beam_20261017/STATUS_SNAPSHOT_20261017_090539.json": "43dc09caa280f0d2f49c4fdc0590b2e5b197d9dbbf0eec017a4768ae460a31ea"
+  }
+}

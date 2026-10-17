@@ -1,0 +1,101 @@
+{
+  "completed": true,
+  "measured_at_utc": "2026-10-16T07:49:12Z",
+  "machine": "x86_64",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "torch": "2.8.0+cu126",
+  "numpy": "1.26.4",
+  "cpu_name": "Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz",
+  "cases": [
+    {
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "replayed_frames": 48,
+      "original_full_episode_success": true,
+      "original_trace_sha256": "d4b236edfdffdb42c3fe34850caebdb4fa12d59987cddb5fdb03c60f9f501bb9"
+    },
+    {
+      "case_id": "long_risk_sensor_02_0",
+      "replayed_frames": 48,
+      "original_full_episode_success": true,
+      "original_trace_sha256": "94d1924c67c48e214eff9f05a9478f9fbf7ab487a15ed3faa537c0adfe7f7528"
+    },
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "replayed_frames": 48,
+      "original_full_episode_success": false,
+      "original_trace_sha256": "1d555275a7d2f81e83cf4c44d17d305061a16648aa8cbde45d5ea7ab8e019f97"
+    }
+  ],
+  "sensor_frames": 144,
+  "backends": [
+    "batch",
+    "reference"
+  ],
+  "timings": {
+    "batch": {
+      "steady_state_samples": 120,
+      "cpu_ms": {
+        "p50": 54.48526049999991,
+        "p95": 102.22269689999938,
+        "p99": 110.27608487000028,
+        "p100": 113.7350760000011
+      },
+      "wall_ms": {
+        "p50": 54.4940524850972,
+        "p95": 102.23922907607628,
+        "p99": 110.29153614188544,
+        "p100": 113.74689103104174
+      },
+      "startup_seconds": [
+        0.10380659799557179,
+        0.08252763701602817,
+        0.08298186695901677
+      ]
+    },
+    "reference": {
+      "steady_state_samples": 120,
+      "cpu_ms": {
+        "p50": 77.74211350000027,
+        "p95": 171.9958739999991,
+        "p99": 187.59425557999938,
+        "p100": 190.46138499999898
+      },
+      "wall_ms": {
+        "p50": 77.75177448638715,
+        "p95": 172.01178343093488,
+        "p99": 187.6118343975395,
+        "p100": 190.47955598216504
+      },
+      "startup_seconds": [
+        0.08163819595938548,
+        0.08214432297972962,
+        0.08279707899782807
+      ]
+    }
+  },
+  "observations_masks_choices_commands_and_estimates_match_recording": true,
+  "paired_stop_and_rejection_reasons_identical": true,
+  "resource": {
+    "seconds": 65.01872340094997,
+    "cpu_seconds": 22.760778611,
+    "average_cpu_cores": 0.350064987751935,
+    "peak_rss_mib": 508.18359375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "paired_process_holds_two_runtime_models": true,
+  "checkpoint_sha256": "a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3",
+  "optimized_source_sha256": "041cfd6c3f6dad96c2e2e46aa26abfd620f0bc793e29ba7944feda24ee0238ef",
+  "uses_existing_ros_guard_acceleration": true,
+  "physics_episodes": 0,
+  "vehicle_started": false,
+  "forbidden_runtime_imports": [],
+  "limitations": [
+    "Recorded causal replay is not a closed-loop navigation success evaluation.",
+    "Measures this machine only; includes sensor core/model/guard, excludes ROS transport, sensor alignment, IPC, other nodes and power.",
+    "Quota-related wall delays are not proof of target-board deadlines.",
+    "Only the selected frame prefixes are checked; complete real-car or full-scene regression is not established."
+  ],
+  "cpu_p50_reduction_fraction": 0.29915385565122665,
+  "cpu_p95_reduction_fraction": 0.40566773770398756
+}

@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-17T06:59:03.498496+08:00",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "actual_new_evidence": [
+    "Readonly NumPy audit of8 complete prior v2 PPO rollouts against current4468 labels verifies masks and new head support without loading model/physics.",
+    "Both106s episodes had only26/19 trainable choices and0 motion labels for matched current mask+guard-cause signatures. They sampled13/10 motions but still timed out; movement alone is not demonstrated recovery.",
+    "Known sensor01 learned full-mission safety gain and all4468 reference retention remain verified. Current exact serial validation continues, not replaced by a narrower gate."
+  ],
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/HARD_COVERAGE.json": "f941f2432e78b82b00225f51449c65d52aa4411fd04a888283e7708989af63a3",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/audit_hard_coverage.py": "b12add326b4dfa4ab7db1f99a19b9fa279e771f07f668df99278f77c44861da9",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/SENSOR01_LEARNED_GAIN_AUDIT.json": "dcfd7e9f8c995566869a1fd681edbb92e0bd39b87bd1be7e4052bd3bda4b0be9",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/VALIDATION_SNAPSHOT_20261017_065903.json": "6097bb9047b5571203e237cf78f15c955ecad8d0292087efe17c42a7021ef9bd"
+  },
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+  "physical_validation": {
+    "completed": false,
+    "reason": null,
+    "completed_episodes": 8,
+    "safe_arrivals": 8,
+    "collisions": 0,
+    "normal18_completed": 7
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2205571",
+      "MemoryCurrent": "1484406784",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520",
+      "unit": "rl-full-navigation-margin-resume-cycle-20261017.service",
+      "start_ticks": "49851050"
+    }
+  ],
+  "active_worker": {
+    "pid": 2209462,
+    "job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/normal18_motion_profile_000_candidate.json",
+    "log": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/normal18_motion_profile_000_candidate.log",
+    "verified_live_now": true,
+    "start_ticks": "49927177",
+    "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u /home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/full_navigation_residual_20261017/worker.py /home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/normal18_motion_profile_000_candidate.json "
+  },
+  "next_action": "Continue exact live validation until authoritative terminal result. If retained navigation passes but original late recoveries still fail, use actual current-policy rollouts or a complete original-guard safe teacher; old failed motions are not positive labels. Preserve original fixed28,known safety,hard97.6/106,conditional fresh8 and no automatic deployment."
+}

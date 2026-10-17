@@ -1,0 +1,64 @@
+{
+  "completed": true,
+  "passed": true,
+  "at": "2026-10-16T07:59:09.971995+00:00",
+  "source_package": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016",
+  "units_passed": 25,
+  "smoke_worker_frames": 3,
+  "causal_benchmark_frames": 48,
+  "bundle_override_argument_checked": true,
+  "tests_cwd": "/tmp",
+  "isolated_pythonpath": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/training:/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016",
+  "runtime_bundle": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/models/stop_feedback_20261015/release_context_bc2000_s231016/portable",
+  "optimized_source_sha256": "041cfd6c3f6dad96c2e2e46aa26abfd620f0bc793e29ba7944feda24ee0238ef",
+  "previous_paired_host_measurement_not_rerun": true,
+  "target_boards_measured": false,
+  "new_training_steps": 0,
+  "physics_episodes": 0,
+  "ros_node_started": false,
+  "vehicle_started": false,
+  "runs": [
+    {
+      "name": "standard_library_checksums",
+      "exit_code": 0,
+      "elapsed_seconds": 0.22767229500459507,
+      "stdout": "OK: 533 archived files verified\ngenerated/ configs and rebuilt native bundles are not archived model replacements\n",
+      "stderr": ""
+    },
+    {
+      "name": "candidate_location_specific_config",
+      "exit_code": 0,
+      "elapsed_seconds": 0.21744524902896956,
+      "stdout": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/generated/model_candidate.json\nmodel_source=/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016\n",
+      "stderr": ""
+    },
+    {
+      "name": "original_2k_rollback_config",
+      "exit_code": 0,
+      "elapsed_seconds": 0.19876770296832547,
+      "stdout": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/generated/model_baseline.json\nmodel_source=/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016\n",
+      "stderr": ""
+    },
+    {
+      "name": "25_scoped_unit_checks",
+      "exit_code": 0,
+      "elapsed_seconds": 3.8622949419659562,
+      "stdout": "",
+      "stderr": "test_invalid_matrix_rejected_and_no_support_is_unknown (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_invalid_measured_velocity_rejected (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_isotropic_equivalence (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_isotropic_finite_response_equivalence (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_projection_never_exceeds_corresponding_isotropic_envelope (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_rotation_preserves_forecast (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_tangential_residual_does_not_expand_normal_identically (training.test_directional_risk.DirectionalRiskTests) ... ok\ntest_long_contour_chunking_and_anisotropic_uncertainty (training.experiments.test_directional_risk_batch.DirectionalBatchTests) ... ok\ntest_no_tracks_preserves_validation_and_unknown_outputs (training.experiments.test_directional_risk_batch.DirectionalBatchTests) ... ok\ntest_numerical_contact_boundary_retains_original_decision (training.experiments.test_directional_risk_batch.DirectionalBatchTests) ... ok\ntest_random_aged_contours_both_motion_models (training.experiments.test_directional_risk_batch.DirectionalBatchTests) ... ok\ntest_approach_vetoes_fast_action_before_current_contact_and_keeps_stop (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_cumulative_occlusion_keeps_explicit_aged_reachable_hypothesis (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_frame_cache_and_missing_scan_tracks_expire (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_hardware_and_action_contract_cannot_mix_forecast_versions (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_map_pose_jump_cannot_change_odometry_frame_forecast (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_probe_masks_are_stricter_and_match_execution_on_the_same_frame (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_static_geometry_and_mecanum_odometry_do_not_become_motion (training.test_predictive_constraint.PredictiveConstraintTests) ... ok\ntest_initialization_preserves_all_old_decisions (training.experiments.test_release_context.ReleaseContextTests) ... ok\ntest_original_mask_and_directional_fallback_remain_authoritative (training.experiments.test_release_context.ReleaseContextTests) ... ok\ntest_unknown_and_no_return_cannot_be_confused (training.experiments.test_release_context.ReleaseContextTests) ... ok\ntest_actual_motion_clears_candidate_wait_and_only_stop_is_distinct (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_candidate_and_rollback_load_with_their_own_contracts (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_invalid_publication_does_not_update_history (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_unpublished_motion_is_replaced_by_actual_external_stop (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 1.490s\n\nOK\n"
+    },
+    {
+      "name": "actual_ros_free_worker_three_frames",
+      "exit_code": 0,
+      "elapsed_seconds": 3.1189167870325036,
+      "stdout": "{\n  \"completed\": true,\n  \"stored_frames\": 3,\n  \"finite_625D\": true,\n  \"actual_published_history_visible_in_observation\": true,\n  \"duplicate_record_errors\": 0,\n  \"native_kernel_loaded\": true,\n  \"physics_episodes\": 0,\n  \"ros_node_executed\": false,\n  \"vehicle_started\": false,\n  \"elapsed_seconds\": 0.465477264020592\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "portable_benchmark_bundle_argument",
+      "exit_code": 0,
+      "elapsed_seconds": 12.184965060965624,
+      "stdout": "{\n  \"completed\": true,\n  \"measured_at_utc\": \"2026-10-16T07:59:09Z\",\n  \"machine\": \"x86_64\",\n  \"platform\": \"Linux-6.8.0-138-generic-x86_64-with-glibc2.35\",\n  \"python\": \"3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]\",\n  \"torch\": \"2.8.0+cu126\",\n  \"numpy\": \"1.26.4\",\n  \"cpu_name\": \"Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz\",\n  \"cases\": [\n    {\n      \"case_id\": \"early_yield_sensor_holdout_05_0\",\n      \"replayed_frames\": 16,\n      \"original_full_episode_success\": true,\n      \"original_trace_sha256\": \"d4b236edfdffdb42c3fe34850caebdb4fa12d59987cddb5fdb03c60f9f501bb9\"\n    },\n    {\n      \"case_id\": \"long_risk_sensor_02_0\",\n      \"replayed_frames\": 16,\n      \"original_full_episode_success\": true,\n      \"original_trace_sha256\": \"94d1924c67c48e214eff9f05a9478f9fbf7ab487a15ed3faa537c0adfe7f7528\"\n    },\n    {\n      \"case_id\": \"long_risk_sensor_05_1\",\n      \"replayed_frames\": 16,\n      \"original_full_episode_success\": false,\n      \"original_trace_sha256\": \"1d555275a7d2f81e83cf4c44d17d305061a16648aa8cbde45d5ea7ab8e019f97\"\n    }\n  ],\n  \"sensor_frames\": 48,\n  \"backends\": [\n    \"batch\"\n  ],\n  \"timings\": {\n    \"batch\": {\n      \"steady_state_samples\": 24,\n      \"cpu_ms\": {\n        \"p50\": 47.185833500000165,\n        \"p95\": 84.99403879999971,\n        \"p99\": 94.54417556999985,\n        \"p100\": 97.2775509999999\n      },\n      \"wall_ms\": {\n        \"p50\": 47.1950295032002,\n        \"p95\": 85.00485411495902,\n        \"p99\": 94.55593813268933,\n        \"p100\": 97.28954103775322\n      },\n      \"startup_seconds\": [\n        0.11241587495896965,\n        0.10765694099245593,\n        0.08163261995650828\n      ]\n    }\n  },\n  \"observations_masks_choices_commands_and_estimates_match_recording\": true,\n  \"paired_stop_and_rejection_reasons_identical\": false,\n  \"resource\": {\n    \"seconds\": 9.675191667978652,\n    \"cpu_seconds\": 3.3886205979999997,\n    \"average_cpu_cores\": 0.3502380846071603,\n    \"peak_rss_mib\": 498.63671875,\n    \"resource_limits\": \"single-thread CPU soft average quota; RSS/disk checked between steps\"\n  },\n  \"paired_process_holds_two_runtime_models\": false,\n  \"checkpoint_sha256\": \"a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3\",\n  \"runtime_bundle\": \"/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/models/stop_feedback_20261015/release_context_bc2000_s231016/portable\",\n  \"runtime_manifest_sha256\": \"a768215faff8e35f72d807f3ace2746b20b5f8552ebadede88f33802fbc3175d\",\n  \"native_kernel\": {\n    \"architecture\": \"x86_64\",\n    \"source_sha256\": \"474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7\",\n    \"build\": \"g++ -O3 -DNDEBUG -std=c++17 -shared -fPIC -I/usr/include/eigen3\",\n    \"runtime_compilation\": false\n  },\n  \"optimized_source_sha256\": \"041cfd6c3f6dad96c2e2e46aa26abfd620f0bc793e29ba7944feda24ee0238ef\",\n  \"uses_existing_ros_guard_acceleration\": true,\n  \"physics_episodes\": 0,\n  \"vehicle_started\": false,\n  \"forbidden_runtime_imports\": [],\n  \"limitations\": [\n    \"Recorded causal replay is not a closed-loop navigation success evaluation.\",\n    \"Measures this machine only; includes sensor core/model/guard, excludes ROS transport, sensor alignment, IPC, other nodes and power.\",\n    \"Quota-related wall delays are not proof of target-board deadlines.\",\n    \"Only the selected frame prefixes are checked; complete real-car or full-scene regression is not established.\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

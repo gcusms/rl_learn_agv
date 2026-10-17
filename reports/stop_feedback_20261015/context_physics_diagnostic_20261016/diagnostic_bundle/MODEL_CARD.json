@@ -1,0 +1,26 @@
+{
+  "deployment_approved": false,
+  "method": "supervised release-context head on frozen RL navigation",
+  "new_ppo_steps": 0,
+  "frozen_components": [
+    "parent_actor",
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "limitations": [
+    "Complete-safe development demonstrations do not prove independent navigation success.",
+    "Unknown/no-return flags do not authorize motion; original guard remains unchanged."
+  ],
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  },
+  "manifest_sha256": "3f8f871773b4489b5cd4d5eb94895533cc1643257b45b0ae37591ee93dd60495"
+}

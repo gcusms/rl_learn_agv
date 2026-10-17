@@ -1,0 +1,54 @@
+{
+  "parent": "early_yield_replay_20261016/replay.py",
+  "changes": [
+    [
+      "Replay four stopped-robot impacts; inspect earlier sensor-only yield signals.",
+      "Replay the two remaining learned-model impacts and inspect sensor-only yield signals."
+    ],
+    [
+      "actual95_transfer_bc400_s231016/bc_portable",
+      "early_yield_bc400_s231016/bc_portable"
+    ],
+    [
+      "source_path=BASE/'actual95_broad_regression_20261016/RESULTS.json'",
+      "source_path=BASE/'early_yield_validation_20261016/RESULTS.json'"
+    ],
+    [
+      "failures=[r for r in source['groups']['fresh12']['rows'] if r['collisions']]",
+      "failures=[r for r in source['rows'] if r['collisions']]"
+    ],
+    [
+      "assert len(failures)==4 and {r['case_id'] for r in failures}=={\n        'proactive_fresh_condition_01','proactive_fresh_condition_02',\n        'proactive_fresh_condition_04','proactive_fresh_condition_05'}",
+      "assert len(failures)==2 and {r['case_id'] for r in failures}=={\n        'proactive_fresh_condition_02','proactive_fresh_condition_05'}"
+    ],
+    [
+      "maximum_replayed_frames=237",
+      "maximum_replayed_frames=98"
+    ],
+    [
+      "assert total==237",
+      "assert total==98"
+    ],
+    [
+      "from neural_navigation.motion_risk import predicted_body_risk",
+      "from neural_navigation.motion_risk import predicted_body_risk\n    from experiments.stop_recovery_policy import StopRecoveryPPO"
+    ],
+    [
+      "summaries=[];all_records=[];total=0",
+      "model=StopRecoveryPPO.load(ROOT/'models/stop_feedback_20261015/early_yield_bc400_s231016/policy_bc.zip',device='cpu')\n    model.policy.set_training_mode(False)\n    summaries=[];all_records=[];total=0"
+    ],
+    [
+      "with np.load(trace_path,allow_pickle=False) as z:data={key:z[key].copy() for key in z.files}",
+      "with np.load(trace_path,allow_pickle=False) as z:data={key:z[key].copy() for key in z.files}\n        converted=np.concatenate((data['observations'][:,:300],data['observations'][:,303:]),axis=1).astype(np.float32)\n        with torch.no_grad():\n            probabilities=model.policy.get_distribution(torch.from_numpy(converted),data['masks']).distribution.probs.numpy()\n            supported=model.policy.recovery_support(torch.from_numpy(converted)).numpy()\n        np.testing.assert_array_equal(probabilities.argmax(-1),data['choices'])"
+    ],
+    [
+      "tracks=len(predictor.tracks),predictions=predictions,",
+      "tracks=len(predictor.tracks),predictions=predictions,\n                    actor_stop_probability=float(probabilities[i,0]),recovery_branch_active=bool(supported[i]),"
+    ],
+    [
+      "scored_truth_gap_m=record['scored_truth_human_gap_m']))",
+      "scored_truth_gap_m=record['scored_truth_human_gap_m'],\n                    actor_stop_probability=record['actor_stop_probability'],recovery_branch_active=record['recovery_branch_active']))"
+    ]
+  ],
+  "new_physics": false
+}

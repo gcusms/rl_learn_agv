@@ -1,0 +1,383 @@
+{
+  "completed": true,
+  "full_safe_source_frames": 3252,
+  "active_frames": 2656,
+  "active_stop_labels": 629,
+  "active_motion_labels": 2027,
+  "inactive_target_disagreements": [],
+  "initial_old_decisions_exact_outside_new_support": true,
+  "newly_supported_source_frames": 135,
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  },
+  "source_reports": [
+    {
+      "case_id": "proactive_fresh_condition_01",
+      "source_report": "reports/stop_feedback_20261015/early_yield_physical_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/early_yield_physical_20261016/early_yield_proactive_fresh_condition_01.npz",
+      "trace_sha256": "16786e69dcd2afbf6cc29ee26f389bbc1c750340dc65a952318aa7c5cd6dfecc",
+      "frames": 184,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true
+    },
+    {
+      "case_id": "proactive_fresh_condition_02",
+      "source_report": "reports/stop_feedback_20261015/early_yield_condition02_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/early_yield_condition02_20261016/early_yield_proactive_fresh_condition_02.npz",
+      "trace_sha256": "9b604b79ddd99ed65269a6fec93d0ca1912c8d7f9e3f19c48608e73448138ef7",
+      "frames": 187,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true
+    },
+    {
+      "case_id": "proactive_fresh_condition_05",
+      "source_report": "reports/stop_feedback_20261015/early_yield_condition05_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/early_yield_condition05_20261016/early_yield_proactive_fresh_condition_05.npz",
+      "trace_sha256": "b633dd57e896cff1cd328444883a7a04e61476094f4d692e7601ef13b0349dc8",
+      "frames": 179,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true
+    },
+    {
+      "case_id": "proactive_fresh_condition_01",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/original_conditions_proactive_fresh_condition_01.npz",
+      "trace_sha256": "fd8fe1691fa171dc2f1f34cb8e6b005343aaaf35e630ddc924c57ef6a15fc347",
+      "frames": 184,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "proactive_fresh_condition_02",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/original_conditions_proactive_fresh_condition_02.npz",
+      "trace_sha256": "aaa71d5b6e7e23eadac6bccdcb21d128897fd4ccaca89ce2fa852d5a2e74d52c",
+      "frames": 187,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "proactive_fresh_condition_04",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/original_conditions_proactive_fresh_condition_04.npz",
+      "trace_sha256": "d93602d0ae7431ffec2381015abeea5c100f312c4c45e3c0d7b5cabb6fc83efa",
+      "frames": 176,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "proactive_fresh_condition_05",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/original_conditions_proactive_fresh_condition_05.npz",
+      "trace_sha256": "c495c178db8808d55b8afb355115382cbfef9d5f8238cab6d68bb20aeb3e396d",
+      "frames": 179,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_02_0",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/development_noise_early_yield_sensor_holdout_02_0.npz",
+      "trace_sha256": "808c6ae7780c5233ca94020633478ad306f4752901f005519d00ae3c09692535",
+      "frames": 168,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_02_1",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/development_noise_early_yield_sensor_holdout_02_1.npz",
+      "trace_sha256": "87094ddad6eda0823a119ca84c477979466c178ca95b7856e3b2966d29aa5cd6",
+      "frames": 175,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_05_1",
+      "source_report": "reports/stop_feedback_20261015/long_risk_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/long_risk_validation_20261016/physical/development_noise_early_yield_sensor_holdout_05_1.npz",
+      "trace_sha256": "e158d8ea9b7e3cfae6adf1b804d3871296fbb8e8154256bd670d24f481b075f1",
+      "frames": 171,
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "source_report": "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/release_validation_20261016/physical/repaired_wait_condition_early_yield_sensor_holdout_05_0.npz",
+      "trace_sha256": "d4b236edfdffdb42c3fe34850caebdb4fa12d59987cddb5fdb03c60f9f501bb9",
+      "frames": 184,
+      "complete_episode_frames": 185,
+      "excluded_inactive_arrival_frames": [
+        184
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "long_risk_sensor_02_0",
+      "source_report": "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/release_validation_20261016/physical/frozen_new_noise_long_risk_sensor_02_0.npz",
+      "trace_sha256": "94d1924c67c48e214eff9f05a9478f9fbf7ab487a15ed3faa537c0adfe7f7528",
+      "frames": 169,
+      "complete_episode_frames": 170,
+      "excluded_inactive_arrival_frames": [
+        169
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "long_risk_sensor_02_1",
+      "source_report": "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/release_validation_20261016/physical/frozen_new_noise_long_risk_sensor_02_1.npz",
+      "trace_sha256": "2019addbfcceaf785bd2f36cf37c87c466622188db5425b61566db5964fa83fa",
+      "frames": 178,
+      "complete_episode_frames": 179,
+      "excluded_inactive_arrival_frames": [
+        178
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "long_risk_sensor_05_0",
+      "source_report": "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/release_validation_20261016/physical/frozen_new_noise_long_risk_sensor_05_0.npz",
+      "trace_sha256": "b6063deb7b29a15d02f4ba2fa04a35d8792e47c5d9e22ccd2b023550e2e10cc9",
+      "frames": 188,
+      "complete_episode_frames": 189,
+      "excluded_inactive_arrival_frames": [
+        188
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false
+    },
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "source_report": "reports/stop_feedback_20261015/sensor_release_source_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/sensor_release_source_20261016/sensor_release_demonstration.npz",
+      "trace_sha256": "37157b2ca1f2c8b3671294cfef6d082d2c49224d76555b952d5b0e3dceea9280",
+      "frames": 174,
+      "complete_episode_frames": 175,
+      "excluded_inactive_arrival_frames": [
+        174
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true,
+      "teacher_controlled_frames": 2,
+      "teacher_inputs_replayed": true
+    },
+    {
+      "case_id": "release_phase_frozen_noise_05_2",
+      "source_report": "reports/stop_feedback_20261015/release_phase_validation_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/release_phase_validation_20261016/physical/recovery_phase_release_phase_frozen_noise_05_2.npz",
+      "trace_sha256": "428755201fdb5da04dbde77af870dc25ade3bb6399f182c7328607ddadaa3485",
+      "frames": 165,
+      "complete_episode_frames": 166,
+      "excluded_inactive_arrival_frames": [
+        165
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": false,
+      "retention_source_after_regression_diagnosis": true
+    },
+    {
+      "case_id": "safe_reference_t95",
+      "source_report": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_t95.npz",
+      "trace_sha256": "18b99943be7601604d067fba8e45332193424a9cbf076c1b40a6e2975c8d1678",
+      "frames": 99,
+      "complete_episode_frames": 575,
+      "excluded_initialization_prefix_frames": 475,
+      "excluded_inactive_arrival_frames": [
+        574
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true,
+      "reference_is_previous_learning_model": true,
+      "original_safe_physics_and_sensor_only_replay_verified": true,
+      "original_physical_trace_sha256": "51bc584573626566846e0ca25e75672427205fbecf3d0120b8e345c9799b82d9",
+      "not_new_physical_success": true
+    },
+    {
+      "case_id": "safe_reference_t90",
+      "source_report": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_t90.npz",
+      "trace_sha256": "60af6a6f12377cd39bf45471d37882aa7d5a06b5fada6903d2b506e638a06f3f",
+      "frames": 102,
+      "complete_episode_frames": 553,
+      "excluded_initialization_prefix_frames": 450,
+      "excluded_inactive_arrival_frames": [
+        552
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true,
+      "reference_is_previous_learning_model": true,
+      "original_safe_physics_and_sensor_only_replay_verified": true,
+      "original_physical_trace_sha256": "87187c83fc410a9eca271710280fb1c4fffc14062a3076b819b3939e7ac63df9",
+      "not_new_physical_success": true
+    },
+    {
+      "case_id": "safe_reference_wait2_4",
+      "source_report": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/RESULTS.json",
+      "trace_path": "reports/stop_feedback_20261015/safe_feedback_replay_20261016/safe_reference_wait2_4.npz",
+      "trace_sha256": "9c0d8b587856dac19d25081989bda8e8fc3b5ebeaa53361f679d33ef94b76425",
+      "frames": 203,
+      "complete_episode_frames": 691,
+      "excluded_initialization_prefix_frames": 487,
+      "excluded_inactive_arrival_frames": [
+        690
+      ],
+      "safe_success": true,
+      "collision_free_complete_episode": true,
+      "source_is_offline_teacher": true,
+      "reference_is_previous_learning_model": true,
+      "original_safe_physics_and_sensor_only_replay_verified": true,
+      "original_physical_trace_sha256": "3a55618439b5efdf92550f0280e7c3bbd1096a469d3547584cc269472504003f",
+      "not_new_physical_success": true
+    }
+  ],
+  "fit_weighting": {
+    "mode": "recovery_phase_action_balanced",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 629,
+        "unique_head_inputs": 481,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 2000,
+        "unique_head_inputs": 1689,
+        "allocated_loss_weight": 0.24999999999999992
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 27,
+        "unique_head_inputs": 21,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true,
+    "balanced_movement_classes": true,
+    "stop_budget_and_duplicate_weighting_unchanged": true,
+    "class_budgets": [
+      {
+        "phase": "ordinary_motion",
+        "action": 1,
+        "labels": 1293,
+        "allocated_loss_weight": 0.024999999999999994
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 2,
+        "labels": 13,
+        "allocated_loss_weight": 0.024999999999999998
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 3,
+        "labels": 3,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 4,
+        "labels": 35,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 5,
+        "labels": 7,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 6,
+        "labels": 167,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 7,
+        "labels": 28,
+        "allocated_loss_weight": 0.025
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 9,
+        "labels": 36,
+        "allocated_loss_weight": 0.024999999999999998
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 10,
+        "labels": 122,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "ordinary_motion",
+        "action": 11,
+        "labels": 296,
+        "allocated_loss_weight": 0.024999999999999988
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 1,
+        "labels": 7,
+        "allocated_loss_weight": 0.06249999999999999
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 6,
+        "labels": 12,
+        "allocated_loss_weight": 0.06250000000000001
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 9,
+        "labels": 1,
+        "allocated_loss_weight": 0.0625
+      },
+      {
+        "phase": "resumed_motion",
+        "action": 11,
+        "labels": 7,
+        "allocated_loss_weight": 0.0625
+      }
+    ]
+  }
+}

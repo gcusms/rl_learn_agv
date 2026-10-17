@@ -1,0 +1,94 @@
+{
+  "completed": true,
+  "rows": [
+    {
+      "case_id": "recovery_holdout_03",
+      "source_reference_trace": "reports/stop_feedback_20261015/recovery_followup_broad_regression_20261016/physical/remaining_full13_recovery_holdout_03.npz",
+      "source_reference_sha256": "2dd0dd3840ac3fb8af55fa581cbaf7018eb627b120e7a81d2d6091940a91998a",
+      "candidate_trace": "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/normal18_recovery_holdout_03.npz",
+      "candidate_trace_sha256": "ad0532d08874108d31cedb32b185a3f588183d972e0e8a27d1e3ca7986301cbf",
+      "first_different_choice": {
+        "frame": 13,
+        "sensor_time_s": 2.599999999999967,
+        "reference_choice": 11,
+        "candidate_choice": 0,
+        "legal_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "prefix_commands_equal": true,
+        "prefix_physical_pose_max_difference_m_rad": 0.0,
+        "same_current439_observation_max_difference": 0.0,
+        "same_current_scan": true,
+        "same_current_odometry": true,
+        "candidate_current_min_scan_m": 1.6966413259506226,
+        "candidate_previous_execution_reason": "none"
+      },
+      "frames": 700,
+      "voluntary_wait_frames": 632,
+      "only_stop_frames": 3,
+      "last150_voluntary_wait_frames": 150,
+      "last150_only_stop_frames": 0,
+      "final_xy_error_m": 3.2387569206264404,
+      "no_new_physics_or_training_or_labels": true
+    },
+    {
+      "case_id": "motion_profile_002",
+      "source_reference_trace": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_motion_profile_002.npz",
+      "source_reference_sha256": "cc905e1822da4d3abcaa26d009896bd58b266362703a85095637c279b9f95f34",
+      "candidate_trace": "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/normal18_motion_profile_002.npz",
+      "candidate_trace_sha256": "51b08aff1c6e3d097064405d06f6f1a0448e7fe3453f6b61808eeb91fc084715",
+      "first_different_choice": {
+        "frame": 63,
+        "sensor_time_s": 12.60000000000057,
+        "reference_choice": 1,
+        "candidate_choice": 4,
+        "legal_actions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "prefix_commands_equal": true,
+        "prefix_physical_pose_max_difference_m_rad": 0.0,
+        "same_current439_observation_max_difference": 0.0,
+        "same_current_scan": true,
+        "same_current_odometry": true,
+        "candidate_current_min_scan_m": 0.5669894814491272,
+        "candidate_previous_execution_reason": "none"
+      },
+      "frames": 700,
+      "voluntary_wait_frames": 593,
+      "only_stop_frames": 2,
+      "last150_voluntary_wait_frames": 150,
+      "last150_only_stop_frames": 0,
+      "final_xy_error_m": 5.980536910019779,
+      "no_new_physics_or_training_or_labels": true
+    }
+  ],
+  "only_predivergence_observations_compared": true,
+  "limitations": [
+    "After the first different action, trajectories are not shared counterfactual states.",
+    "This distinguishes first divergence from later permission collapse, not unique causation."
+  ],
+  "seconds": 5.535036542976741,
+  "cpu_seconds": 0.11075126900000001
+}

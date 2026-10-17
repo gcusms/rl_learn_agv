@@ -1,0 +1,119 @@
+{
+  "completed": true,
+  "at": "2026-10-17T02:03:56.382613+08:00",
+  "episodes": [
+    {
+      "episode": 1,
+      "actual_laser_rejected_turns": 0,
+      "original_reconstruction_misses": 0,
+      "current_returns_alone_clear": 0,
+      "variants": {
+        "original": {
+          "reconstructed_rejections": 0,
+          "current_raw_clear_rejections": 0
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 0,
+          "current_raw_clear_rejections": 0
+        }
+      },
+      "previous_finite_response_diagnostic": {
+        "original": {
+          "reconstructed_rejections": 0,
+          "current_raw_clear_rejections": 0
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 0,
+          "current_raw_clear_rejections": 0
+        }
+      }
+    },
+    {
+      "episode": 2,
+      "actual_laser_rejected_turns": 164,
+      "original_reconstruction_misses": 0,
+      "current_returns_alone_clear": 139,
+      "variants": {
+        "original": {
+          "reconstructed_rejections": 164,
+          "current_raw_clear_rejections": 139
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 136,
+          "current_raw_clear_rejections": 111
+        }
+      },
+      "previous_finite_response_diagnostic": {
+        "original": {
+          "reconstructed_rejections": 164,
+          "current_raw_clear_rejections": 95
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 144,
+          "current_raw_clear_rejections": 75
+        }
+      }
+    },
+    {
+      "episode": 3,
+      "actual_laser_rejected_turns": 310,
+      "original_reconstruction_misses": 0,
+      "current_returns_alone_clear": 306,
+      "variants": {
+        "original": {
+          "reconstructed_rejections": 310,
+          "current_raw_clear_rejections": 306
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 61,
+          "current_raw_clear_rejections": 57
+        }
+      },
+      "previous_finite_response_diagnostic": {
+        "original": {
+          "reconstructed_rejections": 310,
+          "current_raw_clear_rejections": 238
+        },
+        "finite_free_3cm_3frames": {
+          "reconstructed_rejections": 193,
+          "current_raw_clear_rejections": 121
+        }
+      }
+    }
+  ],
+  "guard_geometry_trajectory": "nominal constant command selected by absent motion_response_schema",
+  "hardware_predictive_constraint_still_uses_finite_response": true,
+  "original474checks_matched": true,
+  "old_report_preserved": true,
+  "correction_scope": "Offline trajectory approximation and its derived counts only",
+  "old_closed_loop_physical_outcomes_not_reinterpreted": true,
+  "inputs": {
+    "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/audit_memory_actual.py": "fbbf72c4ab9a11458300b35a8c2c3f26e1f36e47d8379690da93312f0645b74d",
+    "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/audit.py": "d5c6f3efabb7866088b1c388ecc883eede1eb46bb90c7daade862b688b1b0e2d",
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/MEMORY_GEOMETRY_AUDIT.json": "5750317ff6f980bdb7ffe13ad3083cdbc353cd31456d2b059a0179a8e5d918cf",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/context_broad_diagnostic_20261016/physical/hard3_w11_training_stall_t106.npz": "9d307c7e9a83a3c1f75c4a3158eb67c97cc9f98222e174e101ebe128ab127767",
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/FIRST3_GEOMETRY_ROWS.json": "0f62a20ae4e51172cbc7933da76fb64a9ce92eb15b42a6e77960f8149a2b4d8f",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/neural_navigation/motion_response.py": "4452ee85857f6775acf5d0c93786742b964553ce016c23aeee91d7d248ccef77",
+    "training/navrl/geometry.py": "f9e5dd9fbfca08e5ecf8c2efbf154fe0acd2151173c6268e9b2db507c4c21f57",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_01.npz": "d2ee3d0e978f4143562aee07de3faf1ba5593bf170df8fb1c9c362c52172e051",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_02.npz": "4df00de239758e430a361632952b92c1f845fae558acaf2864256b197670fb91",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_03.npz": "3e247f60a29480b7f3ce404b487182c794a88a2e39a143b52cadf982436c1900"
+  },
+  "resource": {
+    "seconds": 85.79928851802833,
+    "cpu_seconds": 8.580315613,
+    "average_cpu_cores": 0.10000450774364038,
+    "peak_rss_mib": 43.22265625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0,
+  "no_optimizer_updates": true,
+  "no_runtime_hardware_model_or_permission_change": true,
+  "no_closed_loop_success_or_full_safety_proof": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-16T12:13:05.256313+00:00",
+  "inputs": {
+    "training/experiments/refit_phase_tail_pair.py": "2972513f3f035717f03085f308bb61763677182ecbadc007ea60d61965915c96",
+    "models/stop_feedback_20261015/normal_retention2000_s231016/checkpoint.pt": "e909ac0dc7df8a7cbc9429971cc5675e5e75fd2fe3262064fff8ccd579c0153f",
+    "models/stop_feedback_20261015/normal_retention2000_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/normal_retention2000_s231016/RESULTS.json": "adcbea06edb5d1491318cf4c730542072618016a211882cda55ae6956f36893a",
+    "models/stop_feedback_20261015/normal_retention2000_s231016/fixed_source_weights.npz": "44f4637c89e469c156878e520ce552294e9726b06a708e99f1bf1d2af95e3310",
+    "reports/stop_feedback_20261015/normal_retention_sources_20261016/demonstrations.npz": "a36a80a5f7c40882a360358542102e47fc5bdf3ca4cd3408d7a3181847f8e5fd",
+    "training/experiments/phase_tail_loss.py": "3c36c1daaec39c830efecf068dc71ee27d4029f1c6dd47ff8f12b5ece225de5b",
+    "training/experiments/test_phase_tail_loss.py": "2b34a0ba45e5774f80a9597cedc2d0a7d67a9fbac9f8497d5bb4e974fec97a9c",
+    "training/experiments/test_phase_tail_pair_resume.py": "9b32543f8a6559980846184ec3c38646040f65b0fc96ed9502bf69d4a517d128",
+    "training/experiments/guard_reason_release_actor.py": "2e2914ef82b68945a758a22dc14a9a2704ea37f7410f0eb0cc0f3cef76ffcd5f",
+    "training/experiments/context_release_actor.py": "26712fd60909cec0c8c46099c0674970f11b45440a31d02a69c2ece3d6b9e811",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a"
+  },
+  "prior_supervised_updates": 2000,
+  "maximum_new_updates_per_model": 500,
+  "maximum_new_models": 2,
+  "ordered_models": [
+    "mean500",
+    "tail500"
+  ],
+  "same_initial_checkpoint_optimizer_rng_data_architecture_and_learning_rate": true,
+  "only_changed_factor": "ordinary_motion_half_mean_half_log_mean_exp_CE_vs_original_mean",
+  "phase_gradient_budgets": {
+    "stop": 0.5,
+    "ordinary": 0.25,
+    "resumed": 0.25
+  },
+  "tail_focus_share": 0.5,
+  "tail_alpha": 1.0,
+  "all_examples_have_positive_gradient": true,
+  "common_early_stop": "allsource labels correct and minimumactive target probability>=.6",
+  "physical_candidate_selection": "prefer mean500 if fullfit; otherwise tail500 if fullfit; else no physical trial",
+  "no_physics_before_full_source_fit_and_portable_checks": true,
+  "no_dataset_or_runtime_contract_change": true,
+  "source_fit_gate": "all3728labels_correct",
+  "no_optimizer_updates_to_parent_localizer_router_docking_or_guard": true,
+  "cpu_soft_cores": 0.1,
+  "maximum_rss_mib": 1024,
+  "new_ppo_steps": 0,
+  "deployment_approved": false
+}

@@ -1,0 +1,130 @@
+{
+  "at": "2026-10-17T08:24:10.090038+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "Latest joint-linear current weights independently passed all original28safety/efficiency cases:18normal,5sensor,3source recovery,2heading.",
+    "5028recorded frames,3616learned-control frames checked; all actual observations,raw sensors,actions,execution and physical non-timing traces exact to actual auxiliary119.",
+    "All original source prefixes and release clocks verified; physical docking tolerance,stop and settle conditions passed. No new current-model gain claimed for retained original28.",
+    "Read-only recorded audit coordinator actually completed successfully and is terminal; exact main physical validator remains live on remaining known complete missions."
+  ],
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "new_ppo_steps": 0,
+  "new_training_updates_this_turn": 0,
+  "source_supervised_updates": 2500,
+  "new_constrained_last_layer_updates_in_current_model": 1,
+  "physical_validation": {
+    "completed": false,
+    "completed_episodes": 31,
+    "safe_arrivals": 31,
+    "collisions": 0,
+    "timeouts": 0,
+    "groups": {
+      "observed6": 3,
+      "normal18": 18,
+      "sensor5": 5,
+      "source_recovery3": 3,
+      "heading2": 2
+    },
+    "latest_candidate_fixed28_still_pending": false,
+    "fixed28_original_gates_independently_passed": true
+  },
+  "fixed28_independent_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json",
+  "fixed28_original_input_hashes_verified": 65,
+  "fixed28_recorded_frames": 5028,
+  "fixed28_learned_control_frames": 3616,
+  "recovery_suffixes": [
+    {
+      "case_id": "w11_training_stall_t95",
+      "initialization_frames": 475,
+      "learned_frames": 100,
+      "post_release_seconds": 19.79999999996808,
+      "voluntary_wait_frames": 2,
+      "only_stop_frames": 20,
+      "original_raw_sensor_physics_and_command_prefix_verified": true
+    },
+    {
+      "case_id": "w11_training_stall_t90",
+      "initialization_frames": 450,
+      "learned_frames": 103,
+      "post_release_seconds": 20.39999999997208,
+      "voluntary_wait_frames": 0,
+      "only_stop_frames": 20,
+      "original_raw_sensor_physics_and_command_prefix_verified": true
+    },
+    {
+      "case_id": "w11_actual95_wait2_4",
+      "initialization_frames": 487,
+      "learned_frames": 204,
+      "post_release_seconds": 40.59999999994699,
+      "voluntary_wait_frames": 1,
+      "only_stop_frames": 11,
+      "original_raw_sensor_physics_and_command_prefix_verified": true
+    }
+  ],
+  "verified_live_handles": [
+    {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1506172928",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd",
+      "start_ticks": "50175760",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run.py ",
+      "unit": "rl-full-navigation-joint-linear-20261017.service"
+    },
+    {
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "[not set]",
+      "MemoryMax": "infinity",
+      "ActiveState": "inactive",
+      "InvocationID": "",
+      "unit": "rl-full-navigation-joint-linear-recorded-audits-20261017.service"
+    },
+    {
+      "MainPID": "2225010",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "7585792",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "InvocationID": "12f8bee1621e4efda6da7f4a2bcbc002",
+      "start_ticks": "50187980",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_neural_mechanism_after_validation.py ",
+      "unit": "rl-full-navigation-joint-linear-mechanism-20261017.service"
+    }
+  ],
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "observed6",
+    "case_id": "pre_ppo_holdout_dynamic_01",
+    "variant": "candidate",
+    "completed_episodes": 31,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/observed6_pre_ppo_holdout_dynamic_01_candidate.json"
+  },
+  "original_scope_preserved": true,
+  "all_known6_now_training_development": true,
+  "frozen8_not_in_training": true,
+  "remaining_requirements": [
+    "Finish remaining known complete-mission safety/efficiency checks.",
+    "Resolve original97.6/106late waits while retaining96success; infeasibility also needs independent proof plus verified earlier prevention,never failed search alone.",
+    "Complete serialized actual new-weight neural cause/likelihood/export checks; input presence is not useful understanding.",
+    "Only after original gates evaluate frozen8pairs without training leakage.",
+    "Preserve original footprint,4cm,blind/unknown,12actions,dynamics,deadlines,memory,original deployment and resource limits; no new localization or target-board claim."
+  ],
+  "conditional_late106_protocol": "reports/stop_feedback_20261015/late106_joint_beam_protocol_20261017/README.md",
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_082410.json": "727a872e1c8d838f5917192a2947fa47899aaa7b8aca658be3e47d9d94bad8e0",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_AUDIT.json": "36a332ab5878a56403bb3e4ff057ca0dad2a3ac034a795eb394b99bfd5f92295",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIXED28_VALIDATION_SNAPSHOT.json": "4b27bd225e0ec83626494c7fbe40c76b01f3c31a528d88d980562bfdb8f5b949",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_AUDITS.json": "967338a12cc22e84fb44506910f5514046300125b90f125e6252bdaa164a3ff0",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/NORMAL18_AUDIT.json": "c26758d5b3da5ac078e2adff9453460248b2d1c2eed2b5b17d1bd6a847a221a9",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/RECORDED_FEEDBACK_AUDIT.json": "a38fccfc70954ab055b49a87c1b5b555cfc78790be0bcfa97879f2058e9f1677",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json": "279657371c5cef95ce11872e5f32307e6efe9554e7e817d61b818823e8e7912f"
+  }
+}

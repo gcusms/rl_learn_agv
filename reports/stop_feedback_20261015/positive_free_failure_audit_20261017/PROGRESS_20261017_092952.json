@@ -1,0 +1,151 @@
+{
+  "at": "2026-10-17T09:29:52.823545+08:00",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "new_ppo_steps": 0,
+  "new_training_updates": 0,
+  "model_weights_unchanged": true,
+  "learned_result": {
+    "physical_episodes": 35,
+    "safe_arrivals": 34,
+    "collisions": 0,
+    "timeouts": 1,
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "hard106_still_failed": true
+  },
+  "shadow_result": "positive_free_shadow_v2_20261017/RESULTS.json",
+  "experimental_from_init_admission": {
+    "completed": true,
+    "source_physical_sensor_commands_and_base235_exact": true,
+    "original_prefix_frames": 530,
+    "changed_prefix_mask_frames": 18,
+    "all_prefix_commands_currently_admissible": true,
+    "two4frame_new_memory_continuations_exact": true,
+    "changed_memory_not_full_retention_or_adoption": true,
+    "resource": {
+      "seconds": 219.33066844701534,
+      "cpu_seconds": 76.7679292,
+      "average_cpu_cores": 0.3500100088307767,
+      "peak_rss_mib": 1642.5625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "at": "2026-10-17T09:26:24.294074+08:00",
+    "new_ppo_steps": 0,
+    "new_training_updates": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "experimental_physics": {
+    "completed": true,
+    "rows": [
+      {
+        "mode": "waypoint",
+        "safe_success": false,
+        "reason": "Original140second deadline reached",
+        "seconds": 139.99999999994517,
+        "post_release_seconds": 33.999999999945175,
+        "final_xy_error_m": 1.7629299741814592,
+        "collisions": 0,
+        "physical_guards": 0,
+        "minimum_dynamic_gap_m": 0.05069167844006317,
+        "trace_path": "reports/stop_feedback_20261015/positive_free_physics_20261017/teacher_waypoint.npz",
+        "trace_sha256": "6dcb98d71a1e0736b844e9a1a6dde14fa86f19ce5585e69e31771ed8d233c483",
+        "frames": 700,
+        "original_prefix_frames": 530,
+        "experimental_memory_from_initialization": true,
+        "offline_teacher_not_learned_success": true,
+        "independent_fresh_replay_passed": false
+      },
+      {
+        "mode": "goal",
+        "safe_success": false,
+        "reason": "Original140second deadline reached",
+        "seconds": 139.99999999994517,
+        "post_release_seconds": 33.999999999945175,
+        "final_xy_error_m": 1.7616035111643753,
+        "collisions": 0,
+        "physical_guards": 0,
+        "minimum_dynamic_gap_m": 0.05554129562983562,
+        "trace_path": "reports/stop_feedback_20261015/positive_free_physics_20261017/teacher_goal.npz",
+        "trace_sha256": "ced8abfd25235fa2d311c51ee725a15315dab288f8b357f73b04a395b139ef71",
+        "frames": 700,
+        "original_prefix_frames": 530,
+        "experimental_memory_from_initialization": true,
+        "offline_teacher_not_learned_success": true,
+        "independent_fresh_replay_passed": false
+      }
+    ],
+    "safe_teacher_candidate_found": false,
+    "new_physical_steps": 878,
+    "original_model_files_and_native_physics_unchanged": true,
+    "changed_memory_not_adopted": true,
+    "independent_fresh_replay_required": false,
+    "full_original28_known6_hard97_6_106_96_and_fresh8_requirements_retained": true,
+    "no_automatic_training_admission": true,
+    "resource": {
+      "seconds": 326.7825906900107,
+      "cpu_seconds": 114.80975665599999,
+      "average_cpu_cores": 0.35133376112104364,
+      "peak_rss_mib": 1661.4140625,
+      "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+    },
+    "at": "2026-10-17T09:28:11.745934+08:00",
+    "new_ppo_steps": 0,
+    "new_training_updates": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "conditional_fresh_replay": {
+    "completed": true,
+    "replay_launched": false,
+    "reason": "No complete safe teacher; no replay, no training labels, no infeasibility claim",
+    "source_result_sha256": "2a08afff1dce81ceab69db390a5c8a8da145ad69cbdc2bcc2a8a7438216a3a8d",
+    "at": "2026-10-17T09:28:13.725834+08:00",
+    "model_or_physics_loaded": false,
+    "new_ppo_steps": 0,
+    "new_training_updates": 0,
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "new_memory_not_adopted": true,
+  "no_success_labels_from_failed_teachers": true,
+  "original_deployment_unchanged": true,
+  "live_handles": [
+    {
+      "MainPID": "2258808",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "26439680",
+      "MemoryMax": "681574400",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "e3757ef9579d4d56b6782fb822322da5",
+      "unit": "rl-positive-free-failure-audit-20261017.service",
+      "checked_at": "2026-10-17T09:29:52.823545+08:00",
+      "start_ticks": "50831228"
+    }
+  ],
+  "active_worker": {
+    "pid": 2258808,
+    "unit": "rl-positive-free-failure-audit-20261017.service",
+    "start_ticks": "50831228",
+    "invocation_id": "e3757ef9579d4d56b6782fb822322da5",
+    "kind": "read_only_recorded_geometry_audit_no_model_or_physics"
+  },
+  "original_requirements_not_waived": [
+    "normal18,sensor5,source3,heading2",
+    "per-case20%,normal aggregate5%time/2%path",
+    "known full missions and safety failures",
+    "original97.6/106 hard recoveries and prior96success",
+    "conditional frozen fresh8pairs,no training leakage",
+    "changed memory from init,matched contract,complete retention",
+    "independent infeasibility plus earlier prevention if claiming impossible",
+    "same footprint,4cm,12actions,unknown/blind,dynamics/deadlines"
+  ],
+  "next_action": "Independently reconstruct actual experimental-memory rejection geometry; do not fit failed teachers or call them infeasibility. Use evidence to select next recovery/prevention experiment.",
+  "no_localization_real_car_generalization_or_board_improvement_claim": true
+}

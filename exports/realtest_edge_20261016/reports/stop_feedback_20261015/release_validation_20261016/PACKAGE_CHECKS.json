@@ -1,0 +1,67 @@
+{
+  "completed": true,
+  "commands": [
+    {
+      "args": [
+        "verify.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.19360603799577802,
+      "output": "OK: 514 archived files verified\ngenerated/ configs and rebuilt native bundles are not archived model replacements\n"
+    },
+    {
+      "args": [
+        "configure.py",
+        "--kind",
+        "candidate"
+      ],
+      "returncode": 0,
+      "seconds": 0.22308790998067707,
+      "output": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_20261016/generated/model_candidate.json\nmodel_source=/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_20261016\n"
+    },
+    {
+      "args": [
+        "configure.py",
+        "--kind",
+        "baseline"
+      ],
+      "returncode": 0,
+      "seconds": 0.1993941210093908,
+      "output": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_20261016/generated/model_baseline.json\nmodel_source=/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_20261016\n"
+    },
+    {
+      "args": [
+        "-m",
+        "unittest",
+        "deployment.ros2_recording_adapter.test_release_handoff",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.25524255901109427,
+      "output": "test_actual_motion_clears_candidate_wait_and_only_stop_is_distinct (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_candidate_and_rollback_load_with_their_own_contracts (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_invalid_publication_does_not_update_history (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\ntest_unpublished_motion_is_replaced_by_actual_external_stop (deployment.ros2_recording_adapter.test_release_handoff.ReleaseHandoffTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.075s\n\nOK\n"
+    },
+    {
+      "args": [
+        "-m",
+        "unittest",
+        "training.experiments.test_release_context",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 2.6948493259842508,
+      "output": "test_initialization_preserves_all_old_decisions (training.experiments.test_release_context.ReleaseContextTests) ... ok\ntest_original_mask_and_directional_fallback_remain_authoritative (training.experiments.test_release_context.ReleaseContextTests) ... ok\ntest_unknown_and_no_return_cannot_be_confused (training.experiments.test_release_context.ReleaseContextTests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.385s\n\nOK\n"
+    },
+    {
+      "args": [
+        "smoke_adapter.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.9766251250403,
+      "output": "{\n  \"completed\": true,\n  \"stored_frames\": 3,\n  \"finite_625D\": true,\n  \"actual_published_history_visible_in_observation\": true,\n  \"duplicate_record_errors\": 0,\n  \"native_kernel_loaded\": true,\n  \"physics_episodes\": 0,\n  \"ros_node_executed\": false,\n  \"vehicle_started\": false,\n  \"elapsed_seconds\": 0.4793331070104614\n}\n"
+    }
+  ],
+  "ros_adapter_syntax_valid": true,
+  "ros_node_executed": false,
+  "vehicle_started": false,
+  "new_physics_episodes": 0
+}

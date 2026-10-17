@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-17T07:13:27.290622+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "Actual new candidate completed all18normal conditions safely. Independent gates against original fixed,declared BC4500 and directaux119 all pass with original per-case20%,total time5% and path2% limits.",
+    "All2315 recorded normal frames match directaux119 in complete625 observations,actions,commands,masks,raw sensors,physical poses/routes and predictive contacts except compute timing. Time459.4s and path67.13577m unchanged.",
+    "Independent new-candidate feedback audit10 actual cases1956learned frames validates current cause/mask categories,actual action/velocity/reason history and exact physical-time risk history; feature consistency alone is not neural use.",
+    "A separate standard-library waiter for the exact current validator is actually running; only after terminal validation and no other running RL service will it load a model for the actual cause-head/likelihood audit. It issues no commands and does not train."
+  ],
+  "normal18_audit": "reports/stop_feedback_20261015/full_navigation_residual_20261017/NORMAL18_AUDIT.json",
+  "recorded_feedback_audit": "reports/stop_feedback_20261015/full_navigation_residual_20261017/RECORDED_FEEDBACK_AUDIT.json",
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/NORMAL18_AUDIT.json": "5953a2096654fe2505ea4a5e3fd16e6695c27a04a65db05e40ee4c28938a68b2",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/RECORDED_FEEDBACK_AUDIT.json": "ae9fdcb96fa59cf6086c1c19a5a41a205dc8b44b3b8ce4a4e72b79b1ad55adfe",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/SENSOR01_LEARNED_GAIN_AUDIT.json": "dcfd7e9f8c995566869a1fd681edbb92e0bd39b87bd1be7e4052bd3bda4b0be9",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/VALIDATION_SNAPSHOT_20261017_071327.json": "ea3167c37b3e27db675cd52759a92fcc574eae404e826d27896c4d29fb4be8d2",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/audit_neural_mechanism_after_validation.py": "1d49075fe0a12d375d88e9506bd9bed299f4e5f19065036e5f59df253dc26e73"
+  },
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+  "physical_validation": {
+    "completed": false,
+    "reason": null,
+    "completed_episodes": 24,
+    "safe_arrivals": 24,
+    "collisions": 0,
+    "groups": {
+      "observed6": 1,
+      "normal18": 18,
+      "sensor5": 5
+    },
+    "normal18_all_safety_efficiency_and_exact_retention_proven": true
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2205571",
+      "MemoryCurrent": "1480118272",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520",
+      "unit": "rl-full-navigation-margin-resume-cycle-20261017.service",
+      "resource_role": "physical_validation",
+      "start_ticks": "49851050",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_residual_20261017/run_margin_resume.py "
+    },
+    {
+      "MainPID": "2211434",
+      "MemoryCurrent": "7512064",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "a4e3d1b2f3db4520ac7289f9bc3b5938",
+      "unit": "rl-full-navigation-mechanism-post-20261017.service",
+      "resource_role": "serialized_neural_audit",
+      "start_ticks": "49966957",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_residual_20261017/audit_neural_mechanism_after_validation.py "
+    }
+  ],
+  "neural_audit_status_at_snapshot": {
+    "stage": "waiting_for_exact_physical_validation",
+    "dependency": {
+      "MainPID": "2205571",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520"
+    },
+    "model_and_physics_not_loaded": true,
+    "no_parallel_model_or_physics": true,
+    "at": "2026-10-17T07:13:26.510017+08:00",
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "source_recovery3",
+    "case_id": "w11_training_stall_t95",
+    "variant": "candidate",
+    "completed_episodes": 24,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/source_recovery3_w11_training_stall_t95_candidate.json"
+  },
+  "next_action": "Continue exact original sensor5/source3/heading2,known safety,hard97.6/106 and conditional frozen8paired gates. Let serialized neural probe finish after validator; do not start another model job while either handle is active. A neural counterfactual is not safe-recovery evidence or permission to waive hard states."
+}

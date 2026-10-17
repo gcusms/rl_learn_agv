@@ -1,0 +1,25 @@
+{
+  "schema": "offline_sensor_checked_wait_release_v1",
+  "training_only": true,
+  "observation_dimensions": 625,
+  "minimum_prior_legal_wait_s": 2.0,
+  "forecast_history": "current supported frame plus at least one supported historical frame",
+  "candidate_contact_scores_must_all_be_zero": true,
+  "unsupported_forecasts_are_not_clear": true,
+  "minimum_forward_finite_hit_fraction": 0.25,
+  "maximum_forward_unknown_fraction": 0.15,
+  "forward_sector_definition": "sensor angles plus mount yaw within 35 degrees of forward",
+  "waypoint_normalization_m": 2.0,
+  "goal_normalization_m": 12.0,
+  "rollout_s": 1.0,
+  "finite_response_gain": 20.0,
+  "finite_response_acceleration": [
+    0.5,
+    1.0
+  ],
+  "only_override_nominal_stop_inside_trainable_support": true,
+  "armed_release_can_bridge_temporary_unknown_without_issuing_motion": true,
+  "no_absolute_episode_time_or_simulator_truth": true,
+  "original_masks_actions_body_and_guard_unchanged": true,
+  "positive_labels_require_separate_complete_safe_physical_episode": true
+}

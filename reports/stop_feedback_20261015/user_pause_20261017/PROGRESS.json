@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-17T09:55:55.264544+08:00",
+  "status": "paused_by_user",
+  "goal_status_requested": "paused",
+  "authorizing_user_request": "如果设计的差不多了，就可以停止了",
+  "previous_goal_turn_classification": "verified_wait",
+  "current_goal_turn_classification": "progress",
+  "current_goal_turn_evidence": [
+    "Specific original-guard physics search and replay waiter stopped at user request; exact PIDs absent and no active RL units/timers.",
+    "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json",
+    "reports/stop_feedback_20261015/user_pause_20261017/CANDIDATE_FILES.json"
+  ],
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "active_worker": null,
+  "live_handles": [],
+  "verified_live_handles": [],
+  "current_candidate_model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "original_deployment_replaced": false,
+  "formal_validation": {
+    "episodes": 35,
+    "safe_arrivals": 34,
+    "timeouts": 1,
+    "collisions": 0,
+    "fixed28_passed": true,
+    "known6_passed": true,
+    "scope": "Includes known training/development and initialized recovery tasks; not an independent generalization rate.",
+    "report": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/RESULTS.json"
+  },
+  "matched_improvement": {
+    "dynamic02_prior_seconds": 140.0,
+    "prior_timeout": true,
+    "current_seconds": 49.2,
+    "current_safe_arrival": true,
+    "prior_voluntary_wait_frames": 569,
+    "current_voluntary_wait_frames": 1,
+    "normal18_seconds_before_after": [
+      459.4,
+      459.4
+    ],
+    "normal18_travel_m_before_after": [
+      67.13577183988691,
+      67.13577183988691
+    ]
+  },
+  "paused_search": {
+    "unit": "rl-late106-framewise-20261017.service",
+    "invocation_id": "2ba7ac0461fa47fb946b4123247ac41c",
+    "pid": 2260374,
+    "outcome": "interrupted_by_user_not_completed_evaluation",
+    "last_persisted_depth": 118,
+    "last_persisted_physical_steps": 2222,
+    "last_persisted_status_at": "2026-10-17T09:54:56.925978+08:00",
+    "complete_safe_teacher_found": false,
+    "no_infeasibility_claim": true,
+    "last_snapshot": "reports/stop_feedback_20261015/user_pause_20261017/LAST_RECORDED_SEARCH_STATUS.json"
+  },
+  "new_training_updates_after_latest_candidate": 0,
+  "new_ppo_steps_after_latest_candidate": 0,
+  "localizer_router_terminal_changed_this_stage": false,
+  "remaining_requirements": [
+    "Original106s late recovery remains unresolved; nominally legal motion does not prove a complete safe recovery.",
+    "Current candidate original97.6s and96s full recovery retention checks remain unexecuted.",
+    "Conditional frozen fresh8 paired evaluation remains unexecuted; no generalization or deployment approval.",
+    "Measured-speed motion-prediction shadow is diagnostic only; no runtime safety-rule change adopted."
+  ],
+  "diagnostic_motion_report": "reports/stop_feedback_20261015/measured_motion_geometry_audit_20261017/RESULTS.json",
+  "next_action": "No further training, simulation, automatic replay or model replacement; resume only on a new user request.",
+  "stop_evidence": "reports/stop_feedback_20261015/user_pause_20261017/POST_STOP_SNAPSHOT.json"
+}

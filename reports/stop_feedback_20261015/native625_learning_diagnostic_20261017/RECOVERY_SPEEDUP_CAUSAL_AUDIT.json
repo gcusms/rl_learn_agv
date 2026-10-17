@@ -1,0 +1,106 @@
+{
+  "completed": true,
+  "same_actual_release_s": 95.99999999998518,
+  "prefix_parity": {
+    "observations": true,
+    "masks": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true,
+    "labels": true,
+    "human_positions": true,
+    "choices_before_difference": true,
+    "commands_before_difference": true
+  },
+  "unchanged_components": {
+    "hardware.json": true,
+    "localizer.pt": true,
+    "router.pt": true,
+    "decision_feedback.json": true,
+    "release_observation.json": true,
+    "docking_contract.json": true,
+    "localization_contract.json": true
+  },
+  "first_difference": {
+    "frame": 525,
+    "sensor_time_s": 104.99999999997699,
+    "parent_choice": 7,
+    "candidate_choice": 5,
+    "parent_command_m_s_rad_s": [
+      0.05,
+      -0.5
+    ],
+    "candidate_command_m_s_rad_s": [
+      0.0,
+      -0.5
+    ],
+    "legal_actions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "observation_and_physical_state_identical": true
+  },
+  "paired_recovery_metrics": {
+    "parent": {
+      "post_release_seconds": 36.39999999996691,
+      "total_travel_including_common_prefix_m": 10.394158845448528,
+      "post_release_only_stop_frames": 90,
+      "post_release_wait_with_choices_frames": 3,
+      "collisions": 0,
+      "false_arrival": false,
+      "physical_guards": 0
+    },
+    "candidate": {
+      "post_release_seconds": 20.199999999981628,
+      "total_travel_including_common_prefix_m": 10.304575452521048,
+      "post_release_only_stop_frames": 5,
+      "post_release_wait_with_choices_frames": 2,
+      "collisions": 0,
+      "false_arrival": false,
+      "physical_guards": 0
+    }
+  },
+  "recovery_time_relative_change": -0.44505494505494525,
+  "policy_weight_change_not_sensor_or_safety_contract_change": true,
+  "interpretation": "The new actor turns in place where the old actor advances while turning; later stop-only frames fall from90 to5.",
+  "one_reused_development_state_not_independent_generalization": true,
+  "remaining_two_hard_states_unsolved": true,
+  "no_new_physics": true,
+  "no_optimizer_updates": true,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "inputs": {
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/audit_recovery_speedup.py": "90eb567de605e336cfd525fcc23bb6a188072aff8621d4e24f7e04ffd85aca67",
+    "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/RESULTS.json": "ef5d9997e4f977f6983d9c701d577b7d79f0a757a5d6e7b74d406aa158964aa8",
+    "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/RESULTS.json": "581d8cb9fdd5e8371c90f0e05409d26aa041a9449e339f995a5c8f3c97aaa5a0",
+    "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_legal_wait_parent_t90.npz": "f3597b91388e718377c9e55261235b11285972e1b623f4bb45cad9eae2d3f40b",
+    "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/physical/hard3_legal_wait_parent_t90.npz": "bee025a8f755bab05464f174a66a57eb14368b07770c302228ea141d43dab7a3",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/actor.pt": "c6b82aec1f71a8aedc65971a921d2daddf63bd77f284fc2e9e5b6cc7cfafa5ca",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/manifest.json": "47146f3de64da56cf5c629e16e3cfafd3083db44e65312b1a702ad7f6f0875ee",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/actor.pt": "514aed9997d3083725c50e6fcfd64ef1392326900ad800ef6161782ec232ce50",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/manifest.json": "0f482bc56aeadd09a0a15de8edaf83b317648a0391b896e39356f095695a379d"
+  }
+}

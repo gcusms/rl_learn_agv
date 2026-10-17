@@ -7,7 +7,7 @@ import numpy as np
 from navrl.geometry import integrate
 
 
-def directional_body_risk(tracks,pose,timestamp,commands,footprint,
+def directional_body_risk_reference(tracks,pose,timestamp,commands,footprint,
                           horizon_s=2.4,period_s=.2,margin_m=.04,
                           uncertainty_floor_m_s=.025,residual_scale=2.,
                           measured_velocity=None,response_gain=20.,response_acceleration=(.5,1.)):
@@ -62,3 +62,8 @@ def directional_body_risk(tracks,pose,timestamp,commands,footprint,
         result.append(dict(command=command.tolist(),supported_tracks=len(supported),
             predicted_margin_contact_s=first,minimum_predicted_clearance_m=minimum))
     return result
+
+
+# Keep the scalar implementation available for numerical boundary fallback,
+# paired regression and target-board benchmarking.
+from neural_navigation.directional_risk_batch import batched_directional_body_risk as directional_body_risk

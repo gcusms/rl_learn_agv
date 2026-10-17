@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-16T09:39:28.331806+00:00",
+  "inputs": {
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/release_phase_validation_20261016/RESULTS.json": "06b07d953b38ed285dd5816422dbaf71129a808204cc97a9dd05a062c02c0314",
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/physical/actual95_actual90_w11_training_stall_t95.npz": "ac1247c8f469b2110eeb9d152964a82a5687eeefa24d43deae163cd0b8a15af0",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/manifest.json": "0ea7025b33c9408b27e2669e215dadc6e1af68ceee440393890994b97453acc7",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_release_phase_frozen_noise_05_2.npz": "c702d4cdf2e0944b2a74871ee53ef81733b81e55be9a94149bfeebbf1606f3ef",
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/physical/actual95_actual90_w11_training_stall_t90.npz": "d40e7319d6046e87f74103d971f4d7b111ae28a4135260664d8ea782cbc0bb43",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_1.npz": "cf5ac804b84ff32630c3320448907730c5b7f2cb18216c0c01a5304496c8f759",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_docking_dev_02.npz": "f0fd0f77ee0751a665bca2a9065babe317f47419bcd79c6d7b9bcbf9a3d3f521",
+    "reports/stop_feedback_20261015/retained_sensor_release_broad_20261016/RESULTS.json": "6bde80f0aeeaa827e943784e0fbbf8808ea2a9683d13f39987b6c255b50f9f9a",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_sensor_release_frozen_noise_05_0.npz": "1f0369ace91c9463c9d3bcadba1c823b0b5c166308d509fa3d676c1cd93932a4",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/portable/actor.pt": "8e5366f7d0a640fe85add441fc7d559cc627f20f7725fb09396761db0440da06",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/RESULTS.json": "f7fdf3ef907d5cfd4af8dbf9cc200d61aa078d232cd58045551cdbe2a85c297b",
+    "models/stop_feedback_20261015/sensor_release_retained400_s231016/checkpoint.pt": "20f48a8c377dab17137c9d940b1f67ea54f8da8b2193ffff3f94a9a334b441c0",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515",
+    "training/neural_navigation/decision_feedback.py": "ab9fa6ef47fc863d793afdf9fb43bb4a6dbd6090959a0c8c97f52af31e61cc0f",
+    "training/experiments/audit_sensor_release_feedback.py": "8648fabc8392637630838019e871fd2dcf7fc0c58f2bc4ea0ae051c77fb24ef8",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_early_yield_sensor_holdout_05_0.npz": "cb7b22fef5f470b19bdf11e8da5afc5c1b9dd93ac16b059bb67c1a63dfd71f1d",
+    "reports/stop_feedback_20261015/release_phase_validation_20261016/physical/recovery_phase_long_risk_sensor_05_1.npz": "1cfbce50892127112bdf0c09a8c647e8038085e3a01eda35c0893d95adc1c53a",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_docking_dev_11.npz": "ecbcebad93a9d480ff813c42e424410927597a2ea5372195358168a64d2d45ee",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a",
+    "reports/stop_feedback_20261015/retained_sensor_release_validation_20261016/physical/candidate_long_risk_sensor_05_1.npz": "b369498a227bf9871d760fd86d80c83808adc4783e229850c48e3916208119be"
+  },
+  "ablations": [
+    "full_context",
+    "previous_stop_reason_none",
+    "without_idle_timers",
+    "without_long_risk_history",
+    "without_mask_features_hard_mask_retained",
+    "without_current_ranges",
+    "without_current_scan_quality",
+    "without_waypoint_and_goal",
+    "without_measured_velocity_and_execution"
+  ],
+  "fixed_support_parent_and_hard_mask": true,
+  "counterfactuals_not_executed_or_admitted_as_labels": true,
+  "no_simulator_truth_in_policy_input": true,
+  "new_optimizer_updates": 0,
+  "new_physical_steps": 0
+}

@@ -1,0 +1,206 @@
+{
+  "at": "2026-10-17T09:37:01.419670+08:00",
+  "source_sha256": "a0d654266f0d5b68c7c7452b2419e18b78ca33f040fdfaf19ef8f94ca9570696",
+  "summaries": [
+    {
+      "trace": "positive_free_goal_teacher",
+      "sampled_only_stop_states": 8,
+      "sampled_only_stop_with_no_raw_geometric_motion": 6,
+      "rows": [
+        {
+          "frame": 532,
+          "sensor_time_s": 106.39999999997572,
+          "raw_only_geometrically_clear_actions": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 537,
+          "sensor_time_s": 107.39999999997481,
+          "raw_only_geometrically_clear_actions": [
+            3,
+            4,
+            5,
+            6,
+            8,
+            9
+          ],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 550,
+          "sensor_time_s": 109.99999999997245,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 580,
+          "sensor_time_s": 115.99999999996699,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 583,
+          "sensor_time_s": 116.59999999996644,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 588,
+          "sensor_time_s": 117.59999999996553,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 620,
+          "sensor_time_s": 123.99999999995971,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 698,
+          "sensor_time_s": 139.59999999994554,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        }
+      ]
+    },
+    {
+      "trace": "positive_free_waypoint_teacher",
+      "sampled_only_stop_states": 8,
+      "sampled_only_stop_with_no_raw_geometric_motion": 4,
+      "rows": [
+        {
+          "frame": 532,
+          "sensor_time_s": 106.39999999997572,
+          "raw_only_geometrically_clear_actions": [
+            3,
+            4,
+            5,
+            7,
+            8,
+            9
+          ],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 535,
+          "sensor_time_s": 106.99999999997517,
+          "raw_only_geometrically_clear_actions": [
+            4,
+            5,
+            8,
+            9
+          ],
+          "remembered_geometry_clear_actions": [
+            4,
+            5,
+            9
+          ],
+          "recorded_cause_groups": {
+            "5": 11
+          }
+        },
+        {
+          "frame": 550,
+          "sensor_time_s": 109.99999999997245,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 580,
+          "sensor_time_s": 115.99999999996699,
+          "raw_only_geometrically_clear_actions": [
+            5
+          ],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 583,
+          "sensor_time_s": 116.59999999996644,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 588,
+          "sensor_time_s": 117.59999999996553,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 620,
+          "sensor_time_s": 123.99999999995971,
+          "raw_only_geometrically_clear_actions": [],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        },
+        {
+          "frame": 698,
+          "sensor_time_s": 139.59999999994554,
+          "raw_only_geometrically_clear_actions": [
+            4,
+            8
+          ],
+          "remembered_geometry_clear_actions": [],
+          "recorded_cause_groups": {
+            "4": 11
+          }
+        }
+      ]
+    }
+  ],
+  "inference": "For sampled states where even current finite scan alone rejects all eleven original motions, memory clearing alone cannot change that geometry. This does not prove complete task infeasibility.",
+  "next_experiment": "Original-guard single-frame branch search preserves transient legal windows and clockwise/counterclockwise/wait directions; no additional memory weakening.",
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0,
+  "new_training_updates": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-16T19:48:08.352806+08:00",
+  "inputs": {
+    "reports/stop_feedback_20261015/context_feedback_longfit_protocol_20261016/tasks.json": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+    "reports/stop_feedback_20261015/guard_reason_normal_protocol_20261016/cases.json": "a14f12d6ea2446718ed3ca6b7d25714ece6aebbd82a994831d80a781adbfb5a8",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/manifest.json": "ca395a058731b78387f1269f539b18db0b8210eac393b4279ded52d6ffa57e7a",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/RESULTS.json": "eba3919053ded748417f3b13cbba275cf5e970e3169590d3fce88950dd027677",
+    "reports/stop_feedback_20261015/risk_relevant_support_audit_20261016/RESULTS.json": "68d91411bf251307b65728423e8f55b4d7069641fe1275f8a2e1fa394778edfa",
+    "training/experiments/evaluate_docking_navigation.py": "2d4de1aaacf253fc0e4f4c84cbf93ac7dd1fc84030573dd09924b48980021f9c",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/actor.pt": "34be059ab222b2be43bdfaa379eecda55d817779dd64a424845ed480a2981b11",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/navigation_preservation.json": "a8e0b8939d1572c84111a00b688122355d16cdce9cefd67bf78db365ed2a3bce",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/uncertainty_contract.json": "0baf6f30fd0729690590a960832304706f8a42414610b23c81a59a3e43e7ca10",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/long_risk_observation.json": "cd42a7c5a1eb9cb0e8ed91a4fd6ce23ea9f724ec72d1d16bf47f6a4c5a8f2e81",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/previous_risk_actor.pt": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+    "reports/stop_feedback_20261015/guard_reason_physics_20261016/diagnostic_bundle/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452"
+  },
+  "cases": [
+    {
+      "id": "recovery_holdout_03",
+      "category": "stop_go",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 9510154,
+      "start": [
+        8.295000000000002,
+        1.145,
+        1.5833780945997562
+      ],
+      "goal": [
+        6.9750000000000005,
+        5.575
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09,
+      "odom_scale": 1.03,
+      "actor_pause_after_event_s": [
+        [
+          2.0,
+          4.0
+        ]
+      ],
+      "dropout_after_event_s": [
+        [
+          1.2,
+          1.8
+        ]
+      ],
+      "pilot_category": "untrained_recovery_conditions",
+      "max_steps": 700,
+      "extra_scan_dropout": 0.02
+    },
+    {
+      "id": "motion_profile_002",
+      "category": "reversal",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 100002,
+      "start": [
+        7.875,
+        6.525,
+        0.5829383550326908
+      ],
+      "goal": [
+        1.175,
+        6.075
+      ],
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.15477787921727554,
+      "odom_scale": 1.0,
+      "reverse_after_event_s": 3.499490583194487,
+      "pilot_category": "original_release_reversal",
+      "max_steps": 700
+    }
+  ],
+  "maximum_physical_episodes": 2,
+  "candidate": "guard_reason2000_s231016",
+  "diagnostic_only": true,
+  "source_fit_gate_still_failed": true,
+  "no_training_or_auto_promotion": true,
+  "hypothesis": "Reason408returns_reference_choice_at_first_regressed_normal03state; full_navigation_unproven.",
+  "alternate_support_gate_rejected_due_four_old_label_changes": true,
+  "no_risk_relevant_support_change_applied": true,
+  "old_guard_reason408_weights_unchanged": true,
+  "no_prefix_initialization": true,
+  "no_runtime_teacher": true,
+  "actions_body4cm_margin_sensors_and_masks_unchanged": true,
+  "resources": {
+    "cpu_soft_cores": 0.35,
+    "cpu_hard_single_core_fraction": 0.4,
+    "memory_max_gib": 3
+  },
+  "new_ppo_steps": 0,
+  "deployment_approved": false
+}

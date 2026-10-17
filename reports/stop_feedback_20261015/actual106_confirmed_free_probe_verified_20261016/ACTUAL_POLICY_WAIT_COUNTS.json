@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-16T12:28:27.152202+08:00",
+  "source_report_sha256": "a1f191718a0d267c7ef87c8bf6e92be5dc02ab6d7b0c3b731132fcb64e0d954d",
+  "rows": [
+    {
+      "case_id": "model_only",
+      "frames": 700,
+      "prefix_frames": 530,
+      "conservative_model_only_frames": 170,
+      "expert_window_frames": 0,
+      "model_only_legal_wait_frames": 169,
+      "model_only_only_stop_frames": 0
+    },
+    {
+      "case_id": "expert_right_1_6",
+      "frames": 700,
+      "prefix_frames": 530,
+      "conservative_model_only_frames": 132,
+      "expert_window_frames": 38,
+      "model_only_legal_wait_frames": 110,
+      "model_only_only_stop_frames": 20
+    },
+    {
+      "case_id": "expert_right_3_4",
+      "frames": 700,
+      "prefix_frames": 530,
+      "conservative_model_only_frames": 108,
+      "expert_window_frames": 62,
+      "model_only_legal_wait_frames": 101,
+      "model_only_only_stop_frames": 7,
+      "current_laser_initial_gaps": [
+        {
+          "time_s": 109.99999999997245,
+          "minimum_gap_m": 0.052612095001941556,
+          "body_point": [
+            0.24957454700194157,
+            -0.06176603432589663
+          ],
+          "legal": [
+            0,
+            5,
+            7,
+            9
+          ]
+        },
+        {
+          "time_s": 111.59999999997099,
+          "minimum_gap_m": 0.06425002517169459,
+          "body_point": [
+            0.2612124771716946,
+            0.06626209869193006
+          ],
+          "legal": [
+            0,
+            4,
+            5,
+            6,
+            8
+          ]
+        },
+        {
+          "time_s": 111.99999999997063,
+          "minimum_gap_m": 0.03453227545067966,
+          "body_point": [
+            0.23149472745067967,
+            0.13450409640598154
+          ],
+          "legal": [
+            0
+          ]
+        },
+        {
+          "time_s": 113.39999999996935,
+          "minimum_gap_m": 0.043023332984694074,
+          "body_point": [
+            0.23998578498469408,
+            0.14984502150218149
+          ],
+          "legal": [
+            0,
+            8
+          ]
+        },
+        {
+          "time_s": 115.99999999996699,
+          "minimum_gap_m": 0.046323031207792686,
+          "body_point": [
+            0.2432854832077927,
+            0.06893731791270977
+          ],
+          "legal": [
+            0,
+            4,
+            8
+          ]
+        },
+        {
+          "time_s": 119.99999999996335,
+          "minimum_gap_m": 0.05260106772654666,
+          "body_point": [
+            0.24956351972654667,
+            0.05536878846162763
+          ],
+          "legal": [
+            0,
+            4,
+            8
+          ]
+        }
+      ]
+    }
+  ],
+  "expert_windows_excluded_from_model_only_statistics": true,
+  "not_a_full_physical_trajectory_check": true,
+  "new_physical_steps": 0,
+  "new_ppo_steps": 0
+}

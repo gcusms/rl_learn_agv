@@ -1,0 +1,67 @@
+{
+  "completed": true,
+  "datasets": {
+    "collection": {
+      "frames": 1665,
+      "actor_eligible_frames": 1014,
+      "greedy_changes": 16,
+      "parent_greedy_stop_frames": 784,
+      "candidate_greedy_stop_frames": 786,
+      "mean_parent_stop_probability": 0.20349373618186511,
+      "mean_candidate_stop_probability": 0.1999728221463956,
+      "mean_kl_parent_to_candidate": 0.004417375652324143,
+      "maximum_probability_change": 0.14213576912879944,
+      "probability_temperature": 4.0,
+      "logged_observations_only_not_counterfactual_physics": true,
+      "logged_complete_batch_clipped_surrogate_gain": 0.02348386184910245,
+      "positive_advantage_samples": 337,
+      "negative_advantage_samples": 677
+    },
+    "actual106_suffix": {
+      "frames": 170,
+      "actor_eligible_frames": 170,
+      "greedy_changes": 0,
+      "parent_greedy_stop_frames": 170,
+      "candidate_greedy_stop_frames": 170,
+      "mean_parent_stop_probability": 0.9392481442760019,
+      "mean_candidate_stop_probability": 0.9388965676812565,
+      "mean_kl_parent_to_candidate": 2.7449111541369237e-05,
+      "maximum_probability_change": 0.01469355821609497,
+      "probability_temperature": 4.0,
+      "logged_observations_only_not_counterfactual_physics": true
+    }
+  },
+  "actual106_paired_trace_arrays_identical": {
+    "observations": true,
+    "masks": true,
+    "choices": true,
+    "commands": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true,
+    "labels": true
+  },
+  "actor_probabilities_changed": true,
+  "no_new_physics": true,
+  "no_optimizer_updates": true,
+  "new_ppo_steps": 0,
+  "no_claim_that_surrogate_gain_proves_navigation_gain": true,
+  "inputs": {
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/audit_batch_policy_effect.py": "a2f87e260bf0f7ef6c3b22c3bea4ec760ff84df926e86d31327a18ac49c19bf0",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/actor.pt": "c6b82aec1f71a8aedc65971a921d2daddf63bd77f284fc2e9e5b6cc7cfafa5ca",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/actor.pt": "514aed9997d3083725c50e6fcfd64ef1392326900ad800ef6161782ec232ce50",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/collection_batch.npz": "a24e7c797315cc47074619f5de64d3ce3aed005638a78ce9786625be64d63ec3",
+    "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/physical/hard3_w11_training_stall_t106.npz": "9462ab03c7f0e7c7d502a93404860b15efdc97f6a4d73870cd4895d457e2036f",
+    "reports/stop_feedback_20261015/native625_batch_credit_validation_20261017/physical/hard3_w11_training_stall_t106.npz": "ac33b8d510a2aa86472d8ae21e0ded080599ccd640a7ceae24a2f10fa33ce84d",
+    "training/neural_navigation/masked_actions.py": "4b68ca19102f8a6a8d4f8c59141100102ba33838c8c7cd9410ca9374f9a53d9d"
+  },
+  "resource": {
+    "seconds": 14.19126732100267,
+    "cpu_seconds": 1.4715240100000002,
+    "average_cpu_cores": 0.10369221977956732,
+    "peak_rss_mib": 470.609375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

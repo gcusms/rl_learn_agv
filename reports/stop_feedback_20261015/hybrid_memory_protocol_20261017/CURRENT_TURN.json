@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-17T05:38:42.495517+08:00",
+  "previous_goal_turn_classification": "verified_wait",
+  "current_goal_turn_classification": "progress",
+  "objective": "解决模型不知道自己为什么被停车和有可行动作却不尝试",
+  "authoritative_changes": [
+    "Implemented actual frozen-v2-model memory-only paired physical coordinator and worker.",
+    "Launched a bounded serial queue, verified exact live service PID and invocation; no new physics started in queue yet."
+  ],
+  "current_candidate_validation": {
+    "completed": false,
+    "actual_physical_episodes": 15,
+    "safe_successes": 15,
+    "groups": {
+      "observed6": 1,
+      "normal18": 14
+    },
+    "service": {
+      "MainPID": "2180324",
+      "MemoryCurrent": "1470980096",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3",
+      "start_ticks": "49348108",
+      "command": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/v2_behavior_retention_20261017/validate.py "
+    }
+  },
+  "memory_pair_queue": {
+    "service": {
+      "MainPID": "2184732",
+      "MemoryCurrent": "9674752",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "InvocationID": "575d6912c71543359234fa06b34e291b",
+      "start_ticks": "49435628",
+      "command": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/physical_pair.py "
+    },
+    "status": {
+      "status": "waiting_for_exact_predecessors",
+      "at": "2026-10-17T05:38:40.442716+08:00",
+      "validator_live": true,
+      "subset_audit_live": true,
+      "unit_state": {
+        "MainPID": "2180324",
+        "LoadState": "loaded",
+        "ActiveState": "active",
+        "SubState": "running",
+        "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3"
+      }
+    },
+    "maximum_physical_episodes": 10,
+    "matching_v2_migration_weights": true,
+    "memory_installed_from_initialization": true,
+    "no_teacher_after_release": true,
+    "initial_96_success_retention_then97_6_106_and_two_full_missions": true,
+    "not_current_auxiliary119_model": true,
+    "not_a_deployment_bundle": true,
+    "original_full_scope_still_required": true
+  },
+  "subset_inclusion_audit": {
+    "completed": false,
+    "process_pid": 2182906,
+    "process_start_ticks": "49399335",
+    "result": "reports/stop_feedback_20261015/hybrid_memory_protocol_20261017/SUBSET_REPLAY.json",
+    "cannot_certify_safety_of_extra_clearing_or_closed_loop_success": true
+  },
+  "checks": {
+    "new_driver_and_worker_ast_parse": true,
+    "existing12_memory_tests_exact_source_hashes_verified": true
+  },
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_physical_episodes_in_memory_queue": 0,
+  "late97_6_and106_still_unresolved": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,153 @@
+{
+  "completed": true,
+  "at": "2026-10-16T17:33:16.730876+00:00",
+  "variants": [
+    {
+      "name": "bc4500",
+      "source": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable",
+      "output": "models/stop_feedback_20261015/memory_evidence_s231017/bc4500/portable",
+      "source_manifest_sha256": "47146f3de64da56cf5c629e16e3cfafd3083db44e65312b1a702ad7f6f0875ee",
+      "manifest_sha256": "0c595e051f456028b5ee10d9bcaf34cf8e5713d1319e99d88ef11d872ebaef26",
+      "actor_sha256": "c6b82aec1f71a8aedc65971a921d2daddf63bd77f284fc2e9e5b6cc7cfafa5ca",
+      "unchanged_component_hashes_verified": {
+        "quality_observation.json": true,
+        "localization_contract.json": true,
+        "actor.pt": true,
+        "docking_contract.json": true,
+        "goal_pose_observation.json": true,
+        "localizer.pt": true,
+        "router.pt": true,
+        "localization_kernel.so": true,
+        "uncertainty_contract.json": true,
+        "decision_feedback.json": true,
+        "parent_actor.pt": true,
+        "long_risk_observation.json": true,
+        "previous_risk_actor.pt": true,
+        "release_observation.json": true
+      },
+      "original_memory": {
+        "resolution_m": 0.04,
+        "near_range_m": 1.5,
+        "forget_radius_m": 2.5,
+        "max_points": 4096,
+        "uncertainty_m_s": 0.002,
+        "max_uncertainty_m": 0.04,
+        "static_footprint_schema": "oriented_rectangle_v1",
+        "static_footprint_margin_m": 0.04,
+        "static_footprint_pose_sigma_scale": 0.0,
+        "predictive_action_constraint": {
+          "schema": "odometry_frame_predictive_mask_v2",
+          "horizon_s": 1.2,
+          "period_s": 0.1,
+          "reaction_s": 0.2,
+          "minimum_check_s": 0.6,
+          "margin_m": 0.04,
+          "velocity_floor_m_s": 0.025,
+          "minimum_speed_m_s": 0.04,
+          "track_max_age_s": 0.8,
+          "minimum_track_hits": 3,
+          "response_gain": 20.0,
+          "response_acceleration": [
+            0.5,
+            1.0
+          ],
+          "contour_hold_s": 0.6,
+          "contour_recovery_measurements": 2,
+          "wait_always_allowed": true,
+          "simulator_truth_used": false,
+          "calibrated": false,
+          "cumulative_contour_reference": true,
+          "contour_count_ratio": 0.8,
+          "contour_diameter_ratio": 0.75,
+          "retained_hypothesis_s": 1.2,
+          "unknown_velocity_reachable_envelope": true,
+          "retained_measurement_age_preserved": true
+        }
+      },
+      "memory_change": {
+        "free_evidence_margin_m": 0.03,
+        "free_evidence_frames": 3,
+        "free_evidence_max_gap_s": 0.4
+      },
+      "new_ppo_steps": 0,
+      "deployment_approved": false
+    },
+    {
+      "name": "ppo1665",
+      "source": "models/stop_feedback_20261015/native625_batch_credit_s231017/portable",
+      "output": "models/stop_feedback_20261015/memory_evidence_s231017/ppo1665/portable",
+      "source_manifest_sha256": "0f482bc56aeadd09a0a15de8edaf83b317648a0391b896e39356f095695a379d",
+      "manifest_sha256": "d0231b06f50cb0f81ab6fc64e26e632c5087c8a2487faaaf17518c7a9fe1565f",
+      "actor_sha256": "514aed9997d3083725c50e6fcfd64ef1392326900ad800ef6161782ec232ce50",
+      "unchanged_component_hashes_verified": {
+        "quality_observation.json": true,
+        "localization_contract.json": true,
+        "actor.pt": true,
+        "docking_contract.json": true,
+        "goal_pose_observation.json": true,
+        "localizer.pt": true,
+        "router.pt": true,
+        "localization_kernel.so": true,
+        "uncertainty_contract.json": true,
+        "decision_feedback.json": true,
+        "parent_actor.pt": true,
+        "long_risk_observation.json": true,
+        "previous_risk_actor.pt": true,
+        "release_observation.json": true
+      },
+      "original_memory": {
+        "resolution_m": 0.04,
+        "near_range_m": 1.5,
+        "forget_radius_m": 2.5,
+        "max_points": 4096,
+        "uncertainty_m_s": 0.002,
+        "max_uncertainty_m": 0.04,
+        "static_footprint_schema": "oriented_rectangle_v1",
+        "static_footprint_margin_m": 0.04,
+        "static_footprint_pose_sigma_scale": 0.0,
+        "predictive_action_constraint": {
+          "schema": "odometry_frame_predictive_mask_v2",
+          "horizon_s": 1.2,
+          "period_s": 0.1,
+          "reaction_s": 0.2,
+          "minimum_check_s": 0.6,
+          "margin_m": 0.04,
+          "velocity_floor_m_s": 0.025,
+          "minimum_speed_m_s": 0.04,
+          "track_max_age_s": 0.8,
+          "minimum_track_hits": 3,
+          "response_gain": 20.0,
+          "response_acceleration": [
+            0.5,
+            1.0
+          ],
+          "contour_hold_s": 0.6,
+          "contour_recovery_measurements": 2,
+          "wait_always_allowed": true,
+          "simulator_truth_used": false,
+          "calibrated": false,
+          "cumulative_contour_reference": true,
+          "contour_count_ratio": 0.8,
+          "contour_diameter_ratio": 0.75,
+          "retained_hypothesis_s": 1.2,
+          "unknown_velocity_reachable_envelope": true,
+          "retained_measurement_age_preserved": true
+        }
+      },
+      "memory_change": {
+        "free_evidence_margin_m": 0.03,
+        "free_evidence_frames": 3,
+        "free_evidence_max_gap_s": 0.4
+      },
+      "new_ppo_steps": 0,
+      "deployment_approved": false
+    }
+  ],
+  "builder_sha256": "e052193092b28b8431909037f32706b942a93c6e497dec894e5d08065e7de2c5",
+  "tests_sha256": "e6e950f76c61c49ec113839e5b525b14df618fdf78c5bc3461d040f9a70a3f9f",
+  "source_models_unchanged": true,
+  "no_new_physics": true,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

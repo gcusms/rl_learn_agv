@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-16T11:08:55.698567+08:00",
+  "objective": "解决模型不知道为什么被停车和有可行动作却不尝试",
+  "previous_goal_turn_classification": "verified_wait",
+  "previous_verified_live_handles": [
+    "rl-actual-stop-validation-probe-fixed-20261016.service",
+    "rl-committed-right-probe-20261016.service"
+  ],
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "authoritative_changes": [
+    "Added tested legal-wait sampling calibration without changing weights or deterministic checked choices.",
+    "Completed all five original106 physical alternatives: none escaped; no failed positive labels admitted.",
+    "Found a complete safe alternative at the actual95 failure; added66 supported decisions with the old2355 bit-identical.",
+    "Created a400-update supervised residual candidate; all2421 labels and55 original stops retained.",
+    "Verified actual95 model-only recovery and all100 post-release actions against the saved actor.",
+    "Completed four original-task physical safety/efficiency regressions without change."
+  ],
+  "new_model": "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/policy_bc.zip",
+  "new_model_sha256": "4141a52dcb294e9394af893324d77d89d258a5c5bda27962efde0b16d69b42ed",
+  "additional_supervised_updates": 400,
+  "additional_ppo_steps": 0,
+  "remaining_requirements": [
+    "Original106s recovery remains unresolved; useful motion there is unproven.",
+    "Complete the400-update old-data matched control.",
+    "Complete the paired physical2.4s waiting-transfer experiment.",
+    "Broader fixed navigation, additional-condition, necessary-wait and directional docking regressions before promotion.",
+    "Admit subsequent PPO only with useful physically verified experience and regression evidence."
+  ],
+  "active_units": {
+    "rl-actual95-matched-control-20261016.service": "MainPID=1835991\nResult=success\nActiveState=active\nInvocationID=0620c414222f458294a13c703e7f7daa",
+    "rl-actual95-wait-verified-20261016.service": "MainPID=1839888\nResult=success\nActiveState=active\nInvocationID=da30e0f498ad40eca0a108330990fbf2"
+  },
+  "cpu_soft_total_cores": 0.5,
+  "no_hardware_action_or_guard_relaxation": true,
+  "original_deployment_sha256": "7a3dad60f76060daf6b311b4bc6db921d3925ef0cdcf11683fe99e282173de11",
+  "backup_branch_still_fixed_at": "2026-10-16T09:38:03+08:00",
+  "new_local_research_not_uploaded": true,
+  "deployment_approved": false
+}

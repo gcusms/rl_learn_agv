@@ -1,0 +1,27 @@
+{
+  "completed": true,
+  "at": "2026-10-17T11:02:10.915613+08:00",
+  "tests": {
+    "command": "PYTHONPATH=training:. python -m unittest deployment.ros2_recording_adapter.test_release_handoff experiments.test_directional_risk_batch",
+    "passed": 10,
+    "failures": 0
+  },
+  "native_kernel_rebuilt_from_source": true,
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "runtime": "neural_navigation.aligned_release_runtime.AlignedReleaseRuntime",
+  "smoke_test": {
+    "input": "one saved sensor frame; no physics or motor publishing",
+    "observation_dimensions": 625,
+    "command": [
+      0.0,
+      0.5
+    ],
+    "goal_yaw_retained": true,
+    "initialization_and_one_step_seconds": 0.3235229520360008
+  },
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "new_training_steps": 0,
+  "new_physical_episodes": 0,
+  "deployment_approved": false,
+  "scope": "Host-side publication checks; not Orin/Raspberry Pi latency, navigation or real-car acceptance."
+}

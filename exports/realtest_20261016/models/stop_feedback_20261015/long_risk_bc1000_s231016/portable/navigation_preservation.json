@@ -1,0 +1,27 @@
+{
+  "schema": "frozen_rl_actor_with_learned_long_risk_head_v1",
+  "parent_actor_sha256": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+  "unchanged_old_observation_prefix": 439,
+  "new_observation_dimensions": 481,
+  "head_features": [
+    "three_frame_action_risk_history",
+    "action_mask",
+    "previous_executed_stop_reason",
+    "previous_executed_idle_and_idle_with_choices",
+    "frozen_parent_choice_one_hot"
+  ],
+  "trainable_head_dimensions": [
+    88,
+    32,
+    32,
+    12
+  ],
+  "outside_support_parent_exact": true,
+  "near_goal_parent_directional_actor_exact": true,
+  "full_twelve_action_set": true,
+  "stop_always_selectable": true,
+  "no_runtime_teacher": true,
+  "no_forced_motion": true,
+  "actions_masks_body_guard_and_blind_memory_unchanged": true,
+  "new_ppo_steps": 0
+}

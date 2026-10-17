@@ -1,0 +1,79 @@
+{
+  "completed": true,
+  "passed": true,
+  "tests": 5,
+  "log": "test_fractional_actions_and_invalid_time_are_rejected (training.experiments.test_release_fit_weights.ReleaseFitWeightTests) ... ok\ntest_input_reordering_does_not_change_example_weight (training.experiments.test_release_fit_weights.ReleaseFitWeightTests) ... ok\ntest_legacy_loss_and_gradients_match_original (training.experiments.test_release_fit_weights.ReleaseFitWeightTests) ... ok\ntest_missing_recovery_or_conflicting_labels_are_rejected (training.experiments.test_release_fit_weights.ReleaseFitWeightTests) ... ok\ntest_recovery_budget_preserves_stop_and_shares_duplicate_weight (training.experiments.test_release_fit_weights.ReleaseFitWeightTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.200s\n\nOK\n",
+  "actual_dataset_active_frames": 1447,
+  "actual_recovery_motion_labels": 16,
+  "legacy_recovery_motion_total_loss_weight": 0.007774538386783284,
+  "optional_recovery_motion_total_loss_weight": 0.25,
+  "legacy": {
+    "mode": "stop_move",
+    "duplicate_weighting": "legacy unchanged",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 418,
+        "unique_head_inputs": 270,
+        "allocated_loss_weight": 0.4999999999999999
+      },
+      {
+        "phase": "move",
+        "labels": 1029,
+        "unique_head_inputs": 726,
+        "allocated_loss_weight": 0.5
+      }
+    ],
+    "stop_loss_weight": 0.4999999999999999,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "optional": {
+    "mode": "recovery_phase",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 418,
+        "unique_head_inputs": 270,
+        "allocated_loss_weight": 0.4999999999999999
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 1013,
+        "unique_head_inputs": 716,
+        "allocated_loss_weight": 0.24999999999999994
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 16,
+        "unique_head_inputs": 10,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.4999999999999999,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "training_cli_help_checked": true,
+  "checkpoint_unchanged_sha256": "a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3",
+  "resource": {
+    "seconds": 4.8360668329987675,
+    "cpu_seconds": 0.40259236200000004,
+    "average_cpu_cores": 0.08324789046605441,
+    "peak_rss_mib": 491.19140625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "optimizer_updates": 0,
+  "new_model_created": false,
+  "physics_episodes": 0,
+  "vehicle_started": false,
+  "limitations": [
+    "Loss allocation is verified; no new navigation performance is established.",
+    "Sparse recovery sources still need expansion and independent full-loop evaluation."
+  ]
+}

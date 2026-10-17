@@ -1,0 +1,71 @@
+{
+  "deployment_approved": false,
+  "method": "supervised release-context head on frozen RL navigation",
+  "new_ppo_steps": 0,
+  "frozen_components": [
+    "parent_actor",
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "limitations": [
+    "Complete-safe development demonstrations do not prove independent navigation success.",
+    "Unknown/no-return flags do not authorize motion; original guard remains unchanged.",
+    "Memory evidence thresholds are research settings, not real-LiDAR calibration; changed masks require full closed-loop validation."
+  ],
+  "learning_support": {
+    "schema": "sensor_context_release_support_v1",
+    "observation_dimensions": 625,
+    "nearest_scan_context_m": 0.8,
+    "support": "valid_goal_far_motion_available_and_old_context_or_near_scan_or_restricted_mask_or_guard_forecast",
+    "no_episode_clock_or_case_or_map_coordinate_gate": true,
+    "unchanged_action_permissions": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_parent_exact": true
+  },
+  "manifest_sha256": "0c595e051f456028b5ee10d9bcaf34cf8e5713d1319e99d88ef11d872ebaef26",
+  "guard_reason_features": {
+    "schema": "current_guard_reason_release_head_v1",
+    "observation_dimensions": 625,
+    "old_head_dimensions": 312,
+    "head_dimensions": [
+      408,
+      32,
+      32,
+      12
+    ],
+    "additional_features": "current_12_by_8_guard_rejection_groups",
+    "source_slice": [
+      303,
+      399
+    ],
+    "rejection_groups": [
+      "accepted",
+      "perception_or_odometry",
+      "localization_or_route",
+      "static_geometry",
+      "laser_geometry",
+      "dynamic_prediction",
+      "projection",
+      "other"
+    ],
+    "first_projection": "unchanged_312_projection_plus_zero_initialized_96_projection",
+    "same_current_scan_as_action_mask": true,
+    "simulator_truth_used": false,
+    "previous_executed_reason_retained": true,
+    "runtime_teacher": false,
+    "action_permissions_and_learning_support_unchanged": true,
+    "no_forced_motion": true,
+    "stop_always_selectable": true
+  },
+  "configuration_only_variant": true,
+  "new_ppo_steps_this_variant": 0,
+  "frozen_actor_source": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable",
+  "memory_evidence_change": {
+    "free_evidence_margin_m": 0.03,
+    "free_evidence_frames": 3,
+    "free_evidence_max_gap_s": 0.4
+  },
+  "no_clock_gating_or_runtime_teacher": true,
+  "not_yet_closed_loop_accepted": true
+}

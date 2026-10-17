@@ -1,0 +1,233 @@
+[
+  {
+    "id": "safe_reference_t95",
+    "case": {
+      "id": "train_failure_w11_e7",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "start": [
+        6.2250000000000005,
+        2.725,
+        0.017376951571745902
+      ],
+      "goal": [
+        7.125,
+        5.7250000000000005
+      ],
+      "max_steps": 700,
+      "pilot_category": "recorded_training_stall",
+      "odom_scale": 1.0,
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09295138997376881,
+      "hold_s": 3.4079953972433437
+    },
+    "release_s": 95.0,
+    "trace": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual95_w11_training_stall_t95.npz",
+    "reference_actor": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/bc_portable/actor.pt",
+    "physical_source_report": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json",
+    "physical_source_row": {
+      "case_id": "w11_training_stall_t95",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 114.79999999996808,
+      "travel_m": 10.277240608290278,
+      "frames": 575,
+      "final_xy_error_m": 0.11399579776586649,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.0046301695065347915,
+      "localization_yaw_p95_rad": 0.0013750217022925335,
+      "stop_choices": 68,
+      "only_stop_frames": 55,
+      "stop_reasons": {
+        "None": 572,
+        "laser_braking_footprint": 2,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 13,
+      "predictive_constraint_frames": 83,
+      "runtime_ms": {
+        "p95": 157.1380799869075,
+        "p99": 181.29899016465058,
+        "maximum": 217.59721997659653
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 95.0,
+      "post_release_seconds": 19.79999999996808,
+      "model_controlled_frames": 100,
+      "post_release_wait_with_choices_frames": 2,
+      "post_release_only_stop_frames": 20,
+      "longest_post_release_wait_with_choices_s": 0.1999999999998181,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "group": "actual95",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "51bc584573626566846e0ca25e75672427205fbecf3d0120b8e345c9799b82d9",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual95_w11_training_stall_t95.npz",
+      "model_only_after_initialization": true
+    }
+  },
+  {
+    "id": "safe_reference_t90",
+    "case": {
+      "id": "train_failure_w11_e7",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "start": [
+        6.2250000000000005,
+        2.725,
+        0.017376951571745902
+      ],
+      "goal": [
+        7.125,
+        5.7250000000000005
+      ],
+      "max_steps": 700,
+      "pilot_category": "recorded_training_stall",
+      "odom_scale": 1.0,
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09295138997376881,
+      "hold_s": 3.4079953972433437
+    },
+    "release_s": 90.0,
+    "trace": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual90_w11_training_stall_t90.npz",
+    "reference_actor": "models/stop_feedback_20261015/recovery_followup_bc400_s231016/bc_portable/actor.pt",
+    "physical_source_report": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/RESULTS.json",
+    "physical_source_row": {
+      "case_id": "w11_training_stall_t90",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 110.39999999997208,
+      "travel_m": 10.141140378741188,
+      "frames": 553,
+      "final_xy_error_m": 0.09393691355948053,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.00459213417667537,
+      "localization_yaw_p95_rad": 0.0014265870169715808,
+      "stop_choices": 66,
+      "only_stop_frames": 55,
+      "stop_reasons": {
+        "None": 552,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 11,
+      "predictive_constraint_frames": 84,
+      "runtime_ms": {
+        "p95": 155.9590012067929,
+        "p99": 181.69810375198728,
+        "maximum": 219.10945000126958
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 450,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 90.0,
+      "post_release_seconds": 20.39999999997208,
+      "model_controlled_frames": 103,
+      "post_release_wait_with_choices_frames": 0,
+      "post_release_only_stop_frames": 20,
+      "longest_post_release_wait_with_choices_s": 0.0,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "group": "actual90",
+      "variant": "recovery_followup_bc400",
+      "trace_sha256": "87187c83fc410a9eca271710280fb1c4fffc14062a3076b819b3939e7ac63df9",
+      "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/actual90_w11_training_stall_t90.npz",
+      "model_only_after_initialization": true
+    }
+  },
+  {
+    "id": "safe_reference_wait2_4",
+    "case": {
+      "id": "train_failure_w11_e7",
+      "scene": "assets/room_navigation_scripted",
+      "seed": 1962350169,
+      "start": [
+        6.2250000000000005,
+        2.725,
+        0.017376951571745902
+      ],
+      "goal": [
+        7.125,
+        5.7250000000000005
+      ],
+      "max_steps": 700,
+      "pilot_category": "recorded_training_stall",
+      "odom_scale": 1.0,
+      "obstacle": "crossing",
+      "obstacle_speed_m_s": 0.09295138997376881,
+      "hold_s": 3.4079953972433437
+    },
+    "release_s": 97.4,
+    "trace": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/physical/new_data.npz",
+    "reference_actor": "models/stop_feedback_20261015/actual95_transfer_bc400_s231016/bc_portable/actor.pt",
+    "physical_source_report": "reports/stop_feedback_20261015/actual95_wait_verified_20261016/RESULTS.json",
+    "physical_source_row": {
+      "case_id": "w11_actual95_wait2_4",
+      "category": "recorded_training_stall",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 137.999999999947,
+      "travel_m": 12.324436014455914,
+      "frames": 691,
+      "final_xy_error_m": 0.0933446525532006,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004673707531500357,
+      "localization_yaw_p95_rad": 0.0014035361453412776,
+      "stop_choices": 70,
+      "only_stop_frames": 46,
+      "stop_reasons": {
+        "None": 690,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 24,
+      "predictive_constraint_frames": 92,
+      "runtime_ms": {
+        "p95": 157.7849400055129,
+        "p99": 195.8732108178083,
+        "maximum": 252.10782600333914
+      },
+      "original_case_id": "train_failure_w11_e7",
+      "recovery_test": true,
+      "not_a_full_mission_score": true,
+      "frozen_prefix_frames": 475,
+      "prefix_sensor_and_physical_parity_verified": true,
+      "release_sensor_timestamp_s": 97.4,
+      "post_release_seconds": 40.59999999994699,
+      "model_controlled_frames": 204,
+      "post_release_wait_with_choices_frames": 1,
+      "post_release_only_stop_frames": 11,
+      "longest_post_release_wait_with_choices_s": 0.1999999999998181,
+      "prefix_trace_sha256": "21ca1035ffc1b35cfcd573e7c2825e69630d5e0201a16f56c8b61f07ad282a31",
+      "variant": "new_data",
+      "source_frozen_prefix_frames": 475,
+      "additional_initialization_hold_frames": 12,
+      "initial_observed_legal_wait_s": 2.3999999463558197,
+      "all_model_commands_after_common_initialization": true,
+      "not_an_actual106_escape": true,
+      "trace_sha256": "3a55618439b5efdf92550f0280e7c3bbd1096a469d3547584cc269472504003f"
+    }
+  }
+]

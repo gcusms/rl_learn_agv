@@ -1,0 +1,379 @@
+{
+  "completed": true,
+  "at": "2026-10-16T13:29:42.390577+08:00",
+  "source": {
+    "admitted": true,
+    "source_report_sha256": "947d4739d7cf7d3144d4996c11fac939b4cbec1fbf3fd3fc21e4a179c1bbd9c8",
+    "source_trace": "reports/stop_feedback_20261015/early_yield_physical_20261016/early_yield_proactive_fresh_condition_01.npz",
+    "source_trace_sha256": "16786e69dcd2afbf6cc29ee26f389bbc1c750340dc65a952318aa7c5cd6dfecc",
+    "minimum_post_yield_sampled_gap_m": 0.3508885484311104,
+    "sampled_geometry_is_not_a_continuous_hardware_guarantee": true,
+    "first_sensor_yield_s": 3.799999999999941,
+    "first_release_s": 10.600000000000257,
+    "total_examples": 2638,
+    "old_examples_retained": 2505,
+    "old_stops_retained": 57,
+    "new_examples": 133,
+    "new_stop_targets": 38,
+    "new_motion_targets": 95,
+    "supported_model_motion_after_release": 95,
+    "expert_trajectory_is_not_a_learned_model_success": true,
+    "inputs_contain_no_truth_or_future_data": true
+  },
+  "fitting": {
+    "completed": true,
+    "updates": 400,
+    "history": [
+      {
+        "update": 1,
+        "balanced_cross_entropy": 3.404818534851074,
+        "minimum_movement_target_probability": 0.010944106616079807,
+        "minimum_wait_target_probability": 3.0323757393979633e-11,
+        "correct_choices": 2544,
+        "training_examples": 2638
+      },
+      {
+        "update": 10,
+        "balanced_cross_entropy": 0.5281521081924438,
+        "minimum_movement_target_probability": 1.3999297721056791e-08,
+        "minimum_wait_target_probability": 0.0013011436676606536,
+        "correct_choices": 2171,
+        "training_examples": 2638
+      },
+      {
+        "update": 20,
+        "balanced_cross_entropy": 0.16738134622573853,
+        "minimum_movement_target_probability": 6.181951448525069e-07,
+        "minimum_wait_target_probability": 0.08827612549066544,
+        "correct_choices": 2441,
+        "training_examples": 2638
+      },
+      {
+        "update": 30,
+        "balanced_cross_entropy": 0.08807478845119476,
+        "minimum_movement_target_probability": 0.0018828028114512563,
+        "minimum_wait_target_probability": 0.15293125808238983,
+        "correct_choices": 2541,
+        "training_examples": 2638
+      },
+      {
+        "update": 40,
+        "balanced_cross_entropy": 0.05922526866197586,
+        "minimum_movement_target_probability": 0.0016230193432420492,
+        "minimum_wait_target_probability": 0.12025497108697891,
+        "correct_choices": 2562,
+        "training_examples": 2638
+      },
+      {
+        "update": 50,
+        "balanced_cross_entropy": 0.04298853874206543,
+        "minimum_movement_target_probability": 0.0027734311297535896,
+        "minimum_wait_target_probability": 0.48351120948791504,
+        "correct_choices": 2583,
+        "training_examples": 2638
+      },
+      {
+        "update": 60,
+        "balanced_cross_entropy": 0.03262006863951683,
+        "minimum_movement_target_probability": 0.008193155750632286,
+        "minimum_wait_target_probability": 0.3123515546321869,
+        "correct_choices": 2613,
+        "training_examples": 2638
+      },
+      {
+        "update": 70,
+        "balanced_cross_entropy": 0.029018862172961235,
+        "minimum_movement_target_probability": 0.013369293883442879,
+        "minimum_wait_target_probability": 0.7177838087081909,
+        "correct_choices": 2615,
+        "training_examples": 2638
+      },
+      {
+        "update": 80,
+        "balanced_cross_entropy": 0.02097655087709427,
+        "minimum_movement_target_probability": 0.01655677706003189,
+        "minimum_wait_target_probability": 0.6433653235435486,
+        "correct_choices": 2620,
+        "training_examples": 2638
+      },
+      {
+        "update": 90,
+        "balanced_cross_entropy": 0.01644665002822876,
+        "minimum_movement_target_probability": 0.036243923008441925,
+        "minimum_wait_target_probability": 0.6316852569580078,
+        "correct_choices": 2625,
+        "training_examples": 2638
+      },
+      {
+        "update": 100,
+        "balanced_cross_entropy": 0.013502068817615509,
+        "minimum_movement_target_probability": 0.04683975875377655,
+        "minimum_wait_target_probability": 0.7655515074729919,
+        "correct_choices": 2630,
+        "training_examples": 2638
+      },
+      {
+        "update": 110,
+        "balanced_cross_entropy": 0.012162256054580212,
+        "minimum_movement_target_probability": 0.058726824820041656,
+        "minimum_wait_target_probability": 0.776784360408783,
+        "correct_choices": 2632,
+        "training_examples": 2638
+      },
+      {
+        "update": 120,
+        "balanced_cross_entropy": 0.010774007998406887,
+        "minimum_movement_target_probability": 0.07271865755319595,
+        "minimum_wait_target_probability": 0.7798284292221069,
+        "correct_choices": 2634,
+        "training_examples": 2638
+      },
+      {
+        "update": 130,
+        "balanced_cross_entropy": 0.009784737601876259,
+        "minimum_movement_target_probability": 0.09093236178159714,
+        "minimum_wait_target_probability": 0.814178466796875,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 140,
+        "balanced_cross_entropy": 0.008930507116019726,
+        "minimum_movement_target_probability": 0.10836579650640488,
+        "minimum_wait_target_probability": 0.8447818756103516,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 150,
+        "balanced_cross_entropy": 0.008218249306082726,
+        "minimum_movement_target_probability": 0.13082489371299744,
+        "minimum_wait_target_probability": 0.8623281121253967,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 160,
+        "balanced_cross_entropy": 0.007617935538291931,
+        "minimum_movement_target_probability": 0.1607084423303604,
+        "minimum_wait_target_probability": 0.8756475448608398,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 170,
+        "balanced_cross_entropy": 0.007102229632437229,
+        "minimum_movement_target_probability": 0.19335195422172546,
+        "minimum_wait_target_probability": 0.8877133727073669,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 180,
+        "balanced_cross_entropy": 0.006654427852481604,
+        "minimum_movement_target_probability": 0.22970201075077057,
+        "minimum_wait_target_probability": 0.8971917033195496,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 190,
+        "balanced_cross_entropy": 0.006261968519538641,
+        "minimum_movement_target_probability": 0.2698754370212555,
+        "minimum_wait_target_probability": 0.9057260155677795,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 200,
+        "balanced_cross_entropy": 0.005915048066526651,
+        "minimum_movement_target_probability": 0.3115414083003998,
+        "minimum_wait_target_probability": 0.9131453633308411,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 210,
+        "balanced_cross_entropy": 0.005606198683381081,
+        "minimum_movement_target_probability": 0.3543234169483185,
+        "minimum_wait_target_probability": 0.9194466471672058,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 220,
+        "balanced_cross_entropy": 0.005329544190317392,
+        "minimum_movement_target_probability": 0.3973928987979889,
+        "minimum_wait_target_probability": 0.9250583052635193,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 230,
+        "balanced_cross_entropy": 0.005080370232462883,
+        "minimum_movement_target_probability": 0.43976813554763794,
+        "minimum_wait_target_probability": 0.9299557209014893,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 240,
+        "balanced_cross_entropy": 0.004854866769164801,
+        "minimum_movement_target_probability": 0.48062655329704285,
+        "minimum_wait_target_probability": 0.9343513250350952,
+        "correct_choices": 2636,
+        "training_examples": 2638
+      },
+      {
+        "update": 250,
+        "balanced_cross_entropy": 0.004649772308766842,
+        "minimum_movement_target_probability": 0.5006451606750488,
+        "minimum_wait_target_probability": 0.9382811784744263,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 260,
+        "balanced_cross_entropy": 0.00446234829723835,
+        "minimum_movement_target_probability": 0.5196667313575745,
+        "minimum_wait_target_probability": 0.9418377876281738,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 270,
+        "balanced_cross_entropy": 0.004290302749723196,
+        "minimum_movement_target_probability": 0.5383267402648926,
+        "minimum_wait_target_probability": 0.9450659155845642,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 280,
+        "balanced_cross_entropy": 0.004131745547056198,
+        "minimum_movement_target_probability": 0.5565357208251953,
+        "minimum_wait_target_probability": 0.9480143189430237,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 290,
+        "balanced_cross_entropy": 0.003985044080764055,
+        "minimum_movement_target_probability": 0.5742285847663879,
+        "minimum_wait_target_probability": 0.9507176876068115,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 300,
+        "balanced_cross_entropy": 0.0038488523568958044,
+        "minimum_movement_target_probability": 0.5913470387458801,
+        "minimum_wait_target_probability": 0.9532060623168945,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 310,
+        "balanced_cross_entropy": 0.0037220169324427843,
+        "minimum_movement_target_probability": 0.6078459024429321,
+        "minimum_wait_target_probability": 0.9555030465126038,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 320,
+        "balanced_cross_entropy": 0.0036035235971212387,
+        "minimum_movement_target_probability": 0.6237025856971741,
+        "minimum_wait_target_probability": 0.9576293230056763,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 330,
+        "balanced_cross_entropy": 0.0034924838691949844,
+        "minimum_movement_target_probability": 0.63889479637146,
+        "minimum_wait_target_probability": 0.959603488445282,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 340,
+        "balanced_cross_entropy": 0.00338814128190279,
+        "minimum_movement_target_probability": 0.6534385681152344,
+        "minimum_wait_target_probability": 0.9614396691322327,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 350,
+        "balanced_cross_entropy": 0.003289841115474701,
+        "minimum_movement_target_probability": 0.6673290729522705,
+        "minimum_wait_target_probability": 0.9631503224372864,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 360,
+        "balanced_cross_entropy": 0.0031969882547855377,
+        "minimum_movement_target_probability": 0.6805638074874878,
+        "minimum_wait_target_probability": 0.9647477269172668,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 370,
+        "balanced_cross_entropy": 0.003109113546088338,
+        "minimum_movement_target_probability": 0.693160891532898,
+        "minimum_wait_target_probability": 0.9662408232688904,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 380,
+        "balanced_cross_entropy": 0.0030257320031523705,
+        "minimum_movement_target_probability": 0.7051318883895874,
+        "minimum_wait_target_probability": 0.9676384925842285,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 390,
+        "balanced_cross_entropy": 0.0029465032275766134,
+        "minimum_movement_target_probability": 0.7165087461471558,
+        "minimum_wait_target_probability": 0.9689485430717468,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      },
+      {
+        "update": 400,
+        "balanced_cross_entropy": 0.0028710688930004835,
+        "minimum_movement_target_probability": 0.7273188233375549,
+        "minimum_wait_target_probability": 0.9701781868934631,
+        "correct_choices": 2638,
+        "training_examples": 2638
+      }
+    ],
+    "environment_steps": 0,
+    "not_navigation_acceptance": true,
+    "physical_outcomes_used_only_to_select_training_examples": true,
+    "actor_inputs_include_truth_or_future_observations": false
+  },
+  "old_examples_correct": 2505,
+  "old_stop_labels_preserved": 57,
+  "total_examples": 2638,
+  "all_examples_correct": 2638,
+  "additional_supervised_updates": 400,
+  "new_ppo_steps": 0,
+  "checkpoint_sha256": "1b55a06047a25f45e4290ea294ca8bf8fe9310c38d1e5517da4ad5765a43ffd2",
+  "frozen_base_sha256": "e5502406c4ee8e42c4da09dd6affa022cb76e7f9b01316b1eaf0d2551431938e",
+  "exported_for_bounded_evaluation": true,
+  "resource": {
+    "seconds": 60.43175304296892,
+    "cpu_seconds": 21.484815968,
+    "average_cpu_cores": 0.35552197125116664,
+    "peak_rss_mib": 696.953125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

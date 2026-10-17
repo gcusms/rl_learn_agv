@@ -1,0 +1,53 @@
+{
+  "completed": true,
+  "at": "2026-10-17T06:38:34.305035+08:00",
+  "admitted": true,
+  "contract": {
+    "schema": "native625_full_navigation_residual_v1",
+    "observation_dimensions": 625,
+    "feature_dimensions": 408,
+    "head_dimensions": [
+      408,
+      32,
+      32,
+      12
+    ],
+    "parent": "complete_prior625_actor_not_a_439dim_ancestor",
+    "initial_behavior": "zero_output_residual_plus_2times_actual_parent_choice",
+    "support": "valid_current_prediction_and_scan_motion_available_goal_distance_over_0.3m",
+    "ordinary_navigation_is_trainable": true,
+    "original_current_action_mask_unchanged": true,
+    "stop_always_selectable": true,
+    "invalid_stop_only_and_terminal_docking_parent_exact": true,
+    "no_map_coordinates_case_clock_or_teacher_in_features": true,
+    "observations_and_execution_contract_unchanged": true,
+    "compatible_onpolicy": "experiments.native625_onpolicy.Native625OnPolicy",
+    "no_runtime_reference_sequence": true
+  },
+  "identity_action_frames_checked": 10719,
+  "old_reference_rows": 4282,
+  "complete_safe_demo_rows": 186,
+  "total_rows": 4468,
+  "exact_input_label_conflicts": [],
+  "outside_support_label_mismatches": [],
+  "old4282_parent_labels_exact": true,
+  "newly_trainable_reference_states": 684,
+  "demo_changed_choices": 52,
+  "demo_changed_choices_outside_new_support": 0,
+  "actual_native625_ppo_eligible_label_frames_checked": 52,
+  "action_masks_parent_terminal_and_invalid_behavior_preserved": true,
+  "archive_sha256": "3b7726292c4d33151d901c80a2e288018c3dfbb78d2d8e4b04909a25095a3269",
+  "no_training_updates": true,
+  "new_physical_episodes": 0,
+  "new_ppo_steps": 0,
+  "source_development_not_independent_test": true,
+  "resource": {
+    "seconds": 21.29838627902791,
+    "cpu_seconds": 7.4619624170000005,
+    "average_cpu_cores": 0.3503534173547995,
+    "peak_rss_mib": 595.75,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

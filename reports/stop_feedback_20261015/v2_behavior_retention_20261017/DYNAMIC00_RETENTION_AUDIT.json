@@ -1,0 +1,69 @@
+{
+  "completed": true,
+  "at": "2026-10-17T06:04:19.084513+08:00",
+  "case_id": "pre_ppo_holdout_dynamic_00",
+  "known_training_development_case_not_independent_generalization": true,
+  "older_stable": {
+    "safe_success": false,
+    "seconds": 139.99999999994517,
+    "travel_m": 2.9903580895023905,
+    "voluntary_wait_frames": 83,
+    "only_stop_frames": 438,
+    "collisions": 0
+  },
+  "prior_ppo": {
+    "safe_success": true,
+    "seconds": 61.60000000001306,
+    "travel_m": 5.8898308211850745,
+    "voluntary_wait_frames": 18,
+    "only_stop_frames": 64,
+    "collisions": 0
+  },
+  "current_auxiliary": {
+    "safe_success": true,
+    "seconds": 61.60000000001306,
+    "travel_m": 5.8898308211850745,
+    "voluntary_wait_frames": 18,
+    "only_stop_frames": 64,
+    "collisions": 0
+  },
+  "whole_case_recorded_frames": 309,
+  "whole_case_sensor_observation_action_and_physical_trace_exact": {
+    "observations": true,
+    "masks": true,
+    "choices": true,
+    "commands": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true,
+    "labels": true,
+    "human_positions": true,
+    "route_diagnostics": true,
+    "route_reasons": true
+  },
+  "fixed28_original_safety_and_efficiency_also_passed": true,
+  "joint_dynamic00_gain_and_dynamic01_efficiency_restoration_now_verified": true,
+  "per_case_wall_compute_ms_excluded_from_semantic_parity": true,
+  "source_snapshot": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC00_VALIDATION_SNAPSHOT.json",
+  "source_snapshot_sha256": "fea8c15afc86e15a7bb90ad6c1aa2c36e742802fe9bed86428a28e34c54a0e26",
+  "inputs": {
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/RESULTS.json": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/RESULTS.json": "80dce686101690a2176a1c2b2ee22b0648c937e58994ed2c9cc437e1de121d7c",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_00_candidate.npz": "4bc1e8e05997d1e25c0f555c1921f35e9e8fd323e44a6516c9e8dcfbd9f8b2a6",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_00_candidate.npz": "55898a5813eca6a6b9cd712a6cc772e328edfd2b6392ac8b3d26e6159f16c926"
+  },
+  "source_actual_total_physical_episodes": 30,
+  "remaining_known_and97_6_106_recovery_and_fresh_requirements_not_waived": true,
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_physical_episodes_in_this_audit": 0,
+  "resource": {
+    "seconds": 0.35753444698639214,
+    "cpu_seconds": 0.039729347,
+    "average_cpu_cores": 0.11112033353673502,
+    "peak_rss_mib": 36.640625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

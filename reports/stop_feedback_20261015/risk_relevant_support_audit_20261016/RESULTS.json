@@ -1,0 +1,56 @@
+{
+  "completed": true,
+  "no_weights_updated": true,
+  "new_ppo_steps": 0,
+  "original_source_frames": 3252,
+  "old_source_correct": 3250,
+  "revised_source_correct": 3246,
+  "revised_wrong_indices": [
+    2574,
+    2576,
+    2582,
+    2587,
+    3182,
+    3245
+  ],
+  "original2848_retained": false,
+  "safe_stop_labels_retained": true,
+  "deactivated_source_frames": 770,
+  "reactivated_source_frames": 0,
+  "changed_source_indices": [
+    2574,
+    2576,
+    2582,
+    2587
+  ],
+  "first_divergence_states": [
+    {
+      "case_id": "recovery_holdout_03",
+      "frame": 13,
+      "prior312choice": 0,
+      "guard_reason408choice": 11,
+      "revised_support_choice": 11,
+      "frozen_parent_choice": 11,
+      "old_support": true,
+      "revised_support": false
+    },
+    {
+      "case_id": "motion_profile_002",
+      "frame": 63,
+      "prior312choice": 4,
+      "guard_reason408choice": 4,
+      "revised_support_choice": 4,
+      "frozen_parent_choice": 1,
+      "old_support": true,
+      "revised_support": true
+    }
+  ],
+  "no_physical_success_or_safety_claim": true,
+  "resource": {
+    "seconds": 12.513310238020495,
+    "cpu_seconds": 0.3759717950000001,
+    "average_cpu_cores": 0.030045750312946436,
+    "peak_rss_mib": 492.8046875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

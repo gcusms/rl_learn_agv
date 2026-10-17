@@ -1,0 +1,195 @@
+{
+  "completed": true,
+  "at": "2026-10-16T13:41:25.266202+00:00",
+  "source_frames": 186,
+  "maximum439_input_difference": 0.0,
+  "complete_reference_masks_actions_commands_reproduced": true,
+  "source_trace_path": "reports/stop_feedback_20261015/full_wait_regression_replay_20261016/complete_reference625.npz",
+  "source_trace_sha256": "80c3022da645929c5036e1e7e66c17a334ca7d11ba928a2ffa8b230bb261b98c",
+  "old_complete_safe_source_row": {
+    "case_id": "train_failure_w11_e7",
+    "category": "original_release_training_failure",
+    "safe_success": true,
+    "physical_arrival": true,
+    "false_arrival": false,
+    "protocol_valid": true,
+    "collisions": 0,
+    "input_odometry": "noisy_motion_feedback",
+    "physical_guards": 0,
+    "timeout": false,
+    "seconds": 37.000000000000476,
+    "travel_m": 4.615564677376485,
+    "frames": 186,
+    "final_xy_error_m": 0.10832328356921055,
+    "final_yaw_error_rad": null,
+    "localization_xy_p95_m": 0.004346804817252861,
+    "localization_yaw_p95_rad": 0.0013653656978636075,
+    "stop_choices": 18,
+    "only_stop_frames": 17,
+    "stop_reasons": {
+      "None": 184,
+      "laser_braking_footprint": 1,
+      "estimated_goal_reached": 1
+    },
+    "voluntary_wait_frames": 1,
+    "predictive_constraint_frames": 31,
+    "runtime_ms": {
+      "p95": 157.57378854323179,
+      "p99": 183.54748231649867,
+      "maximum": 188.0356500041671
+    },
+    "group": "normal4",
+    "variant": "recovery_followup_bc400",
+    "trace_sha256": "a7fd529967ac78e09a46cbb0e5b23c08ec7a1a5ac89f7f6411a042b0b8a4f1b7",
+    "trace_path": "reports/stop_feedback_20261015/recovery_followup_validation_20261016/physical/normal4_train_failure_w11_e7.npz",
+    "model_only_after_initialization": true
+  },
+  "new_complete_safe_but_inefficient_row": {
+    "case_id": "train_failure_w11_e7",
+    "category": "original_release_training_failure",
+    "safe_success": true,
+    "physical_arrival": true,
+    "false_arrival": false,
+    "protocol_valid": true,
+    "collisions": 0,
+    "input_odometry": "noisy_motion_feedback",
+    "physical_guards": 0,
+    "timeout": false,
+    "seconds": 58.600000000011526,
+    "travel_m": 4.751215263065713,
+    "frames": 294,
+    "final_xy_error_m": 0.10862663252416246,
+    "final_yaw_error_rad": null,
+    "localization_xy_p95_m": 0.0043930554852964435,
+    "localization_yaw_p95_rad": 0.001102578961984446,
+    "stop_choices": 151,
+    "only_stop_frames": 47,
+    "stop_reasons": {
+      "None": 162,
+      "learned_route_incomplete": 20,
+      "laser_braking_footprint": 111,
+      "estimated_goal_reached": 1
+    },
+    "voluntary_wait_frames": 104,
+    "predictive_constraint_frames": 43,
+    "runtime_ms": {
+      "p95": 128.41558598738627,
+      "p99": 138.34505121863913,
+      "maximum": 141.8880459968932
+    },
+    "trace_path": "reports/stop_feedback_20261015/sensor_retention_validation_20261016/physical/normal_other16_train_failure_w11_e7.npz",
+    "trace_sha256": "ebb0227783e2f81a9d93a0910fd5127c5c89276d31c60f4a5a276f4b2352a9f3",
+    "variant": "models/stop_feedback_20261015/sensor_retention_pair_s231016/retained500",
+    "pure_learned_model": true,
+    "training_regression_or_development": true
+  },
+  "source_is_reused_not_new_success": true,
+  "automatic_training_admission": false,
+  "first_identical_input_fork": {
+    "frame": 34,
+    "seconds": 6.799999999999877,
+    "full625_observation_identical": true,
+    "all_raw_sensor_inputs_and_prior_execution_identical": true,
+    "reference_choice": 11,
+    "candidate_choice": 0,
+    "legal_actions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "current_forecast": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "legal_idle_seconds": 0.0,
+    "source_label_probability": 0.002652642084285617,
+    "candidate_stop_probability": 0.8909680843353271,
+    "current_reason_ablation_choice": 0,
+    "full_choice": 0,
+    "reason_projection_l2": 0.6537968516349792,
+    "nearest_training_inputs": [
+      {
+        "index": 3229,
+        "distance": 1.743329405784607,
+        "choice": 1,
+        "source_id": 18
+      },
+      {
+        "index": 3710,
+        "distance": 1.9436591863632202,
+        "choice": 11,
+        "source_id": 20
+      },
+      {
+        "index": 729,
+        "distance": 1.9446216821670532,
+        "choice": 11,
+        "source_id": 3
+      },
+      {
+        "index": 179,
+        "distance": 1.9446216821670532,
+        "choice": 11,
+        "source_id": 0
+      },
+      {
+        "index": 3636,
+        "distance": 1.962719440460205,
+        "choice": 1,
+        "source_id": 20
+      },
+      {
+        "index": 1606,
+        "distance": 1.9766043424606323,
+        "choice": 11,
+        "source_id": 8
+      },
+      {
+        "index": 3885,
+        "distance": 1.9773539304733276,
+        "choice": 11,
+        "source_id": 21
+      },
+      {
+        "index": 1065,
+        "distance": 2.0009801387786865,
+        "choice": 11,
+        "source_id": 5
+      }
+    ]
+  },
+  "candidate_mismatch_on_recorded_reference_inputs": 22,
+  "no_counterfactual_navigation_success_inferred": true,
+  "new_physical_steps": 0,
+  "new_optimizer_updates": 0,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 215.8759243679815,
+    "cpu_seconds": 21.587623303999997,
+    "average_cpu_cores": 0.1000001429858468,
+    "peak_rss_mib": 540.0546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "input_hashes_verified": 111
+}

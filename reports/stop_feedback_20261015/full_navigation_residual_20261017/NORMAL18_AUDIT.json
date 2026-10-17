@@ -1,0 +1,784 @@
+{
+  "completed": true,
+  "at": "2026-10-17T07:08:47.833250+08:00",
+  "model": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+  "normal_cases": 18,
+  "safe_cases": 18,
+  "comparisons": {
+    "original_fixed": {
+      "all_passed": true,
+      "checks": [
+        {
+          "case_id": "motion_profile_015",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_002",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_05",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_12",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_17",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_24",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_31",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        }
+      ],
+      "seconds": [
+        489.40000000002607,
+        459.40000000001334
+      ],
+      "travel_m": [
+        67.47422176966873,
+        67.13577183988691
+      ],
+      "aggregate_seconds_within_original_5pct": true,
+      "aggregate_travel_within_original_2pct": true
+    },
+    "declared_parent": {
+      "all_passed": true,
+      "checks": [
+        {
+          "case_id": "motion_profile_015",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_002",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_05",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_12",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_17",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_24",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_31",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        }
+      ],
+      "seconds": [
+        459.40000000001334,
+        459.40000000001334
+      ],
+      "travel_m": [
+        67.13577183988691,
+        67.13577183988691
+      ],
+      "aggregate_seconds_within_original_5pct": true,
+      "aggregate_travel_within_original_2pct": true
+    },
+    "direct_auxiliary119": {
+      "all_passed": true,
+      "checks": [
+        {
+          "case_id": "motion_profile_015",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_02",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_03",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "recovery_holdout_01",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_w11_e7",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_002",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "motion_profile_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_000",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "independent_dynamic_001",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_00",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_05",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_12",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_17",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_24",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "localization_nav_31",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_0",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        },
+        {
+          "case_id": "train_failure_stop_go_variation_1",
+          "safety": true,
+          "seconds_within_original_20pct": true,
+          "travel_within_original_20pct": true
+        }
+      ],
+      "seconds": [
+        459.40000000001334,
+        459.40000000001334
+      ],
+      "travel_m": [
+        67.13577183988691,
+        67.13577183988691
+      ],
+      "aggregate_seconds_within_original_5pct": true,
+      "aggregate_travel_within_original_2pct": true
+    }
+  },
+  "matched_trace_cases": [
+    {
+      "case_id": "motion_profile_015",
+      "frames": 172,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "recovery_holdout_00",
+      "frames": 182,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "recovery_holdout_02",
+      "frames": 157,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "recovery_holdout_03",
+      "frames": 196,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "recovery_holdout_01",
+      "frames": 190,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "train_failure_w11_e7",
+      "frames": 186,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "motion_profile_002",
+      "frames": 282,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "motion_profile_000",
+      "frames": 147,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "independent_dynamic_000",
+      "frames": 258,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "independent_dynamic_001",
+      "frames": 116,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_00",
+      "frames": 3,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_05",
+      "frames": 5,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_12",
+      "frames": 11,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_17",
+      "frames": 12,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_24",
+      "frames": 13,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "localization_nav_31",
+      "frames": 57,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_0",
+      "frames": 169,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    },
+    {
+      "case_id": "train_failure_stop_go_variation_1",
+      "frames": 159,
+      "fields": {
+        "observations": true,
+        "masks": true,
+        "choices": true,
+        "commands": true,
+        "scans": true,
+        "odometry": true,
+        "measured_velocity": true,
+        "labels": true,
+        "human_positions": true,
+        "route_diagnostics": true,
+        "route_reasons": true,
+        "predictive_constraints_excluding_compute_ms": true
+      },
+      "all_non_timing_trace_fields_exact": true
+    }
+  ],
+  "recorded_frames": 2315,
+  "all18_auxiliary119_recorded_non_timing_traces_exact": true,
+  "zero_motion_initially_arrived_cases": [],
+  "fixed_development_regression_not_generalization": true,
+  "known_sensor01_gain_is_separate_training_development_case": true,
+  "remaining_sensor5_source3_heading2_known_hard97_6_106_and_conditional_fresh_gates_not_waived": true,
+  "input_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/audit_normal18.py": "5c382c3f20566d8d24eb7350c28b0e47ff54628848882ca65d8e4e20c611bb75",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/NORMAL18_VALIDATION_SNAPSHOT.json": "3b0d9904890152282f91c222e875206bd84b783efabf785bec43accaa12a96ea",
+    "reports/stop_feedback_20261015/context_feedback_longfit_protocol_20261016/tasks.json": "de378f14da70bd62add20d78db721f19e46266db9228f5ebc74a2eb4993bfdc0",
+    "reports/stop_feedback_20261015/normal_suite_wait_validation_v2_20261016/RESULTS.json": "ef5d9997e4f977f6983d9c701d577b7d79f0a757a5d6e7b74d406aa158964aa8",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/RESULTS.json": "2dbb7d2fba6b696ea251a1d1fa066bc3fd918526b5fd011b282726bd5dc54966",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_motion_profile_015_candidate.npz": "49f83efdcfea923c655c533c645c5f94870a54b34030389d7dc9980793a850bc",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_motion_profile_015_candidate.npz": "e12f7f13d374961a204d27b2765e6f9c7c62127919a03b660cad07777eb96ac4",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_recovery_holdout_00_candidate.npz": "c74a19559e115bbf469a4c4e9dcf1f4c73b1cd7da9de285155e1e780c4824549",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_recovery_holdout_00_candidate.npz": "cefaa290c8b83592adf7a3395ddf209b7a49dad75ef2b1a419b4883efc9e36a2",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_recovery_holdout_02_candidate.npz": "45c42ef973bf7d545d7d3e06bf8e10a37e7c0ecaca878aaff6cb06476612cb1d",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_recovery_holdout_02_candidate.npz": "200518d535ab092d37e70e38381564031dd58cd6d72bb289b67a504b6d88dcd2",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_recovery_holdout_03_candidate.npz": "c6ce40696ae63ef438b9aa5b63c90fe0aeea22c5330c5d1d669b6f8976a84ddc",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_recovery_holdout_03_candidate.npz": "d8bf5e0956d3c1de761722b82bb831b6d9e3ed53cf699bebc650702b152d21a8",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_recovery_holdout_01_candidate.npz": "5dfbf9c0289ef449b40665c0c4055914a6e237266b705f8f3bb5389590bea060",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_recovery_holdout_01_candidate.npz": "3e0b29955d42cbd0358fa33c6ea30c96ff88111b5afb12e5048187cc3c5803c7",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_train_failure_w11_e7_candidate.npz": "109d83cdb4229a8f7f0b6c07f03523cf330eaa640aa7d2dd60443f97f6c4e6e5",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_train_failure_w11_e7_candidate.npz": "33e29a971ebcd7e4055da72ac584d31bdd41303733c68aade2b29b99f0d147ae",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_motion_profile_002_candidate.npz": "4e54ef1d3fedf1f5bf2ba34bd34353806f1ff28944639b8550667a3892ad9a22",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_motion_profile_002_candidate.npz": "6a562e16ec6298f9c2d1f6cfa917a819bd8f32fa01ee97ba5081f52d7b7e5c1a",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_motion_profile_000_candidate.npz": "45e43f350ecff5652105048fc65536be61eb1ccb93645b0d2267843e837f2010",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_motion_profile_000_candidate.npz": "7f5ad902480b7e0f4933134bda05b762372eeb70e882509058c502ff47d79193",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_independent_dynamic_000_candidate.npz": "273d73dccf29be7c4a1f2b28c90deaa9a5f18675a1cc4ae604bad4fdd0807a62",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_independent_dynamic_000_candidate.npz": "9113a06ad3236a43e5704c0f30b257dcc8dc470df9881fa483776b7c1179602d",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_independent_dynamic_001_candidate.npz": "0311204286cbd216dac88fb469accbfbfa6281853da373bf929eb0ab07a6b392",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_independent_dynamic_001_candidate.npz": "03fee603d2ca2b60ec0efa04121ba22f5fda5acbfae9e028a052ce3f3153208d",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_00_candidate.npz": "14847f64d51be8840b883e440ae30e1f129bb215f063902d030bd516216fefea",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_00_candidate.npz": "107994b16972ed9bec1e5a84b3baba7fdff3191c2847df75c46b0879e31d9155",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_05_candidate.npz": "5d39f79ccc9c384e1031928370d07ab96f6c7d4f341ed825ea55f0b8d20f3bf1",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_05_candidate.npz": "9d1d53054f1e0f841c4a84fc5f9390cc76f804cccc7e457f6593a91b3ae0a677",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_12_candidate.npz": "16bc17cd04436c56e31514b709613ef9a568fbbdd7675aed95290dd7fb4b21fa",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_12_candidate.npz": "1adba1da6adae1322575ebae77a5f957ba60291f2358f9ba588e7837f2134b32",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_17_candidate.npz": "01128f063ac01798d7a022a13c7c25f46d568e3d5da014834255b996e0033e8f",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_17_candidate.npz": "f4cadac50bf4be31183f73126d63f72abf5ae59d0f138f4bbe29ceb79341820e",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_24_candidate.npz": "9ec961f45dbac443b263d53e494393de779ebeb5a9bebcbe8397e8c20c198dbe",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_24_candidate.npz": "57a5c84dacaef587f0a446d756dd07da14e75edc2b502f324fe879402a98c988",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_localization_nav_31_candidate.npz": "2febaa13e040f5304bdad2f79e179e23ffa458f3150c0aecd0b5a23586385761",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_31_candidate.npz": "d2af92f675d7da57dc7d3779d4c8246c683487dec21e211fac0427fe9ee4d043",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_train_failure_stop_go_variation_0_candidate.npz": "2b62ed4099ca0b244e4131a4251358405776792bab0a26598fb1c7555be47681",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_train_failure_stop_go_variation_0_candidate.npz": "28dbe3fff96109eb3498d6fdd7c3f067a69e6a6ec7c3f2a0a8b60f5557636b63",
+    "reports/stop_feedback_20261015/v2_behavior_retention_validation_20261017/physical/normal18_train_failure_stop_go_variation_1_candidate.npz": "d10f72140c15c6c3ce50c25cbb98029b7ea811394203eb1d1ee864598203e7f3",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_train_failure_stop_go_variation_1_candidate.npz": "404cf9bbdaec743df8a2841ad1167addac8ee4e3ea3db2daa658277d1c7f7f1e"
+  },
+  "resource": {
+    "seconds": 5.4799207230098546,
+    "cpu_seconds": 0.5483046420000001,
+    "average_cpu_cores": 0.1000570390914055,
+    "peak_rss_mib": 37.1796875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "model_or_physics_not_loaded": true,
+  "new_training_updates": 0,
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

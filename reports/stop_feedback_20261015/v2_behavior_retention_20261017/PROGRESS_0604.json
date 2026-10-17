@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-17T06:05:07.280283+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "actual_new_evidence": [
+    "Current auxiliary119 completed original fixed28 with every safety and efficiency gate independently recomputed.",
+    "Current dynamic00 safe61.6s, retains prior PPO gain over BC4500 timeout140s; all309 recorded observations/actions/physical/sensor frames exact to prior PPO.",
+    "Current same model also repaired dynamic01 to34.6s vs prior53.4s; combined gains verified, but both are known training-development cases."
+  ],
+  "fixed28_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/FIXED28_AUDIT.json",
+  "dynamic00_retention_audit": "reports/stop_feedback_20261015/v2_behavior_retention_20261017/DYNAMIC00_RETENTION_AUDIT.json",
+  "current_total_physical_episodes": 30,
+  "current_validation_completed": false,
+  "groups": {
+    "observed6": {
+      "completed": 2,
+      "safe": 2
+    },
+    "normal18": {
+      "completed": 18,
+      "safe": 18
+    },
+    "sensor5": {
+      "completed": 5,
+      "safe": 5
+    },
+    "source_recovery3": {
+      "completed": 3,
+      "safe": 3
+    },
+    "heading2": {
+      "completed": 2,
+      "safe": 2
+    }
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2180324",
+      "MemoryCurrent": "1483898880",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "2aad2fe0cdc34caca8796f013b79a7d3",
+      "start_ticks": "49348108",
+      "unit": "rl-v2-behavior-retention-validate-20261017.service"
+    },
+    {
+      "MainPID": "2184732",
+      "MemoryCurrent": "9695232",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "575d6912c71543359234fa06b34e291b",
+      "start_ticks": "49435628",
+      "unit": "rl-hybrid-memory-pair-preflight-20261017.service"
+    }
+  ],
+  "new_physical_episodes_in_these_readonly_audits": 0,
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "known_safety_failures_and_late97_6_106_and_conditional_fresh_tests_not_waived": true,
+  "no_current_localization_router_or_target_board_improvement_claim": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

@@ -1,0 +1,513 @@
+{
+  "completed": true,
+  "at": "2026-10-17T04:32:44.640618+08:00",
+  "actual_decisions": 1993,
+  "complete_episodes": 10,
+  "exact_current_guard_reason_groups": true,
+  "executed_history_and_masks_verified": true,
+  "short_contact_floor_verified_frames": 189,
+  "physical_history_age_checked_frames": 1973,
+  "complete_batch_advantage_normalization_reproduced": true,
+  "no_actor_credit_assigned_to_only_stop_states": true,
+  "batches": [
+    {
+      "batch": 1,
+      "complete_decisions": 1065,
+      "eligible_decisions": 682,
+      "normalization_reproduced": true,
+      "raw_advantage_mean": 0.2035454511642456,
+      "raw_advantage_std": 4.844623565673828,
+      "eligible_stop": {
+        "count": 322,
+        "negative": 305,
+        "positive": 17,
+        "mean": -0.4495978199917337,
+        "minimum": -1.0745222568511963,
+        "maximum": 2.425877809524536
+      },
+      "eligible_motion": {
+        "count": 360,
+        "negative": 199,
+        "positive": 161,
+        "mean": 0.4021402765715417,
+        "minimum": -1.0620782375335693,
+        "maximum": 2.4791600704193115
+      }
+    },
+    {
+      "batch": 2,
+      "complete_decisions": 928,
+      "eligible_decisions": 564,
+      "normalization_reproduced": true,
+      "raw_advantage_mean": 4.064391613006592,
+      "raw_advantage_std": 6.765007019042969,
+      "eligible_stop": {
+        "count": 123,
+        "negative": 103,
+        "positive": 20,
+        "mean": -0.6397209417044631,
+        "minimum": -1.2158141136169434,
+        "maximum": 1.285764217376709
+      },
+      "eligible_motion": {
+        "count": 441,
+        "negative": 188,
+        "positive": 253,
+        "mean": 0.17842551559007086,
+        "minimum": -1.3634698390960693,
+        "maximum": 1.5151479244232178
+      }
+    }
+  ],
+  "episodes": [
+    {
+      "batch": 1,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_01.npz",
+      "safe_success": false,
+      "release_frame": 450,
+      "full_navigation_case": null,
+      "sampled_decisions": 250,
+      "category_counts": {
+        "eligible_stop_with_motion": 70,
+        "eligible_motion": 157,
+        "only_stop_available": 23,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 70,
+        "negative": 67,
+        "positive": 3,
+        "mean": -0.7619178295135498,
+        "minimum": -1.0745222568511963,
+        "maximum": 0.24286305904388428
+      },
+      "eligible_motion_advantage": {
+        "count": 157,
+        "negative": 130,
+        "positive": 27,
+        "mean": -0.4794200360774994,
+        "minimum": -1.0620782375335693,
+        "maximum": 0.26418593525886536
+      },
+      "stopped_with_motion_available": 70,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "predicted_dynamic_contact": 384,
+        "unsafe_turn_blocked": 158,
+        "laser_braking_footprint": 343,
+        "unsafe_translation_blocked": 81,
+        "escape_not_increasing_clearance": 29,
+        "static_braking_footprint": 152
+      },
+      "terminal_credit_at_first_decision": -0.4093864452635418,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 1,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_02.npz",
+      "safe_success": false,
+      "release_frame": 480,
+      "full_navigation_case": null,
+      "sampled_decisions": 220,
+      "category_counts": {
+        "eligible_stop_with_motion": 60,
+        "eligible_motion": 35,
+        "only_stop_available": 125,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 60,
+        "negative": 60,
+        "positive": 0,
+        "mean": -0.48676052689552307,
+        "minimum": -1.0259207487106323,
+        "maximum": -0.21964289247989655
+      },
+      "eligible_motion_advantage": {
+        "count": 35,
+        "negative": 35,
+        "positive": 0,
+        "mean": -0.25107184052467346,
+        "minimum": -0.5787389874458313,
+        "maximum": -0.1124492734670639
+      },
+      "stopped_with_motion_available": 60,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "predicted_dynamic_contact": 3,
+        "laser_braking_footprint": 1744,
+        "unsafe_translation_blocked": 168,
+        "unsafe_turn_blocked": 33,
+        "escape_not_increasing_clearance": 125
+      },
+      "terminal_credit_at_first_decision": -0.5534490179967079,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 1,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_03.npz",
+      "safe_success": false,
+      "release_frame": 488,
+      "full_navigation_case": null,
+      "sampled_decisions": 212,
+      "category_counts": {
+        "eligible_stop_with_motion": 165,
+        "eligible_motion": 21,
+        "only_stop_available": 26,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 165,
+        "negative": 165,
+        "positive": 0,
+        "mean": -0.489498496055603,
+        "minimum": -1.074499487876892,
+        "maximum": -0.2218036949634552
+      },
+      "eligible_motion_advantage": {
+        "count": 21,
+        "negative": 21,
+        "positive": 0,
+        "mean": -0.2671210765838623,
+        "minimum": -1.0345711708068848,
+        "maximum": -0.15938134491443634
+      },
+      "stopped_with_motion_available": 165,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "laser_braking_footprint": 1794,
+        "unsafe_translation_blocked": 100,
+        "unsafe_turn_blocked": 29,
+        "escape_not_increasing_clearance": 26
+      },
+      "terminal_credit_at_first_decision": -0.5997856409673894,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 1,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_04.npz",
+      "safe_success": false,
+      "release_frame": 530,
+      "full_navigation_case": null,
+      "sampled_decisions": 170,
+      "category_counts": {
+        "eligible_stop_with_motion": 13,
+        "eligible_motion": 13,
+        "only_stop_available": 144,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 13,
+        "negative": 13,
+        "positive": 0,
+        "mean": -0.28364336490631104,
+        "minimum": -0.31729528307914734,
+        "maximum": -0.25223058462142944
+      },
+      "eligible_motion_advantage": {
+        "count": 13,
+        "negative": 13,
+        "positive": 0,
+        "mean": -0.33916109800338745,
+        "minimum": -0.4062957465648651,
+        "maximum": -0.2556605935096741
+      },
+      "stopped_with_motion_available": 13,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "laser_braking_footprint": 1717,
+        "escape_not_increasing_clearance": 69,
+        "unsafe_translation_blocked": 35,
+        "unsafe_turn_blocked": 3
+      },
+      "terminal_credit_at_first_decision": -0.9147825915453043,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 1,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_05.npz",
+      "safe_success": true,
+      "release_frame": null,
+      "full_navigation_case": "train_failure_w11_e7",
+      "sampled_decisions": 213,
+      "category_counts": {
+        "eligible_stop_with_motion": 14,
+        "eligible_motion": 134,
+        "only_stop_available": 31,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 34
+      },
+      "eligible_stop_advantage": {
+        "count": 14,
+        "negative": 0,
+        "positive": 14,
+        "mean": 1.5874278545379639,
+        "minimum": 1.04539954662323,
+        "maximum": 2.425877809524536
+      },
+      "eligible_motion_advantage": {
+        "count": 134,
+        "negative": 0,
+        "positive": 134,
+        "mean": 1.7824299335479736,
+        "minimum": 0.9891870021820068,
+        "maximum": 2.4791600704193115
+      },
+      "stopped_with_motion_available": 14,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "predicted_dynamic_contact": 412,
+        "laser_braking_footprint": 32,
+        "unsafe_turn_blocked": 12,
+        "unsafe_translation_blocked": 2
+      },
+      "terminal_credit_at_first_decision": 1.1875755691154308,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 2,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_06.npz",
+      "safe_success": true,
+      "release_frame": 450,
+      "full_navigation_case": null,
+      "sampled_decisions": 146,
+      "category_counts": {
+        "eligible_stop_with_motion": 8,
+        "eligible_motion": 116,
+        "only_stop_available": 8,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 14
+      },
+      "eligible_stop_advantage": {
+        "count": 8,
+        "negative": 0,
+        "positive": 8,
+        "mean": 0.7313219308853149,
+        "minimum": 0.47649404406547546,
+        "maximum": 0.9186100959777832
+      },
+      "eligible_motion_advantage": {
+        "count": 116,
+        "negative": 0,
+        "positive": 116,
+        "mean": 0.7255929112434387,
+        "minimum": 0.4642378091812134,
+        "maximum": 1.005090594291687
+      },
+      "stopped_with_motion_available": 8,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "predicted_dynamic_contact": 143,
+        "unsafe_turn_blocked": 27,
+        "static_braking_footprint": 55,
+        "unsafe_translation_blocked": 64,
+        "laser_braking_footprint": 17,
+        "learned_route_incomplete": 9
+      },
+      "terminal_credit_at_first_decision": 2.32864462948006,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 2,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_07.npz",
+      "safe_success": false,
+      "release_frame": 480,
+      "full_navigation_case": null,
+      "sampled_decisions": 220,
+      "category_counts": {
+        "eligible_stop_with_motion": 82,
+        "eligible_motion": 28,
+        "only_stop_available": 110,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 82,
+        "negative": 82,
+        "positive": 0,
+        "mean": -0.9601510167121887,
+        "minimum": -1.2158141136169434,
+        "maximum": -0.6926984190940857
+      },
+      "eligible_motion_advantage": {
+        "count": 28,
+        "negative": 28,
+        "positive": 0,
+        "mean": -0.726484477519989,
+        "minimum": -1.2220723628997803,
+        "maximum": -0.6924240589141846
+      },
+      "stopped_with_motion_available": 82,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "predicted_dynamic_contact": 6,
+        "laser_braking_footprint": 2088,
+        "unsafe_translation_blocked": 45,
+        "unsafe_turn_blocked": 6,
+        "escape_not_increasing_clearance": 1
+      },
+      "terminal_credit_at_first_decision": -0.5534490179967079,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 2,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_08.npz",
+      "safe_success": false,
+      "release_frame": 488,
+      "full_navigation_case": null,
+      "sampled_decisions": 212,
+      "category_counts": {
+        "eligible_stop_with_motion": 12,
+        "eligible_motion": 150,
+        "only_stop_available": 13,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 37
+      },
+      "eligible_stop_advantage": {
+        "count": 12,
+        "negative": 12,
+        "positive": 0,
+        "mean": -0.9544637799263,
+        "minimum": -1.0460965633392334,
+        "maximum": -0.9270656108856201
+      },
+      "eligible_motion_advantage": {
+        "count": 150,
+        "negative": 150,
+        "positive": 0,
+        "mean": -0.9851198196411133,
+        "minimum": -1.3634698390960693,
+        "maximum": -0.7475172281265259
+      },
+      "stopped_with_motion_available": 12,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "laser_braking_footprint": 48,
+        "unsafe_translation_blocked": 48,
+        "unsafe_turn_blocked": 19,
+        "predicted_dynamic_contact": 179
+      },
+      "terminal_credit_at_first_decision": -0.5997856409673894,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 2,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_09.npz",
+      "safe_success": false,
+      "release_frame": 530,
+      "full_navigation_case": null,
+      "sampled_decisions": 170,
+      "category_counts": {
+        "eligible_stop_with_motion": 9,
+        "eligible_motion": 10,
+        "only_stop_available": 151,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 0
+      },
+      "eligible_stop_advantage": {
+        "count": 9,
+        "negative": 9,
+        "positive": 0,
+        "mean": -0.7365245819091797,
+        "minimum": -0.7712029218673706,
+        "maximum": -0.7175473570823669
+      },
+      "eligible_motion_advantage": {
+        "count": 10,
+        "negative": 10,
+        "positive": 0,
+        "mean": -0.814952552318573,
+        "minimum": -0.9440843462944031,
+        "maximum": -0.7221426367759705
+      },
+      "stopped_with_motion_available": 9,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "laser_braking_footprint": 1718,
+        "escape_not_increasing_clearance": 80,
+        "unsafe_translation_blocked": 30,
+        "unsafe_turn_blocked": 6
+      },
+      "terminal_credit_at_first_decision": -0.9147825915453043,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    },
+    {
+      "batch": 2,
+      "source": "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_10.npz",
+      "safe_success": true,
+      "release_frame": null,
+      "full_navigation_case": "motion_profile_015",
+      "sampled_decisions": 180,
+      "category_counts": {
+        "eligible_stop_with_motion": 12,
+        "eligible_motion": 137,
+        "only_stop_available": 3,
+        "outside_support_stop_with_motion": 0,
+        "outside_support_motion": 28
+      },
+      "eligible_stop_advantage": {
+        "count": 12,
+        "negative": 0,
+        "positive": 12,
+        "mean": 1.0232009887695312,
+        "minimum": 0.8369763493537903,
+        "maximum": 1.285764217376709
+      },
+      "eligible_motion_advantage": {
+        "count": 137,
+        "negative": 0,
+        "positive": 137,
+        "mean": 1.2465397119522095,
+        "minimum": 0.8586845993995667,
+        "maximum": 1.5151479244232178
+      },
+      "stopped_with_motion_available": 12,
+      "outside_support_stop_sensor_valid": 0,
+      "rejected_action_reasons": {
+        "scan_unavailable": 33,
+        "predicted_dynamic_contact": 14,
+        "laser_braking_footprint": 5,
+        "unsafe_translation_blocked": 6,
+        "unsafe_turn_blocked": 2
+      },
+      "terminal_credit_at_first_decision": 1.6546259566473476,
+      "recorded_old_gae_not_used_as_complete_batch_advantage": true
+    }
+  ],
+  "inputs": {
+    "reports/stop_feedback_20261015/guard_aligned_credit_audit_20261017/audit.py": "525a7ad1fe512f09382344b621dd4810316d1449e02a8f59031f8c9328482c09",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/RESULTS.json": "1dc13428ac95eb7476096eebc18f8066be865123f37f8e2c067091caaf8bdaf8",
+    "models/stop_feedback_20261015/guard_aligned_migration_s231017/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/batch_credit_ppo.py": "1bedba6c2807210babd24e9e81d05eb37181eb185f78e0c21b420f8da64dd956",
+    "training/experiments/native625_onpolicy.py": "83506487e7c606439ad4fe343589590870808e9512b8e789a3e4d1ad5d4b3e36",
+    "training/experiments/context_release_actor.py": "26712fd60909cec0c8c46099c0674970f11b45440a31d02a69c2ece3d6b9e811",
+    "training/experiments/release_actor.py": "f8c777fccbd11ae1293f89f86800f13155cd277ee681476e13cdb8d1aa54e515",
+    "training/experiments/long_risk_actor.py": "569c054dd83d1f796c7df0143fb49e76ba407befdf7e1363746ad3b284771f2a",
+    "training/experiments/guard_reason_release_actor.py": "2e2914ef82b68945a758a22dc14a9a2704ea37f7410f0eb0cc0f3cef76ffcd5f",
+    "training/neural_navigation/decision_feedback.py": "ab9fa6ef47fc863d793afdf9fb43bb4a6dbd6090959a0c8c97f52af31e61cc0f",
+    "training/neural_navigation/aligned_risk_observation.py": "775c3d118402903092e2ac7f6704c47ae96905ff0b5ae0c7121abc3f37cde8bc",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_01.npz": "0604334478576215da0af7e940922929a75f2ff19071de0ccd2eddabf06077d7",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_02.npz": "545f826cfdaa72a8131d73c36d144be2578936a4339e3b1ce9e9d399c3ba553b",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_03.npz": "6e81df27cbd375cab5864a284297dac0cc10c07b9cc24417826c9d4072f579fc",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_04.npz": "f72664534e148f7b5cd95dc880c9aac08945b658f88f751d836a868883f3a26d",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_20261017/episode_05.npz": "578c1bf286a793b600ca6a70dbf5a47999f8698a3c1e3df269b3e07ba60b0e0a",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_06.npz": "9b17abd078406a099b73316a30124f3d8a3fb03c9fad55bb77c9b587fac768d2",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_07.npz": "ef44623c164e51fb3a06fccb7ee4a0f3385fc89ec7f4c53f9911aa6b6b341b82",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_08.npz": "aa80887d15d011cd9bfd1e7d481cb8431f6f2630a2d77c2ca1bc1d90055ce57d",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_09.npz": "1b4a7fc767a363af7fc7ccaf31463c59b9fd6dc715687317c856365ed25f4f7d",
+    "reports/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_20261017/episode_10.npz": "1bebb558248a00ad7186817ad776cec60804add50283289f0c96555543a251f4"
+  },
+  "output_credit_sha256": "4e15f187fcbe1e5e96630103ef45c08451e96fdb8c851154d43246410e0f0b44",
+  "model_not_loaded": true,
+  "new_optimizer_updates": 0,
+  "new_physical_episodes": 0,
+  "sampling_behavior_log_probability_replay_performed_by_original_learner": true,
+  "this_audit_does_not_independently_replay_neural_log_probabilities": true,
+  "signs_are_learning_signal_not_causal_action_quality_labels": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

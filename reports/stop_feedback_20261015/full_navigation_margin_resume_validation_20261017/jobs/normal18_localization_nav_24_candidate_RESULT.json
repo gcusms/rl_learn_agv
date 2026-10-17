@@ -1,0 +1,44 @@
+{
+  "case_id": "localization_nav_24",
+  "category": "approach_and_stop",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 2.399999999999971,
+  "travel_m": 0.32773332836889674,
+  "frames": 13,
+  "final_xy_error_m": 0.042800521180644736,
+  "final_yaw_error_rad": 0.035518111916342576,
+  "localization_xy_p95_m": 0.004460569165790614,
+  "localization_yaw_p95_rad": 0.0009186571440392469,
+  "stop_choices": 4,
+  "only_stop_frames": 0,
+  "stop_reasons": {
+    "None": 10,
+    "learned_route_incomplete": 2,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 4,
+  "predictive_constraint_frames": 0,
+  "runtime_ms": {
+    "p95": 157.45067438110704,
+    "p99": 178.2513140328228,
+    "maximum": 183.4514739457518
+  },
+  "trace_path": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/normal18_localization_nav_24_candidate.npz",
+  "trace_sha256": "57a5c84dacaef587f0a446d756dd07da14e75edc2b502f324fe879402a98c988",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 11.435750631033443,
+    "cpu_seconds": 4.052981386000001,
+    "average_cpu_cores": 0.3544132358921274,
+    "peak_rss_mib": 1680.453125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

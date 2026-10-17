@@ -55,6 +55,9 @@ class ModelNode(Node):
             raise ValueError('max_missing_scan_fraction must be finite and in [0, 1)')
         if not all(math.isfinite(self.options[k]) for k in ('initial_x','initial_y','initial_yaw')):
             raise ValueError('Initial pose must be finite')
+        # Bundle contracts import the explicitly selected model source too.
+        sys.dont_write_bytecode=True
+        sys.path[:0]=[self.options['model_source'],str(Path(self.options['model_source'])/'training')]
         config=inspect_bundle(self.options['model_config'])
         if (config['sensor_core']=='odom-goal-pose' and self.options['mode']=='execute'
             and not config['deployment_approved']):

@@ -1,0 +1,222 @@
+{
+  "at": "2026-10-17T05:06:50.100996+08:00",
+  "validation_source_at": "2026-10-17T05:06:13.853102+08:00",
+  "evaluated_candidate_additional_ppo_steps": 1993,
+  "model": "models/stop_feedback_20261015/guard_aligned_mixed_ppo_resume_s231017",
+  "validation_completed": true,
+  "validation_reason": "Known complete-mission success or efficiency lost",
+  "new_independent_physical_episodes": 30,
+  "fixed28_completed": 28,
+  "fixed28_safe_successes": 28,
+  "per_group": {
+    "normal18": {
+      "completed": 18,
+      "safe_successes": 18
+    },
+    "sensor5": {
+      "completed": 5,
+      "safe_successes": 5
+    },
+    "source_recovery3": {
+      "completed": 3,
+      "safe_successes": 3
+    },
+    "heading2": {
+      "completed": 2,
+      "safe_successes": 2
+    }
+  },
+  "normal18_comparison": {
+    "schema": "paired_navigation_development_gate_v1",
+    "tasks": 18,
+    "common_successes": 18,
+    "lost_successes": [],
+    "gained_successes": [],
+    "safety_nonregression": true,
+    "common_success_travel_m": [
+      67.13577183988691,
+      67.11121422287155
+    ],
+    "common_success_seconds": [
+      459.40000000001334,
+      460.00000000001364
+    ],
+    "total_travel_relative_change": -0.0003657903430964726,
+    "total_time_relative_change": 0.001306051371354533,
+    "pairs": [
+      {
+        "case_id": "motion_profile_015",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "recovery_holdout_00",
+        "travel_relative_change": -0.004321987722505138,
+        "time_relative_change": 0.016574585635367622
+      },
+      {
+        "case_id": "recovery_holdout_02",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "recovery_holdout_03",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "recovery_holdout_01",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_w11_e7",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_002",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "motion_profile_000",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "independent_dynamic_000",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "independent_dynamic_001",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_00",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_05",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_12",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_17",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_24",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "localization_nav_31",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_0",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      },
+      {
+        "case_id": "train_failure_stop_go_variation_1",
+        "travel_relative_change": 0.0,
+        "time_relative_change": 0.0
+      }
+    ],
+    "limits": {
+      "total_travel_increase": 0.02,
+      "total_time_increase": 0.05,
+      "per_task_travel_increase": 0.2,
+      "per_task_time_increase": 0.2
+    },
+    "efficiency_nonregression": true,
+    "all_regression_checks_passed": true,
+    "larger_training_gate_passed": true,
+    "deployment_approved": false,
+    "scope": "Reused development tasks only; no automatic promotion"
+  },
+  "known_complete_mission_comparisons": [
+    {
+      "case_id": "pre_ppo_holdout_dynamic_00",
+      "reference": {
+        "safe_success": false,
+        "collisions": 0,
+        "timeout": true,
+        "seconds": 139.99999999994517,
+        "travel_m": 2.9903580895023905
+      },
+      "candidate": {
+        "safe_success": true,
+        "collisions": 0,
+        "timeout": false,
+        "seconds": 61.60000000001306,
+        "travel_m": 5.8898308211850745
+      }
+    },
+    {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "reference": {
+        "safe_success": true,
+        "collisions": 0,
+        "timeout": false,
+        "seconds": 34.59999999999925,
+        "travel_m": 4.3882475749918815
+      },
+      "candidate": {
+        "safe_success": true,
+        "collisions": 0,
+        "timeout": false,
+        "seconds": 53.400000000008866,
+        "travel_m": 4.628456294733507
+      }
+    }
+  ],
+  "localizer_router_docking_frozen": true,
+  "no_new_localization_improvement_claim": true,
+  "old_real_car_46_of_48_uses_different_set": true,
+  "no_unseen_map_or_target_board_claim": true,
+  "original_deployment_replaced": false,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "original_gates_preserved": true,
+  "late106_not_waived": true,
+  "live_handles": [
+    {
+      "unit": "rl-guard-aligned-ppo-resume-validate-20261017.service",
+      "checked_at": "2026-10-17T05:06:50.100996+08:00",
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "[not set]",
+      "MemoryMax": "infinity",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    },
+    {
+      "unit": "rl-guard-aligned-mechanism-audit-20261017.service",
+      "checked_at": "2026-10-17T05:06:50.100996+08:00",
+      "MainPID": "0",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "[not set]",
+      "MemoryMax": "infinity",
+      "LoadState": "not-found",
+      "ActiveState": "inactive",
+      "SubState": "dead",
+      "InvocationID": ""
+    }
+  ],
+  "validation_sha256": "c7cf9e939ffe4164a57fe1b442820b5066912fe6013c0767f87afbfd28080cb4"
+}

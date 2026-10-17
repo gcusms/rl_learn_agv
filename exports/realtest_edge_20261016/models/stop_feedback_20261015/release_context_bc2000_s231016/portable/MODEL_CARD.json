@@ -1,0 +1,15 @@
+{
+  "deployment_approved": false,
+  "method": "supervised release-context head on frozen RL navigation",
+  "new_ppo_steps": 0,
+  "frozen_components": [
+    "parent_actor",
+    "localizer",
+    "router",
+    "directional_terminal_actor"
+  ],
+  "limitations": [
+    "Complete-safe development demonstrations do not prove independent navigation success.",
+    "Unknown/no-return flags do not authorize motion; original guard remains unchanged."
+  ]
+}

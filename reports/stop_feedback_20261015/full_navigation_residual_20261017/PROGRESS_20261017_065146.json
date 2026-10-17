@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-17T06:51:46.204183+08:00",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "actual_new_evidence": [
+    "Exact margin optimizer/RNG continuation2500cumulative supervised updates retains all4468 reference labels,658originalSTOPs; strict export/runtime passed.",
+    "Actual learned sensor01 full mission now safe37s versus direct parent collision16.6s; all186frames reproduce safe training demonstration without runtime teacher.",
+    "First action divergence3.0s has full625/sensor/physical/mask/route prefix parity; protected component files identical.",
+    "New physical validation3completed,3safe,0collisions; normal2/18. Remaining full safety,97.6/106 and conditional fresh requirements unexecuted or pending."
+  ],
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/MARGIN_RESUME_FIT_RESULTS.json": "f7f02c56174926228218773799d12377cd685b89d979c0cb6ef070e039116380",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/SENSOR01_LEARNED_GAIN_AUDIT.json": "dcfd7e9f8c995566869a1fd681edbb92e0bd39b87bd1be7e4052bd3bda4b0be9",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/VALIDATION_SNAPSHOT_20261017_065146.json": "f8d939ebe3589209d964de7daf80d40459c6702059ded824d71a272a38c86619"
+  },
+  "verified_live_handles": [
+    {
+      "MainPID": "2205571",
+      "MemoryCurrent": "1481777152",
+      "MemoryMax": "3221225472",
+      "Nice": "19",
+      "ActiveState": "active",
+      "SubState": "running",
+      "InvocationID": "ef95cccf487943edb1a993b9732a2520",
+      "unit": "rl-full-navigation-margin-resume-cycle-20261017.service",
+      "start_ticks": "49851050"
+    }
+  ],
+  "new_candidate": {
+    "model": "models/stop_feedback_20261015/full_navigation_margin_resume_s231017",
+    "checkpoint_sha256": "6a36c250f910c958cec99ae8981427b4d3b094d607759ae77fd913b131a7da44",
+    "cumulative_supervised_updates": 2500,
+    "new_ppo_steps": 0,
+    "validation_completed": false,
+    "completed_physical_episodes": 3,
+    "safe_arrivals": 3,
+    "collisions": 0,
+    "normal18_completed": 2,
+    "overall_upgrade_accepted": false
+  },
+  "current_case": {
+    "status": "physical_case",
+    "group": "normal18",
+    "case_id": "recovery_holdout_02",
+    "variant": "candidate",
+    "completed_episodes": 3,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/normal18_recovery_holdout_02_candidate.json"
+  },
+  "next_action": "Finish original fixed28 and retain prior successes/efficiency, then remaining known cases and hard3 including97.6/106; consume conditional8fresh pairs only if original gates pass. No deployment promotion or localization claim."
+}

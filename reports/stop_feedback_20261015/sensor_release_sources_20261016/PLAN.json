@@ -1,0 +1,290 @@
+{
+  "inputs": {
+    "training/experiments/build_sensor_release_source.py": "667c7650ab22b82c9fe303f8680afb8fc496461d746e5bb4271354c69239b41a",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/RESULTS.json": "de08a2af625ca88aa20770ba883855d2bda134995dccbb2c8fc84d6ff0206a41",
+    "reports/stop_feedback_20261015/release_recovery_sources_v2_20261016/demonstrations.npz": "eb8123e14c5edf472939b9a746240fcd60e97e9ca36697e12fe2b316bf8b4b2b",
+    "reports/stop_feedback_20261015/sensor_release_source_20261016/RESULTS.json": "b75262fc04a3c830264228e11cbabf263186616393efe144ef9d608074b43d2a",
+    "reports/stop_feedback_20261015/sensor_release_source_20261016/PLAN.json": "2bb464fc7e4fa2e09d3a1862b07720021edbf847468299f114f5d1691342df7d",
+    "reports/stop_feedback_20261015/sensor_release_source_20261016/teacher_contract.json": "43cd237558352028d66f293d493fa62a149794d611e217bb84b7fce23fd9529e",
+    "reports/stop_feedback_20261015/sensor_release_source_20261016/sensor_release_demonstration.npz": "37157b2ca1f2c8b3671294cfef6d082d2c49224d76555b952d5b0e3dceea9280",
+    "models/stop_feedback_20261015/release_phase300_s231016/checkpoint.pt": "66c3bd6b1875e4d038eeb8ac4726b7a4bf058846922cbbf84c7331f4381981f6",
+    "models/stop_feedback_20261015/release_phase300_s231016/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/manifest.json": "4409cf79c4164db79688097d8fba4d3956e1ca516352b274734f9ad43c625b0e",
+    "training/experiments/sensor_release_teacher.py": "e3944ea682e0636f0a85d58ac2cb46f0a35dd3167305be617f7860d0113444c1",
+    "training/experiments/build_release_recovery_sources.py": "629584ab69baaf660fb72846087f7cf84ab02b44326e52450d620871b6123259",
+    "training/experiments/release_fit_weights.py": "f7014aaa4b76ecf7932f40354168ab1dd66066304882615c73a56a081723b007",
+    "training/neural_navigation/release_observation.py": "6730b9d7107b0cc7d765915aeb5be3bad410a0cd351597a06c6670ee729198fc",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/actor.pt": "804fa1355626abdf2721e34a0b585d554024329d5cb15cea844f97c6bcdcf55a",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/navigation_preservation.json": "a1f333c73b0e80476088840daae63eba72500c3a640d71eee49526d6a64d8404",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/uncertainty_contract.json": "0baf6f30fd0729690590a960832304706f8a42414610b23c81a59a3e43e7ca10",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/long_risk_observation.json": "cd42a7c5a1eb9cb0e8ed91a4fd6ce23ea9f724ec72d1d16bf47f6a4c5a8f2e81",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/previous_risk_actor.pt": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452"
+  },
+  "original_source_frames": 2509,
+  "old_source_arrays_preserved": true,
+  "teacher_replay_and_sensor_quality_checked": true,
+  "observation_contract": {
+    "schema": "risk_and_measured_release_context_v1",
+    "dimensions": 625,
+    "training_dimensions": 622,
+    "unchanged_runtime_prefix_dimensions": 481,
+    "parent_contract": {
+      "schema": "long_action_risk_history_v1",
+      "dimensions": 481,
+      "training_dimensions": 478,
+      "parent_contract": {
+        "schema": "stop_decision_feedback_v2",
+        "prefix_dimensions": 300,
+        "training_dimensions": 436,
+        "heading_prefix_dimensions": 303,
+        "dimensions": 439,
+        "append_dimensions": 136,
+        "action_commands": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2,
+            0.0
+          ],
+          [
+            0.1,
+            0.0
+          ],
+          [
+            0.05,
+            0.0
+          ],
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.0,
+            -0.5
+          ],
+          [
+            0.05,
+            0.5
+          ],
+          [
+            0.05,
+            -0.5
+          ],
+          [
+            0.01,
+            0.5
+          ],
+          [
+            0.01,
+            -0.5
+          ],
+          [
+            0.2,
+            0.5
+          ],
+          [
+            0.2,
+            -0.5
+          ]
+        ],
+        "fields": [
+          "12_current_guard_rejection_groups_one_hot",
+          "previous_executed_stop_reason_one_hot",
+          "12_guard_forecast_contact_scores",
+          "nonzero_choices_over_11",
+          "scan_age_over_guard_limit",
+          "previous_idle_seconds_over_5",
+          "previous_idle_with_choices_seconds_over_5",
+          "prediction_input_valid",
+          "moving_tracks_over_4",
+          "oldest_track_age_over_0.8",
+          "scan_valid"
+        ],
+        "rejection_groups": [
+          "accepted",
+          "perception_or_odometry",
+          "localization_or_route",
+          "static_geometry",
+          "laser_geometry",
+          "dynamic_prediction",
+          "projection",
+          "other"
+        ],
+        "previous_reasons": [
+          "none",
+          "nonfinite_input",
+          "stale_or_future_scan",
+          "scan_unavailable",
+          "odometry_jump",
+          "localization_uncertain",
+          "learned_route_incomplete",
+          "reverse_without_rear_visibility",
+          "reverse_duration_limit",
+          "static_braking_footprint",
+          "laser_braking_footprint",
+          "escape_not_increasing_clearance",
+          "unsafe_turn_blocked",
+          "unsafe_translation_blocked",
+          "estimated_goal_reached",
+          "other",
+          "predicted_dynamic_contact",
+          "predictive_command_contract",
+          "policy_wait",
+          "only_stop_available"
+        ],
+        "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+        "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+        "unknown_forecast_is_not_clear": true,
+        "legacy_prefix_unchanged": true,
+        "stop_always_selectable": true,
+        "simulator_truth_used": false,
+        "commands_issued": false,
+        "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+        "executed_reason_retained_during_idle": true
+      },
+      "unchanged_runtime_prefix_dimensions": 439,
+      "unchanged_training_prefix_dimensions": 436,
+      "append_dimensions": 42,
+      "history_ages_s": [
+        0.4,
+        0.2,
+        0.0
+      ],
+      "maximum_historical_sample_age_s": 0.05,
+      "fields_per_frame": [
+        "12_forecast_contact_scores",
+        "supported_prediction_valid",
+        "supported_tracks_over_4"
+      ],
+      "horizon_s": 5.0,
+      "forecast_period_s": 0.2,
+      "contact_score": "0 if no predicted contact, else 1-contact_s/5.2; consult validity",
+      "unsupported_or_missing_history": "zero_values_and_zero_validity_not_certified_clear",
+      "margin_m": 0.04,
+      "velocity_uncertainty_floor_m_s": 0.025,
+      "adaptive_track_uncertainty": true,
+      "finite_measured_motion_response": true,
+      "response_gain": 20.0,
+      "response_acceleration": [
+        0.5,
+        1.0
+      ],
+      "action_commands": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2,
+          0.0
+        ],
+        [
+          0.1,
+          0.0
+        ],
+        [
+          0.05,
+          0.0
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.05,
+          0.5
+        ],
+        [
+          0.05,
+          -0.5
+        ],
+        [
+          0.01,
+          0.5
+        ],
+        [
+          0.01,
+          -0.5
+        ],
+        [
+          0.2,
+          0.5
+        ],
+        [
+          0.2,
+          -0.5
+        ]
+      ],
+      "frame": "guard tracks and robot pose in continuous odometry coordinates",
+      "simulator_truth_used": false,
+      "future_sensor_frames_used": false,
+      "absolute_episode_time_input": false,
+      "commands_issued": false,
+      "actions_masks_body_guard_and_blind_memory_unchanged": true
+    },
+    "append_dimensions": 144,
+    "sectors": 72,
+    "pooling": "numpy.array_split_in_scan_order",
+    "fields": [
+      "72_finite_hit_fractions",
+      "72_no_return_fractions"
+    ],
+    "finite_hit": "finite and range_min <= range < range_max",
+    "no_return": "positive infinity or finite range == range_max",
+    "unknown": "NaN, negative infinity, below range_min or finite above range_max",
+    "unknown_fraction": "1 - finite_hit_fraction - no_return_fraction",
+    "no_return_is_not_a_measured_surface": true,
+    "unknown_is_not_clear": true,
+    "source": "same current raw scan consumed by localization, routing and guard",
+    "simulator_truth_used": false,
+    "future_sensor_frames_used": false,
+    "action_masks_body_margin_blind_memory_and_deadlines_unchanged": true,
+    "commands_issued": false
+  },
+  "teacher_contract": {
+    "schema": "offline_sensor_checked_wait_release_v1",
+    "training_only": true,
+    "observation_dimensions": 625,
+    "minimum_prior_legal_wait_s": 2.0,
+    "forecast_history": "current supported frame plus at least one supported historical frame",
+    "candidate_contact_scores_must_all_be_zero": true,
+    "unsupported_forecasts_are_not_clear": true,
+    "minimum_forward_finite_hit_fraction": 0.25,
+    "maximum_forward_unknown_fraction": 0.15,
+    "forward_sector_definition": "sensor angles plus mount yaw within 35 degrees of forward",
+    "waypoint_normalization_m": 2.0,
+    "goal_normalization_m": 12.0,
+    "rollout_s": 1.0,
+    "finite_response_gain": 20.0,
+    "finite_response_acceleration": [
+      0.5,
+      1.0
+    ],
+    "only_override_nominal_stop_inside_trainable_support": true,
+    "armed_release_can_bridge_temporary_unknown_without_issuing_motion": true,
+    "no_absolute_episode_time_or_simulator_truth": true,
+    "original_masks_actions_body_and_guard_unchanged": true,
+    "positive_labels_require_separate_complete_safe_physical_episode": true
+  },
+  "failed_trace_hashes_excluded": [
+    "1d555275a7d2f81e83cf4c44d17d305061a16648aa8cbde45d5ea7ab8e019f97"
+  ],
+  "no_new_physical_or_optimizer_steps": true
+}

@@ -1,0 +1,137 @@
+{
+  "completed": true,
+  "episodes": [
+    {
+      "episode": 1,
+      "training_safe_success": true,
+      "only_stop_frames": 7,
+      "laser_rejected_pure_turn_candidates": 0,
+      "candidates_clear_of_current_raw_returns_only": 0,
+      "examples": []
+    },
+    {
+      "episode": 2,
+      "training_safe_success": false,
+      "only_stop_frames": 95,
+      "laser_rejected_pure_turn_candidates": 164,
+      "candidates_clear_of_current_raw_returns_only": 95,
+      "examples": [
+        {
+          "time_s": 123.7999999999599,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.04331713164397144,
+          "raw_trajectory_minimum_gap_m": 0.04331713164397144,
+          "horizon_s": 0.6978543401289921,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 124.19999999995953,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.06284649780424817,
+          "raw_trajectory_minimum_gap_m": 0.06284649780424817,
+          "horizon_s": 0.7005310889436964,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 124.19999999995953,
+          "action": 5,
+          "raw_initial_minimum_gap_m": 0.06284649780424817,
+          "raw_trajectory_minimum_gap_m": 0.042828374282018494,
+          "horizon_s": 0.6994689110563035,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 124.39999999995935,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.062023280379604306,
+          "raw_trajectory_minimum_gap_m": 0.062023280379604306,
+          "horizon_s": 0.696501345681233,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 124.39999999995935,
+          "action": 5,
+          "raw_initial_minimum_gap_m": 0.062023280379604306,
+          "raw_trajectory_minimum_gap_m": 0.04303630867894112,
+          "horizon_s": 0.7034986543187669,
+          "reported_reason": "laser_braking_footprint"
+        }
+      ]
+    },
+    {
+      "episode": 3,
+      "training_safe_success": false,
+      "only_stop_frames": 163,
+      "laser_rejected_pure_turn_candidates": 310,
+      "candidates_clear_of_current_raw_returns_only": 238,
+      "examples": [
+        {
+          "time_s": 102.19999999997954,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.06246196782304386,
+          "raw_trajectory_minimum_gap_m": 0.058573428049002174,
+          "horizon_s": 1.165575568113023,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 102.19999999997954,
+          "action": 5,
+          "raw_initial_minimum_gap_m": 0.06246196782304386,
+          "raw_trajectory_minimum_gap_m": 0.05817520328250941,
+          "horizon_s": 0.23692429231721,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 102.39999999997936,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.06756719701540803,
+          "raw_trajectory_minimum_gap_m": 0.055594516550407314,
+          "horizon_s": 0.9603203166193213,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 102.39999999997936,
+          "action": 5,
+          "raw_initial_minimum_gap_m": 0.06756719701540803,
+          "raw_trajectory_minimum_gap_m": 0.053882202510983745,
+          "horizon_s": 0.4396796833806787,
+          "reported_reason": "laser_braking_footprint"
+        },
+        {
+          "time_s": 102.59999999997918,
+          "action": 4,
+          "raw_initial_minimum_gap_m": 0.0726254863071174,
+          "raw_trajectory_minimum_gap_m": 0.06087819081592705,
+          "horizon_s": 0.7619213505318423,
+          "reported_reason": "laser_braking_footprint"
+        }
+      ]
+    }
+  ],
+  "identical_declared_measured_response_and_4cm_margin_used": true,
+  "static_map_memory_uncertainty_and_dynamic_predictions_not_removed_from_runtime": true,
+  "remembered_points_not_logged_so_their_accuracy_remains_unverified": true,
+  "raw_return_clearance_does_not_certify_an_action_safe": true,
+  "no_guard_or_action_permission_changes": true,
+  "inputs": {
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/audit_raw_geometry.py": "04a238cf905ff655fc11ef47744e3e0fa9e368aa1385db048769840a4179b29e",
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/FIRST3_GEOMETRY_ROWS.json": "0f62a20ae4e51172cbc7933da76fb64a9ce92eb15b42a6e77960f8149a2b4d8f",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "training/neural_navigation/motion_response.py": "4452ee85857f6775acf5d0c93786742b964553ce016c23aeee91d7d248ccef77",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_01.npz": "d2ee3d0e978f4143562aee07de3faf1ba5593bf170df8fb1c9c362c52172e051",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_02.npz": "4df00de239758e430a361632952b92c1f845fae558acaf2864256b197670fb91",
+    "reports/stop_feedback_20261015/native625_batch_credit_pilot_20261017/episode_03.npz": "3e247f60a29480b7f3ce404b487182c794a88a2e39a143b52cadf982436c1900"
+  },
+  "resource": {
+    "seconds": 7.336172533978242,
+    "cpu_seconds": 0.7427148570000001,
+    "average_cpu_cores": 0.10124010218680644,
+    "peak_rss_mib": 38.05859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "no_new_physics": true,
+  "no_optimizer_updates": true,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

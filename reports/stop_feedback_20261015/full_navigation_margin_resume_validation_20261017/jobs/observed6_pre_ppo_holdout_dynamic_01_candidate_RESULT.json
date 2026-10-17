@@ -1,0 +1,43 @@
+{
+  "case_id": "pre_ppo_holdout_dynamic_01",
+  "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 34.59999999999925,
+  "travel_m": 4.3882475749918815,
+  "frames": 174,
+  "final_xy_error_m": 0.1166269959283642,
+  "final_yaw_error_rad": null,
+  "localization_xy_p95_m": 0.004422492126439605,
+  "localization_yaw_p95_rad": 0.0015253766031078525,
+  "stop_choices": 19,
+  "only_stop_frames": 18,
+  "stop_reasons": {
+    "None": 173,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 1,
+  "predictive_constraint_frames": 32,
+  "runtime_ms": {
+    "p95": 131.8441231327597,
+    "p99": 147.56594669714107,
+    "maximum": 180.77876197639853
+  },
+  "trace_path": "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/observed6_pre_ppo_holdout_dynamic_01_candidate.npz",
+  "trace_sha256": "0343ad81c5d6ea4ab98ee9d3feb81914ef924e646b50e4951e48eb88d4962644",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 76.90366789902328,
+    "cpu_seconds": 27.013876282,
+    "average_cpu_cores": 0.3512690229218975,
+    "peak_rss_mib": 1685.58203125,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

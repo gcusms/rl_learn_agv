@@ -66,6 +66,15 @@ class DockingRuntime(GoalPoseRuntime):
 
 def resolve_runtime(name):
     """Resolve explicit legacy or feedback runtime names; never guess dimensions."""
+    if name=='neural_navigation.aligned_release_runtime.AlignedReleaseRuntime':
+        from neural_navigation.aligned_release_runtime import AlignedReleaseRuntime
+        return AlignedReleaseRuntime
+    if name=='neural_navigation.release_runtime.ReleaseRuntime':
+        from neural_navigation.release_runtime import ReleaseRuntime
+        return ReleaseRuntime
+    if name=='neural_navigation.long_risk_runtime.LongRiskRuntime':
+        from neural_navigation.long_risk_runtime import LongRiskRuntime
+        return LongRiskRuntime
     if name=='neural_navigation.decision_feedback_runtime.StopFeedbackRuntime':
         from neural_navigation.decision_feedback_runtime import StopFeedbackRuntime
         return StopFeedbackRuntime

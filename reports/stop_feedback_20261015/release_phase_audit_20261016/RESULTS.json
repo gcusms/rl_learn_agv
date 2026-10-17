@@ -1,0 +1,198 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:47:36.673284+00:00",
+  "input_sha256": {
+    "training/experiments/audit_release_phase_pilot.py": "e179c5732b1979df2e801d92a1b3a75c38164bcf03b7e2cf80b7472c7eccc338",
+    "reports/stop_feedback_20261015/release_phase_validation_20261016/RESULTS.json": "06b07d953b38ed285dd5816422dbaf71129a808204cc97a9dd05a062c02c0314",
+    "reports/stop_feedback_20261015/release_validation_20261016/RESULTS.json": "2d79c0ebf464482eab038504075087b1b60418902a246aeb026b98beff9765d8",
+    "models/stop_feedback_20261015/release_phase300_s231016/portable/actor.pt": "804fa1355626abdf2721e34a0b585d554024329d5cb15cea844f97c6bcdcf55a",
+    "models/stop_feedback_20261015/release_data_control300_s231016/portable/actor.pt": "3ae67b057e4857c5f1d79a1dc3f8d113dab3d90546b833c5615870bb5e365a82"
+  },
+  "rows": [
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "variant": "stop_move",
+      "frames": 700,
+      "portable_decisions_reproduced": true,
+      "nonterminal_execution_parity": true,
+      "safe_success": false,
+      "seconds": 139.99999999994517,
+      "voluntary_wait_frames": 636,
+      "longest_voluntary_wait_s": 119.39999999994498,
+      "longest_waits": [
+        {
+          "first_frame": 103,
+          "end_frame_exclusive": 700,
+          "start_s": 20.600000000000186,
+          "end_s": 139.99999999994517,
+          "duration_s": 119.39999999994498
+        },
+        {
+          "first_frame": 26,
+          "end_frame_exclusive": 61,
+          "start_s": 5.199999999999911,
+          "end_s": 12.200000000000507,
+          "duration_s": 7.000000000000596
+        },
+        {
+          "first_frame": 19,
+          "end_frame_exclusive": 23,
+          "start_s": 3.799999999999941,
+          "end_s": 4.599999999999924,
+          "duration_s": 0.799999999999983
+        }
+      ],
+      "wait_without_supported_risk_history": 181,
+      "wait_with_supported_history_and_zero_contact_scores": 406,
+      "no_forecast_contact_is_not_a_counterfactual_safe_motion_label": true,
+      "previous_reasons_on_wait": {
+        "none": 2,
+        "scan_unavailable": 1,
+        "policy_wait": 633
+      },
+      "pstop_on_wait_p50": 0.9998104572296143
+    },
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "variant": "recovery_phase",
+      "frames": 454,
+      "portable_decisions_reproduced": true,
+      "nonterminal_execution_parity": true,
+      "safe_success": true,
+      "seconds": 90.59999999999009,
+      "voluntary_wait_frames": 323,
+      "longest_voluntary_wait_s": 58.60000000000084,
+      "longest_waits": [
+        {
+          "first_frame": 99,
+          "end_frame_exclusive": 392,
+          "start_s": 19.800000000000345,
+          "end_s": 78.40000000000119,
+          "duration_s": 58.60000000000084
+        },
+        {
+          "first_frame": 26,
+          "end_frame_exclusive": 52,
+          "start_s": 5.199999999999911,
+          "end_s": 10.400000000000226,
+          "duration_s": 5.200000000000315
+        },
+        {
+          "first_frame": 19,
+          "end_frame_exclusive": 23,
+          "start_s": 3.799999999999941,
+          "end_s": 4.599999999999924,
+          "duration_s": 0.799999999999983
+        }
+      ],
+      "wait_without_supported_risk_history": 57,
+      "wait_with_supported_history_and_zero_contact_scores": 233,
+      "no_forecast_contact_is_not_a_counterfactual_safe_motion_label": true,
+      "previous_reasons_on_wait": {
+        "none": 2,
+        "scan_unavailable": 1,
+        "policy_wait": 320
+      },
+      "pstop_on_wait_p50": 0.9999784231185913
+    },
+    {
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "variant": "recovery_phase",
+      "frames": 185,
+      "portable_decisions_reproduced": true,
+      "nonterminal_execution_parity": true,
+      "safe_success": true,
+      "seconds": 36.800000000000374,
+      "voluntary_wait_frames": 40,
+      "longest_voluntary_wait_s": 5.200000000000813,
+      "longest_waits": [
+        {
+          "first_frame": 44,
+          "end_frame_exclusive": 70,
+          "start_s": 8.799999999999976,
+          "end_s": 14.000000000000789,
+          "duration_s": 5.200000000000813
+        },
+        {
+          "first_frame": 26,
+          "end_frame_exclusive": 40,
+          "start_s": 5.199999999999911,
+          "end_s": 7.999999999999852,
+          "duration_s": 2.7999999999999403
+        }
+      ],
+      "wait_without_supported_risk_history": 4,
+      "wait_with_supported_history_and_zero_contact_scores": 1,
+      "no_forecast_contact_is_not_a_counterfactual_safe_motion_label": true,
+      "previous_reasons_on_wait": {
+        "none": 1,
+        "scan_unavailable": 1,
+        "policy_wait": 38
+      },
+      "pstop_on_wait_p50": 0.9998757243156433
+    },
+    {
+      "case_id": "release_phase_frozen_noise_05_2",
+      "variant": "recovery_phase",
+      "frames": 166,
+      "portable_decisions_reproduced": true,
+      "nonterminal_execution_parity": true,
+      "safe_success": true,
+      "seconds": 32.99999999999843,
+      "voluntary_wait_frames": 38,
+      "longest_voluntary_wait_s": 5.000000000000248,
+      "longest_waits": [
+        {
+          "first_frame": 25,
+          "end_frame_exclusive": 50,
+          "start_s": 4.999999999999916,
+          "end_s": 10.000000000000163,
+          "duration_s": 5.000000000000248
+        },
+        {
+          "first_frame": 55,
+          "end_frame_exclusive": 64,
+          "start_s": 11.00000000000032,
+          "end_s": 12.800000000000601,
+          "duration_s": 1.8000000000002814
+        },
+        {
+          "first_frame": 75,
+          "end_frame_exclusive": 79,
+          "start_s": 15.000000000000945,
+          "end_s": 15.80000000000107,
+          "duration_s": 0.8000000000001251
+        }
+      ],
+      "wait_without_supported_risk_history": 4,
+      "wait_with_supported_history_and_zero_contact_scores": 0,
+      "no_forecast_contact_is_not_a_counterfactual_safe_motion_label": true,
+      "previous_reasons_on_wait": {
+        "none": 2,
+        "scan_unavailable": 1,
+        "policy_wait": 35
+      },
+      "pstop_on_wait_p50": 0.9996135234832764
+    }
+  ],
+  "original_and_added_data_control_exact_trace_parity": {
+    "observations": true,
+    "choices": true,
+    "commands": true,
+    "labels": true,
+    "scans": true,
+    "odometry": true,
+    "measured_velocity": true
+  },
+  "resource": {
+    "seconds": 13.80390040599741,
+    "cpu_seconds": 2.07059214,
+    "average_cpu_cores": 0.15000051283334276,
+    "peak_rss_mib": 507.30859375,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "new_physical_steps": 0,
+  "new_training_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

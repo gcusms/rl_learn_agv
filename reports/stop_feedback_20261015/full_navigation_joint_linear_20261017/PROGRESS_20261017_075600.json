@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-17T07:56:00.344853+08:00",
+  "previous_goal_turn_classification": "progress",
+  "current_goal_turn_classification": "progress",
+  "goal_status": "active",
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "actual_new_evidence": [
+    "ROS handoff source inspection found actual guard-aligned625runtime rejection. Explicit v2release/risk admission support added without model/ROS load or oldmodel/config replacement.",
+    "6meaningful metadata and publication-history tests passed, including consistent rehash of intentionally mixed same-dimension v1/v2contracts. Test process confirmed noTorch/MuJoCo/ROS imports,0.1core/36.875MiBRSS.",
+    "This makes future real-car validation possible without silently feeding wrong625semantics, but is not physical navigation success, actuator confirmation or deployment approval."
+  ],
+  "latest_candidate": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "new_ppo_steps": 0,
+  "source_supervised_updates": 2500,
+  "new_constrained_last_layer_updates": 1,
+  "prior_margin_terminal": {
+    "completed": true,
+    "episodes": 32,
+    "safe_arrivals": 31,
+    "collisions": 0,
+    "timeouts": 1,
+    "reason": "Known complete-mission success or efficiency lost",
+    "original_fixed28_passed": true,
+    "hard3_and_fresh_not_executed": true
+  },
+  "physical_validation": {
+    "completed": false,
+    "completed_episodes": 10,
+    "safe_arrivals": 10,
+    "collisions": 0,
+    "groups": {
+      "observed6": 2,
+      "normal18": 8
+    },
+    "latest_candidate_fixed28_still_pending": true
+  },
+  "all_known6_now_training_development": true,
+  "frozen_prospective8_not_in_training": true,
+  "verified_live_handles": [
+    {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "1498374144",
+      "MemoryMax": "3221225472",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd",
+      "unit": "rl-full-navigation-joint-linear-20261017.service",
+      "start_ticks": "50175760",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/run.py "
+    },
+    {
+      "MainPID": "2225010",
+      "ExecMainStatus": "0",
+      "MemoryCurrent": "7520256",
+      "MemoryMax": "2147483648",
+      "ActiveState": "active",
+      "InvocationID": "12f8bee1621e4efda6da7f4a2bcbc002",
+      "unit": "rl-full-navigation-joint-linear-mechanism-20261017.service",
+      "start_ticks": "50187980",
+      "cmdline": "/home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -u reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_neural_mechanism_after_validation.py "
+    }
+  ],
+  "active_worker": {
+    "pid": 2229034,
+    "job": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/normal18_independent_dynamic_000_candidate.json",
+    "log": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/normal18_independent_dynamic_000_candidate.log"
+  },
+  "current_physical_status": {
+    "status": "physical_case",
+    "group": "normal18",
+    "case_id": "independent_dynamic_000",
+    "variant": "candidate",
+    "completed_episodes": 10,
+    "worker_job": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/jobs/normal18_independent_dynamic_000_candidate.json"
+  },
+  "queued_neural_status": {
+    "stage": "waiting_for_exact_physical_validation",
+    "dependency": {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd"
+    },
+    "model_and_physics_not_loaded": true,
+    "no_parallel_model_or_physics": true,
+    "at": "2026-10-17T07:47:05.049793+08:00",
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "source_hashes": {
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/PRIORITY_PHYSICAL_AUDIT.json": "bd8714a96f255b2231e76e8df8898da07cd558445398fd3234b47508e3b15f03",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_RESULTS.json": "279657371c5cef95ce11872e5f32307e6efe9554e7e817d61b818823e8e7912f",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/ADMISSION.json": "965db2b7a17fe935887dd4d9fb83351d125183b02ca88637362e35bc3f8edc63",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/FIT_PLAN.json": "77641c4719814d5bd542b098b226f0af5ff74673cf962607128ffa10cc1b858a",
+    "reports/stop_feedback_20261015/full_navigation_joint_retention_20261017/REGRESSION_AUDIT.json": "c254349623792f4c7c794f8e14b8dc85787ca558d83529618c6de8e0571fa4ed",
+    "reports/stop_feedback_20261015/full_navigation_joint_retention_20261017/FIT_RESULTS.json": "a642329d115f7d58ca0561dfb7f1b15e747141af501099303d4bf7e2dca62fa1",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/FIXED28_AUDIT.json": "1caba1509bdfb3080e494b528d3aae188fac677ccd61146acc0564e8a9714d74",
+    "reports/stop_feedback_20261015/full_navigation_residual_20261017/NEURAL_MECHANISM.json": "767b6b96ac4891125d2b1fa76a23b9cbb67844fd86c0502ec6cc4cc89e25d208",
+    "reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/RESULTS.json": "a0f44bfa0e06eb3280dbeca5d6caf0621f758d34328e2df139703ca8954e3723",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_074709.json": "a38a4927466ed16b99306784b0d6ac66cc6d2e8d253083d755a89c5e837d1677",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/HARD_COVERAGE.json": "897b1d970084c6b05d8b498bb9b8f9f4ae1463b3922259c3b177bb52c5436a74",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/audit_hard_coverage.py": "cd76fb5ad699c48af7178f13c59c7bd37dafb01ea5fecf951531c2693c17445a",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_075029.json": "98b3d94a9df633a35a2b0ab10cea09e95ba4391872065cc2c866db94baf0a48d",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/DEPLOYMENT_CONTRACT_REPAIR.json": "d249a8523c6f17915fad273164309c264dff30b57d250610be5c32defa9dd010",
+    "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/VALIDATION_SNAPSHOT_20261017_075600.json": "aa5035e1c78cc02b67df731cc8676572dc274fadf95ad0bf35a5a8e096368503"
+  },
+  "prepared_late106_beam_not_launched": "Actual margin protocol stopped at known dynamic02before any hard106 evaluation. The unexecuted conditional teacher search was not run; late requirements are unchanged.",
+  "next_action": "Continue exact live joint-linear validator through original fixed28,remaining known complete missions,hard97.6/106and96,then conditional frozen8pairs. No requirement waived. Let its exact queued cause-head audit finish after physical validation. If any actual failure, diagnose that candidate before new training; no parallel model/physics job and no auto promotion.",
+  "coverage_audit": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/HARD_COVERAGE.json",
+  "neural_audit_status_at_snapshot": {
+    "stage": "waiting_for_exact_physical_validation",
+    "dependency": {
+      "MainPID": "2224412",
+      "ExecMainStatus": "0",
+      "ActiveState": "active",
+      "InvocationID": "4410ede38b4a4369a6c1dfe388ab40fd"
+    },
+    "model_and_physics_not_loaded": true,
+    "no_parallel_model_or_physics": true,
+    "at": "2026-10-17T07:55:58.459396+08:00",
+    "goal_achieved": false,
+    "deployment_approved": false
+  },
+  "deployment_contract_repair": "reports/stop_feedback_20261015/full_navigation_joint_linear_20261017/DEPLOYMENT_CONTRACT_REPAIR.json"
+}

@@ -1,0 +1,14 @@
+Oct 17 10:06:26 ubuntu env[2269158]: {"case_id": "legal_wait_parent_t95", "safe_success": false, "passed": false, "seconds": 139.99999999994517, "post_release_seconds": 42.39999999996145}
+Oct 17 10:10:50 ubuntu env[2269158]: {"case_id": "legal_wait_parent_t90", "safe_success": true, "passed": true, "seconds": 132.3999999999521, "post_release_seconds": 36.39999999996691}
+Oct 17 10:10:50 ubuntu env[2271702]: Traceback (most recent call last):
+Oct 17 10:10:50 ubuntu env[2271702]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/deployment_acceptance_supplement_protocol_20261017/audit.py", line 58, in <module>
+Oct 17 10:10:50 ubuntu env[2271702]:     main()
+Oct 17 10:10:50 ubuntu env[2271702]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/deployment_acceptance_supplement_protocol_20261017/audit.py", line 41, in main
+Oct 17 10:10:50 ubuntu env[2271702]:     assert checks[key]['exact'], (spec['id'], key)
+Oct 17 10:10:50 ubuntu env[2271702]: AssertionError: ('legal_wait_parent_t90', 'observations')
+Oct 17 10:10:50 ubuntu env[2269158]: Traceback (most recent call last):
+Oct 17 10:10:50 ubuntu env[2269158]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/deployment_acceptance_supplement_protocol_20261017/run.py", line 157, in <module>
+Oct 17 10:10:50 ubuntu env[2269158]:     main()
+Oct 17 10:10:50 ubuntu env[2269158]:   File "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/deployment_acceptance_supplement_protocol_20261017/run.py", line 137, in main
+Oct 17 10:10:50 ubuntu env[2269158]:     assert CHILD.wait(timeout=180) == 0
+Oct 17 10:10:50 ubuntu env[2269158]: AssertionError

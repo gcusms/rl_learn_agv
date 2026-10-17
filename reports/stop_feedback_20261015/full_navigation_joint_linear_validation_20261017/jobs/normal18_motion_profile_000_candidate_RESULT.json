@@ -1,0 +1,43 @@
+{
+  "case_id": "motion_profile_000",
+  "category": "original_release_reversal",
+  "safe_success": true,
+  "physical_arrival": true,
+  "false_arrival": false,
+  "protocol_valid": true,
+  "collisions": 0,
+  "input_odometry": "noisy_motion_feedback",
+  "physical_guards": 0,
+  "timeout": false,
+  "seconds": 29.199999999998475,
+  "travel_m": 3.433541525777643,
+  "frames": 147,
+  "final_xy_error_m": 0.11007258763287314,
+  "final_yaw_error_rad": null,
+  "localization_xy_p95_m": 0.004548003437293298,
+  "localization_yaw_p95_rad": 0.0017347295500448553,
+  "stop_choices": 2,
+  "only_stop_frames": 2,
+  "stop_reasons": {
+    "None": 146,
+    "estimated_goal_reached": 1
+  },
+  "voluntary_wait_frames": 0,
+  "predictive_constraint_frames": 9,
+  "runtime_ms": {
+    "p95": 134.6983535098843,
+    "p99": 143.35940755903718,
+    "maximum": 177.0469950279221
+  },
+  "trace_path": "reports/stop_feedback_20261015/full_navigation_joint_linear_validation_20261017/physical/normal18_motion_profile_000_candidate.npz",
+  "trace_sha256": "95599f8fb0988a65d221bff4fe6c1fa751582a66a42cccc9eb537ef884239e32",
+  "variant": "candidate",
+  "fresh_process_per_case": true,
+  "resource": {
+    "seconds": 66.62909053597832,
+    "cpu_seconds": 23.417725094,
+    "average_cpu_cores": 0.35146397625455983,
+    "peak_rss_mib": 1686.0546875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  }
+}

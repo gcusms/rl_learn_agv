@@ -1,0 +1,2799 @@
+{
+  "completed": true,
+  "at": "2026-10-17T02:23:51.949585+08:00",
+  "case_id": "pre_ppo_holdout_dynamic_01",
+  "completed_paired_rows": {
+    "parent": {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": true,
+      "physical_arrival": true,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": false,
+      "seconds": 34.59999999999925,
+      "travel_m": 4.3882475749918815,
+      "frames": 174,
+      "final_xy_error_m": 0.1166269959283642,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.004422492126439605,
+      "localization_yaw_p95_rad": 0.0015253766031078525,
+      "stop_choices": 19,
+      "only_stop_frames": 18,
+      "stop_reasons": {
+        "None": 173,
+        "estimated_goal_reached": 1
+      },
+      "voluntary_wait_frames": 1,
+      "predictive_constraint_frames": 32,
+      "runtime_ms": {
+        "p95": 129.7688767517684,
+        "p99": 138.78174580575435,
+        "maximum": 145.46935900580138
+      },
+      "variant": "parent",
+      "trace_path": "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_parent.npz",
+      "trace_sha256": "93cf99fb368e8135c7b98aa7b9786845f28016e84e77d8d85c6d897773a2faee",
+      "bundle": "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable",
+      "no_optimizer_updates": true
+    },
+    "candidate": {
+      "case_id": "pre_ppo_holdout_dynamic_01",
+      "category": "frozen_before_ppo_new_seed_timing_same_known_map",
+      "safe_success": false,
+      "physical_arrival": false,
+      "false_arrival": false,
+      "protocol_valid": true,
+      "collisions": 0,
+      "input_odometry": "noisy_motion_feedback",
+      "physical_guards": 0,
+      "timeout": true,
+      "seconds": 139.99999999994517,
+      "travel_m": 3.0868624453091464,
+      "frames": 700,
+      "final_xy_error_m": 1.8667993246314774,
+      "final_yaw_error_rad": null,
+      "localization_xy_p95_m": 0.003774162312593466,
+      "localization_yaw_p95_rad": 0.0010210616381334245,
+      "stop_choices": 567,
+      "only_stop_frames": 554,
+      "stop_reasons": {
+        "None": 174,
+        "laser_braking_footprint": 526
+      },
+      "voluntary_wait_frames": 13,
+      "predictive_constraint_frames": 25,
+      "runtime_ms": {
+        "p95": 98.1687695282744,
+        "p99": 124.84761244500984,
+        "maximum": 136.04419701732695
+      },
+      "variant": "candidate",
+      "trace_path": "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_candidate.npz",
+      "trace_sha256": "4e29644b189a402ec46f5d5a0e9010e1bcbd2321ef85567734a417abb9dc2198",
+      "bundle": "models/stop_feedback_20261015/native625_batch_credit_s231017/portable",
+      "no_optimizer_updates": true
+    }
+  },
+  "mutable_study_report_sha256_at_capture": "5365ca2246b02624836d5c6a22a7e786401f6e66dd610692faf45c899096481d",
+  "first_choice_difference": {
+    "frame": 67,
+    "sensor_time_s": 13.400000000000695,
+    "parent_choice": 9,
+    "candidate_choice": 1,
+    "parent_command": [
+      0.010000000149011612,
+      -0.5
+    ],
+    "candidate_command": [
+      0.2,
+      0.0
+    ],
+    "legal_choices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "exact_common_inputs": {
+      "observations": true,
+      "masks": true,
+      "scans": true,
+      "odometry": true,
+      "measured_velocity": true,
+      "labels": true,
+      "human_positions": true,
+      "previous_choices": true,
+      "previous_commands": true
+    }
+  },
+  "final_only_stop_suffix": {
+    "start_frame": 491,
+    "start_time_s": 98.19999999998318,
+    "frames": 209,
+    "every_nonstop_action_vetoed": true,
+    "rejection_groups": {
+      "accepted": 0,
+      "perception_or_odometry": 0,
+      "localization_or_route": 0,
+      "static_geometry": 0,
+      "laser_geometry": 2297,
+      "dynamic_prediction": 0,
+      "projection": 2,
+      "other": 0
+    },
+    "predicted_moving_tracks_max": 1.0,
+    "predicted_veto_count_max": 0.0,
+    "physical_xy_displacement_m": 0.0,
+    "maximum_localization_error_m": 0.004600596430837025,
+    "maximum_route_endpoint_error_m": 8.881784197001252e-16
+  },
+  "current_geometry_checks": 36,
+  "current_geometry_matches": 36,
+  "geometry_samples": [
+    {
+      "frame": 150,
+      "time_s": 29.999999999998316,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0,
+        4
+      ],
+      "remembered_points": 186,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": -2.0421802717288107e-05,
+          "current_scan_minimum_excess_m": 0.040544554070860696,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24174203019728177,
+              0.01757541586389733
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 2.3999999999995225,
+            "initial_gap_m": 0.04477957819728176,
+            "sampled_gap_m": 0.04477957819728176,
+            "nominal_margin_m": 0.04479999999999905,
+            "required_gap_m": 0.04479999999999905,
+            "gap_minus_required_m": -2.0421802717288107e-05
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.0029827388456191567,
+          "current_scan_minimum_excess_m": 0.036966825150888484,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24174203019728177,
+              0.01757541586389733
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 2.3999999999995225,
+            "initial_gap_m": 0.04477957819728176,
+            "sampled_gap_m": 0.04181726115437989,
+            "nominal_margin_m": 0.04479999999999905,
+            "required_gap_m": 0.04479999999999905,
+            "gap_minus_required_m": -0.0029827388456191567
+          }
+        }
+      ]
+    },
+    {
+      "frame": 150,
+      "time_s": 29.999999999998316,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0,
+        4
+      ],
+      "remembered_points": 187,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.024174830198397494,
+          "current_scan_minimum_excess_m": 0.040544554070860696,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.26193728219839735,
+              0.030722851256986795
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.3999999999999204,
+            "initial_gap_m": 0.06497483019839734,
+            "sampled_gap_m": 0.06497483019839734,
+            "nominal_margin_m": 0.04079999999999984,
+            "required_gap_m": 0.04079999999999984,
+            "gap_minus_required_m": 0.024174830198397494
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.019799067618893877,
+          "current_scan_minimum_excess_m": 0.036966825150888484,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.26193728219839735,
+              0.030722851256986795
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.3999999999999204,
+            "initial_gap_m": 0.06497483019839734,
+            "sampled_gap_m": 0.06059906761889372,
+            "nominal_margin_m": 0.04079999999999984,
+            "required_gap_m": 0.04079999999999984,
+            "gap_minus_required_m": 0.019799067618893877
+          }
+        }
+      ]
+    },
+    {
+      "frame": 200,
+      "time_s": 40.00000000000201,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 188,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.019484209440122358,
+          "current_scan_minimum_excess_m": 0.02919271391014653,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2422782425598841,
+              0.01746060063877601
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 12.400000000003217,
+            "initial_gap_m": 0.04531579055988408,
+            "sampled_gap_m": 0.04531579055988408,
+            "nominal_margin_m": 0.06480000000000644,
+            "required_gap_m": 0.06480000000000644,
+            "gap_minus_required_m": -0.019484209440122358
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.02243774291515674,
+          "current_scan_minimum_excess_m": 0.03189557730991852,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2422782425598841,
+              0.01746060063877601
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 12.400000000003217,
+            "initial_gap_m": 0.04531579055988408,
+            "sampled_gap_m": 0.0423622570848497,
+            "nominal_margin_m": 0.06480000000000644,
+            "required_gap_m": 0.06480000000000644,
+            "gap_minus_required_m": -0.02243774291515674
+          }
+        }
+      ]
+    },
+    {
+      "frame": 200,
+      "time_s": 40.00000000000201,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 188,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.02919271391014653,
+          "current_scan_minimum_excess_m": 0.02919271391014653,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.26885802930991853,
+              -0.013619619235049901
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07189557730991852,
+            "sampled_gap_m": 0.06919271391014653,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.02919271391014653
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03189557730991852,
+          "current_scan_minimum_excess_m": 0.03189557730991852,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.26885802930991853,
+              -0.013619619235049901
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07189557730991852,
+            "sampled_gap_m": 0.07189557730991852,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03189557730991852
+          }
+        }
+      ]
+    },
+    {
+      "frame": 250,
+      "time_s": 50.00000000000713,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0,
+        4,
+        8
+      ],
+      "remembered_points": 188,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.002436882172898648,
+          "current_scan_minimum_excess_m": 0.020856363459478146,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24019933417289907,
+              0.0378571306627398
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.40000000000020464,
+            "initial_gap_m": 0.04323688217289906,
+            "sampled_gap_m": 0.04323688217289906,
+            "nominal_margin_m": 0.04080000000000041,
+            "required_gap_m": 0.04080000000000041,
+            "gap_minus_required_m": 0.002436882172898648
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.002542520699464139,
+          "current_scan_minimum_excess_m": 0.015079223637770235,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24019933417289907,
+              0.0378571306627398
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.40000000000020464,
+            "initial_gap_m": 0.04323688217289906,
+            "sampled_gap_m": 0.03825747930053627,
+            "nominal_margin_m": 0.04080000000000041,
+            "required_gap_m": 0.04080000000000041,
+            "gap_minus_required_m": -0.002542520699464139
+          }
+        }
+      ]
+    },
+    {
+      "frame": 250,
+      "time_s": 50.00000000000713,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0,
+        4,
+        8
+      ],
+      "remembered_points": 189,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.002436882172898648,
+          "current_scan_minimum_excess_m": 0.020856363459478146,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24019933417289907,
+              0.0378571306627398
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.40000000000020464,
+            "initial_gap_m": 0.04323688217289906,
+            "sampled_gap_m": 0.04323688217289906,
+            "nominal_margin_m": 0.04080000000000041,
+            "required_gap_m": 0.04080000000000041,
+            "gap_minus_required_m": 0.002436882172898648
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.002542520699464139,
+          "current_scan_minimum_excess_m": 0.015079223637770235,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24019933417289907,
+              0.0378571306627398
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.40000000000020464,
+            "initial_gap_m": 0.04323688217289906,
+            "sampled_gap_m": 0.03825747930053627,
+            "nominal_margin_m": 0.04080000000000041,
+            "required_gap_m": 0.04080000000000041,
+            "gap_minus_required_m": -0.002542520699464139
+          }
+        }
+      ]
+    },
+    {
+      "frame": 300,
+      "time_s": 60.00000000001224,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.017812042885542598,
+          "current_scan_minimum_excess_m": 0.036696207351842904,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.23995040911446805,
+              0.03785808513790873
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.40000000000532,
+            "initial_gap_m": 0.04298795711446804,
+            "sampled_gap_m": 0.04298795711446804,
+            "nominal_margin_m": 0.06080000000001064,
+            "required_gap_m": 0.06080000000001064,
+            "gap_minus_required_m": -0.017812042885542598
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.022790297457972522,
+          "current_scan_minimum_excess_m": 0.036750195047989244,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.23995040911446805,
+              0.03785808513790873
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.40000000000532,
+            "initial_gap_m": 0.04298795711446804,
+            "sampled_gap_m": 0.038009702542038115,
+            "nominal_margin_m": 0.06080000000001064,
+            "required_gap_m": 0.06080000000001064,
+            "gap_minus_required_m": -0.022790297457972522
+          }
+        }
+      ]
+    },
+    {
+      "frame": 300,
+      "time_s": 60.00000000001224,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.036696207351842904,
+          "current_scan_minimum_excess_m": 0.036696207351842904,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.27535264604441817,
+              -0.0031890161969048893
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07839019404441816,
+            "sampled_gap_m": 0.0766962073518429,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.036696207351842904
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.0337410130614968,
+          "current_scan_minimum_excess_m": 0.036750195047989244,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2772933139663273,
+              0.048125542529937976
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.20000000000010232,
+            "initial_gap_m": 0.08033086196632727,
+            "sampled_gap_m": 0.07414101306149701,
+            "nominal_margin_m": 0.04040000000000021,
+            "required_gap_m": 0.04040000000000021,
+            "gap_minus_required_m": 0.0337410130614968
+          }
+        }
+      ]
+    },
+    {
+      "frame": 400,
+      "time_s": 79.99999999999973,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.03768409360555301,
+          "current_scan_minimum_excess_m": 0.04047199369831276,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.239278358394447,
+              0.03799826069583719
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 30.399999999992808,
+            "initial_gap_m": 0.04231590639444699,
+            "sampled_gap_m": 0.04231590639444699,
+            "nominal_margin_m": 0.08,
+            "required_gap_m": 0.08,
+            "gap_minus_required_m": -0.03768409360555301
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.04267298492853931,
+          "current_scan_minimum_excess_m": 0.03484556129803965,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.239278358394447,
+              0.03799826069583719
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 30.399999999992808,
+            "initial_gap_m": 0.04231590639444699,
+            "sampled_gap_m": 0.03732701507146069,
+            "nominal_margin_m": 0.08,
+            "required_gap_m": 0.08,
+            "gap_minus_required_m": -0.04267298492853931
+          }
+        }
+      ]
+    },
+    {
+      "frame": 400,
+      "time_s": 79.99999999999973,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.04047199369831276,
+          "current_scan_minimum_excess_m": 0.04047199369831276,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.27743444569831277,
+              0.039260855143740184
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.08047199369831276,
+            "sampled_gap_m": 0.08047199369831276,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.04047199369831276
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03484556129803965,
+          "current_scan_minimum_excess_m": 0.03484556129803965,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2777176147648529,
+              0.04529715916730314
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.0807551627648529,
+            "sampled_gap_m": 0.07484556129803965,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03484556129803965
+          }
+        }
+      ]
+    },
+    {
+      "frame": 490,
+      "time_s": 97.99999999998336,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0,
+        4,
+        8
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.0002462213644951611,
+          "current_scan_minimum_excess_m": 0.008030085975056785,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2452086733644879,
+              0.03600513832842601
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 3.999999999996362,
+            "initial_gap_m": 0.04824622136448789,
+            "sampled_gap_m": 0.04824622136448789,
+            "nominal_margin_m": 0.04799999999999273,
+            "required_gap_m": 0.04799999999999273,
+            "gap_minus_required_m": 0.0002462213644951611
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.004573316616196851,
+          "current_scan_minimum_excess_m": 0.00368610279757204,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2452086733644879,
+              0.03600513832842601
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 3.999999999996362,
+            "initial_gap_m": 0.04824622136448789,
+            "sampled_gap_m": 0.04342668338379588,
+            "nominal_margin_m": 0.04799999999999273,
+            "required_gap_m": 0.04799999999999273,
+            "gap_minus_required_m": -0.004573316616196851
+          }
+        }
+      ]
+    },
+    {
+      "frame": 490,
+      "time_s": 97.99999999998336,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0,
+        4,
+        8
+      ],
+      "remembered_points": 191,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "accepted",
+          "recorded_legal": true,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.008030085975056729,
+          "current_scan_minimum_excess_m": 0.008030085975056785,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24499253797505674,
+              0.03125247091043513
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.0,
+            "initial_gap_m": 0.04803008597505673,
+            "sampled_gap_m": 0.04803008597505673,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.008030085975056729
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.0036861027975719843,
+          "current_scan_minimum_excess_m": 0.00368610279757204,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24499253797505674,
+              0.03125247091043513
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.0,
+            "initial_gap_m": 0.04803008597505673,
+            "sampled_gap_m": 0.043686102797571985,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.0036861027975719843
+          }
+        }
+      ]
+    },
+    {
+      "frame": 491,
+      "time_s": 98.19999999998318,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.0001284596530355328,
+          "current_scan_minimum_excess_m": 0.027240827939883007,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24523399234695684,
+              0.03598661176968079
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 4.19999999999618,
+            "initial_gap_m": 0.048271540346956826,
+            "sampled_gap_m": 0.048271540346956826,
+            "nominal_margin_m": 0.04839999999999236,
+            "required_gap_m": 0.04839999999999236,
+            "gap_minus_required_m": -0.0001284596530355328
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.004946274553521056,
+          "current_scan_minimum_excess_m": 0.021782314648997526,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24523399234695684,
+              0.03598661176968079
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 4.19999999999618,
+            "initial_gap_m": 0.048271540346956826,
+            "sampled_gap_m": 0.0434537254464713,
+            "nominal_margin_m": 0.04839999999999236,
+            "required_gap_m": 0.04839999999999236,
+            "gap_minus_required_m": -0.004946274553521056
+          }
+        }
+      ]
+    },
+    {
+      "frame": 491,
+      "time_s": 98.19999999998318,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 191,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.0076550458996777135,
+          "current_scan_minimum_excess_m": 0.027240827939883007,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24501749789967736,
+              0.031233960694029023
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.1999999999998181,
+            "initial_gap_m": 0.04805504589967735,
+            "sampled_gap_m": 0.04805504589967735,
+            "nominal_margin_m": 0.04039999999999964,
+            "required_gap_m": 0.04039999999999964,
+            "gap_minus_required_m": 0.0076550458996777135
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.00331278596468159,
+          "current_scan_minimum_excess_m": 0.021782314648997526,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24501749789967736,
+              0.031233960694029023
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.1999999999998181,
+            "initial_gap_m": 0.04805504589967735,
+            "sampled_gap_m": 0.04371278596468123,
+            "nominal_margin_m": 0.04039999999999964,
+            "required_gap_m": 0.04039999999999964,
+            "gap_minus_required_m": 0.00331278596468159
+          }
+        }
+      ]
+    },
+    {
+      "frame": 509,
+      "time_s": 101.7999999999799,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.007403425387372528,
+          "current_scan_minimum_excess_m": 0.02090211440120452,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2451590266126133,
+              0.035903560114521164
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 7.799999999992906,
+            "initial_gap_m": 0.048196574612613285,
+            "sampled_gap_m": 0.048196574612613285,
+            "nominal_margin_m": 0.055599999999985814,
+            "required_gap_m": 0.055599999999985814,
+            "gap_minus_required_m": -0.007403425387372528
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.012212574440946686,
+          "current_scan_minimum_excess_m": 0.016942455275039937,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2451590266126133,
+              0.035903560114521164
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 7.799999999992906,
+            "initial_gap_m": 0.048196574612613285,
+            "sampled_gap_m": 0.04338742555903913,
+            "nominal_margin_m": 0.055599999999985814,
+            "required_gap_m": 0.055599999999985814,
+            "gap_minus_required_m": -0.012212574440946686
+          }
+        }
+      ]
+    },
+    {
+      "frame": 509,
+      "time_s": 101.7999999999799,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.02090211440120452,
+          "current_scan_minimum_excess_m": 0.02090211440120452,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.25786456640120453,
+              0.026758679222820016
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06090211440120452,
+            "sampled_gap_m": 0.06090211440120452,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.02090211440120452
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.016942455275039937,
+          "current_scan_minimum_excess_m": 0.016942455275039937,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.25786456640120453,
+              0.026758679222820016
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06090211440120452,
+            "sampled_gap_m": 0.05694245527503994,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.016942455275039937
+          }
+        }
+      ]
+    },
+    {
+      "frame": 528,
+      "time_s": 105.59999999997645,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.01505149015087058,
+          "current_scan_minimum_excess_m": 0.027473229797377242,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24511096184910833,
+              0.03590561901309387
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 11.59999999998945,
+            "initial_gap_m": 0.04814850984910832,
+            "sampled_gap_m": 0.04814850984910832,
+            "nominal_margin_m": 0.0631999999999789,
+            "required_gap_m": 0.0631999999999789,
+            "gap_minus_required_m": -0.01505149015087058
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.019860604627709347,
+          "current_scan_minimum_excess_m": 0.021729954338665737,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24511096184910833,
+              0.03590561901309387
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 11.59999999998945,
+            "initial_gap_m": 0.04814850984910832,
+            "sampled_gap_m": 0.04333939537226955,
+            "nominal_margin_m": 0.0631999999999789,
+            "required_gap_m": 0.0631999999999789,
+            "gap_minus_required_m": -0.019860604627709347
+          }
+        }
+      ]
+    },
+    {
+      "frame": 528,
+      "time_s": 105.59999999997645,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 191,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.004516898302011997,
+          "current_scan_minimum_excess_m": 0.027473229797377242,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24307935030201056,
+              0.0307219926722172
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.7999999999992724,
+            "initial_gap_m": 0.046116898302010545,
+            "sampled_gap_m": 0.046116898302010545,
+            "nominal_margin_m": 0.04159999999999855,
+            "required_gap_m": 0.04159999999999855,
+            "gap_minus_required_m": 0.004516898302011997
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.00023543254891201376,
+          "current_scan_minimum_excess_m": 0.021729954338665737,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24307935030201056,
+              0.0307219926722172
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.7999999999992724,
+            "initial_gap_m": 0.046116898302010545,
+            "sampled_gap_m": 0.04183543254891056,
+            "nominal_margin_m": 0.04159999999999855,
+            "required_gap_m": 0.04159999999999855,
+            "gap_minus_required_m": 0.00023543254891201376
+          }
+        }
+      ]
+    },
+    {
+      "frame": 547,
+      "time_s": 109.39999999997299,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.006573445268744038,
+          "current_scan_minimum_excess_m": 0.0295741012501348,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.26392654471337595,
+              -0.02623374691544529
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 14.79999999998654,
+            "initial_gap_m": 0.06696409271337594,
+            "sampled_gap_m": 0.06302655473122903,
+            "nominal_margin_m": 0.06959999999997307,
+            "required_gap_m": 0.06959999999997307,
+            "gap_minus_required_m": -0.006573445268744038
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.0070043630243896635,
+          "current_scan_minimum_excess_m": 0.023185521794525744,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2434448042405695,
+              0.03075628744552035
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 4.599999999995816,
+            "initial_gap_m": 0.046482352240569486,
+            "sampled_gap_m": 0.04219563697560197,
+            "nominal_margin_m": 0.04919999999999163,
+            "required_gap_m": 0.04919999999999163,
+            "gap_minus_required_m": -0.0070043630243896635
+          }
+        }
+      ]
+    },
+    {
+      "frame": 547,
+      "time_s": 109.39999999997299,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.0295741012501348,
+          "current_scan_minimum_excess_m": 0.0295741012501348,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2665365532501348,
+              0.05065445076468135
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.0695741012501348,
+            "sampled_gap_m": 0.0695741012501348,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.0295741012501348
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.023185521794525744,
+          "current_scan_minimum_excess_m": 0.023185521794525744,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2665365532501348,
+              0.05065445076468135
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.0695741012501348,
+            "sampled_gap_m": 0.06318552179452575,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.023185521794525744
+          }
+        }
+      ]
+    },
+    {
+      "frame": 566,
+      "time_s": 113.19999999996953,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.0104383443683079,
+          "current_scan_minimum_excess_m": 0.028087926412819354,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24332410763167683,
+              0.03078753190022285
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 8.39999999999236,
+            "initial_gap_m": 0.046361655631676824,
+            "sampled_gap_m": 0.046361655631676824,
+            "nominal_margin_m": 0.056799999999984724,
+            "required_gap_m": 0.056799999999984724,
+            "gap_minus_required_m": -0.0104383443683079
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.014727575893630107,
+          "current_scan_minimum_excess_m": 0.027655251482579114,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24332410763167683,
+              0.03078753190022285
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 8.39999999999236,
+            "initial_gap_m": 0.046361655631676824,
+            "sampled_gap_m": 0.04207242410635462,
+            "nominal_margin_m": 0.056799999999984724,
+            "required_gap_m": 0.056799999999984724,
+            "gap_minus_required_m": -0.014727575893630107
+          }
+        }
+      ]
+    },
+    {
+      "frame": 566,
+      "time_s": 113.19999999996953,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.028087926412819354,
+          "current_scan_minimum_excess_m": 0.028087926412819354,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.26616375105696055,
+              0.0021669844866214496
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06920129905696054,
+            "sampled_gap_m": 0.06808792641281936,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.028087926412819354
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.027655251482579114,
+          "current_scan_minimum_excess_m": 0.027655251482579114,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.26616375105696055,
+              0.0021669844866214496
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06920129905696054,
+            "sampled_gap_m": 0.06765525148257912,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.027655251482579114
+          }
+        }
+      ]
+    },
+    {
+      "frame": 585,
+      "time_s": 116.99999999996608,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.01452374398800476,
+          "current_scan_minimum_excess_m": 0.02877503877305696,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24323870801197633,
+              0.040080813505093536
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.399999999990541,
+            "initial_gap_m": 0.046276256011976324,
+            "sampled_gap_m": 0.046276256011976324,
+            "nominal_margin_m": 0.060799999999981084,
+            "required_gap_m": 0.060799999999981084,
+            "gap_minus_required_m": -0.01452374398800476
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.01974032892541696,
+          "current_scan_minimum_excess_m": 0.02462525573037847,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24323870801197633,
+              0.040080813505093536
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.399999999990541,
+            "initial_gap_m": 0.046276256011976324,
+            "sampled_gap_m": 0.041059671074564125,
+            "nominal_margin_m": 0.060799999999981084,
+            "required_gap_m": 0.060799999999981084,
+            "gap_minus_required_m": -0.01974032892541696
+          }
+        }
+      ]
+    },
+    {
+      "frame": 585,
+      "time_s": 116.99999999996608,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.028775038773056906,
+          "current_scan_minimum_excess_m": 0.02877503877305696,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2657374907730569,
+              0.028269116235177614
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.0,
+            "initial_gap_m": 0.0687750387730569,
+            "sampled_gap_m": 0.0687750387730569,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.028775038773056906
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.024625255730378416,
+          "current_scan_minimum_excess_m": 0.02462525573037847,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2657374907730569,
+              0.028269116235177614
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.0,
+            "initial_gap_m": 0.0687750387730569,
+            "sampled_gap_m": 0.06462525573037842,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.024625255730378416
+          }
+        }
+      ]
+    },
+    {
+      "frame": 603,
+      "time_s": 120.5999999999628,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.021500060031979754,
+          "current_scan_minimum_excess_m": 0.019043902445268636,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2434623919679948,
+              0.04021308759797785
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 13.999999999987267,
+            "initial_gap_m": 0.046499939967994786,
+            "sampled_gap_m": 0.046499939967994786,
+            "nominal_margin_m": 0.06799999999997454,
+            "required_gap_m": 0.06799999999997454,
+            "gap_minus_required_m": -0.021500060031979754
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.02673096783209271,
+          "current_scan_minimum_excess_m": 0.013597973060408032,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2434623919679948,
+              0.04021308759797785
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 13.999999999987267,
+            "initial_gap_m": 0.046499939967994786,
+            "sampled_gap_m": 0.04126903216788183,
+            "nominal_margin_m": 0.06799999999997454,
+            "required_gap_m": 0.06799999999997454,
+            "gap_minus_required_m": -0.02673096783209271
+          }
+        }
+      ]
+    },
+    {
+      "frame": 603,
+      "time_s": 120.5999999999628,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.019043902445268636,
+          "current_scan_minimum_excess_m": 0.019043902445268636,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.25600635444526865,
+              0.04173917001176063
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.05904390244526864,
+            "sampled_gap_m": 0.05904390244526864,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.019043902445268636
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.013597973060408032,
+          "current_scan_minimum_excess_m": 0.013597973060408032,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.25600635444526865,
+              0.04173917001176063
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.05904390244526864,
+            "sampled_gap_m": 0.05359797306040803,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.013597973060408032
+          }
+        }
+      ]
+    },
+    {
+      "frame": 622,
+      "time_s": 124.39999999995935,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.02887243500105928,
+          "current_scan_minimum_excess_m": 0.03422659107525192,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24369001699890835,
+              0.0401700739290011
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 17.79999999998381,
+            "initial_gap_m": 0.046727564998908344,
+            "sampled_gap_m": 0.046727564998908344,
+            "nominal_margin_m": 0.07559999999996762,
+            "required_gap_m": 0.07559999999996762,
+            "gap_minus_required_m": -0.02887243500105928
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.034100185776668776,
+          "current_scan_minimum_excess_m": 0.027655956118332582,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24369001699890835,
+              0.0401700739290011
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 17.79999999998381,
+            "initial_gap_m": 0.046727564998908344,
+            "sampled_gap_m": 0.04149981422329885,
+            "nominal_margin_m": 0.07559999999996762,
+            "required_gap_m": 0.07559999999996762,
+            "gap_minus_required_m": -0.034100185776668776
+          }
+        }
+      ]
+    },
+    {
+      "frame": 622,
+      "time_s": 124.39999999995935,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03422659107525192,
+          "current_scan_minimum_excess_m": 0.03422659107525192,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.27118904307525193,
+              0.05224522504079557
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07422659107525192,
+            "sampled_gap_m": 0.07422659107525192,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03422659107525192
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.027655956118332582,
+          "current_scan_minimum_excess_m": 0.027655956118332582,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.27118904307525193,
+              0.05224522504079557
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07422659107525192,
+            "sampled_gap_m": 0.06765595611833258,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.027655956118332582
+          }
+        }
+      ]
+    },
+    {
+      "frame": 641,
+      "time_s": 128.1999999999559,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.033389615826578,
+          "current_scan_minimum_excess_m": 0.03969059523782984,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.243572836173422,
+              0.040128495405997215
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 21.59999999998037,
+            "initial_gap_m": 0.046610384173422004,
+            "sampled_gap_m": 0.046610384173422004,
+            "nominal_margin_m": 0.08,
+            "required_gap_m": 0.08,
+            "gap_minus_required_m": -0.033389615826578
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.03861263026014018,
+          "current_scan_minimum_excess_m": 0.038990275224006256,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.243572836173422,
+              0.040128495405997215
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 21.59999999998037,
+            "initial_gap_m": 0.046610384173422004,
+            "sampled_gap_m": 0.04138736973985982,
+            "nominal_margin_m": 0.08,
+            "required_gap_m": 0.08,
+            "gap_minus_required_m": -0.03861263026014018
+          }
+        }
+      ]
+    },
+    {
+      "frame": 641,
+      "time_s": 128.1999999999559,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03969059523782984,
+          "current_scan_minimum_excess_m": 0.03969059523782984,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.27780754421080933,
+              0.002337730293664587
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.08084509221080932,
+            "sampled_gap_m": 0.07969059523782984,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03969059523782984
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.038990275224006256,
+          "current_scan_minimum_excess_m": 0.038990275224006256,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2823271266945727,
+              0.04972222703376911
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.0853646746945727,
+            "sampled_gap_m": 0.07899027522400626,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.038990275224006256
+          }
+        }
+      ]
+    },
+    {
+      "frame": 660,
+      "time_s": 131.99999999995245,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.007731317559299261,
+          "current_scan_minimum_excess_m": 0.02396199283547127,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2648961004713819,
+              -0.03146830990842145
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 15.599999999985826,
+            "initial_gap_m": 0.06793364847138189,
+            "sampled_gap_m": 0.06346868244067239,
+            "nominal_margin_m": 0.07119999999997165,
+            "required_gap_m": 0.07119999999997165,
+            "gap_minus_required_m": -0.007731317559299261
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.0058621747931750234,
+          "current_scan_minimum_excess_m": 0.018069348128649333,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24172544239728352,
+              0.042245822829747766
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 2.5999999999976353,
+            "initial_gap_m": 0.044762990397283514,
+            "sampled_gap_m": 0.03933782520682025,
+            "nominal_margin_m": 0.04519999999999527,
+            "required_gap_m": 0.04519999999999527,
+            "gap_minus_required_m": -0.0058621747931750234
+          }
+        }
+      ]
+    },
+    {
+      "frame": 660,
+      "time_s": 131.99999999995245,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.02396199283547127,
+          "current_scan_minimum_excess_m": 0.02396199283547127,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2609244448354713,
+              0.04596766753696863
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06396199283547127,
+            "sampled_gap_m": 0.06396199283547127,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.02396199283547127
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.018069348128649333,
+          "current_scan_minimum_excess_m": 0.018069348128649333,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2609244448354713,
+              0.04596766753696863
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.06396199283547127,
+            "sampled_gap_m": 0.058069348128649334,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.018069348128649333
+          }
+        }
+      ]
+    },
+    {
+      "frame": 679,
+      "time_s": 135.799999999949,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.015181796701975725,
+          "current_scan_minimum_excess_m": 0.03750928161119497,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2650541373552015,
+              -0.03154570383733824
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 19.39999999998237,
+            "initial_gap_m": 0.06809168535520149,
+            "sampled_gap_m": 0.063618203297989,
+            "nominal_margin_m": 0.07879999999996473,
+            "required_gap_m": 0.07879999999996473,
+            "gap_minus_required_m": -0.015181796701975725
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.013276459345720804,
+          "current_scan_minimum_excess_m": 0.03141198257751141,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24190500350390118,
+              0.04217519118477738
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 6.399999999994179,
+            "initial_gap_m": 0.04494255150390117,
+            "sampled_gap_m": 0.03952354065426755,
+            "nominal_margin_m": 0.052799999999988356,
+            "required_gap_m": 0.052799999999988356,
+            "gap_minus_required_m": -0.013276459345720804
+          }
+        }
+      ]
+    },
+    {
+      "frame": 679,
+      "time_s": 135.799999999949,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03750928161119497,
+          "current_scan_minimum_excess_m": 0.03750928161119497,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.274471733611195,
+              0.0473396962204282
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07750928161119497,
+            "sampled_gap_m": 0.07750928161119497,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03750928161119497
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.03141198257751141,
+          "current_scan_minimum_excess_m": 0.03141198257751141,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.274471733611195,
+              0.0473396962204282
+            ],
+            "source": "current_scan",
+            "retained_age_s": null,
+            "initial_gap_m": 0.07750928161119497,
+            "sampled_gap_m": 0.07141198257751141,
+            "nominal_margin_m": 0.04,
+            "required_gap_m": 0.04,
+            "gap_minus_required_m": 0.03141198257751141
+          }
+        }
+      ]
+    },
+    {
+      "frame": 698,
+      "time_s": 139.59999999994554,
+      "variant": "original",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 190,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.015006666637009093,
+          "current_scan_minimum_excess_m": 0.040760171584761064,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.24235578536297236,
+              0.04209246594470803
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.199999999990723,
+            "initial_gap_m": 0.045393333362972355,
+            "sampled_gap_m": 0.045393333362972355,
+            "nominal_margin_m": 0.06039999999998145,
+            "required_gap_m": 0.06039999999998145,
+            "gap_minus_required_m": -0.015006666637009093
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": false,
+          "minimum_margin_excess_m": -0.020419670774947253,
+          "current_scan_minimum_excess_m": 0.03544606804029702,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              -0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.24235578536297236,
+              0.04209246594470803
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 10.199999999990723,
+            "initial_gap_m": 0.045393333362972355,
+            "sampled_gap_m": 0.039980329225034195,
+            "nominal_margin_m": 0.06039999999998145,
+            "required_gap_m": 0.06039999999998145,
+            "gap_minus_required_m": -0.020419670774947253
+          }
+        }
+      ]
+    },
+    {
+      "frame": 698,
+      "time_s": 139.59999999994554,
+      "variant": "three_frame_evidence",
+      "legal_recorded_choices": [
+        0
+      ],
+      "remembered_points": 191,
+      "probes": [
+        {
+          "action": 4,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.02451880960299508,
+          "current_scan_minimum_excess_m": 0.040760171584761064,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 8,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.10000000000000009
+            ],
+            "point_in_initial_body": [
+              0.2657227555027775,
+              -0.02117514357844889
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.3999999999996362,
+            "initial_gap_m": 0.06876030350277751,
+            "sampled_gap_m": 0.06531880960299435,
+            "nominal_margin_m": 0.040799999999999274,
+            "required_gap_m": 0.040799999999999274,
+            "gap_minus_required_m": 0.02451880960299508
+          }
+        },
+        {
+          "action": 5,
+          "recorded_group": "laser_geometry",
+          "recorded_legal": false,
+          "raw_returns_geometry_clear": true,
+          "laser_geometry_clear": true,
+          "minimum_margin_excess_m": 0.027960303502778235,
+          "current_scan_minimum_excess_m": 0.03544606804029702,
+          "escape_incomplete": false,
+          "horizon_s": 0.2,
+          "worst": {
+            "sample": 0,
+            "local_pose": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "point_in_initial_body": [
+              0.2657227555027775,
+              -0.02117514357844889
+            ],
+            "source": "retained_measurement",
+            "retained_age_s": 0.3999999999996362,
+            "initial_gap_m": 0.06876030350277751,
+            "sampled_gap_m": 0.06876030350277751,
+            "nominal_margin_m": 0.040799999999999274,
+            "required_gap_m": 0.040799999999999274,
+            "gap_minus_required_m": 0.027960303502778235
+          }
+        }
+      ]
+    }
+  ],
+  "unchanged_component_files": [
+    "hardware.json",
+    "localizer.pt",
+    "router.pt",
+    "parent_actor.pt",
+    "previous_risk_actor.pt",
+    "localization_kernel.so",
+    "localization_contract.json",
+    "uncertainty_contract.json",
+    "docking_contract.json",
+    "decision_feedback.json",
+    "release_observation.json",
+    "long_risk_observation.json",
+    "goal_pose_observation.json",
+    "quality_observation.json"
+  ],
+  "actor_sha256": {
+    "parent": "c6b82aec1f71a8aedc65971a921d2daddf63bd77f284fc2e9e5b6cc7cfafa5ca",
+    "candidate": "514aed9997d3083725c50e6fcfd64ef1392326900ad800ef6161782ec232ce50"
+  },
+  "original_failed_106s_recovery_unresolved": true,
+  "not_a_monotonic_model_improvement": true,
+  "observed_loss_blocks_automatic_replacement": true,
+  "no_heldout_trace_admitted_to_training": true,
+  "no_new_physics": true,
+  "new_ppo_steps": 0,
+  "new_optimizer_updates": 0,
+  "runtime_hardware_and_guard_unchanged": true,
+  "no_closed_loop_success_or_full_guard_claim_for_alternative_memory": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 23.49282803601818,
+    "cpu_seconds": 2.3632337420000002,
+    "average_cpu_cores": 0.10059383818656456,
+    "peak_rss_mib": 42.16015625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "inputs": {
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/PLAN.json": "396ab1443ee58c68e7223a97f755bbdd098c48b5a8fdd5091a48fa03d3789788",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/long_risk_observation.json": "cd42a7c5a1eb9cb0e8ed91a4fd6ce23ea9f724ec72d1d16bf47f6a4c5a8f2e81",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452",
+    "training/neural_navigation/runtime.py": "fde14cf48d63da35570f7e55701a774e055a244c59f4a44f857d869c50483638",
+    "training/navrl/geometry.py": "f9e5dd9fbfca08e5ecf8c2efbf154fe0acd2151173c6268e9b2db507c4c21f57",
+    "reports/stop_feedback_20261015/actual106_resolution_audit_20261017/audit.py": "d5c6f3efabb7866088b1c388ecc883eede1eb46bb90c7daade862b688b1b0e2d",
+    "training/neural_navigation/safety_context.py": "b8136570dc5d453fa5b977f06868aa4951a90784e2bcc707fd9d4ab5c6be07e7",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/router.pt": "e380efd51c4f0f6027c27e292e607f0e55f0d3ff9092da85b26f70bf97612274",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_candidate.npz": "4e29644b189a402ec46f5d5a0e9010e1bcbd2321ef85567734a417abb9dc2198",
+    "training/neural_navigation/motion_response.py": "4452ee85857f6775acf5d0c93786742b964553ce016c23aeee91d7d248ccef77",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/long_risk_observation.json": "cd42a7c5a1eb9cb0e8ed91a4fd6ce23ea9f724ec72d1d16bf47f6a4c5a8f2e81",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "training/neural_navigation/sensors.py": "430e1927d76d97d24a9b57cf1a58b94b9183551a491a46a493b9da31dab39771",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/parent_actor.pt": "b3993815f4a821555d76bed2e896d4234995f6813bad1a76bd031304e2eabdaf",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/physical/frozen8_pre_ppo_holdout_dynamic_01_parent.npz": "93cf99fb368e8135c7b98aa7b9786845f28016e84e77d8d85c6d897773a2faee",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/localizer.pt": "cdb19105b262ff3fbc02708bea267be749c96ca0709a388cfd3c7d2d87260751",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/localization_kernel.so": "262bd95384c43417c8ba158d0c2350734fddadf4d5a6cf5830ad19cf79fd025d",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/previous_risk_actor.pt": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/hardware.json": "a2b638a89034a514a0fbccd43ef2767fff8f8addb9584e4a7af83391283975fe",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/docking_contract.json": "e757e6c6e2e70299077e50e2a9952498101112425dcb79e2f0b1c8413bd704f5",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/release_observation.json": "949badaf6656dabf2f8e5e9eb31ae6c21f297c0ad92f8eb85b20532f0c9c9452",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/quality_observation.json": "e2160829ae109ad86c1c473342c610c3035719a9fc64ba967ed4d2f7492eafd7",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/uncertainty_contract.json": "0baf6f30fd0729690590a960832304706f8a42414610b23c81a59a3e43e7ca10",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/localization_contract.json": "7e12056db7b45dc3a85af88a6a223e53400d5ca7f541fff61ddb3d6c4f82b966",
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/audit_frozen_regression.py": "23a2f757a6256e99731db8e210d9af50bc32af3c280b96dc0770cd58aa9562d6",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0",
+    "training/neural_navigation/decision_feedback.py": "ab9fa6ef47fc863d793afdf9fb43bb4a6dbd6090959a0c8c97f52af31e61cc0f",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "training/neural_navigation/masked_actions.py": "4b68ca19102f8a6a8d4f8c59141100102ba33838c8c7cd9410ca9374f9a53d9d",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/previous_risk_actor.pt": "2163ba6a982aa841a3778420db5db64cf144f7e841ca6ab2191e73a299680195",
+    "reports/stop_feedback_20261015/native625_frozen_holdout_20261016/PLAN.json": "d2d6888afd76fb535eeefef3a2873c49ec6d75384612dff8bb508903e7524318",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/actor.pt": "514aed9997d3083725c50e6fcfd64ef1392326900ad800ef6161782ec232ce50",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/uncertainty_contract.json": "0baf6f30fd0729690590a960832304706f8a42414610b23c81a59a3e43e7ca10",
+    "models/stop_feedback_20261015/native625_batch_credit_s231017/portable/decision_feedback.json": "f31ce0a02813a04ed372c558c82c95703308acd0b7d3a5c368f22fb29a5155d0",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/goal_pose_observation.json": "78d17c3fc6131f0b74be02e17f2f679a2003b2387a8feb3fd35687fbd3d91513",
+    "reports/stop_feedback_20261015/native625_frozen_holdout_20261016/CASES.json": "00831a06b130e0106cc4ef4f46dffc7fa8fa82a220320feb068bb47a547edb98",
+    "models/stop_feedback_20261015/normal_suite_wait_pair_v2_s231016/wait_continuation/portable/actor.pt": "c6b82aec1f71a8aedc65971a921d2daddf63bd77f284fc2e9e5b6cc7cfafa5ca",
+    "training/neural_navigation/experiment_budget.py": "e1292cd3a1f493fbd1aec9ada5d51e011d5cd7bbc38ddaebb164813f226e2ba5",
+    "reports/stop_feedback_20261015/native625_local_speedup_retention_20261017/DEPENDENCIES.json": "5e15951879967a1055297958d904adfc7be3a2bc60a48e4acc9cea0642117d81"
+  }
+}

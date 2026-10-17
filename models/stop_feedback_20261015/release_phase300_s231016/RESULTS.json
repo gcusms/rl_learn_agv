@@ -1,0 +1,69 @@
+{
+  "completed": true,
+  "at": "2026-10-16T08:29:08.239972+00:00",
+  "correct_source_labels": 2509,
+  "total_source_labels": 2509,
+  "updates": 100,
+  "fit_weighting": {
+    "mode": "recovery_phase",
+    "duplicate_weighting": "inverse exact-input multiplicity",
+    "recovery_wait_s": 2.0,
+    "recovery_motion_share": 0.5,
+    "phases": [
+      {
+        "phase": "stop",
+        "labels": 563,
+        "unique_head_inputs": 415,
+        "allocated_loss_weight": 0.5
+      },
+      {
+        "phase": "ordinary_motion",
+        "labels": 1439,
+        "unique_head_inputs": 1142,
+        "allocated_loss_weight": 0.25
+      },
+      {
+        "phase": "resumed_motion",
+        "labels": 23,
+        "unique_head_inputs": 17,
+        "allocated_loss_weight": 0.25
+      }
+    ],
+    "stop_loss_weight": 0.5,
+    "no_action_override": true,
+    "no_source_safety_admission": true
+  },
+  "fit_records": [
+    {
+      "update": 50,
+      "active_correct": 2025,
+      "active_examples": 2025,
+      "loss": 0.005165076348930597,
+      "minimum_stop_target_probability": 0.7963976263999939,
+      "minimum_motion_target_probability": 0.7554738521575928
+    },
+    {
+      "update": 100,
+      "active_correct": 2025,
+      "active_examples": 2025,
+      "loss": 0.0025035191792994738,
+      "minimum_stop_target_probability": 0.9394818544387817,
+      "minimum_motion_target_probability": 0.8857669234275818
+    }
+  ],
+  "frozen_parent_tensor_sha256": "475eca57e4004dff43e3c0d9b479d420f16e886d79cf3e5a699e5a9a9805d882",
+  "checkpoint_sha256": "66c3bd6b1875e4d038eeb8ac4726b7a4bf058846922cbbf84c7331f4381981f6",
+  "optimizer_and_rng_saved": true,
+  "exported_for_physical_validation": true,
+  "new_ppo_steps": 0,
+  "new_physical_steps": 0,
+  "resource": {
+    "seconds": 6.749509968038183,
+    "cpu_seconds": 2.3671780600000005,
+    "average_cpu_cores": 0.350718507152312,
+    "peak_rss_mib": 748.34765625,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

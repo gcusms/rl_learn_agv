@@ -1,0 +1,112 @@
+{
+  "schema": "stop_decision_feedback_v2",
+  "prefix_dimensions": 300,
+  "training_dimensions": 436,
+  "heading_prefix_dimensions": 303,
+  "dimensions": 439,
+  "append_dimensions": 136,
+  "action_commands": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.2,
+      0.0
+    ],
+    [
+      0.1,
+      0.0
+    ],
+    [
+      0.05,
+      0.0
+    ],
+    [
+      0.0,
+      0.5
+    ],
+    [
+      0.0,
+      -0.5
+    ],
+    [
+      0.05,
+      0.5
+    ],
+    [
+      0.05,
+      -0.5
+    ],
+    [
+      0.01,
+      0.5
+    ],
+    [
+      0.01,
+      -0.5
+    ],
+    [
+      0.2,
+      0.5
+    ],
+    [
+      0.2,
+      -0.5
+    ]
+  ],
+  "fields": [
+    "12_current_guard_rejection_groups_one_hot",
+    "previous_executed_stop_reason_one_hot",
+    "12_guard_forecast_contact_scores",
+    "nonzero_choices_over_11",
+    "scan_age_over_guard_limit",
+    "previous_idle_seconds_over_5",
+    "previous_idle_with_choices_seconds_over_5",
+    "prediction_input_valid",
+    "moving_tracks_over_4",
+    "oldest_track_age_over_0.8",
+    "scan_valid"
+  ],
+  "rejection_groups": [
+    "accepted",
+    "perception_or_odometry",
+    "localization_or_route",
+    "static_geometry",
+    "laser_geometry",
+    "dynamic_prediction",
+    "projection",
+    "other"
+  ],
+  "previous_reasons": [
+    "none",
+    "nonfinite_input",
+    "stale_or_future_scan",
+    "scan_unavailable",
+    "odometry_jump",
+    "localization_uncertain",
+    "learned_route_incomplete",
+    "reverse_without_rear_visibility",
+    "reverse_duration_limit",
+    "static_braking_footprint",
+    "laser_braking_footprint",
+    "escape_not_increasing_clearance",
+    "unsafe_turn_blocked",
+    "unsafe_translation_blocked",
+    "estimated_goal_reached",
+    "other",
+    "predicted_dynamic_contact",
+    "predictive_command_contract",
+    "policy_wait",
+    "only_stop_available"
+  ],
+  "forecast_source": "same_odometry_frame_predictive_constraint_as_action_mask",
+  "contact_score": "0 if no forecast contact, otherwise 1-contact_s/(horizon_s+period_s)",
+  "unknown_forecast_is_not_clear": true,
+  "legacy_prefix_unchanged": true,
+  "stop_always_selectable": true,
+  "simulator_truth_used": false,
+  "commands_issued": false,
+  "idle_with_choices_timer": "all_executed_idle_with_nonzero_legal_choices_except_goal_reached",
+  "executed_reason_retained_during_idle": true
+}

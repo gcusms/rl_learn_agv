@@ -1,0 +1,39 @@
+{
+  "completed": true,
+  "at": "2026-10-17T07:56:00.344853+08:00",
+  "problem": "ROS bundle inspector only recognized old625ReleaseRuntime and would reject current625guard-aligned bundle despite valid simulation admission.",
+  "change": "Add explicitAlignedReleaseRuntime metadata validation with its own v2release/risk and original feedback contracts; preserve old625and300branches. No runtime/model instantiated in admission.",
+  "tests_run": 6,
+  "tests_failed": 0,
+  "tests_errors": 0,
+  "checked": [
+    "actual new625aligned candidate admitted with pinned manifest and still deployment_approved=false",
+    "old625release and original300rollback still admit with their own contracts",
+    "wrong runtime or dimensions or checksum rejected",
+    "deliberately mixed v1/v2release and risk metadata rejected even after consistent rehash and config repin",
+    "actual published stop/motion history corrects unissued candidate; next probe recording not consumed",
+    "invalid publishedcommand/time rejected without history change"
+  ],
+  "actual_test_process_modules_loaded_for_torch_mujoco_rclpy": [],
+  "resource": {
+    "seconds": 1.6475259339786135,
+    "cpu_seconds": 0.164810271,
+    "average_cpu_cores": 0.10003500861561516,
+    "peak_rss_mib": 36.875
+  },
+  "input_hashes": {
+    "deployment/ros2_recording_adapter/model_bundle.py": "10777c123b3cb7da0e284c0faaa6b250af1ba911cd4ed3fe87b780849d7eaf29",
+    "deployment/ros2_recording_adapter/execution_feedback.py": "d3d6a6237845b757f53f3c7c55133a0e0f5331330efd0ee99dff4da2b4fda82f",
+    "deployment/ros2_recording_adapter/test_release_handoff.py": "144a62bd0f27ad9493b1f8ece095157b212dcb102ae859a1a65ef31375b79b53",
+    "models/quality_recovery_20261014/portable/manifest.json": "077073ea10783c35130396b17618bd3d1159bd316ce78b26aab066c16a706996",
+    "models/stop_feedback_20261015/release_context_bc2000_s231016/portable/manifest.json": "a768215faff8e35f72d807f3ace2746b20b5f8552ebadede88f33802fbc3175d",
+    "models/stop_feedback_20261015/full_navigation_joint_linear_s231017/portable/manifest.json": "62f51e8c79e1b6602e96fcbe734c16c446433b6b13c0cd13bab8ee84ad1c1f73"
+  },
+  "old_selected_config_and_model_not_replaced": true,
+  "no_new_training_or_control_publications": true,
+  "no_vehicle_ros_or_target_board_end_to_end_claim": true,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "reproduce_command": "env PYTHONPATH=training:. OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/rl_learn/rl_learn_agv/.venv/bin/python -m unittest deployment.ros2_recording_adapter.test_release_handoff",
+  "actual_test_invocation": "unittest suite loader and TextTestRunner under ExperimentBudget(0.1,550), with explicit assert that torch,mujoco,rclpy were not imported"
+}

@@ -1,0 +1,44 @@
+{
+  "completed": true,
+  "fit_passed": true,
+  "at": "2026-10-17T07:40:34.491710+08:00",
+  "solver": {
+    "success": true,
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "iterations": 481,
+    "pairwise_constraints": 51092,
+    "l1_parameter_change": 4.981676703398736
+  },
+  "final": {
+    "correct_labels": 5608,
+    "total_labels": 5608,
+    "old4468_correct": 4468,
+    "new1140_correct": 1140,
+    "original692_stop_correct": 692,
+    "original658_stop_correct": 658,
+    "minimum_supported_margin": 0.04999947547912598,
+    "maximum_parameter_change": 0.9474987450035247
+  },
+  "export_parity_passed": true,
+  "strict_runtime_admission_passed": true,
+  "accepted_supervised_updates": 1,
+  "constrained_final_layer_updates": 1,
+  "source_supervised_updates": 2500,
+  "cumulative_supervised_updates": 2501,
+  "model": "models/stop_feedback_20261015/full_navigation_joint_linear_s231017",
+  "checkpoint_sha256": "c1634596838c5813be019623b7589590ea328f9a6bc86679841f0c2cd2dd8411",
+  "all_known6_now_training_development": true,
+  "frozen_parent_representation_and_all_other_components": true,
+  "new_ppo_steps": 0,
+  "new_physical_episodes": 0,
+  "resource": {
+    "seconds": 31.217508997011464,
+    "cpu_seconds": 10.928402726000002,
+    "average_cpu_cores": 0.3500728622212044,
+    "peak_rss_mib": 1288.04296875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "goal_achieved": false,
+  "deployment_approved": false
+}

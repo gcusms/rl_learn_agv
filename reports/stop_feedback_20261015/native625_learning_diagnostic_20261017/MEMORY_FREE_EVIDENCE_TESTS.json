@@ -1,0 +1,26 @@
+{
+  "completed": true,
+  "passed": true,
+  "tests_run": 9,
+  "failures": 0,
+  "errors": 0,
+  "output": "test_long_gap_does_not_accumulate_old_confirmations (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_occlusion_keeps_the_old_endpoint (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_original_10cm_threshold_keeps_the_low_endpoint (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_rear_blind_sector_does_not_clear_with_front_free_rays (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_same_timestamp_probe_calls_do_not_count_as_new_frames (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_three_distinct_finite_free_frames_clear_old_endpoint (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_time_alone_retains_point_and_uncertainty (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_unknown_and_no_return_are_not_free_evidence (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\ntest_unknown_interruption_resets_consecutive_confirmations (memory_free_evidence_tests.MemoryEvidenceTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.073s\n\nOK\n",
+  "at": "2026-10-16T17:08:36.560366+00:00",
+  "candidate_configuration_only": true,
+  "runtime_and_hardware_unchanged": true,
+  "no_new_physics": true,
+  "new_ppo_steps": 0,
+  "goal_achieved": false,
+  "deployment_approved": false,
+  "resource": {
+    "seconds": 40.91158376599196,
+    "cpu_seconds": 4.091343503,
+    "average_cpu_cores": 0.10000452503627977,
+    "peak_rss_mib": 34.26171875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "inputs": {
+    "reports/stop_feedback_20261015/native625_learning_diagnostic_20261017/test_memory_free_evidence.py": "a692d686d6281026153f57ce4dd3d8a84eb6d89361cf9e2418f9e335234cb25e",
+    "training/neural_navigation/safety_memory.py": "980d1d3077e79e27d255c8121283948f302e11e4992ff8e934b19b1d82db90f0"
+  }
+}

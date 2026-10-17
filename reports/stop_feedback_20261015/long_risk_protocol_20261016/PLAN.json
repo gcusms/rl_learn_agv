@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-16T14:23:59.062782+08:00",
+  "changed_factor": "Explicit causal per-action five-second risk history with a small learned twelve-action head",
+  "safe_training_sources": [
+    "early_yield_physical_20261016",
+    "early_yield_condition02_20261016",
+    "early_yield_condition05_20261016"
+  ],
+  "parent_actor": "early_yield_bc400_s231016",
+  "source_and_failed_old_holdouts_are_development": true,
+  "new_sensor_cases_sha256": "ca32d1d4f1635204a7fe4a37737be7f1b571ec133cc92a475cac02742ae51e3d",
+  "new_seed_cases_must_not_enter_fitting": true,
+  "maximum_supervised_updates": 1000,
+  "new_ppo_steps": 0,
+  "first_gate": "original_four_conditions_all_safe",
+  "second_gate": "previous_four_noise_cases_all_safe",
+  "third_gate": "four_new_frozen_sensor_cases_all_safe",
+  "full18_extra12_prefix_heading_wait_regressions_required_before_release": true,
+  "unchanged_guard_body_margin_masks_deadlines_and_sensor_inputs": true,
+  "unsupported_is_not_certified_clear": true,
+  "goal_achieved": false,
+  "deployment_approved": false
+}

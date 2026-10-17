@@ -1,0 +1,40 @@
+{
+  "spec": {
+    "id": "early_yield_sensor_holdout_05_0",
+    "category": "stop_go",
+    "scene": "assets/room_navigation_scripted",
+    "seed": 261016910,
+    "start": [
+      8.284539228652575,
+      1.1532254508185673,
+      1.553687577806636
+    ],
+    "goal": [
+      6.9750000000000005,
+      5.575
+    ],
+    "obstacle": "crossing",
+    "obstacle_speed_m_s": 0.09,
+    "odom_scale": 1.03,
+    "actor_pause_after_event_s": [
+      [
+        1.2000000000000002,
+        2.9
+      ]
+    ],
+    "dropout_after_event_s": [
+      [
+        1.2,
+        1.8
+      ]
+    ],
+    "pilot_category": "unfitted_sensor_seed_same_development_map",
+    "max_steps": 700,
+    "extra_scan_dropout": 0.04
+  },
+  "recovery": false,
+  "variant": "candidate",
+  "bundle": "/home/ubuntu/rl_learn/.publish-handoff-20261015/models/stop_feedback_20261015/full_navigation_margin_resume_s231017/portable",
+  "trace": "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/physical/sensor5_early_yield_sensor_holdout_05_0_candidate.npz",
+  "output": "/home/ubuntu/rl_learn/.publish-handoff-20261015/reports/stop_feedback_20261015/full_navigation_margin_resume_validation_20261017/jobs/sensor5_early_yield_sensor_holdout_05_0_candidate_RESULT.json"
+}

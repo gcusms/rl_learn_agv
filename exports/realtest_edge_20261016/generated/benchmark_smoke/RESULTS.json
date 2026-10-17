@@ -1,0 +1,86 @@
+{
+  "completed": true,
+  "measured_at_utc": "2026-10-16T07:59:09Z",
+  "machine": "x86_64",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "torch": "2.8.0+cu126",
+  "numpy": "1.26.4",
+  "cpu_name": "Intel(R) Xeon(R) CPU E5-2696 v3 @ 2.30GHz",
+  "cases": [
+    {
+      "case_id": "early_yield_sensor_holdout_05_0",
+      "replayed_frames": 16,
+      "original_full_episode_success": true,
+      "original_trace_sha256": "d4b236edfdffdb42c3fe34850caebdb4fa12d59987cddb5fdb03c60f9f501bb9"
+    },
+    {
+      "case_id": "long_risk_sensor_02_0",
+      "replayed_frames": 16,
+      "original_full_episode_success": true,
+      "original_trace_sha256": "94d1924c67c48e214eff9f05a9478f9fbf7ab487a15ed3faa537c0adfe7f7528"
+    },
+    {
+      "case_id": "long_risk_sensor_05_1",
+      "replayed_frames": 16,
+      "original_full_episode_success": false,
+      "original_trace_sha256": "1d555275a7d2f81e83cf4c44d17d305061a16648aa8cbde45d5ea7ab8e019f97"
+    }
+  ],
+  "sensor_frames": 48,
+  "backends": [
+    "batch"
+  ],
+  "timings": {
+    "batch": {
+      "steady_state_samples": 24,
+      "cpu_ms": {
+        "p50": 47.185833500000165,
+        "p95": 84.99403879999971,
+        "p99": 94.54417556999985,
+        "p100": 97.2775509999999
+      },
+      "wall_ms": {
+        "p50": 47.1950295032002,
+        "p95": 85.00485411495902,
+        "p99": 94.55593813268933,
+        "p100": 97.28954103775322
+      },
+      "startup_seconds": [
+        0.11241587495896965,
+        0.10765694099245593,
+        0.08163261995650828
+      ]
+    }
+  },
+  "observations_masks_choices_commands_and_estimates_match_recording": true,
+  "paired_stop_and_rejection_reasons_identical": false,
+  "resource": {
+    "seconds": 9.675191667978652,
+    "cpu_seconds": 3.3886205979999997,
+    "average_cpu_cores": 0.3502380846071603,
+    "peak_rss_mib": 498.63671875,
+    "resource_limits": "single-thread CPU soft average quota; RSS/disk checked between steps"
+  },
+  "paired_process_holds_two_runtime_models": false,
+  "checkpoint_sha256": "a77684103768dbdaa5213246118e05b74fc108cc93f9ed25978dd48da2b0cfe3",
+  "runtime_bundle": "/home/ubuntu/rl_learn/.publish-handoff-20261015/exports/realtest_edge_20261016/models/stop_feedback_20261015/release_context_bc2000_s231016/portable",
+  "runtime_manifest_sha256": "a768215faff8e35f72d807f3ace2746b20b5f8552ebadede88f33802fbc3175d",
+  "native_kernel": {
+    "architecture": "x86_64",
+    "source_sha256": "474270487a0317e36e986600d3000fd4f82766bdbc8f777dbe194546afb92ce7",
+    "build": "g++ -O3 -DNDEBUG -std=c++17 -shared -fPIC -I/usr/include/eigen3",
+    "runtime_compilation": false
+  },
+  "optimized_source_sha256": "041cfd6c3f6dad96c2e2e46aa26abfd620f0bc793e29ba7944feda24ee0238ef",
+  "uses_existing_ros_guard_acceleration": true,
+  "physics_episodes": 0,
+  "vehicle_started": false,
+  "forbidden_runtime_imports": [],
+  "limitations": [
+    "Recorded causal replay is not a closed-loop navigation success evaluation.",
+    "Measures this machine only; includes sensor core/model/guard, excludes ROS transport, sensor alignment, IPC, other nodes and power.",
+    "Quota-related wall delays are not proof of target-board deadlines.",
+    "Only the selected frame prefixes are checked; complete real-car or full-scene regression is not established."
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "at": "2026-10-17T09:54:57.631185+08:00",
+  "actions": [
+    {
+      "args": [
+        "systemctl",
+        "--user",
+        "stop",
+        "rl-late106-framewise-replay-waiter-20261017.service"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "systemctl",
+        "--user",
+        "stop",
+        "rl-late106-framewise-20261017.service"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "systemctl",
+        "--user",
+        "stop",
+        "rl-late106-framewise-fresh-replay-20261017.service"
+      ],
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "Failed to stop rl-late106-framewise-fresh-replay-20261017.service: Unit rl-late106-framewise-fresh-replay-20261017.service not loaded.\n"
+    },
+    {
+      "args": [
+        "systemctl",
+        "--user",
+        "stop",
+        "rl-late106-joint-beam-20261017.timer"
+      ],
+      "returncode": 5,
+      "stdout": "",
+      "stderr": "Failed to stop rl-late106-joint-beam-20261017.timer: Unit rl-late106-joint-beam-20261017.timer not loaded.\n"
+    }
+  ],
+  "units": {
+    "args": [
+      "systemctl",
+      "--user",
+      "show",
+      "rl-late106-framewise-replay-waiter-20261017.service",
+      "rl-late106-framewise-20261017.service",
+      "rl-late106-framewise-fresh-replay-20261017.service",
+      "rl-late106-joint-beam-20261017.timer",
+      "-p",
+      "Id",
+      "-p",
+      "LoadState",
+      "-p",
+      "ActiveState",
+      "-p",
+      "SubState",
+      "-p",
+      "MainPID",
+      "-p",
+      "InvocationID",
+      "-p",
+      "ExecMainStatus",
+      "-p",
+      "Result",
+      "-p",
+      "MemoryCurrent",
+      "-p",
+      "CPUUsageNSec",
+      "-p",
+      "Restart"
+    ],
+    "returncode": 0,
+    "stdout": "Restart=no\nMainPID=0\nResult=success\nExecMainStatus=0\nMemoryCurrent=[not set]\nCPUUsageNSec=[not set]\nId=rl-late106-framewise-replay-waiter-20261017.service\nLoadState=not-found\nActiveState=inactive\nSubState=dead\nInvocationID=\n\nRestart=no\nMainPID=0\nResult=success\nExecMainStatus=0\nMemoryCurrent=[not set]\nCPUUsageNSec=[not set]\nId=rl-late106-framewise-20261017.service\nLoadState=not-found\nActiveState=inactive\nSubState=dead\nInvocationID=\n\nRestart=no\nMainPID=0\nResult=success\nExecMainStatus=0\nMemoryCurrent=[not set]\nCPUUsageNSec=[not set]\nId=rl-late106-framewise-fresh-replay-20261017.service\nLoadState=not-found\nActiveState=inactive\nSubState=dead\nInvocationID=\n\nResult=success\nId=rl-late106-joint-beam-20261017.timer\nLoadState=not-found\nActiveState=inactive\nSubState=dead\nInvocationID=\n",
+    "stderr": ""
+  },
+  "previous_pids": {
+    "2260374": {
+      "exists": false,
+      "stat": null
+    },
+    "2260451": {
+      "exists": false,
+      "stat": null
+    }
+  },
+  "active_rl_units": {
+    "args": [
+      "systemctl",
+      "--user",
+      "list-units",
+      "rl-*",
+      "--state=active,activating,deactivating",
+      "--no-pager",
+      "--plain",
+      "--no-legend"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "active_rl_timers": {
+    "args": [
+      "systemctl",
+      "--user",
+      "list-timers",
+      "rl-*",
+      "--no-pager",
+      "--no-legend"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}
